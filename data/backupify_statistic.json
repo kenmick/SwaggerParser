@@ -1,0 +1,82 @@
+{
+    "host": "api.backupify.com", 
+    "basePath": "/", 
+    "total": 41, 
+    "methods": {
+        "put": {
+            "times": 5, 
+            "frequency": "0.122"
+        }, 
+        "post": {
+            "times": 9, 
+            "frequency": "0.220"
+        }, 
+        "get": {
+            "times": 27, 
+            "frequency": "0.659"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 6, 
+            "frequency": "0.207"
+        }, 
+        "2": {
+            "times": 5, 
+            "frequency": "0.172"
+        }, 
+        "3": {
+            "times": 7, 
+            "frequency": "0.241"
+        }, 
+        "4": {
+            "times": 7, 
+            "frequency": "0.241"
+        }, 
+        "5": {
+            "times": 2, 
+            "frequency": "0.069"
+        }, 
+        "6": {
+            "times": 1, 
+            "frequency": "0.034"
+        }, 
+        "7": {
+            "times": 1, 
+            "frequency": "0.034"
+        }
+    }, 
+    "url_noun": [
+        "/v1/backup_instances/{backup_instance_id}/backups/{backup_id}", 
+        "/v1/backup_instances/{backup_instance_id}/logs", 
+        "/v1/customers/{customer_id}/backup_instances", 
+        "/v1/backup_definitions/{backup_definition_id}/variables/{key}", 
+        "/v1/backup_instances/{backup_instance_id}/logs/{scroll_id}", 
+        "/v1/backup_instances/{backup_instance_id}/endpoints/{endpoint_name}/records", 
+        "/v1/backup_definitions/{backup_definition_id}/variables", 
+        "/v1/backup_instances/{backup_instance_id}/backups/active", 
+        "/v1/backup_definitions/{backup_definition_id}", 
+        "/v1/ping", 
+        "/v1/backup_instances/{backup_instance_id}/variables", 
+        "/v1/backup_instances/{backup_instance_id}", 
+        "/v1/customers", 
+        "/v1/backup_instances/{backup_instance_id}/endpoints/{endpoint_name}", 
+        "/v1/backup_instances/{backup_instance_id}/variables/{key}", 
+        "/oauth/token", 
+        "/v1/backup_instances/{backup_instance_id}/exports/{export_id}", 
+        "/v1/backup_instances/{backup_instance_id}/exports/{export_id}/reauth", 
+        "/v1/vendors/me", 
+        "/v1/customers/{customer_id}", 
+        "/v1/backup_instances/{backup_instance_id}/backups", 
+        "/v1/backup_instances/{backup_instance_id}/endpoints/{endpoint_name}/records/{record_id}/blob", 
+        "/v1/backup_instances/{backup_instance_id}/endpoints/{endpoint_name}/records/{record_id}", 
+        "/v1/backup_instances/{backup_instance_id}/exports", 
+        "/v1/backup_instances", 
+        "/v1/backup_instances/{backup_instance_id}/endpoints", 
+        "/v1/backup_definitions"
+    ], 
+    "url_not_noun": [
+        "/v1/authenticate_customer", 
+        "/v1/authenticate_vendor"
+    ]
+}

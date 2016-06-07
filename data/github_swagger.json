@@ -1,0 +1,749 @@
+{
+    "swagger": "2.0", 
+    "info": {
+        "version": "3.0", 
+        "description": "Github RESTful API", 
+        "title": "Github API"
+    }, 
+    "host": "api.github.com", 
+    "scheme": [
+        "https"
+    ], 
+    "basePath": "", 
+    "produces": [
+        "application/json"
+    ], 
+    "paths": {
+        "/repos/:owner/:repo/commits": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/commits/:sha": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/commits/:ref": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/compare/:base...:head": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/readme": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/contents/:path": {
+            "PUT": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/:archive_format/:ref": {
+            "GET": {}
+        }, 
+        "/events": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/events": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues/events": {
+            "GET": {}
+        }, 
+        "/networks/:owner/:repo/events": {
+            "GET": {}
+        }, 
+        "/orgs/:org/events": {
+            "GET": {}
+        }, 
+        "/users/:username/received_events": {
+            "GET": {}
+        }, 
+        "/users/:username/received_events/public": {
+            "GET": {}
+        }, 
+        "/users/:username/events": {
+            "GET": {}
+        }, 
+        "/users/:username/events/public": {
+            "GET": {}
+        }, 
+        "/users/:username/events/orgs/:org": {
+            "GET": {}
+        }, 
+        "/feeds": {
+            "GET": {}
+        }, 
+        "/notifications": {
+            "PUT": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/notifications": {
+            "PUT": {}, 
+            "GET": {}
+        }, 
+        "/notifications/threads/:id": {
+            "PATCH": {}, 
+            "GET": {}
+        }, 
+        "/notifications/threads/:id/subscription": {
+            "PUT": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/stargazers": {
+            "GET": {}
+        }, 
+        "/users/:username/starred": {
+            "GET": {}
+        }, 
+        "/user/starred/:owner/:repo": {
+            "PUT": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/subscribers": {
+            "GET": {}
+        }, 
+        "/users/:username/subscriptions": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/subscription": {
+            "PUT": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/user/subscriptions/:owner/:repo": {
+            "PUT": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/users/:username/gists": {
+            "GET": {}
+        }, 
+        "/gists/public": {
+            "GET": {}
+        }, 
+        "/gists/starred": {
+            "GET": {}
+        }, 
+        "/gists/:id": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/gists/:id/:sha": {
+            "GET": {}
+        }, 
+        "/gists": {
+            "POST": {}
+        }, 
+        "/gists/:id/commits": {
+            "GET": {}
+        }, 
+        "/gists/:id/star": {
+            "PUT": {}, 
+            "GET": {}, 
+            "DELETE": {}
+        }, 
+        "/gists/:id/forks": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/gists/:gist_id/comments": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/gists/:gist_id/comments/:id": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/git/blobs/:sha": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/git/blobs": {
+            "POST": {}
+        }, 
+        "/repos/:owner/:repo/git/commits/:sha": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/git/commits": {
+            "POST": {}
+        }, 
+        "/repos/:owner/:repo/git/refs/:ref": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/git/refs": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/git/tags/:sha": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/git/tags": {
+            "POST": {}
+        }, 
+        "/repos/:owner/:repo/git/trees/:sha": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/git/trees": {
+            "POST": {}
+        }, 
+        "/issues": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues/:number": {
+            "PATCH": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues/:number/lock": {
+            "PUT": {}, 
+            "DELETE": {}
+        }, 
+        "/repos/:owner/:repo/assignees": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/assignees/:assignee": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues/:number/assignees": {
+            "POST": {}, 
+            "DELETE": {}
+        }, 
+        "/repos/:owner/:repo/issues/:number/comments": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues/comments": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues/comments/:id": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues/:issue_number/events": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues/events/:id": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/labels": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/labels/:name": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues/:number/labels": {
+            "PUT": {}, 
+            "POST": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues/:number/labels/:name": {
+            "DELETE": {}
+        }, 
+        "/repos/:owner/:repo/milestones/:number/labels": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/milestones": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/milestones/:number": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues/:issue_number/timeline": {
+            "GET": {}
+        }, 
+        "/orgs/:org/migrations": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/orgs/:org/migrations/:id": {
+            "GET": {}
+        }, 
+        "/orgs/:org/migrations/:id/archive": {
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/orgs/:org/migrations/:id/repos/:repo_name/lock": {
+            "DELETE": {}
+        }, 
+        "/repos/:owner/:repo/import": {
+            "PUT": {}, 
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/import/authors": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/import/authors/:author_id": {
+            "PATCH": {}
+        }, 
+        "/:owner/:name/import/lfs": {
+            "PATCH": {}
+        }, 
+        "/:owner/:name/import/large_files": {
+            "GET": {}
+        }, 
+        "/gitignore/templates": {
+            "GET": {}
+        }, 
+        "/gitignore/templates/C": {
+            "GET": {}
+        }, 
+        "/licenses": {
+            "GET": {}
+        }, 
+        "/licenses/mit": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/license": {
+            "GET": {}
+        }, 
+        "/markdown": {
+            "POST": {}
+        }, 
+        "/markdown/raw": {
+            "POST": {}
+        }, 
+        "/rate_limit": {
+            "GET": {}
+        }, 
+        "/user/orgs": {
+            "GET": {}
+        }, 
+        "/organizations": {
+            "GET": {}
+        }, 
+        "/users/:username/orgs": {
+            "GET": {}
+        }, 
+        "/orgs/:org": {
+            "PATCH": {}, 
+            "GET": {}
+        }, 
+        "/orgs/:org/members": {
+            "GET": {}
+        }, 
+        "/orgs/:org/members/:username": {
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/orgs/:org/public_members": {
+            "GET": {}
+        }, 
+        "/orgs/:org/public_members/:username": {
+            "PUT": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/orgs/:org/memberships/:username": {
+            "PUT": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/user/memberships/orgs": {
+            "GET": {}
+        }, 
+        "/user/memberships/orgs/:org": {
+            "PATCH": {}, 
+            "GET": {}
+        }, 
+        "/orgs/:org/teams": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/teams/:id": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/teams/:id/members": {
+            "GET": {}
+        }, 
+        "/teams/:id/members/:username": {
+            "PUT": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/teams/:id/memberships/:username": {
+            "PUT": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/teams/:id/repos": {
+            "GET": {}
+        }, 
+        "/teams/:id/repos/:owner/:repo": {
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/teams/:id/repos/:org/:repo": {
+            "PUT": {}
+        }, 
+        "/user/teams": {
+            "GET": {}
+        }, 
+        "/orgs/:org/hooks": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/orgs/:org/hooks/:id": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/orgs/:org/hooks/:id/pings": {
+            "POST": {}
+        }, 
+        "/repos/:owner/:repo/pulls": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/pulls/:number": {
+            "PATCH": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/pulls/:number/commits": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/pulls/:number/files": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/pulls/:number/merge": {
+            "PUT": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/pulls/:number/comments": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/pulls/comments": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/pulls/comments/:id": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/comments/:id/reactions": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues/:number/reactions": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/issues/comments/:id/reactions": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/pulls/comments/:id/reactions": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/reactions/:id": {
+            "DELETE": {}
+        }, 
+        "/user/repos": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/users/:username/repos": {
+            "GET": {}
+        }, 
+        "/orgs/:org/repos": {
+            "GET": {}
+        }, 
+        "/repositories": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/contributors": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/languages": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/teams": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/tags": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/branches": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/branches/:branch": {
+            "PATCH": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/collaborators": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/collaborators/:username": {
+            "PUT": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/comments": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/commits/:ref/comments": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/commits/:sha/comments": {
+            "POST": {}
+        }, 
+        "/repos/:owner/:repo/comments/:id": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/keys": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/keys/:id": {
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/deployments": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/deployments/:id/statuses": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/downloads": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/downloads/:id": {
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/forks": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/merges": {
+            "POST": {}
+        }, 
+        "/repos/:owner/:repo/pages": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/pages/builds": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/pages/builds/latest": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/releases": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/releases/:id": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/releases/latest": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/releases/tags/:tag": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/releases/:id/assets": {
+            "GET": {}
+        }, 
+        "https://<upload_url>/repos/:owner/:repo/releases/:id/assets": {
+            "POST": {}
+        }, 
+        "/repos/:owner/:repo/releases/assets/:id": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/stats/contributors": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/stats/commit_activity": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/stats/code_frequency": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/stats/participation": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/stats/punch_card": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/statuses/:sha": {
+            "POST": {}
+        }, 
+        "/repos/:owner/:repo/commits/:ref/statuses": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/commits/:ref/status": {
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/hooks": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/hooks/:id": {
+            "PATCH": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/repos/:owner/:repo/hooks/:id/pings": {
+            "POST": {}
+        }, 
+        "/search/repositories": {
+            "GET": {}
+        }, 
+        "/search/code": {
+            "GET": {}
+        }, 
+        "/search/issues": {
+            "GET": {}
+        }, 
+        "/search/users": {
+            "GET": {}
+        }, 
+        "/legacy/issues/search/:owner/:repository/:state/:keyword": {
+            "GET": {}
+        }, 
+        "/legacy/repos/search/:keyword": {
+            "GET": {}
+        }, 
+        "/legacy/user/search/:keyword": {
+            "GET": {}
+        }, 
+        "/legacy/user/email/:email": {
+            "GET": {}
+        }, 
+        "/users/:username": {
+            "GET": {}
+        }, 
+        "/user": {
+            "PATCH": {}, 
+            "GET": {}
+        }, 
+        "/users": {
+            "GET": {}
+        }, 
+        "/user/emails": {
+            "POST": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/users/:username/followers": {
+            "GET": {}
+        }, 
+        "/users/:username/following": {
+            "GET": {}
+        }, 
+        "/user/following/:username": {
+            "PUT": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/users/:username/following/:target_user": {
+            "GET": {}
+        }, 
+        "/users/:username/keys": {
+            "GET": {}
+        }, 
+        "/user/keys": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/user/keys/:id": {
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/user/gpg_keys": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/user/gpg_keys/:id": {
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/users/:username/site_admin": {
+            "PUT": {}, 
+            "DELETE": {}
+        }, 
+        "/users/:username/suspended": {
+            "PUT": {}, 
+            "DELETE": {}
+        }, 
+        "/enterprise/stats/:type": {
+            "GET": {}
+        }, 
+        "/admin/ldap/users/:username/mapping": {
+            "PATCH": {}
+        }, 
+        "/admin/ldap/users/:username/sync": {
+            "POST": {}
+        }, 
+        "/admin/ldap/teams/:team_id/mapping": {
+            "PATCH": {}
+        }, 
+        "/admin/ldap/teams/:team_id/sync": {
+            "POST": {}
+        }, 
+        "/enterprise/settings/license": {
+            "GET": {}
+        }, 
+        "/setup/api/start": {
+            "POST": {}
+        }, 
+        "/setup/api/upgrade": {
+            "POST": {}
+        }, 
+        "/setup/api/configcheck": {
+            "GET": {}
+        }, 
+        "/setup/api/configure": {
+            "POST": {}
+        }, 
+        "/setup/api/settings": {
+            "PUT": {}, 
+            "GET": {}
+        }, 
+        "/setup/api/maintenance": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/setup/api/settings/authorized-keys": {
+            "POST": {}, 
+            "DELETE": {}, 
+            "GET": {}
+        }, 
+        "/staff/indexing_jobs": {
+            "POST": {}
+        }, 
+        "/admin/organizations": {
+            "POST": {}
+        }
+    }
+}

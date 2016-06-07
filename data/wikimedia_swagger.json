@@ -1,0 +1,2593 @@
+{
+    "info": {
+        "version": "1.0.0-beta",
+        "title": "Wikimedia REST API",
+        "description": "This API aims to provide coherent and low-latency access to Wikimedia content and services. It is currently in beta testing, so things aren't completely locked down yet. Each entry point has explicit stability markers to inform you about development status and change policy, according to [our API version policy](https://www.mediawiki.org/wiki/API_versioning).\n### High-volume access\n  - Don't perform more than 200 requests/s to this API.\n  - Set a unique `User-Agent` header that allows us to contact you\n    quickly. Email addresses or URLs of contact pages work well.\n",
+        "termsOfService": "https://wikimediafoundation.org/wiki/Terms_of_Use",
+        "contact": {
+            "name": "the Wikimedia Services team",
+            "url": "http://mediawiki.org/wiki/RESTBase"
+        },
+        "license": {
+            "name": "Apache2",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+    },
+    "host": "www.mediawiki.org",
+    "x-host-basePath": "/api/rest_v1",
+    "x-route-filters": [
+        {
+            "path": "./lib/normalize_title_filter.js",
+            "options": {
+                "redirect_cache_control": "{{options.purged_cache_control}}"
+            }
+        }
+    ],
+    "paths": {
+        "/page/": {
+            "get": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "List page-related API entry points.",
+                "description": "Stability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Stable)\n",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of page-related API end points.",
+                        "schema": {
+                            "$ref": "#/definitions/listing"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-monitor": false
+            }
+        },
+        "/page/title/": {
+            "get": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "List all pages.",
+                "description": "Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental). Don't rely on this.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Next page token, provided by _links.next.href property.",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A pageable list of page titles.",
+                        "schema": {
+                            "$ref": "#/definitions/listing"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "get_from_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/page_revisions/page/",
+                                "query": {
+                                    "page": "{{page}}"
+                                }
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/page/title/{title}": {
+            "get": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "Get latest revision metadata for a title.",
+                "description": "Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The latest revision metadata for the provided title.",
+                        "schema": {
+                            "$ref": "#/definitions/revision"
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page title or no revisions found.",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "get_from_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/page_revisions/page/{title}",
+                                "headers": {
+                                    "cache-control": "no-cache",
+                                    "if-unmodified-since": "{{if-unmodified-since}}"
+                                }
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": true,
+                "x-amples": [
+                    {
+                        "title": "Get rev by title from storage",
+                        "request": {
+                            "params": {
+                                "domain": "en.wikipedia.org",
+                                "title": "Foobar"
+                            }
+                        },
+                        "response": {
+                            "status": 200,
+                            "headers": {
+                                "etag": "/.+/",
+                                "content-type": "application/json"
+                            },
+                            "body": {
+                                "items": [
+                                    {
+                                        "title": "Foobar",
+                                        "rev": "/\\d+/",
+                                        "tid": "/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/",
+                                        "comment": "/.*/"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/page/title/{title}/": {
+            "get": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "List revisions for a title.",
+                "description": "Currently this lists all revisions that ever used this title and are\nstored in RESTBase, but eventually it should return the\nlinear history (across renames) of the page currently using this\ntitle.\n\nStability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Next page token, provided by _links.next.href property.",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of revisions for a title.",
+                        "schema": {
+                            "$ref": "#/definitions/listing"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "get_from_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/page_revisions/page/{title}/",
+                                "query": {
+                                    "page": "{{page}}"
+                                }
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/page/html/{title}": {
+            "get": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "Get latest HTML for a title.",
+                "description": "Stability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "sections",
+                        "in": "query",
+                        "description": "Comma-separated list of section IDs.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "redirect",
+                        "in": "query",
+                        "description": "Requests for [redirect pages](https://www.mediawiki.org/wiki/Help:Redirects) return HTTP 302 with a redirect target in `Location` header and content in the body.\nTo get a 200 response instead, supply `false` to the `redirect` parameter.\n",
+                        "type": "boolean",
+                        "required": false
+                    }
+                ],
+                "produces": [
+                    "text/html; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/HTML/1.2.1\""
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The latest HTML for the given page title.\n\nSee [the MediaWiki DOM\nspec](https://www.mediawiki.org/wiki/Parsoid/MediaWiki_DOM_spec) for a\ndescription of the MediaWiki-specific semantic markup in this HTML.\nNote that additional metadata is available in the HTML head.\n",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "headers": {
+                            "ETag": {
+                                "description": "ETag header indicating the revision and render timeuuid\nseparated by a slash:\n\"701384379/154d7bca-c264-11e5-8c2f-1b51b33b59fc\"\nThis ETag can be passed to the HTML save end point (as\n`base_etag` POST parameter), and can also be used to retrieve\nthe exact corresponding data-parsoid metadata, by requesting\nthe specific `revision` and `tid` indicated by the `ETag`.\n",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page title",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "get_from_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/parsoid/html/{title}",
+                                "headers": {
+                                    "cache-control": "{{cache-control}}",
+                                    "if-unmodified-since": "{{if-unmodified-since}}",
+                                    "x-restbase-mode": "{{x-restbase-mode}}",
+                                    "x-restbase-parentrevision": "{{x-restbase-parentrevision}}"
+                                },
+                                "query": {
+                                    "sections": "{{sections}}"
+                                }
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": true,
+                "x-amples": [
+                    {
+                        "title": "Get html by title from storage",
+                        "request": {
+                            "params": {
+                                "domain": "en.wikipedia.org",
+                                "title": "Foobar"
+                            }
+                        },
+                        "response": {
+                            "status": 200,
+                            "headers": {
+                                "etag": "/.+/",
+                                "content-type": "/^text\\/html.+/"
+                            },
+                            "body": "/^<!DOCTYPE html>.*/"
+                        }
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "Save a new revision using HTML.",
+                "description": "Save a new revision of a page given in [Parsoid\nHTML](https://www.mediawiki.org/wiki/Parsoid/MediaWiki_DOM_spec)\nformat.\n\nFor new pages, or when editting the latest revision of a page,\nthe `base_etag` parameter should be left empty. For editing old revisions,\nit should contain the `ETag` header of the revision the edit is derived from.\n\nThe latest page revision ETag header could be provided in the If-Match header\nto detect edit conflicts. If the new page is created, appropriate user cookies\nmust be provided.\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "base_etag",
+                        "in": "formData",
+                        "description": "ETag header of the revision the edit is based on. Should be supplied for all existing pages to ensure clean round-tripping.\n",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "html",
+                        "in": "formData",
+                        "description": "HTML of the page to save.",
+                        "type": "string",
+                        "required": true,
+                        "x-textarea": true
+                    },
+                    {
+                        "name": "csrf_token",
+                        "in": "formData",
+                        "description": "CSRF edit token provided by the MW API.",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "comment",
+                        "in": "formData",
+                        "description": "Comment summarizing the change.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "is_minor",
+                        "in": "formData",
+                        "description": "Flag indicating a minor change.",
+                        "type": "boolean",
+                        "required": false
+                    },
+                    {
+                        "name": "is_bot",
+                        "in": "formData",
+                        "description": "Flag indicating a bot edit.",
+                        "type": "boolean",
+                        "required": false
+                    }
+                ],
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The content was not changed, and no new version was created.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "201": {
+                        "description": "A new revision of the page has been created",
+                        "headers": {
+                            "ETag": {
+                                "description": "ETag header indicating the new revision and timeuuid,\nseparated by a slash:\n\"701384379/154d7bca-c264-11e5-8c2f-1b51b33b59fc\"\n",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request - lack of required parameters, bad ETags etc.",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "409": {
+                        "description": "Edit conflict",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-route-filters": [
+                    {
+                        "path": "./lib/mediawiki_auth_filter.js"
+                    }
+                ],
+                "x-request-handler": [
+                    {
+                        "post_to_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/page_save/html/{title}",
+                                "headers": "{{request.headers}}",
+                                "body": "{{request.body}}"
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/page/html/{title}/": {
+            "get": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "List HTML revisions for a title.",
+                "description": "This currently only lists revisions that are already stored in RESTBase.\n\nStability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The next page token, provided by _links.next.href property.",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of revisions for the given title.",
+                        "schema": {
+                            "$ref": "#/definitions/revisions"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "get_from_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/parsoid/html/{title}/",
+                                "headers": {
+                                    "cache-control": "{{cache-control}}",
+                                    "if-unmodified-since": "{{if-unmodified-since}}",
+                                    "x-restbase-mode": "{{x-restbase-mode}}",
+                                    "x-restbase-parentrevision": "{{x-restbase-parentrevision}}"
+                                },
+                                "query": {
+                                    "page": "{{page}}"
+                                }
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/page/html/{title}/{revision}{/tid}": {
+            "get": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "Get HTML for a specific title/revision & optionally timeuuid.",
+                "description": "Stability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+                "operationId": "getFormatRevision",
+                "produces": [
+                    "text/html; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/HTML/1.2.1\""
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "revision",
+                        "in": "path",
+                        "description": "The revision",
+                        "type": "integer",
+                        "required": true
+                    },
+                    {
+                        "name": "tid",
+                        "in": "path",
+                        "description": "The revision's time ID",
+                        "type": "string"
+                    },
+                    {
+                        "name": "sections",
+                        "in": "query",
+                        "description": "Comma-separated list of section IDs",
+                        "type": "string"
+                    },
+                    {
+                        "name": "redirect",
+                        "in": "query",
+                        "description": "Requests for [redirect pages](https://www.mediawiki.org/wiki/Help:Redirects) return HTTP 302 with a redirect target in `Location` header and content in the body.\nTo get a 200 response instead, supply `false` to the `redirect` parameter.\n",
+                        "type": "boolean",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The html for the given page, revision and tid.\n\nSee [the MediaWiki DOM\nspec](https://www.mediawiki.org/wiki/Parsoid/MediaWiki_DOM_spec) for a\ndescription of the MediaWiki-specific semantic markup in this HTML.\nNote that additional metadata is available in the HTML head.\n\nThis HTML can be edited using arbitrary HTML tools. The modified HTML\ncan be converted back to wikitext using the\n[/transform/html/to/wikitext{/title}{/revision}](#!/Transforms/transform_html_to_wikitext__title___revision__post)\nentry point.\n",
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "object",
+                                    "patternProperties": {
+                                        "^mw\\w+$": "string"
+                                    }
+                                }
+                            ]
+                        },
+                        "headers": {
+                            "ETag": {
+                                "description": "ETag header indicating the revision and render timeuuid\nseparated by a slash:\n\"701384379/154d7bca-c264-11e5-8c2f-1b51b33b59fc\"\nThis ETag can be passed to the HTML save end point (as\n`base_etag` POST parameter), and can also be used to retrieve\nthe exact corresponding data-parsoid metadata, by requesting\nthe specific `revision` and `tid` indicated by the `ETag`.\n",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid revision or tid",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "403": {
+                        "description": "Access to the specific revision is restricted",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page, revision or tid",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "get_from_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/parsoid/html/{title}/{revision}{/tid}",
+                                "headers": {
+                                    "cache-control": "{{cache-control}}",
+                                    "if-unmodified-since": "{{if-unmodified-since}}",
+                                    "x-restbase-mode": "{{x-restbase-mode}}",
+                                    "x-restbase-parentrevision": "{{x-restbase-parentrevision}}"
+                                },
+                                "query": {
+                                    "sections": "{{sections}}"
+                                }
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/page/data-parsoid/{title}/{revision}/{tid}": {
+            "get": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "Get data-parsoid metadata for a specific title/revision/tid.",
+                "description": "Data-parsoid is metadata used by\n[Parsoid](https://www.mediawiki.org/wiki/Parsoid) to support clean\nround-tripping conversions between HTML and Wikitext. Among other\nthings, it contains the original Wikitext offsets of each HTML\nelement, keyed by element ID. The format is unstable.\n\nThe metadata in data-parsoid is specific to a specific HTML render.\nFor this reason, you need to supply the exact `revision` and `tid` as\nprovided in the `ETag` header of the HTML response.\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "revision",
+                        "in": "path",
+                        "description": "The revision",
+                        "type": "integer",
+                        "required": true
+                    },
+                    {
+                        "name": "tid",
+                        "in": "path",
+                        "description": "The revision's time ID",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "redirect",
+                        "in": "query",
+                        "description": "Requests for [redirect pages](https://www.mediawiki.org/wiki/Help:Redirects) return HTTP 302 with a redirect target in `Location` header and content in the body.\nTo get a 200 response instead, supply `false` to the `redirect` parameter.\n",
+                        "type": "boolean",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The latest Parsoid data for the given page",
+                        "schema": {
+                            "$ref": "#/definitions/data-parsoid"
+                        },
+                        "headers": {
+                            "ETag": {
+                                "description": "Revision / tid: \"701384379/154d7bca-c264-11e5-8c2f-1b51b33b59fc\"",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid revision",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "403": {
+                        "description": "Access to the specific revision is restricted",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page, revision or tid",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "get_from_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/parsoid/data-parsoid/{title}/{revision}{/tid}",
+                                "headers": {
+                                    "cache-control": "{{cache-control}}",
+                                    "if-unmodified-since": "{{if-unmodified-since}}",
+                                    "x-restbase-mode": "{{x-restbase-mode}}",
+                                    "x-restbase-parentrevision": "{{x-restbase-parentrevision}}"
+                                }
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/page/revision/": {
+            "get": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "List all page revisions.",
+                "description": "Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental).\nDon't rely on this.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Next page token, provided by _links.next.href property.",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The queriable sub-items",
+                        "schema": {
+                            "$ref": "#/definitions/listing"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "get_from_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/page_revisions/rev/",
+                                "query": {
+                                    "page": "{{page}}"
+                                }
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/page/revision/{revision}": {
+            "get": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "Get metadata about a specific revision.",
+                "description": "Stability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "revision",
+                        "in": "path",
+                        "description": "The revision id",
+                        "type": "integer",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The revision's properties",
+                        "schema": {
+                            "$ref": "#/definitions/revision"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid revision",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "403": {
+                        "description": "Access to the specific revision is restricted",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown revision id or domain",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "get_from_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/page_revisions/rev/{revision}",
+                                "headers": {
+                                    "cache-control": "no-cache"
+                                }
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": true,
+                "x-amples": [
+                    {
+                        "title": "Get rev by ID",
+                        "request": {
+                            "params": {
+                                "domain": "en.wikipedia.org",
+                                "revision": 642497713
+                            }
+                        },
+                        "response": {
+                            "status": 200,
+                            "headers": {
+                                "etag": "/.+/",
+                                "content-type": "application/json"
+                            },
+                            "body": {
+                                "items": [
+                                    {
+                                        "title": "Foobar",
+                                        "rev": "/\\d+/",
+                                        "tid": "/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/",
+                                        "comment": "/.*/"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/page/wikitext/{title}": {
+            "post": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "Save a new revision of a page using Wikitext.",
+                "description": "For new pages, or when editting the latest revision of a page,\nthe `base_etag` parameter should be left empty.\nFor editing old revisions, it should contain the ETag header\nof the revision the edit is derived from.\n\nThe latest page revision ETag header should be provided in the If-Match header\nto detect edit conflicts. If the new page is created, appropriate user cookies\nmust be provided.\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "base_etag",
+                        "in": "formData",
+                        "description": "The ETag header of the revision the edit is based on.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "wikitext",
+                        "in": "formData",
+                        "description": "The wikitext source of the page to save",
+                        "type": "string",
+                        "required": true,
+                        "x-textarea": true
+                    },
+                    {
+                        "name": "csrf_token",
+                        "in": "formData",
+                        "description": "The CRSF edit token provided by the MW API",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "comment",
+                        "in": "formData",
+                        "description": "The summary of the change",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "is_minor",
+                        "in": "formData",
+                        "description": "Whether this represents a minor change",
+                        "type": "boolean",
+                        "required": false
+                    },
+                    {
+                        "name": "is_bot",
+                        "in": "formData",
+                        "description": "Whether the change is being made by a bot",
+                        "type": "boolean",
+                        "required": false
+                    }
+                ],
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The existing revision of the page matches the sent text"
+                    },
+                    "201": {
+                        "description": "A new revision of the page has been created",
+                        "schema": {
+                            "type": "object"
+                        },
+                        "headers": {
+                            "ETag": {
+                                "description": "ETag header indicating the new revision and timeuuid,\nseparated by a slash:\n\"701384379/154d7bca-c264-11e5-8c2f-1b51b33b59fc\"\n",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request - lack of required parameters, bad ETags etc.",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "409": {
+                        "description": "Edit conflict",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-route-filters": [
+                    {
+                        "path": "./lib/mediawiki_auth_filter.js"
+                    }
+                ],
+                "x-request-handler": [
+                    {
+                        "post_to_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/page_save/wikitext/{title}",
+                                "headers": "{{request.headers}}",
+                                "body": "{{request.body}}"
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/page/mobile-sections/{title}": {
+            "get": {
+                "tags": [
+                    "Mobile"
+                ],
+                "summary": "Get mobile-optimized HTML sections for a title.",
+                "description": "Retrieve the latest HTML for a page title optimised for viewing with\nnative mobile applications. Note that the output is split by sections.\n\nStability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental). Don't rely on this.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "redirect",
+                        "in": "query",
+                        "description": "Requests for [redirect pages](https://www.mediawiki.org/wiki/Help:Redirects) return HTTP 302 with a redirect target in `Location` header and content in the body.\nTo get a 200 response instead, supply `false` to the `redirect` parameter.\n",
+                        "type": "boolean",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON containing HTML sections and metadata for the given page title.",
+                        "schema": {
+                            "type": "object"
+                        },
+                        "headers": {
+                            "ETag": {
+                                "description": "Syntax: \"{revision}/{tid}\". Example: \"701384379/154d7bca-c264-11e5-8c2f-1b51b33b59fc\"\n"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page title",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "from_backend": {
+                            "request": {
+                                "method": "get",
+                                "uri": "/{domain}/sys/mobileapps/mobile-sections/{title}",
+                                "headers": {
+                                    "cache-control": "{{cache-control}}"
+                                }
+                            },
+                            "return": {
+                                "status": "{{from_backend.status}}",
+                                "headers": "{{ merge({\"cache-control\": options.response_cache_control}, from_backend.headers) }}",
+                                "body": "{{from_backend.body}}"
+                            }
+                        }
+                    }
+                ],
+                "x-monitor": true,
+                "x-amples": [
+                    {
+                        "title": "Get MobileApps Foobar page",
+                        "request": {
+                            "params": {
+                                "domain": "en.wikipedia.org",
+                                "title": "Foobar"
+                            }
+                        },
+                        "response": {
+                            "status": 200,
+                            "headers": {
+                                "content-type": "/application\\/json/"
+                            },
+                            "body": {
+                                "lead": "/.+/",
+                                "remaining": "/.+/"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/page/mobile-sections-lead/{title}": {
+            "get": {
+                "tags": [
+                    "Mobile"
+                ],
+                "summary": "Get mobile-optimized HTML lead section and metadata for a title.",
+                "description": "Retrieve the lead section of the latest HTML for a page title optimised\nfor viewing with native mobile applications.\n\nStability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental). Don't rely on this.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "redirect",
+                        "in": "query",
+                        "description": "Requests for [redirect pages](https://www.mediawiki.org/wiki/Help:Redirects) return HTTP 302 with a redirect target in `Location` header and content in the body.\nTo get a 200 response instead, supply `false` to the `redirect` parameter.\n",
+                        "type": "boolean",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The HTML for the given page title.",
+                        "schema": {
+                            "type": "object"
+                        },
+                        "headers": {
+                            "ETag": {
+                                "description": "Syntax: \"{revision}/{tid}\". Example: \"701384379/154d7bca-c264-11e5-8c2f-1b51b33b59fc\"\n"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page title",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "from_backend": {
+                            "request": {
+                                "method": "get",
+                                "uri": "/{domain}/sys/mobileapps/mobile-sections-lead/{title}"
+                            },
+                            "return": {
+                                "status": "{{from_backend.status}}",
+                                "headers": "{{ merge({\"cache-control\": options.response_cache_control}, from_backend.headers) }}",
+                                "body": "{{from_backend.body}}"
+                            }
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/page/mobile-sections-remaining/{title}": {
+            "get": {
+                "tags": [
+                    "Mobile"
+                ],
+                "summary": "Get non-lead mobile-optimized HTML sections for a title.",
+                "description": "Retrieve the remainder of the latest HTML (without the lead section) for\na page title optimised for viewing with native mobile applications,\nprovided as a JSON object containing the sections.\n\nStability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental). Don't rely on this.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "redirect",
+                        "in": "query",
+                        "description": "Requests for [redirect pages](https://www.mediawiki.org/wiki/Help:Redirects) return HTTP 302 with a redirect target in `Location` header and content in the body.\nTo get a 200 response instead, supply `false` to the `redirect` parameter.\n",
+                        "type": "boolean",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON wrapping HTML sections for the given page title.",
+                        "schema": {
+                            "type": "object"
+                        },
+                        "headers": {
+                            "ETag": {
+                                "description": "Syntax: \"{revision}/{tid}\". Example: \"701384379/154d7bca-c264-11e5-8c2f-1b51b33b59fc\"\n"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page title",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "from_backend": {
+                            "request": {
+                                "method": "get",
+                                "uri": "/{domain}/sys/mobileapps/mobile-sections-remaining/{title}"
+                            },
+                            "return": {
+                                "status": "{{from_backend.status}}",
+                                "headers": "{{ merge({\"cache-control\": options.response_cache_control},  from_backend.headers) }}",
+                                "body": "{{from_backend.body}}"
+                            }
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/page/mobile-text/{title}": {
+            "get": {
+                "tags": [
+                    "Mobile"
+                ],
+                "summary": "Get mobile-optimized text and metadata for a title.",
+                "description": "Retrieve the *lite* (text-only) version of the latest HTML for a page\ntitle optimised for viewing with native mobile applications.\n\nStability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental). Don't rely on this.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON comprising the HTML and various page attributes for the given page title.\n",
+                        "schema": {
+                            "type": "object"
+                        },
+                        "headers": {
+                            "ETag": {
+                                "description": "Syntax: \"{revision}/{tid}\". Example: \"701384379/154d7bca-c264-11e5-8c2f-1b51b33b59fc\"\n"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page title",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "from_backend": {
+                            "request": {
+                                "method": "get",
+                                "uri": "{{options.host}}/{domain}/v1/page/mobile-text/{title}",
+                                "headers": {
+                                    "cache-control": "{{cache-control}}"
+                                }
+                            },
+                            "return": {
+                                "status": "{{from_backend.status}}",
+                                "headers": "{{ merge({\"cache-control\": \"s-maxage=3600, max-age=3600\"}, from_backend.headers) }}",
+                                "body": "{{from_backend.body}}"
+                            }
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/page/graph/png/{title}/{revision}/{graph_id}": {
+            "get": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "Get PNG graph images referenced in page revisions.",
+                "description": "Retrieve PNG graph images embedded in specific revisions of a\npage. See [the Graphoid\ndocumentation](https://www.mediawiki.org/wiki/Extension:Graph#Graphoid_service)\nfor details.\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+                "produces": [
+                    "image/png"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "The page title",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "revision",
+                        "in": "path",
+                        "description": "The page revision, or 0 for the latest",
+                        "type": "integer",
+                        "required": true
+                    },
+                    {
+                        "name": "graph_id",
+                        "in": "path",
+                        "description": "The graph ID, consisting of a hash and the suffix `.png`.",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The PNG render of the requested graph.",
+                        "schema": {
+                            "type": "blob"
+                        }
+                    },
+                    "403": {
+                        "description": "access to the specific revision is restricted",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page title or revision",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "get_from_graphoid": {
+                            "request": {
+                                "uri": "{+ $$.options.host }/{domain}/v1/png/{title}/{revision}/{graph_id}"
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": true,
+                "x-amples": [
+                    {
+                        "title": "Get a graph from Graphoid",
+                        "request": {
+                            "params": {
+                                "domain": "en.wikipedia.org",
+                                "title": "User:Pchelolo/Graph",
+                                "revision": 0,
+                                "graph_id": "c1c5d432407bd5fd7435f5edfb6fdb73ffd4bc9e.png"
+                            }
+                        },
+                        "response": {
+                            "status": 200,
+                            "headers": {
+                                "content-type": "image/png"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/page/summary/{title}": {
+            "get": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "Get a text extract & thumb summary of a page.",
+                "description": "The summary response includes a text extract of the first several\nsentences, as well as information about a thumbnail that represents\nthe page.\n\nStability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "redirect",
+                        "in": "query",
+                        "description": "Requests for [redirect pages](https://www.mediawiki.org/wiki/Help:Redirects) return HTTP 302 with a redirect target in `Location` header and content in the body.\nTo get a 200 response instead, supply `false` to the `redirect` parameter.\n",
+                        "type": "boolean",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The summary for the given page",
+                        "schema": {
+                            "$ref": "#/definitions/summary"
+                        },
+                        "headers": {
+                            "ETag": {
+                                "description": "Syntax: \"{revision}/{tid}\". Example: \"701384379/154d7bca-c264-11e5-8c2f-1b51b33b59fc\"\n"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page title",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-setup-handler": [
+                    {
+                        "init": {
+                            "method": "put",
+                            "uri": "/{domain}/sys/key_value/summary",
+                            "body": {
+                                "valueType": "json"
+                            }
+                        }
+                    }
+                ],
+                "x-request-handler": [
+                    {
+                        "storage": {
+                            "request": {
+                                "method": "get",
+                                "headers": {
+                                    "cache-control": "{{cache-control}}"
+                                },
+                                "uri": "/{domain}/sys/key_value/summary/{request.params.title}"
+                            },
+                            "catch": {
+                                "status": 404
+                            },
+                            "return_if": {
+                                "status": "2xx"
+                            },
+                            "return": {
+                                "status": 200,
+                                "headers": {
+                                    "content-type": "{{storage.headers.content-type}}",
+                                    "etag": "{{storage.headers.etag}}",
+                                    "cache-control": "{{options.response_cache_control}}"
+                                },
+                                "body": "{{storage.body}}"
+                            }
+                        }
+                    },
+                    {
+                        "extract": {
+                            "request": {
+                                "method": "post",
+                                "uri": "/{domain}/sys/action/query",
+                                "body": {
+                                    "prop": "info|extracts|pageimages",
+                                    "exsentences": 5,
+                                    "explaintext": true,
+                                    "piprop": "thumbnail",
+                                    "pithumbsize": 320,
+                                    "titles": "{{request.params.title}}"
+                                }
+                            },
+                            "response": {
+                                "headers": {
+                                    "content-type": "application/json"
+                                },
+                                "body": {
+                                    "title": "{{extract.body.items[0].title}}",
+                                    "extract": "{{extract.body.items[0].extract}}",
+                                    "thumbnail": "{{httpsSource(extract.body.items[0].thumbnail)}}",
+                                    "lang": "{{extract.body.items[0].pagelanguagehtmlcode}}",
+                                    "dir": "{{extract.body.items[0].pagelanguagedir}}"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "emit_change_event": {
+                            "request": {
+                                "method": "post",
+                                "uri": "/{domain}/sys/events/",
+                                "body": [
+                                    {
+                                        "meta": {
+                                            "uri": "//{request.params.domain}/api/rest_v1/page/summary/{request.params.title}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "store_and_return": {
+                            "request": {
+                                "method": "put",
+                                "uri": "/{domain}/sys/key_value/summary/{request.params.title}",
+                                "headers": "{{extract.headers}}",
+                                "body": "{{extract.body}}"
+                            },
+                            "return": {
+                                "status": 200,
+                                "headers": {
+                                    "content-type": "{{extract.headers.content-type}}",
+                                    "etag": "{{store_and_return.headers.etag}}",
+                                    "cache-control": "{{options.response_cache_control}}"
+                                },
+                                "body": "{{extract.body}}"
+                            }
+                        }
+                    }
+                ],
+                "x-monitor": true,
+                "x-amples": [
+                    {
+                        "title": "Get summary from storage",
+                        "request": {
+                            "params": {
+                                "domain": "en.wikipedia.org",
+                                "title": "Barack_Obama"
+                            }
+                        },
+                        "response": {
+                            "status": 200,
+                            "headers": {
+                                "etag": "/.+/",
+                                "content-type": "/^application\\/json$/"
+                            },
+                            "body": {
+                                "extract": "/.+/",
+                                "thumbnail": {
+                                    "source": "/^https:/"
+                                },
+                                "lang": "en",
+                                "dir": "ltr"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/page/related/{title}": {
+            "get": {
+                "tags": [
+                    "Page content"
+                ],
+                "summary": "Get pages related to the given title",
+                "description": "Returns summaries for 5 pages related to the given page. Summaries include\npage title, namespace and id along with short text description of the page\nand a thumbnail.\n\nStability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The related pages",
+                        "schema": {
+                            "$ref": "#/definitions/related"
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page title",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-request-handler": [
+                    {
+                        "api_request": {
+                            "request": {
+                                "method": "post",
+                                "uri": "/{domain}/sys/action/query",
+                                "body": {
+                                    "format": "json",
+                                    "prop": "pageterms|pageimages|pageprops",
+                                    "ppprop": "mainpage|disambiguation",
+                                    "wbptterms": "description",
+                                    "generator": "search",
+                                    "gsrsearch": "morelike:{{request.params.title}}",
+                                    "gsrnamespace": 0,
+                                    "gsrwhat": "text",
+                                    "gsrinfo": "",
+                                    "gsrprop": "redirecttitle",
+                                    "gsrlimit": 5,
+                                    "piprop": "thumbnail",
+                                    "pithumbsize": 320
+                                }
+                            },
+                            "return": {
+                                "status": 200,
+                                "headers": {
+                                    "content-type": "application/json",
+                                    "cache-control": "{{options.cache_control}}"
+                                },
+                                "body": {
+                                    "items": "{{httpsSource(api_request.body.items)}}"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/page": {},
+        "/transform/html/to/wikitext{/title}{/revision}": {
+            "post": {
+                "tags": [
+                    "Transforms"
+                ],
+                "summary": "Transform HTML to Wikitext",
+                "description": "Transform [Parsoid HTML](https://www.mediawiki.org/wiki/Parsoid/MediaWiki_DOM_spec)\nto Wikitext.\n\n- Stability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n- Rate limit: 5 req/s\n",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "text/plain; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/wikitext/1.0.0\""
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "revision",
+                        "in": "path",
+                        "description": "The page revision",
+                        "type": "integer",
+                        "required": false
+                    },
+                    {
+                        "name": "html",
+                        "in": "formData",
+                        "description": "The HTML to transform",
+                        "type": "string",
+                        "required": true,
+                        "x-textarea": true
+                    },
+                    {
+                        "name": "scrub_wikitext",
+                        "in": "formData",
+                        "description": "Normalise the DOM to yield cleaner wikitext?",
+                        "type": "boolean",
+                        "required": false
+                    },
+                    {
+                        "name": "if-match",
+                        "in": "header",
+                        "description": "The `ETag` header of the original render indicating it's revision and timeuuid.\nRequired if both `title` and `revision` parameters are present.\n",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "MediaWiki Wikitext.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "403": {
+                        "description": "Access to the specific revision is restricted",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page title or revision",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "409": {
+                        "description": "Revision was restricted",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "410": {
+                        "description": "Page was deleted",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-route-filters": [
+                    {
+                        "type": "default",
+                        "name": "ratelimit_route",
+                        "options": {
+                            "limits": {
+                                "internal": 10,
+                                "external": 5
+                            }
+                        },
+                        "path": "/srv/deployment/restbase/deploy/node_modules/hyperswitch/lib/filters/ratelimit_route.js"
+                    }
+                ],
+                "x-request-handler": [
+                    {
+                        "get_from_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/parsoid/transform/html/to/wikitext{/title}{/revision}",
+                                "headers": {
+                                    "if-match": "{{if-match}}"
+                                },
+                                "body": {
+                                    "html": "{{html}}",
+                                    "scrub_wikitext": "{{scrub_wikitext}}"
+                                }
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/transform/wikitext/to/html{/title}{/revision}": {
+            "post": {
+                "tags": [
+                    "Transforms"
+                ],
+                "summary": "Transform Wikitext to HTML",
+                "description": "Transform wikitext to HTML. Note that if you set `stash: true`, you\nalso need to supply the title.\n\n- Stability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n- Rate limit: 5 req/s\n",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "text/html; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/html/1.2.1\""
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "revision",
+                        "in": "path",
+                        "description": "The page revision",
+                        "type": "integer",
+                        "required": false
+                    },
+                    {
+                        "name": "wikitext",
+                        "in": "formData",
+                        "description": "The Wikitext to transform to HTML",
+                        "type": "string",
+                        "required": true,
+                        "x-textarea": true
+                    },
+                    {
+                        "name": "body_only",
+                        "in": "formData",
+                        "description": "Return only `body.innerHTML`",
+                        "type": "boolean",
+                        "required": false
+                    },
+                    {
+                        "name": "stash",
+                        "in": "formData",
+                        "description": "Whether to temporarily stash the result of the transformation",
+                        "type": "boolean",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "See wikipage https://www.mediawiki.org/wiki/Parsoid/MediaWiki_DOM_spec",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "403": {
+                        "description": "access to the specific revision is restricted",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page title or revision",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "409": {
+                        "description": "Revision was restricted",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "410": {
+                        "description": "Page was deleted",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-route-filters": [
+                    {
+                        "type": "default",
+                        "name": "ratelimit_route",
+                        "options": {
+                            "limits": {
+                                "internal": 10,
+                                "external": 5
+                            }
+                        },
+                        "path": "/srv/deployment/restbase/deploy/node_modules/hyperswitch/lib/filters/ratelimit_route.js"
+                    }
+                ],
+                "x-request-handler": [
+                    {
+                        "get_from_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/parsoid/transform/wikitext/to/html{/title}{/revision}",
+                                "body": {
+                                    "wikitext": "{{wikitext}}",
+                                    "body_only": "{{body_only}}",
+                                    "stash": "{{stash}}"
+                                }
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": true,
+                "x-amples": [
+                    {
+                        "title": "Transform wikitext to html",
+                        "request": {
+                            "params": {
+                                "domain": "en.wikipedia.org",
+                                "title": "Foobar"
+                            },
+                            "body": {
+                                "wikitext": "== Heading ==",
+                                "body_only": true
+                            }
+                        },
+                        "response": {
+                            "status": 200,
+                            "headers": {
+                                "content-type": "/^text\\/html.+/"
+                            },
+                            "body": "/^<h2.*> Heading <\\/h2>$/"
+                        }
+                    }
+                ]
+            }
+        },
+        "/transform/sections/to/wikitext/{title}/{revision}": {
+            "post": {
+                "tags": [
+                    "Transforms"
+                ],
+                "summary": "Transform modified HTML sections to Wikitext.",
+                "description": "This entry point provides efficient HTML section edit functionality.\nThe client can send back only modified HTML sections, and retrieve the\nfull Wikitext of the page.\n\n- Stability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n- Rate limit: 5 req/s\n",
+                "consumes": [
+                    "application/json",
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "text/html; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/HTML/1.2.1\""
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Page title. Use underscores instead of spaces. Example: `Main_Page`.",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "revision",
+                        "in": "path",
+                        "description": "The page revision",
+                        "type": "integer",
+                        "required": true
+                    },
+                    {
+                        "name": "sections",
+                        "in": "body",
+                        "description": "Sections to transform",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "sections": {
+                                    "example": "{\"mwAg\":\"<h2>First Section replaced</h2><h2>Appended Section</h2>\"}"
+                                }
+                            },
+                            "required": [
+                                "sections"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Wikitext of the full page.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Illegal JSON provided or section id does not exist",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "403": {
+                        "description": "access to the specific revision is restricted",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown page title or revision",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "409": {
+                        "description": "Revision was restricted",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "410": {
+                        "description": "Page was deleted",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-route-filters": [
+                    {
+                        "type": "default",
+                        "name": "ratelimit_route",
+                        "options": {
+                            "limits": {
+                                "internal": 10,
+                                "external": 5
+                            }
+                        },
+                        "path": "/srv/deployment/restbase/deploy/node_modules/hyperswitch/lib/filters/ratelimit_route.js"
+                    }
+                ],
+                "x-request-handler": [
+                    {
+                        "get_from_backend": {
+                            "request": {
+                                "uri": "/{domain}/sys/parsoid/transform/sections/to/wikitext/{title}/{revision}",
+                                "body": {
+                                    "sections": "{{sections}}"
+                                }
+                            },
+                            "return": true
+                        }
+                    }
+                ],
+                "x-monitor": false
+            }
+        },
+        "/transform": {},
+        "/media/math/check/{type}": {
+            "post": {
+                "tags": [
+                    "Math"
+                ],
+                "summary": "Check and normalize a TeX formula.",
+                "description": "Checks the supplied TeX formula for correctness and returns the\nnormalised formula representation as well as information about\nidentifiers. Available types are tex and inline-tex. The response\ncontains the `x-resource-location` header which can be used to retrieve\nthe render of the checked formula in one of the supported rendering\nformats. Just append the value of the header to `/media/math/{format}/`\nand perform a GET request against that URL.\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#unstable).\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "path",
+                        "description": "The input type of the given formula; can be tex or inline-tex",
+                        "type": "string",
+                        "required": true,
+                        "enum": [
+                            "tex",
+                            "inline-tex",
+                            "chem"
+                        ]
+                    },
+                    {
+                        "name": "q",
+                        "in": "formData",
+                        "description": "The formula to check",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Information about the checked formula"
+                    },
+                    "400": {
+                        "description": "Invalid type",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-monitor": true,
+                "x-amples": [
+                    {
+                        "title": "Mathoid - check test formula",
+                        "request": {
+                            "params": {
+                                "domain": "wikimedia.org",
+                                "type": "tex"
+                            },
+                            "body": {
+                                "q": "E=mc^{2}"
+                            }
+                        },
+                        "response": {
+                            "status": 200,
+                            "headers": {
+                                "content-type": "/^application\\/json/",
+                                "x-resource-location": "/.+/",
+                                "cache-control": "no-cache"
+                            },
+                            "body": {
+                                "success": true,
+                                "checked": "/.+/"
+                            }
+                        }
+                    }
+                ],
+                "x-request-handler": [
+                    {
+                        "get_from_sys": {
+                            "request": {
+                                "method": "post",
+                                "uri": "/wikimedia.org/sys/mathoid/check/{type}",
+                                "headers": "{{ request.headers }}",
+                                "body": "{{ request.body }}"
+                            },
+                            "return": true
+                        }
+                    }
+                ]
+            }
+        },
+        "/media/math/formula/{hash}": {
+            "get": {
+                "tags": [
+                    "Math"
+                ],
+                "summary": "Get a previously-stored formula",
+                "description": "Returns the previously-stored formula via `/media/math/check/{type}` for\nthe given hash.\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#unstable).\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "hash",
+                        "in": "path",
+                        "description": "The hash string of the previous POST data",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Information about the checked formula"
+                    },
+                    "404": {
+                        "description": "Data for the given hash cannot be found",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-monitor": false,
+                "x-request-handler": [
+                    {
+                        "get_from_sys": {
+                            "request": {
+                                "method": "get",
+                                "uri": "/wikimedia.org/sys/mathoid/formula/{hash}",
+                                "headers": "{{ request.headers }}"
+                            },
+                            "return": true
+                        }
+                    }
+                ]
+            }
+        },
+        "/media/math/render/{format}/{hash}": {
+            "get": {
+                "tags": [
+                    "Math"
+                ],
+                "summary": "Get rendered formula in the given format.",
+                "description": "Given a request hash, renders a TeX formula into its mathematic\nrepresentation in the given format. When a request is issued to the\n`/media/math/check/{format}` POST endpoint, the response contains the\n`x-resource-location` header denoting the hash ID of the POST data. Once\nobtained, this endpoint has to be used to obtain the actual render.\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#unstable).\n",
+                "produces": [
+                    "image/svg+xml",
+                    "application/mathml+xml",
+                    "image/png"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "description": "The output format; can be svg or mml",
+                        "type": "string",
+                        "required": true,
+                        "enum": [
+                            "svg",
+                            "mml",
+                            "png"
+                        ]
+                    },
+                    {
+                        "name": "hash",
+                        "in": "path",
+                        "description": "The hash string of the previous POST data",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The rendered formula"
+                    },
+                    "404": {
+                        "description": "Unknown format or hash ID",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/problem"
+                        }
+                    }
+                },
+                "x-monitor": false,
+                "x-setup-handler": [
+                    {
+                        "init_svg": {
+                            "uri": "/wikimedia.org/sys/key_value/mathoid.svg",
+                            "body": {
+                                "keyType": "string",
+                                "valueType": "string"
+                            },
+                            "method": "put"
+                        }
+                    },
+                    {
+                        "init_mml": {
+                            "uri": "/wikimedia.org/sys/key_value/mathoid.mml",
+                            "body": {
+                                "keyType": "string",
+                                "valueType": "string"
+                            },
+                            "method": "put"
+                        }
+                    },
+                    {
+                        "init_png": {
+                            "uri": "/wikimedia.org/sys/key_value/mathoid.png",
+                            "body": {
+                                "keyType": "string",
+                                "valueType": "blob"
+                            },
+                            "method": "put"
+                        }
+                    }
+                ],
+                "x-request-handler": [
+                    {
+                        "check_storage": {
+                            "request": {
+                                "method": "get",
+                                "uri": "/wikimedia.org/sys/key_value/mathoid.{$.request.params.format}/{$.request.params.hash}",
+                                "headers": {
+                                    "cache-control": "{{ cache-control }}"
+                                }
+                            },
+                            "catch": {
+                                "status": 404
+                            },
+                            "return_if": {
+                                "status": "2xx"
+                            },
+                            "return": {
+                                "status": 200,
+                                "headers": "{{ merge({ 'cache-control': options.cache-control }, check_storage.headers) }}",
+                                "body": "{{ check_storage.body }}"
+                            }
+                        }
+                    },
+                    {
+                        "postdata": {
+                            "request": {
+                                "uri": "/wikimedia.org/sys/mathoid/formula/{request.params.hash}"
+                            }
+                        }
+                    },
+                    {
+                        "mathoid": {
+                            "request": {
+                                "method": "post",
+                                "uri": "/wikimedia.org/sys/mathoid/render/{request.params.format}",
+                                "headers": {
+                                    "content-type": "application/json",
+                                    "x-resource-location": "{{ request.params.hash }}"
+                                },
+                                "body": "{{postdata.body}}"
+                            },
+                            "return": true
+                        }
+                    }
+                ]
+            }
+        },
+        "/media": {}
+    },
+    "swagger": "2.0",
+    "definitions": {
+        "problem": {
+            "required": [
+                "type"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "detail": {
+                    "type": "string"
+                },
+                "instance": {
+                    "type": "string"
+                }
+            }
+        },
+        "revisions": {
+            "description": "The result format for revision listing",
+            "required": [
+                "items"
+            ],
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "$ref": "#/definitions/revisionIdentifier"
+                }
+            }
+        },
+        "listing": {
+            "description": "The result format for listings",
+            "required": [
+                "items"
+            ],
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "_links": {
+                    "type": "object",
+                    "properties": {
+                        "next": {
+                            "type": "object",
+                            "properties": {
+                                "href": {
+                                    "type": "string",
+                                    "description": "Relative link to next result page."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "data-parsoid": {
+            "description": "Result format for Parsoid data queries",
+            "required": [
+                "counter",
+                "ids"
+            ],
+            "properties": {
+                "counter": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ids": {
+                    "type": "object"
+                }
+            }
+        },
+        "revision": {
+            "description": "Result format for revision items",
+            "required": [
+                "count",
+                "items"
+            ],
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "items": {
+                    "type": "array",
+                    "$ref": "#/definitions/revisionInfo"
+                }
+            }
+        },
+        "revisionInfo": {
+            "description": "Complete information about the revision",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "page_id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "rev": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "tid": {
+                    "type": "string"
+                },
+                "latest_rev": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "latest_tid": {
+                    "type": "string"
+                },
+                "nextrev_tid": {
+                    "type": "string"
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "renames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "restrictions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "user_id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "user_text": {
+                    "type": "string"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "redirect": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "revisionIdentifier": {
+            "description": "Unique revision identifier",
+            "properties": {
+                "revision": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "tid": {
+                    "type": "string"
+                }
+            }
+        },
+        "summary": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "The page title"
+                },
+                "extract": {
+                    "type": "string",
+                    "description": "First several sentences of an article in plain text"
+                },
+                "thumbnail": {
+                    "type": "object",
+                    "properties": {
+                        "source": {
+                            "type": "string",
+                            "description": "Thumbnail image URI"
+                        },
+                        "width": {
+                            "type": "integer",
+                            "description": "Thumbnail width"
+                        },
+                        "height": {
+                            "type": "integer",
+                            "description": "Thumnail height"
+                        }
+                    },
+                    "required": [
+                        "source",
+                        "width",
+                        "height"
+                    ]
+                },
+                "lang": {
+                    "type": "string",
+                    "description": "The page language code",
+                    "example": "en"
+                },
+                "dir": {
+                    "type": "string",
+                    "description": "The page language direction code",
+                    "example": "ltr"
+                }
+            },
+            "required": [
+                "title",
+                "extract",
+                "lang",
+                "dir"
+            ]
+        },
+        "related": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "pageid": {
+                                "type": "integer",
+                                "description": "Page ID"
+                            },
+                            "title": {
+                                "type": "string",
+                                "description": "Page title"
+                            },
+                            "ns": {
+                                "type": "integer",
+                                "description": "The page namespace number"
+                            },
+                            "index": {
+                                "type": "integer",
+                                "description": "Relevance index of this result"
+                            },
+                            "term": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "description": "First several sentences of an article in plain text"
+                                        }
+                                    }
+                                }
+                            },
+                            "thumbnail": {
+                                "type": "object",
+                                "properties": {
+                                    "source": {
+                                        "type": "string",
+                                        "description": "Thumbnail image URI"
+                                    },
+                                    "width": {
+                                        "type": "integer",
+                                        "description": "Thumbnail width"
+                                    },
+                                    "height": {
+                                        "type": "integer",
+                                        "description": "Thumnail height"
+                                    }
+                                },
+                                "required": [
+                                    "source",
+                                    "width",
+                                    "height"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "title",
+                            "ns"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "securityDefinitions": {},
+    "x-default-params": {},
+    "basePath": "/api/rest_v1"
+}

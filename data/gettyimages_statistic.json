@@ -1,0 +1,76 @@
+{
+    "host": "api.gettyimages.com", 
+    "basePath": "/", 
+    "total": 31, 
+    "methods": {
+        "put": {
+            "times": 3, 
+            "frequency": "0.097"
+        }, 
+        "post": {
+            "times": 4, 
+            "frequency": "0.129"
+        }, 
+        "delete": {
+            "times": 1, 
+            "frequency": "0.032"
+        }, 
+        "get": {
+            "times": 23, 
+            "frequency": "0.742"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 11, 
+            "frequency": "0.355"
+        }, 
+        "2": {
+            "times": 11, 
+            "frequency": "0.355"
+        }, 
+        "3": {
+            "times": 8, 
+            "frequency": "0.258"
+        }, 
+        "4": {
+            "times": 1, 
+            "frequency": "0.032"
+        }
+    }, 
+    "url_noun": [
+        "/v3/events", 
+        "/v3/asset-changes/change-sets", 
+        "/v3/search/images/creative", 
+        "/v3/downloads/videos/{id}", 
+        "/v3/countries", 
+        "/v3/collections", 
+        "/v3/images/{id}/similar", 
+        "/v3/usage-batches/{id}", 
+        "/v3/boards", 
+        "/v3/search/events", 
+        "/v3/boards/{board_id}", 
+        "/v3/downloads", 
+        "/v3/images/{id}", 
+        "/v3/asset-registrations", 
+        "/v3/asset-changes/change-sets/{change-set-id}", 
+        "/v3/images", 
+        "/v3/search/videos", 
+        "/v3/asset-changes/channels", 
+        "/v3/search/videos/creative", 
+        "/v3/downloads/{id}", 
+        "/v3/downloads/images/{id}", 
+        "/v3/boards/{board_id}/assets/{asset_id}", 
+        "/v3/search/images", 
+        "/v3/search/videos/editorial", 
+        "/v3/search/images/editorial", 
+        "/v3/videos/{id}", 
+        "/v3/events/{id}", 
+        "/v3/products", 
+        "/v3/videos"
+    ], 
+    "url_not_noun": [
+        "/v3/purchased-assets", 
+        "/v3/purchased-images"
+    ]
+}

@@ -1,0 +1,76 @@
+{
+    "swagger": "2.0", 
+    "info": {
+        "version": "1.0", 
+        "description": "Uber RESTful API", 
+        "title": "Uber API"
+    }, 
+    "host": "api.uber.com", 
+    "schemes": [
+        "https"
+    ], 
+    "basePath": "", 
+    "produces": [
+        "application/json"
+    ], 
+    "paths": {
+        "/v1/products": {
+            "get": {}
+        }, 
+        "/v1/products/{product_id}": {
+            "get": {}
+        }, 
+        "/v1/estimates/price": {
+            "get": {}
+        }, 
+        "/v1/estimates/time": {
+            "get": {}
+        }, 
+        "/v1.2/history": {
+            "get": {}
+        }, 
+        "/v1.1/history": {
+            "get": {}
+        }, 
+        "/v1/me": {
+            "get": {}
+        }, 
+        "/v1/requests": {
+            "post": {}
+        }, 
+        "/v1/requests/current": {
+            "delete": {}, 
+            "patch": {}, 
+            "get": {}
+        }, 
+        "/v1/requests/estimate": {
+            "post": {}
+        }, 
+        "/v1/requests/{request_id}": {
+            "delete": {}, 
+            "patch": {}, 
+            "get": {}
+        }, 
+        "/v1/requests/{request_id}/map": {
+            "get": {}
+        }, 
+        "/v1/requests/{request_id}/receipt": {
+            "get": {}
+        }, 
+        "/v1/places/{place_id}": {
+            "put": {}, 
+            "get": {}
+        }, 
+        "/v1/payment-methods": {
+            "get": {}
+        }, 
+        "/v1/reminders": {
+            "post": {}
+        }, 
+        "/v1/reminders/{reminder_id}": {
+            "delete": {}, 
+            "patch": {}, 
+            "get": {}
+        }
+    }
+}

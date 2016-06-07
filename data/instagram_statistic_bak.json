@@ -1,0 +1,63 @@
+{
+    "host": "api.instagram.com", 
+    "basePath": "/v1", 
+    "total": 40, 
+    "methods": {
+        "post": {
+            "times": 3, 
+            "frequency": "0.075"
+        }, 
+        "delete": {
+            "times": 2, 
+            "frequency": "0.050"
+        }, 
+        "parameters": {
+            "times": 14, 
+            "frequency": "0.350"
+        }, 
+        "get": {
+            "times": 21, 
+            "frequency": "0.525"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 10, 
+            "frequency": "0.455"
+        }, 
+        "3": {
+            "times": 7, 
+            "frequency": "0.318"
+        }, 
+        "4": {
+            "times": 5, 
+            "frequency": "0.227"
+        }
+    }, 
+    "url_noun": [
+        "/tags/{tag-name}", 
+        "/users/search", 
+        "/tags/{tag-name}/media/recent", 
+        "/media/{media-id}/comments", 
+        "/media/{media-id}/likes", 
+        "/locations/{location-id}/media/recent", 
+        "/locations/{location-id}", 
+        "/media/popular", 
+        "/media/{media-id}", 
+        "/locations/search", 
+        "/geographies/{geo-id}/media/recent", 
+        "/media1/{shortcode}", 
+        "/users/{user-id}", 
+        "/users/{user-id}/media/recent", 
+        "/media/search", 
+        "/tags/search", 
+        "/users/{user-id}/relationship", 
+        "/users/self/feed"
+    ], 
+    "url_not_noun": [
+        "/users/{user-id}/follows", 
+        "/users/self/media/liked", 
+        "/users/{user-id}/followed-by", 
+        "/users/self/requested-by"
+    ]
+}

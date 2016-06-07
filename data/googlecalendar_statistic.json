@@ -1,0 +1,79 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/calendar/v3", 
+    "total": 59, 
+    "methods": {
+        "parameters": {
+            "times": 22, 
+            "frequency": "0.373"
+        }, 
+        "get": {
+            "times": 11, 
+            "frequency": "0.186"
+        }, 
+        "patch": {
+            "times": 4, 
+            "frequency": "0.068"
+        }, 
+        "put": {
+            "times": 4, 
+            "frequency": "0.068"
+        }, 
+        "post": {
+            "times": 14, 
+            "frequency": "0.237"
+        }, 
+        "delete": {
+            "times": 4, 
+            "frequency": "0.068"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 3, 
+            "frequency": "0.136"
+        }, 
+        "2": {
+            "times": 2, 
+            "frequency": "0.091"
+        }, 
+        "3": {
+            "times": 5, 
+            "frequency": "0.227"
+        }, 
+        "4": {
+            "times": 10, 
+            "frequency": "0.455"
+        }, 
+        "5": {
+            "times": 2, 
+            "frequency": "0.091"
+        }
+    }, 
+    "url_noun": [
+        "/calendars/{calendarId}/events/{eventId}/instances", 
+        "/calendars/{calendarId}/acl", 
+        "/calendars/{calendarId}/events/{eventId}/move", 
+        "/users/me/calendarList/{calendarId}", 
+        "/calendars/{calendarId}/acl/{ruleId}", 
+        "/calendars/{calendarId}/clear", 
+        "/calendars/{calendarId}", 
+        "/calendars/{calendarId}/events", 
+        "/users/me/settings", 
+        "/calendars", 
+        "/calendars/{calendarId}/events/watch", 
+        "/users/me/calendarList/watch", 
+        "/calendars/{calendarId}/acl/watch", 
+        "/users/me/calendarList", 
+        "/calendars/{calendarId}/events/{eventId}", 
+        "/freeBusy", 
+        "/colors", 
+        "/users/me/settings/{setting}", 
+        "/users/me/settings/watch", 
+        "/calendars/{calendarId}/events/import"
+    ], 
+    "url_not_noun": [
+        "/channels/stop", 
+        "/calendars/{calendarId}/events/quickAdd"
+    ]
+}

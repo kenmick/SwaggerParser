@@ -1,0 +1,72 @@
+{
+    "host": "www.mediawiki.org", 
+    "basePath": "/api/rest_v1", 
+    "total": 25, 
+    "methods": {
+        "post": {
+            "times": 6, 
+            "frequency": "0.240"
+        }, 
+        "get": {
+            "times": 19, 
+            "frequency": "0.760"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 3, 
+            "frequency": "0.111"
+        }, 
+        "2": {
+            "times": 1, 
+            "frequency": "0.037"
+        }, 
+        "3": {
+            "times": 12, 
+            "frequency": "0.444"
+        }, 
+        "4": {
+            "times": 4, 
+            "frequency": "0.148"
+        }, 
+        "5": {
+            "times": 3, 
+            "frequency": "0.111"
+        }, 
+        "6": {
+            "times": 4, 
+            "frequency": "0.148"
+        }
+    }, 
+    "url_noun": [
+        "/page/summary/{title}", 
+        "/media/math/check/{type}", 
+        "/media", 
+        "/page/title/", 
+        "/page/html/{title}", 
+        "/page/wikitext/{title}", 
+        "/page/revision/", 
+        "/page/related/{title}", 
+        "/page/title/{title}", 
+        "/page/revision/{revision}", 
+        "/page/data-parsoid/{title}/{revision}/{tid}", 
+        "/page/mobile-text/{title}", 
+        "/page/html/{title}/{revision}{/tid}", 
+        "/page", 
+        "/media/math/formula/{hash}", 
+        "/page/title/{title}/", 
+        "/page/graph/png/{title}/{revision}/{graph_id}", 
+        "/page/html/{title}/", 
+        "/page/mobile-sections/{title}", 
+        "/page/"
+    ], 
+    "url_not_noun": [
+        "/page/mobile-sections-remaining/{title}", 
+        "/transform/wikitext/to/html{/title}{/revision}", 
+        "/transform/html/to/wikitext{/title}{/revision}", 
+        "/transform/sections/to/wikitext/{title}/{revision}", 
+        "/media/math/render/{format}/{hash}", 
+        "/page/mobile-sections-lead/{title}", 
+        "/transform"
+    ]
+}

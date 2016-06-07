@@ -1,0 +1,61 @@
+{
+    "host": "api.uber.com", 
+    "basePath": "", 
+    "total": 24, 
+    "methods": {
+        "put": {
+            "times": 1, 
+            "frequency": "0.042"
+        }, 
+        "delete": {
+            "times": 3, 
+            "frequency": "0.125"
+        }, 
+        "post": {
+            "times": 3, 
+            "frequency": "0.125"
+        }, 
+        "patch": {
+            "times": 3, 
+            "frequency": "0.125"
+        }, 
+        "get": {
+            "times": 14, 
+            "frequency": "0.583"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 7, 
+            "frequency": "0.412"
+        }, 
+        "2": {
+            "times": 8, 
+            "frequency": "0.471"
+        }, 
+        "3": {
+            "times": 2, 
+            "frequency": "0.118"
+        }
+    }, 
+    "url_noun": [
+        "/v1/estimates/price", 
+        "/v1/reminders/{reminder_id}", 
+        "/v1/me", 
+        "/v1/requests", 
+        "/v1/places/{place_id}", 
+        "/v1/requests/current", 
+        "/v1.2/history", 
+        "/v1/requests/{request_id}", 
+        "/v1/requests/estimate", 
+        "/v1.1/history", 
+        "/v1/requests/{request_id}/receipt", 
+        "/v1/payment-methods", 
+        "/v1/reminders", 
+        "/v1/products/{product_id}", 
+        "/v1/products", 
+        "/v1/estimates/time", 
+        "/v1/requests/{request_id}/map"
+    ], 
+    "url_not_noun": []
+}

@@ -1,0 +1,50 @@
+{
+    "host": "slack.com", 
+    "basePath": "/api", 
+    "total": 29, 
+    "methods": {
+        "get": {
+            "times": 29, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 29, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/groups.list", 
+        "/files.info", 
+        "/channels.history", 
+        "/im.mark", 
+        "/emoji.list", 
+        "/files.list", 
+        "/groups.history", 
+        "/search.messages", 
+        "/stars.list", 
+        "/channels.info", 
+        "/im.history", 
+        "/im.list", 
+        "/search.files", 
+        "/users.list", 
+        "/channels.list", 
+        "/chat.postMessage"
+    ], 
+    "url_not_noun": [
+        "/chat.delete", 
+        "/channels.mark", 
+        "/groups.setTopic", 
+        "/chat.update", 
+        "/groups.mark", 
+        "/channels.setPurpose", 
+        "/files.upload", 
+        "/channels.setTopic", 
+        "/channels.leave", 
+        "/channels.join", 
+        "/groups.setPurpose", 
+        "/channels.invite", 
+        "/search.all"
+    ]
+}

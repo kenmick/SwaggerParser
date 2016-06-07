@@ -1,0 +1,90 @@
+{
+    "host": "openapi.youku.com", 
+    "basePath": "/v2", 
+    "total": 61, 
+    "methods": {
+        "post": {
+            "times": 17, 
+            "frequency": "0.279"
+        }, 
+        "get": {
+            "times": 44, 
+            "frequency": "0.721"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 39, 
+            "frequency": "0.639"
+        }, 
+        "3": {
+            "times": 22, 
+            "frequency": "0.361"
+        }
+    }, 
+    "url_noun": [
+        "/videos/favorite/by_me.json", 
+        "/searches/keyword/top.json", 
+        "/persons/by_type.json", 
+        "/videos/show_batch.json", 
+        "/playlists/video/setcover.json", 
+        "/shows/by_category.json", 
+        "/users/friendship/followers.json", 
+        "/comments/show.json", 
+        "/searches/keyword/complete.json", 
+        "/videos/by_me.json", 
+        "/videos/show_basic_batch.json", 
+        "/shows/show_premium.json", 
+        "/users/friendship/followings.json", 
+        "/searches/show/by_keyword.json", 
+        "/searches/video/by_keyword.json", 
+        "/comments/by_me.json", 
+        "/videos/show_basic.json", 
+        "/shows/show.json", 
+        "/persons/show_batch.json", 
+        "/playlists/show.json", 
+        "/shows/show_batch.json", 
+        "/comments/show_batch.json", 
+        "/playlists/by_category.json", 
+        "/videos/show.json", 
+        "/playlists/show_batch.json", 
+        "/playlists/by_me.json", 
+        "/playlists/by_user.json", 
+        "/videos/by_related.json", 
+        "/playlists/video/next.json", 
+        "/videos/favorite/by_user.json", 
+        "/persons/show.json", 
+        "/comments/by_mention_me.json", 
+        "/shows/videos.json", 
+        "/comments/hot/by_video.json", 
+        "/playlists/videos.json", 
+        "/users/myinfo.json", 
+        "/searches/video/by_tag.json", 
+        "/users/show_batch.json", 
+        "/comments/to_me.json", 
+        "/users/show.json", 
+        "/comments/by_reply_me.json", 
+        "/shows/by_related.json", 
+        "/comments/by_video.json", 
+        "/videos/by_category.json"
+    ], 
+    "url_not_noun": [
+        "/users/subscribe/notice.json", 
+        "/playlists/update.json", 
+        "/playlists/video/del.json", 
+        "/searches/show/address_unite.json", 
+        "/videos/destroy.json", 
+        "/comments/destroy.json", 
+        "/videos/favorite/create.json", 
+        "/playlists/destroy.json", 
+        "/searches/show/top_unite.json", 
+        "/users/subscribe/get.json", 
+        "/users/friendship/create.json", 
+        "/users/subscribe/create.json", 
+        "/videos/favorite/destroy.json", 
+        "/playlists/video/add.json", 
+        "/videos/update.json", 
+        "/playlists/create.json", 
+        "/comments/create.json"
+    ]
+}

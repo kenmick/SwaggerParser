@@ -1,0 +1,295 @@
+{
+    "swagger": "2.0", 
+    "info": {
+        "version": "1.1", 
+        "description": "Twitter RESTful API", 
+        "title": "Twitter API"
+    }, 
+    "host": "api.twitter.com", 
+    "schemes": [
+        "https"
+    ], 
+    "basePath": "/v1.1", 
+    "produces": [
+        "application/json"
+    ], 
+    "paths": {
+        "/statuses/mentions_timeline": {
+            "GET": {}
+        }, 
+        "/statuses/user_timeline": {
+            "GET": {}
+        }, 
+        "/statuses/home_timeline": {
+            "GET": {}
+        }, 
+        "/statuses/retweets_of_me": {
+            "GET": {}
+        }, 
+        "/statuses/retweets/:id": {
+            "GET": {}
+        }, 
+        "/statuses/show/:id": {
+            "GET": {}
+        }, 
+        "/statuses/destroy/:id": {
+            "POST": {}
+        }, 
+        "/statuses/update": {
+            "POST": {}
+        }, 
+        "/statuses/retweet/:id": {
+            "POST": {}
+        }, 
+        "/statuses/unretweet/:id": {
+            "POST": {}
+        }, 
+        "/statuses/update_with_media": {
+            "POST": {}
+        }, 
+        "/statuses/oembed": {
+            "GET": {}
+        }, 
+        "/statuses/retweeters/ids": {
+            "GET": {}
+        }, 
+        "/statuses/lookup": {
+            "GET": {}
+        }, 
+        "/direct_messages/sent": {
+            "GET": {}
+        }, 
+        "/direct_messages/show": {
+            "GET": {}
+        }, 
+        "/search/tweets": {
+            "GET": {}
+        }, 
+        "/direct_messages": {
+            "GET": {}
+        }, 
+        "/direct_messages/destroy": {
+            "POST": {}
+        }, 
+        "/direct_messages/new": {
+            "POST": {}
+        }, 
+        "/friendships/no_retweets/ids": {
+            "GET": {}
+        }, 
+        "/friends/ids": {
+            "GET": {}
+        }, 
+        "/followers/ids": {
+            "GET": {}
+        }, 
+        "/friendships/incoming": {
+            "GET": {}
+        }, 
+        "/friendships/outgoing": {
+            "GET": {}
+        }, 
+        "/friendships/create": {
+            "POST": {}
+        }, 
+        "/friendships/destroy": {
+            "POST": {}
+        }, 
+        "/friendships/update": {
+            "POST": {}
+        }, 
+        "/friendships/show": {
+            "GET": {}
+        }, 
+        "/friends/list": {
+            "GET": {}
+        }, 
+        "/followers/list": {
+            "GET": {}
+        }, 
+        "/friendships/lookup": {
+            "GET": {}
+        }, 
+        "/account/settings": {
+            "POST": {}, 
+            "GET": {}
+        }, 
+        "/account/verify_credentials": {
+            "GET": {}
+        }, 
+        "/account/update_profile": {
+            "POST": {}
+        }, 
+        "/account/update_profile_image": {
+            "POST": {}
+        }, 
+        "/blocks/list": {
+            "GET": {}
+        }, 
+        "/blocks/ids": {
+            "GET": {}
+        }, 
+        "/blocks/create": {
+            "POST": {}
+        }, 
+        "/blocks/destroy": {
+            "POST": {}
+        }, 
+        "/users/lookup": {
+            "GET": {}
+        }, 
+        "/users/show": {
+            "GET": {}
+        }, 
+        "/users/search": {
+            "GET": {}
+        }, 
+        "/account/remove_profile_banner": {
+            "POST": {}
+        }, 
+        "/account/update_profile_banner": {
+            "POST": {}
+        }, 
+        "/users/profile_banner": {
+            "GET": {}
+        }, 
+        "/mutes/users/create": {
+            "POST": {}
+        }, 
+        "/mutes/users/destroy": {
+            "POST": {}
+        }, 
+        "/mutes/users/ids": {
+            "GET": {}
+        }, 
+        "/mutes/users/list": {
+            "GET": {}
+        }, 
+        "/users/suggestions/:slug": {
+            "GET": {}
+        }, 
+        "/users/suggestions": {
+            "GET": {}
+        }, 
+        "/users/suggestions/:slug/members": {
+            "GET": {}
+        }, 
+        "/favorites/list": {
+            "GET": {}
+        }, 
+        "/favorites/destroy": {
+            "POST": {}
+        }, 
+        "/favorites/create": {
+            "POST": {}
+        }, 
+        "/lists/list": {
+            "GET": {}
+        }, 
+        "/lists/statuses": {
+            "GET": {}
+        }, 
+        "/lists/members/destroy": {
+            "POST": {}
+        }, 
+        "/lists/memberships": {
+            "GET": {}
+        }, 
+        "/lists/subscribers": {
+            "GET": {}
+        }, 
+        "/lists/subscribers/create": {
+            "POST": {}
+        }, 
+        "/lists/subscribers/show": {
+            "GET": {}
+        }, 
+        "/lists/subscribers/destroy": {
+            "POST": {}
+        }, 
+        "/lists/members/create_all": {
+            "POST": {}
+        }, 
+        "/lists/members/show": {
+            "GET": {}
+        }, 
+        "/lists/members": {
+            "GET": {}
+        }, 
+        "/lists/members/create": {
+            "POST": {}
+        }, 
+        "/lists/destroy": {
+            "POST": {}
+        }, 
+        "/lists/update": {
+            "POST": {}
+        }, 
+        "/lists/create": {
+            "POST": {}
+        }, 
+        "/lists/show": {
+            "GET": {}
+        }, 
+        "/lists/subscriptions": {
+            "GET": {}
+        }, 
+        "/lists/members/destroy_all": {
+            "POST": {}
+        }, 
+        "/lists/ownerships": {
+            "GET": {}
+        }, 
+        "/saved_searches/list": {
+            "GET": {}
+        }, 
+        "/saved_searches/show/:id": {
+            "GET": {}
+        }, 
+        "/saved_searches/create": {
+            "POST": {}
+        }, 
+        "/saved_searches/destroy/:id": {
+            "POST": {}
+        }, 
+        "/geo/id/:place_id": {
+            "GET": {}
+        }, 
+        "/geo/reverse_geocode": {
+            "GET": {}
+        }, 
+        "/geo/search": {
+            "GET": {}
+        }, 
+        "/geo/place": {
+            "POST": {}
+        }, 
+        "/trends/place": {
+            "GET": {}
+        }, 
+        "/trends/available": {
+            "GET": {}
+        }, 
+        "/application/rate_limit_status": {
+            "GET": {}
+        }, 
+        "/help/configuration": {
+            "GET": {}
+        }, 
+        "/help/languages": {
+            "GET": {}
+        }, 
+        "/help/privacy": {
+            "GET": {}
+        }, 
+        "/help/tos": {
+            "GET": {}
+        }, 
+        "/trends/closest": {
+            "GET": {}
+        }, 
+        "/users/report_spam": {
+            "POST": {}
+        }
+    }
+}

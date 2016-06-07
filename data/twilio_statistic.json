@@ -1,0 +1,120 @@
+{
+    "host": "api.twilio.com", 
+    "basePath": "/2010-04-01", 
+    "total": 116, 
+    "methods": {
+        "put": {
+            "times": 3, 
+            "frequency": "0.026"
+        }, 
+        "post": {
+            "times": 35, 
+            "frequency": "0.302"
+        }, 
+        "delete": {
+            "times": 16, 
+            "frequency": "0.138"
+        }, 
+        "get": {
+            "times": 62, 
+            "frequency": "0.534"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 1, 
+            "frequency": "0.016"
+        }, 
+        "2": {
+            "times": 1, 
+            "frequency": "0.016"
+        }, 
+        "3": {
+            "times": 13, 
+            "frequency": "0.206"
+        }, 
+        "4": {
+            "times": 21, 
+            "frequency": "0.333"
+        }, 
+        "5": {
+            "times": 15, 
+            "frequency": "0.238"
+        }, 
+        "6": {
+            "times": 8, 
+            "frequency": "0.127"
+        }, 
+        "7": {
+            "times": 4, 
+            "frequency": "0.063"
+        }
+    }, 
+    "url_noun": [
+        "/Accounts/{AccountSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Usage/Triggers/{UsageTriggerSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Notifications{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Applications/{ApplicationSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Transcriptions/{TranscriptionSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Messages/{MessageSid}/Media{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/IpAccessControlListMappings{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SMS/ShortCodes{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Recordings{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/IncomingPhoneNumbers{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Recordings/{RecordingSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Conferences{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/Mobile{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/CredentialListMappings{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Calls{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Calls/{CallSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/IncomingPhoneNumbers/Mobile{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/AvailablePhoneNumbers{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{IpAddressSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/Local{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/CredentialListMappings/{CLSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Notifications/{NotificationSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Usage/Triggers{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/IpAccessControlLists{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/IncomingPhoneNumbers/TollFree{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/IncomingPhoneNumbers/{IncomingPhoneNumberSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}/Credentials/{CredentialSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Messages/{MessageSid}/Media/{MediaSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Queues/{QueueSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/IpAccessControlListMappings/{ALSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Calls/{CallSid}/Recordings{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Queues/{QueueSid}/Members/{CallSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/TollFree{mediaTypeExtension}", 
+        "/Accounts{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Applications{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Usage/Records{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Messages{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Usage/Records/{Subresource}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/Domains{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/OutgoingCallerIds{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Calls/{CallSid}/Notifications{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Conferences/{ConferenceSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/CredentialLists{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/IncomingPhoneNumbers/Local{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SMS/ShortCodes/{ShortCodeSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Queues/{QueueSid}/Members{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}/Credentials{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Messages/{MessageSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Queues{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Queues/{QueueSid}/Members/Front{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/Transcriptions{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/OutgoingCallerIds/{OutgoingCallerIdSid}{mediaTypeExtension}"
+    ], 
+    "url_not_noun": [
+        "/Accounts/{AccountSid}/AuthorizedConnectApps/{ConnectAppSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/ConnectApps{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/ConnectApps/{ConnectAppSid}{mediaTypeExtension}", 
+        "/Accounts/{AccountSid}/AuthorizedConnectApps{mediaTypeExtension}"
+    ]
+}
