@@ -1,13 +1,11 @@
 # SwaggerParser
 
-## Partial result
-
-
+## Partial results
 
 In alphabetical order
 
 No. | Name | Portal | Result 
-:---: | :---: | :---: | :---:
+:--- | :--- | :--- | :---
 1 | Backupify | http://www.datto.com/backupify | [backupify_statistic.json](https://github.com/kenmick/SwaggerParser/blob/master/data/backupify_statistic.json)
 2 | Gettyimages | http://developers.gettyimages.com/api/ | [gettyimages_statistic.json](https://github.com/kenmick/SwaggerParser/blob/master/data/gettyimages_statistic.json)
 3 | Github | https://developer.github.com/v3/ | [github_statistic.json](https://github.com/kenmick/SwaggerParser/blob/master/data/github_statistic.json)
