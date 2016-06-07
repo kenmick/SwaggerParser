@@ -16,10 +16,11 @@ FILENAME = args.filename
 
 # get divided url
 def get_divided_url(url):
-    for i in range(len(url)):
-        if url[i].isupper():
-            url = url[:i] + '_' + url[i].lower() + url[i + 1:]
-    return url.split('_')
+    if not url.isupper():
+        for i in range(len(url)):
+            if url[i].isupper():
+                url = url[:i] + '_' + url[i].lower() + url[i + 1:]
+    return re.split('_|-|\.', url)
 
 
 with open(FILENAME) as json_data:
@@ -43,21 +44,26 @@ fd_method = nltk.FreqDist(methods)
 fd_path_length = nltk.FreqDist(path_lengths)
 
 # part-of-speech judgement
-# home_path = '/home/pyx/Desktop/stanford-postagger-full-2015-12-09'
-home_path = '/Users/kenmick/Desktop/stanford-postagger-full-2015-12-09'
-st = StanfordPOSTagger(home_path + '/models/english-bidirectional-distsim.tagger',
+home_path = '/home/pyx/Desktop/stanford-postagger-full-2015-12-09'
+# home_path = '/Users/kenmick/Desktop/stanford-postagger-full-2015-12-09'
+st = StanfordPOSTagger(home_path + '/models/english-left3words-distsim.tagger',
                        home_path + '/stanford-postagger.jar')
 
 url_noun = []
 url_not_noun = []
-pos = ['NN', 'NNS', 'IN', 'JJ', 'RB', 'TO', 'PRP']
+pos = ['NN', 'NNS', 'IN', 'JJ', 'JJS', 'RB', 'TO', 'PRP']
+count = 1
 
 for path in paths:
+    print str(count) + '/' + str(len(paths))
+    count += 1
     isNoun = True
-    # split url by level, namely by '/'
-    urls = re.sub('/{.*?}|^/', '', path).replace('.json', '').split('/')
+    print path
+    # remove parameters in path, such as {id}, [id], :id, and split url by level, namely by '/'
+    urls = re.sub('/?[\[{].*?[\]}]|/:\w+', '', path).replace('.json', '').lstrip('/').split('/')
     for url in urls:
         for word_pos in st.tag(get_divided_url(url)):
+            print st.tag(get_divided_url(url))
             if word_pos[1] not in pos:
                 url_not_noun.append(path)
                 isNoun = False
