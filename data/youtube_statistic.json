@@ -1,0 +1,77 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/youtube/v3", 
+    "total": 107, 
+    "methods": {
+        "put": {
+            "times": 10, 
+            "frequency": "0.093"
+        }, 
+        "post": {
+            "times": 25, 
+            "frequency": "0.234"
+        }, 
+        "get": {
+            "times": 24, 
+            "frequency": "0.224"
+        }, 
+        "parameters": {
+            "times": 36, 
+            "frequency": "0.336"
+        }, 
+        "delete": {
+            "times": 12, 
+            "frequency": "0.112"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 20, 
+            "frequency": "0.556"
+        }, 
+        "2": {
+            "times": 16, 
+            "frequency": "0.444"
+        }
+    }, 
+    "url_noun": [
+        "/liveBroadcasts/control", 
+        "/videos/rate", 
+        "/liveBroadcasts/bind", 
+        "/liveChat/bans", 
+        "/liveBroadcasts/transition", 
+        "/videoAbuseReportReasons", 
+        "/liveStreams", 
+        "/liveChat/messages", 
+        "/channelBanners/insert", 
+        "/commentThreads", 
+        "/captions/{id}", 
+        "/guideCategories", 
+        "/fanFundingEvents", 
+        "/activities", 
+        "/channels", 
+        "/comments/markAsSpam", 
+        "/search", 
+        "/i18nLanguages", 
+        "/watermarks/unset", 
+        "/playlists", 
+        "/thumbnails/set", 
+        "/i18nRegions", 
+        "/videos", 
+        "/videoCategories", 
+        "/channelSections", 
+        "/videos/reportAbuse", 
+        "/watermarks/set", 
+        "/liveChat/moderators", 
+        "/captions", 
+        "/sponsors", 
+        "/comments", 
+        "/subscriptions", 
+        "/playlistItems", 
+        "/liveBroadcasts"
+    ], 
+    "url_not_noun": [
+        "/comments/setModerationStatus", 
+        "/videos/getRating"
+    ]
+}

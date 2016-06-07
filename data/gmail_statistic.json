@@ -1,0 +1,76 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/gmail/v1/users", 
+    "total": 56, 
+    "methods": {
+        "parameters": {
+            "times": 23, 
+            "frequency": "0.411"
+        }, 
+        "get": {
+            "times": 11, 
+            "frequency": "0.196"
+        }, 
+        "patch": {
+            "times": 1, 
+            "frequency": "0.018"
+        }, 
+        "put": {
+            "times": 2, 
+            "frequency": "0.036"
+        }, 
+        "post": {
+            "times": 15, 
+            "frequency": "0.268"
+        }, 
+        "delete": {
+            "times": 4, 
+            "frequency": "0.071"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 8, 
+            "frequency": "0.348"
+        }, 
+        "3": {
+            "times": 8, 
+            "frequency": "0.348"
+        }, 
+        "4": {
+            "times": 6, 
+            "frequency": "0.261"
+        }, 
+        "5": {
+            "times": 1, 
+            "frequency": "0.043"
+        }
+    }, 
+    "url_noun": [
+        "/{userId}/history", 
+        "/{userId}/messages/{id}/trash", 
+        "/{userId}/messages/import", 
+        "/{userId}/messages", 
+        "/{userId}/threads/{id}", 
+        "/{userId}/messages/{id}", 
+        "/{userId}/drafts", 
+        "/{userId}/watch", 
+        "/{userId}/drafts/{id}", 
+        "/{userId}/labels", 
+        "/{userId}/threads", 
+        "/{userId}/threads/{id}/trash", 
+        "/{userId}/labels/{id}", 
+        "/{userId}/profile", 
+        "/{userId}/messages/{id}/untrash", 
+        "/{userId}/messages/{messageId}/attachments/{id}", 
+        "/{userId}/threads/{id}/untrash"
+    ], 
+    "url_not_noun": [
+        "/{userId}/messages/batchDelete", 
+        "/{userId}/threads/{id}/modify", 
+        "/{userId}/drafts/send", 
+        "/{userId}/messages/send", 
+        "/{userId}/stop", 
+        "/{userId}/messages/{id}/modify"
+    ]
+}

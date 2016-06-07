@@ -1,0 +1,65 @@
+{
+    "host": "api.wordnik.com", 
+    "basePath": "/v4", 
+    "total": 28, 
+    "methods": {
+        "put": {
+            "times": 1, 
+            "frequency": "0.036"
+        }, 
+        "post": {
+            "times": 4, 
+            "frequency": "0.143"
+        }, 
+        "delete": {
+            "times": 1, 
+            "frequency": "0.036"
+        }, 
+        "get": {
+            "times": 22, 
+            "frequency": "0.786"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 1, 
+            "frequency": "0.042"
+        }, 
+        "2": {
+            "times": 9, 
+            "frequency": "0.375"
+        }, 
+        "3": {
+            "times": 14, 
+            "frequency": "0.583"
+        }
+    }, 
+    "url_noun": [
+        "/words.json/reverseDictionary", 
+        "/wordLists.json", 
+        "/wordList.json/{permalink}", 
+        "/words.json/search/{query}", 
+        "/account.json/apiTokenStatus", 
+        "/words.json/randomWords", 
+        "/word.json/{word}/relatedWords", 
+        "/account.json/user", 
+        "/wordList.json/{permalink}/words", 
+        "/word.json/{word}/audio", 
+        "/word.json/{word}/frequency", 
+        "/word.json/{word}", 
+        "/word.json/{word}/topExample", 
+        "/account.json/wordLists", 
+        "/word.json/{word}/phrases", 
+        "/word.json/{word}/definitions", 
+        "/word.json/{word}/etymologies", 
+        "/word.json/{word}/hyphenation", 
+        "/word.json/{word}/pronunciations", 
+        "/words.json/randomWord", 
+        "/word.json/{word}/examples"
+    ], 
+    "url_not_noun": [
+        "/account.json/authenticate/{username}", 
+        "/wordList.json/{permalink}/deleteWords", 
+        "/words.json/wordOfTheDay"
+    ]
+}

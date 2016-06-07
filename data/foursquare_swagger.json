@@ -1,0 +1,4334 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"title": "Foursquare",
+		"description": "The Foursquare API provides methods for accessing a resource such as a venue, tip, or user. In spirit with the RESTful model, each resource is associated with a URL. ",
+		"termsOfService": "https://developer.foursquare.com/overview/community",
+		"version": null
+	},
+	"host": "api.foursquare.com",
+	"basePath": "/v2",
+	"schemes": ["http"],
+	"produces": ["application/json"],
+	"consumes": ["application/json"],
+	"paths": {
+		"/campaigns/add": {
+			"post": {
+				"summary": "/campaigns/{CAMPAIGN_ID}",
+				"description": "/campaigns/{CAMPAIGN_ID}",
+				"operationId": "campaignscampaign-id",
+				"parameters": [{
+					"in": "query",
+					"name": "campaignId",
+					"description": "ID of an existing campaign to copy. The existing campaign will be used to supply values for all parameters other than the startAt and endAt parameters. Accordingly, the specialId parameter is optional when campaignId has been specified, but may be specified to override the special ID obtained from the existing campaign. Similarly, the groupId and venueId parameters can also be specified to override the values obtained from the existing campaign.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "endAt",
+					"description": "DateTime when the campaign is to be automatically deactivated (seconds since epoch).",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "groupId",
+					"description": "required (unless venueId has been provided). Comma-separated list of venue group IDs.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "specialId",
+					"description": "required (unless campaignId has been provided). Special ID.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "startAt",
+					"description": "DateTime when the campaign is to be started (seconds since epoch). If this parameter is not specified, the campaign will be in a pending state until the campaign is actually started via the start action. If this parameter is specified and is in the past, the campaign will be started as of the current time.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "venueId",
+					"description": "required (unless groupId has been provided). Comma-separated list of venue IDs.",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/campaigns/list": {
+			"get": {
+				"summary": "/campaigns/add",
+				"description": "/campaigns/add",
+				"operationId": "campaignsadd",
+				"parameters": [{
+					"in": "query",
+					"name": "groupId",
+					"description": "If specified, limits response to campaigns involving the given group.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "specialId",
+					"description": "If specified, limits response to campaigns involving the given special.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "status",
+					"description": "Which campaigns to return: pending, active, expired, all (default=all)",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/campaigns/{CAMPAIGN_ID}": {
+			"get": {
+				"summary": "/specials/{SPECIAL_ID}/retire",
+				"description": "/specials/{SPECIAL_ID}/retire",
+				"operationId": "specialsspecial-idretire",
+				"parameters": [{
+					"in": "query",
+					"name": "CAMPAIGN_ID",
+					"description": "The ID of the campaign to retrieve additional information for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "CAMPAIGN_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/campaigns/{CAMPAIGN_ID}/delete": {
+			"post": {
+				"summary": "/campaigns/{CAMPAIGN_ID}/timeseries",
+				"description": "/campaigns/{CAMPAIGN_ID}/timeseries",
+				"operationId": "campaignscampaign-idtimeseries",
+				"parameters": [{
+					"in": "query",
+					"name": "CAMPAIGN_ID",
+					"description": "The ID of the campaign to delete.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "CAMPAIGN_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/campaigns/{CAMPAIGN_ID}/end": {
+			"post": {
+				"summary": "/campaigns/{CAMPAIGN_ID}/delete",
+				"description": "/campaigns/{CAMPAIGN_ID}/delete",
+				"operationId": "campaignscampaign-iddelete",
+				"parameters": [{
+					"in": "query",
+					"name": "CAMPAIGN_ID",
+					"description": "The ID of the campaign to end.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "CAMPAIGN_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/campaigns/{CAMPAIGN_ID}/start": {
+			"post": {
+				"summary": "/campaigns/{CAMPAIGN_ID}/end",
+				"description": "/campaigns/{CAMPAIGN_ID}/end",
+				"operationId": "campaignscampaign-idend",
+				"parameters": [{
+					"in": "query",
+					"name": "CAMPAIGN_ID",
+					"description": "The ID of the campaign to start.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "CAMPAIGN_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "startAt",
+					"description": "DateTime when the campaign is to be started (seconds since epoch). If this parameter is not specified or is in the past, the campaign will be started as of the current time.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/campaigns/{CAMPAIGN_ID}/timeseries": {
+			"get": {
+				"summary": "/campaigns/list",
+				"description": "/campaigns/list",
+				"operationId": "campaignslist",
+				"parameters": [{
+					"in": "query",
+					"name": "CAMPAIGN_ID",
+					"description": "The campaign id to retrieve stats for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "CAMPAIGN_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "endAt",
+					"description": "The end of the time range to retrieve stats for (seconds since epoch). If omitted, the campaign end time or the current time will be used, whichever occurs first.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "startAt",
+					"description": "The start of the time range to retrieve stats for (seconds since epoch). If omitted, the campaign start time will be used.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/checkins/add": {
+			"post": {
+				"summary": "/checkins/{CHECKIN_ID}",
+				"description": "/checkins/{CHECKIN_ID}",
+				"operationId": "checkinscheckin-id",
+				"parameters": [{
+					"in": "query",
+					"name": "alt",
+					"description": "Altitude of the users location, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "altAcc",
+					"description": "Vertical accuracy of the users location, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "broadcast",
+					"description": "Who to broadcast this check-in to. Accepts a comma-delimited list of values:private (off the grid) or public (share with friends)facebook share on facebooktwitter share on twitterfollowers share with followers (celebrity mode users only)If no valid value is found, the default is public. Shouts cannot be private.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "eventId",
+					"description": "The event the user is checking in to. A venueId for a venue with this eventId must also be specified in the request.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude of the users location. Only specify this field if you have a GPS or other device reported location for the user at the time of check-in.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "llAcc",
+					"description": "Accuracy of the users latitude and longitude, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "shout",
+					"description": "A message about your check-in. The maximum length of this field is 140 characters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "venue",
+					"description": "If are not shouting, but you dont have a venue ID or would rather prefer a venueless checkin, pass the venue name as a string using this parameter. It will become an orphan (no address or venueid but with geolat, geolong).",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "venueId",
+					"description": "The venue where the user is checking in. No venueid is needed if shouting or just providing a venue name. Find venue IDs by searching or from historical APIs.",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/checkins/recent": {
+			"get": {
+				"summary": "/checkins/add",
+				"description": "/checkins/add",
+				"operationId": "checkinsadd",
+				"parameters": [{
+					"in": "query",
+					"name": "afterTimestamp",
+					"description": "Seconds after which to look for checkins, e.g. for looking for new checkins since the last fetch. If more than limit results are new since then, this is ignored. Checkins created prior to this timestamp will still be returned if they have new comments or photos, making it easier to poll for all new activity.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 100.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude of the users location, so response can include distance.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/checkins/{CHECKIN_ID}": {
+			"get": {
+				"summary": "/venuegroups/{GROUP_ID}/removevenue",
+				"description": "/venuegroups/{GROUP_ID}/removevenue",
+				"operationId": "venuegroupsgroup-idremovevenue",
+				"parameters": [{
+					"in": "query",
+					"name": "CHECKIN_ID",
+					"description": "The ID of the checkin to retrieve additional information for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "CHECKIN_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "signature",
+					"description": "When checkins are sent to public feeds such as Twitter, foursquare appends a signature (s=XXXXXX) allowing users to bypass the friends-only access check on checkins. The same value can be used here for programmatic access to otherwise inaccessible checkins. Callers should use the bit.ly API to first expand 4sq.com links.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/checkins/{CHECKIN_ID}/addcomment": {
+			"post": {
+				"summary": "/checkins/recent",
+				"description": "/checkins/recent",
+				"operationId": "checkinsrecent",
+				"parameters": [{
+					"in": "query",
+					"name": "CHECKIN_ID",
+					"description": "The ID of the checkin to add a comment to.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "CHECKIN_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "text",
+					"description": "The text of the comment, up to 200 characters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/checkins/{CHECKIN_ID}/deletecomment": {
+			"post": {
+				"summary": "/checkins/{CHECKIN_ID}/addcomment",
+				"description": "/checkins/{CHECKIN_ID}/addcomment",
+				"operationId": "checkinscheckin-idaddcomment",
+				"parameters": [{
+					"in": "query",
+					"name": "CHECKIN_ID",
+					"description": "The ID of the checkin to remove a comment from.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "CHECKIN_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "commentId",
+					"description": "The id of the comment to remove.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/events/categories": {
+			"get": {
+				"summary": "/events/{EVENT_ID}",
+				"description": "/events/{EVENT_ID}",
+				"operationId": "eventsevent-id",
+				"parameters": [{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/events/search": {
+			"get": {
+				"summary": "/events/categories",
+				"description": "/events/categories",
+				"operationId": "eventscategories",
+				"parameters": [{
+					"in": "query",
+					"name": "domain",
+					"description": "Identifier for a known third-party event provider. This is used in conjunction with id. Currently songkick.com is the only supported value.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "eventId",
+					"description": "Identifier used by third-party specifed in domain, which we will attempt to match against our events listings.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "participantId",
+					"description": "Identifier used by third-party specifed in domain, which we will attempt to match against our events listings.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/events/{EVENT_ID}": {
+			"get": {
+				"summary": "/campaigns/{CAMPAIGN_ID}/start",
+				"description": "/campaigns/{CAMPAIGN_ID}/start",
+				"operationId": "campaignscampaign-idstart",
+				"parameters": [{
+					"in": "query",
+					"name": "EVENT_ID",
+					"description": "The ID of the event to retrieve additional information for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "EVENT_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/add": {
+			"post": {
+				"summary": "/lists/{LIST_ID}",
+				"description": "/lists/{LIST_ID}",
+				"operationId": "listslist-id",
+				"parameters": [{
+					"in": "query",
+					"name": "collaborative",
+					"description": "Indicating if this list can be edited by friends.",
+					"type": "boolean"
+				},
+				{
+					"in": "query",
+					"name": "description",
+					"description": "The description of the list.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "name",
+					"description": "The name of the list.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "photoId",
+					"description": "The id of a photo that should be set as the list photo.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/{LIST_ID}": {
+			"get": {
+				"summary": "/tips/{TIP_ID}/unmark",
+				"description": "/tips/{TIP_ID}/unmark",
+				"operationId": "tipstip-idunmark",
+				"parameters": [{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 200.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "LIST_ID",
+					"description": "id for a user-created (e.g. /v2/lists/12381902N) or followed list or one of USER_ID/tips (e.g. /v2/lists/32/tips), USER_ID/todos, or USER_ID/dones.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "LIST_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "offset",
+					"description": "The number of results to skip. Used to page through results.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/{LIST_ID}/additem": {
+			"post": {
+				"summary": "/lists/{LIST_ID}/suggestvenues",
+				"description": "/lists/{LIST_ID}/suggestvenues",
+				"operationId": "listslist-idsuggestvenues",
+				"parameters": [{
+					"in": "query",
+					"name": "itemId",
+					"description": "Used in conjuction with listId, the id of an item on that list that we wish to copy to this list.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "listId",
+					"description": "Used in conjuction with itemId, the id for a user created or followed list as well as one of USER_ID/tips, USER_ID/todos, or USER_ID/dones.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "LIST_ID",
+					"description": "Id for a user-created or followed list as well as one of USER_ID/tips, USER_ID/todos, or USER_ID/dones.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "LIST_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "text",
+					"description": "If the target is a user-created list, this will create a public tip on the venue. If the target is /userid/todos, the text will be a private note that is only visible to the author.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "tipId",
+					"description": "Used to add a tip to a list. Cannot be used in conjunction with the text and url fields.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "url",
+					"description": "If adding a new tip via text, this can associate a url with the tip.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "venueId",
+					"description": "A venue to add to the list.",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/{LIST_ID}/deleteitem": {
+			"post": {
+				"summary": "/lists/{LIST_ID}/additem",
+				"description": "/lists/{LIST_ID}/additem",
+				"operationId": "listslist-idadditem",
+				"parameters": [{
+					"in": "query",
+					"name": "itemId",
+					"description": "Id of the item to delete.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "LIST_ID",
+					"description": "Id for a user-created or followed list or one of USER_ID/tips, USER_ID/todos, or USER_ID/dones",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "LIST_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/{LIST_ID}/follow": {
+			"post": {
+				"summary": "/lists/{LIST_ID}/deleteitem",
+				"description": "/lists/{LIST_ID}/deleteitem",
+				"operationId": "listslist-iddeleteitem",
+				"parameters": [{
+					"in": "query",
+					"name": "LIST_ID",
+					"description": "Id of a user-created list.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "LIST_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/{LIST_ID}/followers": {
+			"get": {
+				"summary": "/lists/add",
+				"description": "/lists/add",
+				"operationId": "listsadd",
+				"parameters": [{
+					"in": "query",
+					"name": "LIST_ID",
+					"description": "Id for a user-created list.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "LIST_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/{LIST_ID}/moveitem": {
+			"post": {
+				"summary": "/lists/{LIST_ID}/follow",
+				"description": "/lists/{LIST_ID}/follow",
+				"operationId": "listslist-idfollow",
+				"parameters": [{
+					"in": "query",
+					"name": "afterId",
+					"description": "Move itemId after afterId.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "beforeId",
+					"description": "Move itemId before beforeId.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "itemId",
+					"description": "Id of the item on this list to move.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "LIST_ID",
+					"description": "Id for a user-created or followed list or one of USER_ID/tips, USER_ID/todos, or USER_ID/dones",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "LIST_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/{LIST_ID}/share": {
+			"post": {
+				"summary": "/lists/{LIST_ID}/moveitem",
+				"description": "/lists/{LIST_ID}/moveitem",
+				"operationId": "listslist-idmoveitem",
+				"parameters": [{
+					"in": "query",
+					"name": "broadcast",
+					"description": "Where to broadcast this list. Send twitter if you want to send to twitter, facebook if you want to send to facebook, or twitter,facebook if you want to send to both.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "LIST_ID",
+					"description": "Id for a user-created list.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "LIST_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "message",
+					"description": "A personal note to include with the share.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/{LIST_ID}/suggestphoto": {
+			"get": {
+				"summary": "/lists/{LIST_ID}/followers",
+				"description": "/lists/{LIST_ID}/followers",
+				"operationId": "listslist-idfollowers",
+				"parameters": [{
+					"in": "query",
+					"name": "itemId",
+					"description": "Id of item on this list.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "LIST_ID",
+					"description": "Id for a user-created list.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "LIST_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/{LIST_ID}/suggesttip": {
+			"get": {
+				"summary": "/lists/{LIST_ID}/suggestphoto",
+				"description": "/lists/{LIST_ID}/suggestphoto",
+				"operationId": "listslist-idsuggestphoto",
+				"parameters": [{
+					"in": "query",
+					"name": "itemId",
+					"description": "Id of item on this list.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "LIST_ID",
+					"description": "Id for a user-created list.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "LIST_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/{LIST_ID}/suggestvenues": {
+			"get": {
+				"summary": "/lists/{LIST_ID}/suggesttip",
+				"description": "/lists/{LIST_ID}/suggesttip",
+				"operationId": "listslist-idsuggesttip",
+				"parameters": [{
+					"in": "query",
+					"name": "LIST_ID",
+					"description": "Id for a user-created list.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "LIST_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/{LIST_ID}/unfollow": {
+			"post": {
+				"summary": "/lists/{LIST_ID}/share",
+				"description": "/lists/{LIST_ID}/share",
+				"operationId": "listslist-idshare",
+				"parameters": [{
+					"in": "query",
+					"name": "LIST_ID",
+					"description": "Id of a user-created list.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "LIST_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/{LIST_ID}/update": {
+			"post": {
+				"summary": "/lists/{LIST_ID}/unfollow",
+				"description": "/lists/{LIST_ID}/unfollow",
+				"operationId": "listslist-idunfollow",
+				"parameters": [{
+					"in": "query",
+					"name": "collaborative",
+					"description": "Indicating if this list can be edited by friends.",
+					"type": "boolean"
+				},
+				{
+					"in": "query",
+					"name": "description",
+					"description": "If present and a non-empty value, updates the List description. If present and empty, will remove the List description.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "LIST_ID",
+					"description": "Id for a user-created list.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "LIST_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "name",
+					"description": "If present and a non-empty value, updates the List name.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "photoId",
+					"description": "If present and a non-empty value, updates the List photo. If present and empty, will remove the List photo.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/lists/{LIST_ID}/updateitem": {
+			"post": {
+				"summary": "/lists/{LIST_ID}/update",
+				"description": "/lists/{LIST_ID}/update",
+				"operationId": "listslist-idupdate",
+				"parameters": [{
+					"in": "query",
+					"name": "itemId",
+					"description": "The id of an item on this list.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "LIST_ID",
+					"description": "Id for a user-created list.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "LIST_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "photoId",
+					"description": "If present and a non-empty value, adds a photo to this item. If present and empty, will remove the photo on this item. If the photo was a private checkin photo, it will be promoted to a public venue photo.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "text",
+					"description": "If present creates a public tip on the venue and replaces any existing tip on the item. Cannot be used in conjuction with tipId or photoId.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "tipId",
+					"description": "If present and a non-empty value, adds or replaces a tip on this item. If present and empty, will remove the tip on this item.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "url",
+					"description": "If adding a new tip via text, this can associate a url with the tip.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/multi": {
+			"get": {
+				"summary": "/pages/{PAGE_ID}/venues",
+				"description": "/pages/{PAGE_ID}/venues",
+				"operationId": "pagespage-idvenues",
+				"parameters": [{
+					"in": "query",
+					"name": "requests",
+					"description": "A comma-delimited list of API requests.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/pages/search": {
+			"get": {
+				"summary": "/pages/{PAGE_ID}",
+				"description": "/pages/{PAGE_ID}",
+				"operationId": "pagespage-id",
+				"parameters": [{
+					"in": "query",
+					"name": "fbid",
+					"description": "A comma-delimited list of Facebook IDs to look for.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "name",
+					"description": "A search term to be applied against page names.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "twitter",
+					"description": "A comma-delimited list of Twitter handles to look for.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/pages/{PAGE_ID}": {
+			"get": {
+				"summary": "/events/search",
+				"description": "/events/search",
+				"operationId": "eventssearch",
+				"parameters": [{
+					"in": "query",
+					"name": "PAGE_ID",
+					"description": "Identity of the page to get details for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "PAGE_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/pages/{PAGE_ID}/venues": {
+			"get": {
+				"summary": "/pages/search",
+				"description": "/pages/search",
+				"operationId": "pagessearch",
+				"parameters": [{
+					"in": "query",
+					"name": "limit",
+					"description": "The number of venues to return. Defaults to 20, max of 100.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Not valid with ne or sw. Limits results to venues near this latitude and longitude within an optional radius.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "ne",
+					"description": "See sw.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "offset",
+					"description": "The offset of which venues to return. Defaults to 0.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "PAGE_ID",
+					"description": "The page id for which venues are being requested.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "PAGE_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "radius",
+					"description": "Can be used when including ll. Not valid with ne or sw. Limit results to venues within this many meters of the specified ll. The maximum supported radius is currently 100,000 meters.",
+					"type": "decimal"
+				},
+				{
+					"in": "query",
+					"name": "sw",
+					"description": "With ne, limits results to the bounding quadrangle defined by the latitude and longitude given by sw as its south-west corner, and ne as its north-east corner. Not valid with ll or radius. Bounding quadrangles with an area up to approximately 10,000 square kilometers are supported.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/photos/add": {
+			"post": {
+				"summary": "/photos/{PHOTO_ID}",
+				"description": "/photos/{PHOTO_ID}",
+				"operationId": "photosphoto-id",
+				"parameters": [{
+					"in": "query",
+					"name": "alt",
+					"description": "Altitude of the users location, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "altAcc",
+					"description": "Vertical accuracy of the users location, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "broadcast",
+					"description": "Whether to broadcast this photo. Send twitter if you want to send to twitter, facebook if you want to send to facebook, or twitter,facebook if you want to send to both.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "checkinId",
+					"description": "The ID of a checkin owned by the user",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "Content-Type",
+					"description": "Content-Type.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "image",
+					"description": "The image file data.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude of the users location.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "llAcc",
+					"description": "Accuracy of the users latitude and longitude, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "public",
+					"description": "When the checkinId is also provided (meaning this is a photo attached to a checkin), this parameter allows for making the photo public and viewable at the venue. Valid values are 1 and 0 (default). Note that photos attached to venues and tips are always public.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "tipId",
+					"description": "The ID of a tip owned by the user.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "venueId",
+					"description": "The ID of a venue, provided only when adding a public photo of the venue in general, rather than a private checkin or tip photo using the parameters above.",
+					"type": "xsd:string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/photos/{PHOTO_ID}": {
+			"get": {
+				"summary": "/updates/marknotificationsread",
+				"description": "/updates/marknotificationsread",
+				"operationId": "updatesmarknotificationsread",
+				"parameters": [{
+					"in": "query",
+					"name": "PHOTO_ID",
+					"description": "The ID of the photo to retrieve additional information for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "PHOTO_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/settings/all": {
+			"get": {
+				"summary": "/settings/{SETTING_ID}",
+				"description": "/settings/{SETTING_ID}",
+				"operationId": "settingssetting-id",
+				"parameters": [{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/settings/{SETTING_ID}": {
+			"get": {
+				"summary": "/photos/add",
+				"description": "/photos/add",
+				"operationId": "photosadd",
+				"parameters": [{
+					"in": "query",
+					"name": "SETTING_ID",
+					"description": "The name of a setting.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "SETTING_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/settings/{SETTING_ID}/set": {
+			"post": {
+				"summary": "/settings/all",
+				"description": "/settings/all",
+				"operationId": "settingsall",
+				"parameters": [{
+					"in": "query",
+					"name": "SETTING_ID",
+					"description": "Name of setting to change.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "SETTING_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "value",
+					"description": "1 for true, and 0 for false.",
+					"type": "integer"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/specials/add": {
+			"post": {
+				"summary": "/specials/{SPECIAL_ID}",
+				"description": "/specials/{SPECIAL_ID}",
+				"operationId": "specialsspecial-id",
+				"parameters": [{
+					"in": "query",
+					"name": "cost",
+					"description": "The amount of money the user must spend to use this special in dollars and cents. For example, 5.50 meaning 5 dollars and 50 cents.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "count1",
+					"description": "Count for frequency, count, regular, swarm, friends, and flash specials.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "count2",
+					"description": "Secondary count for regular, flash specials.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "count3",
+					"description": "Tertiary count for flash specials.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "finePrint",
+					"description": "Maximum length of 200 characters. Fine print, shown in small type on the special detail page.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "name",
+					"description": "A name for the special.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "offerId",
+					"description": "Maximum length of 16 characters. Internal id in your 3rd party system.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "text",
+					"description": "Maximum length of 200 characters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "type",
+					"description": "The type of special.Mayor: unlocked only for the mayor.Frequency: unlocked every count1 check-ins.Count: unlocked on the count1th check-in (all-time).Regular: unlocked if you have checked in at least count1 times in the last count2 days.Swarm: unlocked if there are count1 people here right now (but only for the first count1 people).Friends: unlocked if at least count1 friends check in together.Flash: first-come first-serve; unlocked for the first count1 people to check in between count2 and coun",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "unlockedText",
+					"description": "Maximum length of 200 characters. Special text that is shown when the user has unlocked the special.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/specials/list": {
+			"get": {
+				"summary": "/specials/add",
+				"description": "/specials/add",
+				"operationId": "specialsadd",
+				"parameters": [{
+					"in": "query",
+					"name": "status",
+					"description": "Which specials to return: pending, active, expired, all",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "venueId",
+					"description": "Comma-separated list of venue IDs; filters results to the specials assigned to the venue(s).",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/specials/search": {
+			"get": {
+				"summary": "/specials/list",
+				"description": "/specials/list",
+				"operationId": "specialslist",
+				"parameters": [{
+					"in": "query",
+					"name": "alt",
+					"description": "Altitude of the users location, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "altAcc",
+					"description": "Accuracy of the users altitude, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 50.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude to search near.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "llAcc",
+					"description": "Accuracy of latitude and longitude, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "radius",
+					"description": "Limit results to venues within this many meters of the specified location. Defaults to a city-wide area.",
+					"type": "decimal"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/specials/{ID}/flag": {
+			"post": {
+				"summary": "/specials/{SPECIAL_ID}/configuration",
+				"description": "/specials/{SPECIAL_ID}/configuration",
+				"operationId": "specialsspecial-idconfiguration",
+				"parameters": [{
+					"in": "query",
+					"name": "ID",
+					"description": "The id of the special being flagged.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "problem",
+					"description": "One of not_redeemable, not_valuable, other.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "text",
+					"description": "Additional text about why the user has flagged this special.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "venueId",
+					"description": "The id of the venue running the special.",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/specials/{SPECIAL_ID}": {
+			"get": {
+				"summary": "/settings/{SETTING_ID}/set",
+				"description": "/settings/{SETTING_ID}/set",
+				"operationId": "settingssetting-idset",
+				"parameters": [{
+					"in": "query",
+					"name": "SPECIAL_ID",
+					"description": "ID of special to retrieve.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "SPECIAL_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "venueId",
+					"description": "ID of a venue the special is running at.",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/specials/{SPECIAL_ID}/configuration": {
+			"get": {
+				"summary": "/specials/search",
+				"description": "/specials/search",
+				"operationId": "specialssearch",
+				"parameters": [{
+					"in": "query",
+					"name": "SPECIAL_ID",
+					"description": "The ID of the special to retrieve configuration details for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "SPECIAL_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/specials/{SPECIAL_ID}/retire": {
+			"post": {
+				"summary": "/specials/{ID}/flag",
+				"description": "/specials/{ID}/flag",
+				"operationId": "specialsidflag",
+				"parameters": [{
+					"in": "query",
+					"name": "SPECIAL_ID",
+					"description": "The ID of the special to retire.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "SPECIAL_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/tips/add": {
+			"post": {
+				"summary": "/tips/{TIP_ID}",
+				"description": "/tips/{TIP_ID}",
+				"operationId": "tipstip-id",
+				"parameters": [{
+					"in": "query",
+					"name": "broadcast",
+					"description": "Whether to broadcast this tip. Send twitter if you want to send to twitter, facebook if you want to send to facebook, or twitter,facebook if you want to send to both.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "text",
+					"description": "The text of the tip, up to 200 characters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "url",
+					"description": "A URL related to this tip.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "venueId",
+					"description": "The venue where you want to add this tip.",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/tips/search": {
+			"get": {
+				"summary": "/tips/add",
+				"description": "/tips/add",
+				"operationId": "tipsadd",
+				"parameters": [{
+					"in": "query",
+					"name": "filter",
+					"description": "If set to friends, only show nearby tips from friends.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 500.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude of the users location.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "offset",
+					"description": "Used to page through results.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "query",
+					"description": "Only find tips matching the given term, cannot be used in conjunction with friends filter.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/tips/{TIP_ID}": {
+			"get": {
+				"summary": "/checkins/{CHECKIN_ID}/deletecomment",
+				"description": "/checkins/{CHECKIN_ID}/deletecomment",
+				"operationId": "checkinscheckin-iddeletecomment",
+				"parameters": [{
+					"in": "query",
+					"name": "TIP_ID",
+					"description": "ID of tip to retrieve.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "TIP_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/tips/{TIP_ID}/done": {
+			"get": {
+				"summary": "/tips/search",
+				"description": "/tips/search",
+				"operationId": "tipssearch",
+				"parameters": [{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 200.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "offset",
+					"description": "Used to page through results.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "TIP_ID",
+					"description": "Identity of a tip to get users who have marked the tip as done.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "TIP_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/tips/{TIP_ID}/listed": {
+			"get": {
+				"summary": "/tips/{TIP_ID}/done",
+				"description": "/tips/{TIP_ID}/done",
+				"operationId": "tipstip-iddone",
+				"parameters": [{
+					"in": "query",
+					"name": "group",
+					"description": "Can be created, edited, followed, friends, other. If no acting user is present, only other is supported.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "TIP_ID",
+					"description": "Identity of a tip to get lists for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "TIP_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/tips/{TIP_ID}/markdone": {
+			"post": {
+				"summary": "/tips/{TIP_ID}/listed",
+				"description": "/tips/{TIP_ID}/listed",
+				"operationId": "tipstip-idlisted",
+				"parameters": [{
+					"in": "query",
+					"name": "TIP_ID",
+					"description": "The tip you want to mark done.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "TIP_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/tips/{TIP_ID}/marktodo": {
+			"post": {
+				"summary": "/tips/{TIP_ID}/markdone",
+				"description": "/tips/{TIP_ID}/markdone",
+				"operationId": "tipstip-idmarkdone",
+				"parameters": [{
+					"in": "query",
+					"name": "TIP_ID",
+					"description": "The tip you want to mark to-do",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "TIP_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/tips/{TIP_ID}/unmark": {
+			"post": {
+				"summary": "/tips/{TIP_ID}/marktodo",
+				"description": "/tips/{TIP_ID}/marktodo",
+				"operationId": "tipstip-idmarktodo",
+				"parameters": [{
+					"in": "query",
+					"name": "TIP_ID",
+					"description": "The tip you want to unmark.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "TIP_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/updates/marknotificationsread": {
+			"post": {
+				"summary": "/updates/notifications",
+				"description": "/updates/notifications",
+				"operationId": "updatesnotifications",
+				"parameters": [{
+					"in": "query",
+					"name": "highWatermark",
+					"description": "The timestamp of the most recent notification that the user viewed.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/updates/notifications": {
+			"get": {
+				"summary": "/updates/{UPDATE_ID}",
+				"description": "/updates/{UPDATE_ID}",
+				"operationId": "updatesupdate-id",
+				"parameters": [{
+					"in": "query",
+					"name": "limit",
+					"description": "Maximum number of results to return, up to 99. Notifications are grouped over time, so there will usually be fewer than 99 results available at any given time. offset 0 Used to page through results. Only the 99 most recent notifications are visible, so offset must be no more than 99 - limit.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/updates/{UPDATE_ID}": {
+			"get": {
+				"summary": "/lists/{LIST_ID}/updateitem",
+				"description": "/lists/{LIST_ID}/updateitem",
+				"operationId": "listslist-idupdateitem",
+				"parameters": [{
+					"in": "query",
+					"name": "UPDATE_ID",
+					"description": "The ID of the update to retrieve.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "UPDATE_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/leaderboard": {
+			"get": {
+				"summary": "/users/{USER_ID}",
+				"description": "/users/{USER_ID}",
+				"operationId": "usersuser-id",
+				"parameters": [{
+					"in": "query",
+					"name": "neighbors",
+					"description": "Number of friends scores to return that are adjacent to your score, in ranked order. The current users score is returned as well. An odd number of neighbors returns one more user ahead of the current user than behind. If the current user is at the top of the leaderboard, only the neighbors behind the current user are returned. If the current user is at the bottom of the leaderboard, only the neighbors ahead of the current user are returned. If neighbors is not specified, scores for all your fr",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/requests": {
+			"get": {
+				"summary": "/users/leaderboard",
+				"description": "/users/leaderboard",
+				"operationId": "usersleaderboard",
+				"parameters": [{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/search": {
+			"get": {
+				"summary": "/users/requests",
+				"description": "/users/requests",
+				"operationId": "usersrequests",
+				"parameters": [{
+					"in": "query",
+					"name": "email",
+					"description": "A comma-delimited list of email addresses to look for.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "fbid",
+					"description": "A comma-delimited list of Facebook IDs to look for.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "name",
+					"description": "A single string to search for in users names.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "phone",
+					"description": "A comma-delimited list of phone numbers to look for.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "twitter",
+					"description": "A comma-delimited list of Twitter handles to look for.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "twitterSource",
+					"description": "A single Twitter handle. Results will be friends of this user who use Foursquare.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			},
+			"post": {
+				"summary": "users/search (GET)",
+				"description": "users/search (GET)",
+				"operationId": "userssearch-get",
+				"parameters": [{
+					"in": "query",
+					"name": "email",
+					"description": "A comma-delimited list of email addresses to look for.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "fbid",
+					"description": "A comma-delimited list of Facebook IDs to look for.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "name",
+					"description": "A single string to search for in users names.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "phone",
+					"description": "A comma-delimited list of phone numbers to look for.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "twitter",
+					"description": "A comma-delimited list of Twitter handles to look for.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "twitterSource",
+					"description": "A single Twitter handle. Results will be friends of this user who use Foursquare.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/self/update": {
+			"post": {
+				"summary": "/users/{USER_ID}/unfriend",
+				"description": "/users/{USER_ID}/unfriend",
+				"operationId": "usersuser-idunfriend",
+				"parameters": [{
+					"in": "query",
+					"name": "Content-Type",
+					"description": "Content type.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "photo",
+					"description": "Photo under 100KB in multipart MIME encoding with content type image/jpeg, image/gif, or image/png.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}": {
+			"get": {
+				"summary": "",
+				"description": "",
+				"operationId": "",
+				"parameters": [{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "Identity of the user to get details for. Pass self to get details of the acting user.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/approve": {
+			"post": {
+				"summary": "/users/{USER_ID}/venuehistory",
+				"description": "/users/{USER_ID}/venuehistory",
+				"operationId": "usersuser-idvenuehistory",
+				"parameters": [{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "The user ID of a pending friend.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/badges": {
+			"get": {
+				"summary": "users/search (POST)",
+				"description": "users/search (POST)",
+				"operationId": "userssearch-post",
+				"parameters": [{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "ID for user to view badges for. Pass self to get details of the acting user.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/checkins": {
+			"get": {
+				"summary": "/users/{USER_ID}/badges",
+				"description": "/users/{USER_ID}/badges",
+				"operationId": "usersuser-idbadges",
+				"parameters": [{
+					"in": "query",
+					"name": "afterTimestamp",
+					"description": "Retrieve the first results to follow these seconds since epoch. This should be useful for paging forward in time, or when polling for changes. To avoid missing results when polling, we recommend subtracting several seconds from the last poll time and then de-duplicating.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "beforeTimestamp",
+					"description": "Retrieve the first results prior to these seconds since epoch. Useful for paging backward in time.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 250.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "offset",
+					"description": "The number of results to skip. Used to page through results.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "Identity of the user to get details for. Pass self to get details of the acting user. For now, only self is supported",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/deny": {
+			"post": {
+				"summary": "/users/{USER_ID}/approve",
+				"description": "/users/{USER_ID}/approve",
+				"operationId": "usersuser-idapprove",
+				"parameters": [{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "The user ID of a pending friend.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/friends": {
+			"get": {
+				"summary": "/users/{USER_ID}/checkins",
+				"description": "/users/{USER_ID}/checkins",
+				"operationId": "usersuser-idcheckins",
+				"parameters": [{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 500.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "offset",
+					"description": "Used to page through results.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "Identity of the user to get friends of. Pass self to get friends of the acting user.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/lists": {
+			"get": {
+				"summary": "/users/{USER_ID}/friends",
+				"description": "/users/{USER_ID}/friends",
+				"operationId": "usersuser-idfriends",
+				"parameters": [{
+					"in": "query",
+					"name": "group",
+					"description": "Can be created (lists created by this user), edited (other peoples lists this user has edited), followed (lists this user follows), friends (lists from this users friends), and suggested (lists relevant to the users current location).",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Location of the user, required in order to receive the suggested group.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "Identity of the user to get lists for. Pass self to get lists of the acting user.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/mayorships": {
+			"get": {
+				"summary": "/users/{USER_ID}/lists",
+				"description": "/users/{USER_ID}/lists",
+				"operationId": "usersuser-idlists",
+				"parameters": [{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "Identity of the user to get mayorships for. Pass self to get friends of the acting user.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/photos": {
+			"get": {
+				"summary": "/users/{USER_ID}/mayorships",
+				"description": "/users/{USER_ID}/mayorships",
+				"operationId": "usersuser-idmayorships",
+				"parameters": [{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 500.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "offset",
+					"description": "Used to page through results.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "Identity of the user to get details for. Pass self to get details of the acting user. For now, only self is supported",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/request": {
+			"post": {
+				"summary": "/users/{USER_ID}/deny",
+				"description": "/users/{USER_ID}/deny",
+				"operationId": "usersuser-iddeny",
+				"parameters": [{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "The user ID to which a request will be sent.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/setpings": {
+			"post": {
+				"summary": "/users/{USER_ID}/request",
+				"description": "/users/{USER_ID}/request",
+				"operationId": "usersuser-idrequest",
+				"parameters": [{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "The user ID of a friend.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "value",
+					"description": "The value to set: true or false.",
+					"type": "boolean"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/tips": {
+			"get": {
+				"summary": "/users/{USER_ID}/photos",
+				"description": "/users/{USER_ID}/photos",
+				"operationId": "usersuser-idphotos",
+				"parameters": [{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 500.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude of the users location.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "offset",
+					"description": "Used to page through results.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "sort",
+					"description": "One of recent, nearby, or popular. Nearby requires geolat and geolong to be provided.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "Identity of the user to get tips from. Pass self to get tips of the acting user.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/todos": {
+			"get": {
+				"summary": "/users/{USER_ID}/tips",
+				"description": "/users/{USER_ID}/tips",
+				"operationId": "usersuser-idtips",
+				"parameters": [{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude of the users location.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "sort",
+					"description": "One of nearby or recent. Nearby requires geolat and geolong to be provided.",
+					"type": "xsd:string"
+				},
+				{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "Identity of the user to get todos for. Pass self to get todos of the acting user.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/unfriend": {
+			"post": {
+				"summary": "/users/{USER_ID}/setpings",
+				"description": "/users/{USER_ID}/setpings",
+				"operationId": "usersuser-idsetpings",
+				"parameters": [{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "Identity of the user to unfriend.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/users/{USER_ID}/venuehistory": {
+			"get": {
+				"summary": "/users/{USER_ID}/todos",
+				"description": "/users/{USER_ID}/todos",
+				"operationId": "usersuser-idtodos",
+				"parameters": [{
+					"in": "query",
+					"name": "afterTimestamp",
+					"description": "Seconds after epoch.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "beforeTimestamp",
+					"description": "Seconds since epoch.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "categoryId",
+					"description": "Limits returned venues to those in this category. If specifying a top-level category, all sub-categories will also match the query.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "USER_ID",
+					"description": "Identity of the user to get details for. Pass self to get details of the acting user. For now, only self is supported",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "USER_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venuegroups/add": {
+			"post": {
+				"summary": "/venuegroups/{GROUP_ID}",
+				"description": "/venuegroups/{GROUP_ID}",
+				"operationId": "venuegroupsgroup-id",
+				"parameters": [{
+					"in": "query",
+					"name": "name",
+					"description": "The name to give the group.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venuegroups/list": {
+			"get": {
+				"summary": "/venuegroups/{GROUP_ID}/delete",
+				"description": "/venuegroups/{GROUP_ID}/delete",
+				"operationId": "venuegroupsgroup-iddelete",
+				"parameters": [{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venuegroups/{GROUP_ID}": {
+			"get": {
+				"summary": "/venues/{VENUE_ID}/proposeedit",
+				"description": "/venues/{VENUE_ID}/proposeedit",
+				"operationId": "venuesvenue-idproposeedit",
+				"parameters": [{
+					"in": "query",
+					"name": "GROUP_ID",
+					"description": "The ID of the venue group to retrieve additional information for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "GROUP_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venuegroups/{GROUP_ID}/addvenue": {
+			"post": {
+				"summary": "/venuegroups/list",
+				"description": "/venuegroups/list",
+				"operationId": "venuegroupslist",
+				"parameters": [{
+					"in": "query",
+					"name": "GROUP_ID",
+					"description": "The ID of the venue group.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "GROUP_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "venueId",
+					"description": "Comma-delimited list of venue IDs to add to the group.",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venuegroups/{GROUP_ID}/delete": {
+			"post": {
+				"summary": "/venuegroups/add",
+				"description": "/venuegroups/add",
+				"operationId": "venuegroupsadd",
+				"parameters": [{
+					"in": "query",
+					"name": "GROUP_ID",
+					"description": "The ID of the venue group to delete.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "GROUP_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venuegroups/{GROUP_ID}/removevenue": {
+			"post": {
+				"summary": "/venuegroups/{GROUP_ID}/addvenue",
+				"description": "/venuegroups/{GROUP_ID}/addvenue",
+				"operationId": "venuegroupsgroup-idaddvenue",
+				"parameters": [{
+					"in": "query",
+					"name": "GROUP_ID",
+					"description": "The ID of the venue group.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "GROUP_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "venueId",
+					"description": "Comma-delimited list of venue IDs to remove from the group.",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/add": {
+			"post": {
+				"summary": "/venues/{VENUE_ID}",
+				"description": "/venues/{VENUE_ID}",
+				"operationId": "venuesvenue-id",
+				"parameters": [{
+					"in": "query",
+					"name": "address",
+					"description": "The address of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "city",
+					"description": "The city name where this venue is.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "crossStreet",
+					"description": "The nearest intersecting street or streets.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "description",
+					"description": "A freeform description of the venue, up to 300 characters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "ignoreDuplicates",
+					"description": "A boolean flag telling the server to ignore duplicates and force the addition of this venue.",
+					"type": "boolean"
+				},
+				{
+					"in": "query",
+					"name": "ignoreDuplicatesKey",
+					"description": "Required if ignoreDuplicates is true. This key will be available in the response of the HTTP 409 error of the first (failed) attempt to add venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude of the venue, as accurate as is known.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "name",
+					"description": "The name of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "phone",
+					"description": "The phone number of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "primaryCategoryId",
+					"description": "The ID of the category to which you want to assign this venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "state",
+					"description": "The nearest state or province to the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "twitter",
+					"description": "The twitter handle of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "url",
+					"description": "The url of the homepage of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "zip",
+					"description": "The zip or postal code for the venue.",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/categories": {
+			"get": {
+				"summary": "/venues/add",
+				"description": "/venues/add",
+				"operationId": "venuesadd",
+				"parameters": [{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/explore": {
+			"get": {
+				"summary": "/venues/categories",
+				"description": "/venues/categories",
+				"operationId": "venuescategories",
+				"parameters": [{
+					"in": "query",
+					"name": "alt",
+					"description": "Altitude of the users location, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "altAcc",
+					"description": "Accuracy of the users altitude, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "intent",
+					"description": "Limit results to venues with specials.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 50.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude of the users location, so response can include distance.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "llAcc",
+					"description": "Accuracy of latitude and longitude, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "novelty",
+					"description": "Pass new or old to limit results to places the acting user hasnt been or has been, respectively. Omitting this parameter returns a mixture.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "query",
+					"description": "A search term to be applied against tips, category, tips, etc. at a venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "radius",
+					"description": "Radius to search within, in meters. If radius is not specified, a suggested radius will be used depending on the density of venues in the area.",
+					"type": "decimal"
+				},
+				{
+					"in": "query",
+					"name": "section",
+					"description": "One of food, drinks, coffee, shops, arts, or outdoors. Choosing one of these limits results to venues with categories matching these terms.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/managed": {
+			"get": {
+				"summary": "/venues/explore",
+				"description": "/venues/explore",
+				"operationId": "venuesexplore",
+				"parameters": [{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/search": {
+			"get": {
+				"summary": "/venues/managed",
+				"description": "/venues/managed",
+				"operationId": "venuesmanaged",
+				"parameters": [{
+					"in": "query",
+					"name": "alt",
+					"description": "Altitude of the users location, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "altAcc",
+					"description": "Accuracy of the users altitude, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "categoryId",
+					"description": "A comma separated list of categories to limit results to. This is an experimental feature and subject to change or may be unavailable. If you specify categoryId you may also specify a radius. If specifying a top-level category, all sub-categories will also match the query.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "intent",
+					"description": "One of the values checkin, browse or match, indicating your intent in performing the search. If no value is specified, defaults to checkin.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 50.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "linkedId",
+					"description": "Identifier used by third party specified in providerId, which we will attempt to match against our map of venues to URLs. This is an experimental API and subject to change or breakage.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude of the users location, so response can include distance.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "llAcc",
+					"description": "Accuracy of latitude and longitude, in meters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "ne",
+					"description": "See sw.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "providerId",
+					"description": "Identifier for a known third party that is part of our map of venues to URLs, used in conjunction with linkedId. This is an experimental API and subject to change or breakage.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "query",
+					"description": "A search term to be applied against venue names.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "radius",
+					"description": "Limit results to venues within this many meters of the specified location. Defaults to a city-wide area. Only valid for requests with intent=browse, or requests with intent=checkin and categoryId or query. Does not apply to match intent requests. The maximum supported radius is currently 100,000 meters.",
+					"type": "decimal"
+				},
+				{
+					"in": "query",
+					"name": "sw",
+					"description": "With ne, limits results to the bounding quadrangle defined by the latitude and longitude given by sw as its south-west corner, and ne as its north-east corner. The bounding quadrangle is only supported for intent=browse searches. Not valid with ll or radius. Bounding quadrangles with an area up to approximately 10,000 square kilometers are supported.",
+					"type": "decimal"
+				},
+				{
+					"in": "query",
+					"name": "url",
+					"description": "A third-party URL which we will attempt to match against our map of venues to URLs. This is an experimental API and subject to change or breakage.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/suggestcompletion": {
+			"get": {
+				"summary": "/venues/search",
+				"description": "/venues/search",
+				"operationId": "venuessearch",
+				"parameters": [{
+					"in": "query",
+					"name": "alt",
+					"description": "Altitude of the users location, in meters. (Does not currently affect search results.)",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "altAcc",
+					"description": "Accuracy of the users altitude, in meters. (Does not currently affect search results.)",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 100.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude of the users location.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "llAcc",
+					"description": "Accuracy of latitude and longitude, in meters. (Does not currently affect search results.)",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "query",
+					"description": "A search term to be applied against titles. Must be at least 3 characters long.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/timeseries": {
+			"get": {
+				"summary": "/venues/suggestcompletion",
+				"description": "/venues/suggestcompletion",
+				"operationId": "venuessuggestcompletion",
+				"parameters": [{
+					"in": "query",
+					"name": "endAt",
+					"description": "The end of the time range to retrieve stats for (seconds since epoch). If omitted, the current time is assumed.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "startAt",
+					"description": "The start of the time range to retrieve stats for (seconds since epoch).",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "venueId",
+					"description": "A comma-separated list of venue ids to retrieve series data for.",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/trending": {
+			"get": {
+				"summary": "/venues/timeseries",
+				"description": "/venues/timeseries",
+				"operationId": "venuestimeseries",
+				"parameters": [{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 50.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude of the users location.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "radius",
+					"description": "Radius in meters, up to approximately 2000 meters.",
+					"type": "decimal"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}": {
+			"get": {
+				"summary": "/users/self/update",
+				"description": "/users/self/update",
+				"operationId": "usersselfupdate",
+				"parameters": [{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "ID of venue to retrieve.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}/edit": {
+			"post": {
+				"summary": "/venues/{VENUE_ID}/tips",
+				"description": "/venues/{VENUE_ID}/tips",
+				"operationId": "venuesvenue-idtips",
+				"parameters": [{
+					"in": "query",
+					"name": "address",
+					"description": "The address of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "categoryId",
+					"description": "The IDs of the category or categories to which you want to assign this venue (separate multiple IDs with commas).",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "city",
+					"description": "The city name where this venue is.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "crossStreet",
+					"description": "The nearest intersecting street or streets.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "description",
+					"description": "A freeform description of the venue, up to 300 characters.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "name",
+					"description": "The name of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "phone",
+					"description": "The phone number of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "state",
+					"description": "The nearest state or province to the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "twitter",
+					"description": "The twitter handle of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "url",
+					"description": "The url of the homepage of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "The venue id to edit.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "zip",
+					"description": "The zip or postal code for the venue.",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}/events": {
+			"get": {
+				"summary": "/venues/trending",
+				"description": "/venues/trending",
+				"operationId": "venuestrending",
+				"parameters": [{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "The venue id for which events are being requested.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}/flag": {
+			"post": {
+				"summary": "/venues/{VENUE_ID}/edit",
+				"description": "/venues/{VENUE_ID}/edit",
+				"operationId": "venuesvenue-idedit",
+				"parameters": [{
+					"in": "query",
+					"name": "problem",
+					"description": "One of mislocated, closed, duplicate, inappropriate, doesnt_exist, event_over.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "venueId",
+					"description": "ID of the duplicated venue (for problem duplicate)",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "The venue id for which an edit is being proposed.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}/herenow": {
+			"get": {
+				"summary": "/venues/{VENUE_ID}/events",
+				"description": "/venues/{VENUE_ID}/events",
+				"operationId": "venuesvenue-idevents",
+				"parameters": [{
+					"in": "query",
+					"name": "afterTimestamp",
+					"description": "Retrieve the first results to follow these seconds since epoch. This should be useful when polling for changes. To avoid missing results when polling, we recommend subtracting several seconds from the last poll time and then de-duplicating.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 500.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "offset",
+					"description": "Used to page through results.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "ID of venue to retrieve",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}/links": {
+			"get": {
+				"summary": "/venues/{VENUE_ID}/herenow",
+				"description": "/venues/{VENUE_ID}/herenow",
+				"operationId": "venuesvenue-idherenow",
+				"parameters": [{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "The venue you want annotations for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}/listed": {
+			"get": {
+				"summary": "/venues/{VENUE_ID}/links",
+				"description": "/venues/{VENUE_ID}/links",
+				"operationId": "venuesvenue-idlinks",
+				"parameters": [{
+					"in": "query",
+					"name": "group",
+					"description": "Can be created, edited, followed, friends, other. If no acting user is present, only other is supported.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 200.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "offset",
+					"description": "Used to page through results. Must specify a group.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "Identity of a venue to get lists for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}/marktodo": {
+			"post": {
+				"summary": "/venues/{VENUE_ID}/flag",
+				"description": "/venues/{VENUE_ID}/flag",
+				"operationId": "venuesvenue-idflag",
+				"parameters": [{
+					"in": "query",
+					"name": "text",
+					"description": "The text of the tip.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "The venue you want to mark to-do.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}/menu": {
+			"get": {
+				"summary": "/venues/{VENUE_ID}/listed",
+				"description": "/venues/{VENUE_ID}/listed",
+				"operationId": "venuesvenue-idlisted",
+				"parameters": [{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "The venue id for which menu is being requested.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}/photos": {
+			"get": {
+				"summary": "/venues/{VENUE_ID}/menu",
+				"description": "/venues/{VENUE_ID}/menu",
+				"operationId": "venuesvenue-idmenu",
+				"parameters": [{
+					"in": "query",
+					"name": "group",
+					"description": "Pass checkin for photos added by friends on their recent checkins. Pass venue for public photos added to the venue by anyone. Use multi service to fetch both.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 500.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "offset",
+					"description": "Used to page through results.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "The venue you want photos for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}/proposeedit": {
+			"post": {
+				"summary": "/venues/{VENUE_ID}/marktodo",
+				"description": "/venues/{VENUE_ID}/marktodo",
+				"operationId": "venuesvenue-idmarktodo",
+				"parameters": [{
+					"in": "query",
+					"name": "address",
+					"description": "The address of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "city",
+					"description": "The city name where this venue is.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "crossStreet",
+					"description": "The nearest intersecting street or streets.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "ll",
+					"description": "Latitude and longitude of the venue, as accurate as is known.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "name",
+					"description": "The name of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "phone",
+					"description": "The phone number of the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "primaryCategoryId",
+					"description": "The ID of the category to which you want to assign this venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "state",
+					"description": "The nearest state or province to the venue.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "The venue id for which an edit is being proposed.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "zip",
+					"description": "The zip or postal code for the venue.",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}/similar": {
+			"get": {
+				"summary": "/venues/{VENUE_ID}/photos",
+				"description": "/venues/{VENUE_ID}/photos",
+				"operationId": "venuesvenue-idphotos",
+				"parameters": [{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "The venue you want similar venues for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}/stats": {
+			"get": {
+				"summary": "/venues/{VENUE_ID}/similar",
+				"description": "/venues/{VENUE_ID}/similar",
+				"operationId": "venuesvenue-idsimilar",
+				"parameters": [{
+					"in": "query",
+					"name": "endAt",
+					"description": "The end of the time range to retrieve stats for (seconds since epoch). If omitted, the current time is assumed.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "startAt",
+					"description": "The start of the time range to retrieve stats for (seconds since epoch). If omitted, all-time stats will be returned.",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "The venue id to retrieve stats for.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/venues/{VENUE_ID}/tips": {
+			"get": {
+				"summary": "/venues/{VENUE_ID}/stats",
+				"description": "/venues/{VENUE_ID}/stats",
+				"operationId": "venuesvenue-idstats",
+				"parameters": [{
+					"in": "query",
+					"name": "limit",
+					"description": "Number of results to return, up to 500.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "offset",
+					"description": "Used to page through results.",
+					"type": "integer"
+				},
+				{
+					"in": "query",
+					"name": "sort",
+					"description": "One of friends, recent, or popular",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "v",
+					"description": "All requests now accept a v=YYYYMMDD param, which indicates that the client is up to date as of the specified date. Sometimes we may need to make breaking changes to an API. Although weu2019ll do everything possible to avoid this, when we do so we will use this parameter to give you time to transition to the new implementation. Requests to deprecated endpoints will return 200s, but they will also contain errorType deprecated in the meta section of the response. Clients that wish to be robust again",
+					"type": "string"
+				},
+				{
+					"in": "query",
+					"name": "VENUE_ID",
+					"description": "The venue where you want to add this tip.",
+					"type": "string"
+				},
+				{
+					"in": "path",
+					"name": "VENUE_ID",
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		}
+	},
+	"definitions": []
+}

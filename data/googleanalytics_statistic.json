@@ -1,0 +1,107 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/analytics/v3", 
+    "total": 117, 
+    "methods": {
+        "parameters": {
+            "times": 38, 
+            "frequency": "0.325"
+        }, 
+        "get": {
+            "times": 33, 
+            "frequency": "0.282"
+        }, 
+        "patch": {
+            "times": 9, 
+            "frequency": "0.077"
+        }, 
+        "put": {
+            "times": 12, 
+            "frequency": "0.103"
+        }, 
+        "post": {
+            "times": 16, 
+            "frequency": "0.137"
+        }, 
+        "delete": {
+            "times": 9, 
+            "frequency": "0.077"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 7, 
+            "frequency": "0.184"
+        }, 
+        "3": {
+            "times": 1, 
+            "frequency": "0.026"
+        }, 
+        "4": {
+            "times": 3, 
+            "frequency": "0.079"
+        }, 
+        "5": {
+            "times": 3, 
+            "frequency": "0.079"
+        }, 
+        "6": {
+            "times": 6, 
+            "frequency": "0.158"
+        }, 
+        "7": {
+            "times": 5, 
+            "frequency": "0.132"
+        }, 
+        "8": {
+            "times": 7, 
+            "frequency": "0.184"
+        }, 
+        "9": {
+            "times": 6, 
+            "frequency": "0.158"
+        }
+    }, 
+    "url_noun": [
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/customMetrics/{customMetricId}", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/entityAdWordsLinks", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/entityUserLinks/{linkId}", 
+        "/data/mcf", 
+        "/management/accounts/{accountId}/filters/{filterId}", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}", 
+        "/metadata/{reportType}/columns", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/entityUserLinks/{linkId}", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/customDimensions", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/goals/{goalId}", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/unsampledReports/{unsampledReportId}", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/profileFilterLinks/{linkId}", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles", 
+        "/data/realtime", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/goals", 
+        "/management/segments", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/entityUserLinks", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/entityAdWordsLinks/{webPropertyAdWordsLinkId}", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/customDimensions/{customDimensionId}", 
+        "/management/accounts/{accountId}/filters", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/uploads/{uploadId}", 
+        "/data/ga", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/entityUserLinks", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/customMetrics", 
+        "/management/accounts", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/profileFilterLinks", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments/{experimentId}", 
+        "/management/accountSummaries", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/unsampledReports", 
+        "/management/accounts/{accountId}/webproperties", 
+        "/management/accounts/{accountId}/entityUserLinks/{linkId}", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/uploads", 
+        "/management/accounts/{accountId}/entityUserLinks"
+    ], 
+    "url_not_noun": [
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/deleteUploadData", 
+        "/provisioning/createAccountTicket"
+    ]
+}
