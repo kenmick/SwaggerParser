@@ -51,7 +51,7 @@ st = StanfordPOSTagger(home_path + '/models/english-left3words-distsim.tagger',
 
 url_noun = []
 url_not_noun = []
-pos = ['NN', 'NNS', 'IN', 'JJ', 'JJS', 'RB', 'TO', 'PRP']
+pos = ['NN', 'NNS', 'IN', 'JJ', 'JJS', 'RB', 'TO', 'PRP', 'PRP$']
 count = 1
 
 for path in paths:
@@ -63,7 +63,7 @@ for path in paths:
     urls = re.sub('/?[\[{].*?[\]}]|/:\w+', '', path).replace('.json', '').lstrip('/').split('/')
     for url in urls:
         for word_pos in st.tag(get_divided_url(url)):
-            print st.tag(get_divided_url(url))
+            # print st.tag(get_divided_url(url))
             if word_pos[1] not in pos:
                 url_not_noun.append(path)
                 isNoun = False
