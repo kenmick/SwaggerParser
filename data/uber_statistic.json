@@ -45,10 +45,8 @@
         "/v1/requests", 
         "/v1/places/{place_id}", 
         "/v1/requests/current", 
-        "/v1.2/history", 
         "/v1/requests/{request_id}", 
         "/v1/requests/estimate", 
-        "/v1.1/history", 
         "/v1/requests/{request_id}/receipt", 
         "/v1/payment-methods", 
         "/v1/reminders", 
@@ -57,5 +55,8 @@
         "/v1/estimates/time", 
         "/v1/requests/{request_id}/map"
     ], 
-    "url_not_noun": []
+    "url_not_noun": [
+        "/v1.2/history", 
+        "/v1.1/history"
+    ]
 }
