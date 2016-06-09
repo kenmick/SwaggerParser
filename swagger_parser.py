@@ -44,14 +44,14 @@ fd_method = nltk.FreqDist(methods)
 fd_path_length = nltk.FreqDist(path_lengths)
 
 # part-of-speech judgement
-home_path = '/home/pyx/Desktop/stanford-postagger-full-2015-12-09'
-# home_path = '/Users/kenmick/Desktop/stanford-postagger-full-2015-12-09'
+# home_path = '/home/pyx/Desktop/stanford-postagger-full-2015-12-09'
+home_path = '/Users/kenmick/Desktop/stanford-postagger-full-2015-12-09'
 st = StanfordPOSTagger(home_path + '/models/english-left3words-distsim.tagger',
                        home_path + '/stanford-postagger.jar')
 
 url_noun = []
 url_not_noun = []
-pos = ['NN', 'NNS', 'IN', 'JJ', 'JJS', 'RB', 'TO', 'PRP', 'PRP$']
+pos = ['NN', 'NNS', 'IN', 'JJ', 'JJS', 'RB', 'TO', 'PRP', 'PRP$', 'NNP', 'NNPS']
 count = 1
 
 for path in paths:
