@@ -1,0 +1,2850 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0",
+        "description": "Disqus RESTful API",
+        "title": "Disqus API"
+    },
+    "host": "disqus.com",
+    "basePath": "/api/3.0",
+    "scheme": [
+        "https"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/blacklists/remove.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to [] Domain Name",
+                        "name": "domain",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] - Email address (defined by RFC 5322)",
+                        "name": "email",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] - IP address in CIDR notation",
+                        "name": "ip",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] - Looks up a user by ID You may look up a user by username using the username query type.",
+                        "name": "user",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] - Maximum length of 200",
+                        "name": "word",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Blacklists Remove",
+                "summary": "Blacklists Remove",
+                "security": [],
+                "operationId": "blacklists-remove"
+            }
+        },
+        "/blacklists/list.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 - Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "query",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] -You may specify relations to include with your response. Choices: forum",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null - Unix timestamp (or ISO datetime standard)",
+                        "name": "since",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Choices: domain, word, ip, user, thread_slug, email, brand_unsafe_word",
+                        "name": "type",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Blacklists List ",
+                "summary": "Blacklists List",
+                "security": [],
+                "operationId": "blacklists-list"
+            }
+        },
+        "/categories/details.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a category by ID",
+                        "name": "category",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Categories Details ",
+                "summary": "Categories Details",
+                "security": [],
+                "operationId": "categories-details"
+            }
+        },
+        "/categories/listThreads.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a category by ID",
+                        "name": "category",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to desc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, author",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Unix timestamp (or ISO datetime standard)",
+                        "name": "since",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Categories ListThreads ",
+                "summary": "Categories ListThreads",
+                "security": [],
+                "operationId": "categories-listthreads"
+            }
+        },
+        "/categories/listPosts.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a category by ID",
+                        "name": "category",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [approved] Choices: unapproved, approved, spam, deleted, flagged, highlighted",
+                        "name": "include",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to desc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "query",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, thread",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Unix timestamp (or ISO datetime standard)",
+                        "name": "since",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Categories ListPosts ",
+                "summary": "Categories ListPosts",
+                "security": [],
+                "operationId": "categories-listposts"
+            }
+        },
+        "/categories/list.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Categories List ",
+                "summary": "Categories List",
+                "security": [],
+                "operationId": "categories-list"
+            }
+        },
+        "/forums/details.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to [] Choices: followsForum, counters",
+                        "name": "attach",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: author",
+                        "name": "related",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums Details ",
+                "summary": "Forums Details",
+                "security": [],
+                "operationId": "forums-details"
+            }
+        },
+        "/forums/create.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Choices: Tech, Living, Style, Business, Entertainment, Auto, Celebrity, Sports, Culture, Games, Others, News",
+                        "name": "category",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Maximum length of 300",
+                        "name": "description",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "guidelines",
+                        "in": "query"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query"
+                    },
+                    {
+                        "name": "short_name",
+                        "in": "query"
+                    },
+                    {
+                        "description": "URL (defined by RFC 3986)",
+                        "name": "website",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums Create ",
+                "summary": "Forums Create",
+                "security": [],
+                "operationId": "forums-create"
+            }
+        },
+        "/forums/listMostLikedUsers.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: desc",
+                        "name": "order",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums ListMostLikedUsers ",
+                "summary": "Forums ListMostLikedUsers",
+                "security": [],
+                "operationId": "forums-listmostlikedusers"
+            }
+        },
+        "/forums/listFollowers.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums ListFollowers ",
+                "summary": "Forums ListFollowers",
+                "security": [],
+                "operationId": "forums-listfollowers"
+            }
+        },
+        "/forums/listCategories.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums ListCategories ",
+                "summary": "Forums ListCategories",
+                "security": [],
+                "operationId": "forums-listcategories"
+            }
+        },
+        "/forums/listModerators.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums ListModerators ",
+                "summary": "Forums ListModerators",
+                "security": [],
+                "operationId": "forums-listmoderators"
+            }
+        },
+        "/forums/unfollow.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "target",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums Unfollow ",
+                "summary": "Forums Unfollow",
+                "security": [],
+                "operationId": "forums-unfollow"
+            }
+        },
+        "/forums/update.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Choices: Tech, Living, Style, Business, Entertainment, Auto, Celebrity, Sports, Culture, Games, Others, News",
+                        "name": "category",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Maximum length of 300",
+                        "name": "description",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name) You must be a moderator on the selected forum.",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "guidelines",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "name",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null URL (defined by RFC 3986)",
+                        "name": "website",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums Update ",
+                "summary": "Forums Update",
+                "security": [],
+                "operationId": "forums-update"
+            }
+        },
+        "/forums/listMostActiveUsers.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: desc",
+                        "name": "order",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums ListMostActiveUsers ",
+                "summary": "Forums ListMostActiveUsers",
+                "security": [],
+                "operationId": "forums-listmostactiveusers"
+            }
+        },
+        "/forums/follow.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "target",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums Follow ",
+                "summary": "Forums Follow",
+                "security": [],
+                "operationId": "forums-follow"
+            }
+        },
+        "/forums/listThreads.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [open,closed] Choices: open, closed, killed",
+                        "name": "include",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to desc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, author",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Unix timestamp (or ISO datetime standard)",
+                        "name": "since",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a thread by ID You may pass us the &#39;ident&#39; query type instead of an ID by including &#39;forum&#39;. You may pass us the &#39;link&#39; query type to filter by URL. You must pass the &#39;forum&#39; if you do not have the Pro API Access addon.",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums ListThreads ",
+                "summary": "Forums ListThreads",
+                "security": [],
+                "operationId": "forums-listthreads"
+            }
+        },
+        "/forums/listPosts.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [approved] Choices: unapproved, approved, spam, deleted, flagged, highlighted",
+                        "name": "include",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum number of posts to return. Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to desc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "query",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: thread",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Unix timestamp (or ISO datetime standard)",
+                        "name": "since",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums ListPosts ",
+                "summary": "Forums ListPosts",
+                "security": [],
+                "operationId": "forums-listposts"
+            }
+        },
+        "/forums/listUsers.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums ListUsers ",
+                "summary": "Forums ListUsers",
+                "security": [],
+                "operationId": "forums-listusers"
+            }
+        },
+        "/forums/generateInterestingContent.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "tags": [
+                    ""
+                ],
+                "description": "Forums GenerateInterestingContent ",
+                "summary": "Forums GenerateInterestingContent",
+                "security": [],
+                "operationId": "forums-generateinterestingcontent"
+            }
+        },
+        "/forums/removeModerator.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a moderator by ID",
+                        "name": "moderator",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums RemoveModerator ",
+                "summary": "Forums RemoveModerator",
+                "security": [],
+                "operationId": "forums-removemoderator"
+            }
+        },
+        "/forums/interestingForums.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to 5 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Forums InterestingForums ",
+                "summary": "Forums InterestingForums",
+                "security": [],
+                "operationId": "forums-interestingforums"
+            }
+        },
+        "/forums/fixFavIconsForClassifiedForums.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "tags": [
+                    ""
+                ],
+                "description": "Forums FixFavIconsForClassifiedForums ",
+                "summary": "Forums FixFavIconsForClassifiedForums",
+                "security": [],
+                "operationId": "forums-fixfaviconsforclassifiedforums"
+            }
+        },
+        "/imports/list.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Imports List ",
+                "summary": "Imports List",
+                "security": [],
+                "operationId": "imports-list"
+            }
+        },
+        "/posts/spam.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a post by ID You must be a moderator on the selected post&#39;s forum.",
+                        "name": "post",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Posts Spam ",
+                "summary": "Posts Spam",
+                "security": [],
+                "operationId": "posts-spam"
+            }
+        },
+        "/posts/details.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a post by ID",
+                        "name": "post",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, thread",
+                        "name": "related",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Posts Details ",
+                "summary": "Posts Details",
+                "security": [],
+                "operationId": "posts-details"
+            }
+        },
+        "/posts/report.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a post by ID",
+                        "name": "post",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Posts Report ",
+                "summary": "Posts Report",
+                "security": [],
+                "operationId": "posts-report"
+            }
+        },
+        "/posts/create.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Email address (defined by RFC 5322)",
+                        "name": "author_email",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "author_name",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null URL (defined by RFC 3986)",
+                        "name": "author_url",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Unix timestamp (or ISO datetime standard)",
+                        "name": "date",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null IP address (defined by RFC 5322)",
+                        "name": "ip_address",
+                        "in": "query"
+                    },
+                    {
+                        "name": "message",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a post by ID",
+                        "name": "parent",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Choices: unapproved, approved, spam, killed",
+                        "name": "state",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a thread by ID",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Posts Create ",
+                "summary": "Posts Create",
+                "security": [],
+                "operationId": "posts-create"
+            }
+        },
+        "/posts/getContext.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to 10 Minimum value of 1 Maximum value of 10",
+                        "name": "depth",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a post by ID",
+                        "name": "post",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, thread",
+                        "name": "related",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Posts GetContext ",
+                "summary": "Posts GetContext",
+                "security": [],
+                "operationId": "posts-getcontext"
+            }
+        },
+        "/posts/update.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "message",
+                        "in": "query"
+                    },
+                    {
+                        "description": "You must be the author of the post or a moderator on the applicable forum.",
+                        "name": "post",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Posts Update ",
+                "summary": "Posts Update",
+                "security": [],
+                "operationId": "posts-update"
+            }
+        },
+        "/posts/restore.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a post by ID",
+                        "name": "post",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Posts Restore ",
+                "summary": "Posts Restore",
+                "security": [],
+                "operationId": "posts-restore"
+            }
+        },
+        "/posts/vote.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a post by ID",
+                        "name": "post",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Choices: -1, 0, 1",
+                        "name": "vote",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Posts Vote ",
+                "summary": "Posts Vote",
+                "security": [],
+                "operationId": "posts-vote"
+            }
+        },
+        "/posts/listPopular.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "category",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Defaults to all forums you moderate. Use :all to retrieve all forums.",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [approved] Choices: unapproved, approved, spam, deleted, flagged, highlighted",
+                        "name": "include",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 7d Choices: 1h, 6h, 12h, 1d, 3d, 7d, 30d, 60d, 90d",
+                        "name": "interval",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 0",
+                        "name": "offset",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to popular Choices: popular, best",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up an organization by ID",
+                        "name": "organization",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "query",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, thread",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a thread by ID",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Posts ListPopular ",
+                "summary": "Posts ListPopular",
+                "security": [],
+                "operationId": "posts-listpopular"
+            }
+        },
+        "/posts/remove.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a post by ID",
+                        "name": "post",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Posts Remove ",
+                "summary": "Posts Remove",
+                "security": [],
+                "operationId": "posts-remove"
+            }
+        },
+        "/posts/list.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Looks up a category by ID",
+                        "name": "category",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Defaults to all forums you moderate. Use :all to retrieve all forums.",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [approved] Choices: unapproved, approved, spam, deleted, flagged, highlighted",
+                        "name": "include",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 0 Deprecated: Please see documentation on cursors",
+                        "name": "offset",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to desc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "query",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, thread",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Unix timestamp (or ISO datetime standard)",
+                        "name": "since",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a thread by ID",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Posts List ",
+                "summary": "Posts List",
+                "security": [],
+                "operationId": "posts-list"
+            }
+        },
+        "/threads/unsubscribe.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Email address (defined by RFC 5322)",
+                        "name": "email",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a thread by ID",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads Unsubscribe ",
+                "summary": "Threads Unsubscribe",
+                "security": [],
+                "operationId": "threads-unsubscribe"
+            }
+        },
+        "/threads/restore.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a thread by ID You must be a moderator on the selected thread&#39;s forum. You may pass us the &#39;ident&#39; query type instead of an ID by including &#39;forum&#39;. You may pass us the &#39;link&#39; query type to filter by URL. You must pass the &#39;forum&#39; if you do not have the Pro API Access addon.",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads Restore ",
+                "summary": "Threads Restore",
+                "security": [],
+                "operationId": "threads-restore"
+            }
+        },
+        "/threads/create.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Looks up a category by ID",
+                        "name": "category",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Unix timestamp (or ISO datetime standard)",
+                        "name": "date",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Maximum length of 300",
+                        "name": "identifier",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "message",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Alpha-numeric slug Maximum length of 200",
+                        "name": "slug",
+                        "in": "query"
+                    },
+                    {
+                        "name": "title",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null URL (defined by RFC 3986) Maximum length of 500",
+                        "name": "url",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads Create ",
+                "summary": "Threads Create",
+                "security": [],
+                "operationId": "threads-create"
+            }
+        },
+        "/threads/update.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null You must be a moderator on the applicable forum to change a thread author. You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "author",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a category by ID",
+                        "name": "category",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null To update a specific identifier, provide &#39;old_identifier&#39;.If no identifier exists, a new one is created. Maximum length of 300",
+                        "name": "identifier",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "message",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Only valid if &#39;identifier&#39; is provided.See &#39;identifier&#39; for more information. Maximum length of 300",
+                        "name": "old_identifier",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Alpha-numeric slug Maximum length of 200",
+                        "name": "slug",
+                        "in": "query"
+                    },
+                    {
+                        "description": "You must be the author of the post or a moderator on the applicable forum.",
+                        "name": "thread",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Maximum length of 200",
+                        "name": "title",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null URL (defined by RFC 3986) Maximum length of 500",
+                        "name": "url",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads Update ",
+                "summary": "Threads Update",
+                "security": [],
+                "operationId": "threads-update"
+            }
+        },
+        "/threads/listHot.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "author",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a category by ID",
+                        "name": "category",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [open,closed] Choices: open, closed, killed",
+                        "name": "include",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, author, category",
+                        "name": "related",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads ListHot ",
+                "summary": "Threads ListHot",
+                "security": [],
+                "operationId": "threads-listhot"
+            }
+        },
+        "/threads/spam.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a thread by ID You must be a moderator on the selected thread&#39;s forum. You may pass us the &#39;ident&#39; or &#39;link&#39; query types instead of an ID by including &#39;forum&#39;.",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads Spam ",
+                "summary": "Threads Spam",
+                "security": [],
+                "operationId": "threads-spam"
+            }
+        },
+        "/threads/open.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a thread by ID You must be a moderator on the selected thread&#39;s forum. You may pass us the &#39;ident&#39; query type instead of an ID by including &#39;forum&#39;. You may pass us the &#39;link&#39; query type to filter by URL. You must pass the &#39;forum&#39; if you do not have the Pro API Access addon.",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads Open ",
+                "summary": "Threads Open",
+                "security": [],
+                "operationId": "threads-open"
+            }
+        },
+        "/threads/subscribe.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Email address (defined by RFC 5322)",
+                        "name": "email",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a thread by ID",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads Subscribe ",
+                "summary": "Threads Subscribe",
+                "security": [],
+                "operationId": "threads-subscribe"
+            }
+        },
+        "/threads/details.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to [] Choices: topics",
+                        "name": "attach",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, author, category",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a thread by ID You may pass us the &#39;ident&#39; or &#39;link&#39; query types instead of an ID by including &#39;forum&#39;.",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads Details ",
+                "summary": "Threads Details",
+                "security": [],
+                "operationId": "threads-details"
+            }
+        },
+        "/threads/list.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to [] Choices: topics",
+                        "name": "attach",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "author",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a category by ID",
+                        "name": "category",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [open,closed] Choices: open, closed, killed",
+                        "name": "include",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to desc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, author, category",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Unix timestamp (or ISO datetime standard)",
+                        "name": "since",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a thread by ID You may pass us the &#39;ident&#39; query type instead of an ID by including &#39;forum&#39;. You may pass us the &#39;link&#39; query type to filter by URL. You must pass the &#39;forum&#39; if you do not have the Pro API Access addon.",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads List ",
+                "summary": "Threads List",
+                "security": [],
+                "operationId": "threads-list"
+            }
+        },
+        "/threads/close.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a thread by ID You must be a moderator on the selected thread&#39;s forum. You may pass us the &#39;ident&#39; query type instead of an ID by including &#39;forum&#39;. You may pass us the &#39;link&#39; query type to filter by URL. You must pass the &#39;forum&#39; if you do not have the Pro API Access addon.",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads Close ",
+                "summary": "Threads Close",
+                "security": [],
+                "operationId": "threads-close"
+            }
+        },
+        "/threads/listPopular.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Looks up a category by ID",
+                        "name": "category",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 7d Choices: 1h, 6h, 12h, 1d, 3d, 7d, 30d, 90d",
+                        "name": "interval",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, author, category",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to false",
+                        "name": "with_top_post",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads ListPopular ",
+                "summary": "Threads ListPopular",
+                "security": [],
+                "operationId": "threads-listpopular"
+            }
+        },
+        "/threads/set.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to [] Choices: topics",
+                        "name": "attach",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, author, category",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a thread by ID You may pass us the &#39;ident&#39; query type instead of an ID by including &#39;forum&#39;. You may pass us the &#39;link&#39; query type to filter by URL. You must pass the &#39;forum&#39; if you do not have the Pro API Access addon.",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads Set ",
+                "summary": "Threads Set",
+                "security": [],
+                "operationId": "threads-set"
+            }
+        },
+        "/threads/listUsersVotedThread.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to 10 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to true Prioritize followed users who voted on this thread (must be authenticated)",
+                        "name": "prioritize_followed",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a thread by ID",
+                        "name": "thread",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 1 Choices: -1, 0, 1",
+                        "name": "vote",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads ListUsersVotedThread ",
+                "summary": "Threads ListUsersVotedThread",
+                "security": [],
+                "operationId": "threads-listusersvotedthread"
+            }
+        },
+        "/threads/remove.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a thread by ID You must be a moderator on the selected thread&#39;s forum. You may pass us the &#39;ident&#39; query type instead of an ID by including &#39;forum&#39;. You may pass us the &#39;link&#39; query type to filter by URL. You must pass the &#39;forum&#39; if you do not have the Pro API Access addon.",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads Remove ",
+                "summary": "Threads Remove",
+                "security": [],
+                "operationId": "threads-remove"
+            }
+        },
+        "/threads/vote.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a thread by ID You may pass us the &#39;ident&#39; or &#39;link&#39; query types instead of an ID by including &#39;forum&#39;.",
+                        "name": "thread",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Choices: -1, 0, 1",
+                        "name": "vote",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads Vote ",
+                "summary": "Threads Vote",
+                "security": [],
+                "operationId": "threads-vote"
+            }
+        },
+        "/threads/listPosts.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [approved] Choices: unapproved, approved, spam, deleted, flagged, highlighted",
+                        "name": "include",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to desc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "query",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, thread",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Unix timestamp (or ISO datetime standard)",
+                        "name": "since",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a thread by ID You may pass us the &#39;ident&#39; or &#39;link&#39; query types instead of an ID by including &#39;forum&#39;.",
+                        "name": "thread",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Threads ListPosts ",
+                "summary": "Threads ListPosts",
+                "security": [],
+                "operationId": "threads-listposts"
+            }
+        },
+        "/users/listFollowingChannels.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to false Whether to exclude Channels that the user moderates fromthe results",
+                        "name": "excludeModerated",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to false Whether to exclude Channels that the user owns from the results",
+                        "name": "excludeOwned",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to false Whether to include Channels where the user follows the primary forum",
+                        "name": "includeFollowedPrimaryForums",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users ListFollowingChannels ",
+                "summary": "Users ListFollowingChannels",
+                "security": [],
+                "operationId": "users-listfollowingchannels"
+            }
+        },
+        "/users/listActiveForums.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users ListActiveForums ",
+                "summary": "Users ListActiveForums",
+                "security": [],
+                "operationId": "users-listactiveforums"
+            }
+        },
+        "/users/listPosts.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [approved] Choices: unapproved, approved, spam, deleted, flagged, highlighted",
+                        "name": "include",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to desc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, thread",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Unix timestamp (or ISO datetime standard)",
+                        "name": "since",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users ListPosts ",
+                "summary": "Users ListPosts",
+                "security": [],
+                "operationId": "users-listposts"
+            }
+        },
+        "/users/listModeratedChannels.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to false Whether to exclude Channels that the user owns from the results",
+                        "name": "excludeOwned",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users ListModeratedChannels ",
+                "summary": "Users ListModeratedChannels",
+                "security": [],
+                "operationId": "users-listmoderatedchannels"
+            }
+        },
+        "/users/updateProfile.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to ",
+                        "name": "about",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults toMaximum length of 255",
+                        "name": "location",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults toMinimum length of 2 Maximum length of 30",
+                        "name": "name",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults toURL (defined by RFC 3986) Maximum length of 200",
+                        "name": "url",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users UpdateProfile ",
+                "summary": "Users UpdateProfile",
+                "security": [],
+                "operationId": "users-updateprofile"
+            }
+        },
+        "/users/unfollow.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "target",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users Unfollow ",
+                "summary": "Users Unfollow",
+                "security": [],
+                "operationId": "users-unfollow"
+            }
+        },
+        "/users/listActivity.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Looks up an anonymous user by unique hash",
+                        "name": "anon_user",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [user,replies,following] Choices: user, replies, following",
+                        "name": "include",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "query",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [forum,thread] You may specify relations to include with your response. Choices: forum, thread",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Unix timestamp (or ISO datetime standard)",
+                        "name": "since",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users ListActivity ",
+                "summary": "Users ListActivity",
+                "security": [],
+                "operationId": "users-listactivity"
+            }
+        },
+        "/users/listForums.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users ListForums ",
+                "summary": "Users ListForums",
+                "security": [],
+                "operationId": "users-listforums"
+            }
+        },
+        "/users/removeFollower.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "follower",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users RemoveFollower ",
+                "summary": "Users RemoveFollower",
+                "security": [],
+                "operationId": "users-removefollower"
+            }
+        },
+        "/users/listFollowing.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users ListFollowing ",
+                "summary": "Users ListFollowing",
+                "security": [],
+                "operationId": "users-listfollowing"
+            }
+        },
+        "/users/follow.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "target",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users Follow ",
+                "summary": "Users Follow",
+                "security": [],
+                "operationId": "users-follow"
+            }
+        },
+        "/users/listFollowingForums.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users ListFollowingForums ",
+                "summary": "Users ListFollowingForums",
+                "security": [],
+                "operationId": "users-listfollowingforums"
+            }
+        },
+        "/users/listFollowers.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users ListFollowers ",
+                "summary": "Users ListFollowers",
+                "security": [],
+                "operationId": "users-listfollowers"
+            }
+        },
+        "/users/listOwnedChannels.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users ListOwnedChannels ",
+                "summary": "Users ListOwnedChannels",
+                "security": [],
+                "operationId": "users-listownedchannels"
+            }
+        },
+        "/users/details.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users Details ",
+                "summary": "Users Details",
+                "security": [],
+                "operationId": "users-details"
+            }
+        },
+        "/users/listActiveThreads.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [open,closed] Choices: open, closed, killed",
+                        "name": "include",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to desc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum, author, category",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Unix timestamp (or ISO datetime standard)",
+                        "name": "since",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users ListActiveThreads ",
+                "summary": "Users ListActiveThreads",
+                "security": [],
+                "operationId": "users-listactivethreads"
+            }
+        },
+        "/users/listMostActiveForums.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Looks up a user by ID You may look up a user by username using the &#39;username&#39; query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users ListMostActiveForums ",
+                "summary": "Users ListMostActiveForums",
+                "security": [],
+                "operationId": "users-listmostactiveforums"
+            }
+        },
+        "/users/interestingUsers.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to 5 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Users InterestingUsers ",
+                "summary": "Users InterestingUsers",
+                "security": [],
+                "operationId": "users-interestingusers"
+            }
+        },
+        "/whitelists/list.json": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to null",
+                        "name": "cursor",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to 25 Maximum value of 100",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to asc Choices: asc, desc",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "query",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to [] You may specify relations to include with your response. Choices: forum",
+                        "name": "related",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Unix timestamp (or ISO datetime standard)",
+                        "name": "since",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null",
+                        "name": "since_id",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to null Choices: email, user",
+                        "name": "type",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Whitelists List ",
+                "summary": "Whitelists List",
+                "security": [],
+                "operationId": "whitelists-list"
+            }
+        },
+        "/whitelists/remove.json": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Defaults to [] Email address (defined by RFC 5322)",
+                        "name": "email",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Looks up a forum by ID (aka short name)",
+                        "name": "forum",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Defaults to []-Looks up a user by ID You may look up a user by username using the username query type.",
+                        "name": "user",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    ""
+                ],
+                "description": "Whitelists Remove ",
+                "summary": "Whitelists Remove",
+                "security": [],
+                "operationId": "whitelists-remove"
+            }
+        }
+    }
+}
