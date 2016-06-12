@@ -1,0 +1,111 @@
+{
+    "host": "batch.core.windows.net", 
+    "basePath": "/", 
+    "total": 73, 
+    "methods": {
+        "head": {
+            "times": 4, 
+            "frequency": "0.055"
+        }, 
+        "get": {
+            "times": 27, 
+            "frequency": "0.370"
+        }, 
+        "patch": {
+            "times": 3, 
+            "frequency": "0.041"
+        }, 
+        "put": {
+            "times": 4, 
+            "frequency": "0.055"
+        }, 
+        "post": {
+            "times": 27, 
+            "frequency": "0.370"
+        }, 
+        "delete": {
+            "times": 8, 
+            "frequency": "0.110"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 10, 
+            "frequency": "0.200"
+        }, 
+        "2": {
+            "times": 5, 
+            "frequency": "0.100"
+        }, 
+        "3": {
+            "times": 19, 
+            "frequency": "0.380"
+        }, 
+        "4": {
+            "times": 2, 
+            "frequency": "0.040"
+        }, 
+        "5": {
+            "times": 11, 
+            "frequency": "0.220"
+        }, 
+        "6": {
+            "times": 3, 
+            "frequency": "0.060"
+        }
+    }, 
+    "url_noun": [
+        "/applications", 
+        "/pools/{poolId}/nodes/{nodeId}/remoteloginsettings", 
+        "/pools/{poolId}", 
+        "/pools/{poolId}/removenodes", 
+        "/applications/{applicationId}", 
+        "/pools/{poolId}/stopresize", 
+        "/jobschedules/{jobScheduleId}/jobs", 
+        "/jobs/{jobId}/tasks/{taskId}", 
+        "/certificates", 
+        "/pools/{poolId}/nodes/{nodeId}/reimage", 
+        "/poolusagemetrics", 
+        "/jobs/{jobId}/tasks", 
+        "/pools/{poolId}/nodes/{nodeId}/rdp", 
+        "/jobs/{jobId}/tasks/{taskId}/subtasksinfo", 
+        "/pools/{poolId}/updateproperties", 
+        "/jobs/{jobId}", 
+        "/lifetimepoolstats", 
+        "/jobs", 
+        "/pools/{poolId}/evaluateautoscale", 
+        "/pools", 
+        "/jobschedules/{jobScheduleId}", 
+        "/certificates(thumbprintAlgorithm={thumbprintAlgorithm},thumbprint={thumbprint})", 
+        "/nodeagentskus", 
+        "/jobs/{jobId}/addtaskcollection", 
+        "/jobs/{jobId}/tasks/{taskId}/files", 
+        "/jobschedules", 
+        "/pools/{poolId}/nodes", 
+        "/certificates(thumbprintAlgorithm={thumbprintAlgorithm},thumbprint={thumbprint})/canceldelete", 
+        "/pools/{poolId}/upgradeos", 
+        "/pools/{poolId}/nodes/{nodeId}/files", 
+        "/pools/{poolId}/nodes/{nodeId}/users", 
+        "/pools/{poolId}/nodes/{nodeId}", 
+        "/pools/{poolId}/enableautoscale", 
+        "/pools/{poolId}/nodes/{nodeId}/files/{fileName}", 
+        "/pools/{poolId}/disableautoscale", 
+        "/pools/{poolId}/nodes/{nodeId}/users/{userName}", 
+        "/jobs/{jobId}/jobpreparationandreleasetaskstatus", 
+        "/lifetimejobstats", 
+        "/pools/{poolId}/nodes/{nodeId}/reboot", 
+        "/jobs/{jobId}/tasks/{taskId}/files/{fileName}"
+    ], 
+    "url_not_noun": [
+        "/jobs/{jobId}/tasks/{taskId}/terminate", 
+        "/jobschedules/{jobScheduleId}/enable", 
+        "/jobs/{jobId}/enable", 
+        "/jobschedules/{jobScheduleId}/terminate", 
+        "/jobs/{jobId}/terminate", 
+        "/jobs/{jobId}/disable", 
+        "/pools/{poolId}/resize", 
+        "/pools/{poolId}/nodes/{nodeId}/enablescheduling", 
+        "/pools/{poolId}/nodes/{nodeId}/disablescheduling", 
+        "/jobschedules/{jobScheduleId}/disable"
+    ]
+}
