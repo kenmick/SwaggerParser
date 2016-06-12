@@ -1,0 +1,65 @@
+{
+    "host": "api-ssl.bitly.com", 
+    "basePath": "/v3", 
+    "total": 40, 
+    "methods": {
+        "get": {
+            "times": 40, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 4, 
+            "frequency": "0.100"
+        }, 
+        "2": {
+            "times": 36, 
+            "frequency": "0.900"
+        }
+    }, 
+    "url_noun": [
+        "/user/popular_links", 
+        "/organization/popular_links", 
+        "/user/link_lookup", 
+        "/oauth/app", 
+        "/link/encoders", 
+        "/user/link_edit", 
+        "/user/referrers", 
+        "/link/referrers", 
+        "/organization/clicks", 
+        "/bitly_pro_domain", 
+        "/user/link_history", 
+        "/organization/leaderboard", 
+        "/info", 
+        "/link/encoders_by_count", 
+        "/user/info", 
+        "/user/clicks", 
+        "/user/save_custom_domain_keyword", 
+        "/organization/brand_messages", 
+        "/user/network_history", 
+        "/link/referrers_by_domain", 
+        "/user/countries", 
+        "/link/countries", 
+        "/link/clicks", 
+        "/user/tracking_domain_list", 
+        "/link/lookup"
+    ], 
+    "url_not_noun": [
+        "/user/referring_domains", 
+        "/link/encoders_count", 
+        "/expand", 
+        "/user/popular_owned_by_shortens", 
+        "/user/tracking_domain_shorten_counts", 
+        "/organization/missed_opportunities", 
+        "/organization/shorten_counts", 
+        "/user/popular_earned_by_clicks", 
+        "/user/popular_earned_by_shortens", 
+        "/user/link_save", 
+        "/user/popular_owned_by_clicks", 
+        "/user/shorten_counts", 
+        "/user/tracking_domain_clicks", 
+        "/shorten", 
+        "/organization/intersecting_links"
+    ]
+}

@@ -1,0 +1,2236 @@
+{
+    "swagger": "2.0", 
+    "info": {
+        "version": "3.0", 
+        "description": "Bitly RESTful API", 
+        "title": "Bitly API"
+    }, 
+    "host": "api-ssl.bitly.com", 
+    "basePath": "/v3", 
+    "scheme": [
+        "https"
+    ], 
+    "produces": [
+        "application/json"
+    ], 
+    "paths": {
+        "/bitly_pro_domain": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "A short domain. ie: nyti.ms.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Domains"
+                ], 
+                "description": "Query whether a given domain is a valid bitly pro domain. Keep in mind that bitly custom short domains are restricted to less than 15 characters in length", 
+                "summary": "Bitly Pro Domain", 
+                "security": [], 
+                "operationId": "bitlyProDomain"
+            }
+        }, 
+        "/user/tracking_domain_clicks": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a tracking domain as returned from /v3/user/tracking_domain_list.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1 to 1000 (default=100).", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "true or false. Return data for multiple units rolled up to a single result instead of a separate value for each period of time.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "rollup", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14 to 14), or a timezone string default: America/New_York.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "minute, hour, day, week or month, default: day ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for. Pass -1 to return all units of time.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics, default: now. ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Domains"
+                ], 
+                "description": "Returns the number of clicks on Bitlinks pointing to the specified tracking domain that have occured in a given time period.", 
+                "summary": "Tracking Domain Clicks", 
+                "security": [], 
+                "operationId": "trackingDomainClicks"
+            }
+        }, 
+        "/user/tracking_domain_shorten_counts": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a tracking domain as returned from /v3/user/tracking_domain_list.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1 to 1000 (default=100).", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Return data for multiple units rolled up to a single result instead of a separate value for each period of time.", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "rollup", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14 to 14), or a timezone string default: America/New_York.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "minute, hour, day, week or month, default: day ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for. Pass -1 to return all units of time.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics, default: now. ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Domains"
+                ], 
+                "description": "Returns the number of links, pointing to a specified tracking domain, shortened (encoded) in a given time period by all bitly users.", 
+                "summary": "User Tracking Domain Shortens Counts", 
+                "security": [], 
+                "operationId": "userTrackingDomainShortensCounts"
+            }
+        }, 
+        "/user/link_save": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "urlencoded json array of deeplink items", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "deeplinks", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "the short domain to use; either bit.ly, j.mp, or bitly.com or a custom short domain. The default for this parameter is the short domain selected by each user in their bitly account settings. Passing a specific domain via this parameter will override the default settings.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "the URL to be saved as a Bitlink.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "longUrl", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "a description of, or note about, this Bitlink.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "note", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "indicating privacy setting (defaults to user-level setting).", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "private", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "the title of this Bitlink.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "title", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "timestamp as an integer epoch.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "user_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Links"
+                ], 
+                "description": "Saves a long URL as a Bitlink in a users history, with optional pre-set metadata. (Also returns a short URL for that link.)", 
+                "summary": "Save User Link", 
+                "security": [], 
+                "operationId": "saveUserLink"
+            }
+        }, 
+        "/user/link_lookup": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "one or more Bitlinks to lookup.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "link", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "one or more long URLs to lookup.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "url", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Links"
+                ], 
+                "description": "This is used to query for a Bitlink shortened by the authenticated user based on a long URL or a Bitlink.", 
+                "summary": "User Link Lookup", 
+                "security": [], 
+                "operationId": "userLinkLookup"
+            }
+        }, 
+        "/user/save_custom_domain_keyword": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "the Custom Bitlink (short domain and keyword combination) to set", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "keyword_link", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Ovewrite existing entry if one exists. Default: false.", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "overwrite", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "the Bitlink the specified keyword will map to (as returned from /v3/shorten)", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "target_link", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Links"
+                ], 
+                "description": "Save a Custom Bitlink for a custom short domain.", 
+                "summary": "Save Custom Bitlink", 
+                "security": [], 
+                "operationId": "saveCustomBitlink"
+            }
+        }, 
+        "/link/lookup": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "one or more long URLs to lookup.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "url", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Links"
+                ], 
+                "description": "lookup", 
+                "summary": "lookup", 
+                "security": [], 
+                "operationId": "lookup"
+            }
+        }, 
+        "/info": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "optional true|false - include extra user info in response.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "expand_user", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "refers to one or more bitly hashes, (e.g.: 2bYgqR or a-custom-name ).", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "hash", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "refers to one or more Bitlinks e.g.: http://bit.ly/1RmnUT or http://j.mp/1RmnUT.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "shortUrl", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Links"
+                ], 
+                "description": "info", 
+                "summary": "info", 
+                "security": [], 
+                "operationId": "info"
+            }
+        }, 
+        "/shorten": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "until we have model", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "json, xml, txt. Default: json.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "format", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "a long URL to be shortened (example: http://betaworks.com/).", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "longUrl", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Links"
+                ], 
+                "description": "shorten", 
+                "summary": "shorten", 
+                "security": [], 
+                "operationId": "shorten"
+            }
+        }, 
+        "/user/link_edit": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "indicating whether or not link is to be archived.", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "archived", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "indicating that all deeplinks should be removed form the bitlink", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "clear_deeplinks", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "urlencoded json array of deeplink items", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "deeplinks", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "a comma separated string of fields to be edited. ie: to edit the note field you also need to pass edit=note.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "edit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Successful response", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "link", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "a description of, or note about, this Bitlink.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "note", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "boolean true or false indicating privacy setting (defaults to user-level setting).", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "private", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "the title of this Bitlink.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "title", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "timestamp as an integer epoch.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "user_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Links"
+                ], 
+                "description": "Changes link metadata in a users history.", 
+                "summary": "Edit User Link", 
+                "security": [], 
+                "operationId": "editUserLink"
+            }
+        }, 
+        "/expand": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "json, xml, txt. Default: json.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "format", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "refers to one or more bitly hashes. e.g.: 2bYgqR or a-custom-name.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "hash", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "refers to one or more Bitlinks. e.g.: http://bit.ly/1RmnUT or http://j.mp/1RmnUT.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "shortUrl", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Links"
+                ], 
+                "description": "expand", 
+                "summary": "expand", 
+                "security": [], 
+                "operationId": "expand"
+            }
+        }, 
+        "/link/referrers_by_domain": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a Bitlink.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "link", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string default:America/New_York. tlimit=1..1000 (default=100)", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "minute | hour | day | week | month default:day", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for. pass -1 to return all units of time.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Link Metrics"
+                ], 
+                "description": "Returns metrics about the pages referring click traffic to a single Bitlink, grouped by referring domain.", 
+                "summary": "Link Referrers by Domain", 
+                "security": [], 
+                "operationId": "linkReferrersByDomain"
+            }
+        }, 
+        "/link/referrers": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a Bitlink.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "link", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string default:America/New_York. limit=1..1000 (default=100)", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "minute | hour | day | week | month default:day ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for. pass -1 to return all units of time.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Link Metrics"
+                ], 
+                "description": "Returns metrics about the pages referring click traffic to a single Bitlink.", 
+                "summary": "Link Referrers", 
+                "security": [], 
+                "operationId": "linkReferrers"
+            }
+        }, 
+        "/link/encoders_by_count": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "include display names of encoders", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "expand_user", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "integer in the range 1:100 that specifies the number of records to return (default:10).", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "a Bitlink.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "link", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "restrict to my network", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "my_network", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "restrict to this enterprise account and its subaccounts", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "subaccounts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Link Metrics"
+                ], 
+                "description": "Returns users who have encoded this link (optionally only those in the requesting users social graph), sorted by the number of clicks on each encoding users link.", 
+                "summary": "Users Who Encoded Link", 
+                "security": [], 
+                "operationId": "usersWhoEncodedLink"
+            }
+        }, 
+        "/link/encoders_count": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a Bitlink.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "link", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Link Metrics"
+                ], 
+                "description": "Returns the number of users who have shortened (encoded) a single Bitlink.", 
+                "summary": "Number of Encoders", 
+                "security": [], 
+                "operationId": "numberOfEncoders"
+            }
+        }, 
+        "/link/countries": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a Bitlink.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "link", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string default:America/New_York. limit=1..1000 (default=100)", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "minute | hour | day | week | month default:day ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for. pass -1 to return all units of time.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now it_reference_ts is specified, unit cannot be minute.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Link Metrics"
+                ], 
+                "description": "Returns metrics about the countries referring click traffic to a single Bitlink.", 
+                "summary": "Link Clicks by Country", 
+                "security": [], 
+                "operationId": "linkClicksbyCountry"
+            }
+        }, 
+        "/link/clicks": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "json, xml, txt. Default: json.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "format", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1 to 1000 (default=100).", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "a Bitlink.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "link", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Return data for multiple units rolled up to a single result instead of a separate value for each period of time.", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "rollup", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14 to 14), or a timezone string default: America/New_York.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "minute, hour, day, week or month, default: day ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for. Pass -1 to return all units of time.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics, default: now.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Link Metrics"
+                ], 
+                "description": "Returns the number of clicks on a single Bitlink.", 
+                "summary": "Link Clicks", 
+                "security": [], 
+                "operationId": "linkClicks"
+            }
+        }, 
+        "/link/encoders": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "include display names of encoders.", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "expand_user", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "integer in the range of 1 to 25 that specifies the number of records to return (default: 10).", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "a Bitlink.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "link", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "restrict to my network.", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "my_network", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "true or false - restrict to this enterprise account and its subaccounts", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "subaccounts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Link Metrics"
+                ], 
+                "description": "Returns users who have encoded this long URL (optionally only those in the requesting users social graph).", 
+                "summary": "User Who Encoded Link", 
+                "security": [], 
+                "operationId": "userWhoEncodedLink"
+            }
+        }, 
+        "/organization/leaderboard": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a tracking or e2e domain for this organization. May be specified more than once.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1..1000 (default=100)", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "either clicks or shortens. Default is clicks.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "orderby", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string. default:America/New_York", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "hour | day | week | month default:day", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Organization Metrics"
+                ], 
+                "description": "Returns the top-performing organization members ordered by clicks or shortens.", 
+                "summary": "Organization Leaderboard", 
+                "security": [], 
+                "operationId": "organizationLeaderBoard"
+            }
+        }, 
+        "/organization/shorten_counts": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "filter to a tracking or e2e domain for this organization. If unspecified, aggregate of all domains in this organization is pulled.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1..1000 (default=100)", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an account in this organization. If unspecified, aggregate of all accounts in this organization is pulled. ! is a valid option to exclude the organizations Bitlinks.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "login", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string. default:America/New_York.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "hour | day | week | month default:day", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Organization Metrics"
+                ], 
+                "description": "Returns the number of Bitlinks created by your organization or by other Bitly users that point to your domains.", 
+                "summary": "Organization Shorten Counts", 
+                "security": [], 
+                "operationId": "organizationShortenCounts"
+            }
+        }, 
+        "/organization/clicks": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "filter to a tracking or e2e domain for this organization. If unspecified, aggregate of all domains in this organization is pulled.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1..1000 (default=100)", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an account in this organization. If unspecified, aggregate of all accounts in this organization is pulled. ! is a valid option to exclude the organizations Bitlinks.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "login", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string. default:America/New_York", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "hour | day | week | month default:day", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Organization Metrics"
+                ], 
+                "description": "Returns the number of clicks on Bitlinks created by your organization or by other Bitly users that point to your domains.", 
+                "summary": "Organization Clicks", 
+                "security": [], 
+                "operationId": "organizationClicks"
+            }
+        }, 
+        "/organization/popular_links": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a tracking or e2e domain for this organization. May be specified more than once, or omitted for all domains.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1..1000 (default=100)", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string. default:America/New_York", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "hour | day | week | month default:day", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Organization Metrics"
+                ], 
+                "description": "Returns the top links shared by you or your audience, ordered by clicks", 
+                "summary": "Organization Popular Links", 
+                "security": [], 
+                "operationId": "organizationPopularLinks"
+            }
+        }, 
+        "/organization/brand_messages": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a tracking or e2e domain for this organization. May be specified more than once, or omitted for all domains.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1..1000 (default=100)", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string. default:America/New_York", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "hour | day | week | month default:day", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Organization Metrics"
+                ], 
+                "description": "Returns the top Bitlinks created by you with traffic, that did not also have non-organization traffic in the same time period, ordered by clicks.", 
+                "summary": "Organization Brand Messages", 
+                "security": [], 
+                "operationId": "organizationBrandMessages"
+            }
+        }, 
+        "/organization/intersecting_links": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a tracking or e2e domain for this organization. May be specified more than once, or omitted for all domains.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1..1000 (default=100)", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string. default:America/New_York", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "hour | day | week | month default:day", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Organization Metrics"
+                ], 
+                "description": "Returns the top links shared by both your audience and by your account, ordered by clicks.", 
+                "summary": "Organization Intersecting Links", 
+                "security": [], 
+                "operationId": "organizationIntersectingLinks"
+            }
+        }, 
+        "/organization/missed_opportunities": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "hour | day | week | month default:day", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "a tracking or e2e domain for this organization. May be specified more than once, or omitted for all domains.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1..1000 (default=100)", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string. default:America/New_York", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "hour | day | week | month default:day", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "Organization Metrics"
+                ], 
+                "description": "Returns the top links shared by your audience, but not by you, ordered by clicks.", 
+                "summary": "Organization Missed Opportunities", 
+                "security": [], 
+                "operationId": "organizationMissedOpportunities"
+            }
+        }, 
+        "/user/info": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "set the users full name value. (only available for the authenticated user.)", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "full_name", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "the bitly login of the user whose info to look up. If not given, the authenticated user will be used.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "login", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User"
+                ], 
+                "description": "Return or update information about a user.", 
+                "summary": "User Info", 
+                "security": [], 
+                "operationId": "userInfo"
+            }
+        }, 
+        "/oauth/app": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "the client ID of the app.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "client_id", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User"
+                ], 
+                "description": "Return information about an OAuth app.", 
+                "summary": "OAuth App", 
+                "security": [], 
+                "operationId": "oauthApp"
+            }
+        }, 
+        "/user/link_history": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "on, offor both whether to include or exclude archived history entries. (on = return only archived history entries) default: off.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "archived", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "filter to return only links for the given campaign_id, can be provided multiple times", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "campaign_id", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "timestamp as an integer unix epoch.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "created_after", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "timestamp as an integer unix epoch.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "created_before", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "n exact domain to filter on history entries", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "exact_domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "whether to provide additional information about encoding application. default: false.", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "expand_client_id", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "custom keyword to filter on history entries", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "keyword", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "integer in the range 1 to 100 default: 50, specifying the max number of results to return.", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "optional the Bitlink or Bitlinks to return metadata for (when specified, overrides all other options), can be provided multiple times.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "link", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "timestamp as an integer unix epoch.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "modified_after", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "integer specifying the numbered result at which to start (for pagination).", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "offset", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "on, off and both whether to include or exclude private history entries. (on = return only private history entries) default: both.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "private", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "optional ad hoc text search string", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "query", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "a root domain to filter on history entries", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "root_domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "the user for whom to retrieve history entries (if different from authenticated user).", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "user", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User"
+                ], 
+                "description": "Returns entries from a users link history in reverse chronological order.", 
+                "summary": "User Link History", 
+                "security": [], 
+                "operationId": "userLinkHistory"
+            }
+        }, 
+        "/user/network_history": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "whether to provide additional information about encoding application. default: false.", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "expand_client_id", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "include extra user info in response (login, avatar_url, display_name, profile_url, full_name).", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "expand_user", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "integer in the range of 1 to 100 that specifies the number of records to return (default: 20).", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "integer that specifies the first record to return.", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "offset", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User"
+                ], 
+                "description": "Returns entries from a users network history in reverse chronogical order. (A users network history includes publicly saved links from Twitter and Facebook connections.)", 
+                "summary": "User Network History", 
+                "security": [], 
+                "operationId": "userNetworkHistory"
+            }
+        }, 
+        "/user/tracking_domain_list": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a list of tracking domains configured for the authenticated user.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "tracking_domains", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User"
+                ], 
+                "description": "Returns a list of tracking domains a user has configured.", 
+                "summary": "User Tracking Domain List", 
+                "security": [], 
+                "operationId": "userTrackingDomainList"
+            }
+        }, 
+        "/user/popular_links": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "1..1000 (default=100)", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string default:America/New_York.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "minute | hour | day | week | month default:day ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for. pass -1 to return all units of time.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User Metrics"
+                ], 
+                "description": "Returns the authenticated users most-clicked Bitlinks (ordered by number of clicks) in a given time period.", 
+                "summary": "User Popular Links", 
+                "security": [], 
+                "operationId": "userPopularLinks"
+            }
+        }, 
+        "/user/clicks": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "json, xml, txt. Default: json.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "format", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1 to 1000 (default=100).", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Return data for multiple units rolled up to a single result instead of a separate value for each period of time.", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "rollup", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14 to 14), or a timezone string default: America/New_York.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "minute, hour, day, week or month, default: day ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for. Pass -1 to return all units of time.", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics, default: now. ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User Metrics"
+                ], 
+                "description": "Returns the aggregate number of clicks on all of the authenticated users Bitlinks.", 
+                "summary": "User Clicks", 
+                "security": [], 
+                "operationId": "userClicks"
+            }
+        }, 
+        "/user/popular_earned_by_clicks": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a tracking domain as returned from /v3/user/tracking_domain_list.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1..1000 (default=100)", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string. default:America/New_York", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "hour | day | week | month default:day", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for.", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User Metrics"
+                ], 
+                "description": "Returns the top links to your tracking domain (or domains) created by users not associated with your account, ordered by clicks.", 
+                "summary": "User Popular Earned By Clicks", 
+                "security": [], 
+                "operationId": "userPopularEarnedbyClicks"
+            }
+        }, 
+        "/user/referrers": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "1 to 1000 (default=100).", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Return data for multiple units rolled up to a single result instead of a separate value for each period of time.", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "rollup", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14 to 14), or a timezone string default: America/New_York.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "minute, hour, day, week or month, default: day ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for. Pass -1 to return all units of time.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics, default: now. ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User Metrics"
+                ], 
+                "description": "Returns aggregate metrics about the pages referring click traffic to all of the authenticated users Bitlinks.", 
+                "summary": "User Referrers", 
+                "security": [], 
+                "operationId": "userReferrers"
+            }
+        }, 
+        "/user/popular_owned_by_shortens": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a tracking domain as returned from /v3/user/tracking_domain_list (may be specified multiple times).", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1..1000 (default=100)", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "restrict to links created by this subaccount (may be specified multiple times).", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "subaccount", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string. default:America/New_York", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "hour | day | week | month default:day", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User Metrics"
+                ], 
+                "description": "Returns the top links to your tracking domain (or domains) created by you or your subaccounts ordered by number of shortens.", 
+                "summary": "User Popular Owned by Shortens", 
+                "security": [], 
+                "operationId": "userPopularOwnedByShortens"
+            }
+        }, 
+        "/user/popular_owned_by_clicks": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a tracking domain as returned from /v3/user/tracking_domain_list (may be specified multiple times).", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1..1000 (default=100)", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "restrict to links created by this subaccount (may be specified multiple times).", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "subaccount", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string. default:America/New_York.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "hour | day | week | month default:day", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User Metrics"
+                ], 
+                "description": "Returns the top links to your tracking domain (or domains) created by you or your subaccounts ordered by clicks.", 
+                "summary": "User Popular Owned By Clicks", 
+                "security": [], 
+                "operationId": "userPopularOwnedByClicks"
+            }
+        }, 
+        "/user/popular_earned_by_shortens": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "a tracking domain as returned from /v3/user/tracking_domain_list.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "domain", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1..1000 (default=100)", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14..14), or a timezone string. default:America/New_York.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "hour | day | week | month default:day", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics. default:now ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User Metrics"
+                ], 
+                "description": "Returns the top links to your tracking domain (or domains) created by users not associated with your account, ordered by shortens.", 
+                "summary": "User Popular Earned By Shortens", 
+                "security": [], 
+                "operationId": "userPopularEarnedByShortens"
+            }
+        }, 
+        "/user/referring_domains": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "If true, exclude domains that are part of a social network that bitly tracks (default=true).", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "exclude_social_networks", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1 to 1000 (default=100).", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an optional string consisting of the account name used to report the appropriate statistics; defaults to the current user.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "login", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Return data for multiple units rolled up to a single result instead of a separate value for each period of time.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "rollup", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14 to 14), or a timezone string default: America/New_York.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "minute, hour, day, week or month, default: day ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for. Pass -1 to return all units of time.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics, default: now. ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User Metrics"
+                ], 
+                "description": "eturns aggregate metrics about the domains referring click traffic to all of the authenticated users Bitlinks. If the user is a master account, or is a subaccount with full_reports permission, the user may choose to view the metrics of any account belonging to the master account.", 
+                "summary": "User Referring Domains", 
+                "security": [], 
+                "operationId": "userReferringDomains"
+            }
+        }, 
+        "/user/shorten_counts": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "json, xml, txt. Default: json.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "format", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "1 to 1000 (default=100).", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Return data for multiple units rolled up to a single result instead of a separate value for each period of time.", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "rollup", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14 to 14), or a timezone string default: America/New_York.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "minute, hour, day, week or month, default: day ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer representing the time units to query data for. Pass -1 to return all units of time.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics, default: now. ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User Metrics"
+                ], 
+                "description": "Returns the number of Bitlinks created in a given time period by the authenticated user.", 
+                "summary": "User Shorten Counts", 
+                "security": [], 
+                "operationId": "userShortenCounts"
+            }
+        }, 
+        "/user/countries": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "description": "1 to 1000 (default=100).", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "limit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Return data for multiple units rolled up to a single result instead of a separate value for each period of time.", 
+                        "format": "boolean", 
+                        "type": "boolean", 
+                        "name": "rollup", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an integer hour offset from UTC (-14 to 14), or a timezone string default: America/New_York.", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "timezone", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "minute, hour, day, week or month, default: day ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "Successful response", 
+                        "format": "integer", 
+                        "type": "integer", 
+                        "name": "units", 
+                        "in": "query"
+                    }, 
+                    {
+                        "description": "an epoch timestamp, indicating the most recent time for which to pull metrics, default: now. ", 
+                        "format": "string", 
+                        "type": "string", 
+                        "name": "unit_reference_ts", 
+                        "in": "query"
+                    }
+                ], 
+                "tags": [
+                    "User Metrics"
+                ], 
+                "description": "Returns aggregate metrics about the countries referring click traffic to all of the authenticated users Bitlinks.", 
+                "summary": "User Countries", 
+                "security": [], 
+                "operationId": "userCountries"
+            }
+        }
+    }
+}
