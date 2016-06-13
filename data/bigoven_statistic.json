@@ -1,0 +1,76 @@
+{
+    "host": "api2.bigoven.com", 
+    "basePath": "", 
+    "total": 39, 
+    "methods": {
+        "put": {
+            "times": 4, 
+            "frequency": "0.103"
+        }, 
+        "post": {
+            "times": 10, 
+            "frequency": "0.256"
+        }, 
+        "delete": {
+            "times": 5, 
+            "frequency": "0.128"
+        }, 
+        "get": {
+            "times": 20, 
+            "frequency": "0.513"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 4, 
+            "frequency": "0.129"
+        }, 
+        "2": {
+            "times": 13, 
+            "frequency": "0.419"
+        }, 
+        "3": {
+            "times": 12, 
+            "frequency": "0.387"
+        }, 
+        "4": {
+            "times": 2, 
+            "frequency": "0.065"
+        }
+    }, 
+    "url_noun": [
+        "/recipe/autocomplete", 
+        "/recipe/{recipeId}/scans", 
+        "/recipe/{recipeId}/images", 
+        "/recipe/{recipeId}/image", 
+        "/grocerylist/sync", 
+        "/grocerylist", 
+        "/recipe/{recipeId}/note", 
+        "/recipe/{recipeId}/review/{reviewId}", 
+        "/recipe/{recipeId}/feedback", 
+        "/recipe/{id}", 
+        "/recipe/{recipeId}/photos", 
+        "/collections", 
+        "/glossary/{id}", 
+        "/recipe/categories", 
+        "/recipe/{recipeId}/review", 
+        "/recipes", 
+        "/glossary/byterm/{term}", 
+        "/grocerylist/department", 
+        "/recipe/{recipeId}/related", 
+        "/recipe/{recipeId}/note/{noteId}", 
+        "/grocerylist/item", 
+        "/grocerylist/item/{guid}", 
+        "/recipe/{recipeId}/reviews", 
+        "/recipe/{recipeId}/notes", 
+        "/recipe", 
+        "/collection/{id}", 
+        "/recipes/recentviews", 
+        "/recipes/random", 
+        "/grocerylist/recipe"
+    ], 
+    "url_not_noun": [
+        "/recipe/scan", 
+        "/recipes/raves"
+    ]
+}
