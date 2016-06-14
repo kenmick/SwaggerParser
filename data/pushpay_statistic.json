@@ -1,0 +1,82 @@
+{
+    "host": "api.pushpay.com", 
+    "basePath": "/", 
+    "total": 37, 
+    "methods": {
+        "put": {
+            "times": 2, 
+            "frequency": "0.054"
+        }, 
+        "patch": {
+            "times": 2, 
+            "frequency": "0.054"
+        }, 
+        "post": {
+            "times": 2, 
+            "frequency": "0.054"
+        }, 
+        "delete": {
+            "times": 2, 
+            "frequency": "0.054"
+        }, 
+        "get": {
+            "times": 29, 
+            "frequency": "0.784"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 5, 
+            "frequency": "0.167"
+        }, 
+        "2": {
+            "times": 10, 
+            "frequency": "0.333"
+        }, 
+        "3": {
+            "times": 10, 
+            "frequency": "0.333"
+        }, 
+        "4": {
+            "times": 4, 
+            "frequency": "0.133"
+        }, 
+        "5": {
+            "times": 1, 
+            "frequency": "0.033"
+        }
+    }, 
+    "url_noun": [
+        "/v1/settlement/{settlementKey}/payments", 
+        "/v1/paymentmethod/{key}", 
+        "/v1/merchant/{merchantKey}/webhook/{token}", 
+        "/v1/merchant/{merchantKey}", 
+        "/v1/my/payments", 
+        "/v1/merchant/{merchantKey}/webhooks", 
+        "/v1/merchants/near", 
+        "/v1/my/merchants", 
+        "/v1/anticipatedpayment/{token}", 
+        "/v1/anticipatedpayment/{token}/status", 
+        "/v1/merchant/{merchantKey}/payments", 
+        "/v1/merchants/in-scope", 
+        "/v1/settlement/{settlementKey}", 
+        "/v1/merchant/{merchantKey}/recurringpayment/{token}", 
+        "/v1/merchant/{merchantKey}/payment/{token}", 
+        "/v1/merchant/{merchantKey}/community", 
+        "/v1/settlements", 
+        "/v1/paymentmethods", 
+        "/v1/merchant/{merchantKey}/recurringpayments", 
+        "/v1/merchant/{merchantKey}/settlements", 
+        "/swagger", 
+        "/swagger/{resourceName}", 
+        "/v1/anticipatedpayment/{token}/payment", 
+        "/v1/merchants", 
+        "/v1/merchant/{merchantKey}/recurringpayment/{paymentToken}/payments", 
+        "/v1/anticipatedpayments", 
+        "/v1/person/{personKey}/recurringpayments", 
+        "/v1/merchant/{merchantKey}/community/{memberKey}", 
+        "/v1/merchant/{merchantKey}/anticipatedpayments", 
+        "/v1/diagnostics/identity"
+    ], 
+    "url_not_noun": []
+}
