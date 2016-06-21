@@ -1,0 +1,441 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Freebase",
+        "description": "Read and write access to the Freebase graph of people, places and things.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "www.googleapis.com",
+    "basePath": "/freebase/v1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/search": {
+            "get": {
+                "description": "Find entities by keyword search.",
+                "operationId": "search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The text you want to match against freebase entities."
+                    },
+                    {
+                        "name": "callback",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "JS method name for JSONP callbacks."
+                    },
+                    {
+                        "name": "domain",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A comma separated list of domain IDs. Search results must include these domains."
+                    },
+                    {
+                        "name": "exact",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Matches only the name, and keys 'exactly'. No normalization of any kind is done at indexing and query time. The text is only broken up on space characters."
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A Filter s-expression."
+                    },
+                    {
+                        "name": "html_escape",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": true,
+                        "type": "boolean",
+                        "description": "Whether or not to escape entities."
+                    },
+                    {
+                        "name": "indent",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Whether to indent the json."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 20.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Return up to this number of results. (integer >= 1)"
+                    },
+                    {
+                        "name": "mql_output",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A MQL query thats extracts entity information."
+                    },
+                    {
+                        "name": "prefixed",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Whether or not to match by name prefix (used for autosuggest)."
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Allows paging through results. (integer >= 0)"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A comma seperated list of type IDs. Search results must include these types."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Read and write access to the Freebase graph of people, places and things."
+                    }
+                }
+            }
+        },
+        "/mqlread": {
+            "get": {
+                "description": "Retrieve detailed structured data about entities or collections of entities using the Metaweb Query Language (MQL).",
+                "operationId": "Get_mqlread_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A valid MQL query in the json format."
+                    },
+                    {
+                        "name": "as_of_time",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Run the query as it would've been run at the specified point in time. Must be a valid timestamp (e.g. \"2007-01-09T22\" or \"2007-02\")."
+                    },
+                    {
+                        "name": "callback",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "JS method name for JSONP callbacks."
+                    },
+                    {
+                        "name": "cursor",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Provides a mechanism for \"paging\" out results (can be used in conjunction with \"limit\" directive in MQL). No value (for the first request) OR a valid cursor returned by a previous request."
+                    },
+                    {
+                        "name": "html_escape",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": true,
+                        "type": "boolean",
+                        "description": "Whether or not to escape entities."
+                    },
+                    {
+                        "name": "indent",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "false",
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "How many spaces to indent the JSON. (integer 0-10)"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "/lang/en",
+                        "type": "string",
+                        "description": "Return strings in the language requested (if a given object has no name in the requested language, null will be returned)."
+                    },
+                    {
+                        "name": "cost",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Whether or not to show the costs."
+                    },
+                    {
+                        "name": "uniqueness_failure",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "hard",
+                            "soft"
+                        ],
+                        "default": "hard",
+                        "type": "integer",
+                        "description": "How MQL responds to uniqueness failures."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Read and write access to the Freebase graph of people, places and things.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/mqlwrite": {
+            "post": {
+                "description": "Perform insertions, deletions and updates of Metaweb Query Language (MQL).",
+                "operationId": "Create_mqlwrite_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A valid MQL query in the json format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Read and write access to the Freebase graph of people, places and things.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/text{id}": {
+            "get": {
+                "description": "Get short textual descriptions for entities.",
+                "operationId": "Get_text_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The id of the entity that you want a description for."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "html",
+                            "plain",
+                            "raw"
+                        ],
+                        "default": "raw",
+                        "type": "integer",
+                        "description": "Sanitizing transformation."
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "/lang/en",
+                        "type": "string",
+                        "description": "The desired language of the content."
+                    },
+                    {
+                        "name": "maxlength",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 200.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The max number of characters to return. Valid only for 'plain' format. (integer 0-4,294,967,295)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Read and write access to the Freebase graph of people, places and things.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/image{id}": {
+            "get": {
+                "description": "Get representative thumbnail images for entities.",
+                "operationId": "Get_image_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The id of an entity for which you want an image. Alternatively, you may pass the id of the content node for a specific image."
+                    },
+                    {
+                        "name": "fallbackid",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Use the image associated with this secondary id if no image is associated with the primary id."
+                    },
+                    {
+                        "name": "maxheight",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Maximum height in pixels for resulting image. (integer 0 - 4,096)"
+                    },
+                    {
+                        "name": "maxwidth",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Maximum width in pixels for resulting image. (integer 0 - 4,096)"
+                    },
+                    {
+                        "name": "mode",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "fill",
+                            "fillcrop",
+                            "fillcropmid",
+                            "fit"
+                        ],
+                        "type": "integer",
+                        "description": "Method used to scale or crop image."
+                    },
+                    {
+                        "name": "pad",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Whether the resulting image should be padded up to the requested dimensions. (boolean as 0 or 1)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Read and write access to the Freebase graph of people, places and things.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "uniqueness_failure": {
+            "title": "uniqueness_failure",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "hard",
+                "soft"
+            ]
+        },
+        "format": {
+            "title": "format",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "html",
+                "plain",
+                "raw"
+            ]
+        },
+        "mode": {
+            "title": "mode",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "fill",
+                "fillcrop",
+                "fillcropmid",
+                "fit"
+            ]
+        }
+    }
+}

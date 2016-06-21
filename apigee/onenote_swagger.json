@@ -1,0 +1,1238 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "OneNote",
+        "description": "Easily capture content into OneNote with this REST API.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "www.onenote.com",
+    "basePath": "/api/v1.0/me/notes/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/pages": {
+            "get": {
+                "description": "Returns a collection of pages matching the search criteria.",
+                "operationId": "searchPages_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The term or phrase to search for. Example: cell div"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new page in the default notebook and section.",
+                "operationId": "createPage_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "multipart/form-data; boundary=NewPart",
+                        "type": "string",
+                        "description": "Required: indicates type of content sent"
+                    },
+                    {
+                        "name": "sectionName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Optional: indicates the name of the section in the default notebook that the page should be created in. This section will be created if it does not already exist."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/sections/{sectionId}/pages": {
+            "get": {
+                "description": "Get the pages (metadata) in the specified section.",
+                "operationId": "getPageLevelAndOrder_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "true, to return the number of entities in the collection."
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The filter for the query. Example: title eq 'Homework'"
+                    },
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The property to order by. Default is \"lastModifiedTime desc\". Example: createdTime desc"
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The properties to return. Example: title,self,createdTime"
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The navigation properties (parentNotebook or parentSection) to return inline in the response. Example: parentNotebook"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to return from the result set. Default is 20, maximum is 100. Example: 10"
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The term or phrase to search for. Example: todo"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to skip in the result set. Example: 10"
+                    },
+                    {
+                        "name": "pagelevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "true, to return the level and order properties for pages."
+                    },
+                    {
+                        "name": "sectionId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the section that contains the pages."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new page in a specific section.",
+                "operationId": "createPageinSection_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "multipart/form-data; boundary=NewPart",
+                        "type": "string",
+                        "description": "Required: indicates type of content sent"
+                    },
+                    {
+                        "name": "sectionId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the section to create the page in."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/pages/{pageId}": {
+            "get": {
+                "description": "Returns the specified page.",
+                "operationId": "getPage_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The properties to return. Example: title,contentUrl,links"
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The navigation properties (parentNotebook or parentSection) to return inline in the response. Example: parentNotebook"
+                    },
+                    {
+                        "name": "pagelevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "true, to return the level and order properties."
+                    },
+                    {
+                        "name": "pageId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the page to get."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes the specified page.",
+                "operationId": "deletePage_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "pageId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the page to delete."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API."
+                    }
+                }
+            }
+        },
+        "/pages/{pageId}/content": {
+            "get": {
+                "description": "Returns HTML content of the specified page.",
+                "operationId": "getPageContent_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Accept",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "text/html",
+                        "type": "string",
+                        "description": "Required: indicates type of content returned in the response."
+                    },
+                    {
+                        "name": "includeIDs",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "false",
+                        "type": "string",
+                        "description": "Optional: set to true to get generated IDs to use for PATCH operations."
+                    },
+                    {
+                        "name": "pageId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the page whose content you want to retrieve."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/pages/{pageId}/preview": {
+            "get": {
+                "description": "Returns preview text and (if there is one) a preview image for the specified page.",
+                "operationId": "getPagePreview_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Required: indicates type of content being sent"
+                    },
+                    {
+                        "name": "pageId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the page whose content you want to retrieve."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/notebooks": {
+            "get": {
+                "description": "Returns a collection of notebooks.",
+                "operationId": "getAllNotebooks_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "true, to return the number of entities in the collection."
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The filter for the query. Example: createdTime ge 2015-09-01"
+                    },
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The property to order by. Default is \"name asc\". Example: lastModifiedTime desc"
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The properties to return. Example: name,self,links"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to return from the result set. Example: 10"
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The navigation properties (sections or sectionGroups) to return inline in the response. Example: sections"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to skip in the result set. Example: 10"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new notebook.",
+                "operationId": "createNotebook_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Required: indicates type of content being sent"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/notebooks/{notebookId}": {
+            "get": {
+                "description": "Returns a specific notebook object.",
+                "operationId": "getNotebook_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The properties to return. Example: name,sectionsUrl,links"
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The navigation properties (sections and sectionGroups) to return inline in the response. Example: sections,sectionGroups"
+                    },
+                    {
+                        "name": "notebookId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the specific notebook"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/notebooks/{notebookId}/sections": {
+            "get": {
+                "description": "Returns a collection of sections within a specific notebook.",
+                "operationId": "getNotebookSections_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "true, to return the number of entities in the collection."
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The filter for the query. Example: createdTime ge 2015-09-01"
+                    },
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The property to order by. Default is \"name asc\". Example: lastModifiedTime desc"
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The properties to return. Example: name,pagesUrl,createdTime"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to return from the result set. Example: 10"
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The navigation properties (parentNotebook or parentSectionGroup) to return inline in the response. The default query expands parentNotebook and parentSectionGroup, and selects their id, name, and self properties."
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to skip in the result set. Example: 10"
+                    },
+                    {
+                        "name": "notebookId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the notebook."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new section in a specific notebook.",
+                "operationId": "createSectionInNotebook_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Required: indicates type of content being sent"
+                    },
+                    {
+                        "name": "notebookId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the notebook."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/notebooks/{notebookId}/sectiongroups": {
+            "get": {
+                "description": "Returns a collection of section groups within a specific notebook.",
+                "operationId": "getNotebookSectionGroups_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "true, to return the number of entities in the collection."
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The filter for the query. Example: createdTime ge 2015-09-01"
+                    },
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The property to order by. Default is \"name asc\". Example: lastModifiedTime desc"
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The properties to return. Example: name,sectionsUrl,createdTime"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to return from the result set. Example: 10"
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The navigation properties (sections, sectionGroups, parentNotebook, or parentSectionGroup) to return inline in the response. The default query expands parentNotebook and parentSectionGroup, and selects their id, name, and self properties.    Example: sections,sectionGroups"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to skip in the result set. Example: 10"
+                    },
+                    {
+                        "name": "notebookId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the notebook."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new section group in a notebook.",
+                "operationId": "createSectionGroupInNotebook_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Required: The type of content being sent."
+                    },
+                    {
+                        "name": "notebookId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the notebook."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/sectionGroups/": {
+            "get": {
+                "description": "Returns a collection of section groups.",
+                "operationId": "getAllSectionGroups_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "true, to return the number of entities in the collection."
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The filter for the query. Example: createdTime ge 2015-09-01"
+                    },
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The property to order by. Default is \"name asc\". Example: lastModifiedTime desc"
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The properties to return. Example: name,sectionsUrl,createdTime"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to return from the result set. Example: 10"
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The navigation properties (sections, sectionGroups, parentNotebook, or parentSectionGroup) to return inline in the response. The default query expands parentNotebook and parentSectionGroup, and selects their id, name, and self properties.    Example: sections,sectionGroups"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to skip in the result set. Example: 10"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/sectionGroups/{sectionGroupId}": {
+            "get": {
+                "description": "Returns a specific section group object.",
+                "operationId": "getSectionGroup_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The properties to return. Example: name,sectionsUrl,createdTime"
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The navigation properties (sections, sectionGroups, parentNotebook, or parentSectionGroup) to return inline in the response. Example: sections,parentNotebook"
+                    },
+                    {
+                        "name": "sectionGroupId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the specific section group"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/sectionGroups/{sectionGroupId}/sections": {
+            "get": {
+                "description": "Returns a collection of sections within a specific section group.",
+                "operationId": "getSectionGroupsSections_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "true, to return the number of entities in the collection."
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The filter for the query. Example: createdTime ge 2015-09-01"
+                    },
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The property to order by. Default is \"name asc\". Example: lastModifiedTime desc"
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The properties to return. Example: name,pagesUrl,createdTime"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to return from the result set. Example: 10"
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The navigation properties (parentNotebook or parentSectionGroup) to return inline in the response. The default query expands parentNotebook and parentSectionGroup, and selects their id, name, and self properties."
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to skip in the result set. Example: 10"
+                    },
+                    {
+                        "name": "sectionGroupId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the section group."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new section in a section group.",
+                "operationId": "createSectionInSectionGroup_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Required: The type of content being sent."
+                    },
+                    {
+                        "name": "sectionGroupId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the section group."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/sectionGroups/{sectionGroupId}/sectionGroups": {
+            "get": {
+                "description": "Returns a collection of section groups within a specific section group.",
+                "operationId": "getSectionGroupsSectionGroups_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "true, to return the number of entities in the collection."
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The filter for the query. Example: createdTime ge 2015-09-01"
+                    },
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The property to order by. Default is \"name asc\". Example: lastModifiedTime desc"
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The properties to return. Example: name,sectionsUrl,createdTime"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to return from the result set. Example: 10"
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The navigation properties (sections, sectionGroups, parentNotebook, or parentSectionGroup) to return inline in the response. The default query expands parentNotebook and parentSectionGroup, and selects their id, name, and self properties.    Example: sections,sectionGroups"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to skip in the result set. Example: 10"
+                    },
+                    {
+                        "name": "sectionGroupId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the section group."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new section group in a section group.",
+                "operationId": "createSectionGroupInSectionGroup_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Required: The type of content being sent"
+                    },
+                    {
+                        "name": "sectionGroupId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the section group."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/sections/": {
+            "get": {
+                "description": "Returns a collection of sections.",
+                "operationId": "getAllSections_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "true, to return the number of entities in the collection."
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The filter for the query. Example: createdTime ge 2015-09-01"
+                    },
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The property to order by. Default is \"name asc\". Example: lastModifiedTime desc"
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The properties to return. Example: name,pagesUrl,createdTime"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to return from the result set. Example: 10"
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The navigation properties (parentNotebook or parentSectionGroup) to return inline in the response. The default query expands parentNotebook and parentSectionGroup, and selects their id, name, and self properties."
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of entities to skip in the result set. Example: 10"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/sections/{sectionId}": {
+            "get": {
+                "description": "Returns a specific section.",
+                "operationId": "getSection_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The properties to return. Example: name,pagesUrl,createdTime"
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The navigation properties (parentNotebook, or parentSectionGroup) to return inline in the response. Example: parentNotebook"
+                    },
+                    {
+                        "name": "sectionId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the specific Section"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Easily capture content into OneNote with this REST API.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,4016 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "MySpace",
+        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.myspace.com",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/1.0/activities/{personId}/{selector}": {
+            "get": {
+                "description": "Retrieves all activities for the user or for the friends of the viewer.",
+                "operationId": "Get_activities.getUserActivities_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported.\nappid, body, externalid, id, mediaitems, postedtime, streamfaviconurl, title, titleid, userid, \n@all (a special value that tells the REST endpoint to send back all fields for the activity.)"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    },
+                    {
+                        "name": "updatedSince",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the date before which no activities should be returned."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "selector",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "@self",
+                            "@all",
+                            "@friends"
+                        ],
+                        "type": "integer",
+                        "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/activities/{personId}/@self": {
+            "post": {
+                "description": "Creates an activity for the user.",
+                "operationId": "Create_activities.createUserActivity_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/activities/@supportedFields": {
+            "get": {
+                "description": "Retrieves all supported fields.",
+                "operationId": "Get_activities.getSupportedFields_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported.\nappid, body, externalid, id, mediaitems, postedtime, streamfaviconurl, title, titleid, userid, \n@all (a special value that tells the REST endpoint to send back all fields for the activity.)"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    },
+                    {
+                        "name": "updatedSince",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the date before which no activities should be returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/activities/@supportedVerbs": {
+            "get": {
+                "description": "Retrieves all supported verbs.",
+                "operationId": "Get_activities.getSupportedVerbs_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported.\nappid, body, externalid, id, mediaitems, postedtime, streamfaviconurl, title, titleid, userid, \n@all (a special value that tells the REST endpoint to send back all fields for the activity.)"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    },
+                    {
+                        "name": "updatedSince",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the date before which no activities should be returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/activities/@supportedObjectTypes": {
+            "get": {
+                "description": "Retrieves all supported object types.",
+                "operationId": "Get_activities.getSupportedObjectTypes_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported.\nappid, body, externalid, id, mediaitems, postedtime, streamfaviconurl, title, titleid, userid, \n@all (a special value that tells the REST endpoint to send back all fields for the activity.)"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    },
+                    {
+                        "name": "updatedSince",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the date before which no activities should be returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/activities/{personId}/{selector}/{appId}": {
+            "get": {
+                "description": "Retrieves activities created by an application.",
+                "operationId": "Get_activities.getApplicationActivities_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "selector",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "@self",
+                            "@all",
+                            "@friends"
+                        ],
+                        "type": "integer",
+                        "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
+                    },
+                    {
+                        "name": "appId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@app",
+                        "type": "string",
+                        "description": "The application's ID associated with the OAuth ConsumerKey/ConsumerSecret pair."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported.\nappid, body, externalid, id, mediaitems, postedtime, streamfaviconurl, title, titleid, userid, \n@all (a special value that tells the REST endpoint to send back all fields for the activity.)"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    },
+                    {
+                        "name": "updatedSince",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the date before which no activities should be returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/albums/@supportedFields": {
+            "get": {
+                "description": "Retrieves all supported fields.",
+                "operationId": "Get_albums.getSupportedFields_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold are default values.\n caption, id, location, mediaItemCount, mediaType, ownerId, thumbnailUrl \n @all (a special value that tells the REST endpoint to send back all fields for the album.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Album is private.\nfriendsonly - Album is visible to friends.\neveryone - Album is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/albums/{personId}/@self": {
+            "get": {
+                "description": "Retrieves the current user's albums.",
+                "operationId": "Get_albums.getCurrentUserAlbums_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold are default values.\n caption, id, location, mediaItemCount, mediaType, ownerId, thumbnailUrl \n @all (a special value that tells the REST endpoint to send back all fields for the album.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Album is private.\nfriendsonly - Album is visible to friends.\neveryone - Album is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Adding an Album.",
+                "operationId": "Create_albums.addAlbum_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/albums/{personId}/@self/{albumId}": {
+            "get": {
+                "description": "Retrieves an album.",
+                "operationId": "Get_albums.getAlbum_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "albumId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "Indicates which single album should be returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Update an Album.",
+                "operationId": "Update_albums.updateAlbum_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "albumId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "Indicates which single album should be returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/groups/@supportedFields": {
+            "get": {
+                "description": "Retrieves all supported fields.",
+                "operationId": "Get_groups.getSupportedFields_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported: id and title."
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Album is private.\nfriendsonly - Album is visible to friends.\neveryone - Album is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/groups/{personId}": {
+            "get": {
+                "description": "Retrieves the current user's groups.",
+                "operationId": "Get_groups.getCurrentUserGroups._",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported: id and title."
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Album is private.\nfriendsonly - Album is visible to friends.\neveryone - Album is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/notifications/{personId}/@self": {
+            "post": {
+                "description": "Sends notification.",
+                "operationId": "Create_notifications.send_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/appdata/{personId}/{selector}/{appId}": {
+            "get": {
+                "description": "Retrieves all application data for a specified user.",
+                "operationId": "Get_appdata.getAllApplicationData_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "selector",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "@self",
+                            "@all",
+                            "@friends"
+                        ],
+                        "type": "integer",
+                        "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
+                    },
+                    {
+                        "name": "appId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@app",
+                        "type": "string",
+                        "description": "The application's ID associated with the OAuth ConsumerKey/ConsumerSecret pair."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fields correspond to keys in the application data. One uses fields to only retrieve specific keys. If the request omits fields, all application data per user will be returned."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Adds or updates a specified user's application data.",
+                "operationId": "Create_appdata.addApplicationData_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "selector",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "@self",
+                            "@all",
+                            "@friends"
+                        ],
+                        "type": "integer",
+                        "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
+                    },
+                    {
+                        "name": "appId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@app",
+                        "type": "string",
+                        "description": "The application's ID associated with the OAuth ConsumerKey/ConsumerSecret pair."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fields correspond to keys in the application data. One uses fields to only retrieve specific keys. If the request omits fields, all application data per user will be returned."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a specified user's application data.",
+                "operationId": "Delete_appdata.deleteApplicationData_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "selector",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "@self",
+                            "@all",
+                            "@friends"
+                        ],
+                        "type": "integer",
+                        "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
+                    },
+                    {
+                        "name": "appId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@app",
+                        "type": "string",
+                        "description": "The application's ID associated with the OAuth ConsumerKey/ConsumerSecret pair."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fields correspond to keys in the application data. One uses fields to only retrieve specific keys. If the request omits fields, all application data per user will be returned."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods."
+                    }
+                }
+            }
+        },
+        "/1.0/people/@supportedFields": {
+            "get": {
+                "description": "Retrieves all supported fields.",
+                "operationId": "Get_people.getSupportedFields_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold are default values.\naboutMe, age, birthday, bodyType, children, currentLocation, dateofbirth, displayname,drinker, ethnicity, gender, hasapp, heroes, id, interests, jobinterests, jobs, lookingFor,movies, mslargeImage, msmediumimage, msstatusmood, msusertype, mszodiacsign, music, name, nickname, networkPresence, organizations, photos, profilesong,profileurl, relationshipStatus, religion, sexualOrientation, smoker, status, thumbnailUrl, tvshows, urls, userappdata (See documentation on App_Data endpoints), utcOffset, \n@all (a special value that tells the REST endpoint to send back all fields for the person.)"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/people/{personId}/{selector}": {
+            "get": {
+                "description": "Retrieves user data.",
+                "operationId": "Get_people.getUserData_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "selector",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "@self",
+                            "@all",
+                            "@friends"
+                        ],
+                        "type": "integer",
+                        "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold are default values.\naboutMe, age, birthday, bodyType, children, currentLocation, dateofbirth, displayname,drinker, ethnicity, gender, hasapp, heroes, id, interests, jobinterests, jobs, lookingFor,movies, mslargeImage, msmediumimage, msstatusmood, msusertype, mszodiacsign, music, name, nickname, networkPresence, organizations, photos, profilesong,profileurl, relationshipStatus, religion, sexualOrientation, smoker, status, thumbnailUrl, tvshows, urls, userappdata (See documentation on App_Data endpoints), utcOffset, \n@all (a special value that tells the REST endpoint to send back all fields for the person.)"
+                    },
+                    {
+                        "name": "filterBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "@friends, hasapp, @topfriends, @toponlinefriends,\tnetworkpresence.\nSee: http://wiki.developer.myspace.com/index.php?title=People_API#Filters_Supported_by_People_Endpoints"
+                    },
+                    {
+                        "name": "filterOp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "contains, equals\nSee: http://wiki.developer.myspace.com/index.php?title=People_API#Filters_Supported_by_People_Endpoints"
+                    },
+                    {
+                        "name": "filterValue",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "<userId>, online, true|false \nSee: http://wiki.developer.myspace.com/index.php?title=People_API#Filters_Supported_by_People_Endpoints"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/people/{personId}/{selector}/{friendId}": {
+            "get": {
+                "description": "Retrieves friend data.",
+                "operationId": "Get_people.getFriendData_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "selector",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "@self",
+                            "@all",
+                            "@friends"
+                        ],
+                        "type": "integer",
+                        "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
+                    },
+                    {
+                        "name": "friendId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Is the same as {personId}, but for the person's friend."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold are default values.\naboutMe, age, birthday, bodyType, children, currentLocation, dateofbirth, displayname,drinker, ethnicity, gender, hasapp, heroes, id, interests, jobinterests, jobs, lookingFor,movies, mslargeImage, msmediumimage, msstatusmood, msusertype, mszodiacsign, music, name, nickname, networkPresence, organizations, photos, profilesong,profileurl, relationshipStatus, religion, sexualOrientation, smoker, status, thumbnailUrl, tvshows, urls, userappdata (See documentation on App_Data endpoints), utcOffset, \n@all (a special value that tells the REST endpoint to send back all fields for the person.)"
+                    },
+                    {
+                        "name": "filterBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "@friends, hasapp, @topfriends, @toponlinefriends,\tnetworkpresence.\nSee: http://wiki.developer.myspace.com/index.php?title=People_API#Filters_Supported_by_People_Endpoints"
+                    },
+                    {
+                        "name": "filterOp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "contains, equals\nSee: http://wiki.developer.myspace.com/index.php?title=People_API#Filters_Supported_by_People_Endpoints"
+                    },
+                    {
+                        "name": "filterValue",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "<userId>, online, true|false \nSee: http://wiki.developer.myspace.com/index.php?title=People_API#Filters_Supported_by_People_Endpoints"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/profilecomments/{personId}/@self": {
+            "get": {
+                "description": "Retrieves profile comments.",
+                "operationId": "Get_profilecomments.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/opensearch/people": {
+            "get": {
+                "description": "Returns search results for people.",
+                "operationId": "search.getPeople_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "searchTerms",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Free form search terms or query words"
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of items to return."
+                    },
+                    {
+                        "name": "countryCode",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Country code to search with. Can be used instead of culture."
+                    },
+                    {
+                        "name": "culture",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The culture context of the search. Default is en-us."
+                    },
+                    {
+                        "name": "distance",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Distance away from location to return results. Default is in miles, but depending on culture specified, it can be in kilometers."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "gender",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The gender to filter on. Default is both."
+                    },
+                    {
+                        "name": "hasPhoto",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter for only those who have a photo. Default those with or without a photo."
+                    },
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Geographic latitude. Required to be combined with longitude and not combined with location field."
+                    },
+                    {
+                        "name": "location",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The location field, such as city, state and/or country."
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Geographic longitude. Required to be combined with latitude and not combined with location field."
+                    },
+                    {
+                        "name": "minAge",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Minimum age for returned people. Same functionality as the MySpace website search."
+                    },
+                    {
+                        "name": "maxAge",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Maximum age for returned people. Same functionality as the MySpace website search."
+                    },
+                    {
+                        "name": "searchBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Which field the search should go through. Default is all of the fields. (yomi is only available to ja-jp culture)."
+                    },
+                    {
+                        "name": "startPage",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Which page to start at for the results."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/opensearch/images": {
+            "get": {
+                "description": "Returns search results for images.",
+                "operationId": "search.getImages_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "searchTerms",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Free form search terms or query words"
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of items to return."
+                    },
+                    {
+                        "name": "culture",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The culture context of the search. Default is en-us."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "sortBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "How to sort the images. Default is all."
+                    },
+                    {
+                        "name": "sortOrder",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates whether to sort ascending or descending. Default is descending."
+                    },
+                    {
+                        "name": "startPage",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Which page to start at for the results."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/opensearch/videos": {
+            "get": {
+                "description": "Returns search results for videos.",
+                "operationId": "search.getVideos_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "searchTerms",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Free form search terms or query words"
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of items to return."
+                    },
+                    {
+                        "name": "culture",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The culture context of the search. Default is en-us."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startPage",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Which page to start at for the results."
+                    },
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Determine if searching on tags, as opposed to contents. To enable tag search, set to 1."
+                    },
+                    {
+                        "name": "videoMode",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "1",
+                            "2"
+                        ],
+                        "type": "integer",
+                        "description": "Search for specific video types. Two allowed values are videoMode=1 (music videos) or videoMode=2 (official)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/stream/subscription": {
+            "post": {
+                "description": "Creates a subscription.",
+                "operationId": "Create_streamSubscription.post_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/stream/subscription/{subscriptionId}": {
+            "get": {
+                "description": "Retrieves a subscription.",
+                "operationId": "Get_streamSubscription.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subscriptionId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The subscription's identifier."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates a subscription.",
+                "operationId": "Update_streamSubscription.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "subscriptionId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The subscription's identifier."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a subscription.",
+                "operationId": "Delete_streamSubscription.delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subscriptionId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The subscription's identifier."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods."
+                    }
+                }
+            }
+        },
+        "/stream/subscription/@all": {
+            "get": {
+                "description": "Retrieves all subscriptions.",
+                "operationId": "Get_streamSubscription.getAll_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes all subscriptions.",
+                "operationId": "Delete_streamSubscription.deleteAll_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods."
+                    }
+                }
+            }
+        },
+        "/1.0/mediaItems/@supportedFields": {
+            "get": {
+                "description": "Retrieves all supported fields.",
+                "operationId": "Get_mediaItems.getSupportedFields_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold fields are always returned.\nalbumId, created, description, duration, id, language, mimeType, msMediaItemUri, msPrivacyLevel, \nnumComments, numViews, numVotes, rating, tags, thumbnailUrl, title, type, url \n@all (a special value that tells the REST endpoint to send back all fields for the MediaItem.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/mediaItems/{personId}/@self/{albumId}": {
+            "get": {
+                "description": "Retrieves items from a specified album.",
+                "operationId": "Get_mediaItems.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "albumId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates which single album from the group identified by {selector} should be returned."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold fields are always returned.\nalbumId, created, description, duration, id, language, mimeType, msMediaItemUri, msPrivacyLevel, \nnumComments, numViews, numVotes, rating, tags, thumbnailUrl, title, type, url \n@all (a special value that tells the REST endpoint to send back all fields for the MediaItem.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Adds items from a specified album.",
+                "operationId": "Create_mediaItems.post_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "albumId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates which single album from the group identified by {selector} should be returned."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold fields are always returned.\nalbumId, created, description, duration, id, language, mimeType, msMediaItemUri, msPrivacyLevel, \nnumComments, numViews, numVotes, rating, tags, thumbnailUrl, title, type, url \n@all (a special value that tells the REST endpoint to send back all fields for the MediaItem.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/mediaItems/{personId}/@self/{albumId}/{mediaItemId}": {
+            "get": {
+                "description": "Retrieves an item from a specified album.",
+                "operationId": "Get_mediaItems.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "albumId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates which single album from the group identified by {selector} should be returned."
+                    },
+                    {
+                        "name": "mediaItemId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates which single media item from the album identified by {albumId} should be returned."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold fields are always returned.\nalbumId, created, description, duration, id, language, mimeType, msMediaItemUri, msPrivacyLevel, \nnumComments, numViews, numVotes, rating, tags, thumbnailUrl, title, type, url \n@all (a special value that tells the REST endpoint to send back all fields for the MediaItem.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates an item from a specified album.",
+                "operationId": "Update_mediaItems.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "albumId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates which single album from the group identified by {selector} should be returned."
+                    },
+                    {
+                        "name": "mediaItemId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates which single media item from the album identified by {albumId} should be returned."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold fields are always returned.\nalbumId, created, description, duration, id, language, mimeType, msMediaItemUri, msPrivacyLevel, \nnumComments, numViews, numVotes, rating, tags, thumbnailUrl, title, type, url \n@all (a special value that tells the REST endpoint to send back all fields for the MediaItem.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/mediaItems/{personId}/@self/@videos": {
+            "get": {
+                "description": "Retrieves all the videos.",
+                "operationId": "Get_mediaItems.videas.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold fields are always returned.\nalbumId, created, description, duration, id, language, mimeType, msMediaItemUri, msPrivacyLevel, \nnumComments, numViews, numVotes, rating, tags, thumbnailUrl, title, type, url \n@all (a special value that tells the REST endpoint to send back all fields for the MediaItem.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Adds videos from a specified album.",
+                "operationId": "Create_mediaItems.videos.post_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold fields are always returned.\nalbumId, created, description, duration, id, language, mimeType, msMediaItemUri, msPrivacyLevel, \nnumComments, numViews, numVotes, rating, tags, thumbnailUrl, title, type, url \n@all (a special value that tells the REST endpoint to send back all fields for the MediaItem.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/mediaItems/{personId}/@self/@videos/{mediaItemId}": {
+            "get": {
+                "description": "Retrieves a video.",
+                "operationId": "Get_mediaItems.video.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "mediaItemId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates which single media item should be returned."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold fields are always returned.\nalbumId, created, description, duration, id, language, mimeType, msMediaItemUri, msPrivacyLevel, \nnumComments, numViews, numVotes, rating, tags, thumbnailUrl, title, type, url \n@all (a special value that tells the REST endpoint to send back all fields for the MediaItem.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates an video.",
+                "operationId": "Update_mediaItems.video.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "mediaItemId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates which single media item should be returned."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold fields are always returned.\nalbumId, created, description, duration, id, language, mimeType, msMediaItemUri, msPrivacyLevel, \nnumComments, numViews, numVotes, rating, tags, thumbnailUrl, title, type, url \n@all (a special value that tells the REST endpoint to send back all fields for the MediaItem.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/mediaItems/{personId}/@videos/@supportedcategories": {
+            "get": {
+                "description": "Retrieves supported categories.",
+                "operationId": "Get_mediaItems.video.supportedcategories_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold fields are always returned.\nalbumId, created, description, duration, id, language, mimeType, msMediaItemUri, msPrivacyLevel, \nnumComments, numViews, numVotes, rating, tags, thumbnailUrl, title, type, url \n@all (a special value that tells the REST endpoint to send back all fields for the MediaItem.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/mediaItems/{personId}/@videos/@supportedcategories/{categoryId}": {
+            "get": {
+                "description": "Retrieves videos for Category.",
+                "operationId": "Get_mediaItems.video.category_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "categoryId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the video category about which you want to retrieve data."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold fields are always returned.\nalbumId, created, description, duration, id, language, mimeType, msMediaItemUri, msPrivacyLevel, \nnumComments, numViews, numVotes, rating, tags, thumbnailUrl, title, type, url \n@all (a special value that tells the REST endpoint to send back all fields for the MediaItem.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/mediaitemcomments/{personId}/@self/{albumId}/{mediaItemId}": {
+            "get": {
+                "description": "Retrieves item comments from a specified album.",
+                "operationId": "Get_mediaItemsComments.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "albumId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates which single album from the group identified by {selector} should be returned."
+                    },
+                    {
+                        "name": "mediaItemId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates which single media item from the album identified by {albumId} should be returned."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported. Bold fields are always returned.\nalbumId, created, description, duration, id, language, mimeType, msMediaItemUri, msPrivacyLevel, \nnumComments, numViews, numVotes, rating, tags, thumbnailUrl, title, type, url \n@all (a special value that tells the REST endpoint to send back all fields for the MediaItem.)"
+                    },
+                    {
+                        "name": "msPrivacyLevel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "me",
+                            "friendsonly",
+                            "everyone"
+                        ],
+                        "type": "integer",
+                        "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/statusmood/{personId}/@supportedMood": {
+            "get": {
+                "description": "Retrieves all supported moods.",
+                "operationId": "Get_statusmood.getSupportedMoods_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported."
+                    },
+                    {
+                        "name": "filterBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterOp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterValue",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Adds a mood.",
+                "operationId": "Create_statusmood.addMood_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported."
+                    },
+                    {
+                        "name": "filterBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterOp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterValue",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/statusmood/{personId}/@supportedMood/{moodId}": {
+            "get": {
+                "description": "Retrieves a mood.",
+                "operationId": "Get_statusmood.getMood_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "moodId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The integer value of the specific mood that you want to retrieve data for."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported."
+                    },
+                    {
+                        "name": "filterBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterOp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterValue",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates a mood.",
+                "operationId": "Update_statusmood.updateMood_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "moodId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The integer value of the specific mood that you want to retrieve data for."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported."
+                    },
+                    {
+                        "name": "filterBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterOp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterValue",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/statusmood/{personId}/{selector}": {
+            "get": {
+                "description": "Returns a status for User.",
+                "operationId": "Get_statusmood.getStatusUser_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "selector",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "@self",
+                            "@all",
+                            "@friends"
+                        ],
+                        "type": "integer",
+                        "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported."
+                    },
+                    {
+                        "name": "filterBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterOp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterValue",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates a status for User.",
+                "operationId": "Update_statusmood.updateStatusUser_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "selector",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "@self",
+                            "@all",
+                            "@friends"
+                        ],
+                        "type": "integer",
+                        "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported."
+                    },
+                    {
+                        "name": "filterBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterOp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterValue",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/statusmood/{personId}/{selector}/history": {
+            "get": {
+                "description": "Returns History User.",
+                "operationId": "Get_statusmood.getUserHistory_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "selector",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "@self",
+                            "@all",
+                            "@friends"
+                        ],
+                        "type": "integer",
+                        "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported."
+                    },
+                    {
+                        "name": "filterBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterOp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterValue",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/statusmood/{personId}/{selector}/{friendId}": {
+            "get": {
+                "description": "Returns a status for Friend.",
+                "operationId": "Get_statusmood.getStatusFriend_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "friendId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Is the same as {personId}, but for the person's friend."
+                    },
+                    {
+                        "name": "selector",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "@self",
+                            "@all",
+                            "@friends"
+                        ],
+                        "type": "integer",
+                        "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported."
+                    },
+                    {
+                        "name": "filterBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterOp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterValue",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/statusmood/{personId}/{selector}/{friendId}/history": {
+            "get": {
+                "description": "Returns History Friend.",
+                "operationId": "Get_statusmood.getFriendHistory_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "friendId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Is the same as {personId}, but for the person's friend."
+                    },
+                    {
+                        "name": "selector",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "@self",
+                            "@all",
+                            "@friends"
+                        ],
+                        "type": "integer",
+                        "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported."
+                    },
+                    {
+                        "name": "filterBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterOp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterValue",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1.0/statusmoodcomments/{personId}/@self/{statusId}": {
+            "post": {
+                "description": "Posts a comment to a status.",
+                "operationId": "Create_statusmood.postComment_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "personId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "@me",
+                        "type": "string",
+                        "description": "The person's identifier."
+                    },
+                    {
+                        "name": "statusId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies which status or mood to post a comment for."
+                    },
+                    {
+                        "name": "selector",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "@self",
+                            "@all",
+                            "@friends"
+                        ],
+                        "type": "integer",
+                        "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only returns the nearest multiple of 3 compared to the original value."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The following field names are supported."
+                    },
+                    {
+                        "name": "filterBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterOp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "filterValue",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "See: http://wiki.developer.myspace.com/index.php?title=Status_and_Mood_API#Filtering_Results"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "type": "integer",
+                        "description": "Determines the format of the response."
+                    },
+                    {
+                        "name": "startIndex",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates the index of the first item to retrieve from the query set."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps and games within the MySpace platform. Monetize through advertising and virtual goods.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "format": {
+            "title": "format",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "json",
+                "xml"
+            ]
+        },
+        "selector": {
+            "title": "selector",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "@self",
+                "@all",
+                "@friends"
+            ]
+        },
+        "msPrivacyLevel": {
+            "title": "msPrivacyLevel",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "me",
+                "friendsonly",
+                "everyone"
+            ]
+        },
+        "videoMode": {
+            "title": "videoMode",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "1",
+                "2"
+            ]
+        }
+    }
+}

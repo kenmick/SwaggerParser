@@ -1,0 +1,278 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Getty Images Connect",
+        "description": "Integrate Getty Images content directly into your site.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "connect.gettyimages.com",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/sample/v1/session/CreateSession": {
+            "post": {
+                "description": "<b>[Note: this resource is for demonstration purposes only. Any credentials you enter will not be considered. If you wish to use your own developer credentials, use the other &ldquo;create session&rdquo; resource.]</b> All operations in the Getty Images Connect API require an authentication token argument provided in the RequestHeader. An authentication token securely identifies the caller of an operation. When called, an operation checks the validity of the provided authentication token before executing the request. A malformed, invalid, or expired token will cause an operation to fail. Clients get authentication tokens by authenticating themselves using the CreateSession operation. Some operations are designated secure only. This designation means that the operation: 1) must be called over an SSL connection 2) with a secure token. Secure authentication tokens are provided by the CreateSession operation. Secure tokens are essentially the same as standard tokens, with the difference that secure tokens can only be used over SSL connections. Calling any operation with a secure token over a non-SSL connection will result in an error. Tokens expire after 30 minutes. Clients can renew a token before it expires by using the RenewSession operation, without having to provide credentials again. <b>We recommend clients track each token&rsquo;s time-to-expiration, and proactively call RenewSession prior to the token's expiration.</b>",
+                "operationId": "createSampleSession_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Getty Images content directly into your site.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/session/CreateSession": {
+            "post": {
+                "description": "All operations in the Getty Images Connect API require an authentication token argument provided in the RequestHeader. An authentication token securely identifies the caller of an operation. When called, an operation checks the validity of the provided authentication token before executing the request. A malformed, invalid, or expired token will cause an operation to fail. Clients get authentication tokens by authenticating themselves using the CreateSession operation. Some operations are designated secure only. This designation means that the operation: 1) must be called over an SSL connection 2) with a secure token. Secure authentication tokens are provided by the CreateSession operation. Secure tokens are essentially the same as standard tokens, with the difference that secure tokens can only be used over SSL connections. Calling any operation with a secure token over a non-SSL connection will result in an error. Tokens expire after 30 minutes. Clients can renew a token before it expires by using the RenewSession operation, without having to provide credentials again. We recommend clients track each token’s time-to-expiration, and proactively call RenewSession prior to the token’s expiration.",
+                "operationId": "createSession_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Getty Images content directly into your site.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/session/RenewSession": {
+            "post": {
+                "description": "Renews an authentication token previously issued by the CreateSession operation before it expires. Use this operation to extend the duration of a fully authenticated token without having to provide the user’s credentials again. This operation is secure only; it requires a fully authenticated secure authentication token generated by CreateSession.",
+                "operationId": "Create_renewSession_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Getty Images content directly into your site.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/search/SearchForImages": {
+            "post": {
+                "description": "Returns image metadata for all images matching a specified search query. This operation requires a fully authenticated standard token in the request.",
+                "operationId": "Create_searchImages_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Getty Images content directly into your site.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/search/GetEvents": {
+            "post": {
+                "description": "Returns detailed event metadata for all specified events. This operation requires a fully authenticated standard token in the request.",
+                "operationId": "Create_getEvents_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Getty Images content directly into your site.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/search/GetImageDetails": {
+            "post": {
+                "description": "Returns detailed image metadata for all specified images. This operation requires a fully authenticated standard token in the request.",
+                "operationId": "Create_getImageDetails_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Getty Images content directly into your site.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/download/GetImageDownloadAuthorizations": {
+            "post": {
+                "description": "Returns download authorizations for the specified image size(s), for each applicable product offering owned by the customer. This version of the operation requires a fully authenticated standard token in the request.",
+                "operationId": "Create_getImageDownloadAuthorizations_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Getty Images content directly into your site.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/download/GetLargestImageDownloadAuthorizations": {
+            "post": {
+                "description": "Returns download authorizations for the largest available image size, for each applicable product offering owned by the customer. This version of the operation requires a fully authenticated standard token in the request.",
+                "operationId": "Create_getLargestImageDownloadAuthorizations_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Getty Images content directly into your site.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/download/CreateDownloadRequest": {
+            "post": {
+                "description": "Returns download urls and related data for images the customer is authorized to download. This operation is secure only; it requires a fully authenticated secure authentication token generated by CreateSession.",
+                "operationId": "createDownloadRequest_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Getty Images content directly into your site.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

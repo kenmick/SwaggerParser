@@ -1,0 +1,1135 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Zappos",
+        "description": "Search the Zappos catalog and much more.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.zappos.com",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/AutoComplete?term={term}": {
+            "get": {
+                "description": "If you want to implement the always\n\t\t\t\t\tpopular \"auto-complete\" for\n\t\t\t\t\tsearch terms on your website, this is\n\t\t\t\t\tthe API for you! We use this\n\t\t\t\t\tsame auto-complete functionality on\n\t\t\t\t\tZappos.com itself.",
+                "operationId": "Get_autocomplete_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "term",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "String to be completed, automatically.\n\t\t\t\t\tPlease don't use this API to cheat\n\t\t\t\t\tat Words for Friends."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Brand/{id}": {
+            "get": {
+                "description": "Returns details on the brands Zappos\n\t\t\t\t\tcarries. To get a full list of\n\t\t\t\t\tbrands, use Search API\n\t\t\t\t\thttp://api.zappos.com/Search?facets=[\"brandFacet\"]",
+                "operationId": "Get_brand_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "The includes parameter is a json array\n\t\t\t\t\tof optional values that can be\n\t\t\t\t\treturned from this API"
+                    },
+                    {
+                        "name": "includes",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "[\"realBrandId\",\"faqText\",\"aboutText\",\"newStyleCount\",\"allStyleCount\"]",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/CoreValue": {
+            "get": {
+                "description": "\"Core Values are what separate us from\n\t\t\t\t\tthe Robots\" - John Connor",
+                "operationId": "Get_corevalue_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/CoreValue/{id}": {
+            "get": {
+                "description": "What happens if you try and push the\n\t\t\t\t\tboundaries of our 10 core values?",
+                "operationId": "Get_corevalue_id_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/CoreValue/random": {
+            "get": {
+                "description": "For correctness, probably should call\n\t\t\t\t\tthis pseudo-random",
+                "operationId": "Get_corevalue_random_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Image?styleId=[\"{styleId}\"]": {
+            "get": {
+                "description": "Returns images for one style or a list\n\t\t\t\t\tof styles (denoted as a JSON Array\n\t\t\t\t\t- [\"styleId1\",\"styleId2\"])",
+                "operationId": "Get_image_styleId_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "styleId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "6888",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Images are two dimensional, products\n\t\t\t\t\tare three dimensional. Using the\n\t\t\t\t\tTYPE parameter you can specify\n\t\t\t\t\twhich views of the product you want\n\t\t\t\t\treturned."
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "[\"PAIR\", \"LEFT\", \"RIGHT\", \"TOP\", \"THUMBNAIL\"]",
+                        "type": "string",
+                        "description": "Recipe is a sizing transformation for\n\t\t\t\t\tan image. For example, we may have\n\t\t\t\t\tthe LEFT type of an item, but\n\t\t\t\t\twant a smaller version for a preview.\n\t\t\t\t\tWe would request type=LEFT and\n\t\t\t\t\trecipe=TINY. If we wanted a zoom-in\n\t\t\t\t\tfeature, we could request LEFT\n\t\t\t\t\tand recipe=2x. Not all image types\n\t\t\t\t\thave recipes."
+                    },
+                    {
+                        "name": "recipe",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "[\"2x\"]",
+                        "type": "string",
+                        "description": "The includes parameter is a json array\n\t\t\t\t\tof optional values that can be\n\t\t\t\t\treturned from this API"
+                    },
+                    {
+                        "name": "includes",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "[\"colorId\",\"width\",\"height\",\"uploadDate\",\"isHighResolution\",\"tiles\"]",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Image?productId={productId}": {
+            "get": {
+                "description": "Zappos doesn't use stock imagery. We\n\t\t\t\t\thave real photographers and live\n\t\t\t\t\tmodels to present our products.\n\t\t\t\t\tSome of those products are\n\t\t\t\t\tunderwear and sometimes the underwear is\n\t\t\t\t\ttoo revealing on the live\n\t\t\t\t\tmodels and needs to be touched up. When\n\t\t\t\t\tthis happens Zappos has\n\t\t\t\t\tskilled artists touch up the photos so our\n\t\t\t\t\tsite remains family\n\t\t\t\t\tfriendly. Calling our Image API is like putting\n\t\t\t\t\tall of these people\n\t\t\t\t\tto work just for you. Maybe you should tip them.",
+                "operationId": "Get_image_productid_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "[\"PAIR\", \"LEFT\", \"RIGHT\", \"TOP\", \"THUMBNAIL\"]",
+                        "type": "string",
+                        "description": "Images are two dimensional, products\n\t\t\t\t\tare three dimensional. Using the\n\t\t\t\t\tTYPE parameter you can specify\n\t\t\t\t\twhich views of the product you want\n\t\t\t\t\treturned."
+                    },
+                    {
+                        "name": "recipe",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "[\"2x\"]",
+                        "type": "string",
+                        "description": "Recipe is a sizing transformation for\n\t\t\t\t\tan image. For example, we may have\n\t\t\t\t\tthe LEFT type of an item, but\n\t\t\t\t\twant a smaller version for a preview.\n\t\t\t\t\tWe would request type=LEFT and\n\t\t\t\t\trecipe=TINY. If we wanted a zoom-in\n\t\t\t\t\tfeature, we could request LEFT\n\t\t\t\t\tand recipe=2x. Not all image types\n\t\t\t\t\thave recipes."
+                    },
+                    {
+                        "name": "includes",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "[\"colorId\",\"width\",\"height\",\"uploadDate\",\"isHighResolution\",\"tiles\"]",
+                        "type": "string",
+                        "description": "The includes parameter is a json array\n\t\t\t\t\tof optional values that can be\n\t\t\t\t\treturned from this API"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Image/list/recipes": {
+            "get": {
+                "description": "A recipe is a sizing transformation for\n\t\t\t\t\tan image. For example, we\n\t\t\t\t\tmay have the LEFT type of an item, but\n\t\t\t\t\twant a smaller version for a\n\t\t\t\t\tpreview. We would request type=LEFT and\n\t\t\t\t\trecipe=TINY. If we wanted a\n\t\t\t\t\tzoom-in feature, we could request LEFT\n\t\t\t\t\tand recipe=2x",
+                "operationId": "Get_image_recipes_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Product?id=[\"{id1}\",\"{id2}\"]": {
+            "get": {
+                "description": "Returns images for one style or a list\n\t\t\t\t\tof styles (denoted as a JSON Array\n\t\t\t\t\t- [\"styleId1\",\"styleId2\"])",
+                "operationId": "Get_product_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "id1",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": 7564933.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "id2",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": 7590514.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Either a single SKU or a JSON array of\n\t\t\t\t\tmultiple SKUs. A SKU uniquely\n\t\t\t\t\tidentifies a product on Zappos."
+                    },
+                    {
+                        "name": "includes",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "[\"colorId\",\"width\",\"height\",\"uploadDate\",\"isHighResolution\",\"tiles\"]",
+                        "type": "string",
+                        "description": "The includes parameter is a json array\n\t\t\t\t\tof optional values that can be\n\t\t\t\t\treturned from this API"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Review?productId={productid}": {
+            "get": {
+                "description": "Returns reviews for a given product",
+                "operationId": "Get_review_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "productId",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The SKU number of the product to get\n\t\t\t\t\tthe reviews from."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Use this number to change the starting point from which we start\n\t\t\t\t\tgrabbing reviews. We can only return up to 30 at a time."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Use this to grab a particular page of reviews. Reviews come in pages\n\t\t\t\t\tthat are 30 reviews long."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Search?term={term}": {
+            "get": {
+                "description": "L2Paginate",
+                "operationId": "SearchPaginated_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "search_term",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "boots",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "boots",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "includes",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "[\"{name}\"]",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": 10.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": 1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Search the Zappos catalog and much more."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Search/term/{search_term}?includes=[\"facets\"]": {
+            "get": {
+                "description": "Facets are like a SQL GROUP BY clause and can be used to group results.",
+                "operationId": "GetFacetGrouping_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "search_term",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "boots",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "boots",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "includes",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "[\"{name}\"]",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Search/term/includes=[\"facets\"]&facets=[\"{facetField}\",\"{facetField}\"]": {
+            "get": {
+                "description": "Specify which facets you would like back in your grouping",
+                "operationId": "GetCustomizedFacetGrouping_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "search_term",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "boots",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "boots",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "includes",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "[\"{name}\"]",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "facetField",
+                        "in": "path",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "productTypeFacet",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Search/term/{search_term}?filters={\"{Facet_Field}\":[\"{Facet_Value}\"]}": {
+            "get": {
+                "description": "Filters are a way of limiting your results, similar to a SQL WHERE clause",
+                "operationId": "GetFacetFilters_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "search_term",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "boots",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "boots",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "Facet_Field",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "colorFacet",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "Facet_Value",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "blue",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Search?list=facetFields": {
+            "get": {
+                "description": "See all available facets",
+                "operationId": "GetFacetFields_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "search_term",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "boots",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "boots",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "includes",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "[\"{name}\"]",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Search/Similarity?type=visualSearch&limit={limit}&styleId={styleId}&emphasis={options}": {
+            "get": {
+                "description": "Visual Search will return products that look like the specified style_id.",
+                "operationId": "Get_similarity_visual_search_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "path",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "10",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "styleId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "6888",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "options",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "color",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "visiualSearch",
+                        "type": "string",
+                        "description": "Specifies the type of similarity search to perform.\n\t\t\t\t\tOptions are visualSearch\n\t\t\t\t\tand moreLikeThis. VisualSearch returns\n\t\t\t\t\tproducts that look like this\n\t\t\t\t\tstyle and moreLikeThis returns products\n\t\t\t\t\twith similar attributes as\n\t\t\t\t\tthe specified product."
+                    },
+                    {
+                        "name": "emphasis",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "color",
+                        "type": "string",
+                        "description": "VisualSearch: color, shape, texture. MoreLikeThis:\n\t\t\t\t\tcolor, style. Use our captive\n\t\t\t\t\talgorithms to choose how the match\n\t\t\t\t\twill be performed."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Search/Similarity?type=moreLikeThis&limit={limit}&styleId={styleId}&emphasis={options}": {
+            "get": {
+                "description": "More Like This Search will return products that share common attributes with the specified style_id.",
+                "operationId": "Get_similarity_more_like_this_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "path",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "10",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "styleId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "6888",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "options",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "color",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "visiualSearch",
+                        "type": "string",
+                        "description": "Specifies the type of similarity search to perform.\n\t\t\t\t\tOptions are visualSearch\n\t\t\t\t\tand moreLikeThis. VisualSearch returns\n\t\t\t\t\tproducts that look like this\n\t\t\t\t\tstyle and moreLikeThis returns products\n\t\t\t\t\twith similar attributes as\n\t\t\t\t\tthe specified product."
+                    },
+                    {
+                        "name": "emphasis",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "color",
+                        "type": "string",
+                        "description": "VisualSearch: color, shape, texture. MoreLikeThis:\n\t\t\t\t\tcolor, style. Use our captive\n\t\t\t\t\talgorithms to choose how the match\n\t\t\t\t\twill be performed."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Statistics/type/latestStyles": {
+            "get": {
+                "description": "Returns the latest styles and top\n\t\t\t\t\tstyles being sold at Zappos.",
+                "operationId": "Get_statistics_latest_styles_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "This string selects the type of\n\t\t\t\t\tstatistics you want to get. There are\n\t\t\t\t\tonly two valid types at the\n\t\t\t\t\tmoment. The latestStyles type will\n\t\t\t\t\treturn a list of styles sold in\n\t\t\t\t\tthe last hour, while the topStyles\n\t\t\t\t\twill return the top 10 styles\n\t\t\t\t\tthat have been sold in the past few\n\t\t\t\t\tdays."
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter the results by brand,\n\t\t\t\t\tcategorization or gender.\n\t\t\t\t\tExamples:{\"brand\":{\"name\":\"Nike\"}} gets\n\t\t\t\t\tonly Nike brand products.\n\t\t\t\t\t{\"categorization\":{\"categoryType\":\"Jewelry\"}} gets products that\n\t\t\t\t\tare Jewlery. Other categorization options include productType and\n\t\t\t\t\tsubcategoryType. {\"gender\":\"F\"} gets products for the female\n\t\t\t\t\tgender. You can combine these as well:\n\t\t\t\t\t{\"gender\":\"F\",\"brand\":{\"name\":\"Nike\"},\"categorization\":{\"categoryType\":\"Jewelry\"}}\n\t\t\t\t\tgets female Nike brand Jewlery."
+                    },
+                    {
+                        "name": "location",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filters the results by location. You\n\t\t\t\t\tcan include state or zip\n\t\t\t\t\trestrictions. Examples: {\"zip\":89074} grabs\n\t\t\t\t\tfrom products ordered\n\t\t\t\t\tin that zip code. {\"state\":\"CA\"} grabs from\n\t\t\t\t\tproducts ordered in\n\t\t\t\t\tCalifornia."
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Limits results by a start date. Must be\n\t\t\t\t\tin the format MM/DD/YYYY HH:MM."
+                    },
+                    {
+                        "name": "startOrderItemId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Limits by order item id. You can get\n\t\t\t\t\tthese from lastestStyles calls to\n\t\t\t\t\tthis api."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A number that limits the results you\n\t\t\t\t\tget. 200 is the maximum number\n\t\t\t\t\tof results you can get. Requesting 0\n\t\t\t\t\tor less results is a very\n\t\t\t\t\tinefficient way to generate an empty list."
+                    },
+                    {
+                        "name": "timespan",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "For topStyles, you can specify how many\n\t\t\t\t\tdays are used. The only valid\n\t\t\t\t\tnumbers for this parameter are 1, 7\n\t\t\t\t\tand 30."
+                    },
+                    {
+                        "name": "option",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "You can cascade results by setting this\n\t\t\t\t\tfield to \"cascade\". This means\n\t\t\t\t\tthat if you make a very specific\n\t\t\t\t\trequest that has no results, it\n\t\t\t\t\twill run similar filters that are\n\t\t\t\t\tless specific until results\n\t\t\t\t\tappear. For example, using a zip code\n\t\t\t\t\tmay expand to the state the\n\t\t\t\t\tzip code the zip code is in."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Statistics/type/topStyles": {
+            "get": {
+                "description": "Returns the latest styles and top\n\t\t\t\t\tstyles being sold at Zappos.",
+                "operationId": "Get_statistics_top_styles_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "This string selects the type of\n\t\t\t\t\tstatistics you want to get. There are\n\t\t\t\t\tonly two valid types at the\n\t\t\t\t\tmoment. The latestStyles type will\n\t\t\t\t\treturn a list of styles sold in\n\t\t\t\t\tthe last hour, while the topStyles\n\t\t\t\t\twill return the top 10 styles\n\t\t\t\t\tthat have been sold in the past few\n\t\t\t\t\tdays."
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter the results by brand,\n\t\t\t\t\tcategorization or gender.\n\t\t\t\t\tExamples:{\"brand\":{\"name\":\"Nike\"}} gets\n\t\t\t\t\tonly Nike brand products.\n\t\t\t\t\t{\"categorization\":{\"categoryType\":\"Jewelry\"}} gets products that\n\t\t\t\t\tare Jewlery. Other categorization options include productType and\n\t\t\t\t\tsubcategoryType. {\"gender\":\"F\"} gets products for the female\n\t\t\t\t\tgender. You can combine these as well:\n\t\t\t\t\t{\"gender\":\"F\",\"brand\":{\"name\":\"Nike\"},\"categorization\":{\"categoryType\":\"Jewelry\"}}\n\t\t\t\t\tgets female Nike brand Jewlery."
+                    },
+                    {
+                        "name": "location",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filters the results by location. You\n\t\t\t\t\tcan include state or zip\n\t\t\t\t\trestrictions. Examples: {\"zip\":89074} grabs\n\t\t\t\t\tfrom products ordered\n\t\t\t\t\tin that zip code. {\"state\":\"CA\"} grabs from\n\t\t\t\t\tproducts ordered in\n\t\t\t\t\tCalifornia."
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Limits results by a start date. Must be\n\t\t\t\t\tin the format MM/DD/YYYY HH:MM."
+                    },
+                    {
+                        "name": "startOrderItemId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Limits by order item id. You can get\n\t\t\t\t\tthese from lastestStyles calls to\n\t\t\t\t\tthis api."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A number that limits the results you\n\t\t\t\t\tget. 200 is the maximum number\n\t\t\t\t\tof results you can get. Requesting 0\n\t\t\t\t\tor less results is a very\n\t\t\t\t\tinefficient way to generate an empty list."
+                    },
+                    {
+                        "name": "timespan",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "For topStyles, you can specify how many\n\t\t\t\t\tdays are used. The only valid\n\t\t\t\t\tnumbers for this parameter are 1, 7\n\t\t\t\t\tand 30."
+                    },
+                    {
+                        "name": "option",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "You can cascade results by setting this\n\t\t\t\t\tfield to \"cascade\". This means\n\t\t\t\t\tthat if you make a very specific\n\t\t\t\t\trequest that has no results, it\n\t\t\t\t\twill run similar filters that are\n\t\t\t\t\tless specific until results\n\t\t\t\t\tappear. For example, using a zip code\n\t\t\t\t\tmay expand to the state the\n\t\t\t\t\tzip code the zip code is in."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Statistics/type/topStyles?location={\"{key}\":\"{value}\"}": {
+            "get": {
+                "description": "Returns the latest styles and top\n\t\t\t\t\tstyles being sold at Zappos.",
+                "operationId": "Get_statistics_top_styles_by_location_api_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "67d92579a32ecef2694b74abfc00e0f26b10d623",
+                        "type": "string",
+                        "description": "Search the Zappos catalog and much more."
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "This string selects the type of\n\t\t\t\t\tstatistics you want to get. There are\n\t\t\t\t\tonly two valid types at the\n\t\t\t\t\tmoment. The latestStyles type will\n\t\t\t\t\treturn a list of styles sold in\n\t\t\t\t\tthe last hour, while the topStyles\n\t\t\t\t\twill return the top 10 styles\n\t\t\t\t\tthat have been sold in the past few\n\t\t\t\t\tdays."
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter the results by brand,\n\t\t\t\t\tcategorization or gender.\n\t\t\t\t\tExamples:{\"brand\":{\"name\":\"Nike\"}} gets\n\t\t\t\t\tonly Nike brand products.\n\t\t\t\t\t{\"categorization\":{\"categoryType\":\"Jewelry\"}} gets products that\n\t\t\t\t\tare Jewlery. Other categorization options include productType and\n\t\t\t\t\tsubcategoryType. {\"gender\":\"F\"} gets products for the female\n\t\t\t\t\tgender. You can combine these as well:\n\t\t\t\t\t{\"gender\":\"F\",\"brand\":{\"name\":\"Nike\"},\"categorization\":{\"categoryType\":\"Jewelry\"}}\n\t\t\t\t\tgets female Nike brand Jewlery."
+                    },
+                    {
+                        "name": "location",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filters the results by location. You\n\t\t\t\t\tcan include state or zip\n\t\t\t\t\trestrictions. Examples: {\"zip\":89074} grabs\n\t\t\t\t\tfrom products ordered\n\t\t\t\t\tin that zip code. {\"state\":\"CA\"} grabs from\n\t\t\t\t\tproducts ordered in\n\t\t\t\t\tCalifornia."
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Limits results by a start date. Must be\n\t\t\t\t\tin the format MM/DD/YYYY HH:MM."
+                    },
+                    {
+                        "name": "startOrderItemId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Limits by order item id. You can get\n\t\t\t\t\tthese from lastestStyles calls to\n\t\t\t\t\tthis api."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A number that limits the results you\n\t\t\t\t\tget. 200 is the maximum number\n\t\t\t\t\tof results you can get. Requesting 0\n\t\t\t\t\tor less results is a very\n\t\t\t\t\tinefficient way to generate an empty list."
+                    },
+                    {
+                        "name": "timespan",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "For topStyles, you can specify how many\n\t\t\t\t\tdays are used. The only valid\n\t\t\t\t\tnumbers for this parameter are 1, 7\n\t\t\t\t\tand 30."
+                    },
+                    {
+                        "name": "option",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "You can cascade results by setting this\n\t\t\t\t\tfield to \"cascade\". This means\n\t\t\t\t\tthat if you make a very specific\n\t\t\t\t\trequest that has no results, it\n\t\t\t\t\twill run similar filters that are\n\t\t\t\t\tless specific until results\n\t\t\t\t\tappear. For example, using a zip code\n\t\t\t\t\tmay expand to the state the\n\t\t\t\t\tzip code the zip code is in."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search the Zappos catalog and much more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

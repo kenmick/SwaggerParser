@@ -1,0 +1,487 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Pinboard",
+        "description": "Store, manage and share bookmarks on Pinboard",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.pinboard.in",
+    "basePath": "/v1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/posts/update": {
+            "get": {
+                "description": "Returns the most recent time a bookmark was added, updated or deleted. Use this before calling posts/all to see if the data has changed since the last fetch.",
+                "operationId": "Get_postUpdate_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Store, manage and share bookmarks on Pinboard",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/posts/add": {
+            "get": {
+                "description": "Add a new bookmark.",
+                "operationId": "Get_postAdd_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The URL of the item."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Title of the item. This field is unfortunately named 'description' for backwards compatibility with the delicious API."
+                    },
+                    {
+                        "name": "extended",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Description of the item. Called 'extended' for backwards compatibility with delicious API."
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "List of up to 100 tags."
+                    },
+                    {
+                        "name": "dt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Creation time for this bookmark. Defaults to current time. Datestamps more than 10 minutes ahead of server time will be reset to current server time."
+                    },
+                    {
+                        "name": "replace",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "yes",
+                        "type": "string",
+                        "description": "Replace any existing bookmark with this URL. Default is yes. If set to no, will throw an error if bookmark exists."
+                    },
+                    {
+                        "name": "shared",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "yes",
+                        "type": "string",
+                        "description": "Make bookmark public. Default is \"yes\" unless user has enabled the \"save all bookmarks as private\" user setting, in which case default is \"no\"."
+                    },
+                    {
+                        "name": "toread",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "no",
+                        "type": "string",
+                        "description": "Marks the bookmark as unread. Default is \"no\"."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Store, manage and share bookmarks on Pinboard",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/posts/delete": {
+            "get": {
+                "description": "Delete a bookmark.",
+                "operationId": "Get_postsDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The URL of the item."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Store, manage and share bookmarks on Pinboard",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/posts/get": {
+            "get": {
+                "description": "Returns one or more posts on a single day matching the arguments. If no date or url is given, date of most recent bookmark will be used.",
+                "operationId": "Get_postGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter by up to three tags."
+                    },
+                    {
+                        "name": "dt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return results bookmarked on this day."
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return bookmark for this URL."
+                    },
+                    {
+                        "name": "meta",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "yes",
+                        "type": "string",
+                        "description": "Include a change detection signature in a meta attribute (yes/no)."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "xml",
+                        "type": "string",
+                        "description": "Default is xml."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Store, manage and share bookmarks on Pinboard",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/posts/dates": {
+            "get": {
+                "description": "Returns a list of dates with the number of posts at each date.",
+                "operationId": "Get_postDates_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter by up to three tags."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Store, manage and share bookmarks on Pinboard",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/posts/recent": {
+            "get": {
+                "description": "Returns a list of the user's most recent posts, filtered by tag.",
+                "operationId": "Get_postRecent_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter by up to three tags."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 15.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of results to return. Default is 15, max is 100."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Store, manage and share bookmarks on Pinboard",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/posts/all": {
+            "get": {
+                "description": "Returns all bookmarks in the user's account.",
+                "operationId": "Get_postAll_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter by up to three tags."
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Offset value (default is 0)."
+                    },
+                    {
+                        "name": "results",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of results to return. Default is all."
+                    },
+                    {
+                        "name": "fromdt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return only bookmarks created after this time."
+                    },
+                    {
+                        "name": "todt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return only bookmarks created before this time."
+                    },
+                    {
+                        "name": "meta",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Include a change detection signature for each bookmark."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "xml",
+                        "type": "string",
+                        "description": "Default is xml."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Store, manage and share bookmarks on Pinboard",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/posts/suggest": {
+            "get": {
+                "description": "Returns a list of popular tags and recommended tags for a given URL. Popular tags are tags used site-wide for the url; recommended tags are drawn from the user's own tags.",
+                "operationId": "Get_postSuggest_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The URL of the item."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Store, manage and share bookmarks on Pinboard",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tags/get": {
+            "get": {
+                "description": "Returns a full list of the user's tags along with the number of times they were used.",
+                "operationId": "getTags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Store, manage and share bookmarks on Pinboard",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tags/delete": {
+            "get": {
+                "description": "Delete an existing tag.",
+                "operationId": "Get_deleteTags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The tag to delete."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Store, manage and share bookmarks on Pinboard",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tags/rename": {
+            "get": {
+                "description": "Rename an tag, or fold it in to an existing tag.",
+                "operationId": "Get_renameTag_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "old",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The tag to rename. Note: match is not case sensitive."
+                    },
+                    {
+                        "name": "new",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The new name. If empty, nothing will happen."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Store, manage and share bookmarks on Pinboard",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/secret": {
+            "get": {
+                "description": "Get the secret RSS token (allows viewing user's private RSS feeds).",
+                "operationId": "Get_userSecret_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Store, manage and share bookmarks on Pinboard",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

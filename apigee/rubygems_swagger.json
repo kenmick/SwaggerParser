@@ -1,0 +1,952 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Ruby Gems",
+        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "rubygems.org",
+    "basePath": "/api/v1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/gems/{name}.{format}": {
+            "get": {
+                "description": "Returns some basic information about the given gem.",
+                "operationId": "getGem_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "rails",
+                        "type": "string",
+                        "description": "Gem name."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/search.{format}": {
+            "get": {
+                "description": "Submit a search to Gemcutter for active gems, just like a search query on the site.",
+                "operationId": "search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "cucumber",
+                        "type": "string",
+                        "description": "Query to search for."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/gems.{format}": {
+            "get": {
+                "description": "List all gems that you own.",
+                "operationId": "getGems_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/gems": {
+            "post": {
+                "description": "Submit a gem to RubyGems.org. Must post a built RubyGem in the request body.",
+                "operationId": "Create_submitGem_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/gems/yank": {
+            "delete": {
+                "description": "Remove a gem from RubyGems.org’s index.",
+                "operationId": "removeGem_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "gem_name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "bills",
+                        "type": "string",
+                        "description": "Gem name."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "0.0.1",
+                        "type": "string",
+                        "description": "Gem version."
+                    },
+                    {
+                        "name": "platform",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "x86-darwin-10",
+                        "type": "string",
+                        "description": "Gem platform."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more."
+                    }
+                }
+            }
+        },
+        "/gems/unyank": {
+            "put": {
+                "description": "Update a previously yanked gem back into RubyGems.org’s index.",
+                "operationId": "updateGem_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "gem_name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "bills",
+                        "type": "string",
+                        "description": "Gem name."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "0.0.1",
+                        "type": "string",
+                        "description": "Gem version."
+                    },
+                    {
+                        "name": "platform",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "x86-darwin-10",
+                        "type": "string",
+                        "description": "Gem platform."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/gems/latest.{format}": {
+            "get": {
+                "description": "Pulls the 50 newest first-version gems added to RubyGems.org.",
+                "operationId": "getLatestGems_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/gems/just_updated.{format}": {
+            "get": {
+                "description": "Pulls the 50 most recently updated gems.",
+                "operationId": "getJustUpdatedGems_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/versions/{name}.{format}": {
+            "get": {
+                "description": "Returns an array of gem version details.",
+                "operationId": "getGemVersionDetails_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "coulda",
+                        "type": "string",
+                        "description": "Gem name."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/downloads.{format}": {
+            "get": {
+                "description": "Returns an object containing the total number of downloads on RubyGems.",
+                "operationId": "getTotalGemsDownloads_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/downloads/top.{format}": {
+            "get": {
+                "description": "Returns an object containing the top 50 downloaded gem versions for today.",
+                "operationId": "getTodayTopGemVersionsDownloads_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/downloads/all.{format}": {
+            "get": {
+                "description": "Returns an object containing the top 50 downloaded gem versions of all time.",
+                "operationId": "getTopGemVersionsDownloads_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/downloads/{name}-{version}.{format}": {
+            "get": {
+                "description": "Returns an object containing the total number of downloads for a paritcular gem as well as the total number of downloads for the specified version.",
+                "operationId": "getGemDownloads_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "rails_admin",
+                        "type": "string",
+                        "description": "Gem name."
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "0.0.0",
+                        "type": "string",
+                        "description": "Gem version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/versions/{name}-{version}/downloads.{format}": {
+            "get": {
+                "description": "Returns an object containing the number of downloads by day for a particular gem version for 90 days of data.",
+                "operationId": "getDailyGemDownloads_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "coulda",
+                        "type": "string",
+                        "description": "Gem name."
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "0.6.3",
+                        "type": "string",
+                        "description": "Gem version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/versions/{name}-{version}/downloads/search.{format}": {
+            "get": {
+                "description": "Returns an object containing the number of downloads by day for a particular gem version between a date range, specified by the parameters from and to. Dates values should be specified in the format YYYY-MM-DD.",
+                "operationId": "getDailyGemDownloadsWithinRange_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "coulda",
+                        "type": "string",
+                        "description": "Gem name."
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "0.6.3",
+                        "type": "string",
+                        "description": "Gem version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2011-11-01",
+                        "type": "string",
+                        "description": "Start date from where to search for. (YYYY-MM-DD)"
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2011-11-05",
+                        "type": "string",
+                        "description": "End date to where to search for. (YYYY-MM-DD)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/gems/{name}/owners.{format}": {
+            "get": {
+                "description": "View all owners of a gem. These users can all push to this gem.",
+                "operationId": "getGemOwners_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "gemcutter",
+                        "type": "string",
+                        "description": "Gem name."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/gems/{name}/owners": {
+            "post": {
+                "description": "Add an owner to a RubyGem you own, giving that user permission to manage it.",
+                "operationId": "addGemOwner_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "gemcutter",
+                        "type": "string",
+                        "description": "Gem name."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "nick@gemcutter.org",
+                        "type": "string",
+                        "description": "Gem owner email."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Remove a user’s permission to manage a RubyGem you own.",
+                "operationId": "removeGemOwner_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "gemcutter",
+                        "type": "string",
+                        "description": "Gem name."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "nick@gemcutter.org",
+                        "type": "string",
+                        "description": "Gem owner email."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more."
+                    }
+                }
+            }
+        },
+        "/web_hooks.{format}": {
+            "get": {
+                "description": "List the webhooks registered under your account.",
+                "operationId": "getWebHooks_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/web_hooks": {
+            "post": {
+                "description": "Create a webhook.",
+                "operationId": "createWebHook_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "gem_name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Gem name. Could specify * to apply the hook globally to all gems."
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "http://example.com",
+                        "type": "string",
+                        "description": "WebHook URL."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/web_hooks/remove": {
+            "delete": {
+                "description": "Remove a webhook.",
+                "operationId": "removeWebHook_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "gem_name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "rails",
+                        "type": "string",
+                        "description": "Gem name. Could specify * to apply the hook globally to all gems."
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "http://example.com",
+                        "type": "string",
+                        "description": "WebHook URL."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more."
+                    }
+                }
+            }
+        },
+        "/web_hooks/fire": {
+            "post": {
+                "description": "Test fire a webhook. This can be used to test out an endpoint at any time, for example when you’re developing your application.",
+                "operationId": "Create_testFireWebHook_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "gem_name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "rails",
+                        "type": "string",
+                        "description": "Gem name. Could specify * to apply the hook globally to all gems."
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "http://example.com",
+                        "type": "string",
+                        "description": "WebHook URL."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api_key.{format}": {
+            "get": {
+                "description": "Retrieve your API key using HTTP basic auth.",
+                "operationId": "getApiKey_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml",
+                            "yaml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/dependencies": {
+            "get": {
+                "description": "Returns a marshalled array of hashes for all versions of given gems. Each hash contains a gem version with its dependencies making this useful for resolving dependencies.",
+                "operationId": "getGemsDependencies_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "gems",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "rails,thor",
+                        "type": "string",
+                        "description": "Comma delimited Gem names."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with RubyGems.org to query and create gems, mange owners and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "format": {
+            "title": "format",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "json",
+                "xml",
+                "yaml"
+            ]
+        }
+    }
+}

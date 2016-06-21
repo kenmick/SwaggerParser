@@ -1,0 +1,122 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "PageSpeed",
+        "description": "Integrate PageSpeed performance analysis into your development workflow.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "www.googleapis.com",
+    "basePath": "/pagespeedonline/v1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/runPagespeed": {
+            "get": {
+                "description": "Runs Page Speed analysis on the page at the specified URL, and returns a Page Speed score, a list of suggestions to make that page faster, and other information.",
+                "operationId": "Get_run_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The URL to fetch and analyze."
+                    },
+                    {
+                        "name": "locale",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "en_US",
+                        "type": "string",
+                        "description": "The locale used to localize formatted results."
+                    },
+                    {
+                        "name": "rule",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "Array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "A Page Speed rule to run; if none are given, all rules are run."
+                    },
+                    {
+                        "name": "strategy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desktop",
+                            "mobile"
+                        ],
+                        "default": "desktop",
+                        "type": "integer",
+                        "description": "The analysis strategy to use."
+                    },
+                    {
+                        "name": "callback",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Callback function."
+                    },
+                    {
+                        "name": "prettyPrint",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": true,
+                        "type": "boolean",
+                        "description": "Returns response with identations and line breaks."
+                    },
+                    {
+                        "name": "userIp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "IP address of the site where the request originates."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate PageSpeed performance analysis into your development workflow.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "strategy": {
+            "title": "strategy",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "desktop",
+                "mobile"
+            ]
+        }
+    }
+}

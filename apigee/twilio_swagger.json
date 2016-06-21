@@ -1,0 +1,2266 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Twilio",
+        "description": "Telephony platform that exposes SMS and voice capabilities.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.twilio.com",
+    "basePath": "/2010-04-01/Accounts/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/{AccountSid}.{format}": {
+            "get": {
+                "description": "Returns the account details for the {AccountSid}.",
+                "operationId": "getAccount_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Allows you to modify the 'FriendlyName' for the {AccountSid} via PUT.",
+                "operationId": "updateFriendlyNameByPut_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Allows you to modify the 'FriendlyName' for the {AccountSid} via POST.",
+                "operationId": "updateFriendlyNameByPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/": {
+            "get": {
+                "description": "Right now, your credentials are tied to one and only one account, so the list resource only contains your single\n\t\t\t\t\taccount.",
+                "operationId": "getAccountList_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/SMS/Messages.{format}": {
+            "get": {
+                "description": "Returns a list of SMS messages associated with your account identified by {AccountSid}.",
+                "operationId": "getSMSList_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account"
+                    },
+                    {
+                        "name": "From",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show SMS messages from this phone number"
+                    },
+                    {
+                        "name": "To",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show SMS messages to this phone number."
+                    },
+                    {
+                        "name": "DateSent",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show SMS messages sent on this date, given as YYYY-MM-DD. Example: DateSent=2009-07-06. You can also specify\n\t\t\t\t\tinequality, such as DateSent lt YYYY-MM-DD for SMS messages that were sent on or before midnight on a date, and DateSent\n\t\t\t\t\tgt YYYY-MM-DD for SMS messages sent on or after midnight on a date."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Send a new outgoing message.",
+                "operationId": "Create_sendSMS_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/SMS/Messages/{SMSMessageSid}.{format}": {
+            "get": {
+                "description": "Returns a single SMS message specified by the provided {SMSMessageSid}.",
+                "operationId": "getSMS_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account"
+                    },
+                    {
+                        "name": "SMSMessageSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents a 34 character string that uniquely identifies this SMSMessage"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/OutgoingCallerIds.{format}": {
+            "get": {
+                "description": "Returns the list of outgoing caller ids for this account",
+                "operationId": "getOutgoingCallerIdList_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "PhoneNumber",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show the caller id resource that exactly matches this phone number."
+                    },
+                    {
+                        "name": "FriendlyName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show the caller id resource that exactly matches this name."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Adds a new caller id to your account",
+                "operationId": "addOutgoingCallerId_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/OutgoingCallerIds/{OutgoingCallerIdSid}.{format}": {
+            "get": {
+                "description": "Returns a single outgoing caller id specified by the provided {OutgoingCallerIdSid}",
+                "operationId": "getOutgoingCallerId_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "OutgoingCallerIdSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents a 34 character string that uniquely identifies this caller Id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates the outgoing caller id specified by the provided {OutgoingCallerIdSid} and returns the updated resource if\n\t\t\t\t\tsuccessful via PUT.",
+                "operationId": "updateOutgoingCallerIdByPut_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "OutgoingCallerIdSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents a 34 character string that uniquely identifies this caller Id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Updates the outgoing caller id specified by the provided {OutgoingCallerIdSid} and returns the updated resource if\n\t\t\t\t\tsuccessful via POST.",
+                "operationId": "updateOutgoingCallerIdByPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "OutgoingCallerIdSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents a 34 character string that uniquely identifies this caller Id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes the outgoing caller id specified by the provided {OutgoingCallerIdSid}",
+                "operationId": "deleteOutgoingCallerId_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "OutgoingCallerIdSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents a 34 character string that uniquely identifies this caller Id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/Local.{format}": {
+            "get": {
+                "description": "Returns a list of local AvailablePhoneNumber resource representations, each representing a phone number that is\n\t\t\t\t\tcurrently available for provisioning within your account.",
+                "operationId": "getAvailableLocalPhoneNumberList_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "IsoCountryCode",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ISO country code of this phone number"
+                    },
+                    {
+                        "name": "AreaCode",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Find phone numbers in the specified Area Code. Only available for North American numbers."
+                    },
+                    {
+                        "name": "Contains",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A pattern to match phone numbers on. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single\n\t\t\t\t\tdigit."
+                    },
+                    {
+                        "name": "InRegion",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Limit results to a particular region (i.e. State/Province). Given a phone number, search within the same Region as that\n\t\t\t\t\tnumber."
+                    },
+                    {
+                        "name": "InPostalCode",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Limit results to a particular postal code. Given a phone number, search within the same postal code as that number."
+                    },
+                    {
+                        "name": "NearLatLong",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Given a latitude/longitude pair lat,long find geographically close numbers within Distance miles."
+                    },
+                    {
+                        "name": "NearNumber",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Given a phone number, find a geographically close number within Distance miles. Distance defaults to 25 miles."
+                    },
+                    {
+                        "name": "InLata",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Limit results to a specific Local access and transport area (LATA). Given a phone number, search within the same LATA as\n\t\t\t\t\tthat number."
+                    },
+                    {
+                        "name": "InRateCenter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Limit results to a specific rate center, or given a phone number search within the same rate center as that number.\n\t\t\t\t\tRequires InLata to be set as well."
+                    },
+                    {
+                        "name": "Distance",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the search radius for a Near- query in miles. If not specified this defaults to 25 miles."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/TollFree.{format}": {
+            "get": {
+                "description": "Returns a list of toll-free AvailablePhoneNumber resource representations, each representing a phone number that is\n\t\t\t\t\tcurrently available for provisioning within your account.",
+                "operationId": "getAvailableTollFreePhoneNumberList_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "IsoCountryCode",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ISO country code of this phone number"
+                    },
+                    {
+                        "name": "Contains",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A pattern to match phone numbers on. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single\n\t\t\t\t\tdigit."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Calls/{CallSid}.{format}": {
+            "get": {
+                "description": "Returns the single Call resource identified by {CallSid}.",
+                "operationId": "getCall_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "CallSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely idetifies this resource"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Modifies a live call. Modification could be redirection or termination of the call.",
+                "operationId": "modifyLiveCall_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "CallSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely idetifies this resource"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Calls.{format}": {
+            "get": {
+                "description": "Returns a list of phone calls made to and from the account identified by {AccountSid}, sorted by DateUpdated with\n\t\t\t\t\tmost-recent calls first.",
+                "operationId": "getCallList_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "To",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show calls to this phone number."
+                    },
+                    {
+                        "name": "From",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show calls from this phone number."
+                    },
+                    {
+                        "name": "Status",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show calls currently in this status. May be queued, ringing, in-progress, completed, failed, busy, or no-answer."
+                    },
+                    {
+                        "name": "StartTime",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show calls that started on this date, given as YYYY-MM-DD. Also supports inequalities, such as StartTime(less than\n\t\t\t\t\tor equal to)YYYY-MM-DD for calls that started at or before midnight on a date, and StartTime(greater than or equal\n\t\t\t\t\tto)YYYY-MM-DD for calls that started at or after midnight on a date."
+                    },
+                    {
+                        "name": "EndTime",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show calls that ended on this date, given as YYYY-MM-DD. Also supoprts inequalities, such as EndTime(less than or\n\t\t\t\t\tequal to)YYYY-MM-DD for calls that ended at or before midnight on a date, and EndTime(greater than or equal\n\t\t\t\t\tto)YYYY-MM-DD for calls that end at or after midnight on a date."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Make a call.",
+                "operationId": "Create_makeCall_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/IncomingPhoneNumbers/{IncomingPhoneNumberSid}.{format}": {
+            "get": {
+                "description": "Fetches the details of a phone number purchased from Twilio",
+                "operationId": "getIncomingPhoneNumber_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id."
+                    },
+                    {
+                        "name": "IncomingPhoneNumberSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely idetifies this resource."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Update an incoming phone number obtained from Twilio via PUT.",
+                "operationId": "updateIncomingPhoneNumberByPut_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id."
+                    },
+                    {
+                        "name": "IncomingPhoneNumberSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely idetifies this resource."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Update an incoming phone number obtained from Twilio via POST.",
+                "operationId": "updateIncomingPhoneNumberByPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id."
+                    },
+                    {
+                        "name": "IncomingPhoneNumberSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely idetifies this resource."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a phone number purchased from Twilio",
+                "operationId": "deleteIncomingPhoneNumber_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id."
+                    },
+                    {
+                        "name": "IncomingPhoneNumberSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely idetifies this resource."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/IncomingPhoneNumbers.{format}": {
+            "get": {
+                "description": "Returns a list of incoming phone number resources, each representing a phone number given to your account",
+                "operationId": "getIncomingPhoneNumberList_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id."
+                    },
+                    {
+                        "name": "PhoneNumber",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show the incoming phone number resources that match this pattern. You can specify partial numbers and use '*' as a\n\t\t\t\t\twildcard for any digit."
+                    },
+                    {
+                        "name": "FriendlyName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show the incoming phone number resources with friendly names that exactly match this name."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Adds a random phone number available for the area depending on the Area Code provided",
+                "operationId": "addIncomingPhoneNumberByAreaCode_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Calls/{CallSid}/Recordings.{format}": {
+            "get": {
+                "description": "Returns a recording list for the {CallSid}",
+                "operationId": "getRecordingListForCall_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "CallSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Show only recordings made during the call given by this sid."
+                    },
+                    {
+                        "name": "DateCreated",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show recordings created on the given date. Should be formatted as YYYY-MM-DD. You can also specify inequality, such\n\t\t\t\t\tas DateCreated(less than or equal to)YYYY-MM-DD for recordings generated at or before midnight on a date, and\n\t\t\t\t\tDateCreated(greater than or equal to)YYYY-MM-DD for recordings generated at or after midnight on a date."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Recordings.{format}": {
+            "get": {
+                "description": "Returns a recording list associated with this {AccountSid}",
+                "operationId": "getRecordingListForAccount_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "CallSid",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Show only recordings made during the call given by this sid."
+                    },
+                    {
+                        "name": "DateCreated",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show recordings created on the given date. Should be formatted as YYYY-MM-DD. You can also specify inequality, such\n\t\t\t\t\tas DateCreated(less than or equal to)YYYY-MM-DD for recordings generated at or before midnight on a date, and\n\t\t\t\t\tDateCreated(greater than or equal to)YYYY-MM-DD for recordings generated at or after midnight on a date."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Recordings/{RecordingSid}/Transcriptions.{format}": {
+            "get": {
+                "description": "Each Recording instance resource has a Transcriptions subresource which represents the set of transcriptions generated\n\t\t\t\t\tfrom the recording (if any). Represents the set of transcriptions available for the recording identified by\n\t\t\t\t\t{RecordingSid}.",
+                "operationId": "getTranscriptionListForRecording_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "RecordingSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The unique id of the Recording this Transcription was made of"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Transcriptions/{TranscriptionSid}.{format}": {
+            "get": {
+                "description": "Returns a single Transcription resource representation identified by the given {TranscriptionSid}.",
+                "operationId": "getTranscription_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "TranscriptionSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely identifies this resource"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Transcriptions.{format}": {
+            "get": {
+                "description": "Returns a set of Transcription resource representations that includes paging information, sorted by 'DateUpdated', with\n\t\t\t\t\tmost recent transcripts first.",
+                "operationId": "getTranscriptionList_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Recordings/{RecordingSid}.{format}": {
+            "get": {
+                "description": "Returns a recording",
+                "operationId": "getRecording_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "wav",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "RecordingSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The unique id of the Recording this Transcription was made of"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a recording",
+                "operationId": "deleteRecording_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "wav",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "RecordingSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The unique id of the Recording this Transcription was made of"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Notifications/{NotificationSid}.{format}": {
+            "get": {
+                "description": "Returns a notification",
+                "operationId": "getNotification_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "NotificationSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely identifies this resource."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a notification",
+                "operationId": "deleteNotification_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "NotificationSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely identifies this resource."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Notifications.{format}": {
+            "get": {
+                "description": "Returns a notification list",
+                "operationId": "getNotificationList_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "Log",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show notifications for this log, using the integer log values shown above."
+                    },
+                    {
+                        "name": "MessageDate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show notifications for this date. Should be formatted as YYYY-MM-DD. You can also specify inequality, such as\n\t\t\t\t\tMessageDate(less than or equal to)YYYY-MM-DD for messages logged at or before midnight on a date, and\n\t\t\t\t\tMessageDate(greater than or equal to )YYYY-MM-DD for messages logged at or after midnight on a date. When performing a\n\t\t\t\t\tdate range query with day-granularity make sure the right endpoint is midnight of the next day (e.g. to construct a\n\t\t\t\t\trange query for all calls on YYYY-MM-DD use MessageDate(greater than or equal to)YYYY-MM-DD(and)MessageDate(less\n\t\t\t\t\tthan)YYYY-MM-(DD+1))."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Calls/{CallSid}/Notifications.{format}": {
+            "get": {
+                "description": "Returns a notification list",
+                "operationId": "getNotificationListForCall_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "CallSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely identifies this resource"
+                    },
+                    {
+                        "name": "Log",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show notifications for this log, using the integer log values shown above."
+                    },
+                    {
+                        "name": "MessageDate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show notifications for this date. Should be formatted as YYYY-MM-DD. You can also specify inequality, such as\n\t\t\t\t\tMessageDate(less than or equal to)YYYY-MM-DD for messages logged at or before midnight on a date, and\n\t\t\t\t\tMessageDate(greater than or equal to)YYYY-MM-DD for messages logged at or after midnight on a date. When performing a\n\t\t\t\t\tdate range query with day-granularity make sure the right endpoint is midnight of the next day (e.g. to construct a\n\t\t\t\t\trange query for all calls on YYYY-MM-DD use MessageDate(greater than or equal to)YYYY-MM-DD(and)MessageDate(less\n\t\t\t\t\tthan)YYYY-MM-(DD+1))."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Conferences/{ConferenceSid}.{format}": {
+            "get": {
+                "description": "Returns a representation of the conference identified by {ConferenceSid}.",
+                "operationId": "getConference_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "ConferenceSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely identifies this conference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Conferences/{ConferenceSid}/Participants.{format}": {
+            "get": {
+                "description": "Returns the list of participants in the conference identified by {ConferenceSid}.",
+                "operationId": "getParticipantListForConference2_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "ConferenceSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely identifies this conference."
+                    },
+                    {
+                        "name": "Muted",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show participants that are muted or unmuted. Either true or false."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Conferences.{format}": {
+            "get": {
+                "description": "Returns a list of conferences within an account identified by {AccountSid}.",
+                "operationId": "getConferenceListForAccount_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "Status",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show conferences currently in with this status. May be init, in-progress, or completed."
+                    },
+                    {
+                        "name": "FriendlyName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "List conferences who's FriendlyName is the exact match of this string."
+                    },
+                    {
+                        "name": "DateCreated",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show conferences that started on this date, given as YYYY-MM-DD. You can also specify inequality, such as\n\t\t\t\t\tDateCreated(less than or equal to)YYYY-MM-DD for conferences that started at or before midnight on a date, and\n\t\t\t\t\tDateCreated(greater than or equal to)YYYY-MM-DD for conferences that started at or after midnight on a date."
+                    },
+                    {
+                        "name": "DateUpdated",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Only show conferences that were last updated on this date, given as YYYY-MM-DD. You can also specify inequality, such as\n\t\t\t\t\tDateUpdated(less than or equal to)YYYY-MM-DD for conferences that were last updated at or before midnight on a date, and\n\t\t\t\t\tDateUpdated(greater than or equal to)YYYY-MM-DD for conferences that were updated at or after midnight on a date."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.{format}": {
+            "get": {
+                "description": "Returns a representation of this participant.",
+                "operationId": "getParticipantForConference_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "ConferenceSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely identifies this conference."
+                    },
+                    {
+                        "name": "CallSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely identifies the call that is connected to this conference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Mute a participant.",
+                "operationId": "Create_MuteParticipant_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "ConferenceSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely identifies this conference."
+                    },
+                    {
+                        "name": "CallSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely identifies the call that is connected to this conference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Kick a participant from a conference.",
+                "operationId": "deleteParticipant_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    },
+                    {
+                        "name": "ConferenceSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely identifies this conference."
+                    },
+                    {
+                        "name": "CallSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A 34 character string that uniquely identifies the call that is connected to this conference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    }
+                }
+            }
+        },
+        "/{AccountSid}/Sandbox.{format}": {
+            "get": {
+                "description": "Returns the Sandbox resource associated with the account identified by {AccountSid}.",
+                "operationId": "getSandbox_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates the Sandbox resource via PUT.",
+                "operationId": "updateSandboxByPut_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Updates the Sandbox resource via POST.",
+                "operationId": "updateSandboxByPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "xml",
+                        "type": "integer",
+                        "description": "Telephony platform that exposes SMS and voice capabilities."
+                    },
+                    {
+                        "name": "AccountSid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents the unique id of the Account responsible for this caller Id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Telephony platform that exposes SMS and voice capabilities.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "format": {
+            "title": "format",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "xml",
+                "json"
+            ]
+        }
+    }
+}

@@ -1,0 +1,710 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Rdio",
+        "description": "Easily and legally access and play music across web and mobile devices.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.rdio.com",
+    "basePath": "/1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/?method=get": {
+            "post": {
+                "description": "Fetch one or more objects from Rdio.",
+                "operationId": "Create_get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getObjectFromShortCode": {
+            "post": {
+                "description": "Return the object that the supplied Rdio short-code is a representation of, or null if the short-code is invalid.",
+                "operationId": "Create_getObjectFromShortCode_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getObjectFromUrl": {
+            "post": {
+                "description": "Return the object that the supplied Rdio url is a representation of, or null if the url doesn't represent an object.",
+                "operationId": "Create_getObjectFromUrl_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getAlbumsByUPC": {
+            "post": {
+                "description": "Finds and returns albums based on their Universal Product Code (UPC).",
+                "operationId": "Create_getAlbumsByUPC_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getAlbumsForArtist": {
+            "post": {
+                "description": "Returns the albums by (or featuring) an artist.",
+                "operationId": "Create_getAlbumsForArtist_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getTracksByISRC": {
+            "post": {
+                "description": "Finds and returns tracks based on their International Standard Recording Code (ISRC).",
+                "operationId": "Create_getTracksByISRC_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getTracksForArtist": {
+            "post": {
+                "description": "Gets all of the tracks by this artist.",
+                "operationId": "Create_getTracksForArtist_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=search": {
+            "post": {
+                "description": "Searches for artists, albums, tracks, users or all kinds of objects.",
+                "operationId": "Create_search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=searchSuggestions": {
+            "post": {
+                "description": "Matches the supplied prefix against artists, albums, tracks and people in the Rdio system. Return the first ten matches.",
+                "operationId": "Create_searchSuggestions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=addToCollection": {
+            "post": {
+                "description": "Adds tracks or playlists to the current user's collection.",
+                "operationId": "addToCollection_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getAlbumsForArtistInCollection": {
+            "post": {
+                "description": "Gets the albums in the user's collection by a particular artist.",
+                "operationId": "Create_getAlbumsForArtistInCollection_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getAlbumsInCollection": {
+            "post": {
+                "description": "Gets all of the albums in the user's collection.",
+                "operationId": "Create_getAlbumsInCollection_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getArtistsInCollection": {
+            "post": {
+                "description": "Gets all of the artist in a user's collection.",
+                "operationId": "Create_getArtistsInCollection_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getTracksForAlbumInCollection": {
+            "post": {
+                "description": "Which tracks on the given album are in the user's collection.",
+                "operationId": "Create_getTracksForAlbumInCollection_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getTracksForArtistInCollection": {
+            "post": {
+                "description": "Which tracks from the given artist are in the user's collection.",
+                "operationId": "Create_getTracksForArtistInCollection_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getTracksInCollection": {
+            "post": {
+                "description": "Gets all of the tracks in the user's collection.",
+                "operationId": "Create_getTracksInCollection_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=removeFromCollection": {
+            "post": {
+                "description": "Removes tracks or playlists from the current user's collection.",
+                "operationId": "Create_removeFromCollection_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=setAvailableOffline": {
+            "post": {
+                "description": "Marks tracks or playlists for offline syncing.",
+                "operationId": "Create_setAvailableOffline_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=addToPlaylist": {
+            "post": {
+                "description": "Adds a track to a playlist.",
+                "operationId": "addToPlaylist_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=createPlaylist": {
+            "post": {
+                "description": "Creates a new playlist in the current user's collection. The new playlist will be returned if the creation is successful, otherwise null will be returned.",
+                "operationId": "createPlaylist_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=deletePlaylist": {
+            "post": {
+                "description": "Deletes a playlist.",
+                "operationId": "Create_deletePlaylist_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getPlaylists": {
+            "post": {
+                "description": "Gets the current user's playlists.",
+                "operationId": "Create_getPlaylists_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=removeFromPlaylist": {
+            "post": {
+                "description": "Removes items from a playlist by range (index and count). All track keys to remove must be in the tracks list too. This is to prevent accidental overwriting of playlist changes.",
+                "operationId": "Create_removeFromPlaylist_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=setPlaylistCollaborating": {
+            "post": {
+                "description": "Starts or stops collaborating on this playlist.",
+                "operationId": "Create_setPlaylistCollaborating_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=setPlaylistCollaborationMode": {
+            "post": {
+                "description": "Sets the playlist collaboration mode to allow no collaboration (0), collaboration with all Rdio users (1), or collaboration with Rdio users followed by the playlist owner (2).",
+                "operationId": "Create_setPlaylistCollaborationMode_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=setPlaylistFields": {
+            "post": {
+                "description": "Sets the name and description for a playlist.",
+                "operationId": "Create_setPlaylistFields_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=setPlaylistOrder": {
+            "post": {
+                "description": "Saves the given order of tracks in a given playlist. The new order must have the same tracks as the previous order (this method may not be used to add/remove tracks).",
+                "operationId": "Create_setPlaylistOrder_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=addFriend": {
+            "post": {
+                "description": "Adds a friend to the current user.",
+                "operationId": "addFriend_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=currentUser": {
+            "post": {
+                "description": "Gets information about the currently logged in user.",
+                "operationId": "Create_currentUser_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=findUser": {
+            "post": {
+                "description": "Finds a user either by email address or by their username. Exactly one of email or vanityName must be supplied.",
+                "operationId": "Create_findUser_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=removeFriend": {
+            "post": {
+                "description": "Removes a friend from the current user.",
+                "operationId": "Create_removeFriend_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=userFollowers": {
+            "post": {
+                "description": "Gets a list of users following a user.",
+                "operationId": "Create_userFollowers_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=userFollowing": {
+            "post": {
+                "description": "Gets a list of users that a user follows.",
+                "operationId": "Create_userFollowing_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getActivityStream": {
+            "post": {
+                "description": "Gets the activity events for a user, a user's friends, or everyone on Rdio.",
+                "operationId": "Create_getActivityStream_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getHeavyRotation": {
+            "post": {
+                "description": "Finds the most popular artists or albums for a user, their friends or the whole site.",
+                "operationId": "Create_getHeavyRotation_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getNewReleases": {
+            "post": {
+                "description": "Returns new albums released across a timeframe.",
+                "operationId": "Create_getNewReleases_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getTopCharts": {
+            "post": {
+                "description": "Returns the site-wide most popular items for a given type.",
+                "operationId": "Create_getTopCharts_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/?method=getPlaybackToken": {
+            "post": {
+                "description": "Gets an playback token. If you are using this for web playback you must supply a domain.",
+                "operationId": "Create_getPlaybackToken_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Easily and legally access and play music across web and mobile devices.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

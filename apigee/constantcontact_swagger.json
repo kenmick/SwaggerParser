@@ -1,0 +1,1513 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Constant Contact",
+        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.constantcontact.com",
+    "basePath": "/ws/customers/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/{username}/contacts": {
+            "get": {
+                "description": "Search for contacts on a specific list that have been updated since a specified date.",
+                "operationId": "Get_contacts.search.by.list.id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "updatedsince",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specified date. The date has to be in UTC in the format specified by the Atom spec (i.e. 2008-07-23T14:21:06.407Z)."
+                    },
+                    {
+                        "name": "listid",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specific list."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Add a new contact to the account.",
+                "operationId": "Create_contacts.add_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/contacts/{contact-id}": {
+            "get": {
+                "description": "Retrieve the entry for the contact.",
+                "operationId": "Get_contacts.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "contact-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual contact."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Change information for a contact, including contact list membership.",
+                "operationId": "Update_contacts.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "contact-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual contact."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Opt-out the contact from all lists.",
+                "operationId": "Delete_contacts.opting.out_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "contact-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual contact."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app."
+                    }
+                }
+            }
+        },
+        "/{username}/contacts/{contact-id}/events/": {
+            "get": {
+                "description": "The per-contact campaign events resource contains send, open, unsubscribe, click, bounce and forward events for a given contact.",
+                "operationId": "Get_contacts.events_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "contact-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual contact."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/lists": {
+            "get": {
+                "description": "Retrieve the list of all mailing lists for the account.",
+                "operationId": "lists.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create a new mailing list.",
+                "operationId": "Create_lists.add_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/lists/{list-id}": {
+            "get": {
+                "description": "Retrieving an Individual List.",
+                "operationId": "lists.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "list-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The list identifier."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updating a List.",
+                "operationId": "Update_lists.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "list-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The list identifier."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deleting a List.",
+                "operationId": "Delete_lists.delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "list-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The list identifier."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app."
+                    }
+                }
+            }
+        },
+        "/{username}/lists/{list-id}/members": {
+            "get": {
+                "description": "Retrieving a contacts collection from a specific list.",
+                "operationId": "lists.members_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "list-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The list identifier."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/campaigns": {
+            "get": {
+                "description": "Manually refreshing campaign Results.",
+                "operationId": "Get_campaigns.refresh.results_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "refresh",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": true,
+                        "type": "boolean",
+                        "description": "To initiate re-calculation of campaign results, you must use refresh= true."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create a new campaign.",
+                "operationId": "Create_campaigns.add_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/campaigns/{campaign-id}": {
+            "get": {
+                "description": "Return details for the specified campaign.",
+                "operationId": "Get_campaigns.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "campaign-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual Campaign entry."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Update selected information for the specified campaign.",
+                "operationId": "Update_campaigns.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "campaign-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual Campaign entry."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Removing a Campaign.",
+                "operationId": "Delete_campaigns.delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "campaign-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual Campaign entry."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app."
+                    }
+                }
+            }
+        },
+        "/{username}/campaigns/{campaign-id}/events/": {
+            "get": {
+                "description": "The campaign events resource that contains send, open, unsubscribe, click, bounce and forward events for a given campaign.",
+                "operationId": "Get_campaigns.events_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "campaign-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual Campaign entry."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/events": {
+            "get": {
+                "description": "Retrieve a list of all events.",
+                "operationId": "Get_events.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create a new event marketing.",
+                "operationId": "Create_events.add_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/events/{event-id}": {
+            "get": {
+                "description": "Retrieve details for the specified event.",
+                "operationId": "Get_events.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "event-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual event."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/events/{event-id}/registrants": {
+            "get": {
+                "description": "Retrieve the list of registrants for the event.",
+                "operationId": "Get_events.list.registrants_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "event-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual event."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/events/{event-id}/registrants/{registrant-id}": {
+            "get": {
+                "description": "The registrant information for a particular registrant for a particular event.",
+                "operationId": "Get_events.get.registrant_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "event-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual event."
+                    },
+                    {
+                        "name": "registrant-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual registrant."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/events/{event-id}/registrants/{registrant-id}/guests": {
+            "get": {
+                "description": "Obtaining a list of guests.",
+                "operationId": "Get_events.list.guests_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "event-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual event."
+                    },
+                    {
+                        "name": "registrant-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual registrant."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/events/{event-id}/registrants/{registrant-id}/guests/{guest-id}": {
+            "get": {
+                "description": "Obtaining guest details.",
+                "operationId": "Get_events.guest.details_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "event-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual event."
+                    },
+                    {
+                        "name": "registrant-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual registrant."
+                    },
+                    {
+                        "name": "guest-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual guest entry."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/events/{event-id}/registrants/{registrant-id}/attendancestatus": {
+            "get": {
+                "description": "Retrieve the attendance status for the registrant.",
+                "operationId": "Get_events.get.attendance.status_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "event-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual event."
+                    },
+                    {
+                        "name": "registrant-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual registrant."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates the attendance status for the registrant.",
+                "operationId": "Update_events.update.attendance.status_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "event-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual event."
+                    },
+                    {
+                        "name": "registrant-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual registrant."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/events/{event-id}/registrants/{registrant-id}/paymentstatus": {
+            "get": {
+                "description": "Retrieve the payment status for the registrant.",
+                "operationId": "Get_events.get.payment.status_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "event-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual event."
+                    },
+                    {
+                        "name": "registrant-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual registrant."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates the payment status for the registrant.",
+                "operationId": "Update_events.update.payment.status_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "event-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual event."
+                    },
+                    {
+                        "name": "registrant-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual registrant."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/activities": {
+            "get": {
+                "description": "Retrieve all activities.",
+                "operationId": "Get_activities.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create a new activity.",
+                "operationId": "Create_activities.add_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/activities/{activity-id}": {
+            "get": {
+                "description": "Retrieving the Details of an Individual Activity.",
+                "operationId": "Get_activities.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "activity-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual activity."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/settings/emailaddresses": {
+            "get": {
+                "description": "Retrieving account email addresses.",
+                "operationId": "Get_account.list.email.addresses_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/settings/emailaddresses/{email-id}": {
+            "get": {
+                "description": "Retrieving email address details.",
+                "operationId": "Get_account.get.email.details_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "email-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A particular email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/library/folders": {
+            "get": {
+                "description": "Obtaining a list of folders.",
+                "operationId": "Get_folders.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Accept",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Accept."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{username}/library/folders/{folder-id}/images": {
+            "get": {
+                "description": "Obtaining a list of images in a folder.",
+                "operationId": "Get_images.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Accept",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Accept."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "folder-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual folder."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deleting all images in a folder.",
+                "operationId": "Delete_images.delete.all_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "folder-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual folder."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app."
+                    }
+                }
+            }
+        },
+        "/{username}/library/folders/{folder-id}/images/{image-id}": {
+            "get": {
+                "description": "Obtaining details of an image.",
+                "operationId": "Get_images.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Accept",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Accept."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "folder-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual folder."
+                    },
+                    {
+                        "name": "image-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual image."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deleting an image.",
+                "operationId": "Delete_images.delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The account owner's Constant Contact user name. Value must be in lower case."
+                    },
+                    {
+                        "name": "folder-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual folder."
+                    },
+                    {
+                        "name": "image-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Represents an individual image."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Make Constant Contact's leading email and event marketing services accessible directly from your app."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "listtype": {
+            "title": "listtype",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "active",
+                "removed",
+                "do-not-mail"
+            ]
+        },
+        "status": {
+            "title": "status",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "DRAFT",
+                "RUNNING",
+                "SENT",
+                "SCHEDULED"
+            ]
+        }
+    }
+}

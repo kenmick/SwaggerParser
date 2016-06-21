@@ -1,0 +1,721 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Infoconnect",
+        "description": "Search our rich and robust data on companies and people. Utilize our fuzzy matching to power your new app or website with Infoconnect from Infogroup Targeting Solutions.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.infoconnect.com",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/v1/companies/{id}": {
+            "get": {
+                "description": "Retrieves details of the Company identified by the resource.",
+                "operationId": "getCompany_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A nine to ten digit Infogroup identification number. A number referencing the company assigned by Infogroup. This number will always refer to a single company and the reference will never change, unless the resource is permanently removed. Requesting a record by {id} will always return zero or one response."
+                    },
+                    {
+                        "name": "resourcetype",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "basic",
+                            "enhanced",
+                            "core"
+                        ],
+                        "default": "basic",
+                        "type": "integer",
+                        "description": "Identifies the resource type for the response. The default value basic returns a base resource type that is valid across all methods; the resource type parameter is not needed to produce this response. To get a more detailed response set the resource type parameter to enhanced. To retrieve resources with Id's only, set the resource type parameter to core."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml"
+                        ],
+                        "default": "application/json",
+                        "type": "integer",
+                        "description": "The content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search our rich and robust data on companies and people. Utilize our fuzzy matching to power your new app or website with Infoconnect from Infogroup Targeting Solutions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/companies": {
+            "get": {
+                "description": "Retrieves lists of companies.",
+                "operationId": "getCompanies_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "resourcetype",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "basic",
+                            "enhanced",
+                            "core"
+                        ],
+                        "default": "basic",
+                        "type": "integer",
+                        "description": "Identifies the resource type for the response. The default value basic returns a base resource type that is valid across all methods; the resource type parameter is not needed to produce this response. To get a more detailed response set the resource type parameter to enhanced. To retrieve resources with Id's only, set the resource type parameter to core."
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "Omaha",
+                        "type": "string",
+                        "description": "Filters through the Companies collection by city name."
+                    },
+                    {
+                        "name": "companyname",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "ABC",
+                        "type": "string",
+                        "description": "Filters through the Companies collection and returns resources by company name."
+                    },
+                    {
+                        "name": "ein",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "521492843",
+                        "type": "string",
+                        "description": "Filters through the Companies collection and returns resources with an Employer Identification Number (EIN)."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "johndoe@abcco.com",
+                        "type": "string",
+                        "description": "Filters through the Companies collection and returns resources with a case-insensitive email address match at the level."
+                    },
+                    {
+                        "name": "firstname",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "bill",
+                        "type": "string",
+                        "description": "Filters through the Companies collection by the primary contact's first name."
+                    },
+                    {
+                        "name": "lastname",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "doe",
+                        "type": "string",
+                        "description": "Filters through the Companies collection by the primary contact's last name."
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "5558675309",
+                        "type": "string",
+                        "description": "Filters through the Companies collection and returns resources with an ten-digit phone number match."
+                    },
+                    {
+                        "name": "postalcode",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "68046",
+                        "type": "string",
+                        "description": "Filters through the Companies collection by ZIP code or Postal code."
+                    },
+                    {
+                        "name": "stateprovince",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "NE",
+                        "type": "string",
+                        "description": "Filters through the Companies collection by State or Province abbreviation."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 10.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of responses to return. If used, must be a number between 1 and 10. Default is 10."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of responses to be skipped for generating the output. If used, must be a number between 0-100 minus limit. Default is 0."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml"
+                        ],
+                        "default": "application/json",
+                        "type": "integer",
+                        "description": "The content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search our rich and robust data on companies and people. Utilize our fuzzy matching to power your new app or website with Infoconnect from Infogroup Targeting Solutions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/companies/search": {
+            "post": {
+                "description": "Retrieves details of resources matching a given set of search fields that are submitted along with the request.",
+                "operationId": "Create_searchCompanies_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml"
+                        ],
+                        "default": "application/json",
+                        "type": "integer",
+                        "description": "The content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search our rich and robust data on companies and people. Utilize our fuzzy matching to power your new app or website with Infoconnect from Infogroup Targeting Solutions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/companies/counts": {
+            "post": {
+                "description": "Retrieves counts on resources matching a given set of search fields that are submitted along with the request.",
+                "operationId": "Create_countCompanies_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml"
+                        ],
+                        "default": "application/json",
+                        "type": "integer",
+                        "description": "The content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search our rich and robust data on companies and people. Utilize our fuzzy matching to power your new app or website with Infoconnect from Infogroup Targeting Solutions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/people/{id}": {
+            "get": {
+                "description": "Retrieves details of the individual identified by the resource.",
+                "operationId": "getPerson_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A twelve digit Infogroup identification number. A number referencing the individual assigned by Infogroup. This number will always refer to a single individual and the reference will never change, unless the resource is permanently removed. Requesting a record by {id} will always return zero or one response."
+                    },
+                    {
+                        "name": "resourcetype",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "basic",
+                            "enhanced",
+                            "core"
+                        ],
+                        "default": "basic",
+                        "type": "integer",
+                        "description": "Identifies the resource type for the response. The default value basic returns a base resource type that is valid across all methods; the resource type parameter is not needed to produce this response. To get a more detailed response set the resource type parameter to enhanced. To retrieve resources with Id's only, set the resource type parameter to core. Additional ResourceTypes are Core, LifeStyle and TargetReady."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml"
+                        ],
+                        "default": "application/json",
+                        "type": "integer",
+                        "description": "The content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search our rich and robust data on companies and people. Utilize our fuzzy matching to power your new app or website with Infoconnect from Infogroup Targeting Solutions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/people": {
+            "get": {
+                "description": "Retrieves lists of people.",
+                "operationId": "getPeople_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "resourcetype",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "basic",
+                            "enhanced",
+                            "core"
+                        ],
+                        "default": "basic",
+                        "type": "integer",
+                        "description": "Identifies the resource type for the response. The default value basic returns a base resource type that is valid across all methods; the resource type parameter is not needed to produce this response. To get a more detailed response set the resource type parameter to enhanced. To retrieve resources with Id's only, set the resource type parameter to core. Additional ResourceTypes are Core, LifeStyle and TargetReady."
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "Omaha",
+                        "type": "string",
+                        "description": "Filters through the People collection by city name."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "johndoe@abcco.com",
+                        "type": "string",
+                        "description": "Filters through the People collection and returns resources with a case-insensitive email address match at the level."
+                    },
+                    {
+                        "name": "emailsha1upper",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "9d2972490f8c6a9a3a8e052d6050f9d3fde2e54d",
+                        "type": "string",
+                        "description": "Filters through the People collection and returns resources with a case-insensitive email address match at the level. If used, must be a SHA1 hashed upper case email address."
+                    },
+                    {
+                        "name": "includehistoricalemail",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "IncludeHistoricalEmail can only be used in combination with Email or EmailSha1Upper. IncludeHistoricalEmail is used to retrieve historical records. Including this limits the ResourceType to Basic only. These records do not have an Id therefore cannot be used to return an Enhanced ResourceType. If used, must be True or False. Default is False."
+                    },
+                    {
+                        "name": "firstname",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "bill",
+                        "type": "string",
+                        "description": "Filters through the People collection by the primary contact's first name."
+                    },
+                    {
+                        "name": "lastname",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "doe",
+                        "type": "string",
+                        "description": "Filters through the People collection by the primary contact's last name."
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "5558675309",
+                        "type": "string",
+                        "description": "Filters through the People collection and returns resources with an ten-digit phone number match."
+                    },
+                    {
+                        "name": "postalcode",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "68046",
+                        "type": "string",
+                        "description": "Filters through the People collection by ZIP code or Postal code."
+                    },
+                    {
+                        "name": "stateprovince",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "NE",
+                        "type": "string",
+                        "description": "Filters through the People collection by State or Province abbreviation."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 10.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of responses to return. If used, must be a number between 1 and 10. Default is 10."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of responses to be skipped for generating the output. If used, must be a number between 0-100 minus limit. Default is 0."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml"
+                        ],
+                        "default": "application/json",
+                        "type": "integer",
+                        "description": "The content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search our rich and robust data on companies and people. Utilize our fuzzy matching to power your new app or website with Infoconnect from Infogroup Targeting Solutions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/people/search": {
+            "post": {
+                "description": "Retrieves details of resources matching a given set of search fields that are submitted along with the request.",
+                "operationId": "Create_searchPeople_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml"
+                        ],
+                        "default": "application/json",
+                        "type": "integer",
+                        "description": "The content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search our rich and robust data on companies and people. Utilize our fuzzy matching to power your new app or website with Infoconnect from Infogroup Targeting Solutions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/people/counts": {
+            "post": {
+                "description": "Retrieves counts on resources matching a given set of search fields that are submitted along with the request.",
+                "operationId": "Create_countPeople_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml"
+                        ],
+                        "default": "application/json",
+                        "type": "integer",
+                        "description": "The content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search our rich and robust data on companies and people. Utilize our fuzzy matching to power your new app or website with Infoconnect from Infogroup Targeting Solutions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v3/match": {
+            "post": {
+                "description": "Matching and data append for partial name and address.",
+                "operationId": "Create_match_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml"
+                        ],
+                        "default": "application/json",
+                        "type": "integer",
+                        "description": "The content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search our rich and robust data on companies and people. Utilize our fuzzy matching to power your new app or website with Infoconnect from Infogroup Targeting Solutions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v3/multiplematch": {
+            "post": {
+                "description": "Multiple matching and data append for partial name and address.",
+                "operationId": "Create_multiplematch_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml"
+                        ],
+                        "default": "application/json",
+                        "type": "integer",
+                        "description": "The content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search our rich and robust data on companies and people. Utilize our fuzzy matching to power your new app or website with Infoconnect from Infogroup Targeting Solutions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/sics/{id}": {
+            "get": {
+                "description": "Retrieves details of Standard Identification Classification (SIC) code.",
+                "operationId": "getSic_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A two, four, or six numeric Standard Identification Classification (SIC) code."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml"
+                        ],
+                        "default": "application/json",
+                        "type": "integer",
+                        "description": "The content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search our rich and robust data on companies and people. Utilize our fuzzy matching to power your new app or website with Infoconnect from Infogroup Targeting Solutions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/sics": {
+            "get": {
+                "description": "Retrieves details of Standard Identification Classification (SIC) code.",
+                "operationId": "getSics_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "barber",
+                        "type": "string",
+                        "description": "By SIC description. Example \"barber\"."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml"
+                        ],
+                        "default": "application/json",
+                        "type": "integer",
+                        "description": "The content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search our rich and robust data on companies and people. Utilize our fuzzy matching to power your new app or website with Infoconnect from Infogroup Targeting Solutions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "resourcetype": {
+            "title": "resourcetype",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "basic",
+                "enhanced",
+                "core"
+            ]
+        },
+        "Content-Type": {
+            "title": "Content-Type",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "application/json",
+                "application/xml"
+            ]
+        }
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Yahoo Weather",
+        "description": "Access up-to-date weather information for your location, including condition codes.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "weather.yahooapis.com",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/forecastrss": {
+            "get": {
+                "description": "Retrieves weather information for a location.",
+                "operationId": "Get_weather.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "w",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "12797282",
+                        "type": "string",
+                        "description": "The location for the weather forecast as a WOEID, example is Palo Alto, CA."
+                    },
+                    {
+                        "name": "u",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "f",
+                            "c"
+                        ],
+                        "type": "integer",
+                        "description": "Units for temperature (case sensitive). f: Fahrenheit, c: Celsius."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access up-to-date weather information for your location, including condition codes.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "u": {
+            "title": "u",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "f",
+                "c"
+            ]
+        }
+    }
+}

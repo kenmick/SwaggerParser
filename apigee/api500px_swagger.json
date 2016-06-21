@@ -1,0 +1,1842 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "500px",
+        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.500px.com",
+    "basePath": "/v1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/photos": {
+            "get": {
+                "description": "Retrieves list of photos",
+                "operationId": "get_photos_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "feature",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "popular",
+                            "upcoming",
+                            "editors",
+                            "fresh_today",
+                            "fresh_yesterday",
+                            "fresh_week",
+                            "user",
+                            "user_friends",
+                            "user_favorites"
+                        ],
+                        "default": "fresh_today",
+                        "type": "integer",
+                        "description": "Photo stream."
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "User ID 'user' Photo streeam"
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "OR username for 'user' Photo streeam"
+                    },
+                    {
+                        "name": "only",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "String name of the category to return photos from"
+                    },
+                    {
+                        "name": "exclude",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "String name of the category to exclude photos by."
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "created_at",
+                            "rating",
+                            "times_viewed",
+                            "votes_count",
+                            "favorites_count",
+                            "comments_count",
+                            "taken_at"
+                        ],
+                        "type": "integer",
+                        "description": "Sort photos in the specified order."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return a specific page in the photo stream. Page numbering is 1-based."
+                    },
+                    {
+                        "name": "rpp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The number of results to return. Can not be over 100, default 20."
+                    },
+                    {
+                        "name": "image_size",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "1",
+                            "2",
+                            "3",
+                            "4"
+                        ],
+                        "default": "3",
+                        "type": "integer",
+                        "description": "The photo size to be returned."
+                    },
+                    {
+                        "name": "include_store",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "store_download",
+                            "store_print"
+                        ],
+                        "type": "integer",
+                        "description": "Returns market infomation about the photo."
+                    },
+                    {
+                        "name": "include_states",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "voted",
+                            "favorited",
+                            "purchased"
+                        ],
+                        "type": "integer",
+                        "description": "Returns state of the photo for the currently logged in user and authenticated request."
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Returns an array of tags for the photo."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create a new photo on behalf of the user, and receive an upload key in exchange.",
+                "operationId": "post_photos_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Title for the photo."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The description of the photo."
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "A numerical ID for the Category of the photo"
+                    },
+                    {
+                        "name": "shutter_speed",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Shutter speed in seconds, represented by string containing a rational expression if the value is 1sec."
+                    },
+                    {
+                        "name": "focal_length",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Focal length in millimetres, a string representing an integer value"
+                    },
+                    {
+                        "name": "aperture",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Aperture value"
+                    },
+                    {
+                        "name": "iso",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ISO value"
+                    },
+                    {
+                        "name": "camera",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Make and model of the camera. Note: Please make sure it contains sensible information (eg., does not contain camera's make or model twice)"
+                    },
+                    {
+                        "name": "lens",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Lens used to make this photo"
+                    },
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Latitude, in decimal format"
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Longitude, in decimal format"
+                    },
+                    {
+                        "name": "privacy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Whether to hide the photo from the user profile on the website. Otherwise, the photo is only available for use in Collections/Portfolio. Recognized values: 1, 0."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/photos/search": {
+            "get": {
+                "description": "Returns a listing of twenty (up to one hundred) photos from search results for a specified tag or keyword.",
+                "operationId": "get_photos_search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "term",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A keyword to search for."
+                    },
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A complete tag string to search for."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Return a specific page. Page numbering is 1-based."
+                    },
+                    {
+                        "name": "rpp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of results to return. Can not be over 100, default 20."
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Returns an array of tags for each photo."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/photos/{id}": {
+            "get": {
+                "description": "Returns detailed information of a single photo.",
+                "operationId": "get_photos_id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The Photo ID"
+                    },
+                    {
+                        "name": "image_size",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "1",
+                            "2",
+                            "3",
+                            "4"
+                        ],
+                        "default": "3",
+                        "type": "integer",
+                        "description": "The photo size to be returned."
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "1",
+                            "2"
+                        ],
+                        "type": "integer",
+                        "description": "Return comments to the photo in the response. Comments are returned in order of creation, 20 entries per page."
+                    },
+                    {
+                        "name": "comments_page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Return the specified page from the comments listing. Page numbers are 1-based."
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Returns an array of tags for the photo."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates a photo.",
+                "operationId": "put_photos_id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The Photo ID"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Title for the photo."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The description of the photo."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes the photo from the User's library.",
+                "operationId": "delete_photos_id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The Photo ID to delete."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs."
+                    }
+                }
+            }
+        },
+        "/photos/{id}/comments": {
+            "get": {
+                "description": "Returns a listing of twenty comments for the photo.",
+                "operationId": "get_photos_id_comments_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The Photo ID"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Return a specific page in the comment listing. Page numbering is 1-based."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new comment for the photo.",
+                "operationId": "post_photos_id_comments_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The Photo ID to post comments for."
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Content of the comment."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/photos/{id}/favorite": {
+            "get": {
+                "description": "Deletes the photo from User's favorite list.",
+                "operationId": "get_photos_id_favorite_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The Photo ID"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Return a specific page in the comment listing. Page numbering is 1-based."
+                    },
+                    {
+                        "name": "rpp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of results to return. Can not be over 100, default 20."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Adds the photo to user's list of favorites.",
+                "operationId": "post_photos_id_favorite_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the photo the favorite is cast upon."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Removes the photo to user's list of favorites.",
+                "operationId": "delete_photos_id_favorite_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the photo to delete from list of favorites."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs."
+                    }
+                }
+            }
+        },
+        "/photos/{id}/votes": {
+            "get": {
+                "description": "Deletes the photo from User's favorite list.",
+                "operationId": "get_photos_id_votes_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The Photo ID"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Return a specific page in the comment listing. Page numbering is 1-based."
+                    },
+                    {
+                        "name": "rpp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of results to return. Can not be over 100, default 20."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/photos/{id}/vote": {
+            "post": {
+                "description": "Allows the user to vote for a photo.",
+                "operationId": "post_photos_id_vote_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the photo the vote is cast upon."
+                    },
+                    {
+                        "name": "vote",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "0",
+                            "1"
+                        ],
+                        "default": "1",
+                        "type": "integer",
+                        "description": "vote, values: '0' for 'dislike' or '1' for 'like'."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/photos/{id}/tags": {
+            "post": {
+                "description": "Adds tags to the photo. Accepts one or multiple coma separated tags.",
+                "operationId": "post_photos_id_tags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The Photo ID to add tags for."
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Coma separated tags."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Removes tags from the photo. Accepts one or multiple coma separated tags.",
+                "operationId": "delete_photos_id_tags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The Photo ID to remove tags from."
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Coma separated tags."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs."
+                    }
+                }
+            }
+        },
+        "/upload": {
+            "post": {
+                "description": "Allows an application to upload the photo file.\n\t\t\t\t\tWarning: This endpoint cannot accept oauth signed requests.",
+                "operationId": "upload_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "photo_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the photo the file is being uploaded for. The ID should be known to the client from the POST photos request result."
+                    },
+                    {
+                        "name": "upload_key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Upload key"
+                    },
+                    {
+                        "name": "consumer_key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Your application Consumer key."
+                    },
+                    {
+                        "name": "access_key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Oauth token."
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The multipart HTTP upload. This is expected to be of the same format as when a file is being sent from an HTML file form."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/photos/upload": {
+            "post": {
+                "description": "(This is a new, simplified upload endpoint.) Allows an application to upload the photo.",
+                "operationId": "Create_photos_upload_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The multipart HTTP upload. This is expected to be of the same format as when a file is being sent from an HTML file form."
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Title for the photo."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The description of the photo."
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "A numerical ID for the Category of the photo"
+                    },
+                    {
+                        "name": "privacy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "0",
+                            "1"
+                        ],
+                        "default": "0",
+                        "type": "integer",
+                        "description": "Whether to hide the photo from the user profile on the website. Otherwise, the photo is only available for use in Collections/Portfolio. 0 - Public, 1 - Private"
+                    },
+                    {
+                        "name": "shutter_speed",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Shutter speed in seconds, represented by string containing a rational expression if the value is 1sec."
+                    },
+                    {
+                        "name": "focal_length",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Focal length in millimetres, a string representing an integer value"
+                    },
+                    {
+                        "name": "aperture",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Aperture value"
+                    },
+                    {
+                        "name": "iso",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ISO value"
+                    },
+                    {
+                        "name": "camera",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Make and model of the camera. Note: Please make sure it contains sensible information (eg., does not contain camera's make or model twice)"
+                    },
+                    {
+                        "name": "lens",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Lens used to make this photo"
+                    },
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Latitude, in decimal format"
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Longitude, in decimal format"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users": {
+            "get": {
+                "description": "Returns the profile information for the current user.",
+                "operationId": "get_users_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/show": {
+            "get": {
+                "description": "Returns the profile information for a specified user.",
+                "operationId": "get_users_show_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return information for the specified user ID."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return information for the user with the specified username."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return information for the user with the specified email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{id}/friends": {
+            "get": {
+                "description": "Returns a list of friends for the specified user.",
+                "operationId": "get_users_id_friends_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return information for the specified user ID"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return the specified page of the resource. Page numbering is 1-based."
+                    },
+                    {
+                        "name": "rpp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Results Per Page, default 20, max 100."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Add the user to the list of followers.",
+                "operationId": "post_users_search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the User to add to the followers list."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Removes the user from the list of followers.",
+                "operationId": "delete_users_search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the User to remove from the followers list."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs."
+                    }
+                }
+            }
+        },
+        "/users/{id}/followers": {
+            "get": {
+                "description": "Returns a list of users who follow the specified user.",
+                "operationId": "get_users_id_followers_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the user."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return the specified page of the resource. Page numbering is 1-based."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/search": {
+            "get": {
+                "description": "Return listing of ten (up to one hundred) users from search results for a specified search term.",
+                "operationId": "get_users_search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "term",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A keyword to search for."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return the specified page of the resource. Page numbering is 1-based."
+                    },
+                    {
+                        "name": "rpp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Results Per Page, default 20, max 100."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blogs": {
+            "get": {
+                "description": "Returns a listing of five recent (blogs) stories (maximum 100 per page).",
+                "operationId": "get_blogs_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "feature",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "popular",
+                            "upcoming",
+                            "editors",
+                            "fresh_today",
+                            "fresh_yesterday",
+                            "fresh_week",
+                            "user",
+                            "user_friends",
+                            "user_favorites"
+                        ],
+                        "default": "fresh_today",
+                        "type": "integer",
+                        "description": "Blogs (Story) stream to be retrieved. Default fresh."
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "User ID 'user' blogs (stories)"
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "OR username for 'user' Blog (story) stream"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return a specific page in the blog (story) listing. Page numbering is 1-based."
+                    },
+                    {
+                        "name": "rpp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The number of results to return. Can not be over 100, default 5."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new Story.",
+                "operationId": "post_blogs_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Title for the blog post."
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Content of the blog post."
+                    },
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Latitude for the blog post."
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Longitude for the blog post."
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Comma separated list of tags."
+                    },
+                    {
+                        "name": "photo_ids",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Comma separated list of Photo ID values to post with the blog."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blogs/{id}": {
+            "get": {
+                "description": "Returns detailed information of a single story.",
+                "operationId": "get_blogs_id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Story ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Creates a new Story.",
+                "operationId": "put_blogs_id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The Blog Post ID to update."
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Title for the blog post."
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Content of the blog post."
+                    },
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Latitude for the blog post."
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Longitude for the blog post."
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Comma separated list of tags."
+                    },
+                    {
+                        "name": "photo_ids",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Comma separated list of Photo ID values to post with the blog."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes the story.",
+                "operationId": "delete_blogs_id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The Story ID to delete."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs."
+                    }
+                }
+            }
+        },
+        "/blogs/{id}/comments": {
+            "get": {
+                "description": "Returns a listing of twenty comments for a specific Story.",
+                "operationId": "get_blogs_id_comments_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The Story ID to get comments for."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return a specific page in the comment listing. Page numbering is 1-based."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a comment for the Story.",
+                "operationId": "post_blogs_id_comments_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The Story ID to create a comment for."
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Content of the comment."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/collections": {
+            "get": {
+                "description": "Returns a listing of five recent (blogs) stories (maximum 100 per page).",
+                "operationId": "get_collections_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new collection.",
+                "operationId": "post_collections_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Title for the collection."
+                    },
+                    {
+                        "name": "path",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Path where the collection will be accessible at 500px.com/user/sets/:path."
+                    },
+                    {
+                        "name": "kind",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "1",
+                            "2"
+                        ],
+                        "type": "integer",
+                        "description": "Kind of the Collection to be created Recognized values: 1 - Portfolio Set (default), 2 - Profile Set."
+                    },
+                    {
+                        "name": "photo_ids",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Comma separated list of Photo ID values."
+                    },
+                    {
+                        "name": "position",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Position of the collection in the list of collections."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/collections/{id}": {
+            "get": {
+                "description": "Returns the collection.",
+                "operationId": "get_collections_id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Collection (set) ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates collection.",
+                "operationId": "put_collections_id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The Collection (set) ID."
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Title for the collection (set)."
+                    },
+                    {
+                        "name": "path",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Path where the collection (set) will be accessible at 500px.com/user/sets/:path."
+                    },
+                    {
+                        "name": "kind",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "1",
+                            "2"
+                        ],
+                        "type": "integer",
+                        "description": "Kind of the Collection to be created Recognized values: 1 - Portfolio Set (default), 2 - Profile Set."
+                    },
+                    {
+                        "name": "photo_ids",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Comma separated list of Photo ID values."
+                    },
+                    {
+                        "name": "position",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Position of the collection in the list of collections."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes the collection.",
+                "operationId": "delete_collections_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Collection (set) ID to delete."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "500px is a photo community powered by creative people worldwide that lets you discover, share, buy and sell inspiring photographs."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "feature": {
+            "title": "feature",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "popular",
+                "upcoming",
+                "editors",
+                "fresh_today",
+                "fresh_yesterday",
+                "fresh_week",
+                "user",
+                "user_friends",
+                "user_favorites"
+            ]
+        },
+        "sort": {
+            "title": "sort",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "created_at",
+                "rating",
+                "times_viewed",
+                "votes_count",
+                "favorites_count",
+                "comments_count",
+                "taken_at"
+            ]
+        },
+        "image_size": {
+            "title": "image_size",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        "include_store": {
+            "title": "include_store",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "store_download",
+                "store_print"
+            ]
+        },
+        "include_states": {
+            "title": "include_states",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "voted",
+                "favorited",
+                "purchased"
+            ]
+        },
+        "comments": {
+            "title": "comments",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "1",
+                "2"
+            ]
+        },
+        "vote": {
+            "title": "vote",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "0",
+                "1"
+            ]
+        },
+        "privacy": {
+            "title": "privacy",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "0",
+                "1"
+            ]
+        },
+        "kind": {
+            "title": "kind",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "1",
+                "2"
+            ]
+        }
+    }
+}

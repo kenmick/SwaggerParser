@@ -1,0 +1,4279 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Stack Exchange",
+        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.stackoverflow.com",
+    "basePath": "/1.1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/answers": {
+            "get": {
+                "description": "Get all answers on the site.",
+                "operationId": "getAnswers_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/answers/{ids}": {
+            "get": {
+                "description": "Get answers identified by a set of ids.",
+                "operationId": "getAnswersByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/answers/{ids}/comments": {
+            "get": {
+                "description": "Get comments on the answers identified by a set of ids.",
+                "operationId": "getAnswersCommentsByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/badges": {
+            "get": {
+                "description": "Get all badges on the site, in alphabetical order.",
+                "operationId": "getBadges_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/badges/{ids}": {
+            "get": {
+                "description": "Get all users who have been awarded the badges identified by ids.",
+                "operationId": "getBadgeRecipients_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/badges/name": {
+            "get": {
+                "description": "Get all non-tagged-based badges in alphabetical order.",
+                "operationId": "getNonTaggedBadges_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/badges/tags": {
+            "get": {
+                "description": "Get all tagged-based badges in alphabetical order.",
+                "operationId": "getTaggedBadges_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/comments": {
+            "get": {
+                "description": "Get all comments on the site.",
+                "operationId": "getComments_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/comments/{ids}": {
+            "get": {
+                "description": "Get comments identified by a set of ids.",
+                "operationId": "getCommentsByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/posts/{ids}/comments": {
+            "get": {
+                "description": "Get comments on the posts (question or answer) identified by a set of ids.",
+                "operationId": "getPostsCommentsByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/errors/{id}": {
+            "get": {
+                "description": "Simulate an API error for testing purposes.",
+                "operationId": "Get_simulateApiError_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "id of the error to simulate. 32-bit signed integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/privileges": {
+            "get": {
+                "description": "Get all the privileges available on the site.",
+                "operationId": "getPrivileges_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/questions": {
+            "get": {
+                "description": "Get all questions on the site.",
+                "operationId": "getQuestions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "answers",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", the answers to a question will be returned. boolean"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "tagged",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Semicolon delimited list of tags questions must have. string"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/questions/{ids}": {
+            "get": {
+                "description": "Get the questions identified by a set of ids.",
+                "operationId": "getQuestionsByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "answers",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", the answers to a question will be returned. boolean"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/questions/{ids}/answers": {
+            "get": {
+                "description": "Get the answers to the questions identified by a set of ids.",
+                "operationId": "getQuestionsAnswersByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/questions/{ids}/comments": {
+            "get": {
+                "description": "Get the comments on the questions identified by a set of ids.",
+                "operationId": "getQuestionsCommentsByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/questions/{ids}/linked": {
+            "get": {
+                "description": "Get the questions that link to the questions identified by a set of ids.",
+                "operationId": "getLinkedQuestionsByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "answers",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", the answers to a question will be returned. boolean"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/questions/{ids}/related": {
+            "get": {
+                "description": "Get the questions that are related to the questions identified by a set of ids.",
+                "operationId": "getRelatedQuestionsByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "answers",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", the answers to a question will be returned. boolean"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/questions/{ids}/timeline": {
+            "get": {
+                "description": "Get the timelines of the questions identified by a set of ids.",
+                "operationId": "getQuestionsTimelinesByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/questions/unanswered": {
+            "get": {
+                "description": "Get all questions the site considers unanswered.",
+                "operationId": "getUnansweredQuestions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "answers",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", the answers to a question will be returned. boolean"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "tagged",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Semicolon delimited list of tags questions must have. string"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/questions/no-answers": {
+            "get": {
+                "description": "Get all questions on the site with no answers.",
+                "operationId": "getNoAnswersQuestions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "answers",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", the answers to a question will be returned. boolean"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "tagged",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Semicolon delimited list of tags questions must have. string"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/revisions/{ids}": {
+            "get": {
+                "description": "Get all revisions for posts identified by a set of ids.",
+                "operationId": "getPostsRevisionsByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/revisions/{id}/{revisionguid}": {
+            "get": {
+                "description": "Get a specific revision identified by a post id and a revision guid.",
+                "operationId": "getPostSpecificRevision_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. string"
+                    },
+                    {
+                        "name": "revisionguid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "specific revision id. guid, 8-4-4-4-12 format"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/search": {
+            "get": {
+                "description": "Search the site for questions meeting certain criteria.",
+                "operationId": "SearchQuestionsByCriteria_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "nottagged",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "List of tags delimited by semi-colons of which at least one must be on a question. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/similar": {
+            "get": {
+                "description": "Search the site based on similarity to a title.",
+                "operationId": "SearchSimilarQuestionsByTitle_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "nottagged",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "List of tags delimited by semi-colons of which at least one must be on a question. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "tagged",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "List of tags delimited by semi-colons of which at least one must be on a question. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "answers",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", the answers to a question will be returned. boolean"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A title. string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/stats": {
+            "get": {
+                "description": "Get a set of statistics for the entire site.",
+                "operationId": "getStats_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tags": {
+            "get": {
+                "description": "Get the tags on the site.",
+                "operationId": "getTags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Required text in returned tags. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tags/synonyms": {
+            "get": {
+                "description": "Get all the tag synonyms on the site.",
+                "operationId": "getTagsSynonyms_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tags/{tags}/synonyms": {
+            "get": {
+                "description": "Get the synonyms for a specific set of tags.",
+                "operationId": "getSpecificTagsSynonyms_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tags",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The tags for which to return synonyms. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tags/{tags}/wikis": {
+            "get": {
+                "description": "Get the wiki entries for a set of tags.",
+                "operationId": "getTagsWikis_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tags",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The tags for which to return wikis. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tags/{tag}/top-answerers/{period}": {
+            "get": {
+                "description": "Get the top answer posters in a specific tag, either in the last month or for all time. Returns the top 30 answerers.",
+                "operationId": "getTagTopAnswerersByPeriod_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The tags in question. string"
+                    },
+                    {
+                        "name": "period",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "all-time",
+                            "month"
+                        ],
+                        "type": "integer",
+                        "description": "One of all-time or month. string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tags/{tag}/top-askers/{period}": {
+            "get": {
+                "description": "Get the top question askers in a specific tag, either in the last month or for all time. Returns the top 30 question askers.",
+                "operationId": "getTagTopAskersByPeriod_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The tags in question. string"
+                    },
+                    {
+                        "name": "period",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "all-time",
+                            "month"
+                        ],
+                        "type": "integer",
+                        "description": "One of all-time or month. string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users": {
+            "get": {
+                "description": "Get all users on the site.",
+                "operationId": "getUsers_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "String that must appear in returned users' names"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{ids}": {
+            "get": {
+                "description": "Get the users identified by a set of ids.",
+                "operationId": "getUsersByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{ids}/answers": {
+            "get": {
+                "description": "Get the answers posted by the users identified by a set of ids.",
+                "operationId": "getUsersAnswersByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{ids}/badges": {
+            "get": {
+                "description": "Get the badges earned by the users identified by a set of ids.",
+                "operationId": "getUsersBadgesByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{ids}/comments": {
+            "get": {
+                "description": "Get the comments posted by the users identified by a set of ids.",
+                "operationId": "getUsersCommentsByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{ids}/comments/{toid}": {
+            "get": {
+                "description": "Get the comments posted by a set of users in reply to another user.",
+                "operationId": "getReplyUsersCommentsByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "toid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "id of the user referred to. 32-bit signed integer"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{ids}/favorites": {
+            "get": {
+                "description": "Get the comments that mention one of the users identified by a set of ids.",
+                "operationId": "getCommentsMentioningUsersByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{ids}/questions": {
+            "get": {
+                "description": "Get the questions asked by the users identified by a set of ids.",
+                "operationId": "getUsersAskedQuestionsByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "answers",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", the answers to a question will be returned. boolean"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{ids}/questions/no-answers": {
+            "get": {
+                "description": "Get the questions asked by a set of users, which have no answers.",
+                "operationId": "getUsersAskedQuestionsWithNoAnswersByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "answers",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", the answers to a question will be returned. boolean"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{ids}/questions/unaccepted": {
+            "get": {
+                "description": "Get the questions asked by a set of users, which have at least one answer but no accepted answer.",
+                "operationId": "getUnacceptedUsersAskedQuestionsByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "answers",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", the answers to a question will be returned. boolean"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{ids}/questions/unanswered": {
+            "get": {
+                "description": "Get the questions asked by a set of users, which are not considered to be adequately answered.",
+                "operationId": "getUnansweredUsersAskedQuestionsByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "answers",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", the answers to a question will be returned. boolean"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{ids}/reputation": {
+            "get": {
+                "description": "Get a subset of the reputation changes experienced by the users identified by a set of ids.",
+                "operationId": "getUsersReputationChangesSubsetByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{ids}/tags": {
+            "get": {
+                "description": "Get the tags that the users (identified by a set of ids) have been active in.",
+                "operationId": "getTagsUsersBeingActiveByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Required text in returned tags. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{id}/tags/{tags}/top-answers": {
+            "get": {
+                "description": "Get the top answers a user has posted on questions with a set of tags.",
+                "operationId": "getUserPostedTopAnswersWithTags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "the id of a user. 32-bit signed integer"
+                    },
+                    {
+                        "name": "tags",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "a semi-colon delimitted list of tags the questions the answers are on must have. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{id}/tags/{tags}/top-questions": {
+            "get": {
+                "description": "Get the top questions a user has posted on questions with a set of tags.",
+                "operationId": "getUserPostedTopQuestionsWithTags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "the id of a user. 32-bit signed integer"
+                    },
+                    {
+                        "name": "tags",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "a semi-colon delimitted list of tags the questions the answers are on must have. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "answers",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", the answers to a question will be returned. boolean"
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", a post's body will be included in the response. boolean"
+                    },
+                    {
+                        "name": "comments",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "When \"true\", any comments on a post will be included in the response. boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{ids}/timeline": {
+            "get": {
+                "description": "Get a subset of the actions of that have been taken by the users identified by a set of ids.",
+                "operationId": "getUsersActionsSubsetByIds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A single primary key identifier or a vectorized, semicolon-delimited list of identifiers. This is a vectorized parameter, multiple ids can be sent a single request if delimited with a semi-colon. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{id}/top-answer-tags": {
+            "get": {
+                "description": "Get the top 30 tags (by score) a single user has posted answers in.",
+                "operationId": "getUserAnswersTopTags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The single user id to query with. 32-bit signed integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{id}/top-question-tags": {
+            "get": {
+                "description": "Get the top 30 tags (by score) a single user has asked questions in.",
+                "operationId": "getUserQuestionsTopTags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The single user id to query with. 32-bit signed integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/moderators": {
+            "get": {
+                "description": "Get the users who have moderation powers on the site.",
+                "operationId": "getModeratorsUsers_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "String that must appear in returned users' names. string"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the minimum creation date on a returned item. unix epoch date, range [0, 253,402,300,799]"
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Minimum of the range to include in the response according to the current sort. integer or unix epoch date"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "desc",
+                            "asc"
+                        ],
+                        "default": "desc",
+                        "type": "integer",
+                        "description": "How the current sort should be ordered. one of desc (default), or asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The pagination offset for the current collection. Affected by the specified pagesize. 32-bit signed integer"
+                    },
+                    {
+                        "name": "pagesize",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of collection results to display during pagination. Should be between 0 and 100 inclusive. 32-bit signed integer"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "activity",
+                            "creation",
+                            "votes"
+                        ],
+                        "default": "activity",
+                        "type": "integer",
+                        "description": "How a collection should be sorted. one of activity (default), creation, or votes"
+                    },
+                    {
+                        "name": "todate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unix timestamp of the maximum creation date on a returned item. Unix epoch date, range [0, 253,402,300,799]"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create apps or scripts that can access Stack Exchange questions, answers, comments, badges and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "order": {
+            "title": "order",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "desc",
+                "asc"
+            ]
+        },
+        "sort": {
+            "title": "sort",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "activity",
+                "creation",
+                "votes"
+            ]
+        },
+        "period": {
+            "title": "period",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "all-time",
+                "month"
+            ]
+        }
+    }
+}

@@ -1,0 +1,455 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Blogger",
+        "description": "Create, edit, query and delete blog posts, or create gadgets for Blogger users.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "www.googleapis.com",
+    "basePath": "/blogger/v2/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/users/{userId}/blogs": {
+            "get": {
+                "description": "Retrieves the list of Blogs for a User, given a userId.",
+                "operationId": "Get_blogger.users.blogs.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the user whose blogs are to be fetched."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, edit, query and delete blog posts, or create gadgets for Blogger users.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blogs/{blogId}": {
+            "get": {
+                "description": "Retrieves a Blogs Resource's metadata by its blogId.",
+                "operationId": "Get_blogger.blogs.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "blogId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the blog to get."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, edit, query and delete blog posts, or create gadgets for Blogger users.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blogs/{blogId}/posts/{postId}/comments": {
+            "get": {
+                "description": "Retrieves the list of Comments for a Post.",
+                "operationId": "Get_blogger.blogs.comments.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "blogId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the blog to fetch comments from."
+                    },
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the post to fetch posts from."
+                    },
+                    {
+                        "name": "fetchBodies",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Whether the body content of the comments is included."
+                    },
+                    {
+                        "name": "maxResults",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Maximum number of comments to include in the result."
+                    },
+                    {
+                        "name": "pageToken",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Continuation token if request is paged."
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Earliest date of comment to fetch."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, edit, query and delete blog posts, or create gadgets for Blogger users.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blogs/{blogId}/posts/{postId}/comments/{commentId}": {
+            "get": {
+                "description": "Retrieves one Comments Resource by its commentId.",
+                "operationId": "Get_blogger.blogs.comments.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "blogId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the blog to fetch comments from."
+                    },
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the post to fetch posts from."
+                    },
+                    {
+                        "name": "commentId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the comment to get."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, edit, query and delete blog posts, or create gadgets for Blogger users.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blogs/{blogId}/pages": {
+            "get": {
+                "description": "Retrieves the list of Pages for a Blog.",
+                "operationId": "Get_blogger.blogs.pages.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "blogId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the blog to fetch pages from."
+                    },
+                    {
+                        "name": "fetchBodies",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Whether to retrieve the Page bodies."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, edit, query and delete blog posts, or create gadgets for Blogger users.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blogs/{blogId}/pages/{pageId}": {
+            "get": {
+                "description": "Retrieves one Pages Resource by its pageId.",
+                "operationId": "Get_blogger.blogs.pages.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "blogId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the blog containing the page."
+                    },
+                    {
+                        "name": "pageId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the page to get."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, edit, query and delete blog posts, or create gadgets for Blogger users.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blogs/{blogId}/posts": {
+            "get": {
+                "description": "Retrieves a list of posts.",
+                "operationId": "Get_blogger.blogs.posts.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "blogId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the blog to fetch posts from."
+                    },
+                    {
+                        "name": "fetchBodies",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Whether the body content of posts is included."
+                    },
+                    {
+                        "name": "maxResults",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Maximum number of posts to fetch."
+                    },
+                    {
+                        "name": "pageToken",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Continuation token if the request is paged."
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Earliest post date to fetch."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, edit, query and delete blog posts, or create gadgets for Blogger users.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blogs/{blogId}/posts/{postId}": {
+            "get": {
+                "description": "Retrieves one post by postId.",
+                "operationId": "Get_blogger.blogs.posts.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "blogId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the blog to fetch the post from."
+                    },
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the post."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, edit, query and delete blog posts, or create gadgets for Blogger users.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{userId}": {
+            "get": {
+                "description": "Retrieves one user by userId.",
+                "operationId": "Get_blogger.blogs.users.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the user to get."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, edit, query and delete blog posts, or create gadgets for Blogger users.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

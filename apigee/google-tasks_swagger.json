@@ -1,0 +1,593 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Google Tasks",
+        "description": "Bring Google Tasks content and metadata into your apps or websites.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "www.googleapis.com",
+    "basePath": "/tasks/v1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/lists/{tasklist}/tasks": {
+            "get": {
+                "description": "Returns all Task Resources in the specified task list. Authentication is required.",
+                "operationId": "Get_tasks.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "maxResults",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "100",
+                        "type": "string",
+                        "description": "The maximum number of elements to return with this request. Default: maxResults=20. Maximum allowable value: maxResults=100."
+                    },
+                    {
+                        "name": "completedMax",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "2031-01-01",
+                        "type": "string",
+                        "description": "Upper bound for a task's completion date (as an RFC 3339 timestamp) to filter by. Default: completedMax=2031-01-01. Use the RFC 3339 timestamp format. For example: 2010-08-09T10:57:00.000-08:00"
+                    },
+                    {
+                        "name": "completedMin",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "1970-01-01",
+                        "type": "string",
+                        "description": "Lower bound for a task's completion date (as an RFC 3339 timestamp) to filter by. Default: completedMin=1970-01-01. Use the RFC 3339 timestamp format. For example: 2010-08-09T10:57:00.000-08:00"
+                    },
+                    {
+                        "name": "dueMax",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "2031-01-01",
+                        "type": "string",
+                        "description": "Upper bound for a task's due date (as an RFC 3339 timestamp) to filter by. Default: dueMax=2031-01-01. Use the RFC 3339 timestamp format. For example: 2010-08-09T10:57:00.000-08:00"
+                    },
+                    {
+                        "name": "dueMin",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "1970-01-01",
+                        "type": "string",
+                        "description": "Lower bound for a task's due date (as an RFC 3339 timestamp) to filter by. Default: dueMin=1970-01-01. Use the RFC 3339 timestamp format. For example: 2010-08-09T10:57:00.000-08:00"
+                    },
+                    {
+                        "name": "showCompleted",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": true,
+                        "type": "boolean",
+                        "description": "Specify whether or not to show completed tasks. Default: showCompleted=true"
+                    },
+                    {
+                        "name": "showDeleted",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Specify whether or not to show deleted tasks. Default: showDeleted=false"
+                    },
+                    {
+                        "name": "showHidden",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Specify whether or not to show hidden tasks. Default: showHidden=true"
+                    },
+                    {
+                        "name": "pageToken",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Token specifying the result page to return. The default is to return the first page."
+                    },
+                    {
+                        "name": "updatedMin",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Lower bound for a task's last modification time (as an RFC 3339 timestamp) to filter by. Use the RFC 3339 timestamp format. For example: 2010-08-09T10:57:00.000-08:00Z. The default is not to filter by last modification time."
+                    },
+                    {
+                        "name": "tasklist",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task list identifier. To refer to the authenticated user's default task list, use the special value @default."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying a subset of fields to include in the response. Use for better performance."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Google Tasks content and metadata into your apps or websites.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new task on the specified task list. Returns a copy of the created Task Resource. Authentication is required.",
+                "operationId": "Create_tasks.insert_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "parent",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specify the task's parent task ID. No parameter indicates an insertion or a move to the top level of the task list."
+                    },
+                    {
+                        "name": "previous",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specify the task's previous task ID. No parameter indicates an insertion or a move to the first position in the sublist."
+                    },
+                    {
+                        "name": "tasklist",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task list identifier. To refer to the authenticated user's default task list, use the special value @default."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying a subset of fields to include in the response. Use for better performance."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Google Tasks content and metadata into your apps or websites.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/lists/{tasklist}/tasks/{task}": {
+            "get": {
+                "description": "Returns the specified Task Resource. Authentication is required.",
+                "operationId": "Get_tasks.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying a subset of fields to include in the response. Use for better performance."
+                    },
+                    {
+                        "name": "tasklist",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task list identifier. To refer to the authenticated user's default task list, use the special value @default."
+                    },
+                    {
+                        "name": "task",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task identifier."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Google Tasks content and metadata into your apps or websites.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates the specified task. Returns a copy of the updated Task Resource. Authentication is required.",
+                "operationId": "Update_tasks.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying a subset of fields to include in the response. Use for better performance."
+                    },
+                    {
+                        "name": "tasklist",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task list identifier. To refer to the authenticated user's default task list, use the special value @default."
+                    },
+                    {
+                        "name": "task",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task identifier."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Google Tasks content and metadata into your apps or websites.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes the specified task from the task list. Returns no data (only a status code). Authentication is required.",
+                "operationId": "Delete_tasks.delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tasklist",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task list identifier. To refer to the authenticated user's default task list, use the special value @default."
+                    },
+                    {
+                        "name": "task",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task identifier."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Google Tasks content and metadata into your apps or websites."
+                    }
+                }
+            }
+        },
+        "/lists/{tasklist}/tasks/{task}/move": {
+            "post": {
+                "description": "Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or moving it to a different position among its sibling tasks. Returns a copy of the updated Task Resource. Authentication is required.",
+                "operationId": "Create_tasks.move_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tasklist",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task list identifier. To refer to the authenticated user's default task list, use the special value @default."
+                    },
+                    {
+                        "name": "task",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task identifier."
+                    },
+                    {
+                        "name": "parent",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specify the task's parent task ID. No parameter indicates an insertion or a move to the top level of the task list."
+                    },
+                    {
+                        "name": "previous",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specify the task's previous task ID. No parameter indicates an insertion or a move to the first position in the sublist."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying a subset of fields to include in the response. Use for better performance."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Google Tasks content and metadata into your apps or websites.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/lists/{tasklist}/clear": {
+            "post": {
+                "description": "Clears all completed tasks from the specified task list. The affected tasks are marked as hidden and are no longer returned by default when retrieving all tasks for a task list. Returns no data (only a status code). Authentication is required.",
+                "operationId": "Create_tasks.clear_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tasklist",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task list identifier. To refer to the authenticated user's default task list, use the special value @default."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Google Tasks content and metadata into your apps or websites.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/@me/lists": {
+            "get": {
+                "description": "Returns all the authenticated user's Tasklist Resources. Authentication is required.",
+                "operationId": "Get_tasklists.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "maxResults",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "100",
+                        "type": "string",
+                        "description": "The maximum number of elements to return with this request. Default: maxResults=20. Maximum allowable value: maxResults=100."
+                    },
+                    {
+                        "name": "pageToken",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Token specifying the result page to return. The default is to return the first page."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying a subset of fields to include in the response. Use for better performance."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Google Tasks content and metadata into your apps or websites.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new task list and adds it to the authenticated user's task lists. Returns a copy of the created Tasklist Resource. Authentication is required.",
+                "operationId": "Create_tasklists.insert_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying a subset of fields to include in the response. Use for better performance."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Google Tasks content and metadata into your apps or websites.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/@me/lists/{tasklist}": {
+            "get": {
+                "description": "Returns the authenticated user's specified Tasklist Resource. Authentication is required.",
+                "operationId": "Get_tasklists.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying a subset of fields to include in the response. Use for better performance."
+                    },
+                    {
+                        "name": "tasklist",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task list identifier. To refer to the authenticated user's default task list, use the special value @default."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Google Tasks content and metadata into your apps or websites.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates the authenticated user's specified task list. Returns a copy of the updated Tasklist Resource. Authentication is required.",
+                "operationId": "Update_tasklists.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying a subset of fields to include in the response. Use for better performance."
+                    },
+                    {
+                        "name": "tasklist",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task list identifier. To refer to the authenticated user's default task list, use the special value @default."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Google Tasks content and metadata into your apps or websites.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes the authenticated user's specified task list. Returns no data (only a status code). Authentication is required.",
+                "operationId": "Delete_tasklists.delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tasklist",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Task list identifier. To refer to the authenticated user's default task list, use the special value @default."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Google Tasks content and metadata into your apps or websites."
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,238 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Tropo",
+        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.tropo.com",
+    "basePath": "/v1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/applications": {
+            "get": {
+                "description": "Sometimes you need to access a list a specific application.",
+                "operationId": "Get_application_find_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "When you want to change the name, platform or partition of an application, just run a PUT on the application specific folder and specify the new details. The old information will be removed and the new information entered in its place. Note that if you do not have a production Tropo account, you will not be able to change the partition to production.",
+                "operationId": "Update_application_update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Use this method to add a brand new application. You can define a voice and messaging URL in the Request Body, but this method won't assign any addresses. You'll need to update the application once it's created to add a phone number or IM account.",
+                "operationId": "Create_application_create_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Use this method to remove an application. This cannot be undone; once an application has been deleted, it cannot be restored without recreating it from scratch.",
+                "operationId": "Delete_application_delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications."
+                    }
+                }
+            }
+        },
+        "/applications/{AppId}/addresses": {
+            "get": {
+                "description": "Sometimes you'll need to view all the addresses associated with a specific application. Using a GET on the addresses folder will provide you with the information you need; running a GET on a specific address type folder, such as addresses/number or addresses/aim, will get you a list of all the addresses that match that type for this application.",
+                "operationId": "Get_address_find_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "applicationId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "This example will add a voice token to your application; you can add a messaging token just by changing the channel to \"messaging\" instead of \"voice\".",
+                "operationId": "address_addtoken_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications."
+                    },
+                    {
+                        "name": "applicationId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "You can remove a phone number, IM account or token from an application. If you remove a phone number, it will become available for use by someone else, so it's not recommended to delete a phone number unless you're absolutely sure you have no further need for it. If you want to move a phone number between applications, there's an easier way. Check out the Adding a Specific Number/Moving a Number> example for more info.",
+                "operationId": "Delete_address_delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "applicationId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications."
+                    }
+                }
+            }
+        },
+        "/exchanges": {
+            "get": {
+                "description": "Exchanges identify the locations and prefixes for phone numbers; using the following method will allow you to view the exchanges available to you (e.g., if you're still in staging, toll free numbers won't be displayed). The results are abbreviated for ease of viewing; there's typically many, many more available.",
+                "operationId": "Get_address_viewexchanges_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/sessions": {
+            "post": {
+                "description": "Say you want to play some hold music, then interrupt it later. In order to interrupt, you would give a the say that's playing the hold music a signal using the allowSignals parameter. You can then make a web service call using that name and Tropo will stop running that function. If the function has already run and completed, your interrupt request will be ignored. If it has not run yet, it will be queued until the function runs.\n\n\t\t\t\t\tNote: transfer and conference must include the terminator parameter for signaling to work.",
+                "operationId": "Create_session_interrupt_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tropo is a cloud communications API and platform for building scalable Voice and SMS applications.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

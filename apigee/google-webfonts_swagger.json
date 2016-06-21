@@ -1,0 +1,82 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Google Web Fonts",
+        "description": "Include high-quality web fonts in any web page.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "www.googleapis.com",
+    "basePath": "/webfonts/v1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/webfonts": {
+            "get": {
+                "description": "Retrieves the list of fonts.",
+                "operationId": "Get_webfonts.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "alpha",
+                            "date",
+                            "popularity",
+                            "style",
+                            "trending"
+                        ],
+                        "type": "integer",
+                        "description": "Enables sorting of the list."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Include high-quality web fonts in any web page.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "sort": {
+            "title": "sort",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "alpha",
+                "date",
+                "popularity",
+                "style",
+                "trending"
+            ]
+        }
+    }
+}

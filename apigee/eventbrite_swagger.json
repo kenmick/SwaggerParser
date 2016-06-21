@@ -1,0 +1,2216 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Eventbrite",
+        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "www.eventbrite.com",
+    "basePath": "/%7Bdata-type%7D/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/event_search": {
+            "get": {
+                "description": "This method uses our search index to find publicly listed events.",
+                "operationId": "Get_event_search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "keywords",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The search keywords. To run an OR search, you need this format: “keywords=google%20OR%20multimedia”. Optional."
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Event categories (comma seperated): conference, conventions, entertainment, fundraisers, meetings, other, performances, reunions, sales, seminars, social, sports, tradeshows, travel, religion, fairs, food, music, recreation. Optional."
+                    },
+                    {
+                        "name": "address",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The venue address. Optional."
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The venue city. Optional."
+                    },
+                    {
+                        "name": "region",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The venue state/province/county/territory depending on the country. 2-letter state code is required for US addresses. Optional."
+                    },
+                    {
+                        "name": "postal_code",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The postal/zip code of the venue. Optional."
+                    },
+                    {
+                        "name": "country",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "2-letter country code, according to the ISO 3166 format. Optional."
+                    },
+                    {
+                        "name": "within",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "If “within” is set and the “city” or “zipcode” resolve to a specific geolocation, the search will be restricted to the specified within radius. The sorting default will be set to “distance”. Optional."
+                    },
+                    {
+                        "name": "within_unit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "M",
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "If within is set, you can specify the unit to use: “M” for miles, or “K” for kilometers. By default, the API will use miles. Optional."
+                    },
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "number",
+                        "format": "double",
+                        "description": "If “within” is set you can limit your search to wgs84 coordinates (latitude, longitude). Optional."
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "number",
+                        "format": "double",
+                        "description": "If “within” is set you can limit your search to wgs84 coordinates (latitude, longitude). Optional."
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event start date. Limit the list of results to a date range, specified by a label or by exact dates. Currently supported labels include: “All”, “Future”, “Past”, “Today”, “Yesterday”, “Last Week”, “This Week”, “Next week”, “This Month”, “Next Month” and months by name, e.g. “October”. Exact date ranges take the form “YYYY-MM-DD YYYY-MM-DD”, e.g. “2008-04-25 2008-04-27″. Optional."
+                    },
+                    {
+                        "name": "date_created",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The date range the event was created, specified by a label or by exact dates. Currently supported labels include: “All”, “Future”, “Past”, “Today”, “Yesterday”, “Last Week”, “This Week”, “Next week”, “This Month”, “Next Month” and months by name, e.g. “October”. Exact date ranges take the form “YYYY-MM-DD YYYY-MM-DD”, e.g. “2008-04-25 2008-04-27″. Optional."
+                    },
+                    {
+                        "name": "date_modified",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The date range the event was modified, specified by a label or by exact dates. Currently supported labels include: “All”, “Future”, “Past”, “Today”, “Yesterday”, “Last Week”, “This Week”, “Next week”, “This Month”, “Next Month” and months by name, e.g. “October”. Exact date ranges take the form “YYYY-MM-DD YYYY-MM-DD”, e.g. “2008-04-25 2008-04-27″. Optional."
+                    },
+                    {
+                        "name": "organizer",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The organizer name. Optional."
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 10.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Limit the number of events returned. Maximum limit is 100 events per page. Default is 10. Optional."
+                    },
+                    {
+                        "name": "count_only",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Only return the total number of events (“true” or “false”). Default is “false”. Optional."
+                    },
+                    {
+                        "name": "sort_by",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "date",
+                        "type": "string",
+                        "description": "Sort the list of events by “id”, “date”, “name”, “city”. The default is “date”. Optional."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Allows for paging through the results of a query. Default is 1. Optional."
+                    },
+                    {
+                        "name": "since_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Returns events with id greater than “since_id” value. Default is 1. Optional."
+                    },
+                    {
+                        "name": "tracking_link",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The tracking link code to add to the event URLs. Optional."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/event_get": {
+            "get": {
+                "description": "This method returns the data for a given event. Only public events are viewable if no authentication is passed.",
+                "operationId": "Get_event_get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "event_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The ID of the requested event."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/event_new": {
+            "get": {
+                "description": "This method creates a new event. It returns the ID of the newly created event.",
+                "operationId": "Get_event_new_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event title. 255 characters max."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event description. Optional."
+                    },
+                    {
+                        "name": "start_date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event start date and time, in ISO 8601 format (e.g., “2007-12-31 23:59:59″)."
+                    },
+                    {
+                        "name": "end_date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event end date and time, in ISO 8601 format (e.g., “2007-12-31 23:59:59″)."
+                    },
+                    {
+                        "name": "timezone",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event time zone in relation to GMT (e.g., “GMT+01″, “GMT+02″, “GMT-01″)."
+                    },
+                    {
+                        "name": "privacy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "0 for a private event, 1 for a public event. If not provided, will default to 0. Optional."
+                    },
+                    {
+                        "name": "personalized_url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event registration URL. If you pass “testevent”, the event will be accessible at “http://testevent.eventbrite.com”.    This string is limited to 255 characters max. Optional."
+                    },
+                    {
+                        "name": "venue_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The event venue ID. The venue must have been previously created using /venue_new. Optional."
+                    },
+                    {
+                        "name": "organizer_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The event organizer ID. The organizer must have been previously created using /organizer_new. Optional."
+                    },
+                    {
+                        "name": "capacity",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of people who can attend the event. Optional."
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event currency in ISO 4217 format (e.g., “USD”, “EUR”). Optional."
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event status. Allowed values are “draft”, “live” for new events. If not provided, status will be “draft”, meaning that the event registration page will not be available publicly. Optional."
+                    },
+                    {
+                        "name": "custom_header",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom HTML header for your registration page. Optional."
+                    },
+                    {
+                        "name": "custom_footer",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom HTML footer for your registration page. Optional."
+                    },
+                    {
+                        "name": "background_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound. Optional."
+                    },
+                    {
+                        "name": "text_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound. Optional."
+                    },
+                    {
+                        "name": "title_text_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound. Optional."
+                    },
+                    {
+                        "name": "box_background_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound. Optional."
+                    },
+                    {
+                        "name": "box_text_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound. Optional."
+                    },
+                    {
+                        "name": "box_border_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound. Optional."
+                    },
+                    {
+                        "name": "box_header_background_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound. Optional."
+                    },
+                    {
+                        "name": "box_header_text_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound. Optional."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/event_update": {
+            "get": {
+                "description": "This method updates an existing event. Only the fields passed as arguments will be modified. This method returns the ID of the modified event.",
+                "operationId": "Get_event_update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "event_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The ID of the event to update."
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event title. 255 characters max."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event description."
+                    },
+                    {
+                        "name": "start_date",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event start date and time, in ISO 8601 format (e.g., “2007-12-31 23:59:59″)."
+                    },
+                    {
+                        "name": "end_date",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event end date and time, in ISO 8601 format (e.g., “2007-12-31 23:59:59″)."
+                    },
+                    {
+                        "name": "timezone",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event time zone in relation to GMT (e.g., “GMT+01″, “GMT+02″, “GMT-01″) or US Time Zone (“PT”    or “US/Pacific”, “MT”     or “US/Mountain”, “CT”     or “US/Central” or “ET”    or “US/Eastern”)."
+                    },
+                    {
+                        "name": "privacy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "0 for a private event, 1 for a public event."
+                    },
+                    {
+                        "name": "personalized_url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event registration URL subdomain.    Your event will be available at http://<personalized_url>.eventbrite.com.    This string is limited to 255 characters max."
+                    },
+                    {
+                        "name": "venue_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The event venue ID. The venue must have been previously created using /venue_new."
+                    },
+                    {
+                        "name": "organizer_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The event organizer ID. The organizer must have been previously created using /organizer_new."
+                    },
+                    {
+                        "name": "capacity",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of people who can attend the event."
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event currency in ISO 4217 format (e.g., “USD”, “EUR”)."
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The event status. Allowed values are “draft”, “live” for new events."
+                    },
+                    {
+                        "name": "custom_header",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom HTML header for your registration page."
+                    },
+                    {
+                        "name": "custom_footer",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom HTML footer for your registration page."
+                    },
+                    {
+                        "name": "background_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound."
+                    },
+                    {
+                        "name": "text_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound."
+                    },
+                    {
+                        "name": "title_text_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound."
+                    },
+                    {
+                        "name": "box_background_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound."
+                    },
+                    {
+                        "name": "box_text_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound."
+                    },
+                    {
+                        "name": "box_border_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound."
+                    },
+                    {
+                        "name": "box_header_background_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound."
+                    },
+                    {
+                        "name": "box_header_text_color",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Custom hexadecimal color for your registration page. Format: FFFFFF *without* the pound."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/event_copy": {
+            "get": {
+                "description": "This method duplicates an existing event, returning the ID of the new event.",
+                "operationId": "Get_event_copy_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "event_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The ID of the existing event."
+                    },
+                    {
+                        "name": "event_name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A new name for this copy of the Event.    255 character limit."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user_list_events": {
+            "get": {
+                "description": "This method lists the events created by this user. Only public events are returned if no authentication is passed.",
+                "operationId": "Get_user_list_events_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user email. Defaults to the authenticated user if not provided. Optional."
+                    },
+                    {
+                        "name": "do_not_display",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Comma separated list without spaces. Valid options include: description, venue, logo, style, organizer, tickets. Example: \"do_not_display=venue,logo,style\". If you leave this field blank, it will return everything. Optional."
+                    },
+                    {
+                        "name": "event_statuses",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Comma separated list without spaces. Valid options include: live, started, ended. Example: \"event_statuses=live,started\". If you leave this field blank, it will return everything. Also note that the “ended” option will only return events that have ended in the last 7 days. Optional."
+                    },
+                    {
+                        "name": "asc_or_desc",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "asc",
+                        "type": "string",
+                        "description": "Valid options include ‘asc’ or results in ascending order or ‘desc’ or descending order based on event start_date. Defaults to asc. Optional."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/ticket_new": {
+            "get": {
+                "description": "This method creates new fixed-price or donation ticket types. It returns the ID of the newly created ticket.",
+                "operationId": "Get_ticket_new_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "event_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The event ID. The event must have been previously created using /event_new."
+                    },
+                    {
+                        "name": "is_donation",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "0 for fixed-price tickets, 1 for donations. 0 will be used by default if not provided. Optional."
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ticket name."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ticket description. Optional."
+                    },
+                    {
+                        "name": "price",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "number",
+                        "format": "double",
+                        "description": "The ticket price. Enter 0.00 for free tickets. Leave blank for a donation."
+                    },
+                    {
+                        "name": "quantity",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of tickets available. Not required for donations."
+                    },
+                    {
+                        "name": "start_sales",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The date and time when ticket sales start, in ISO 8601 format (e.g., “2007-12-31 23:59:59″). Optional."
+                    },
+                    {
+                        "name": "end_sales",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The date and time when ticket sales stop, in ISO 8601 format (e.g., “2007-12-31 23:59:59″). Optional."
+                    },
+                    {
+                        "name": "include_fee",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "0 to add the Eventbrite service fee on top of ticket price, or 1 to include it in the ticket price. 0 will be used by default if not provided. Optional."
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The minimum number of tickets per order. Optional."
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of tickets per order. Optional."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/ticket_update": {
+            "get": {
+                "description": "This method updates an existing ticket type. Only the fields passed as arguments will be modified. It returns the ID of the updated ticket.",
+                "operationId": "Get_ticket_update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The ticket ID."
+                    },
+                    {
+                        "name": "is_donation",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "0 for fixed-price tickets, 1 for donations."
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ticket name."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ticket description."
+                    },
+                    {
+                        "name": "price",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "number",
+                        "format": "double",
+                        "description": "The ticket price. Enter 0.00 for free tickets. Leave blank for a donation. If tickets are already sold, price will not change."
+                    },
+                    {
+                        "name": "quantity",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The number of tickets available. Not required for donations."
+                    },
+                    {
+                        "name": "start_sales",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The date and time when ticket sales start, in ISO 8601 format (e.g., “2007-12-31 23:59:59″). Optional."
+                    },
+                    {
+                        "name": "end_sales",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The date and time when ticket sales stop, in ISO 8601 format (e.g., “2007-12-31 23:59:59″). Optional."
+                    },
+                    {
+                        "name": "include_fee",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "0 to add the Eventbrite service fee on top of ticket price, or 1 to include it in the ticket price."
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The minimum number of tickets per order."
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of tickets per order."
+                    },
+                    {
+                        "name": "hide",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Show or hide the ticket type. Valid options: (y or n)"
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/event_list_attendees": {
+            "get": {
+                "description": "This method returns a list of attendees for a given event. If no authentication is passed, only publicly available attendee records will be returned.",
+                "operationId": "Get_event_list_attendees_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "event_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The ID of the event."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 50.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Limit the number of attendees returned. Default limit is 50 attendees per page if paginate selected."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Allows for paging through the results of a query. Default is 1. Page size will be setted with “count” parameter."
+                    },
+                    {
+                        "name": "do_not_display",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Comma separated list without spaces that leaves out certain data returned. Valid options are: profile,answers,address. Optional."
+                    },
+                    {
+                        "name": "show_full_barcodes",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "If set to ‘true’, it will return all barcodes associates with the attendee, plus the barcode status, device used, attendee_id, and barcode number. If left blank, it will return a comma separated list of barcodes. Optional."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/venue_get": {
+            "get": {
+                "description": "This method returns a single venue by id.",
+                "operationId": "Get_venue_get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The venue id."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/venue_new": {
+            "get": {
+                "description": "This method creates a new venue. It returns the ID of the newly created venue.",
+                "operationId": "Get_venue_new_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "organizer_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The ID of the related organizer."
+                    },
+                    {
+                        "name": "venue",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The venue name."
+                    },
+                    {
+                        "name": "adress",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The venue address (line 1). Optional."
+                    },
+                    {
+                        "name": "adress_2",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The venue address (line 2). Optional."
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The venue city. Optional."
+                    },
+                    {
+                        "name": "region",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The venue state/province/county/territory depending on the country. 2-letter state code is required for US addresses."
+                    },
+                    {
+                        "name": "postal_code",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The postal code of the venue. Optional."
+                    },
+                    {
+                        "name": "country_code",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "2-letter country code, according to the ISO 3166 format."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/venue_update": {
+            "get": {
+                "description": "This method updates an existing venue. Only the fields passed as arguments will be modified. It returns the ID of the updated venue.",
+                "operationId": "Get_venue_update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The venue ID."
+                    },
+                    {
+                        "name": "venue",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The venue name."
+                    },
+                    {
+                        "name": "adress",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The venue address (line 1)."
+                    },
+                    {
+                        "name": "adress_2",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The venue address (line 2)."
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The venue city."
+                    },
+                    {
+                        "name": "region",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The venue state/province/county/territory depending on the country. 2-letter state code is required for US addresses."
+                    },
+                    {
+                        "name": "postal_code",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The postal code of the venue."
+                    },
+                    {
+                        "name": "country_code",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "2-letter country code, according to the ISO 3166 format."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user_list_venues": {
+            "get": {
+                "description": "This method lists the venues created by this user. Requires authentication.",
+                "operationId": "Get_user_list_venues_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/organizer_list_events": {
+            "get": {
+                "description": "This method returns a list of events for a given organizer.",
+                "operationId": "Get_organizer_list_events_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The organizer id."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/organizer_get": {
+            "get": {
+                "description": "This method returns a single organizer by id.",
+                "operationId": "Get_organizer_get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The organizer profile id."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/organizer_new": {
+            "get": {
+                "description": "Many event creators prefer having a specific person identified as the point of contact for their event. This person is usually someone like the event emcee, or an on-site contact that can help with attendee check-ins or other issues during the event. This method creates a new organizer, and returns the organizer_id for the newly created resource.",
+                "operationId": "Get_organizer_new_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The organizer name."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The organizer description. Optional."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/organizer_update": {
+            "get": {
+                "description": "This method updates an existing organizer. Only the fields passed as arguments will be modified. It returns the ID of the updated organizer.",
+                "operationId": "Get_organizer_update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The organizer ID."
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The organizer name."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The organizer description."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user_list_organizers": {
+            "get": {
+                "description": "This method lists the organizers created by this user. Requires authentication.",
+                "operationId": "Get_user_list_organizers_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user_list_tickets": {
+            "get": {
+                "description": "This method lists the tickets purchased by the authenticated user. Each transaction is an order in our system and an order may contain one or more tickets. Tickets to free events are included.",
+                "operationId": "Get_user_list_tickets_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user_get": {
+            "get": {
+                "description": "This method returns the user account identified by the user_id or email request parameters. Visibility is limited to users and sub-users of the given user_key.",
+                "operationId": "Get_user_get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The ID of the subuser account. Optional."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The email address of the subuser account. Optional."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user_new": {
+            "get": {
+                "description": "This method creates a new user, returning the user’s ID in the response.",
+                "operationId": "Get_user_new_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user email address."
+                    },
+                    {
+                        "name": "passwd",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user password. (needs to be at least 4 characters long)."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user_update": {
+            "get": {
+                "description": "This method updates an existing user. Only the fields passed as arguments will be modified. It returns the ID of the updated user.",
+                "operationId": "Get_user_update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "new_email",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "New user email address."
+                    },
+                    {
+                        "name": "new_password",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "New user password. (needs to be at least 4 characters long)."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/event_list_discounts": {
+            "get": {
+                "description": "This method returns a list of discounts for a given event.",
+                "operationId": "Get_event_list_discounts_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The ID of the event."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/discount_new": {
+            "get": {
+                "description": "This method creates a new discount code for a specific event. It returns the ID of the newly created discount code.",
+                "operationId": "Get_discount_new_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "event_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The event ID. The event must have been previously created using /event_new."
+                    },
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The discount code. Spaces, apostrophes and non-alphanumeric characters are not allowed, except for dashes and underscores. Examples: “earlybirdspecial_08″, “membersonly”, “dc121232″."
+                    },
+                    {
+                        "name": "amount_off",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "number",
+                        "format": "double",
+                        "description": "The fixed amount off the ticket price. Each discount code can have a fixed discount amount or a variable (percentage) discount amount, but not both."
+                    },
+                    {
+                        "name": "percent_off",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "number",
+                        "format": "double",
+                        "description": "The percentage off the ticket price. Each discount code can have a fixed discount amount or a variable (percentage) discount amount, but not both."
+                    },
+                    {
+                        "name": "tickets",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Comma-separated list of ticket IDs for which the discount applies. If not provided, the discount will apply to all ticket types."
+                    },
+                    {
+                        "name": "quantity_available",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Maximum number of times this discount can be used. If not provided, no maximum is set."
+                    },
+                    {
+                        "name": "start_date",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The discount start date and time, in ISO 8601 format (e.g., “2007-12-31 23:59:59″)."
+                    },
+                    {
+                        "name": "end_date",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The discount end date and time, in ISO 8601 format (e.g., “2007-12-31 23:59:59″)."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/discount_update": {
+            "get": {
+                "description": "This method is used to update an existing discount code. Only the fields passed as arguments will be modified. This method returns the ID of the modified discount code.",
+                "operationId": "Get_discount_update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The discount ID to update."
+                    },
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The discount code. Spaces, apostrophes and non-alphanumeric characters are not allowed, except for dashes and underscores. Examples: “earlybirdspecial_08″, “membersonly”, “dc121232″."
+                    },
+                    {
+                        "name": "amount_off",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "number",
+                        "format": "double",
+                        "description": "The fixed amount off the ticket price. Each discount code can have a fixed discount amount or a variable (percentage) discount amount, but not both."
+                    },
+                    {
+                        "name": "percent_off",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "number",
+                        "format": "double",
+                        "description": "The percentage off the ticket price. Each discount code can have a fixed discount amount or a variable (percentage) discount amount, but not both."
+                    },
+                    {
+                        "name": "tickets",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Comma-separated list of ticket IDs for which the discount applies. If not provided, the discount will apply to all ticket types."
+                    },
+                    {
+                        "name": "quantity_available",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Maximum number of times this discount can be used. If not provided, no maximum is set."
+                    },
+                    {
+                        "name": "start_date",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The discount start date and time, in ISO 8601 format (e.g., “2007-12-31 23:59:59″)."
+                    },
+                    {
+                        "name": "end_date",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The discount end date and time, in ISO 8601 format (e.g., “2007-12-31 23:59:59″)."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/payment_update": {
+            "get": {
+                "description": "This method creates or updates the payment options for this event. Only the fields passed as arguments will be modified.",
+                "operationId": "Get_payment_update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "event_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The event ID."
+                    },
+                    {
+                        "name": "accept_paypal",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Accept PayPal payments (1 or 0)."
+                    },
+                    {
+                        "name": "paypal_email",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Your PayPal email. Defaults to the user email address if not provided."
+                    },
+                    {
+                        "name": "accept_google",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Accept Google Checkout payments (1 or 0)."
+                    },
+                    {
+                        "name": "google_merchant_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Google Checkout Merchant ID. Required if accept_google is 1."
+                    },
+                    {
+                        "name": "google_merchant_key",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Google Checkout Merchant Key. Required if accept_google is 1."
+                    },
+                    {
+                        "name": "accept_check",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Accept “Pay by Check” payments (1 or 0)."
+                    },
+                    {
+                        "name": "instructions_check",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Instructions to attendees who want to pay by check."
+                    },
+                    {
+                        "name": "accept_cash",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Accept “Pay by Cash” payments (1 or 0)."
+                    },
+                    {
+                        "name": "instructions_cash",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Instructions to attendees who want to pay by cash."
+                    },
+                    {
+                        "name": "accept_invoice",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Accept “Send an Invoice” payments (1 or 0)."
+                    },
+                    {
+                        "name": "instructions_invoice",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Instructions to attendees who need to be sent an invoice."
+                    },
+                    {
+                        "name": "data-type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "xml or json data-types are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create, manage & promote events. Add event-management features to your site. Show the world what exciting things are happening around them.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "data-type": {
+            "title": "data-type",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "xml",
+                "json"
+            ]
+        }
+    }
+}

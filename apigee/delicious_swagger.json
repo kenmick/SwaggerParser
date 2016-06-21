@@ -1,0 +1,511 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Delicious",
+        "description": "Keep, share and discover the best of the Web with Delicious APIs.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.del.icio.us",
+    "basePath": "/v1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/posts/update": {
+            "get": {
+                "description": "Returns the last update time for the user, as well as the number of new items in the user's inbox since it was last visited.",
+                "operationId": "Get_postUpdate_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/posts/add": {
+            "get": {
+                "description": "Add a post to Delicious.",
+                "operationId": "Get_postAdd_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The URL of the item."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The description of the item."
+                    },
+                    {
+                        "name": "extended",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Notes for the item."
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Tags for the item (space delimited)."
+                    },
+                    {
+                        "name": "dt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Datestamp of the item (format \"CCYY-MM-DDThh:mm:ssZ\"). Requires a LITERAL \"T\" and \"Z\" like in ISO8601 at http://www.cl.cam.ac.uk/~mgk25/iso-time.html for example: \"1984-09-01T14:21:31Z\""
+                    },
+                    {
+                        "name": "replace",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "no",
+                        "type": "string",
+                        "description": "Don't replace post if given url has already been posted."
+                    },
+                    {
+                        "name": "shared",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "no",
+                        "type": "string",
+                        "description": "Make the item private."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/posts/delete": {
+            "delete": {
+                "description": "Delete a post from Delicious.",
+                "operationId": "Delete_postDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The URL of the item."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/posts/get": {
+            "get": {
+                "description": "Returns one or more posts on a single day matching the arguments. If no date or url is given, most recent date will be used.",
+                "operationId": "Get_postGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter by this tag (space delimited)."
+                    },
+                    {
+                        "name": "dt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter by this date, defaults to the most recent date on which bookmarks were saved."
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Fetch a bookmark for this URL, regardless of date. Note: Be sure to URL-encode the argument value."
+                    },
+                    {
+                        "name": "hashes",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Fetch multiple bookmarks by one or more URL MD5s regardless of date, separated by URL-encoded spaces (ie. '+')."
+                    },
+                    {
+                        "name": "meta",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "yes",
+                        "type": "string",
+                        "description": "Include change detection signatures on each item in a 'meta' attribute. Clients wishing to maintain a synchronized local store of bookmarks should retain the value of this attribute - its value will change when any significant field of the bookmark changes."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/posts/recent": {
+            "get": {
+                "description": "Returns a list of the most recent posts, filtered by argument. Maximum 100.",
+                "operationId": "Get_postRecent_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter by this tag."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 15.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of items to retrieve (Default:15, Maximum:100)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/posts/dates": {
+            "get": {
+                "description": "Returns a list of dates with the number of posts at each date.",
+                "operationId": "Get_postDates_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter by this tag."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/posts/all": {
+            "get": {
+                "description": "Returns all posts. Please use sparingly. Call the update function to see if you need to fetch this at all.",
+                "operationId": "Get_postAll_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter by this tag."
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Start returning posts this many results into the set."
+                    },
+                    {
+                        "name": "results",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Return this many results."
+                    },
+                    {
+                        "name": "fromdt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter for posts on this date or later."
+                    },
+                    {
+                        "name": "todt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Filter for posts on this date or earlier."
+                    },
+                    {
+                        "name": "meta",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "yes",
+                        "type": "string",
+                        "description": "Include change detection signatures on each item in a 'meta' attribute. Clients wishing to maintain a synchronized local store of bookmarks should retain the value of this attribute - its value will change when any significant field of the bookmark changes."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/posts/all?hashes": {
+            "get": {
+                "description": "Returns a change manifest of all posts. Call the update function to see if you need to fetch this at all.",
+                "operationId": "Get_postAllHashes_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/posts/suggest": {
+            "get": {
+                "description": "Returns a list of popular tags, recommended tags and network tags for a user.",
+                "operationId": "Get_postSuggest_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "URL for which you'd like suggestions."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/tags/get": {
+            "get": {
+                "description": "Returns a list of tags and number of times used by a user.",
+                "operationId": "Get_tagsGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/tags/delete": {
+            "delete": {
+                "description": "Delete an existing tag.",
+                "operationId": "Delete_tagsDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Tag to delete."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/tags/rename": {
+            "get": {
+                "description": "Rename an existing tag with a new tag name.",
+                "operationId": "Get_tagsRename_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "old",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Tag to rename."
+                    },
+                    {
+                        "name": "new",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "New tag name."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/tags/bundles/all": {
+            "get": {
+                "description": "Retrieve all of a user's bundles.",
+                "operationId": "Get_tagBundlesAll_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "bundle",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Fetch just the named bundle."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/tags/bundles/set": {
+            "put": {
+                "description": "Assign a set of tags to a single bundle, wipes away previous settings for bundle.",
+                "operationId": "Update_tagBundlesSet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "bundle",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Name of the bundle."
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "List of tags, space-separated."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        },
+        "/tags/bundles/delete": {
+            "delete": {
+                "description": "Delete a bundle.",
+                "operationId": "Delete_tagBundlesDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "bundle",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Name of the bundle."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep, share and discover the best of the Web with Delicious APIs."
+                    }
+                }
+            }
+        }
+    }
+}

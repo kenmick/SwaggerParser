@@ -1,0 +1,612 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "PayPal (Sandbox)",
+        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "svcs.sandbox.paypal.com",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/AdaptivePayments/Pay": {
+            "post": {
+                "description": "Use the Pay API operation to transfer funds from a sender’s PayPal account to one or more receivers’ PayPal accounts. You can use the Pay API operation to make simple payments, chained payments, or parallel payments; these payments can be explicitly approved, preapproved, or implicitly approved.",
+                "operationId": "Create_Pay_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptivePayments/PaymentDetails": {
+            "post": {
+                "description": "Use the PaymentDetails API operation to obtain information about a payment. You can identify the payment by your tracking ID, the PayPal transaction ID in an IPN message, or the pay key associated with the payment.",
+                "operationId": "Create_PaymentDetails_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptivePayments/Preapproval": {
+            "post": {
+                "description": "Use the Preapproval API operation to set up an agreement between yourself and a sender for making payments on the sender’s behalf. You set up a preapprovals for a specific maximum amount over a specific period of time and, optionally, by any of the following constraints: the number of payments, a maximum per-payment amount, a specific day of the week or the month, and whether or not a PIN is required for each payment request.",
+                "operationId": "Create_Preapproval_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptivePayments/PreapprovalDetails": {
+            "post": {
+                "description": "Use the PreapprovalDetails API operation to obtain information about an agreement between you and a sender for making payments on the sender’s behalf.",
+                "operationId": "Create_PreapprovalDetails_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptivePayments/CancelPreapproval": {
+            "post": {
+                "description": "Use the CancelPreapproval API operation to handle the canceling of preapprovals. Preapprovals can be canceled regardless of the state they are in, such as active, expired, deactivated, and previously canceled.",
+                "operationId": "Create_CancelPreapproval_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptivePayments/ConvertCurrency": {
+            "post": {
+                "description": "Use the ConvertCurrency API operation to request the current foreign exchange (FX) rate for a specific amount and currency.",
+                "operationId": "Create_ConvertCurrency_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptivePayments/Refund": {
+            "post": {
+                "description": "Use the Refund API operation to refund all or part of a payment. You can specify the amount of the refund and identify the accounts to receive the refund by the payment key or tracking ID, and optionally, by transaction ID or the receivers of the original payment.",
+                "operationId": "Create_Refund_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptivePayments/GetPaymentOptions": {
+            "post": {
+                "description": "You use the GetPaymentOptions API operation to retrieve the payment options passed with the SetPaymentOptionsRequest.",
+                "operationId": "Create_GetPaymentOptions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptivePayments/SetPaymentOptions": {
+            "post": {
+                "description": "You use the SetPaymentOptions API operation to specify settings for a payment of the actionType CREATE. \n\t\t\t\t\tThis actionType is specified in the PayRequest message.",
+                "operationId": "Create_SetPaymentOptions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptivePayments/ExecutePayment": {
+            "post": {
+                "description": "The ExecutePayment API operation lets you execute a payment set up with the Pay API operation with the actionType CREATE. To pay receivers identified in the Pay call, set the pay key from the PayResponse message in the ExecutePaymentRequest message.",
+                "operationId": "Create_ExecutePayment_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptivePayments/GetShippingAddresses": {
+            "post": {
+                "description": "Use the GetShippingAddresses API operation to obtain the selected shipping address. You must have created the payment or preapproval key that identifies the account holder whose shipping address you want to obtain, or be the primary receiver of the payment or one of the parallel receivers of the payment. The shipping address is available only if it was provided during the embedded payment flow.",
+                "operationId": "Create_ExecutePayment1_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptivePayments/GetFundingPlans": {
+            "post": {
+                "description": "Use the GetFundingPlans API operation to determine the funding sources that are available for a specified payment, identified by its key, which takes into account the preferences and country of the receiver as well as the payment amount. You must be both the sender of the payment and the caller of this API operation",
+                "operationId": "Create_ExecutePayment2_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptiveAccounts/CreateAccount": {
+            "post": {
+                "description": "The CreateAccount API operation enables you to create a PayPal account on behalf of a third party.",
+                "operationId": "CreateAccount_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "X-PAYPAL-SANDBOX-EMAIL-ADDRESS",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "abc@test.com",
+                        "type": "string",
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptiveAccounts/AddBankAccount": {
+            "post": {
+                "description": "The AddBankAccount API operation lets your application set up bank accounts as funding sources for PayPal accounts.",
+                "operationId": "AddBankAccount_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptiveAccounts/AddPaymentCard": {
+            "post": {
+                "description": "The AddPaymentCard API operation lets your application set up credit cards as funding sources for PayPal accounts.",
+                "operationId": "AddPaymentCard_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptiveAccounts/SetFundingSourceConfirmed": {
+            "post": {
+                "description": "The SetFundingSourceConfirmed API operation lets your application set up bank accounts as funding sources for PayPal accounts.",
+                "operationId": "Create_SetFundingSourceConfirmed_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptiveAccounts/GetVerifiedStatus": {
+            "post": {
+                "description": "The GetVerifiedStatus API operation lets you check if a PayPal account status is verified. A PayPal account gains verified status under a variety of circumstances, such as when an account is linked to a verified funding source. Verified status serves to indicate a trust relationship. For more information about account verified status, refer to PayPal.com.",
+                "operationId": "Create_GetVerifiedStatus_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/AdaptiveAccounts/GetUserAgreement": {
+            "post": {
+                "description": "The GetUserAgreement API operation lets you retrieve the user agreement for the customer to approve the new PayPal account.",
+                "operationId": "Create_GetUserAgreement_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Invoice/CreateInvoice": {
+            "post": {
+                "description": "Use the CreateInvoice API operation to create a new invoice. The call includes merchant, payer, and API caller information, in addition to invoice detail. The response to the call contains an invoice ID and URL.",
+                "operationId": "CreateInvoice_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Invoice/SendInvoice": {
+            "post": {
+                "description": "Use the SendInvoice API operation to send an invoice to a payer, and notify the payer of the pending invoice.",
+                "operationId": "Create_SendInvoice_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Invoice/CreateAndSendInvoice": {
+            "post": {
+                "description": "Use the CreateAndSendInvoice API operation to create and send an invoice.",
+                "operationId": "CreateAndSendInvoice_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Invoice/UpdateInvoice": {
+            "post": {
+                "description": "Use the UpdateInvoice API operation to update an invoice.",
+                "operationId": "UpdateInvoice_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Invoice/GetInvoiceDetails": {
+            "post": {
+                "description": "Use the GetInvoiceDetails API operation to get detailed information about an invoice.",
+                "operationId": "Create_GetInvoiceDetails_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Invoice/CancelInvoice": {
+            "post": {
+                "description": "Use the CancelInvoice API operation to cancel an invoice.",
+                "operationId": "Create_CancelInvoice_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Invoice/MarkInvoiceAsPaid": {
+            "post": {
+                "description": "Use the MarkInvoiceAsPaid API operation to mark an invoice as paid.",
+                "operationId": "Create_MarkInvoiceAsPaid_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Invoice/SearchInvoices": {
+            "post": {
+                "description": "Use the SearchInvoice API operation to search an invoice.",
+                "operationId": "Create_SearchInvoices_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Permissions/RequestPermissions": {
+            "post": {
+                "description": "Use the RequestPermissions API operation to request permissions to execute API operations on a PayPal account holder’s behalf.",
+                "operationId": "Create_RequestPermissions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Permissions/GetAccessToken": {
+            "post": {
+                "description": "Use the GetAccessToken API operation to obtain an access token for a set of permissions.",
+                "operationId": "Create_GetAccessToken_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Permissions/GetPermissions": {
+            "post": {
+                "description": "Use the GetPermissons API operation to obtain the permissions associated with an access token.",
+                "operationId": "Create_GetPermissions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Permissions/CancelPermissions": {
+            "post": {
+                "description": "Use the CancelPermissions API operation to cancel access to a set of permissions.",
+                "operationId": "Create_CancelPermissions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Permissions/GetBasicPersonalData": {
+            "post": {
+                "description": "Use the GetBasicPersonalData API operation to obtain basic personal data for an account holder.",
+                "operationId": "Create_GetBasicPersonalData_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Permissions/GetAdvancedPersonalData": {
+            "post": {
+                "description": "Use the GetAdvancedPersonalData API operation to obtain sensitive personal data for an account holder.",
+                "operationId": "Create_GetAdvancedPersonalData_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Bring payments to apps, mobile and social with Adaptive Payments <b>(Sandbox API).</b>",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

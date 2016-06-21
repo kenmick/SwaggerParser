@@ -1,0 +1,162 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Next Caller",
+        "description": "Advanced Caller ID. Obtain name, address, and email of your inbound callers.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.sandbox.nextcaller.com",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/{version}/records/": {
+            "get": {
+                "description": "Returns Nextcaller member detailed info.",
+                "operationId": "Get_sandbox.users.record_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v2",
+                            "v3"
+                        ],
+                        "default": "v2",
+                        "type": "integer",
+                        "description": "Specifies a api version."
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Specifies the caller's phone number."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Specifies a format of response: JSON or XML."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Advanced Caller ID. Obtain name, address, and email of your inbound callers.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{version}/users/{nextcaller_id}/?format={format}": {
+            "post": {
+                "description": "Allows you to update caller's info on Nextcaller.",
+                "operationId": "Create_sandbox.users.profile_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Advanced Caller ID. Obtain name, address, and email of your inbound callers."
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v2",
+                            "v3"
+                        ],
+                        "default": "v2",
+                        "type": "integer",
+                        "description": "Specifies a api version."
+                    },
+                    {
+                        "name": "nextcaller_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the user whose profile you wish to edit"
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Specifies a format of response: JSON or XML."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Advanced Caller ID. Obtain name, address, and email of your inbound callers.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "version": {
+            "title": "version",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "v2",
+                "v3"
+            ]
+        },
+        "format": {
+            "title": "format",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "json",
+                "xml"
+            ]
+        }
+    }
+}

@@ -1,0 +1,2298 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Reddit",
+        "description": "Find the front page of the internet with Reddit API's.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "www.reddit.com",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/by_id/{fullname}.{format}": {
+            "get": {
+                "description": "Returns information about a link given its fullname.",
+                "operationId": "Get_link_by_fullname_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "fullname",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A base-36 id of the form /t[0-9]+_[a-z0-9]+/ (e.g. t3_6nw57) that reddit associates with every Thing. In the example, the type prefix t3_ specifies that the fullname is for a Link, and the id 6nw57 specifies the Link's id36. (Note: the numbers according to id type are not constant, and may vary between reddit installations.)"
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "rss",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Format of the data being returned. Accepted values: json (JSON), rss (RSS feed), xml (RSS feed)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/comments/{id36}.{format}": {
+            "get": {
+                "description": "Returns information about a link, with comments, given its id36.",
+                "operationId": "Get_link_by_fullname_comments_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id36",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The second part of the fullname, a base-36 id of the form /t[0-9]+_[a-z0-9]+/ (e.g. t3_6nw57) that reddit associates with every Thing. In the example, the type prefix t3_ specifies that the fullname is for a Link, and the id 6nw57 specifies the Link's id36. (Note: the numbers according to id type are not constant, and may vary between reddit installations.)"
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "rss",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Format of the data being returned. Accepted values: json (JSON), rss (RSS feed), xml (RSS feed)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/info.{format}": {
+            "get": {
+                "description": "Returns information about a URL's submissions.",
+                "operationId": "get_info_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Format: a URL. Specify either this or id."
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Format: a link ID. Specify either this or url."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Presumably, limits the number of links returned. Format: a number."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "rss",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Format of the data being returned. Accepted values: json (JSON), xml (XML)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/expando": {
+            "post": {
+                "description": "Returns expanded link content.",
+                "operationId": "post_expando_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "link_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The link to expand."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/login/{username}": {
+            "post": {
+                "description": "Logs a user in. Returns a SetCookie line in the HTTP header, identifying the new session.",
+                "operationId": "Create_login_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username to authenticate as. This is redundant, but required."
+                    },
+                    {
+                        "name": "passwd",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The plain-text password for the account."
+                    },
+                    {
+                        "name": "api_type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "json",
+                        "type": "string",
+                        "description": "Must be \"json\" for the style of auth used in this documentation."
+                    },
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username to log in as."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/user/{username}/about.json": {
+            "get": {
+                "description": "Retrieves information from a user's \"about\" page, including karma totals.",
+                "operationId": "Get_user_about_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The name of the user whose \"about\" page to retrieve."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/me.json": {
+            "get": {
+                "description": "Returns information about the logged-in user.",
+                "operationId": "get_me_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/reddits/mine.{format}": {
+            "get": {
+                "description": "Returns information about the subreddits the currently logged-in user subscribes to.",
+                "operationId": "get_mine_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "rss",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Format of the data being returned. Accepted values: json (JSON), xml (XML)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "description": "Registers a new user.",
+                "operationId": "post_register_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username to register."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user's email address."
+                    },
+                    {
+                        "name": "passwd",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user's password."
+                    },
+                    {
+                        "name": "passwd2",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user's password, again. Has to be the same as \"passwd\"."
+                    },
+                    {
+                        "name": "dest",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Destination?"
+                    },
+                    {
+                        "name": "rem",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Format: boolean"
+                    },
+                    {
+                        "name": "reason",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Possible accepted values: redirect, subscribe"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/delete_user": {
+            "post": {
+                "description": "Permanently deletes the logged-in user.",
+                "operationId": "post_delete_user_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "areyousure1",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Verification. All three parameters must be \"yes\" to delete user successfully. Accepted values: yes, no"
+                    },
+                    {
+                        "name": "areyousure2",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Verification. All three parameters must be \"yes\" to delete user successfully. Accepted values: yes, no"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/leavemoderator": {
+            "post": {
+                "description": "Handles self-removal as moderator from a subreddit as rendered in the subreddit sidebox on any of that subreddit's pages.",
+                "operationId": "post_leavemoderator_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID?"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/leavecontributor": {
+            "post": {
+                "description": "Handles self-removal as contributor from a subreddit as rendered in the subreddit sidebox on any of that subreddit's pages.",
+                "operationId": "post_leavecontributor_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID?"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/password": {
+            "post": {
+                "description": "Sends a forgot-password message to an account holder.",
+                "operationId": "post_password_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A username with a valid email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/resetpassword": {
+            "post": {
+                "description": "Resets a user's password.",
+                "operationId": "post_resetpassword_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "reset",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Cache key?"
+                    },
+                    {
+                        "name": "passwd",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The new password."
+                    },
+                    {
+                        "name": "passwd2",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The new password, again. Must be the same as \"passwd\"."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/submit": {
+            "post": {
+                "description": "Submits a link/story. For submitting to work, the reddit_session cookie needs to be present in the request, or the answer to a CAPTCHA must be supplied.",
+                "operationId": "Create_submit_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The link to submit, if the \"kind\" parameter is \"link\". Required if the story is a regular post."
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The text to submit, if the \"kind\" parameter is \"self\". Required if the story is a self post."
+                    },
+                    {
+                        "name": "kind",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Accepted values: link, self."
+                    },
+                    {
+                        "name": "sr",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subreddit to submit the link to."
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The text to appear as a link to the new story."
+                    },
+                    {
+                        "name": "r",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subreddit, again. (?)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/share": {
+            "post": {
+                "description": "Shares a link/story via email to a friend on the logged-in user's behalf. For sharing to work, the reddit_session cookie needs to be present in the request, or the answer to a CAPTCHA must be supplied.",
+                "operationId": "Create_share_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "parent",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The thing you want to share. See API docs for more details about things."
+                    },
+                    {
+                        "name": "share_from",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The name of the person who is sending the message. Maximum 100 characters."
+                    },
+                    {
+                        "name": "replyto",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The email address of the person who is sending the message."
+                    },
+                    {
+                        "name": "share_to",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The email address of the recepient of the message."
+                    },
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The text that precedes the link to the story in the message. Maximum 1000 characters."
+                    },
+                    {
+                        "name": "renderstyle",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Presumably, the email format. Known accepted value: html"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/vote": {
+            "post": {
+                "description": "Casts or rescinds a vote on a story/comment.",
+                "operationId": "post_vote_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fullname of the thing you are voting for."
+                    },
+                    {
+                        "name": "dir",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The vote you are going to cast. Use 1 to vote up, 0 to rescind a vote, or -1 to vote down. Note that previous votes are not additive. If the user previously voted 1, voting -1 will change the vote to -1, not 0. Accepted values: -1 (downvote), 0 (neutral-vote), 1 (upvote)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/fetch_title": {
+            "post": {
+                "description": "Returns the title for a story, given its URL.",
+                "operationId": "post_fetch_title_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The URL to fetch the title of."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/marknsfw": {
+            "post": {
+                "description": "Marks a thing as NSFW.",
+                "operationId": "post_marknsfw_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fullname of the thing to mark."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/unmarknsfw": {
+            "post": {
+                "description": "Marks a thing as SFW (unmarks as NSFW)",
+                "operationId": "post_unmarknsfw_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fullname of the thing to unmark."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/save": {
+            "post": {
+                "description": "Saves a post.",
+                "operationId": "post_save_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fullname of the post to save."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/unsave": {
+            "post": {
+                "description": "Unsaves a post.",
+                "operationId": "post_unsave_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fullname of the post to unsave."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/hide": {
+            "post": {
+                "description": "Hides a post.",
+                "operationId": "post_hide_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fullname of the post to hide."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/unhide": {
+            "post": {
+                "description": "Unhides a post.",
+                "operationId": "post_unhide_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fullname of the post to unhide."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/del": {
+            "post": {
+                "description": "Deletes things.",
+                "operationId": "post_del_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fullname of the thing to delete."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/editusertext": {
+            "post": {
+                "description": "Updates the user text on a thing.",
+                "operationId": "post_editusertext_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "thing_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fullname of the thing to update."
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The new text."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/remove": {
+            "post": {
+                "description": "Removes a thing.",
+                "operationId": "post_remove_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The thing to remove."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/approve": {
+            "post": {
+                "description": "Approves a thing.",
+                "operationId": "post_approve_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The thing to approve."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/distinguish": {
+            "post": {
+                "description": "Distinguishes a thing.",
+                "operationId": "post_distinguish_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The thing to distinguish."
+                    },
+                    {
+                        "name": "how",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Accepted values: yes, no, admin."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/compose": {
+            "post": {
+                "description": "Handles message composition under /message/compose",
+                "operationId": "post_compose_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The recepient of the message."
+                    },
+                    {
+                        "name": "subject",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subject of the message."
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The message."
+                    },
+                    {
+                        "name": "captcha",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "CAPTCHA result."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/collapse_message": {
+            "post": {
+                "description": "Collapses a message.",
+                "operationId": "post_collapse_message_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A list of messages to collapse."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/uncollapse_message": {
+            "post": {
+                "description": "Collapses a message.",
+                "operationId": "post_uncollapse_message_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A list of messages to uncollapse."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/unread_message": {
+            "post": {
+                "description": "Mark a message as unread.",
+                "operationId": "post_unread_message_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The message to mark as unread."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/read_message": {
+            "post": {
+                "description": "Mark a message as read.",
+                "operationId": "post_read_message_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The message to mark as read."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/hide_message": {
+            "post": {
+                "description": "Hides a message.",
+                "operationId": "post_hide_message_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The message to hide."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/unhide_message": {
+            "post": {
+                "description": "Unhides a message.",
+                "operationId": "post_unhide_message_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The message to unhide."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/moremessages": {
+            "post": {
+                "description": "Retrieves more messages by parent.",
+                "operationId": "post_moremessages_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "parent_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The message parent."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/comment": {
+            "post": {
+                "description": "Posts a comment.",
+                "operationId": "post_comment_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "parent",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fullname of the thing or comment you are commenting on."
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The markdown content of the comment you are posting."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/morechildren": {
+            "post": {
+                "description": "Retrieves more comment children.",
+                "operationId": "post_morechildren_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "link_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The id of the link to get the comments for."
+                    },
+                    {
+                        "name": "where",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Comment sorting option."
+                    },
+                    {
+                        "name": "children",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Children comment IDs."
+                    },
+                    {
+                        "name": "pv_hex",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum 40 characters?"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Some kind of ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/friend": {
+            "post": {
+                "description": "Complement to \"unfriend\": handles friending as well as privilege changes on subreddits.",
+                "operationId": "post_friend_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user to add as a friend."
+                    },
+                    {
+                        "name": "container",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Either the current user or the subreddit."
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Accepted values: friend, moderator, contributor, banned"
+                    },
+                    {
+                        "name": "note",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A \"friend note\". Maximum 300 characters."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/unfriend": {
+            "post": {
+                "description": "Handles removal of a friend (a user-user relation) or removal of a user's privileges from a subreddit (a user-subreddit relation).    The user can either be passed in by name (name) or by fullname (id).    'container' will either be the current user or the subreddit.",
+                "operationId": "post_unfriend_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user's name."
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user's fullname."
+                    },
+                    {
+                        "name": "container",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Either the current user or the subreddit."
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Accepted values: friend, moderator, contributor, banned"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/friend_note": {
+            "post": {
+                "description": "Attach a note to a friend.",
+                "operationId": "post_friend_note_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The friend to whom to associate the note with."
+                    },
+                    {
+                        "name": "note",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A note. Maximum 300 characters."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/update": {
+            "post": {
+                "description": "Handles /prefs/update for updating email address and password.",
+                "operationId": "post_update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "curpass",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The current password of the logged-in user. Required to update any setting."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A new email."
+                    },
+                    {
+                        "name": "newpass",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A new password."
+                    },
+                    {
+                        "name": "verpass",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A new password, again. Must be the same as \"newpass\"."
+                    },
+                    {
+                        "name": "verify",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Whether or not to send an email verification letter? Format: boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/tb_commentspanel_show": {
+            "post": {
+                "description": "Turns on the preference to show comments panel.",
+                "operationId": "post_tb_commentspanel_show_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/tb_commentspanel_hide": {
+            "post": {
+                "description": "Turns off the preference to show comments panel.",
+                "operationId": "post_tb_commentspanel_hide_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/site_admin": {
+            "post": {
+                "description": "Creates or updates subreddits.",
+                "operationId": "post_site_admin_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "sr",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Subreddit."
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Subreddit name."
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A title for the subreddit. Maximum 100 characters."
+                    },
+                    {
+                        "name": "header-title",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A title for the subreddit for the header. Maximum 500 characters."
+                    },
+                    {
+                        "name": "domain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Subreddit domain. \"Own a domain? Enter it here and then go to your DNS provider and add a CNAME record aliasing your domain to rhs.reddit.com. You will be able to access your reddit through your domain.\""
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Subreddit description. Maximum 5120 characters."
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Subreddit language."
+                    },
+                    {
+                        "name": "over_18",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Whether or not this is a \"mature content\" subreddit; viewers must be at least 18 years old."
+                    },
+                    {
+                        "name": "allow_top",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Whether or not to allow this subreddit to be shown in the \"default set\"."
+                    },
+                    {
+                        "name": "show_media",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Whether or not to show thumbnails images of content."
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Subreddit type. Accepted values: public (anyone can view and submit), private (only approved members can view and submit), restricted (anyone can view, but only approved members can submit)"
+                    },
+                    {
+                        "name": "link_type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Subreddit content options. Accepted values: any (any link type is allowed), link (only links to external sites allowed), self (only self posts allowed)"
+                    },
+                    {
+                        "name": "sponsorship-text",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Sponsorship text. Maximum 500 characters."
+                    },
+                    {
+                        "name": "sponsorship-name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Sponsorship name. Maximum 500 characters."
+                    },
+                    {
+                        "name": "sponsorship-url",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Sponsorship URL. Maximum 500 characters."
+                    },
+                    {
+                        "name": "css_on_cname",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Whether or not to show subreddit style while accessing the subreddit through the domain?"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/subreddit_stylesheet": {
+            "post": {
+                "description": "Updates the CSS for a subreddit.",
+                "operationId": "post_subreddit_stylesheet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "stylesheet_contents",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The stylesheet."
+                    },
+                    {
+                        "name": "op",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Operation. Accepted values: save, preview"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/delete_sr_img": {
+            "post": {
+                "description": "Deletes a subreddit image. Called called upon requested delete on /about/stylesheet. Updates the site's image list, and causes the <li> which wraps the image to be hidden.",
+                "operationId": "post_delete_sr_img_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "img_name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The image to delete."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/delete_sr_header": {
+            "post": {
+                "description": "Called when the user request that the header on a subreddit be reset.",
+                "operationId": "post_delete_sr_header_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "img_name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The image to delete."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/upload_sr_img": {
+            "get": {
+                "description": "Completely unnecessary method which exists because safari can be dumb too.    On page reload after an image has been posted in safari, the iframe to which the request posted preserves the URL of the POST, and safari attempts to execute a GET against it.    The iframe is hidden, so what it returns is completely irrelevant.",
+                "operationId": "get_upload_sr_img_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            },
+            "post": {
+                "description": "Called on /about/stylesheet when an image needs to be replaced or uploaded, as well as on /about/edit for updating the header.    Unlike every other POST in this controller, this method does not get called with Ajax but rather is from the original form POSTing to a hidden iFrame.    Unfortunately, this means the response needs to generate an page with a script tag to fire the requisite updates to the parent document, and, more importantly, that we can't use our normal toolkit for passing those responses back. The result of this function is a rendered UploadedImage() object in charge of firing the completedUploadImage() call in JS.",
+                "operationId": "post_upload_sr_img_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The name for the image."
+                    },
+                    {
+                        "name": "formid",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Form ID. Maximum 100 characters."
+                    },
+                    {
+                        "name": "header",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Whether or not this is a header image? Accepted values: 0, 1"
+                    },
+                    {
+                        "name": "sponsor",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Whether or not something is sponsored? Used by admins only. Accepted values: 0, 1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/subscribe": {
+            "post": {
+                "description": "Subscribes or unsubscribes the logged-in user to a subreddit.",
+                "operationId": "post_subscribe_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "action",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Accepted values: sub (subscribe), unsub (unsubscribe)"
+                    },
+                    {
+                        "name": "sr",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subreddit."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/search_reddit_names": {
+            "post": {
+                "description": "Searches for subreddits with the given query.",
+                "operationId": "post_search_reddit_names_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The search query. Maximum 50 characters."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/flairlist": {
+            "get": {
+                "description": "Returns the flair assignments of a subreddit.",
+                "operationId": "Get_flairlist_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "r",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The name of the subreddit."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": 100.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of items to return (up to 1000)."
+                    },
+                    {
+                        "name": "after",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return entries starting after this user."
+                    },
+                    {
+                        "name": "before",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return entries starting before this user."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/flair": {
+            "get": {
+                "description": "Sets or clears a user's flair in a subreddit.",
+                "operationId": "Get_flair_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "r",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The name of the subreddit."
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The name of the user."
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The flair text to assign. Note: If an empty string is assigned to both text and css_class, then flair for the user will be removed."
+                    },
+                    {
+                        "name": "css_class",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The CSS class to assign to the flair text. Note: If an empty string is assigned to both text and css_class, then flair for the user will be removed."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/flaircsv.json": {
+            "post": {
+                "description": "Posts a CSV file of flair settings to a subreddit.",
+                "operationId": "Create_flaircsv_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "r",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The name of the subreddit."
+                    },
+                    {
+                        "name": "flair_csv",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "CSV file contents, up to 100 lines."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/feedback": {
+            "post": {
+                "description": "Sends user feedback to Reddit admins.",
+                "operationId": "post_feedback_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A name."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "An email."
+                    },
+                    {
+                        "name": "reason",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A reason for feedback. Accepted values: ad_inq (advertising inquiry), feedback, i18n (internationalization)."
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The feedback."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/report": {
+            "post": {
+                "description": "Reports a thing.",
+                "operationId": "post_report_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The fullname of the thing to report."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/searchfeedback": {
+            "post": {
+                "description": "Returns search results.",
+                "operationId": "post_searchfeedback_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Search query. Maximum 500 characters."
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Sort option. Maximum 10 characters."
+                    },
+                    {
+                        "name": "t",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum 10 characters."
+                    },
+                    {
+                        "name": "approval",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Format: boolean."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/bookmarklet": {
+            "get": {
+                "description": "Does something with bookmarklets.",
+                "operationId": "get_bookmarklet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "what",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Action. Accepted values: like, dislike, save."
+                    },
+                    {
+                        "name": "u",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Array of link URLs?"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        },
+        "/api/edit_error": {
+            "post": {
+                "description": "Find the front page of the internet with Reddit API's.",
+                "operationId": "post_edit_error_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "hexkey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum 32 characters."
+                    },
+                    {
+                        "name": "nickname",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Maximum 1000 characters."
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Accepted values: new, severe, interesting, normal, fixed."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/noframe": {
+            "post": {
+                "description": "Removes the Reddit toolbar if it is enabled in the user's preferences",
+                "operationId": "post_noframe_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/frame": {
+            "post": {
+                "description": "Adds the Reddit toolbar if it is disabled in the user's preferences",
+                "operationId": "post_frame_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/gadget": {
+            "get": {
+                "description": "Something related to the \"recently viewed\" sidebar gadget.",
+                "operationId": "get_gadget_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "click",
+                        "type": "string",
+                        "description": "The type of gadget? Accepted value: click."
+                    },
+                    {
+                        "name": "links",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A list of links."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find the front page of the internet with Reddit API's."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "format": {
+            "title": "format",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "json",
+                "rss",
+                "xml"
+            ]
+        }
+    }
+}

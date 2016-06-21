@@ -1,0 +1,938 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Instagram",
+        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.instagram.com",
+    "basePath": "/v1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/users/{user-id}": {
+            "get": {
+                "description": "Get basic information about a user.",
+                "operationId": "get_users_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the user whose information to retrieve, or \"self\" to reference the currently logged-in user."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/users/self/feed": {
+            "get": {
+                "description": "See the authenticated user's feed.",
+                "operationId": "get_users_feed_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "max_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return media earlier than this max_id"
+                    },
+                    {
+                        "name": "min_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return media later than this min_id"
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Count of media to return"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/users/{user-id}/media/recent": {
+            "get": {
+                "description": "Get the most recent media published by a user.",
+                "operationId": "get_users_media_recent_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "max_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return media earlier than this max_id"
+                    },
+                    {
+                        "name": "min_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return media later than this min_id"
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Count of media to return"
+                    },
+                    {
+                        "name": "min_timestamp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Return media after this UNIX timestamp"
+                    },
+                    {
+                        "name": "max_timestamp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Return media before this UNIX timestamp"
+                    },
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the user whose recent media to retrieve."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/users/self/media/liked": {
+            "get": {
+                "description": "See the authenticated user's list of media they've liked.",
+                "operationId": "get_users_liked_feed_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "max_like_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return media liked before this id"
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Count of media to return"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/users/search": {
+            "get": {
+                "description": "Search for a user by name.",
+                "operationId": "get_users_search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A query string."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of users to return"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/users/{user-id}/follows": {
+            "get": {
+                "description": "Get the list of users this user follows. Required scope: relationships",
+                "operationId": "get_users_follows_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the user to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/users/{user-id}/followed-by": {
+            "get": {
+                "description": "Get the list of users this user is followed by. Required scope: relationships",
+                "operationId": "get_users_followed_by_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the user to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/users/self/requested-by": {
+            "get": {
+                "description": "List the users who have requested this user's permission to follow. Required scope: relationships",
+                "operationId": "get_incoming_requests_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/users/{user-id}/relationship": {
+            "get": {
+                "description": "Get information about the current user's relationship (follow/following/etc) to another user. Required scope: relationships",
+                "operationId": "get_relationship_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the user to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            },
+            "post": {
+                "description": "Modify the relationship between the current user and the target user. Required scope: relationships",
+                "operationId": "post_relationship_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the user to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/media/{id}": {
+            "get": {
+                "description": "Get information about a media object.",
+                "operationId": "get_media_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the media object to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/media/search": {
+            "get": {
+                "description": "Get information about a media object.",
+                "operationId": "get_media_search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "lat",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "number",
+                        "format": "double",
+                        "description": "Latitude of the center search coordinate. If used, lng is required."
+                    },
+                    {
+                        "name": "lng",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "number",
+                        "format": "double",
+                        "description": "Longitude of the center search coordinate. If used, lat is required."
+                    },
+                    {
+                        "name": "max_timestamp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "A unix timestamp. All media returned will be taken earlier than this timestamp."
+                    },
+                    {
+                        "name": "min_timestamp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "A unix timestamp. All media returned will be taken later than this timestamp."
+                    },
+                    {
+                        "name": "distance",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 1000.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Search distance, in meters. Default is 1km (distance=1000), max distance is 5km (5000)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/media/popular": {
+            "get": {
+                "description": "Get a list of what media is most popular at the moment.",
+                "operationId": "get_media_popular_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/media/{media-id}/comments": {
+            "get": {
+                "description": "Get a full list of comments on a media. Required scope: comments",
+                "operationId": "get_media_comments_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "media-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the media object to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            },
+            "post": {
+                "description": "Create a comment on a media. Required scope: comments",
+                "operationId": "post_media_comments_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "media-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the media object to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/media/{media-id}/comments/{comment-id}": {
+            "delete": {
+                "description": "Remove a comment either on the authenticated user's media or authored by the authenticated user. Required scope: comments",
+                "operationId": "delete_media_comments_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "media-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the media object to reference."
+                    },
+                    {
+                        "name": "comment-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the comment to delete."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/media/{media-id}/likes": {
+            "get": {
+                "description": "Get a list of users who have liked this media. Required scope: likes",
+                "operationId": "get_media_likes_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "media-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the media object to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            },
+            "post": {
+                "description": "Set a like on this media by the currently authenticated user. Required scope: likes",
+                "operationId": "post_media_likes_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "media-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the media object to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            },
+            "delete": {
+                "description": "Remove a like on this media by the currently authenticated user. Required scope: likes",
+                "operationId": "delete_media_likes_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "media-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the media object to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/tags/{tag-name}": {
+            "get": {
+                "description": "Get information about a tag object.",
+                "operationId": "get_tags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag-name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The name of the tag to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/tags/{tag-name}/media/recent": {
+            "get": {
+                "description": "Get a list of recently tagged media.",
+                "operationId": "get_tags_media_recent_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "max_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return media after this max_id"
+                    },
+                    {
+                        "name": "min_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return media before this min_id"
+                    },
+                    {
+                        "name": "tag-name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The name of the tag to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/tags/search": {
+            "get": {
+                "description": "Search for tags by name.",
+                "operationId": "get_tags_search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Valid tag name without a leading #. (eg. snow, nofilter)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/locations/{location-id}": {
+            "get": {
+                "description": "Get information about a location.",
+                "operationId": "get_locations_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "location-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the location to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/locations/{location-id}/media/recent": {
+            "get": {
+                "description": "Get a list of recent media objects from a given location.",
+                "operationId": "get_locations_media_recent_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "max_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return media after this max_id"
+                    },
+                    {
+                        "name": "min_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return media before this min_id"
+                    },
+                    {
+                        "name": "min_timestamp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Return media after this UNIX timestamp"
+                    },
+                    {
+                        "name": "max_timestamp",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Return media before this UNIX timestamp"
+                    },
+                    {
+                        "name": "location-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the location to reference."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/locations/search": {
+            "get": {
+                "description": "Search for a location by name and geographic coordinate.",
+                "operationId": "get_locations_search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "lat",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Latitude of the center search coordinate. If used, lng is required."
+                    },
+                    {
+                        "name": "lng",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Longitude of the center search coordinate. If used, lat is required."
+                    },
+                    {
+                        "name": "foursquare_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Returns a location mapped off of a foursquare v1 api location id. If used, you are not required to use lat and lng. Note that this method is deprecated; you should use the new foursquare IDs with V2 of their API."
+                    },
+                    {
+                        "name": "foursquare_v2_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Returns a location mapped off of a foursquare v2 api location id. If used, you are not required to use lat and lng."
+                    },
+                    {
+                        "name": "distance",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 1000.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Search distance, in meters. Default is 1km (distance=1000), max distance is 5km (5000)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        },
+        "/subscriptions": {
+            "get": {
+                "description": "Returns your current subscriptions.",
+                "operationId": "get_subscriptions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Client ID of your application."
+                    },
+                    {
+                        "name": "client_secret",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Client secret of your application."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a subscription to receive notifications when a new photos are posted in an arbitrary geographical location as defined by a center point and radius.",
+                "operationId": "post_subscriptions_geography_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "verify_token",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    },
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Client ID of your application."
+                    },
+                    {
+                        "name": "client_secret",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Client secret of your application."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a subscription by object type or ID.",
+                "operationId": "delete_subscriptions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the subscription you want to delete. Either this or \"object\" is required."
+                    },
+                    {
+                        "name": "object",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "object",
+                        "description": "The object type of the subscription you want to delete, or \"all\" to clear all subscriptions."
+                    },
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Client ID of your application."
+                    },
+                    {
+                        "name": "client_secret",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Client secret of your application."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fast, beautiful and fun way to share your life with friends through a series of pictures."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "object": {
+            "title": "object",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "all",
+                "user",
+                "tag",
+                "location",
+                "geography"
+            ]
+        }
+    }
+}

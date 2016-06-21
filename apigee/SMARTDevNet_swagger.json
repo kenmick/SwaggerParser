@@ -1,0 +1,420 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "SMARTDevNet",
+        "description": "The SMARTDevNet APIs provide capability for developers to utilize SMART Communications Inc.'s SMS, MMS & other network capabilities",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "x.smart.com.ph",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/oauth/authorize": {
+            "get": {
+                "description": "OAuth Authorize",
+                "operationId": "Get_oauth-authorize_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "{api-key}",
+                        "type": "string",
+                        "description": "Client Id / API Key that you got when you registered your app"
+                    },
+                    {
+                        "name": "client_secret",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "{secret}",
+                        "type": "string",
+                        "description": "Client Secret that you got when you registered your app"
+                    },
+                    {
+                        "name": "scope",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "{scope}",
+                        "type": "string",
+                        "description": "Requested scope of access token. Can be SMS+MMS"
+                    },
+                    {
+                        "name": "redirect_uri",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "https://developer.smart.com.ph/",
+                        "type": "string",
+                        "description": "Redirect URI of your application. Ensure this is the same as what was registered at Smart developer portal"
+                    },
+                    {
+                        "name": "response_type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "code",
+                        "type": "string",
+                        "description": "Response type"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The SMARTDevNet APIs provide capability for developers to utilize SMART Communications Inc.'s SMS, MMS & other network capabilities",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/oauth/token": {
+            "get": {
+                "description": "OAuth Get Access Token call",
+                "operationId": "Get_oauth-accessToken_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "{api-key}",
+                        "type": "string",
+                        "description": "Client Id / API Key that you got when you registered your app"
+                    },
+                    {
+                        "name": "client_secret",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "{secret}",
+                        "type": "string",
+                        "description": "Client Secret that you got when you registered your app"
+                    },
+                    {
+                        "name": "scope",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "{scope}",
+                        "type": "string",
+                        "description": "Requested scope of access token. Can be SMS+MMS"
+                    },
+                    {
+                        "name": "redirect_uri",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "https://developer.smart.com.ph/",
+                        "type": "string",
+                        "description": "Redirect URI of your application. Ensure this is the same as what was registered at Smart developer portal"
+                    },
+                    {
+                        "name": "grant_type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "authorization_code",
+                        "type": "string",
+                        "description": "Grant Type. Smart supports authorization_code grant type"
+                    },
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "{fill from authorize call response}",
+                        "type": "string",
+                        "description": "Authorization Code got from OAuth authorize call"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The SMARTDevNet APIs provide capability for developers to utilize SMART Communications Inc.'s SMS, MMS & other network capabilities",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1/smsmessaging/outbound/{senderAddress}/requests": {
+            "post": {
+                "description": "Send SMS",
+                "operationId": "Create_sms-send_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "senderAddress",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "40689871",
+                        "type": "string",
+                        "description": "Sender address given by the Operator"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "Bearer {access-token}",
+                        "type": "string",
+                        "description": "AccessToken"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content-Type"
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Accept format - application/xml or application/json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The SMARTDevNet APIs provide capability for developers to utilize SMART Communications Inc.'s SMS, MMS & other network capabilities",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1/smsmessaging/outbound/{senderAddress}/requests/{requestId}/deliveryInfos": {
+            "get": {
+                "description": "Get delivery information",
+                "operationId": "Get_sms-delivery-info_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "senderAddress",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "40689871",
+                        "type": "string",
+                        "description": "Sender address given by the Operator"
+                    },
+                    {
+                        "name": "requestId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "{request-id-from-send-sms-payload}",
+                        "type": "string",
+                        "description": "Request id that was in Send SMS response payload"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "Bearer {access-token}",
+                        "type": "string",
+                        "description": "AccessToken"
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Accept format - application/json or application/xml"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The SMARTDevNet APIs provide capability for developers to utilize SMART Communications Inc.'s SMS, MMS & other network capabilities",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1/messaging/outbound/{senderAddress}/requests": {
+            "post": {
+                "description": "Send MMS With Attachment",
+                "operationId": "Create_mms-send-binary_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "senderAddress",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "5626987",
+                        "type": "string",
+                        "description": "Sender address given by the Operator"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "Bearer {access-token}",
+                        "type": "string",
+                        "description": "AccessToken"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "multipart/form-data",
+                        "type": "string",
+                        "description": "Content-Type"
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Accept format - application/json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The SMARTDevNet APIs provide capability for developers to utilize SMART Communications Inc.'s SMS, MMS & other network capabilities",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/1/messaging/outbound/{senderAddress}/requests/{requestId}/deliveryInfos": {
+            "get": {
+                "description": "Get delivery information",
+                "operationId": "Get_mms-delivery-info_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "senderAddress",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "5626987",
+                        "type": "string",
+                        "description": "Sender address given by the Operator"
+                    },
+                    {
+                        "name": "requestId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "{request-id-from-send-mms-payload}",
+                        "type": "string",
+                        "description": "Request id that was in Send MMS response payload"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "Bearer {access-token}",
+                        "type": "string",
+                        "description": "AccessToken"
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Accept format - application/json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The SMARTDevNet APIs provide capability for developers to utilize SMART Communications Inc.'s SMS, MMS & other network capabilities",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/payment/v1/{MSISDN}/transactions/amount": {
+            "post": {
+                "description": "Request to Charge To Bill Call. Will return redirect URL of consent page.",
+                "operationId": "Create_payment-request-charge-to-bill_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "MSISDN",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "tel:%2B63{phone-number}",
+                        "type": "string",
+                        "description": "Telephone number of the subscriber"
+                    },
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "{api-key}",
+                        "type": "string",
+                        "description": "Client Secret that you got when you registered your app"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The SMARTDevNet APIs provide capability for developers to utilize SMART Communications Inc.'s SMS, MMS & other network capabilities",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

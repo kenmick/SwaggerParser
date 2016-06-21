@@ -1,0 +1,61 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "BoxCar",
+        "description": "Add BoxCar services to your app so users can get messages and update all their favorite social services.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "boxcar.io",
+    "basePath": "/devices/providers/%7Bprovider_key%7D/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/notifications/subscribe": {
+            "post": {
+                "description": "This sends the user with the matching e-mail address a push notification which requests that they add your service. This will ease integration with your website, as you will have already registered them on your system and can identify whom they are based on their Boxcar e-mail address. Please note, this API call is an exception and will return an HTTP status code of 404 if we are unable to find the registered user by e-mail in our system. If the email address is not found in our system, we'll send an email to it letting the user know where they can download Boxcar. If the user has already added your service, we'll return an HTTP status code of 401.",
+                "operationId": "Create_subscribeToProvider_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "provider_key",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The API key."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user's e-mail address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Add BoxCar services to your app so users can get messages and update all their favorite social services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

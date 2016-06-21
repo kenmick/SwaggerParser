@@ -1,0 +1,612 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "BlueVia",
+        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.bluevia.com",
+    "basePath": "/services/REST/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/SMS/outbound/requests": {
+            "post": {
+                "description": "Generate a SMS to be retrieved by means of Get Received SMS operation",
+                "operationId": "Create_SMS_SendSMS_MO_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "v1",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/SMS/outbound/requests/{SMSId}/deliverystatus": {
+            "get": {
+                "description": "Get delivery status of a sent SMS requesting a JSON formatted response",
+                "operationId": "Get_SMS_CheckDeliveryStatus_JSON_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "v1",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "alt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "json",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/SMS/inbound/{shortNumber}/messages": {
+            "get": {
+                "description": "Get a received SMS requesting a JSON formatted response",
+                "operationId": "Get_SMS_GetReceivedSMS_JSON_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "v1",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "alt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "json",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/MMS/outbound/requests": {
+            "post": {
+                "description": "Generate a MMS to be retrieved by means of Get Received MMS operation",
+                "operationId": "Create_MMS_SendMMS_MO_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "v1",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/MMS/outbound/requests/{messageId}/deliverystatus": {
+            "get": {
+                "description": "Get delivery status of a sent MMS requesting a JSON formatted response",
+                "operationId": "Get_MMS_CheckDeliveryStatus_JSON_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "v1",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "alt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "json",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/MMS/inbound/{shortNumber}/messages": {
+            "get": {
+                "description": "Get a received MMS requesting foot-fields to be formattted as JSON",
+                "operationId": "Get_MMS_GetReceivedMMS_JSON_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "v1",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "alt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "json",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Directory/alias:$oauth_token$/UserInfo": {
+            "get": {
+                "description": "Get User Info filtered by dataSets",
+                "operationId": "Get_Directory_GetUserInfo_filtered_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "v1",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "alt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "json",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "dataSets",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Directory/alias:$oauth_token$}/UserInfo/UserPersonalInfo": {
+            "get": {
+                "description": "Get User Personal info requesting an XML formatted response",
+                "operationId": "Get_Directory_GetUserPersonalInfo_XML_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "v1",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "alt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "json",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Directory/alias:$oauth_token$/UserInfo/UserPersonalInfo": {
+            "get": {
+                "description": "Get User Personal info filtered by fields",
+                "operationId": "Get_Directory_GetUserPersonalInfo_filtered_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "v1",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "alt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "json",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Directory/alias:$oauth_token$/UserInfo/UserProfile": {
+            "get": {
+                "description": "Get User Profile Info filtered by fields",
+                "operationId": "Get_Directory_GetUserProfile_filtered_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "v1",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "alt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "json",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Directory/alias:$oauth_token$/UserInfo/UserAccessInfo": {
+            "get": {
+                "description": "Get User Access Info filtered by fields",
+                "operationId": "Get_Directory_GetUserAccess_filtered_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "v1",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "alt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "json",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Directory/alias:$oauth_token$/UserInfo/UserTerminalInfo": {
+            "get": {
+                "description": "Get User Terminal Info filtered by fields",
+                "operationId": "Get_Directory_GetUserTerminalInfo_filtered_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "v1",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "alt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "json",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Advertising/requests": {
+            "post": {
+                "description": "Get a graphic Ad",
+                "operationId": "Create_Ad_GetAd_Banner_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Location/TerminalLocation": {
+            "get": {
+                "description": "Get User Location with accuracy theresold",
+                "operationId": "Get_Location_GetLocation_Accuracy_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "v1",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "alt",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "json",
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "locatedParty",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    },
+                    {
+                        "name": "acceptableAccuracy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Telefonica network services like sending messages, getting an Ad, or real-time end-user information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

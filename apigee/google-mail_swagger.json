@@ -1,0 +1,858 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Google Mail (Settings)",
+        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "apps-apis.google.com",
+    "basePath": "/a/feeds/emailsettings/2.0/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/{domain_name}/{user_name}/label": {
+            "get": {
+                "description": "Retrieves all labels and their settings.",
+                "operationId": "Get_gmail.settings.label.retrieve_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a label.",
+                "operationId": "Create_gmail.settings.label.create_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "The content type."
+                    },
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{domain_name}/{user_name}/filter": {
+            "post": {
+                "description": "Creates a filter.",
+                "operationId": "Create_gmail.settings.filter.create_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "The content type."
+                    },
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{domain_name}/{user_name}/sendas": {
+            "get": {
+                "description": "Retrieves all send-as alias settings.",
+                "operationId": "Get_gmail.settings.sendas.retrieve_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a send-as alias.",
+                "operationId": "Create_gmail.settings.sendas.create_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "The content type."
+                    },
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{domain_name}/{user_name}/webclip": {
+            "put": {
+                "description": "Updates web clips settings.",
+                "operationId": "Update_gmail.settings.webclip.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "The content type."
+                    },
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{domain_name}/{user_name}/forwarding": {
+            "get": {
+                "description": "Retrieves all forwarding settings.",
+                "operationId": "Get_gmail.settings.forwarding.retrieve_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates forwarding settings.",
+                "operationId": "Update_gmail.settings.forwarding.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "The content type."
+                    },
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{domain_name}/{user_name}/pop": {
+            "get": {
+                "description": "Retrieves POP settings.",
+                "operationId": "Get_gmail.settings.pop.retrieve_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates POP settings.",
+                "operationId": "Update_gmail.settings.pop.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "The content type."
+                    },
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{domain_name}/{user_name}/imap": {
+            "get": {
+                "description": "Retrieves IMAP settings.",
+                "operationId": "Get_gmail.settings.imap.retrieve_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates IMAP settings.",
+                "operationId": "Update_gmail.settings.imap.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "The content type."
+                    },
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{domain_name}/{user_name}/vacation": {
+            "get": {
+                "description": "Retrieves vacation-responder settings.",
+                "operationId": "Get_gmail.settings.vacation.retrieve_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates vacation-responder settings.",
+                "operationId": "Update_gmail.settings.vacation.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "The content type."
+                    },
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{domain_name}/{user_name}/signature": {
+            "get": {
+                "description": "Retrieves signature settings.",
+                "operationId": "Get_gmail.settings.signature.retrieve_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates signature settings.",
+                "operationId": "Update_gmail.settings.signature.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "The content type."
+                    },
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{domain_name}/{user_name}/language": {
+            "put": {
+                "description": "Updates language settings.",
+                "operationId": "Update_gmail.settings.language.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "The content type."
+                    },
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{domain_name}/{user_name}/delegation": {
+            "get": {
+                "description": "Retrieves all delegates.",
+                "operationId": "Get_gmail.settings.delegation.retrieve_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a delegate.",
+                "operationId": "Create_gmail.settings.delegation.create_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "The content type."
+                    },
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/{domain_name}/{user_name}/delegation/{delegate_email_id}": {
+            "delete": {
+                "description": "Deletes a delegate.",
+                "operationId": "Delete_gmail.settings.delegation.delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    },
+                    {
+                        "name": "delegate_email_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The email ID of the delegate."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed."
+                    }
+                }
+            }
+        },
+        "/{domain_name}/{user_name}/general": {
+            "put": {
+                "description": "Updates general settings.",
+                "operationId": "Update_gmail.settings.general.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/atom+xml",
+                        "type": "string",
+                        "description": "The content type."
+                    },
+                    {
+                        "name": "domain_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The domain of the email address."
+                    },
+                    {
+                        "name": "user_name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The username of the email address."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create sidebar and contextual gadgets and access the Gmail inbox feed.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

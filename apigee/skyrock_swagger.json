@@ -1,0 +1,3007 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Skyrock",
+        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.skyrock.com",
+    "basePath": "/v2/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/check_rate_limit.{format}": {
+            "get": {
+                "description": "Returns the number of remaining queries (see http://en.skyrock.com/developer/documentation/api/#request-rate-limits). Calls to this method are not counted against the limits.",
+                "operationId": "Get_general_check_rate_limit_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/get.{format}": {
+            "get": {
+                "description": "Returns an user's public data. If the call is authenticated and username is not provided, the method returns data about the current user's Skyrock account.",
+                "operationId": "Get_user_get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/list_friends.{format}": {
+            "get": {
+                "description": "List of friends (paginated).",
+                "operationId": "Get_user_list_friends_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Page number."
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "DEFAULT",
+                        "type": "string",
+                        "description": "Results order. Possible values:\n- DEFAULT: default order.\n- ALPHA: sort alphabetically.\n- OLDEST_TO_NEWEST: sort by oldest to newest friends (by date of friendship).\n- NEWEST_TO_OLDEST: sort by newest to oldest friends (by date of friendship).\n- BEST_FIRST: default order, with best friends first.\n- BEST_LAST: default order, with best friends last."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/list_friends_ids.{format}": {
+            "get": {
+                "description": "List of friends ids (paginated).",
+                "operationId": "Get_user_list_friends_ids_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Page number."
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "DEFAULT",
+                        "type": "string",
+                        "description": "Results order. Possible values:\n- DEFAULT: default order.\n- ALPHA: sort alphabetically.\n- OLDEST_TO_NEWEST: sort by oldest to newest friends (by date of friendship).\n- NEWEST_TO_OLDEST: sort by newest to oldest friends (by date of friendship).\n- BEST_FIRST: default order, with best friends first.\n- BEST_LAST: default order, with best friends last."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/list_best_friends.{format}": {
+            "get": {
+                "description": "List of best friends (paginated).",
+                "operationId": "Get_user_list_best_friends_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Page number."
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "DEFAULT",
+                        "type": "string",
+                        "description": "Results order. Possible values:\n- DEFAULT: default order.\n- ALPHA: sort alphabetically.\n- OLDEST_TO_NEWEST: sort by oldest to newest friends (by date of friendship).\n- NEWEST_TO_OLDEST: sort by newest to oldest friends (by date of friendship).\n- BEST_FIRST: default order, with best friends first.\n- BEST_LAST: default order, with best friends last."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/list_online_friends.{format}": {
+            "get": {
+                "description": "List of online friends.",
+                "operationId": "Get_user_list_online_friends_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/send_friend_request.{format}": {
+            "post": {
+                "description": "Sends a friend request.",
+                "operationId": "Create_user_send_friend_request_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/add_to_best_friends.{format}": {
+            "post": {
+                "description": "Adds a friend to the best friend list. The friend user should be a friend of current user.",
+                "operationId": "Create_user_add_to_best_friends_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/remove_from_best_friends.{format}": {
+            "post": {
+                "description": "Removes a friend from the best friend list. The friend user should be a best friend of current user.",
+                "operationId": "Create_user_remove_from_best_friends_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/remove_from_friends.{format}": {
+            "post": {
+                "description": "Removes a friend from the friend list.",
+                "operationId": "Create_user_remove_from_friends_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/list_friend_requests.{format}": {
+            "get": {
+                "description": "List of friend requests.",
+                "operationId": "Get_user_list_friend_requests_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/accept_friend_request.{format}": {
+            "post": {
+                "description": "Accepts a friend request.",
+                "operationId": "Create_user_accept_friend_request_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/deny_friend_request.{format}": {
+            "post": {
+                "description": "Denies a friend request.",
+                "operationId": "Create_user_deny_friend_request_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/is_friend.{format}": {
+            "get": {
+                "description": "Checks friend relation between two users.",
+                "operationId": "Get_user_is_friend_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user_1",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "First user ID."
+                    },
+                    {
+                        "name": "id_user_2",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Second user ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/get_counters.{format}": {
+            "get": {
+                "description": "Returns current user counters.",
+                "operationId": "Get_user_get_counters_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/list_blacklist.{format}": {
+            "get": {
+                "description": "List of users in blacklist.",
+                "operationId": "Get_user_list_blacklist_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/add_user_to_blacklist.{format}": {
+            "post": {
+                "description": "Adds a user to the blacklist.",
+                "operationId": "Create_user_add_user_to_blacklist_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/remove_user_from_blacklist.{format}": {
+            "post": {
+                "description": "Removes a user from the blacklist.",
+                "operationId": "Create_user_remove_user_from_blacklist_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/list_groups.{format}": {
+            "get": {
+                "description": "List of user's groups.",
+                "operationId": "Get_user_list_groups_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/get.{format}": {
+            "get": {
+                "description": "Returns a blog public data. If the call is authenticated and username is not provided, the method returns data about the current user's Skyrock blog.",
+                "operationId": "Get_blog_get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "output_format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "html",
+                            "bbcode"
+                        ],
+                        "default": "html",
+                        "type": "integer",
+                        "description": "Defines which format to output, for specific rich text fields. Possible values: 'html' (default), 'bbcode'."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/set.{format}": {
+            "post": {
+                "description": "Sets authenticated user's blog data. Each parameter is optional, you can either set one or many at once.",
+                "operationId": "Create_blog_set_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/change_avatar.{format}": {
+            "post": {
+                "description": "Changes authenticated user's blog avatar.",
+                "operationId": "Create_blog_change_avatar_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "multipart/form-data",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/list_posts.{format}": {
+            "get": {
+                "description": "Returns an user's blog posts list (online only), paginated (10 articles per page).",
+                "operationId": "Get_blog_list_posts_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Page number."
+                    },
+                    {
+                        "name": "with_secret",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Allow authenticated blog owner to show secret posts (false by default)."
+                    },
+                    {
+                        "name": "output_format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "html",
+                            "bbcode"
+                        ],
+                        "default": "html",
+                        "type": "integer",
+                        "description": "Defines which format to output, for specific rich text fields. Possible values: 'html' (default), 'bbcode'."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/list_offline_posts.{format}": {
+            "get": {
+                "description": "Returns current user's blog posts list (offline only), paginated.",
+                "operationId": "Get_blog_list_offline_posts_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Page number."
+                    },
+                    {
+                        "name": "with_secret",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Allow authenticated blog owner to show secret posts (false by default)."
+                    },
+                    {
+                        "name": "output_format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "html",
+                            "bbcode"
+                        ],
+                        "default": "html",
+                        "type": "integer",
+                        "description": "Defines which format to output, for specific rich text fields. Possible values: 'html' (default), 'bbcode'."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/new_post.{format}": {
+            "post": {
+                "description": "Creates a new blog post.",
+                "operationId": "Create_blog_new_post_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/get_post.{format}": {
+            "get": {
+                "description": "Returns an user's blog post. Only online posts will be returned, unless authenticated user is its creator.",
+                "operationId": "Get_blog_get_post_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "id_post",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Post ID."
+                    },
+                    {
+                        "name": "output_format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "html",
+                            "bbcode"
+                        ],
+                        "default": "html",
+                        "type": "integer",
+                        "description": "Defines which format to output, for specific rich text fields. Possible values: 'html' (default), 'bbcode'."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/set_post.{format}": {
+            "post": {
+                "description": "Edits a blog post.",
+                "operationId": "Create_blog_set_post_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/delete_post.{format}": {
+            "post": {
+                "description": "Deletes a blog post.",
+                "operationId": "Create_blog_delete_post_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/list_post_medias.{format}": {
+            "get": {
+                "description": "Returns a post's medias list.",
+                "operationId": "Get_blog_list_post_medias_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "id_post",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Post ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/new_post_media.{format}": {
+            "post": {
+                "description": "Associates media with a blog post.",
+                "operationId": "Create_blog_new_post_media_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/delete_post_media.{format}": {
+            "post": {
+                "description": "Deletes a post's media.",
+                "operationId": "Create_blog_delete_post_media_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/list_post_comments.{format}": {
+            "get": {
+                "description": "Lists a post's comments.",
+                "operationId": "Get_blog_list_post_comments_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "id_post",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Post ID."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Page number."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/get_post_comment.{format}": {
+            "get": {
+                "description": "Returns a post's comment.",
+                "operationId": "Get_blog_get_post_comment_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "id_post",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Post ID."
+                    },
+                    {
+                        "name": "id_comment",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Post comment ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/list_skins.{format}": {
+            "get": {
+                "description": "Returns available skins.",
+                "operationId": "Get_blog_list_skins_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/list_pictures.{format}": {
+            "get": {
+                "description": "Returns the list of pictures from all blog's articles, paginated (35 pictures per page).",
+                "operationId": "Get_blog_list_pictures_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Page number."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/get.{format}": {
+            "get": {
+                "description": "Returns an user's profile public data.",
+                "operationId": "Get_profile_get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "output_format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "html",
+                            "bbcode"
+                        ],
+                        "default": "html",
+                        "type": "integer",
+                        "description": "Defines which format to output, for specific rich text fields. Possible values: 'html' (default), 'bbcode'."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/set.{format}": {
+            "post": {
+                "description": "Sets an user's profile public data.",
+                "operationId": "Create_profile_set_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/add_album.{format}": {
+            "post": {
+                "description": "Adds an album to the profile.",
+                "operationId": "Create_profile_add_album_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/list_albums.{format}": {
+            "get": {
+                "description": "Returns the list of albums associated with a profile. Main album has id_album = 1.",
+                "operationId": "Get_profile_list_albums_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/set_album.{format}": {
+            "post": {
+                "description": "Sets an album's title.",
+                "operationId": "Create_profile_set_album_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/delete_album.{format}": {
+            "post": {
+                "description": "Deletes an empty album. Main album (id_album = 1) cannot be deleted.",
+                "operationId": "Create_profile_delete_album_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/add_picture.{format}": {
+            "post": {
+                "description": "Adds a picture to the profile.",
+                "operationId": "Create_profile_add_picture_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/list_pictures.{format}": {
+            "get": {
+                "description": "Returns the list of pictures associated with a profile.",
+                "operationId": "Get_profile_list_pictures_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "id_album",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Album ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/get_picture.{format}": {
+            "get": {
+                "description": "Returns a specified picture.",
+                "operationId": "Get_profile_get_picture_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_album",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Album ID."
+                    },
+                    {
+                        "name": "id_picture",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Picture ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/set_picture.{format}": {
+            "post": {
+                "description": "Sets a picture's properties.",
+                "operationId": "Create_profile_set_picture_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/delete_picture.{format}": {
+            "post": {
+                "description": "Deletes a picture.",
+                "operationId": "Create_profile_delete_picture_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/get_config.{format}": {
+            "get": {
+                "description": "Returns settings about current user's profile.",
+                "operationId": "Get_profile_get_config_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/set_config.{format}": {
+            "post": {
+                "description": "Sets informations about a profile's (see get_property_values for possible values to set).",
+                "operationId": "Create_profile_set_config_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/get_property_values.{format}": {
+            "get": {
+                "description": "Returns possible values for a given property. These properties can be set using set or set_config.",
+                "operationId": "Get_profile_get_property_values_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "property",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "gender",
+                            "gender_preference",
+                            "looks_for",
+                            "status",
+                            "town",
+                            "country",
+                            "department",
+                            "occupation",
+                            "place",
+                            "personality",
+                            "smoker",
+                            "hair_color",
+                            "eye_color",
+                            "height",
+                            "weight",
+                            "block_friends",
+                            "block_honors",
+                            "block_groups",
+                            "block_gifts",
+                            "show_visits_counter",
+                            "show_comments_counter",
+                            "show_kiffs_counter",
+                            "show_my_websites",
+                            "show_mood",
+                            "display_policy",
+                            "allow_share",
+                            "allow_facebook_like",
+                            "allow_votes",
+                            "allow_kiffs",
+                            "default_page",
+                            "show_me_page",
+                            "show_news_page",
+                            "show_photos_page",
+                            "show_videos_page",
+                            "allow_comments"
+                        ],
+                        "type": "integer",
+                        "description": "Property name. Possible values: gender, gender_preference, looks_for, status, town, country, department, occupation, place, personality, smoker, hair_color, eye_color, height, weight, block_friends, block_honors, block_groups, block_gifts, show_visits_counter, show_comments_counter, show_kiffs_counter, show_my_websites, show_mood, display_policy, allow_share, allow_facebook_like, allow_votes, allow_kiffs, default_page, show_me_page, show_news_page, show_photos_page, show_videos_page, allow_comments."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/set_tags.{format}": {
+            "post": {
+                "description": "Sets an user profile's tags.",
+                "operationId": "Create_profile_set_tags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/get_tags.{format}": {
+            "get": {
+                "description": "Returns an user profile's tags.",
+                "operationId": "Get_profile_get_tags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/get_tags_types.{format}": {
+            "get": {
+                "description": "Returns user profile's tags types.",
+                "operationId": "Get_profile_get_tags_types_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/mood/list_moods.{format}": {
+            "get": {
+                "description": "Returns an user's mood list.",
+                "operationId": "Get_mood_list_moods_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/mood/get_mood.{format}": {
+            "get": {
+                "description": "Returns an user last mood.",
+                "operationId": "Get_mood_get_mood_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User ID (optional if OAuthenticated)."
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Username (optional if OAuthenticated)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/mood/set_mood.{format}": {
+            "post": {
+                "description": "Sets an user's mood.",
+                "operationId": "Create_mood_set_mood_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/mood/delete_mood.{format}": {
+            "post": {
+                "description": "Deletes an user's mood.",
+                "operationId": "Create_mood_delete_mood_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/newsfeed/send_event.{format}": {
+            "post": {
+                "description": "Sends a free text as event to the authenticated user's dash-board (eg. newsfeed). Events also appear in the dash-board of the user's friends. The message is not localized and should be send in the user language.",
+                "operationId": "newsfeed_send_event_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/newsfeed/send_alert.{format}": {
+            "post": {
+                "description": "Sends a free text as alert to the authenticated user's alerts (notifications). The message is not localized and should be send in the user language. Unlike events, alerts are personal.",
+                "operationId": "newsfeed_send_alert_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/newsfeed/list_events.{format}": {
+            "get": {
+                "description": "Lists events in the user's dash-board (eg. newsfeed).",
+                "operationId": "Get_newsfeed_list_events_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "events_category",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "own",
+                            "friends"
+                        ],
+                        "default": "own",
+                        "type": "integer",
+                        "description": "Events category. Possible values: own (display own events), friends (display friends' events)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/newsfeed/list_events_types.{format}": {
+            "get": {
+                "description": "Returns descriptions of events types, for developer information.",
+                "operationId": "Get_newsfeed_list_events_types_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/newsfeed/list_alerts.{format}": {
+            "get": {
+                "description": "Lists user's alerts (notifications).",
+                "operationId": "Get_newsfeed_list_alerts_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/newsfeed/list_alerts_types.{format}": {
+            "get": {
+                "description": "Returns descriptions of alerts types, for developer information.",
+                "operationId": "Get_newsfeed_list_alerts_types_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/message/list_threads.{format}": {
+            "get": {
+                "description": "Returns the authenticated user's message threads (15 threads per page).",
+                "operationId": "Get_message_list_threads_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "all",
+                            "unread"
+                        ],
+                        "default": "all",
+                        "type": "integer",
+                        "description": "Thread selection filter (all/unread)."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Page number (optional)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/message/get_thread.{format}": {
+            "get": {
+                "description": "Returns a message thread (15 messages per page).",
+                "operationId": "Get_message_get_thread_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    },
+                    {
+                        "name": "id_thread",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Message thread ID."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Page number (optional)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/message/set_thread_as_read.{format}": {
+            "post": {
+                "description": "Marks a message thread as read.",
+                "operationId": "Create_message_set_thread_as_read_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/message/delete_thread.{format}": {
+            "post": {
+                "description": "Deletes a message thread.",
+                "operationId": "Create_message_delete_thread_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/message/delete_message.{format}": {
+            "post": {
+                "description": "Deletes a message.",
+                "operationId": "Create_message_delete_message_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/message/send_message.{format}": {
+            "post": {
+                "description": "Sends a message to a single recipient.",
+                "operationId": "Create_message_send_message_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/message/create_thread.{format}": {
+            "post": {
+                "description": "Creates a multi-recipient thread.",
+                "operationId": "Create_message_create_thread_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/message/reply_thread.{format}": {
+            "post": {
+                "description": "Replies to a thread.",
+                "operationId": "Create_message_reply_thread_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "xml"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Interact with Skyrock.com features: blogs, profiles, messaging, 'what's new', friends & activities!",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "format": {
+            "title": "format",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "json",
+                "xml"
+            ]
+        },
+        "output_format": {
+            "title": "output_format",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "html",
+                "bbcode"
+            ]
+        },
+        "property": {
+            "title": "property",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "gender",
+                "gender_preference",
+                "looks_for",
+                "status",
+                "town",
+                "country",
+                "department",
+                "occupation",
+                "place",
+                "personality",
+                "smoker",
+                "hair_color",
+                "eye_color",
+                "height",
+                "weight",
+                "block_friends",
+                "block_honors",
+                "block_groups",
+                "block_gifts",
+                "show_visits_counter",
+                "show_comments_counter",
+                "show_kiffs_counter",
+                "show_my_websites",
+                "show_mood",
+                "display_policy",
+                "allow_share",
+                "allow_facebook_like",
+                "allow_votes",
+                "allow_kiffs",
+                "default_page",
+                "show_me_page",
+                "show_news_page",
+                "show_photos_page",
+                "show_videos_page",
+                "allow_comments"
+            ]
+        },
+        "events_category": {
+            "title": "events_category",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "own",
+                "friends"
+            ]
+        },
+        "filter": {
+            "title": "filter",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "all",
+                "unread"
+            ]
+        }
+    }
+}

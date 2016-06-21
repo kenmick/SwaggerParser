@@ -1,0 +1,213 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Google Prediction",
+        "description": "Harness Google's cloud-based machine learning tools to analyze your data.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "www.googleapis.com",
+    "basePath": "/prediction/v1.4/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/hostedmodels/{hostedModelName}/predict": {
+            "post": {
+                "description": "Run a prediction request against a hosted model.",
+                "operationId": "Create_prediction.hostedmodels.predict_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "hostedModelName",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The name of a hosted model."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Harness Google's cloud-based machine learning tools to analyze your data.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/trainedmodels/{id}": {
+            "get": {
+                "description": "Returns information about a trained model.",
+                "operationId": "Get_prediction.trainedmodels.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The unique name for the predictive model."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Harness Google's cloud-based machine learning tools to analyze your data.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Add new data to a trained model.",
+                "operationId": "Update_prediction.trainedmodels.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The unique name for the predictive model."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Harness Google's cloud-based machine learning tools to analyze your data.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete a trained model.",
+                "operationId": "Delete_prediction.trainedmodels.delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The unique name for the predictive model."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Harness Google's cloud-based machine learning tools to analyze your data."
+                    }
+                }
+            }
+        },
+        "/trainedmodels": {
+            "post": {
+                "description": "Begin training your model.",
+                "operationId": "Create_prediction.trainedmodels.insert_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Harness Google's cloud-based machine learning tools to analyze your data.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/trainedmodels/{id}/predict": {
+            "post": {
+                "description": "Run a prediction against your model.",
+                "operationId": "Create_prediction.trainedmodels.predict_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The unique name for the predictive model."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Harness Google's cloud-based machine learning tools to analyze your data.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

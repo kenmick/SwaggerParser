@@ -1,0 +1,820 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "DonorsChoose.org",
+        "description": "Help classroom projects by integrating project information and donation functionality into your app.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "apisecure.donorschoose.org",
+    "basePath": "/common/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/json_feed.html": {
+            "get": {
+                "description": "Specify the center point using the parameters centerLat and centerLng. Leave out the \"radius\" parameter.",
+                "operationId": "Get_geo.projects.near.me_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "If you wish to wrap your response in a callback function, include the name here."
+                    },
+                    {
+                        "name": "index",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "By default, the start index of the result set is 0; for example, by setting index=10 and max=10, you can return rows 10-19."
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 10.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "By default, the maximum number of projects returned is 10; you can request up to 50 rows at a time."
+                    },
+                    {
+                        "name": "showSynopsis",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "To show the synopsis for each project listing set this to true."
+                    },
+                    {
+                        "name": "showFacetCounts",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "To show facet counts set this to true. They will appear after the project listings."
+                    },
+                    {
+                        "name": "showZeroFacetCountsForSchools",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Facet counts will be displayed for all schools--including those with zero live projects--if this parameter is set to true and showFacetCounts is set to true and school counts are displayed because there is a community parameter in the search parameters."
+                    },
+                    {
+                        "name": "keywords",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "To search for a phrase, enclose it in quotes. It gets a list of projects where the keyword search matches any of the following fields:\n- id\n- title\n- synopsis (full length project essay; not returned in JSON)\n- short description\n- fulfillment trailer\n- school name\n- teacher's first name (not returned in JSON)\n- teacher's last name (only initial returned in JSON)\n- city\n- county (not returned in JSON)\n- district (not returned in JSON)\n- ward/neighborhood (not returned in JSON)\n- state (e.g. TX)\n- zip (not returned in JSON)\n- subject name"
+                    },
+                    {
+                        "name": "subject1",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "-1",
+                            "1",
+                            "11",
+                            "12"
+                        ],
+                        "type": "integer",
+                        "description": "Search for subjects:\nMusic & The Arts - subject1=-1 \nPerforming Arts    - subject1=1 \nVisual Arts            - subject1=11 \nMusic                        - subject1=12"
+                    },
+                    {
+                        "name": "subject2",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "-2",
+                            "2",
+                            "27",
+                            "28",
+                            "29"
+                        ],
+                        "type": "integer",
+                        "description": "Search for subjects:\nHealth & Sports     - subject2=-2\nSports                        - subject2=2\nHealth & Wellness - subject2=27    \nNutrition                 - subject2=28 \nGym & Fitness\t    - subject2=29"
+                    },
+                    {
+                        "name": "subject3",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "-3",
+                            "9",
+                            "13",
+                            "14",
+                            "15"
+                        ],
+                        "type": "integer",
+                        "description": "Search for subjects:\nHistory & Civics        - subject3=-3\nHistory & Geography - subject3=9\nCivics & Government - subject3=13\nEconomics                     - subject3=14\nSocial Sciences         - subject3=15"
+                    },
+                    {
+                        "name": "subject4",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "-4",
+                            "4",
+                            "6",
+                            "7",
+                            "8"
+                        ],
+                        "type": "integer",
+                        "description": "Search for subjects:\nMath & Science                - subject4=-4 \nHealth & Life Science - subject4=4\nApplied Science             - subject4=6\nEnvironmental Science - subject4=7\nMathematics\t                    - subject4=8"
+                    },
+                    {
+                        "name": "subject5",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "-5",
+                            "18",
+                            "21",
+                            "26",
+                            "16",
+                            "17",
+                            "20",
+                            "19"
+                        ],
+                        "type": "integer",
+                        "description": "Search for subjects:\nApplied Learning            - subject5=-5\nEarly Development         - subject5=18\nCommunity Service         - subject5=21\nCharacter Education     - subject5=26\nCollege & Career Prep - subject5=16 \nExtra Curricular            - subject5=17\nParental Involvement    - subject5=20\nOther                                 - subject5=19"
+                    },
+                    {
+                        "name": "subject6",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "-6",
+                            "10",
+                            "3",
+                            "22",
+                            "25"
+                        ],
+                        "type": "integer",
+                        "description": "Search for subjects:\nLiteracy & Language    - subject6=-6\nLiteracy                         - subject6=10\nLiterature & Writing - subject6=3 \nForeign Languages        - subject6=22\nESL\t                                 - subject6=25"
+                    },
+                    {
+                        "name": "subject7",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "-7"
+                        ],
+                        "type": "integer",
+                        "description": "Search for subjects:\nSpecial Needs - subject7=-7"
+                    },
+                    {
+                        "name": "partiallyFunded",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "yes",
+                            "no"
+                        ],
+                        "type": "integer",
+                        "description": "Some Received: Projects that have already received partial donations - partiallyFunded=yes\t\nNone Yet: Projects that haven't yet received a donation - partiallyFunded=no"
+                    },
+                    {
+                        "name": "teacherNotFunded",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Never Before Funded. Projects from teachers that have never had a project funded."
+                    },
+                    {
+                        "name": "costToComplete",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "1",
+                            "2",
+                            "3",
+                            "4"
+                        ],
+                        "type": "integer",
+                        "description": "$99 or less -\tcostToComplete=1\n$100-$200 - costToComplete=2\n$200-$1,000 - costToComplete=3\n$1,000-above - costToComplete=4"
+                    },
+                    {
+                        "name": "costToCompleteRange",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Cost to Complete Range. Example: costToCompleteRange=0+TO+400. Please note that when costToCompleteRange is set, costToComplete is ignored."
+                    },
+                    {
+                        "name": "proposalType",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6"
+                        ],
+                        "type": "integer",
+                        "description": "Books - proposalType=1\nTechnology - proposalType=2\nSupplies - proposalType=3\nTrips - proposalType=4\nVisitors - proposalType=5\nOther - proposalType=6"
+                    },
+                    {
+                        "name": "proposalTypeCombo",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "TripsVisitors",
+                            "Supplies"
+                        ],
+                        "type": "integer",
+                        "description": "Trips & Visitors - proposalTypeCombo=TripsVisitors\nSupplies - proposalTypeCombo=Supplies"
+                    },
+                    {
+                        "name": "gradeType",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5"
+                        ],
+                        "type": "integer",
+                        "description": "Grades PreK-2\t - gradeType=1\nGrades 3-5\t- gradeType=2\nGrades 6-8\t- gradeType=3\nHigh School\t- gradeType=4\nAdult Ed\t- gradeType=5"
+                    },
+                    {
+                        "name": "resourceUsage",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "1",
+                            "2"
+                        ],
+                        "type": "integer",
+                        "description": "Essential - resourceUsage=1\nEnrichment - resourceUsage=2"
+                    },
+                    {
+                        "name": "teacherType",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "1"
+                        ],
+                        "type": "integer",
+                        "description": "Teach For America\t - teacherType=1"
+                    },
+                    {
+                        "name": "schoolType",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "1",
+                            "4",
+                            "5"
+                        ],
+                        "type": "integer",
+                        "description": "Charter School - schoolType=1\nMagnet School - schoolType=4\nYear Round School - schoolType=5"
+                    },
+                    {
+                        "name": "challengeId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Giving Page ID. Example: challengeId=18369"
+                    },
+                    {
+                        "name": "matchingId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Example: matchingId=6. Please use the \"Match Offers\" filter on our Search Projects page to get the matching grant value you need."
+                    },
+                    {
+                        "name": "state",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "To search by state code (e.g. TX) you can either do a keyword search or use the state parameter (e.g. state=TX)."
+                    },
+                    {
+                        "name": "community",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Use the \"Community\" filter on our Search Projects page to get the community values you need."
+                    },
+                    {
+                        "name": "cityName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "City Name."
+                    },
+                    {
+                        "name": "countyName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "County Name."
+                    },
+                    {
+                        "name": "school",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "to identify a specific school."
+                    },
+                    {
+                        "name": "sortBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "0",
+                            "1",
+                            "2",
+                            "4"
+                        ],
+                        "type": "integer",
+                        "description": "You can sort your results by:\n- Urgency: Shows projects with higher urgency at the top - sortBy=0\n- Poverty: Shows projects from schools with the highest levels of poverty at the top - sortBy=1\n- Cost: Shows projects with the lowest cost to complete at the top - sortBy=2\n- Popularity: Shows projects with higher numbers of donors at the top - sortBy=4"
+                    },
+                    {
+                        "name": "historical",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "The historical=true parameter returns completed projects only. Without adding that parameter, the default behavior is to always return projects in need of funding."
+                    },
+                    {
+                        "name": "nwLat",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specify the NW point using the parameters nwLat and nwLng."
+                    },
+                    {
+                        "name": "nwLng",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specify the NW point using the parameters nwLat and nwLng."
+                    },
+                    {
+                        "name": "seLat",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specify the SE point using seLat and seLng."
+                    },
+                    {
+                        "name": "seLng",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specify the SE point using seLat and seLng."
+                    },
+                    {
+                        "name": "centerLat",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specify the center point using the parameters centerLat and centerLng."
+                    },
+                    {
+                        "name": "centerLng",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specify the center point using the parameters centerLat and centerLng."
+                    },
+                    {
+                        "name": "radius",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specify the radius using radius."
+                    },
+                    {
+                        "name": "concise",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "If you are plotting potentially many points on a map, we recommend you use add the concise=true."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Help classroom projects by integrating project information and donation functionality into your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/json_challenge.html": {
+            "get": {
+                "description": "Retrieve a Giving Page.",
+                "operationId": "Get_giving.page_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Giving Page ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Help classroom projects by integrating project information and donation functionality into your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/json_api.html": {
+            "post": {
+                "description": "To donate to a proposal.",
+                "operationId": "Create_project.donation_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Dollar amount to donate to the proposal. (Must be a whole number (no cents) >=$1 unless you're making the project's \"completing\" donation, in which case you must specify the exact amount remaining for the project.)"
+                    },
+                    {
+                        "name": "proposalId",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "ID of the project to receive the donation. (Typically a 6-digit number.)"
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Email address of the person to whom the donation should be credited. (This must be a known-good email address so that we can send the donor a receipt for tax purposes and later the thank-you assets from the classroom: the thank-you note, impact letter, and photos.)"
+                    },
+                    {
+                        "name": "first",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "First name of person to whom the donation should be credited. (This field should be accurate for tax purposes. On our site, only the salutation will be revealed publicly.)"
+                    },
+                    {
+                        "name": "last",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Last name of person to whom the donation should be credited. (This field should be accurate for tax purposes. On our site, only the salutation will be revealed publicly)"
+                    },
+                    {
+                        "name": "salutation",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "How the donor wants to be acknowledged on our site, eg. Timothy, The Richards Family. (We recommend defaulting this value to simply First Last and then inviting the donor to alter it if they want.)"
+                    },
+                    {
+                        "name": "address1",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "First line of street address of person to whom the donation should be credited. (Required if the donor wants to receive the awesome hand-written thank-you notes from the classroom they supported!)"
+                    },
+                    {
+                        "name": "address2",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Second line of street address of person to whom the donation should be credited. (Required if the donor wants to receive the awesome hand-written thank-you notes from the classroom they supported!)"
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "City of person to whom the donation should be credited. (Strongly encouraged so the classroom can know where their supporters reside!)"
+                    },
+                    {
+                        "name": "state",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "State of person to whom the donation should be credited. (Strongly encouraged so the classroom can know where their supporters reside!)"
+                    },
+                    {
+                        "name": "zip",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "5-digit zip code of person to whom the donation should be credited. (Required if the donor wants to receive the awesome hand-written thank-you notes from the classroom they supported!)"
+                    },
+                    {
+                        "name": "action",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "donate",
+                            "giftcode"
+                        ],
+                        "type": "integer",
+                        "description": "Either 'donate' or 'giftcode' depending on whether you're making Project donations or issuing Gift codes."
+                    },
+                    {
+                        "name": "callback",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "If you wish to wrap your response in a callback function, include the name here."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Help classroom projects by integrating project information and donation functionality into your app.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "subject1": {
+            "title": "subject1",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "-1",
+                "1",
+                "11",
+                "12"
+            ]
+        },
+        "subject2": {
+            "title": "subject2",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "-2",
+                "2",
+                "27",
+                "28",
+                "29"
+            ]
+        },
+        "subject3": {
+            "title": "subject3",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "-3",
+                "9",
+                "13",
+                "14",
+                "15"
+            ]
+        },
+        "subject4": {
+            "title": "subject4",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "-4",
+                "4",
+                "6",
+                "7",
+                "8"
+            ]
+        },
+        "subject5": {
+            "title": "subject5",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "-5",
+                "18",
+                "21",
+                "26",
+                "16",
+                "17",
+                "20",
+                "19"
+            ]
+        },
+        "subject6": {
+            "title": "subject6",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "-6",
+                "10",
+                "3",
+                "22",
+                "25"
+            ]
+        },
+        "subject7": {
+            "title": "subject7",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "-7"
+            ]
+        },
+        "partiallyFunded": {
+            "title": "partiallyFunded",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "yes",
+                "no"
+            ]
+        },
+        "costToComplete": {
+            "title": "costToComplete",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        "proposalType": {
+            "title": "proposalType",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ]
+        },
+        "proposalTypeCombo": {
+            "title": "proposalTypeCombo",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "TripsVisitors",
+                "Supplies"
+            ]
+        },
+        "gradeType": {
+            "title": "gradeType",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ]
+        },
+        "resourceUsage": {
+            "title": "resourceUsage",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "1",
+                "2"
+            ]
+        },
+        "teacherType": {
+            "title": "teacherType",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "1"
+            ]
+        },
+        "schoolType": {
+            "title": "schoolType",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "1",
+                "4",
+                "5"
+            ]
+        },
+        "sortBy": {
+            "title": "sortBy",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "0",
+                "1",
+                "2",
+                "4"
+            ]
+        },
+        "action": {
+            "title": "action",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "donate",
+                "giftcode"
+            ]
+        }
+    }
+}

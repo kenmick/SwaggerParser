@@ -1,0 +1,1780 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Urban Airship",
+        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "go.urbanairship.com",
+    "basePath": "/api/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/device_tokens/{token}": {
+            "get": {
+                "description": "Gets a device token’s alias.",
+                "operationId": "getDeviceToken_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Device tokens should be represented as an uppercase string, 64 characters long, without spaces or other separators. An example device token is: FE66489F304DC75B8D6E8200DFF8A456E8DAEACEC428B427E9518741C92C6660."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Registers a device token.",
+                "operationId": "Update_registerDeviceTokens_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Device tokens should be represented as an uppercase string, 64 characters long, without spaces or other separators. An example device token is: FE66489F304DC75B8D6E8200DFF8A456E8DAEACEC428B427E9518741C92C6660."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Marks the device token as inactive. No notifications will be delivered to it until a PUT is executed again. The DELETE returns HTTP 204 No Content, and needs no payload. When a token is deleted in this manner, any alias or tags will be cleared.",
+                "operationId": "Delete_disableDeviceToken_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Device tokens should be represented as an uppercase string, 64 characters long, without spaces or other separators. An example device token is: FE66489F304DC75B8D6E8200DFF8A456E8DAEACEC428B427E9518741C92C6660."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services."
+                    }
+                }
+            }
+        },
+        "/push": {
+            "post": {
+                "description": "Sends a push message to one or more users. Only one of aliases, tags, or device_pins is required, but they can be mixed and matched as much as you’d like.",
+                "operationId": "Create_pushBlackberryMessage_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/push/scheduled/{notification}": {
+            "delete": {
+                "description": "Cancels a scheduled notification.    A successful delete will have an HTTP status code of 204. If the scheduled notification does not exist, has already been successfully deleted, or was sent, the status code will be 404.",
+                "operationId": "Delete_cancelScheduledNotification_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "notification",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Scheduled notification ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services."
+                    }
+                }
+            }
+        },
+        "/push/scheduled": {
+            "post": {
+                "description": "Bulk deletes scheduled notifications. If you include URLs or aliases for scheduled notifications that don’t exist or have already been sent, they will be ignored. Any device token in the cancel_device_tokens payload will have every notification that is sent to it removed. This will not prevent it from receiving scheduled notifications to tags or broadcast messages.",
+                "operationId": "Create_bulkDeleteScheduledNotifications_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/push/scheduled/alias/{alias}": {
+            "put": {
+                "description": "Changes a scheduled notification alias. Aliases for scheduled notifications are unique per Urban Airship application, so you might want to hash the aliases with a device ID or use some other mechanism to ensure uniqueness. The only other limit is that they must be 255 characters or less.",
+                "operationId": "changeScheduledNotificationAlias_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "alias",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Scheduled notification alias."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a scheduled notification alias.    If you attempt to schedule an aliased scheduled notification with an alias that already exists for your application, it will overwrite the existing one.",
+                "operationId": "removeScheduledNotificationAlias_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "alias",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Scheduled notification alias."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services."
+                    }
+                }
+            }
+        },
+        "/push/batch": {
+            "post": {
+                "description": "Sends a push message to all the listed PINs. Each item in the list can contain 0 or many device_pins and 0 or many aliases or tags, and the blackberry payload is in the same format as for individual pushes.",
+                "operationId": "Create_pushBlackberryMessageBatch_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/push/broadcast": {
+            "post": {
+                "description": "Sends a push message to all active APIDs (Broadcast). Important: The maximum message size is 1024 bytes. This is calculated as the UTF-8 lengths of alert and extra fields together.",
+                "operationId": "Create_broadcastAndroidMessage_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/push/stats": {
+            "get": {
+                "description": "Returns hourly message counts for your application. By default, results are returned in JSON. For CSV, either add the header:Accept:text/csv or append &format=csv to the query string. Times are in UTC, and data is provided for each push platform (currently: iOS, BlackBerry, Android, and C2DM, in that order). The statistics system is updated every 15 minutes, so the final count for an hour will be done at the latest 15 minutes after the hour is done.",
+                "operationId": "getHourlyMessageCounts_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Start date in UTC format. Example: 2009-06-22."
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "End date in UTC format. Example: 2009-06-22+06:00."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "json",
+                            "csv"
+                        ],
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/device_tokens": {
+            "get": {
+                "description": "Gets information about all of your device tokens. If your application has a large number of device tokens, we’ll paginate the request for you. By default, we paginate at 5000 device tokens. You can receive the next page simply by retrieving the URL from \"next_page\" - in this way it is easy to export all of your device tokens and all their data.",
+                "operationId": "listDeviceTokens_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The page number."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The total items to return. By default, we paginate at 5000 device tokens."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/device_tokens/count": {
+            "get": {
+                "description": "Gets the number of device tokens you have registered.",
+                "operationId": "Get_countDeviceTokens_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/device_tokens/feedback": {
+            "get": {
+                "description": "Gets what device tokens are now invalid. Apple informs us when a push notification is sent to a device that can’t receive it because the application has been uninstalled. We mark the device token as inactive and immediately stop sending notifications to that device. Once a day is a good interval for querying the feedback service, but you can do it more often to save on bandwidth from unnecessary notifications. In the response, what does marked_inactive_on mean? Apple sends a timestamp for each device token returned via the feedback service. Since a device can be off the network for a while, this can be a point in the recent past. In order to make this API work smoothly for you, we record the timestamp we marked as inactive. This means you only need to query for data since the last time you queried. Once a day is a good timeframe, or once a week for very small or infrequently used applications. A few times a day is good for applications with heavy use.",
+                "operationId": "listInvalidDeviceTokens_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "since",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Since timestamp in ISO 8601 format. Example: 2012-03-01+13:00:00."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/apids/{apid}": {
+            "get": {
+                "description": "Gets APID information.",
+                "operationId": "getApid_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "An APID (Android Push ID) is the Urban Airship ID of a device to which a message can be pushed."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Registers an APID. Unlike registration for iOS and BlackBerry applications, basic registration tying an APID to your application happens automatically. The registration API can be used to set aliases or tags. This returns HTTP 200 OK for any updates. Registering without any body is a no-op. Not including the alias field will clear it. To clear the list of tags, set it to the empty list []. If you are registering an APID to be used with C2DM, you will also need to include a C2DM registration ID.",
+                "operationId": "Update_registerApid_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "apid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "An APID (Android Push ID) is the Urban Airship ID of a device to which a message can be pushed."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Marks an APID as invalid. No notifications will be delivered to it until it re-registers.",
+                "operationId": "Delete_invalidateApid_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apid",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "An APID (Android Push ID) is the Urban Airship ID of a device to which a message can be pushed."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services."
+                    }
+                }
+            }
+        },
+        "/apids": {
+            "get": {
+                "description": "Gets APIDs. You can control how many APIDs are returned at a time by using the limit GET argument. The maximum limit is 5000.",
+                "operationId": "listApids_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "APID from where to start from."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Control how many APIDs are returned at a time. The maximum limit is 5000."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/device_pins/{pin}": {
+            "get": {
+                "description": "Gets Device PIN information.",
+                "operationId": "getDevicePin_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "pin",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A BlackBerry PIN. Device PINs should be 8 character strings, without spaces."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Registers a BlackBerry PIN. This is optional, but recommended, for BlackBerry push messages. This returns HTTP 201 Created for the first registration and 200 OK for any updates. If you wish to include additional information about a device pin, for instance an alias or tags, include a JSON payload along with this request. Not including one of these keys removes it from the device pin.",
+                "operationId": "Update_registerPin_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "pin",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A BlackBerry PIN. Device PINs should be 8 character strings, without spaces."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Marks a PIN as inactive. No notifications will be delivered to it until a PUT is executed again.",
+                "operationId": "Delete_disablePin_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "pin",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A BlackBerry PIN. Device PINs should be 8 character strings, without spaces."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services."
+                    }
+                }
+            }
+        },
+        "/user": {
+            "post": {
+                "description": "Creates a new user and returns the credentials.",
+                "operationId": "createSubscriptionUser_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user_id}": {
+            "get": {
+                "description": "Retrieves an user’s subscription information.",
+                "operationId": "getUserSubscriptionInfo_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "User ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Changes properties of an user - for example, changing or adding an email address.",
+                "operationId": "modifySubscriptionUser_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "User ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes an user.",
+                "operationId": "deleteSubscriptionUser_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "User ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services."
+                    }
+                }
+            }
+        },
+        "/user/{user_id}/creds/reset": {
+            "post": {
+                "description": "Changes the password of an user.",
+                "operationId": "Create_resetCredentials_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "User ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/airmail/send": {
+            "post": {
+                "description": "Sends a message. All fields except message are optional, but at least one of tags, users or aliases must be specified. Much like the push API, we have a batch API call that can make sending multiple messages easier. It’s located at /api/airmail/send/batch/ and accepts a list of messages in the same format as the standard push call.",
+                "operationId": "Create_sendUserMessage_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/airmail/send/broadcast": {
+            "post": {
+                "description": "Sends a message to all users (broadcast). Only message is required. The message will be sent out to every registered user. Badge numbers will be handled automatically as long as the push key is present.",
+                "operationId": "Create_broadcastBlackberryMessage_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user_id}/messages": {
+            "get": {
+                "description": "Returns a list of messages and some metadata about them. It will also include some metadata about the user.",
+                "operationId": "listUserMessages_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user ID."
+                    },
+                    {
+                        "name": "full_list",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Get the full message included in this list (which might take a while to download)."
+                    },
+                    {
+                        "name": "since",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Return only new items. Example: since=some_message_id will return all messages sent after the message ID of some_message_id."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user_id}/messages/unread": {
+            "get": {
+                "description": "Returns a list of unread message IDs and their URLs.",
+                "operationId": "listUserUnreadMessages_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Marks multiple messages as read at once. If a message has already been marked as read, it will be silently skipped.",
+                "operationId": "Create_markUserUnreadMessagesAsRead_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user_id}/messages/message/{message_id}": {
+            "get": {
+                "description": "Gets a message.",
+                "operationId": "getUserMessage_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user ID."
+                    },
+                    {
+                        "name": "message_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The message ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a message.",
+                "operationId": "deleteUserMessage_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user ID."
+                    },
+                    {
+                        "name": "message_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The message ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services."
+                    }
+                }
+            }
+        },
+        "/user/{user_id}/messages/message/{message_id}/body": {
+            "get": {
+                "description": "Gets a message's body.",
+                "operationId": "getUserMessageBody_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user ID."
+                    },
+                    {
+                        "name": "message_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The message ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user_id}/messages/message/{message_id}/read": {
+            "post": {
+                "description": "Marks a message as read.",
+                "operationId": "Create_markUserMessageAsRead_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user ID."
+                    },
+                    {
+                        "name": "message_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The message ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user_id}/messages/delete": {
+            "post": {
+                "description": "Deletes multiple messages at once. If a message has already been deleted, it will be silently skipped.",
+                "operationId": "Create_deleteUserMessages_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/app/content": {
+            "get": {
+                "description": "Gets the store inventory.",
+                "operationId": "getStoreInventory_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/app/content/{product_id}/download": {
+            "post": {
+                "description": "Returns a temporary URL where the client can download the content. In the payload, the receipt string is the receipt data from the purchase. It should be unaltered from how Apple delivers it to your application.udid is an optional field to help identify a particular user’s purchases, which can aid debugging. It should always be a hash of the UDID, not the actual UDID, to ensure compliance with Apple’s TOS. The optional version field should be the StoreFront library version, or custom if you’re building your own.",
+                "operationId": "Create_downloadPaidContent_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "product_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The product ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/app/updates": {
+            "post": {
+                "description": "Checks for updates. It can be useful on application launch to compare a list of installed updates with our server to see if there are any updates to be had for the content.",
+                "operationId": "Create_checkForUpdates_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "product_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The product ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/recover": {
+            "post": {
+                "description": "Uses the user’s email address as a way to restore subscription content across devices.",
+                "operationId": "Create_recoverAccount_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/recover/{id}": {
+            "get": {
+                "description": "Checks the recovery status.",
+                "operationId": "Get_checkRecoveryStatus_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the user’s account recovery."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user_id}/available_subscriptions": {
+            "get": {
+                "description": "Retrieves subscription options.",
+                "operationId": "retrieveSubscriptionOptions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "User ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user_id}/subscriptions/{subscription_key}/purchase": {
+            "post": {
+                "description": "Adds a new subscription.",
+                "operationId": "addSubscription_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "User ID."
+                    },
+                    {
+                        "name": "subscription_key",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Subscription Key."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user_id}/subscription_content": {
+            "get": {
+                "description": "Returns a list of available content.",
+                "operationId": "listAvailableContent_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "User ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user_id}/subscriptions/content/{content_id}/download": {
+            "post": {
+                "description": "Downloads the content.",
+                "operationId": "Create_downloadContent_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "User ID."
+                    },
+                    {
+                        "name": "content_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Content ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/feeds": {
+            "get": {
+                "description": "Gets a list of feeds.",
+                "operationId": "listFeeds_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new feed item.",
+                "operationId": "createFeedItem_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/feeds/{feed_id}": {
+            "get": {
+                "description": "Returns information about a particular feed.",
+                "operationId": "getFeed_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "feed_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A particular feed."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates a feed.",
+                "operationId": "updateFeed_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "feed_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A particular feed."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a feed.",
+                "operationId": "deleteFeed_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "feed_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A particular feed."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services."
+                    }
+                }
+            }
+        },
+        "/tags": {
+            "get": {
+                "description": "Returns all the tags that you have created.",
+                "operationId": "listTags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tags/{tag}": {
+            "put": {
+                "description": "Deletes a tag.",
+                "operationId": "Update_deleteTag_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Tags can be of any format you wish, but we recommend that they be URL-safe in order to make less work for you. The maximum length of a tag is 128 characters."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Modifies device tokens on a tag.",
+                "operationId": "modifyTagDeviceTokens_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "tag",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Tags can be of any format you wish, but we recommend that they be URL-safe in order to make less work for you. The maximum length of a tag is 128 characters."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/device_tokens/{device_token}/tags": {
+            "get": {
+                "description": "Gets tags for a specific device token.",
+                "operationId": "listDeviceTokenTags_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "device_token",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A specific device token."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/device_tokens/{device_token}/tags/{tag}": {
+            "put": {
+                "description": "Creates a tag and associate it with the specific device token.",
+                "operationId": "addDeviceTokenTag_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "device_token",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A specific device token."
+                    },
+                    {
+                        "name": "tag",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Tags can be of any format you wish, but we recommend that they be URL-safe in order to make less work for you. The maximum length of a tag is 128 characters."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Removes a single tag from a device token.",
+                "operationId": "deleteDeviceTokenTag_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "device_token",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A specific device token."
+                    },
+                    {
+                        "name": "tag",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Tags can be of any format you wish, but we recommend that they be URL-safe in order to make less work for you. The maximum length of a tag is 128 characters."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services."
+                    }
+                }
+            }
+        },
+        "/partner/apps": {
+            "get": {
+                "description": "List applications.",
+                "operationId": "listApplications_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Adds a new application.",
+                "operationId": "createApplication_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/partner/apps/{app_id}": {
+            "put": {
+                "description": "Updates an application.",
+                "operationId": "updateApplication_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Content type."
+                    },
+                    {
+                        "name": "app_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A specific application."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The Urban Airship's API powers mobile applications with push, rich push, in-app purchases and subscription services.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "format": {
+            "title": "format",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "json",
+                "csv"
+            ]
+        }
+    }
+}

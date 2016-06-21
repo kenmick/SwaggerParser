@@ -1,0 +1,3139 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Desk.com",
+        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "securityDefinitions": {},
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/cases.{format}": {
+            "get": {
+                "description": "Searches cases based on a combination of parameters with pagination.",
+                "operationId": "getCases_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/cases/{id}.{format}": {
+            "get": {
+                "description": "Shows the case.",
+                "operationId": "getCase_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "by",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "id",
+                            "external_id"
+                        ],
+                        "default": "id",
+                        "type": "integer",
+                        "description": "Specify what to find the case by. Can either be 'id' or 'external_id'. If none specified, defaults to 'id'."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The case ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates an existing case.",
+                "operationId": "updateCase_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subject",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The case's subject."
+                    },
+                    {
+                        "name": "external_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The cases external_id."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The case's description."
+                    },
+                    {
+                        "name": "priority",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9",
+                            "10"
+                        ],
+                        "type": "integer",
+                        "description": "The case's priority (1-10)."
+                    },
+                    {
+                        "name": "labels",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "general,must reply,customer",
+                        "type": "string",
+                        "description": "The case's labels. This is a comma delimited list of label names. Any existing labels that are not specified will be removed, and any new labels will be added."
+                    },
+                    {
+                        "name": "custom_key",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The custom field identified by key."
+                    },
+                    {
+                        "name": "case_status_type_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "10",
+                            "30",
+                            "50",
+                            "70"
+                        ],
+                        "type": "integer",
+                        "description": "The case's status type identifier. Can be one of the following: 10 (New), 30 (Open), 50 (Pending), 70 (Resolved)."
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The case's assigned user id."
+                    },
+                    {
+                        "name": "group_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The case's assigned group id."
+                    },
+                    {
+                        "name": "language",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "en",
+                        "type": "string",
+                        "description": "The case's language. This will only be accepted if the multi-language support is turned on for the site and the language is enabled from the Admin."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The case ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/customers.{format}": {
+            "get": {
+                "description": "Searches and returns a paginated collection of customers.",
+                "operationId": "getCustomers_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "custom_key",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Match customers by a custom field value denoted by key."
+                    },
+                    {
+                        "name": "since_created_at",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Match customers with a created date (in unix time) greater than (that is, more recent than) the specified Date."
+                    },
+                    {
+                        "name": "max_created_at",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Match customers with a created timestamp (in unix time) less than (that is, older than) or equal to the specified Date."
+                    },
+                    {
+                        "name": "since_updated_at",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Match customers with an updated timestamp (in unix time) greater than (that is, more recent than) the specified Date."
+                    },
+                    {
+                        "name": "max_updated_at",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Match customers with an updated timestamp (in unix time) less than (that is, older than) or equal to the specified Date."
+                    },
+                    {
+                        "name": "since_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Match customers with ID greater than (that is, more recent than) the specified ID."
+                    },
+                    {
+                        "name": "max_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Match customers with ID less than (that is, older than) or equal to the specified ID."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Match customers by a comma separated list of email addresses."
+                    },
+                    {
+                        "name": "twitter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Match customers by a comma separated list of twitter logins."
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Match customers by a comma separated list of phone numbers."
+                    },
+                    {
+                        "name": "external_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Match customers by a comma separated list of external ids."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the number of records to retrieve. May not be greater than 100."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the page of results to retrieve. Note: there are pagination limits. See the FAQ for details."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new customer.",
+                "operationId": "createCustomer_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer's full name."
+                    },
+                    {
+                        "name": "company",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer's company."
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer's title."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer's background information."
+                    },
+                    {
+                        "name": "external_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer's external identifier."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Additionally create the customer's default email address. This will eventually be deprecated in favor of customers/emails/create."
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Additionally create the customer's default phone number. This will eventually be deprecated in favor of customers/phones/create."
+                    },
+                    {
+                        "name": "twitter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer's twitter account. This will create an associated twitter account to the customer. An associated twitter account can not be created if it is already assigned to an existing customer."
+                    },
+                    {
+                        "name": "language",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "en",
+                        "type": "string",
+                        "description": "The customer's language. This will only be accepted if the multi-language support is turned on for the site and the language is one of the supported languages."
+                    },
+                    {
+                        "name": "custom_key",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The custom field identified by key."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/customers/{id}.{format}": {
+            "get": {
+                "description": "Returns a single customer, specified by the ID parameter.",
+                "operationId": "getCustomer_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates an existing customer.",
+                "operationId": "updateCustomer_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer's full name."
+                    },
+                    {
+                        "name": "company",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer's company."
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer's title."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer's background information."
+                    },
+                    {
+                        "name": "external_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer's external_id. This represents the customer's unique ID in your client application."
+                    },
+                    {
+                        "name": "language",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "en",
+                        "type": "string",
+                        "description": "The customer's language. This will only be accepted if the multi-language support is turned on for the site and the language is one of the supported languages."
+                    },
+                    {
+                        "name": "custom_key",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The custom field identified by key."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/customers/{customer_id}/emails.{format}": {
+            "post": {
+                "description": "Creates a new customer contact email.",
+                "operationId": "createCustomerEmail_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "customer_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer ID."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The email address of the customer. An email address cannot be created if it is already assigned to an existing customer."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/customers/{customer_id}/emails/{id}.{format}": {
+            "put": {
+                "description": "Updates an existing customer contact email.",
+                "operationId": "updateCustomerEmail_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "customer_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer ID."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer email ID."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The email address of the customer. An email address cannot be created if it is already assigned to an existing customer."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/customers/{customer_id}/phones.{format}": {
+            "post": {
+                "description": "Creates a new customer contact phone number.",
+                "operationId": "createCustomerPhone_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "customer_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer ID."
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The phone number."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/customers/{customer_id}/phones/{id}.{format}": {
+            "put": {
+                "description": "Updates an existing customer contact phone.",
+                "operationId": "updateCustomerPhone_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "customer_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer ID."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The customer email ID."
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The phone number."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/interactions.{format}": {
+            "get": {
+                "description": "Returns the first X interactions within the system with pagination.",
+                "operationId": "getInteractions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "case_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The numerical ID of the desired case interactions."
+                    },
+                    {
+                        "name": "channels",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "email,twitter",
+                        "type": "string",
+                        "description": "Channel types (comma delimited list of channels)."
+                    },
+                    {
+                        "name": "since_created_at",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "12345",
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Returns results with an Create Date greater than (that is, more recent than) the specified Date."
+                    },
+                    {
+                        "name": "max_created_at",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "54321",
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Returns results with an Create Date less than (that is, older than) or equal to the specified Date."
+                    },
+                    {
+                        "name": "since_updated_at",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "12345",
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Returns results with an Update Date greater than (that is, more recent than) the specified Date."
+                    },
+                    {
+                        "name": "max_updated_at",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "54321",
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Returns results with an Update Date less than (that is, older than) or equal to the specified Date."
+                    },
+                    {
+                        "name": "since_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "12345",
+                        "type": "string",
+                        "description": "Returns results with an ID greater than (that is, more recent than) the specified ID."
+                    },
+                    {
+                        "name": "max_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "54321",
+                        "type": "string",
+                        "description": "Returns results with an ID less than (that is, older than) or equal to the specified ID."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 100.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the number of records to retrieve. May not be greater than 100."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the page of results to retrieve. Note: there are pagination limits. See the FAQ for details."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new interaction either by creating a new case or linking to an existing one.",
+                "operationId": "createInteraction_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "interaction_subject",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subject of the new interaction."
+                    },
+                    {
+                        "name": "customer_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The numerical ID of the customer you wish to link this new with. At least one of Customer ID, Customer Email, Customer Twitter, or Case ID must be supplied. If you supply case ID and customer information, the case ID will take precedence and use the existing customer linked to the case, ignoring all other customer API parameters."
+                    },
+                    {
+                        "name": "customer_twitter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The twitter screenname of the customer you wish to create or link the new case to. At least one of Customer ID, Customer Email, Customer Twitter, or Case ID must be supplied. If you supply case ID and customer information, the case ID will take precedence and use the existing customer linked to the case, ignoring all other customer API parameters."
+                    },
+                    {
+                        "name": "customer_email",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The email address of the customer you wish to create or link the new case to. At least one of Customer ID, Customer Email, Customer Twitter, or Case ID must be supplied. If you supply case ID and customer information, the case ID will take precedence and use the existing customer linked to the case, ignoring all other customer API parameters."
+                    },
+                    {
+                        "name": "case_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The numerical ID of the case to associate this new interaction with."
+                    },
+                    {
+                        "name": "customer_name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The full name of the customer (Create customer only)."
+                    },
+                    {
+                        "name": "customer_custom_key",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The custom customer field identified by key (updates custom fields for the customer if it already exists, otherwise, will be initialized for a new customer record)."
+                    },
+                    {
+                        "name": "customer_language",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "en",
+                        "type": "string",
+                        "description": "The customer's language. This will only be accepted if the multi-language support is turned on for the site and the language is one of the supported languages."
+                    },
+                    {
+                        "name": "external_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A string ID (max of 64 characters) of the case to associate this new interaction with. External IDs can be used to associate cases with IDs used within another external system."
+                    },
+                    {
+                        "name": "case_labels",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The labels to associate with the new case (create case only)."
+                    },
+                    {
+                        "name": "case_custom_key",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The custom case field identified by key (create case only)."
+                    },
+                    {
+                        "name": "case_language",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "en",
+                        "type": "string",
+                        "description": "The case's language. This will only be accepted if the multi-language support is turned on for the site and the language is enabled from the Admin. If no language is supplied, the case will be created with the customers assigned language."
+                    },
+                    {
+                        "name": "interaction_channel",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "email",
+                            "phone"
+                        ],
+                        "default": "email",
+                        "type": "integer",
+                        "description": "The channel type of the new interaction (\"email\" or \"phone\"). Defaults to \"email\"."
+                    },
+                    {
+                        "name": "interaction_body",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The full content of the interaction (email body or phone summary depending on channel type)."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/groups.{format}": {
+            "get": {
+                "description": "Returns a paginated list of groups.",
+                "operationId": "getGroups_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 100.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the number of records to retrieve. May not be greater than 100."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the page of results to retrieve. Note: there are pagination limits. See the FAQ for details."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/groups/{id}.{format}": {
+            "get": {
+                "description": "Returns a single group, specified by the ID parameter.",
+                "operationId": "getGroup_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The group ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users.{format}": {
+            "get": {
+                "description": "Returns a paginated list of users (Agents / Admins).",
+                "operationId": "getUsers_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 100.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the number of records to retrieve. May not be greater than 100."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the page of results to retrieve. Note: there are pagination limits. See the FAQ for details."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{id}.{format}": {
+            "get": {
+                "description": "Returns a single user (Agent / Admin), specified by the ID parameter.",
+                "operationId": "getUser_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/topics.{format}": {
+            "get": {
+                "description": "Returns the first X topics within the system with pagination.",
+                "operationId": "getTopics_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 100.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the number of records to retrieve. May not be greater than 100."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the page of results to retrieve. Note: there are pagination limits. See the FAQ for details."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new topic.",
+                "operationId": "createTopic_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The topic's name."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The topic's description."
+                    },
+                    {
+                        "name": "show_in_portal",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": true,
+                        "type": "boolean",
+                        "description": "Show the topic in the portal."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/topics/{id}.{format}": {
+            "get": {
+                "description": "Returns a single topic, specified by the ID parameter.",
+                "operationId": "getTopic_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The topic ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates an existing topic.",
+                "operationId": "updateTopic_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The topic's name."
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The topic's description."
+                    },
+                    {
+                        "name": "show_in_portal",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": true,
+                        "type": "boolean",
+                        "description": "Show the topic in the portal."
+                    },
+                    {
+                        "name": "language",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "en",
+                        "type": "string",
+                        "description": "The topic's language. This will only be accepted if the multi-language support is turned on for the site and the language is enabled from the Admin."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The topic ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Destroys an existing topic.",
+                "operationId": "deleteTopic_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The topic ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions."
+                    }
+                }
+            }
+        },
+        "/topics/{topic_id}/articles.{format}": {
+            "get": {
+                "description": "Returns the first X articles for a given topic with pagination.",
+                "operationId": "getTopicArticles_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 100.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the number of records to retrieve. May not be greater than 100."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the page of results to retrieve. Note: there are pagination limits. See the FAQ for details."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "topic_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The topic ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new article for a topic.",
+                "operationId": "createTopicArticle_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subject",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subject of the article."
+                    },
+                    {
+                        "name": "main_content",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The main content of the article."
+                    },
+                    {
+                        "name": "published",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Whether or not to publish this article. Defaults to false (draft)."
+                    },
+                    {
+                        "name": "show_in_portal",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Whether or not to display this article in the Portal."
+                    },
+                    {
+                        "name": "agent_content",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Any private content only viewable by agents."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Email response template when replying to an email case. Defaults to main_content."
+                    },
+                    {
+                        "name": "chat",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Chat response template when replying to a chat case. Defaults to main_content (truncates and provides an URL to public article)."
+                    },
+                    {
+                        "name": "twitter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Twitter response template when replying to a tweet case. Defaults to main_content (truncates and provides a URL to public article)."
+                    },
+                    {
+                        "name": "question",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Question/Answer response template when replying to a Portal Question/Answer case. Defaults to main_content."
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Phone response template when replying to a Phone case. Defaults to main_content."
+                    },
+                    {
+                        "name": "quickcode",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Quickcode for the article."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "topic_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The topic ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/articles/{id}.{format}": {
+            "get": {
+                "description": "Returns a single article, specified by the ID parameter.",
+                "operationId": "getArticle_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The article ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates an existing article.",
+                "operationId": "updateArticle_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subject",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subject of the article."
+                    },
+                    {
+                        "name": "main_content",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The main content of the article."
+                    },
+                    {
+                        "name": "published",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Whether or not to publish this article. Defaults to false (draft)."
+                    },
+                    {
+                        "name": "show_in_portal",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Whether or not to display this article in the Portal."
+                    },
+                    {
+                        "name": "agent_content",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Any private content only viewable by agents."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Email response template when replying to an email case. Defaults to main_content."
+                    },
+                    {
+                        "name": "chat",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Chat response template when replying to a chat case. Defaults to main_content (truncates and provides an URL to public article)."
+                    },
+                    {
+                        "name": "twitter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Twitter response template when replying to a tweet case. Defaults to main_content (truncates and provides a URL to public article)."
+                    },
+                    {
+                        "name": "question",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Question/Answer response template when replying to a Portal Question/Answer case. Defaults to main_content."
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Phone response template when replying to a Phone case. Defaults to main_content."
+                    },
+                    {
+                        "name": "quickcode",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Quickcode for the article."
+                    },
+                    {
+                        "name": "topic_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Parent topic id for the article. This allows you to move an article to a different topic on your site."
+                    },
+                    {
+                        "name": "language",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "en",
+                        "type": "string",
+                        "description": "The article's language. This will only be accepted if the multi-language support is turned on for the site and the language is enabled from the Admin."
+                    },
+                    {
+                        "name": "mark_translations_outdated",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "boolean",
+                        "description": "Set to 'true' when updating the default language (or not specifying one) to mark all article translations as out-of-date. NOTE: translations are only marked as out-of-date if at least one attribute is changed on the articles default langauge. If content is changed on a translated version of the article this flag is ignored."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The article ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a single article, specified by the ID.",
+                "operationId": "deleteArticle_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The article ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions."
+                    }
+                }
+            }
+        },
+        "/macros.{format}": {
+            "get": {
+                "description": "Returns the first X macros within the system with pagination.",
+                "operationId": "getMacros_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 100.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the number of records to retrieve. May not be greater than 100."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specifies the page of results to retrieve. Note: there are pagination limits. See the FAQ for details."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new macro.",
+                "operationId": "createMacro_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The name of the macro."
+                    },
+                    {
+                        "name": "enable",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Enable/Disable macro. Defaults to false."
+                    },
+                    {
+                        "name": "labels",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Sets labels for the macro. Accepts a comma separated list of label names. Any labels that do not exist will be created."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/macros/{id}.{format}": {
+            "get": {
+                "description": "Returns a single macro, specified by the ID parameter.",
+                "operationId": "getMacro_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The macro ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates an existing macro.",
+                "operationId": "updateMacro_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The name of the macro."
+                    },
+                    {
+                        "name": "enable",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "Enable/Disable macro. Defaults to false."
+                    },
+                    {
+                        "name": "labels",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Sets labels for the macro. Accepts a comma separated list of label names. Any labels that do not exist will be created."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The macro ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Destroys an existing macro.",
+                "operationId": "deleteMacro_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The macro ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions."
+                    }
+                }
+            }
+        },
+        "/macros/{macro_id}/actions.{format}": {
+            "get": {
+                "description": "Returns actions for a given macro.",
+                "operationId": "getMacroActions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "macro_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The macro ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/macros/{macro_id}/actions/{type}.{format}": {
+            "get": {
+                "description": "Returns a single macro action, specified by the macro ID and one of the action type slugs below:\n- set-case-description: The description to be applied to a case.\n- set-case-labels: The labels to be set on a case, removing any labels already applied to the case. Value must be a comma separated list of label names. New labels will be created if they do not exist.\n- append-case-labels: The labels to be appended to a case, keeping any labels already applied to the case. Value must be a comma separated list of label names. New labels will be created if they do not exist. \n- set-case-priority: The priority to be applied to a case. Value must be a number (1-10) representing the priority (1 being lowest, 10 being highest).\n- set-case-status: The status to be applied to a case. Value must be one of the following status IDs: 30 (Open), 50 (Pending), 70 (Resolved).\n- set-case-agent: The agent to be assigned to a case. Value must be the ID of the agent.\n- set-case-group: The group to apply to the case. Value must be the ID of the group.\n- append-case-article: The article to be appended to a case. Value must be the ID of the article.\n- set-case-quick-reply: Quick reply on a case.\n- set-case-outbound-email-subject: Set the case's outbound email subject.\n- set-case-custom-key: Set the case's custom field, where key is the key of the custom field.",
+                "operationId": "getMacroAction_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "macro_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The macro ID."
+                    },
+                    {
+                        "name": "type",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "set-case-description",
+                            "set-case-labels",
+                            "append-case-labels",
+                            "set-case-priority",
+                            "set-case-status",
+                            "set-case-agent",
+                            "set-case-group",
+                            "append-case-article",
+                            "set-case-quick-reply",
+                            "set-case-outbound-email-subject",
+                            "set-case-custom-key"
+                        ],
+                        "type": "integer",
+                        "description": "The action type slug."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates an action for a given macro, specified by the action's slug. Every action has a value that will be applied when invoking the macro. The following list of values are available, depending on the action type:\n- set-case-description: The description to be applied to a case.\n- set-case-labels: The labels to be set on a case, removing any labels already applied to the case. Value must be a comma separated list of label names. New labels will be created if they do not exist.\n- append-case-labels: The labels to be appended to a case, keeping any labels already applied to the case. Value must be a comma separated list of label names. New labels will be created if they do not exist. \n- set-case-priority: The priority to be applied to a case. Value must be a number (1-10) representing the priority (1 being lowest, 10 being highest).\n- set-case-status: The status to be applied to a case. Value must be one of the following status IDs: 30 (Open), 50 (Pending), 70 (Resolved).\n- set-case-agent: The agent to be assigned to a case. Value must be the ID of the agent.\n- set-case-group: The group to apply to the case. Value must be the ID of the group.\n- append-case-article: The article to be appended to a case. Value must be the ID of the article.\n- set-case-quick-reply: Quick reply on a case.\n- set-case-outbound-email-subject: Set the case's outbound email subject.\n- set-case-custom-key: Set the case's custom field, where key is the key of the custom field.",
+                "operationId": "updateMacroAction_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "value",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The value of the action. Value is dependent on the action type."
+                    },
+                    {
+                        "name": "enabled",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": false,
+                        "type": "boolean",
+                        "description": "If enabled, the action will be performed when using the macro. Defaults to false."
+                    },
+                    {
+                        "name": "subdomain",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The subdomain configured for your Desk.com application."
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "v1"
+                        ],
+                        "default": "v1",
+                        "type": "integer",
+                        "description": "The API version."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "The response format."
+                    },
+                    {
+                        "name": "macro_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The macro ID."
+                    },
+                    {
+                        "name": "type",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "set-case-description",
+                            "set-case-labels",
+                            "append-case-labels",
+                            "set-case-priority",
+                            "set-case-status",
+                            "set-case-agent",
+                            "set-case-group",
+                            "append-case-article",
+                            "set-case-quick-reply",
+                            "set-case-outbound-email-subject",
+                            "set-case-custom-key"
+                        ],
+                        "type": "integer",
+                        "description": "The action type slug."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Integrate Desk.com's customer service tools directly into your Web site or application. Create cases, customer profiles, content, macros & track interactions.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "version": {
+            "title": "version",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "v1"
+            ]
+        },
+        "format": {
+            "title": "format",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "json"
+            ]
+        },
+        "by": {
+            "title": "by",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "id",
+                "external_id"
+            ]
+        },
+        "priority": {
+            "title": "priority",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ]
+        },
+        "case_status_type_id": {
+            "title": "case_status_type_id",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "10",
+                "30",
+                "50",
+                "70"
+            ]
+        },
+        "interaction_channel": {
+            "title": "interaction_channel",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "email",
+                "phone"
+            ]
+        },
+        "type": {
+            "title": "type",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "set-case-description",
+                "set-case-labels",
+                "append-case-labels",
+                "set-case-priority",
+                "set-case-status",
+                "set-case-agent",
+                "set-case-group",
+                "append-case-article",
+                "set-case-quick-reply",
+                "set-case-outbound-email-subject",
+                "set-case-custom-key"
+            ]
+        }
+    }
+}

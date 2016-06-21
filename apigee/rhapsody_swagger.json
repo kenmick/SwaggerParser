@@ -1,0 +1,687 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Rhapsody",
+        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.rhapsody.com",
+    "basePath": "/v1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/artists/top": {
+            "get": {
+                "description": "Returns a list of top artists.",
+                "operationId": "Get_artists.top_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/artists/{art.id}": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_artist.lite_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/artists/{art.id}/full": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_artist.full_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/artists/{art.id}/albums": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_artist.albums_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/artists/{art.id}/recommendations": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_artist.reco_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/artists/{art.id}/similar": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_artist.similar_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/artists/{art.id}/tracks/top": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_artist.top.tracks_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/albums/top": {
+            "get": {
+                "description": "Returns a list of top albums.",
+                "operationId": "Get_topAlbums_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/albums/new": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_albums.new_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/albums/{alb.id}": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_album_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/albums/{alb.id}/tracks": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_album.tracks_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/albums/{alb.id}/similar": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_album.similar_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/albums/{alb.id}/recommendations": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_album.reco_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/albums/{alb.id}/reviews": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_album.reviews_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/search/typeahead": {
+            "get": {
+                "description": "Returns a list of tracks, artists and albums based on the search term for authenticated users.",
+                "operationId": "Get_typeaheadSearch_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "weezer",
+                        "type": "string",
+                        "description": "Typeahead search term."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tracks/top": {
+            "get": {
+                "description": "Returns a list of top tracks.",
+                "operationId": "Get_tracks.top_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tracks/{tra.id}": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_track.detail_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tracks/{tra.id}/recommendations": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_track.reco_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/genres": {
+            "get": {
+                "description": "Returns a list of available genres.",
+                "operationId": "Get_genres_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/genres/{g.id}": {
+            "get": {
+                "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                "operationId": "Get_genre.detail_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "apikey",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access Rhapsody technologies and content, including metadeta, search and music player.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

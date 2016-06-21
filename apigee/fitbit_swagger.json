@@ -1,0 +1,3319 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Fitbit",
+        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.fitbit.com",
+    "basePath": "/1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/user/{user-id}/profile.{format}": {
+            "get": {
+                "description": "Get user's profile in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "get-user-info_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "-",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/profile.{format}": {
+            "post": {
+                "description": "Update user's profile using units in the unit system that corresponds to the Accept-Language header provided and get a response in the format requested.",
+                "operationId": "update-user-info_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "gender",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "FEMALE",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "birthday",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "1980-02-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "height",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "176",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "nickname",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "Me",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "fullname",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "TestUser",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user-id}/body/date/{date}.{format}": {
+            "get": {
+                "description": "Get a summary of a user's body measurements for a given day in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "get-body-measurements_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "-",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/body/log/weight/date/{date}.{format}": {
+            "get": {
+                "description": "Get a list of all user's body weight log entries for a given day in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "get-body-weight_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/body/log/fat/date/{date}.{format}": {
+            "get": {
+                "description": "Get a list of all user's body fat log entries for a given day in the format requested.",
+                "operationId": "get-body-fat_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user-id}/activities/date/{date}.{format}": {
+            "get": {
+                "description": "Get a summary and list of a user's activities and activity log entries for a given day in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "get-activities_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "-",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user-id}/foods/log/date/{date}.{format}": {
+            "get": {
+                "description": "Get a summary and list of a user's food log entries for a given day in the format requested.",
+                "operationId": "get-foods_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "-",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user-id}/sleep/date/{date}.{format}": {
+            "get": {
+                "description": "Get a summary and list of a user's sleep log entries for a given day in the format requested. Endpoint returns summary for all sleep log entries for the given day (including naps). If you need data only for the main sleep you can fetch entry with \"isMainSleep\" = true or use Get-Time-Series calls.",
+                "operationId": "get-sleep_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "-",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/heart/date/{date}.{format}": {
+            "get": {
+                "description": "Get an average values and a list of user's heart rate log entries for a given day in the format requested. Heart rate data available only to the authorized user. Heart rate log entries in response are sorted exactly the same as they are presented on the Fitbit website. We always include all heart rate trackers in the \"average\" section of the response body (with zero average values for the days with no measurements) to allow to seamlessly fetch a list of all additional user created custom trackers.",
+                "operationId": "get-heart-rate_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/bp/date/{date}.{format}": {
+            "get": {
+                "description": "Get an average value and a list of user's blood pressure log entries for a given day in the format requested. Blood pressure log entries are available only to authorized user. Blood pressure log entries in response are sorted exactly the same as they are presented on the Fitbit website.",
+                "operationId": "get-blood-pressure_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/glucose/date/{date}.{format}": {
+            "get": {
+                "description": "Get a list of user's blood glucose and HbA1C measurements for a given day in the format requested using units in the unit system which corresponds to the Accept-Language header provided. Glucose measurement log entries are available only to authorized user. We always include all glucose trackers in the response body (with zero glucose value for the days with no measurements) to allow to seamlessly fetch a list of all additional user created custom trackers.",
+                "operationId": "get-glucose_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user-id}/friends.{format}": {
+            "get": {
+                "description": "Get user's friends in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "get-friends_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "-",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/friends/leaderboard.{format}": {
+            "get": {
+                "description": "Get a leaderboard of user's friends progress in the format requested using units in the unit system which corresponds to the Accept-Language header provided. Authorized user himself is also included in the response.",
+                "operationId": "get-friends-leaderboard_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/activities.{format}": {
+            "get": {
+                "description": "Get user's activity statistics in the format requested using units in the unit system which corresponds to the Accept-Language header provided. Response contains both lifetime statistics from the tracker device and total numbers including the manual activity log entries as seen on the Fitbit website dashboard.",
+                "operationId": "get-activity-stats_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create log entry for an activity using units in the unit system which corresponds to the Accept-Language header provided (or using optional custom distanceUnit).",
+                "operationId": "Create_log-activity_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "activityId",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "90009",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "startTime",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "12:20",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "durationMillis",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "600000",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "distance",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1.5",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/foods/log.{format}": {
+            "post": {
+                "description": "Create log entry for a food. You need to select one of the unit ids to create a food log entry. It is possible to fetch unit ids allowed for specific food via previous calls to endpoints that retrieve food lists of the user. Each unit id maps to a unit in the list returned via the Get Food Units API call.",
+                "operationId": "Create_log-food_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "foodId",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "30414",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "mealTypeId",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "unitId",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "147",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/sleep.{format}": {
+            "post": {
+                "description": "Create log entry for a sleep and get a response in the format requested.",
+                "operationId": "Create_log-sleep_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "startTime",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "02:20",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "duration",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "24000000",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/heart.{format}": {
+            "post": {
+                "description": "Create log entry for a heart rate measurement and get a response in the format requested.",
+                "operationId": "Create_log-heart-rate_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "tracker",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "Running",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "heartRate",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "80",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/bp.{format}": {
+            "post": {
+                "description": "Create log entry for a blood pressure measurement and get a response in the format requested.",
+                "operationId": "Create_log-blood-pressure_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "systolic",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "120",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "diastolic",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "80",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/glucose.{format}": {
+            "post": {
+                "description": "Create log entry for a blood glucose measurement and/or HbA1c using units in the unit system which corresponds to the Accept-Language header provided and get a response in the format requested.",
+                "operationId": "Create_log-glucose_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "hba1c",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "4.5",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "tracker",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "Afternoon",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "glucose",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "3",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "time",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "12:30",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/foods/log/{food-log-id}.{format}": {
+            "delete": {
+                "description": "Delete the user's food log entry with the given id.",
+                "operationId": "delete-food-log_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "food-log-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                }
+            }
+        },
+        "/user/-/activities/{activity-log-id}.{format}": {
+            "delete": {
+                "description": "Delete user's activity log entry with the given id.",
+                "operationId": "delete-activity-log_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "activity-log-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                }
+            }
+        },
+        "/user/{user-id}/badges.{format}": {
+            "get": {
+                "description": "Get user's badges in the format requested. Response includes all badges for the user as seen on the Fitbit website badge locker (both activity and weight related). We return weight and distance badges based on the user's unit profile preference as on the website.",
+                "operationId": "get-badges-weight_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "-",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/sleep/{sleep-log-id}.{format}": {
+            "delete": {
+                "description": "Delete user's sleep log entry with the given id.",
+                "operationId": "delete-sleep-log_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "sleep-log-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                }
+            }
+        },
+        "/user/-/heart/{heart-log-id}.{format}": {
+            "delete": {
+                "description": "Delete user's heart rate log entry with the given id.",
+                "operationId": "delete-heart-rate-log_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "heart-log-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                }
+            }
+        },
+        "/user/-/bp/{bp-log-id}.{format}": {
+            "delete": {
+                "description": "Delete user's blood pressure log entry with the given id.",
+                "operationId": "delete-blood-pressure-log_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "bp-log-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                }
+            }
+        },
+        "/user/{user-id}/activities/calories/date/{start-date-or-end-date}/{end-date-or-period}.{format}": {
+            "get": {
+                "description": "Get time series in the specified range for a given resource in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "get-time-series-activities_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "-",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "start-date-or-end-date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "end-date-or-period",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "7d",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user-id}/body/weight/date/{start-date-or-end-date}/{end-date-or-period}.{format}": {
+            "get": {
+                "description": "Get time series in the specified range for a given resource in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "get-time-series-body_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "-",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "start-date-or-end-date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "end-date-or-period",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "7d",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/body.{format}": {
+            "post": {
+                "description": "Log body measurements using units in the unit system that corresponds to the Accept-Language header provided.",
+                "operationId": "Create_log-body-measurements_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "weight",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "150",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "fat",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "14.4",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/body/log/weight.{format}": {
+            "post": {
+                "description": "Create log entry for a body weight using units in the unit system that corresponds to the Accept-Language header provided and get a response in the format requested.",
+                "operationId": "Create_log-body-weight_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "weight",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "150",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "time",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "12:20:00",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/body/log/fat.{format}": {
+            "post": {
+                "description": "Create log entry for a body fat and get a response in the format requested.",
+                "operationId": "Create_log-body-fat_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "fat",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "14.4",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "time",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "12:20",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/body/log/fat/{body-weight-log-id}.{format}": {
+            "delete": {
+                "description": "Delete user's body weight log entry with the given id.",
+                "operationId": "delete-body-weight-log_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "body-weight-log-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                }
+            }
+        },
+        "/user/-/body/log/fat/{body-fat-log-id}.{format}": {
+            "delete": {
+                "description": "Delete user's body fat log entry with the given id.",
+                "operationId": "delete-body-fat-log_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "body-fat-log-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                }
+            }
+        },
+        "/user/-/body/log/weight/goal.{format}": {
+            "get": {
+                "description": "Get a user's current weight goal using units in the unit system that corresponds to the Accept-Language header provided in the format requested.",
+                "operationId": "get-body-weight-goal_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create or update user's weight goal using units in the unit system that corresponds to the Accept-Language header provided and get a response in the format requested.",
+                "operationId": "update-weight-goal_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "weight",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "70",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "startWeight",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "75",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/body/log/fat/goal.{format}": {
+            "get": {
+                "description": "Get a user's current fat goal in the format requested.",
+                "operationId": "get-body-fat-goal_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create or updates user's fat goal and get a response in the format requested.",
+                "operationId": "update-fat-goal_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "fat",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "14",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user-id}/foods/log/caloriesIn/date/{start-date-or-end-date}/{end-date-or-period}.{format}": {
+            "get": {
+                "description": "Get time series in the specified range for a given resource in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "get-time-series-foods_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "-",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "start-date-or-end-date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "end-date-or-period",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "7d",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{user-id}/sleep/minutesAsleep/date/{start-date-or-end-date}/{end-date-or-period}.{format}": {
+            "get": {
+                "description": "Get time series in the specified range for a given resource in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "get-time-series-sleep_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "-",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "start-date-or-end-date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "end-date-or-period",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "7d",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/activities/recent.{format}": {
+            "get": {
+                "description": "Get a list of a user's recent activities in the format requested using units in the unit system which corresponds to the Accept-Language header provided. A recent activity record contains the distance and duration values recorded the last time the activity was logged. The record retrieved can therefore be used to log the activity via the Log Activity with the same or adjusted values for distance and duration.",
+                "operationId": "get-recent-activities_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/activities/frequent.{format}": {
+            "get": {
+                "description": "Get a list of a user's frequent activities in the format requested using units in the unit system which corresponds to the Accept-Language header provided. A frequent activity record contains the distance and duration values recorded the last time the activity was logged. The record retrieved can therefore be used to log the activity via the Log Activity with the same or adjusted values for distance and duration.",
+                "operationId": "get-frequent-activities_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/activities/favorite.{format}": {
+            "get": {
+                "description": "Get a list of a user's favorite activities in the format requested. A user marks an activity as favorite on the user's Activities Tab. The activity ids in the list can be used to create a new activity log entry via the Log Activity.",
+                "operationId": "get-favorite-activities_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/foods/log/recent.{format}": {
+            "get": {
+                "description": "Get a list of a user's recent foods in the format requested. A recent food provides a quick way to log the food via the Log Food endpoint.",
+                "operationId": "get-recent-foods_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/foods/log/frequent.{format}": {
+            "get": {
+                "description": "Get a list of a user's frequent foods in the format requested. A frequent food in the list provides a quick way to log the food via the Log Food endpoint.",
+                "operationId": "get-frequent-foods_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/foods/log/favorite.{format}": {
+            "get": {
+                "description": "Get a list of a user's favorite foods in the format requested. A user marks a food as favorite on the user's Food Tab tab. A favorite food in the list provides a quick way to log the food via the Log Food endpoint.",
+                "operationId": "get-favorite-foods_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/activities/log/favorite/{id}.{format}": {
+            "post": {
+                "description": "Adds the activity with the given id to user's list of favorite activities.",
+                "operationId": "add-favorite-activity_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete the activity with the given id from user's list of favorite activities.",
+                "operationId": "delete-favorite-activity_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                }
+            }
+        },
+        "/user/-/activities/goals/daily.{format}": {
+            "get": {
+                "description": "Get a user's current daily activity goals in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "get-activity-daily-goals_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/activities/goals/weekly.{format}": {
+            "get": {
+                "description": "Get a user's current weekly activity goals in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "get-activity-weekly-goals_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/activities/goals/daily.{format}?type={type}&value={value}": {
+            "post": {
+                "description": "Create or updates user's daily activity goals and get a response in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "update-activity-daily-goals_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "type",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "steps",
+                            "distance",
+                            "floors",
+                            "caloriesOut"
+                        ],
+                        "default": "steps",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "value",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "5000",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/activities/goals/weekly.{format}?type={type}&value={value}": {
+            "post": {
+                "description": "Create or updates user's weekly activity goals and get a response in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "update-activity-weekly-goals_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "type",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "steps",
+                            "distance",
+                            "floors",
+                            "caloriesOut"
+                        ],
+                        "default": "steps",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "value",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "5000",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/foods/log/favorite/{id}.{format}": {
+            "post": {
+                "description": "Add the food with the given id to user's list of favorite foods.",
+                "operationId": "add-favorite-food_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete the food with the given id from user's list of favorite foods.",
+                "operationId": "delete-favorite-food_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                }
+            }
+        },
+        "/user/-/foods/log/water/date/{date}.{format}": {
+            "get": {
+                "description": "Get a summary and list of a user's water log entries for a given day in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+                "operationId": "get-water_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/foods/log/water.{format}": {
+            "post": {
+                "description": "Create log entry for a water using units in the unit system that corresponds to the Accept-Language header provided (or waterUnit) and get a response in the format requested.",
+                "operationId": "Create_log-water_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "300",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "2015-03-01",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/foods/log/water/{water-log-id}.{format}": {
+            "delete": {
+                "description": "Delete user's water log entry with the given id.",
+                "operationId": "delete-water-log_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "water-log-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                }
+            }
+        },
+        "/foods.{format}": {
+            "post": {
+                "description": "Create new private food for a user and get a response in a format requested. Created private food could be found in results of Search Foods call.",
+                "operationId": "create-food_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "Icecream,big",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "defaultFoodMeasurementUnitId",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "147",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "defaultServingSize",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "calories",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "500",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/meals.{format}": {
+            "get": {
+                "description": "Get a list of meals user created in his food log in the format requested.",
+                "operationId": "get-meals_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/foods/log/goal.{format}": {
+            "get": {
+                "description": "Get a user's current daily calorie consumption goal and/or Food Plan in the format requested.",
+                "operationId": "get-food-goals_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Update (create) a user's daily calorie consumption goal or Food Plan and get a response in the format requested. Food Plan could not be created unless user already has active goal (Update-Weight-Goal). Depending on the weight goal setup only either MAINTENANCE (in case start weight is close to target weight or smaller) or one of the four other \"lose\" food plans could be created via intensity POST parameter.",
+                "operationId": "update-food-goals_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "intensity",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "MEDIUM",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/devices.{format}": {
+            "get": {
+                "description": "Retrieve the list of Fitbit devices for a user in the format requested.",
+                "operationId": "get-devices_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/activities.{format}": {
+            "get": {
+                "description": "Get a tree of all valid Fitbit public activities from the activities catalog as well as private custom activities the user created in the format requested. If activity has levels, also get a list of activity level details.",
+                "operationId": "Get_browse-activities_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/activities/{id}.{format}": {
+            "get": {
+                "description": "Get the details of a specific activity in Fitbit activities database in the format requested. If activity has levels, also get list of activity level details.",
+                "operationId": "get-activity_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "90009",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/foods/search.{format}?query={query}": {
+            "get": {
+                "description": "Given a search query, get a list of public foods from Fitbit foods database and private foods the user created in the format requested.",
+                "operationId": "search-foods_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "query",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "Icecream"
+                        ],
+                        "default": "Icecream",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/foods/{food-id}.{format}": {
+            "get": {
+                "description": "Get the details of a specific food in Fitbit Food database (or private food for the user) in the format requested. Note, that nutritional values currently included in response only for the private foods.",
+                "operationId": "get-food_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "food-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "30414",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/foods/units.{format}": {
+            "get": {
+                "description": "Get list of all valid Fitbit food units in the format requested.",
+                "operationId": "get-food-units_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/friends/invitations.{format}": {
+            "get": {
+                "description": "Retrieve the list of invites to become freinds for a user in the format requested.",
+                "operationId": "get-invites_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/friends/invitations.{format}?invitedUserEmail={invitedUserEmail}": {
+            "post": {
+                "description": "Invite a user to become friends with authorized user. If you provide invitedUserEmail parameter with the request, standard friendship invitation email will be sent to the invited user, that he can accept later. Contrary, invitedUserId parameter creates an invite silently, so it could only be fetched through the Get Invites endpoint. You can accept or reject both invitation types on behalf of the authorized user via Accept Invite API call.",
+                "operationId": "create-invite_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "invitedUserEmail",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "222YZL",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-/friends/invitations/{from-user-id}.{format}?accept={accept}": {
+            "post": {
+                "description": "Accept or reject an invite to become friends with inviting user.",
+                "operationId": "Create_accept-invite_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "from-user-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "222YZL",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "accept",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "true",
+                            "false"
+                        ],
+                        "default": "true",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/-{collection-path}apiSubscriptions/{subscription-id}.{format}": {
+            "post": {
+                "description": "Add a subscription for the user to get notifications and get a response in the format requested.",
+                "operationId": "add-subscription_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "collection-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "/",
+                            "/activities/",
+                            "/foods/",
+                            "/body/",
+                            "/sleep/"
+                        ],
+                        "default": "/",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "subscription-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete a subscription for the user and get a response in the format requested.",
+                "operationId": "remove-subscription_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "collection-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "/",
+                            "/activities/",
+                            "/foods/",
+                            "/body/",
+                            "/sleep/"
+                        ],
+                        "default": "/",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "subscription-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1",
+                        "type": "string",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                }
+            }
+        },
+        "/user/-{collection-path}apiSubscriptions.{format}": {
+            "get": {
+                "description": "Get a list of user's subscriptions for your application in the format requested.",
+                "operationId": "get-subscriptions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    },
+                    {
+                        "name": "collection-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "/",
+                            "/activities/",
+                            "/foods/",
+                            "/body/",
+                            "/sleep/"
+                        ],
+                        "default": "/",
+                        "type": "integer",
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "format": {
+            "title": "format",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "xml",
+                "json"
+            ]
+        },
+        "type": {
+            "title": "type",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "steps",
+                "distance",
+                "floors",
+                "caloriesOut"
+            ]
+        },
+        "query": {
+            "title": "query",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "Icecream"
+            ]
+        },
+        "accept": {
+            "title": "accept",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "collection-path": {
+            "title": "collection-path",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "/",
+                "/activities/",
+                "/foods/",
+                "/body/",
+                "/sleep/"
+            ]
+        }
+    }
+}

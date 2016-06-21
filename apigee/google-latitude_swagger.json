@@ -1,0 +1,292 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Google Latitude",
+        "description": "Let your users update and read their current location, history and more.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "www.googleapis.com",
+    "basePath": "/latitude/v1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/location": {
+            "get": {
+                "description": "Returns a list of Location Resources representing past locations of the authenticated user.",
+                "operationId": "Get_location.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "granularity",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "city",
+                            "best"
+                        ],
+                        "type": "integer",
+                        "description": "Granularity of the requested locations."
+                    },
+                    {
+                        "name": "max-results",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Maximum number of locations to return."
+                    },
+                    {
+                        "name": "max-time",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Maximum timestamp of locations to return (ms since epoch)."
+                    },
+                    {
+                        "name": "min-time",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Minimum timestamp of locations to return (ms since epoch)."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Let your users update and read their current location, history and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates or updates the specified Location Resource in the authenticated user's location history using the data included in the request.",
+                "operationId": "Create_location.insert_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Let your users update and read their current location, history and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/location/{locationId}": {
+            "get": {
+                "description": "Returns the specified Location Resource from the authenticated user's location history.",
+                "operationId": "Get_location.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "granularity",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "city",
+                            "best"
+                        ],
+                        "type": "integer",
+                        "description": "Granularity of the requested locations."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    },
+                    {
+                        "name": "locationId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Timestamp of the location to read (ms since epoch)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Let your users update and read their current location, history and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes the specified Location Resource from the authenticated user's location history.",
+                "operationId": "Delete_location.delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "locationId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Timestamp of the location to read (ms since epoch)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Let your users update and read their current location, history and more."
+                    }
+                }
+            }
+        },
+        "/currentLocation": {
+            "get": {
+                "description": "Returns the Location Resource that represent the authenticated user's current location.",
+                "operationId": "Get_current.location.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "granularity",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "city",
+                            "best"
+                        ],
+                        "type": "integer",
+                        "description": "Granularity of the requested locations."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Let your users update and read their current location, history and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Updates or creates the single Location Resource of the authenticated user's Current Location Collection using the data included in the request. A copy of the same location is automatically added to the location history.",
+                "operationId": "Create_current.location.insert_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Let your users update and read their current location, history and more.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes the single Location Resource of the authenticated user's Current Location Collection.",
+                "operationId": "Delete_current.location.delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Let your users update and read their current location, history and more."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "granularity": {
+            "title": "granularity",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "city",
+                "best"
+            ]
+        }
+    }
+}

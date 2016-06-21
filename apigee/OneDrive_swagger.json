@@ -1,0 +1,1833 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "OneDrive",
+        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.onedrive.com",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/v1.0/drive/": {
+            "get": {
+                "description": "Get metadata about user's default drive.",
+                "operationId": "get-default-drive_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "You can use the select query string parameter to provide a comma-separated list of properties to return on Items."
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "You can use the expand query string parameter to instruct the API to expand a children collection and include those results."
+                    },
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "",
+                            "name%20desc",
+                            "size%20desc",
+                            "lastModifiedDateTime%20desc",
+                            "name%20asc",
+                            "size%20asc",
+                            "lastModifiedDateTime%20asc"
+                        ],
+                        "type": "integer",
+                        "description": "You can use the orderby query string to control the sort order of the items returned from the API. For a collection of items, the following fields are allowed to be used in the orderby parameter:"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specify the number of items to return in a result set. The API may have a hard limit that prevents you from asking for more items per response."
+                    },
+                    {
+                        "name": "skipToken",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Paging token that can be used to get the next set of results"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drives/{drive-id}": {
+            "get": {
+                "description": "Get metadata of a drive by unique identifier.",
+                "operationId": "get-metadata-for-drive_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "drive-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "me",
+                        "type": "string",
+                        "description": "The ID for the drive requested"
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "You can use the select query string parameter to provide a comma-separated list of properties to return on Items."
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "You can use the expand query string parameter to instruct the API to expand a children collection and include those results."
+                    },
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "",
+                            "name%20desc",
+                            "size%20desc",
+                            "lastModifiedDateTime%20desc",
+                            "name%20asc",
+                            "size%20asc",
+                            "lastModifiedDateTime%20asc"
+                        ],
+                        "type": "integer",
+                        "description": "You can use the orderby query string to control the sort order of the items returned from the API. For a collection of items, the following fields are allowed to be used in the orderby parameter:"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specify the number of items to return in a result set. The API may have a hard limit that prevents you from asking for more items per response."
+                    },
+                    {
+                        "name": "skipToken",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Paging token that can be used to get the next set of results"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/special/{special-folder-name}": {
+            "get": {
+                "description": "Special folders provide simple aliases to access well known folders in OneDrive\r\nwithout the need to look up the folder by path (which would require localization)\r\nor referencing the folder with an ID. If a special folder is renamed or moved\r\nto another location within the Drive, this syntax will continue to find that\r\nfolder.",
+                "operationId": "get-special-folder_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "special-folder-name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "documents",
+                            "photos",
+                            "cameraroll",
+                            "approot",
+                            "music"
+                        ],
+                        "default": "documents",
+                        "type": "integer",
+                        "description": "The special folder name"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/special/{special-folder-name}/children": {
+            "get": {
+                "description": "Special folders provide simple aliases to access well known folders in OneDrive\r\nwithout the need to look up the folder by path (which would require localization)\r\nor referencing the folder with an ID. If a special folder is renamed or moved\r\nto another location within the Drive, this syntax will continue to find that\r\nfolder.",
+                "operationId": "get-special-children_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "special-folder-name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "documents",
+                            "photos",
+                            "cameraroll",
+                            "approot",
+                            "music"
+                        ],
+                        "default": "documents",
+                        "type": "integer",
+                        "description": "The special folder name"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{parent-path}:/{file-name}:/upload.createSession": {
+            "post": {
+                "description": "To support the upload of larger files, a resumable upload method is necessary\r\nto ensure that the whole file can be uploaded in pieces and easily resumed if\r\nthe transfer is interrupted.",
+                "operationId": "upload-fragment-create-session_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "if-match",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "100-continue",
+                        "type": "string",
+                        "description": "If this request header is included and the etag provided does not match the current etag on the item, a 412 Precondition Failed error response is returned."
+                    },
+                    {
+                        "name": "parent-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "root",
+                        "type": "string",
+                        "description": "The parent folder's path.     Ex: root, special/public, etc."
+                    },
+                    {
+                        "name": "file-name",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "myLargeFile.txt",
+                        "type": "string",
+                        "description": "The file name"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/up/{upload-fragment}": {
+            "get": {
+                "description": "Once your app has created an upload session, you can find out what fragments are left to be uploaded.",
+                "operationId": "Get_upload-fragment-status_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "upload-fragment",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the upload URL part after 'https://api.onedrive.com/up/' returned from creating a session for uploading a large file in fragments"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Once your app has created an upload session, you can upload the fragments.",
+                "operationId": "upload-fragment_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "upload-fragment",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the upload URL part after 'https://api.onedrive.com/up/' returned from creating a session for uploading a large file in fragments"
+                    },
+                    {
+                        "name": "Content-Range",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "bytes 0-23/24",
+                        "type": "string",
+                        "description": "Specify the range of the bytes to be uploaded and the total size."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Once your app has created an upload session, you can abort the upload.",
+                "operationId": "Delete_abort-fragment_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "upload-fragment",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the upload URL part after 'https://api.onedrive.com/up/' returned from creating a session for uploading a large file in fragments"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time"
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{parent-path}/children": {
+            "post": {
+                "description": "Add a new item under an existing parent item.",
+                "operationId": "create-item-by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "parent-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "root",
+                        "type": "string",
+                        "description": "the 'parent-path' of the item to be created.    Ex: root, special/public"
+                    },
+                    {
+                        "name": "nameConflict",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "fail",
+                            "rename",
+                            "replace"
+                        ],
+                        "default": "fail",
+                        "type": "integer",
+                        "description": "Determines what to do if a file with a matching filename already exists in this folder. Accepted values are: rename, replace, and fail (the default)."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Since the body of the request is in JSON, the request header should be set accordingly."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{parent-path}:/{filename}:/content": {
+            "put": {
+                "description": "The simple upload API allows you to provide the contents of a new file or update\r\nthe contents of an existing file in a single API call. This method only supports\r\nfiles up to 100MB in size.",
+                "operationId": "upload-via-put_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "parent-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "root",
+                        "type": "string",
+                        "description": "The parent folder.     Ex: root, special/public, etc."
+                    },
+                    {
+                        "name": "filename",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "myFilename.txt",
+                        "type": "string",
+                        "description": "The file name (myFilename.txt) or the file name with path relative to the parent folder (path/to/my/folder/myFileName.txt) of the item to be uploaded"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/octet-stream",
+                        "type": "string",
+                        "description": "Always use the Content-Type value application/octet-stream when uploading binary content to the OneDrive API. This will ensure that the contents of the file are not misinterpreted."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{parent-item}/children": {
+            "post": {
+                "description": "Upload from URL allows your app to upload a file to OneDrive from a remote\r\nserver without streaming the bytes through your client. This is especially useful\r\nfor mobile clients or browser add-ins where it may be optimal to not transfer\r\nthe bytes of the file through the local client.",
+                "operationId": "upload-from-url_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "parent-item",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "root",
+                        "type": "string",
+                        "description": "The parent item.     Ex: root, special/public, root:/path/to/my/folder: etc."
+                    },
+                    {
+                        "name": "Prefer",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "respond-async",
+                        "type": "string",
+                        "description": "respond-async to enable asynchronous item transfer. Otherwise the request is aborted."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Since the body of the request is in JSON, the request header should be set accordingly."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/monitor/{location}": {
+            "get": {
+                "description": "Returns details about how to monitor the progress of the copy, upon accepting the request.",
+                "operationId": "Get_copy-item-status-by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "location",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the URL part after 'https://api.onedrive.com/v1.0/monitor/' returned in the 'Location' header after copying an item"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{item-path}:/action.copy": {
+            "post": {
+                "description": "Create copy of an Item (including any children) under a new parent.",
+                "operationId": "Create_copy-item-by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-path' of the item to be copied.    Ex: root:/myFile.zip"
+                    },
+                    {
+                        "name": "Prefer",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "respond-async",
+                        "type": "string",
+                        "description": "respond-async to enable asynchronous item transfer. Otherwise the request is aborted."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Since the body of the request is in JSON, the request header should be set accordingly."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/items/{item-id}/action.copy": {
+            "post": {
+                "description": "Create copy of an Item (including any children) under a new parent.",
+                "operationId": "Create_copy-item-by-id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-id' of the item to be copied"
+                    },
+                    {
+                        "name": "Prefer",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "respond-async",
+                        "type": "string",
+                        "description": "respond-async to enable asynchronous item transfer. Otherwise the request is aborted."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Since the body of the request is in JSON, the request header should be set accordingly."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/items/{parent-id}/children": {
+            "post": {
+                "description": "Add a new item under an existing parent item.",
+                "operationId": "create-item-by-id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "parent-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'parent-id' of the item to be created"
+                    },
+                    {
+                        "name": "nameConflict",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "fail",
+                            "rename",
+                            "replace"
+                        ],
+                        "default": "fail",
+                        "type": "integer",
+                        "description": "Determines what to do if a file with a matching filename already exists in this folder. Accepted values are: rename, replace, and fail (the default)."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Since the body of the request is in JSON, the request header should be set accordingly."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{item-path}": {
+            "get": {
+                "description": "Retrieve the metadata for an Item by path or ID.",
+                "operationId": "get-item-metadata-by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "root",
+                        "type": "string",
+                        "description": "the 'item-path' of the item to view the metadata for.    Ex: root, root:/myFile.zip, special/public, special/public:/myFile.zip, etc."
+                    },
+                    {
+                        "name": "if-none-match",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "If this request header is included and the etag provided matches the current etag on the file, an HTTP 304 Not Modified response is returned."
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "children",
+                        "type": "string",
+                        "description": "If set to \"children\", includes the children of an item in the same call as retrieving the metadata of an item"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Change the parent folder for an Item resource.",
+                "operationId": "Create_move-item-by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-path' of the item to be moved.    Ex: root:/myFile.jpg, special/public, special/public:/myFile.jpg, etc."
+                    },
+                    {
+                        "name": "X-HTTP-Method-Override",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "PATCH",
+                        "type": "string",
+                        "description": "Apigee's API console doesn't support PATCH but the OneDrive API supports HTTP Method overriding."
+                    },
+                    {
+                        "name": "if-match",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "100-continue",
+                        "type": "string",
+                        "description": "If this request header is included and the etag provided does not match the current etag on the folder, an 412 Precondition Failed response is returned."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Since the body of the request is in JSON, the request header should be set accordingly."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Add a new item under an existing parent item.",
+                "operationId": "delete-item-by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-path' of the item to be deleted.    Ex: root:/myFile.zip, special/public:/path/to/my/folder, special/public:/myFile.zip, etc."
+                    },
+                    {
+                        "name": "if-match",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "If this request header is included and the etag provided does not match the current etag on the item, an 412 Precondition Failed response is returned and the item will not be deleted."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time"
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/items/{item-id}": {
+            "get": {
+                "description": "Retrieve the metadata for an Item by path or ID.",
+                "operationId": "get-item-metadata-by-id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-id' of the item to view the metadata for"
+                    },
+                    {
+                        "name": "if-none-match",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "If this request header is included and the etag provided matches the current etag on the file, an HTTP 304 Not Modified response is returned."
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "children",
+                        "type": "string",
+                        "description": "If set to \"children\", includes the children of an item in the same call as retrieving the metadata of an item"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Change the parent folder for an Item resource.",
+                "operationId": "Create_move-item-by-id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-id' of the item to be moved"
+                    },
+                    {
+                        "name": "X-HTTP-Method-Override",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "PATCH",
+                        "type": "string",
+                        "description": "Apigee's API console doesn't support PATCH but the OneDrive API supports HTTP Method overriding."
+                    },
+                    {
+                        "name": "if-match",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "100-continue",
+                        "type": "string",
+                        "description": "If this request header is included and the etag provided does not match the current etag on the folder, an 412 Precondition Failed response is returned."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Since the body of the request is in JSON, the request header should be set accordingly."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Add a new item under an existing parent item.",
+                "operationId": "delete-item-by-id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-id' of the item to be deleted"
+                    },
+                    {
+                        "name": "if-match",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "If this request header is included and the etag provided does not match the current etag on the item, an 412 Precondition Failed response is returned and the item will not be deleted."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time"
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{item-path}:/content": {
+            "get": {
+                "description": "Use this API to download the contents (default stream) for an Item with the File facet.",
+                "operationId": "Get_download-item-by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-path' of the item to be downloaded.    Ex: root:/myFile.zip, special/public:/myFile.zip, etc."
+                    },
+                    {
+                        "name": "if-none-match",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "If this request header is included and the etag provided matches the current etag on the file, an HTTP 304 Not Modified response is returned."
+                    },
+                    {
+                        "name": "range",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Range of bytes that should be returned in the request."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/items/{item-id}/content": {
+            "get": {
+                "description": "Use this API to download the contents (default stream) for an Item with the File facet.",
+                "operationId": "Get_download-item-by-id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-id' of the item to be downloaded"
+                    },
+                    {
+                        "name": "if-none-match",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "If this request header is included and the etag provided matches the current etag on the file, an HTTP 304 Not Modified response is returned."
+                    },
+                    {
+                        "name": "range",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Range of bytes that should be returned in the request."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{item-path}:/thumbnails": {
+            "get": {
+                "description": "Retrieve available thumbnails for an Item by path or ID.",
+                "operationId": "get-all-item-thumbnails-by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-path' of the item to get the thumbnails for.    Ex: root:/myFile.jpg, special/public:/myFile.jpg, etc."
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "",
+                            "small",
+                            "medium",
+                            "large",
+                            "smallSquare",
+                            "mediumSquare",
+                            "largeSquare"
+                        ],
+                        "type": "integer",
+                        "description": "You can use the select query string parameter to control which thumbnail sizes are returned in the ThumbnailSet. For example: /thumbnails?select=medium to retrieve only the medium sized thumbnails."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/items/{item-id}/thumbnails": {
+            "get": {
+                "description": "Retrieve available thumbnails for an Item by path or ID.",
+                "operationId": "get-all-item-thumbnails-by-id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-id' of the item to get the thumbnails for"
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "",
+                            "small",
+                            "medium",
+                            "large",
+                            "smallSquare",
+                            "mediumSquare",
+                            "largeSquare"
+                        ],
+                        "type": "integer",
+                        "description": "You can use the select query string parameter to control which thumbnail sizes are returned in the ThumbnailSet. For example: /thumbnails?select=medium to retrieve only the medium sized thumbnails."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{item-path}:/thumbnails/{thumbnail-set-index}/{size}": {
+            "get": {
+                "description": "Retrieve available thumbnails for an Item by path or ID.",
+                "operationId": "get-a-item-thumbnail-by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "root",
+                        "type": "string",
+                        "description": "the 'item-path' of the item to get the thumbnail for.    Ex: root:/myFile.jpg, special/public:/myFile.jpg, etc."
+                    },
+                    {
+                        "name": "thumbnail-set-index",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "0",
+                            "1",
+                            "2",
+                            "3",
+                            "4"
+                        ],
+                        "default": "0",
+                        "type": "integer",
+                        "description": "The index of the thumbnail, usually 0-4."
+                    },
+                    {
+                        "name": "size",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "small",
+                            "medium",
+                            "large",
+                            "smallSquare",
+                            "mediumSquare",
+                            "largeSquare"
+                        ],
+                        "default": "medium",
+                        "type": "integer",
+                        "description": "The size of the thumbnail requested"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/items/{item-id}/thumbnails/{thumbnail-set-index}/{size}": {
+            "get": {
+                "description": "Retrieve available thumbnails for an Item by path or ID.",
+                "operationId": "get-a-item-thumbnail-by-id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-id' of the item to get the thumbnails for"
+                    },
+                    {
+                        "name": "thumbnail-set-index",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "0",
+                            "1",
+                            "2",
+                            "3",
+                            "4"
+                        ],
+                        "default": "0",
+                        "type": "integer",
+                        "description": "The index of the thumbnail, usually 0-4."
+                    },
+                    {
+                        "name": "size",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "small",
+                            "medium",
+                            "large",
+                            "smallSquare",
+                            "mediumSquare",
+                            "largeSquare"
+                        ],
+                        "default": "medium",
+                        "type": "integer",
+                        "description": "The size of the thumbnail requested"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{item-path}:/thumbnails/{thumbnail-set-index}/{size}/content": {
+            "get": {
+                "description": "Retrieve available thumbnails for an Item by path or ID.",
+                "operationId": "get-a-item-thumbnail-contents--by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-path' of the item to get the thumbnail contents for.    Ex: root:/myFile.jpg, special/public:/myFile.jpg, etc."
+                    },
+                    {
+                        "name": "thumbnail-set-index",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "0",
+                            "1",
+                            "2",
+                            "3",
+                            "4"
+                        ],
+                        "default": "0",
+                        "type": "integer",
+                        "description": "The index of the thumbnail, usually 0-4."
+                    },
+                    {
+                        "name": "size",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "small",
+                            "medium",
+                            "large",
+                            "smallSquare",
+                            "mediumSquare",
+                            "largeSquare"
+                        ],
+                        "default": "medium",
+                        "type": "integer",
+                        "description": "The size of the thumbnail requested"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/items/{item-id}/thumbnails/{thumbnail-set-index}/{size}/content": {
+            "get": {
+                "description": "Retrieve available thumbnails for an Item by path or ID.",
+                "operationId": "get-a-item-thumbnail-contents-by-id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-id' of the item to get the thumbnails contents for"
+                    },
+                    {
+                        "name": "thumbnail-set-index",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "0",
+                            "1",
+                            "2",
+                            "3",
+                            "4"
+                        ],
+                        "default": "0",
+                        "type": "integer",
+                        "description": "The index of the thumbnail, usually 0-4."
+                    },
+                    {
+                        "name": "size",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "small",
+                            "medium",
+                            "large",
+                            "smallSquare",
+                            "mediumSquare",
+                            "largeSquare"
+                        ],
+                        "default": "medium",
+                        "type": "integer",
+                        "description": "The size of the thumbnail requested"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{item-path}:/view.delta": {
+            "get": {
+                "description": "Enumerate the changes under a folder since a given state, represented by a change token. This enables your application to maintain a local representation of the contents of a drive and update the local state efficiently.",
+                "operationId": "Get_view-changes-item-by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-path' of the item to view the changes for. Ex: root:/myFile.jpg:, special/public:/myFile.jpg, etc."
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The last token returned from the previous call to view.delta. If omitted, view.delta will return the current state of the hierarchy."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Since the body of the request is in JSON, the request header should be set accordingly."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/items/{item-id}/view.delta": {
+            "get": {
+                "description": "Enumerate the changes under a folder since a given state, represented by a change token. This enables your application to maintain a local representation of the contents of a drive and update the local state efficiently.",
+                "operationId": "Get_view-changes-item-by-id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-id' of the item to view the changes for"
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The last token returned from the previous call to view.delta. If omitted, view.delta will return the current state of the hierarchy."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Since the body of the request is in JSON, the request header should be set accordingly."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{item-path}:/view.search": {
+            "get": {
+                "description": "Search the hierarchy of items for items matching a query. Filenames and content of items may be searched depending on the query.",
+                "operationId": "search-by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "root",
+                        "type": "string",
+                        "description": "the 'item-path' of the item to search under.    Ex: root:/path/to/my/folder"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The query text used to search the item's index."
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "You can use the select query string parameter to provide a comma-separated list of properties to return on Items."
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "You can use the expand query string parameter to instruct the API to expand a children collection and include those results."
+                    },
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "",
+                            "name%20desc",
+                            "size%20desc",
+                            "lastModifiedDateTime%20desc",
+                            "name%20asc",
+                            "size%20asc",
+                            "lastModifiedDateTime%20asc"
+                        ],
+                        "type": "integer",
+                        "description": "You can use the orderby query string to control the sort order of the items returned from the API. For a collection of items, the following fields are allowed to be used in the orderby parameter:"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specify the number of items to return in a result set. The API may have a hard limit that prevents you from asking for more items per response."
+                    },
+                    {
+                        "name": "skipToken",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Paging token that can be used to get the next set of results"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/items/{item-id}/view.search": {
+            "get": {
+                "description": "Search the hierarchy of items for items matching a query. Filenames and content of items may be searched depending on the query.",
+                "operationId": "search-by-id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-id' of the item to search under"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The query text used to search the item's index."
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "You can use the select query string parameter to provide a comma-separated list of properties to return on Items."
+                    },
+                    {
+                        "name": "expand",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "You can use the exapnd query string parameter to instruct the API to expand a children collection and include those results."
+                    },
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "",
+                            "name%20desc",
+                            "size%20desc",
+                            "lastModifiedDateTime%20desc",
+                            "name%20asc",
+                            "size%20asc",
+                            "lastModifiedDateTime%20asc"
+                        ],
+                        "type": "integer",
+                        "description": "You can use the orderby query string to control the sort order of the items returned from the API. For a collection of items, the following fields are allowed to be used in the orderby parameter:"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Specify the number of items to return in a result set. The API may have a hard limit that prevents you from asking for more items per response."
+                    },
+                    {
+                        "name": "skipToken",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Paging token that can be used to get the next set of results"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{item-path}:/children": {
+            "get": {
+                "description": "Items with the Folder facet may contain one or more child items. This API lists the contents of the item's Children collection using either the Item ID or path to the Item.",
+                "operationId": "list-by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "root",
+                        "type": "string",
+                        "description": "the 'item-path' of the item to list the children of.    Ex: root:/path/to/my/folder, special/public:/path/to/my/folder"
+                    },
+                    {
+                        "name": "if-none-match",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "If this request header is included and the etag provided matches the current etag on the file, an HTTP 304 Not Modified response is returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/items/{item-id}/children": {
+            "get": {
+                "description": "Items with the Folder facet may contain one or more child items. This API lists the contents of the item's Children collection using either the Item ID or path to the Item.",
+                "operationId": "list-by-id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-id' of the item to list the children of"
+                    },
+                    {
+                        "name": "if-none-match",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "If this request header is included and the etag provided matches the current etag on the file, an HTTP 304 Not Modified response is returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/{item-path}:/action.createLink": {
+            "post": {
+                "description": "The createLink action can be used to share an existing Item via a link.",
+                "operationId": "Create_sharing-link-by-path_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-path",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-path' of the item to create a sharing link for. Ex: root:/path/to/my/folder, root:/path/to/my/folder:/myFile.zip, special/public:/myFile.zip, etc."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Since the body of the request is in JSON, the request header should be set accordingly."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1.0/drive/items/{item-id}/action.createLink": {
+            "post": {
+                "description": "The createLink action can be used to share an existing Item via a link.",
+                "operationId": "Create_sharing-link-by-id_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item-id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "the 'item-id' of the item to create a sharing link for"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Since the body of the request is in JSON, the request header should be set accordingly."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Keep your user’s files, folders, and photos in OneDrive to make them accessible on any device and at any time",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "orderby": {
+            "title": "orderby",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "",
+                "name%20desc",
+                "size%20desc",
+                "lastModifiedDateTime%20desc",
+                "name%20asc",
+                "size%20asc",
+                "lastModifiedDateTime%20asc"
+            ]
+        },
+        "special-folder-name": {
+            "title": "special-folder-name",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "documents",
+                "photos",
+                "cameraroll",
+                "approot",
+                "music"
+            ]
+        },
+        "nameConflict": {
+            "title": "nameConflict",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "fail",
+                "rename",
+                "replace"
+            ]
+        },
+        "select": {
+            "title": "select",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "",
+                "small",
+                "medium",
+                "large",
+                "smallSquare",
+                "mediumSquare",
+                "largeSquare"
+            ]
+        },
+        "thumbnail-set-index": {
+            "title": "thumbnail-set-index",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        "size": {
+            "title": "size",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "small",
+                "medium",
+                "large",
+                "smallSquare",
+                "mediumSquare",
+                "largeSquare"
+            ]
+        }
+    }
+}

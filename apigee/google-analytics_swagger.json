@@ -1,0 +1,408 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Google Analytics",
+        "description": "Extend the functionality of Google Analytics by accessing profile and reporting data.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "www.googleapis.com",
+    "basePath": "/analytics/v3/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/data/ga": {
+            "get": {
+                "description": "Returns Analytics data for a profile.",
+                "operationId": "Get_analytics.data.ga.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Unique table ID for retrieving Analytics data. Table ID is of the form ga:XXXX, where XXXX is the Analytics profile ID. (string)"
+                    },
+                    {
+                        "name": "start-date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Start date for fetching Analytics data. All requests should specify a start date formatted as YYYY-MM-DD. (string)"
+                    },
+                    {
+                        "name": "end-date",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "End date for fetching Analytics data. All requests should specify an end date formatted as YYYY-MM-DD. (string)"
+                    },
+                    {
+                        "name": "metrics",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A comma-separated list of Analytics metrics. E.g., 'ga:visits,ga:pageviews'. At least one metric must be specified. (string)"
+                    },
+                    {
+                        "name": "dimensions",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A comma-separated list of Analytics dimensions. E.g., 'ga:browser,ga:city'. (string)"
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A comma-separated list of dimension or metric filters to be applied to Analytics data. (string)"
+                    },
+                    {
+                        "name": "max-results",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of entries to include in this response. (integer)"
+                    },
+                    {
+                        "name": "segment",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "An Analytics advanced segment to be applied to data. (string)"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A comma-separated list of dimensions or metrics that determine the sort order for Analytics data. (string)"
+                    },
+                    {
+                        "name": "start-index",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter. (integer, 1+)"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Extend the functionality of Google Analytics by accessing profile and reporting data.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/management/accounts": {
+            "get": {
+                "description": "Lists all accounts to which the user has access.",
+                "operationId": "Get_analytics.management.accounts.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "max-results",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of entries to include in this response. (integer)"
+                    },
+                    {
+                        "name": "start-index",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter. (integer, 1+)"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Extend the functionality of Google Analytics by accessing profile and reporting data.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/goals": {
+            "get": {
+                "description": "Lists goals to which the user has access.",
+                "operationId": "Get_analytics.management.goals.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "accountId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Account ID for the web properties to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access. (string)"
+                    },
+                    {
+                        "name": "webPropertyId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Web property ID for the web properties to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties to which the user has access. (string)"
+                    },
+                    {
+                        "name": "profileId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Profile ID for the web properties to retrieve. Can either be a specific profile ID or '~all', which refers to all the profiles to which the user has access. (string)"
+                    },
+                    {
+                        "name": "max-results",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of entries to include in this response. (integer)"
+                    },
+                    {
+                        "name": "start-index",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter. (integer, 1+)"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Extend the functionality of Google Analytics by accessing profile and reporting data.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles": {
+            "get": {
+                "description": "Lists profiles to which the user has access.",
+                "operationId": "Get_analytics.management.profiles.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "accountId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Account ID for the web properties to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access. (string)"
+                    },
+                    {
+                        "name": "webPropertyId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Web property ID for the web properties to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties to which the user has access. (string)"
+                    },
+                    {
+                        "name": "max-results",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of entries to include in this response. (integer)"
+                    },
+                    {
+                        "name": "start-index",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter. (integer, 1+)"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Extend the functionality of Google Analytics by accessing profile and reporting data.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/management/segments": {
+            "get": {
+                "description": "Lists advanced segments to which the user has access.",
+                "operationId": "Get_analytics.management.segments.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "max-results",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of entries to include in this response. (integer)"
+                    },
+                    {
+                        "name": "start-index",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter. (integer, 1+)"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Extend the functionality of Google Analytics by accessing profile and reporting data.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/management/accounts/{accountId}/webproperties": {
+            "get": {
+                "description": "Lists web properties to which the user has access.",
+                "operationId": "Get_analytics.management.webproperties.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "accountId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Account ID for the web properties to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access. (string)"
+                    },
+                    {
+                        "name": "max-results",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of entries to include in this response. (integer)"
+                    },
+                    {
+                        "name": "start-index",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter. (integer, 1+)"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Extend the functionality of Google Analytics by accessing profile and reporting data.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

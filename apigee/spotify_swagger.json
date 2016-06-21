@@ -1,0 +1,231 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Spotify",
+        "description": "Expore Spotify's music catalog, with search and look up for artists, tracks and albums.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "ws.spotify.com",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/lookup/1/": {
+            "get": {
+                "description": "Lookup data related to a Spotify track URI.",
+                "operationId": "Get_track.lookup_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "uri",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "spotify:track:6NmXV4o6bmp704aPGyTVVG",
+                        "type": "string",
+                        "description": "A Spotify URI. Either track."
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml, text/xml"
+                        ],
+                        "default": "application/xml, text/xml",
+                        "type": "integer",
+                        "description": "The format to be returned in the response. (e.g. JSON, or XML)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Expore Spotify's music catalog, with search and look up for artists, tracks and albums.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/search/1/album": {
+            "get": {
+                "description": "Search for Spotify metadata by album.",
+                "operationId": "Get_album.search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Accept",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml, text/xml"
+                        ],
+                        "default": "application/xml, text/xml",
+                        "type": "integer",
+                        "description": "The format to be returned in the response. (e.g. JSON, or XML)"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "foo",
+                        "type": "string",
+                        "description": "Search string encoded in UTF-8."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 2.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The page of the result set to return."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Expore Spotify's music catalog, with search and look up for artists, tracks and albums.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/search/1/artist": {
+            "get": {
+                "description": "Search for Spotify metadata by artist.",
+                "operationId": "Get_artist.search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Accept",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml, text/xml"
+                        ],
+                        "default": "application/xml, text/xml",
+                        "type": "integer",
+                        "description": "The format to be returned in the response. (e.g. JSON, or XML)"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "artist:Bj%C3%B6rk",
+                        "type": "string",
+                        "description": "Search string encoded in UTF-8."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 2.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The page of the result set to return."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Expore Spotify's music catalog, with search and look up for artists, tracks and albums.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/search/1/track": {
+            "get": {
+                "description": "Search for Spotify metadata by track.",
+                "operationId": "Get_track.search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Accept",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "application/json",
+                            "application/xml, text/xml"
+                        ],
+                        "default": "application/xml, text/xml",
+                        "type": "integer",
+                        "description": "The format to be returned in the response. (e.g. JSON, or XML)"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "foo",
+                        "type": "string",
+                        "description": "Search string encoded in UTF-8."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 2.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The page of the result set to return."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Expore Spotify's music catalog, with search and look up for artists, tracks and albums.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Accept": {
+            "title": "Accept",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "application/json",
+                "application/xml, text/xml"
+            ]
+        }
+    }
+}

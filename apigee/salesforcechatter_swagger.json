@@ -1,0 +1,2110 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Salesforce Chatter",
+        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "na1.salesforce.com",
+    "basePath": "/services/data/v23.0/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/chatter/comments/{commentId}": {
+            "get": {
+                "description": "Gets info on a comment.",
+                "operationId": "Get_commentGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "commentId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a comment.",
+                "operationId": "Delete_commentDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "commentId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                }
+            }
+        },
+        "/chatter/feed-items/{feedItemId}": {
+            "get": {
+                "description": "Gets info on a feedItem.",
+                "operationId": "Get_feedItemGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "feedItemId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a feedItem.",
+                "operationId": "Delete_feedItemDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "feedItemId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                }
+            }
+        },
+        "/chatter/feed-items/{feedItemId}/comments": {
+            "get": {
+                "description": "Gets comments on a feedItem.",
+                "operationId": "Get_feedItemCommentGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "feedItemId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Post a comment on a feedItem.",
+                "operationId": "Create_feedItemCommentPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "feedItemId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/feed-items/{feedItemId}/likes": {
+            "get": {
+                "description": "Gets likes on a feedItem.",
+                "operationId": "Get_feedItemLikeGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "feedItemId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Post a like on a feedItem.",
+                "operationId": "Create_feedItemLikePost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "feedItemId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/group-memberships/{membershipId}": {
+            "get": {
+                "description": "Gets info on a subscriber to a group.",
+                "operationId": "Get_membershipGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "membershipId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a subscriber.",
+                "operationId": "Delete_membershipDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "membershipId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                }
+            }
+        },
+        "/chatter/groups/{groupId}": {
+            "get": {
+                "description": "Gets info on a group.",
+                "operationId": "Get_groupGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "groupId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/groups/{groupId}/members": {
+            "get": {
+                "description": "Gets members of a group.",
+                "operationId": "Get_groupMembersGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "groupId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Add member to a group.",
+                "operationId": "Create_groupMembersPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "groupId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/groups/{groupId}/photos": {
+            "get": {
+                "description": "Gets photos of a group.",
+                "operationId": "Get_groupPhotosGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "groupId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Post photos to a group.",
+                "operationId": "Create_groupPhotosPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "groupId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Post photos to a group.",
+                "operationId": "Delete_groupPhotosDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "groupId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                }
+            }
+        },
+        "/chatter/likes/{likeId}": {
+            "get": {
+                "description": "Gets info on a specified like.",
+                "operationId": "Get_likeGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "likeId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a specified like.",
+                "operationId": "Delete_likeDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "likeId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                }
+            }
+        },
+        "/chatter/feeds/news/me/feed-items": {
+            "get": {
+                "description": "Gets news on a specified feed.",
+                "operationId": "Get_newsGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Posts news on a specified feed.",
+                "operationId": "newsPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "contentDocumentId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "fileName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "feedItemFileUpload",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "desc",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "urlName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/feeds/news/{userId}/feed-items": {
+            "get": {
+                "description": "Gets news on a specified user's feed items.",
+                "operationId": "Get_unFeedGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Post news on a specified user's feed items.",
+                "operationId": "Create_unFeedPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "contentDocumentId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "fileName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "feedItemFileUpload",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "desc",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "urlName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/feeds/record/me/feed-items": {
+            "get": {
+                "description": "Gets records on a specified feed.",
+                "operationId": "Get_recordGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "contentDocumentId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "fileName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "feedItemFileUpload",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "desc",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "urlName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "recordId",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Posts a record on a specified feed.",
+                "operationId": "Create_recordPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "contentDocumentId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "fileName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "feedItemFileUpload",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "desc",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "urlName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "recordId",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/feeds/record/{userId}/feed-items": {
+            "get": {
+                "description": "Gets records on a specified user's feed items.",
+                "operationId": "Get_recordFeedGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Post record on a specified user's feed items.",
+                "operationId": "Create_recordFeedPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "contentDocumentId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "fileName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "feedItemFileUpload",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "desc",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "urlName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/subscriptions/{subscriptionId}": {
+            "get": {
+                "description": "Gets info on a specified subscription.",
+                "operationId": "Get_subscriptionGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subscriptionId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a specified subscription.",
+                "operationId": "Delete_subscriptionDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subscriptionId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                }
+            }
+        },
+        "/chatter/feeds/to/me/feed-items": {
+            "get": {
+                "description": "Gets @mentions of the current user.",
+                "operationId": "Get_mentionGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Posts a @mention on the current user.",
+                "operationId": "Create_mentionPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "contentDocumentId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "fileName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "feedItemFileUpload",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "desc",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "urlName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/feeds/to/{userId}/feed-items": {
+            "get": {
+                "description": "Gets @mentions on a specified user.",
+                "operationId": "Get_userMentionGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Post @mentions on a specified user.",
+                "operationId": "Create_userMentionPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "contentDocumentId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "fileName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "feedItemFileUpload",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "desc",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "urlName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/feeds/user-profile/me/feed-items": {
+            "get": {
+                "description": "Gets profile feed of the current user.",
+                "operationId": "Get_profileGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Posts a profile feed on the current user.",
+                "operationId": "Create_profilePost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "contentDocumentId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "fileName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "feedItemFileUpload",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "desc",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "urlName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/feeds/user-profile/{userId}/feed-items": {
+            "get": {
+                "description": "Gets profile feed on a specified user.",
+                "operationId": "Get_userProfileGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Post profile feed on a specified user.",
+                "operationId": "Create_userProfilePost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "contentDocumentId",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "fileName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "feedItemFileUpload",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "desc",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "urlName",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/users/me": {
+            "get": {
+                "description": "Returns information on the current user.",
+                "operationId": "Get_userGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/users/me/followers": {
+            "get": {
+                "description": "Returns information on followers of the current user.",
+                "operationId": "Get_userFollowersGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/users/me/following": {
+            "get": {
+                "description": "Returns information on who the current user follows.",
+                "operationId": "Get_userFollowingGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Posts information on who the current user follows.",
+                "operationId": "Create_userFollowingPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subjectId",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/users/me/groups": {
+            "get": {
+                "description": "Returns information on groups the current user is in.",
+                "operationId": "Get_userGroupGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/users/me/photo": {
+            "get": {
+                "description": "Returns information on the current user's photos.",
+                "operationId": "Get_userPhotoGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Post photo to current user's profile.",
+                "operationId": "Create_userPhotoPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete photo of current user's profile.",
+                "operationId": "Delete_userPhotoDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                }
+            }
+        },
+        "/chatter/users/me/status": {
+            "get": {
+                "description": "Returns info of current user's status.",
+                "operationId": "Get_userStatusGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Post text to current user's status.",
+                "operationId": "Create_userStatusPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete current user's status containing text.",
+                "operationId": "Delete_userStatusDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                }
+            }
+        },
+        "/chatter/users/{userId}": {
+            "get": {
+                "description": "Returns information on the specified user.",
+                "operationId": "Get_userIdGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/users/{userId}/followers": {
+            "get": {
+                "description": "Returns information on followers of the specified user.",
+                "operationId": "Get_userIdFollowersGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/users/{userId}/following": {
+            "get": {
+                "description": "Returns information on who the specified user follows.",
+                "operationId": "Get_userIdFollowingGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Posts information on who the specified user follows.",
+                "operationId": "Create_userIdFollowingPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "subjectId",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/users/{userId}/groups": {
+            "get": {
+                "description": "Returns information on groups the specified user is in.",
+                "operationId": "Get_userIdGroupGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/chatter/users/{userId}/photo": {
+            "get": {
+                "description": "Returns information on the specified user's photos.",
+                "operationId": "Get_userIdPhotoGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Post photo to specified user's profile.",
+                "operationId": "Create_userIdPhotoPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete photo of specified user's profile.",
+                "operationId": "Delete_userIdPhotoDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                }
+            }
+        },
+        "/chatter/users/{userId}/status": {
+            "get": {
+                "description": "Returns info of specified user's status.",
+                "operationId": "Get_userIdStatusGet_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Post text to specified user's status.",
+                "operationId": "Create_userIdStatusPost_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete specified user's status containing text.",
+                "operationId": "Delete_userIdStatusDelete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create applications for the social enterprise with Salesforce's collaboration platform"
+                    }
+                }
+            }
+        }
+    }
+}

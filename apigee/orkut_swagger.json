@@ -1,0 +1,532 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Orkut",
+        "description": "Build OpenSocial-based applications for orkut's world-wide user base.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "www.googleapis.com",
+    "basePath": "/orkut/v2/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/activities/{activityId}/acl/{userId}": {
+            "delete": {
+                "description": "Excludes an element from the ACL of the activity. The value \"me\" is valid for the parameter userId and means the authenticated user.",
+                "operationId": "Delete_orkut.acl.delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "activityId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the activity to remove."
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the user to be removed from the activity."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Build OpenSocial-based applications for orkut's world-wide user base."
+                    }
+                }
+            }
+        },
+        "/people/{userId}/activities/{collection}": {
+            "get": {
+                "description": "Retrieves a list of activities.",
+                "operationId": "Get_orkut.activities.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the user whose activities will be listed. Can be me to refer to the viewer (i.e. the authenticated user)."
+                    },
+                    {
+                        "name": "collection",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "all",
+                            "scraps",
+                            "steam"
+                        ],
+                        "type": "integer",
+                        "description": "The collection of activities to list. \n1. \"stream\", which shows activities from the user's friends. Applications can only view the stream of the authenticated user.\n2. \"all\", which shows activities created by the user that are visible to the authenticated user.\n3. \"scraps\", which shows the user's scrapbook. Access controls apply, so the authenticated user will see public scraps, scraps to all friends if he or she is a friend of the target user, and private scraps if he or she is in the Access control list\nfor the scrap."
+                    },
+                    {
+                        "name": "hl",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the interface language (host language) of your user interface."
+                    },
+                    {
+                        "name": "maxResults",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of activities to include in the response. (integer, 1-100)"
+                    },
+                    {
+                        "name": "pageToken",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A continuation token that allows pagination."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Build OpenSocial-based applications for orkut's world-wide user base.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/activities/{activityId}": {
+            "delete": {
+                "description": "Deletes an existing activity, if the access controls allow it. Currently the authenticated user is only allowed to delete their own activities.",
+                "operationId": "Delete_orkut.activities.delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "activityId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the activity to remove."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Build OpenSocial-based applications for orkut's world-wide user base."
+                    }
+                }
+            }
+        },
+        "/activities/{activityId}/visibility": {
+            "get": {
+                "description": "Gets the visibility of an existing activity.",
+                "operationId": "Get_orkut.activityVisibility.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "activityId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the activity to get the visibility."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Build OpenSocial-based applications for orkut's world-wide user base.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates the visibility of an existing activity.",
+                "operationId": "Update_orkut.activityVisibility.update_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "activityId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the activity to get the visibility."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Build OpenSocial-based applications for orkut's world-wide user base.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/people/{userId}/badges": {
+            "get": {
+                "description": "Retrieves the list of visible badges of a user.",
+                "operationId": "Get_orkut.badges.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The id of the user whose badges will be listed. Can be me to refer to caller."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Build OpenSocial-based applications for orkut's world-wide user base.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/people/{userId}/badges/{badgeId}": {
+            "get": {
+                "description": "Retrieves a badge from a user.",
+                "operationId": "Get_orkut.badges.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the user whose badges will be listed. Can be me to refer to caller."
+                    },
+                    {
+                        "name": "badgeId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the badge that will be retrieved."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Build OpenSocial-based applications for orkut's world-wide user base.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/activities/{activityId}/comments": {
+            "get": {
+                "description": "Retrieves a list of comments, possibly filtered.",
+                "operationId": "Get_orkut.comments.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "hl",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the interface language (host language) of your user interface."
+                    },
+                    {
+                        "name": "maxResults",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of activities to include in the response. (integer, 1+)"
+                    },
+                    {
+                        "name": "orderBy",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Sort search results."
+                    },
+                    {
+                        "name": "pageToken",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A continuation token that allows pagination."
+                    },
+                    {
+                        "name": "activityId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the activity containing the comments."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Build OpenSocial-based applications for orkut's world-wide user base.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Inserts a new comment to an activity.",
+                "operationId": "Create_orkut.comments.insert_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "application/json",
+                        "type": "string",
+                        "description": "Specifies Content Type."
+                    },
+                    {
+                        "name": "activityId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the activity containing the comments."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Build OpenSocial-based applications for orkut's world-wide user base.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/comments/{commentId}": {
+            "get": {
+                "description": "Retrieves an existing comment.",
+                "operationId": "Get_orkut.comments.get_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "hl",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the interface language (host language) of your user interface."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    },
+                    {
+                        "name": "commentId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the comment to get."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Build OpenSocial-based applications for orkut's world-wide user base.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes an existing comment.",
+                "operationId": "Delete_orkut.comments.delete_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "commentId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "ID of the comment to get."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Build OpenSocial-based applications for orkut's world-wide user base."
+                    }
+                }
+            }
+        },
+        "/people/{userId}/counters": {
+            "get": {
+                "description": "Retrieves the counters of an user.",
+                "operationId": "Get_orkut.counters.list_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the user whose counters will be listed."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Selector specifying which fields to include in a partial response."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Build OpenSocial-based applications for orkut's world-wide user base.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "collection": {
+            "title": "collection",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "all",
+                "scraps",
+                "steam"
+            ]
+        }
+    }
+}

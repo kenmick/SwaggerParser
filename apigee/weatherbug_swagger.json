@@ -1,0 +1,361 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "WeatherBug",
+        "description": "Develop weather applications or integrate localized, global weather conditions, forecasts and alerts into your apps.  Including Spark with near Real-Time location based Lightning Alerts.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.wxbug.net",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/getLocationsXML.aspx": {
+            "get": {
+                "description": "Returns the location based on U.S. and international city name. The soundex system allows searching for a city based on phonetics rather than spelling.",
+                "operationId": "search.location.names_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "SearchString",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Parameter used to search for locations. Only U.S. zipcodes and citynames can be searched. SearchString is not case-sensitive and accepts blank spaces."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Develop weather applications or integrate localized, global weather conditions, forecasts and alerts into your apps.  Including Spark with near Real-Time location based Lightning Alerts.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/getStationsXML.aspx": {
+            "get": {
+                "description": "For a given latitude/longitude, returns the weather stations in the area.",
+                "operationId": "search.stations.lat.long_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "lat",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Location of a place north or south of the equator. Minimum value: -90. Maximum value: 90."
+                    },
+                    {
+                        "name": "long",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Location of a place east or west of the prime meridian. Minimum value -180. Maximum value: 180."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Develop weather applications or integrate localized, global weather conditions, forecasts and alerts into your apps.  Including Spark with near Real-Time location based Lightning Alerts.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/getLiveWeatherRSS.aspx": {
+            "get": {
+                "description": "Returns detailed live weather conditions for the chosen location.",
+                "operationId": "Get_live.weather.lat.long_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "lat",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Location of a place north or south of the equator. Minimum value: -90. Maximum value: 90."
+                    },
+                    {
+                        "name": "long",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Location of a place east or west of the prime meridian. Minimum value -180. Maximum value: 180."
+                    },
+                    {
+                        "name": "UnitType",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "UnitType= 0 — U.S. customary units (miles, °F, etc...) [default]. UnitType= 1 — Metric system units (kms, °C, etc...)."
+                    },
+                    {
+                        "name": "OutputType",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "0",
+                        "type": "string",
+                        "description": "OutputType= 0 — Returns the RSS with the XML embedded inside it starting with \"<aws:weather>\" [default]. OutputType= 1 — Returns pure xml beginning with \"<aws:weather>\"."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Develop weather applications or integrate localized, global weather conditions, forecasts and alerts into your apps.  Including Spark with near Real-Time location based Lightning Alerts.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/getLiveCompactWeatherRSS.aspx": {
+            "get": {
+                "description": "Returns concise live weather conditions for the chosen location.",
+                "operationId": "Get_compact.live.weather.lat.long_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "lat",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Location of a place north or south of the equator. Minimum value: -90. Maximum value: 90."
+                    },
+                    {
+                        "name": "long",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Location of a place east or west of the prime meridian. Minimum value -180. Maximum value: 180."
+                    },
+                    {
+                        "name": "UnitType",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "UnitType= 0 — U.S. customary units (miles, °F, etc...) [default]. UnitType= 1 — Metric system units (kms, °C, etc...)."
+                    },
+                    {
+                        "name": "OutputType",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "0",
+                        "type": "string",
+                        "description": "OutputType= 0 — Returns the RSS with the XML embedded inside it starting with \"<aws:weather>\" [default]. OutputType= 1 — Returns pure xml beginning with \"<aws:weather>\"."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Develop weather applications or integrate localized, global weather conditions, forecasts and alerts into your apps.  Including Spark with near Real-Time location based Lightning Alerts.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/getForecastRSS.aspx": {
+            "get": {
+                "description": "Returns the 7-day forecast for a latitude/longitude.",
+                "operationId": "Get_forescat.lat.long_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "lat",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Location of a place north or south of the equator. Minimum value: -90. Maximum value: 90."
+                    },
+                    {
+                        "name": "long",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Location of a place east or west of the prime meridian. Minimum value -180. Maximum value: 180."
+                    },
+                    {
+                        "name": "UnitType",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "UnitType= 0 — U.S. customary units (miles, °F, etc...) [default]. UnitType= 1 — Metric system units (kms, °C, etc...)."
+                    },
+                    {
+                        "name": "OutputType",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "0",
+                        "type": "string",
+                        "description": "OutputType= 0 — Returns the RSS with the XML embedded inside it starting with \"<aws:weather>\" [default]. OutputType= 1 — Returns pure xml beginning with \"<aws:weather>\"."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Develop weather applications or integrate localized, global weather conditions, forecasts and alerts into your apps.  Including Spark with near Real-Time location based Lightning Alerts.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/getCamerasXML.aspx": {
+            "get": {
+                "description": "For a given latitude/longitude, this call returns a list of available weather cameras (U.S. Only).",
+                "operationId": "Get_camera.list.lat.long_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "lat",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Location of a place north or south of the equator. Minimum value: -90. Maximum value: 90."
+                    },
+                    {
+                        "name": "long",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Location of a place east or west of the prime meridian. Minimum value -180. Maximum value: 180."
+                    },
+                    {
+                        "name": "UnitType",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "UnitType= 0 — U.S. customary units (miles, °F, etc...) [default]. UnitType= 1 — Metric system units (kms, °C, etc...)."
+                    },
+                    {
+                        "name": "OutputType",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "0",
+                        "type": "string",
+                        "description": "OutputType= 0 — Returns the RSS with the XML embedded inside it starting with \"<aws:weather>\" [default]. OutputType= 1 — Returns pure xml beginning with \"<aws:weather>\"."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Develop weather applications or integrate localized, global weather conditions, forecasts and alerts into your apps.  Including Spark with near Real-Time location based Lightning Alerts.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/getAlertsRSS.aspx": {
+            "get": {
+                "description": "Returns weather alert information for a given latitude/longitude (U.S. Only).",
+                "operationId": "Get_alerts.lat.long_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "lat",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Location of a place north or south of the equator. Minimum value: -90. Maximum value: 90."
+                    },
+                    {
+                        "name": "long",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Location of a place east or west of the prime meridian. Minimum value -180. Maximum value: 180."
+                    },
+                    {
+                        "name": "UnitType",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "UnitType= 0 — U.S. customary units (miles, °F, etc...) [default]. UnitType= 1 — Metric system units (kms, °C, etc...)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Develop weather applications or integrate localized, global weather conditions, forecasts and alerts into your apps.  Including Spark with near Real-Time location based Lightning Alerts.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

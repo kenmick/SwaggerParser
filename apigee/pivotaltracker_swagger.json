@@ -1,0 +1,966 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Pivotal Tracker",
+        "description": "Access and manipulate agile project management data including projects, stories and tasks.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "www.pivotaltracker.com",
+    "basePath": "/services/v3/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/tokens/active": {
+            "get": {
+                "description": "Returns an API token associated with the user. This method requires HTTP Basic authentication.",
+                "operationId": "get_tokens_active_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            },
+            "post": {
+                "description": "Returns an API token associated with the user.",
+                "operationId": "post_tokens_active_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user's name."
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The user's password."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/activities": {
+            "get": {
+                "description": "Retrieves the recent activity of all your projects.",
+                "operationId": "get_activities_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 10.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Limits the number of activity feed items. Note the default value is 10, and there is a upper cap of 100"
+                    },
+                    {
+                        "name": "occurred_since_date",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Restricts the activity feed to only those items that occurred after a supplied date (example format: 2009/12/18 21:00:00 UTC)"
+                    },
+                    {
+                        "name": "newer_than_version",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Restricts the activity feed to only those items that have a greater than supplied version"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/activities": {
+            "get": {
+                "description": "Retrieves the recent activity of a specific project.",
+                "operationId": "get_project_activities_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 10.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Limits the number of activity feed items. Note the default value is 10, and there is a upper cap of 100"
+                    },
+                    {
+                        "name": "occurred_since_date",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Restricts the activity feed to only those items that occurred after a supplied date (example format: 2009/12/18 21:00:00 UTC)"
+                    },
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project to retrieve the activity for"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}": {
+            "get": {
+                "description": "Retrieves information about a project.",
+                "operationId": "get_single_project_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project to retrieve"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects": {
+            "get": {
+                "description": "Retrieves all of the user's projects.",
+                "operationId": "get_all_projects_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            },
+            "post": {
+                "description": "Adds a new project.",
+                "operationId": "post_add_project_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/memberships": {
+            "get": {
+                "description": "Retrieves all memberships for a project.",
+                "operationId": "get_all_memberships_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            },
+            "post": {
+                "description": "Adds a new membership to a project.",
+                "operationId": "post_add_membership_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/memberships/{MEMBERSHIP_ID}": {
+            "get": {
+                "description": "Retrieves information about a single membership.",
+                "operationId": "get_membership_info_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    },
+                    {
+                        "name": "MEMBERSHIP_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the membership"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            },
+            "delete": {
+                "description": "Removes a membership from a project",
+                "operationId": "delete_remove_membership_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    },
+                    {
+                        "name": "MEMBERSHIP_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the membership"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/iterations": {
+            "get": {
+                "description": "Retrieves all iterations, with stories.",
+                "operationId": "get_iterations_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/iterations/done": {
+            "get": {
+                "description": "Retrieves iterations from the \"done\" group, with stories.",
+                "operationId": "get_iterations_done_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Controls the number of iterations to skip from the beginning of the result."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Controls the maximum number of iterations returned."
+                    },
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/iterations/current": {
+            "get": {
+                "description": "Retrieves iterations from the \"current\" group, with stories.",
+                "operationId": "get_iterations_current_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/iterations/backlog": {
+            "get": {
+                "description": "Retrieves iterations from the \"backlog\" group, with stories.",
+                "operationId": "get_iterations_backlog_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Controls the number of iterations to skip from the beginning of the result."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Controls the maximum number of iterations returned."
+                    },
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/iterations/current_backlog": {
+            "get": {
+                "description": "Retrieves iterations from the \"current\" and \"backlog\" groups, with stories.",
+                "operationId": "get_iterations_current_backlog_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Controls the number of iterations to skip from the beginning of the result."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Controls the maximum number of iterations returned."
+                    },
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/stories/{STORY_ID}": {
+            "get": {
+                "description": "Retrieves information about a single story.",
+                "operationId": "get_story_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    },
+                    {
+                        "name": "STORY_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the story"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates a story",
+                "operationId": "put_story_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    },
+                    {
+                        "name": "STORY_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the story"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a story",
+                "operationId": "delete_story_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    },
+                    {
+                        "name": "STORY_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the story"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/stories": {
+            "get": {
+                "description": "Retrieves all stories for a project, or those matching filter(s)",
+                "operationId": "get_all_stories_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "A filter for the returned stories to match. See the API documentation for more details."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Controls the number of stories to skip from the beginning of the result."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Controls the maximum number of stories returned."
+                    },
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            },
+            "post": {
+                "description": "Adds a new story",
+                "operationId": "post_add_story_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/stories/{STORY_ID}/notes": {
+            "put": {
+                "description": "Adds a note (comment)",
+                "operationId": "Update_post_add_note_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    },
+                    {
+                        "name": "STORY_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the story"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/stories/deliver_all_finished": {
+            "post": {
+                "description": "Takes all finished stories and marks them as delivered. This could be used to automate a demo deploy process. The updated stories are returned as the result.",
+                "operationId": "Create_put_deliver_all_finished_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/stories/{STORY_ID}/moves": {
+            "post": {
+                "description": "Moves a story before or after another story. The moved story is returned in the response.",
+                "operationId": "post_move_stories_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    },
+                    {
+                        "name": "STORY_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the story"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/stories/{STORY_ID}/tasks/{TASK_ID}": {
+            "get": {
+                "description": "Returns information about a single task",
+                "operationId": "get_view_task_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    },
+                    {
+                        "name": "STORY_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the story"
+                    },
+                    {
+                        "name": "TASK_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the task"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates a task",
+                "operationId": "put_update_task_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    },
+                    {
+                        "name": "STORY_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the story"
+                    },
+                    {
+                        "name": "TASK_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the task"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a task",
+                "operationId": "delete_task_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    },
+                    {
+                        "name": "STORY_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the story"
+                    },
+                    {
+                        "name": "TASK_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the task"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/stories/{STORY_ID}/tasks": {
+            "get": {
+                "description": "Returns all tasks for a story",
+                "operationId": "get_all_tasks_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    },
+                    {
+                        "name": "STORY_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the story"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            },
+            "post": {
+                "description": "Adds a task to a story",
+                "operationId": "post_add_task_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    },
+                    {
+                        "name": "STORY_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the story"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/projects/{PROJECT_ID}/stories/{STORY_ID}/attachments": {
+            "post": {
+                "description": "Uploads an attachment to a story.",
+                "operationId": "post_upload_attachment_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "PROJECT_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the project"
+                    },
+                    {
+                        "name": "STORY_ID",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The ID of the story"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        },
+        "/source_commits": {
+            "post": {
+                "description": "Allows integration with post-commit hooks of Source Control Management (SCM) systems such as Subversion, Git, etc.",
+                "operationId": "post_source_commits_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Access and manipulate agile project management data including projects, stories and tasks."
+                    }
+                }
+            }
+        }
+    }
+}

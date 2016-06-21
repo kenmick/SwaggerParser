@@ -1,0 +1,317 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "World of Warcraft",
+        "description": "Welcome to the RESTful APIs exposed through the World of Warcraft community site as a service to the World of Warcraft community.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "us.battle.net",
+    "basePath": "/api/wow/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/character/{realm}/{characterName}": {
+            "get": {
+                "description": "Fetches a single character at a time through an HTTP GET request to a URL describing the character profile resource. By default, a basic dataset will be returned and with each request and zero or more additional fields can be retrieved. The core dataset returned includes the character's realm, name, level, last modified timestamp, thumbnail, race id, achievement points value, gender id and class id.",
+                "operationId": "getCharacter_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "realm",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The realm name."
+                    },
+                    {
+                        "name": "characterName",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The character name."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates that one or more of the optional datasets is to be retrieved. The list of the optional fields that can be requested:\n- guild: A summary of the guild that the character belongs to. If the character does not belong to a guild and this field is requested, this field will not be exposed.\n- stats: A map of character attributes and stats.\n- talents: A list of talent structures.\n- items: A list of items equipted by the character. Use of this field will also include the average item level and average item level equipped for the character.\n- reputation: A list of the factions that the character has an associated reputation with.\n- titles: A list of the titles obtained by the character including the currently selected title.\n- professions: A list of the character's professions. It is important to note that when this information is retrieved, it will also include the known recipes of each of the listed professions.\n- appearance: A map of values that describes the face, features and helm/cloak display preferences and attributes.\n- companions: A list of all of the non-combat pets obtained by the character.\n- mounts: A list of all of the mounts obtained by the character.\n- pets: A list of all of the combat pets obtained by the character.\n- achievements: A map of achievement data including completion timestamps and criteria information.\n- progression: A list of raids and bosses indicating raid progression and completedness.\n- pvp: A map of pvp information including arena team membership and rated battlegrounds information.\n- quests: A list of quests completed by the character."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Welcome to the RESTful APIs exposed through the World of Warcraft community site as a service to the World of Warcraft community.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/guild/{realm}/{guildName}": {
+            "get": {
+                "description": "Fetches a single guild at a time through an HTTP GET request to a url describing the guild profile resource. By default, a basic dataset will be returned and with each request and zero or more additional fields can be retrieved. The core dataset returned includes the guild's name, level, faction and achievement points.",
+                "operationId": "getGuild_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "realm",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The realm name."
+                    },
+                    {
+                        "name": "guildName",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The guild name."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Indicates that one or more of the optional datasets is to be retrieved. The list of the optional fields that can be requested:\n- members: A list of characters that are a member of the guild.\n- achievements: A set of data structures that describe the achievements earned by the guild."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Welcome to the RESTful APIs exposed through the World of Warcraft community site as a service to the World of Warcraft community.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/realm/status": {
+            "get": {
+                "description": "Retrieves realms status information. This information is limited to whether or not the realm is up, the type and state of the realm and the current population.",
+                "operationId": "getRealmsStatus_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Welcome to the RESTful APIs exposed through the World of Warcraft community site as a service to the World of Warcraft community.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/auction/data/{realm}": {
+            "get": {
+                "description": "Provides a per-realm list of recently generated auction house data dumps. The current auctions data is represented as JSON structures containing auction data for the tree auctions houses available on each realm.",
+                "operationId": "getRealmAuctions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "realm",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The realm name."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Welcome to the RESTful APIs exposed through the World of Warcraft community site as a service to the World of Warcraft community.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/item/{itemId}": {
+            "get": {
+                "description": "Provides detailed item information.",
+                "operationId": "getItem_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "itemId",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The item ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Welcome to the RESTful APIs exposed through the World of Warcraft community site as a service to the World of Warcraft community.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/arena/{realm}/{teamSize}/{teamName}": {
+            "get": {
+                "description": "Provides detailed arena team information.",
+                "operationId": "getArenaTeam_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "realm",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The realm name."
+                    },
+                    {
+                        "name": "teamSize",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The team size."
+                    },
+                    {
+                        "name": "teamName",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "The team name."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Welcome to the RESTful APIs exposed through the World of Warcraft community site as a service to the World of Warcraft community.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/data/character/races": {
+            "get": {
+                "description": "Provides a list of character races.",
+                "operationId": "getCharacterRaces_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Welcome to the RESTful APIs exposed through the World of Warcraft community site as a service to the World of Warcraft community.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/data/character/classes": {
+            "get": {
+                "description": "Provides a list of character classes.",
+                "operationId": "getCharacterClasses_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Welcome to the RESTful APIs exposed through the World of Warcraft community site as a service to the World of Warcraft community.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/data/guild/rewards": {
+            "get": {
+                "description": "Provides a list of all guild rewards.",
+                "operationId": "getGuildRewards_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Welcome to the RESTful APIs exposed through the World of Warcraft community site as a service to the World of Warcraft community.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/data/guild/perks": {
+            "get": {
+                "description": "Provides a list of all guild perks.",
+                "operationId": "getGuildPerks_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Welcome to the RESTful APIs exposed through the World of Warcraft community site as a service to the World of Warcraft community.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/data/item/classes": {
+            "get": {
+                "description": "Provides a list of item classes.",
+                "operationId": "getItemClasses_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Welcome to the RESTful APIs exposed through the World of Warcraft community site as a service to the World of Warcraft community.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

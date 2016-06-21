@@ -1,0 +1,459 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Groupon API2",
+        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.groupon.com",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/status.{format}": {
+            "get": {
+                "description": "Returns the status of Groupon's API and all the currently available versions of the API.",
+                "operationId": "getApiVersion_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "enter_your_client_id_please",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "device_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "user_agent",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "iPhone/1.0.4",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/divisions.{format}": {
+            "get": {
+                "description": "Returns the list of all launched divisions.",
+                "operationId": "getDivisions_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "enter_your_client_id_please",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "show",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "all",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/groupon_says.{format}": {
+            "get": {
+                "description": "Returns the list of recent (or random) Groupon Says commentaries.",
+                "operationId": "getRecentCommentaries_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "enter_your_client_id_please ",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "10",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "random",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "false",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/deals/{id}.{format}": {
+            "get": {
+                "description": "Returns the detailed information about a specified deal.",
+                "operationId": "getDeal_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "paddy-longs-beer-pub-1",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "enter_your_client_id_please",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "show",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "all",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "email_address",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "area",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "east-bay",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "referral_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "uu1234567",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/deals.{format}": {
+            "get": {
+                "description": "Returns an ordered list of deals that are currently launched for a specific division.",
+                "operationId": "getDeals_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "enter_your_client_id_please ",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "show",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "all",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "email_address",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "area",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "east-bay",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "lat",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "41.896579",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "lng",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "-87.643583",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "radius",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "100",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "division_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "chicago",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "device_token",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "subscriber_id",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "affiliate",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/deals/{deal_id}/posts.{format}": {
+            "get": {
+                "description": "Returns the lists of all the discussion posts for the specified deal.",
+                "operationId": "getListedDealPosts_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "json"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "enter_your_client_id_please",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    },
+                    {
+                        "name": "deal_id",
+                        "in": "path",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "troya-restaurant-san-francisco",
+                        "type": "string",
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work.",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "format": {
+            "title": "format",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "json"
+            ]
+        }
+    }
+}

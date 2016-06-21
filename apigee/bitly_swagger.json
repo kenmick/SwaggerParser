@@ -1,0 +1,939 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Bitly",
+        "description": "Shorten, Share and Track your links with the Bitly APIs.",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api-ssl.bitly.com",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/v3/shorten": {
+            "get": {
+                "description": "Given a long URL, returns a bitly short URL.",
+                "operationId": "Get_shorten_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "longUrl",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "a long URL to be shortened (example: http://betaworks.com/)"
+                    },
+                    {
+                        "name": "domain",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "bit.ly",
+                            "j.mp",
+                            "bitly.com"
+                        ],
+                        "default": "bit.ly",
+                        "type": "integer",
+                        "description": "(optional) refers to a preferred domain; either bit.ly, j.mp, or bitly.com, for users who do NOT have a custom short domain set up with bitly. This affects the output value of url. The default for this parameter is the short domain selected by each user in his/her bitly account settings. Passing a specific domain via this parameter will override the default settings for users who do NOT have a custom short domain set up with bitly. For users who have implemented a custom short domain, bitly will always return short links according to the user's account-level preference."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        },
+        "/v3/expand": {
+            "get": {
+                "description": "Given a bitly URL or hash (or multiple), returns the target (long) URL.",
+                "operationId": "Get_expand_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "shortUrl",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Short URL to be expanded."
+                    },
+                    {
+                        "name": "hash",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Refers to one or more bitly hashes."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        },
+        "/v3/link/lookup": {
+            "get": {
+                "description": "This is used to query for a bitly link based on a long URL.",
+                "operationId": "Get_lookup_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "One or more long URLs to lookup."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        },
+        "/v3/info": {
+            "get": {
+                "description": "This is used to return the page title for a given bitly link.",
+                "operationId": "Get_info_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "shortUrl",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Refers to one or more short URLs."
+                    },
+                    {
+                        "name": "hash",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Refers to one or more bitly hashes."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        },
+        "/v3/user/info": {
+            "get": {
+                "description": "Return information about a user.",
+                "operationId": "Get_user_info_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "login",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "(optional) the bitly login of the user whose info to look up. If not given, the authenticated user will be used."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        },
+        "/v3/user/link_history": {
+            "get": {
+                "description": "Returns entries from a user's link history in reverse chronological order.",
+                "operationId": "Get_user_link_history_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "(optional) integer in the range 1 to 100 -    default: 50, specifying the max number of results to return."
+                    },
+                    {
+                        "name": "created_before",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "(optional) timestamp as an integer unix epoch."
+                    },
+                    {
+                        "name": "created_after",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "(optional) timestamp as an integer unix epoch."
+                    },
+                    {
+                        "name": "user",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "(optional)    the user for whom to retrieve history entries (if different from authenticated user)."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        },
+        "/v3/user/popular_links": {
+            "get": {
+                "description": "Returns the authenticated user's most-clicked bitly links (ordered by number of clicks) in a given time period.",
+                "operationId": "Get_user_popular_links_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "unit",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "minute",
+                            "hour",
+                            "day",
+                            "week",
+                            "month"
+                        ],
+                        "default": "day",
+                        "type": "integer",
+                        "description": "minute, hour, day, week or month"
+                    },
+                    {
+                        "name": "units",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": -1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "an integer representing the time units to query data for. Pass -1 to return all units of time."
+                    },
+                    {
+                        "name": "timezone",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "(optional) an integer hour offset from UTC (-14 to 14)"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 100.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "(optional) 1 to 1000 (default=100)."
+                    },
+                    {
+                        "name": "rollup",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "true",
+                        "type": "string",
+                        "description": "(optional) true or false. Return data for multiple units rolled up to a single result instead of a separate value for each period of time."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        },
+        "/v3/link/clicks": {
+            "get": {
+                "description": "Returns entries from a user's link history in reverse chronological order.",
+                "operationId": "Get_link_clicks_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "link",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "a bltly link."
+                    },
+                    {
+                        "name": "unit",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "minute",
+                            "hour",
+                            "day",
+                            "week",
+                            "month"
+                        ],
+                        "default": "day",
+                        "type": "integer",
+                        "description": "minute, hour, day, week or month"
+                    },
+                    {
+                        "name": "units",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": -1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "an integer representing the time units to query data for. Pass -1 to return all units of time."
+                    },
+                    {
+                        "name": "timezone",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "(optional) an integer hour offset from UTC (-14 to 14)"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 100.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "(optional) 1 to 1000 (default=100)."
+                    },
+                    {
+                        "name": "rollup",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "true",
+                        "type": "string",
+                        "description": "(optional) true or false. Return data for multiple units rolled up to a single result instead of a separate value for each period of time."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        },
+        "/v3/link/countries": {
+            "get": {
+                "description": "Returns metrics about the countries referring click traffic to a single bitly link.",
+                "operationId": "Get_link_countries_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "link",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "a bltly link."
+                    },
+                    {
+                        "name": "unit",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "minute",
+                            "hour",
+                            "day",
+                            "week",
+                            "month"
+                        ],
+                        "default": "day",
+                        "type": "integer",
+                        "description": "minute, hour, day, week or month"
+                    },
+                    {
+                        "name": "units",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": -1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "an integer representing the time units to query data for. Pass -1 to return all units of time."
+                    },
+                    {
+                        "name": "timezone",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "(optional) an integer hour offset from UTC (-14 to 14)"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 100.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "(optional) 1 to 1000 (default=100)."
+                    },
+                    {
+                        "name": "rollup",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "true",
+                        "type": "string",
+                        "description": "(optional) true or false. Return data for multiple units rolled up to a single result instead of a separate value for each period of time."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        },
+        "/v3/link/referrers": {
+            "get": {
+                "description": "Returns metrics about the pages referring click traffic to a single bitly link.",
+                "operationId": "Get_link_referrers_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "link",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "a bltly link."
+                    },
+                    {
+                        "name": "unit",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "minute",
+                            "hour",
+                            "day",
+                            "week",
+                            "month"
+                        ],
+                        "default": "day",
+                        "type": "integer",
+                        "description": "minute, hour, day, week or month"
+                    },
+                    {
+                        "name": "units",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": -1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "an integer representing the time units to query data for. Pass -1 to return all units of time."
+                    },
+                    {
+                        "name": "timezone",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "(optional) an integer hour offset from UTC (-14 to 14)"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 100.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "(optional) 1 to 1000 (default=100)."
+                    },
+                    {
+                        "name": "rollup",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "true",
+                        "type": "string",
+                        "description": "(optional) true or false. Return data for multiple units rolled up to a single result instead of a separate value for each period of time."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        },
+        "/v3/link/shares": {
+            "get": {
+                "description": "Returns metrics about a shares of a single link.",
+                "operationId": "Get_link_shares_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "link",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "a bltly link."
+                    },
+                    {
+                        "name": "unit",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "enum": [
+                            "minute",
+                            "hour",
+                            "day",
+                            "week",
+                            "month"
+                        ],
+                        "default": "day",
+                        "type": "integer",
+                        "description": "minute, hour, day, week or month"
+                    },
+                    {
+                        "name": "units",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": -1.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "an integer representing the time units to query data for. Pass -1 to return all units of time."
+                    },
+                    {
+                        "name": "timezone",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 0.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "(optional) an integer hour offset from UTC (-14 to 14)"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": 100.0,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "(optional) 1 to 1000 (default=100)."
+                    },
+                    {
+                        "name": "rollup",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "default": "true",
+                        "type": "string",
+                        "description": "(optional) true or false. Return data for multiple units rolled up to a single result instead of a separate value for each period of time."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        },
+        "/v3/search": {
+            "get": {
+                "description": "Search links receiving clicks across bitly by content, language, location, and more.",
+                "operationId": "Get_realtime_search_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "string to query for."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "(optional) the maximum number of links to return."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "(optional) which result to start with (defaults to 0)."
+                    },
+                    {
+                        "name": "cities",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "(optional) show links active in this city (ordered like country-state-city, e.g. us-il-chicago)."
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "(optional) favor results in this language (two letter ISO code)."
+                    },
+                    {
+                        "name": "domain",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "(optional) restrict results to this web domain."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        },
+        "/v3/realtime/bursting_phrases": {
+            "get": {
+                "description": "Returns phrases that are receiving an uncharacteristically high volume of click traffic, and the individual links (hashes) driving traffic to pages containing these phrases.",
+                "operationId": "Get_realtime_bursting_phrases_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        },
+        "/v3/realtime/hot_phrases": {
+            "get": {
+                "description": "Returns phrases that are receiving a consistently high volume of click traffic, and the individual links (hashes) driving traffic to pages containing these phrases.",
+                "operationId": "Get_realtime_hot_phrases_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "enum": [
+                            "xml",
+                            "json",
+                            "txt"
+                        ],
+                        "default": "json",
+                        "type": "integer",
+                        "description": "Response format."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shorten, Share and Track your links with the Bitly APIs."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "domain": {
+            "title": "domain",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "bit.ly",
+                "j.mp",
+                "bitly.com"
+            ]
+        },
+        "format": {
+            "title": "format",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "xml",
+                "json",
+                "txt"
+            ]
+        },
+        "unit": {
+            "title": "unit",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+                "minute",
+                "hour",
+                "day",
+                "week",
+                "month"
+            ]
+        }
+    }
+}

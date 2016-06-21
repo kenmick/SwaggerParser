@@ -1,0 +1,288 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "SMSified",
+        "description": "RESTful SMS API for sending and receiving text messages",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "api.smsified.com",
+    "basePath": "/v1/",
+    "securityDefinitions": {},
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/smsmessaging/outbound/{senderAddress}/requests": {
+            "post": {
+                "description": "Sends a 160 character SMS message from your SMSified phone number to any US mobile number.",
+                "operationId": "Create_send_smsmessage_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "address",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "default": "1234567890",
+                        "type": "string",
+                        "description": "Specifies the 10-digit phone number to send the SMS message to."
+                    },
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Specifies the 160 character SMS message to deliver."
+                    },
+                    {
+                        "name": "notifyURL",
+                        "in": "query",
+                        "required": false,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "If you want to set a callback URL for your SMS, you would use the notifyURL parameter, which will allow you to receive status information about the sent SMS (including the destination address, sender's address, the message itself and the status code). If the message was successfully delivered, the code field will always read 0; if the SMS could not be delivered, possibly due to exceeded rate limits or a bad phone number, there are a variety of additional codes to help you identify the problem."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "RESTful SMS API for sending and receiving text messages",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/smsmessaging/outbound/{senderAddress}/requests/{requestId}/deliveryInfos": {
+            "get": {
+                "description": "If you want to check your delivery status before all your messages may have sent out (especially useful if you send an SMS to multiple addresses), you can pull a Delivery Status report using the requestId displayed in Response JSON. This is different than the other reporting options, as it functions in realtime - reporting only shows messages once they've successfully sent to the network or failed completely.",
+                "operationId": "Get_delivery_status_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "RESTful SMS API for sending and receiving text messages",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/smsmessaging/outbound/{senderAddress}/subscriptions": {
+            "post": {
+                "description": "If you want to check your delivery status before all your messages may have sent out (especially useful if you send an SMS to multiple addresses), you can pull a Delivery Status report using the requestId displayed in Response JSON. This is different than the other reporting options, as it functions in realtime - reporting only shows messages once they've successfully sent to the network or failed completely.",
+                "operationId": "Create_set_outbound_subscribe_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "notifyURL",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Instead of setting a callback URL using the notifyURL parameter every time you send a text message, you can set an outbound subscription. With a subscription, you set the callback URL one time and tie it to the phone number, then every time a text message goes out, you'll receive the delivery notification automatically. If you set a value for notifyURL when you send a text message and also have an active subscription, the delivery info will be sent to both URLs."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "RESTful SMS API for sending and receiving text messages",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/smsmessaging/outbound/subscriptions?senderAddress={senderAddress}": {
+            "get": {
+                "description": "If you want to check your delivery status before all your messages may have sent out (especially useful if you send an SMS to multiple addresses), you can pull a Delivery Status report using the requestId displayed in Response JSON. This is different than the other reporting options, as it functions in realtime - reporting only shows messages once they've successfully sent to the network or failed completely. Note: If you omit the senderAddress, you'll see a list of all your outbound subscriptions.",
+                "operationId": "Get_view_outbound_subscribe_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "RESTful SMS API for sending and receiving text messages",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/smsmessaging/outbound/subscriptions/{subscriptionId}": {
+            "delete": {
+                "description": "If you want to check your delivery status before all your messages may have sent out (especially useful if you send an SMS to multiple addresses), you can pull a Delivery Status report using the requestId displayed in Response JSON. This is different than the other reporting options, as it functions in realtime - reporting only shows messages once they've successfully sent to the network or failed completely.",
+                "operationId": "delete_outbound_subscribe_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "RESTful SMS API for sending and receiving text messages"
+                    }
+                }
+            }
+        },
+        "/smsmessaging/inbound/subscriptions": {
+            "post": {
+                "description": "If you want to check your delivery status before all your messages may have sent out (especially useful if you send an SMS to multiple addresses), you can pull a Delivery Status report using the requestId displayed in Response JSON. This is different than the other reporting options, as it functions in realtime - reporting only shows messages once they've successfully sent to the network or failed completely.",
+                "operationId": "Create_set_inbound_subscribe_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "destinationAddress",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "Application phone number to receive messages."
+                    },
+                    {
+                        "name": "notifyURL",
+                        "in": "query",
+                        "required": true,
+                        "x-is-map": false,
+                        "type": "string",
+                        "description": "With an inbound subscription, every time a text message is sent to the phone number associated with the subscription, the message will be sent to your URL. This is the same thing you can achieve through the User Interface (outlined in the Receiving a Text Message Quickstart), but using the API you can attach multiple URLs though multiple subscriptions."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "RESTful SMS API for sending and receiving text messages",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/smsmessaging/inbound/subscriptions?destinationAddress={destinationAddress}": {
+            "get": {
+                "description": "It's likely if you're setting subscriptions, at some point you'll want to check out which ones are tied to a particular number. A simple GET on the proper URL gets you what you need. Note: If you omit the destinationAddress, you'll see a list of all your inbound subscriptions.",
+                "operationId": "Get_view_inbound_subscribe_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "RESTful SMS API for sending and receiving text messages",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/smsmessaging/inbound/subscriptions/{subscriptionId}": {
+            "delete": {
+                "description": "If you can create a subscription, you'll obviously need the ability to remove one as well. A DELETE with the right URL handles this for you.",
+                "operationId": "delete_inbound_subscribe_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "RESTful SMS API for sending and receiving text messages"
+                    }
+                }
+            }
+        },
+        "/messages": {
+            "get": {
+                "description": "SMSified also provides comprehensive reporting, both through Logs in the user interface and programmatically. Reporting can be used to retrieve information about an individual SMS or multiple SMS messages, using a variety of search and filter criteria such as date range, direction, from, to and status. To start, here's an example showing how to retrieve the information for all messages, with no search criteria or filters.",
+                "operationId": "Get_reporting_allmessages_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "RESTful SMS API for sending and receiving text messages",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/messages/{messageId}": {
+            "get": {
+                "description": "SMSified also provides comprehensive reporting, both through Logs in the user interface and programmatically. Reporting can be used to retrieve information about an individual SMS or multiple SMS messages, using a variety of search and filter criteria such as date range, direction, from, to and status. To start, here's an example showing how to retrieve the information for all messages, with no search criteria or filters.",
+                "operationId": "Get_reporting_individual_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "RESTful SMS API for sending and receiving text messages",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/messages?startDate=2011-02-14&endDate=2011-02-15": {
+            "get": {
+                "description": "SMSified also provides comprehensive reporting, both through Logs in the user interface and programmatically. Reporting can be used to retrieve information about an individual SMS or multiple SMS messages, using a variety of search and filter criteria such as date range, direction, from, to and status. To start, here's an example showing how to retrieve the information for all messages, with no search criteria or filters.",
+                "operationId": "Get_reporting_FilteredByDate_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "RESTful SMS API for sending and receiving text messages",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/messages?status=fail&direction=in": {
+            "get": {
+                "description": "SMSified also provides comprehensive reporting, both through Logs in the user interface and programmatically. Reporting can be used to retrieve information about an individual SMS or multiple SMS messages, using a variety of search and filter criteria such as date range, direction, from, to and status. To start, here's an example showing how to retrieve the information for all messages, with no search criteria or filters.",
+                "operationId": "Get_reporting_FilteredByStatusDirection_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "RESTful SMS API for sending and receiving text messages",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
