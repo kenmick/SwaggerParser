@@ -1,0 +1,38 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/analytics/v3/", 
+    "total": 6, 
+    "methods": {
+        "get": {
+            "times": 6, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 3, 
+            "frequency": "0.500"
+        }, 
+        "3": {
+            "times": 1, 
+            "frequency": "0.167"
+        }, 
+        "4": {
+            "times": 1, 
+            "frequency": "0.167"
+        }, 
+        "5": {
+            "times": 1, 
+            "frequency": "0.167"
+        }
+    }, 
+    "url_noun": [
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles", 
+        "/data/ga", 
+        "/management/accounts/{accountId}/webproperties", 
+        "/management/accounts", 
+        "/management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/goals", 
+        "/management/segments"
+    ], 
+    "url_not_noun": []
+}

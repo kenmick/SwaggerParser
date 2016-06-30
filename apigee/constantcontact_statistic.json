@@ -1,0 +1,64 @@
+{
+    "host": "api.constantcontact.com", 
+    "basePath": "/ws/customers/", 
+    "total": 39, 
+    "methods": {
+        "put": {
+            "times": 5, 
+            "frequency": "0.128"
+        }, 
+        "post": {
+            "times": 5, 
+            "frequency": "0.128"
+        }, 
+        "get": {
+            "times": 24, 
+            "frequency": "0.615"
+        }, 
+        "delete": {
+            "times": 5, 
+            "frequency": "0.128"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 10, 
+            "frequency": "0.417"
+        }, 
+        "2": {
+            "times": 6, 
+            "frequency": "0.250"
+        }, 
+        "3": {
+            "times": 8, 
+            "frequency": "0.333"
+        }
+    }, 
+    "url_noun": [
+        "/{username}/contacts/{contact-id}", 
+        "/{username}/events", 
+        "/{username}/lists/{list-id}/members", 
+        "/{username}/library/folders", 
+        "/{username}/activities/{activity-id}", 
+        "/{username}/library/folders/{folder-id}/images/{image-id}", 
+        "/{username}/lists/{list-id}", 
+        "/{username}/campaigns", 
+        "/{username}/contacts", 
+        "/{username}/campaigns/{campaign-id}", 
+        "/{username}/lists", 
+        "/{username}/campaigns/{campaign-id}/events/", 
+        "/{username}/activities", 
+        "/{username}/events/{event-id}/registrants/{registrant-id}/paymentstatus", 
+        "/{username}/events/{event-id}/registrants/{registrant-id}", 
+        "/{username}/contacts/{contact-id}/events/", 
+        "/{username}/library/folders/{folder-id}/images", 
+        "/{username}/settings/emailaddresses", 
+        "/{username}/settings/emailaddresses/{email-id}", 
+        "/{username}/events/{event-id}/registrants/{registrant-id}/attendancestatus", 
+        "/{username}/events/{event-id}/registrants/{registrant-id}/guests/{guest-id}", 
+        "/{username}/events/{event-id}/registrants/{registrant-id}/guests", 
+        "/{username}/events/{event-id}/registrants", 
+        "/{username}/events/{event-id}"
+    ], 
+    "url_not_noun": []
+}

@@ -1,0 +1,79 @@
+{
+    "host": "api.stackoverflow.com", 
+    "basePath": "/1.1/", 
+    "total": 51, 
+    "methods": {
+        "get": {
+            "times": 51, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 18, 
+            "frequency": "0.353"
+        }, 
+        "2": {
+            "times": 28, 
+            "frequency": "0.549"
+        }, 
+        "3": {
+            "times": 5, 
+            "frequency": "0.098"
+        }
+    }, 
+    "url_noun": [
+        "/questions/no-answers", 
+        "/users/{ids}/favorites", 
+        "/questions/{ids}/linked", 
+        "/stats", 
+        "/comments/{ids}", 
+        "/users/{ids}/badges", 
+        "/questions/{ids}/comments", 
+        "/users/{ids}/reputation", 
+        "/errors/{id}", 
+        "/users/{id}/top-question-tags", 
+        "/posts/{ids}/comments", 
+        "/answers", 
+        "/revisions/{ids}", 
+        "/badges", 
+        "/users/{ids}/questions/unaccepted", 
+        "/users/{ids}", 
+        "/users/{ids}/answers", 
+        "/tags/{tag}/top-askers/{period}", 
+        "/similar", 
+        "/tags/synonyms", 
+        "/questions/{ids}", 
+        "/questions/unanswered", 
+        "/users/{id}/tags/{tags}/top-answers", 
+        "/tags/{tag}/top-answerers/{period}", 
+        "/badges/{ids}", 
+        "/users/{ids}/comments", 
+        "/users/{ids}/timeline", 
+        "/users/{ids}/comments/{toid}", 
+        "/users/{ids}/tags", 
+        "/questions/{ids}/timeline", 
+        "/users/{ids}/questions/no-answers", 
+        "/users/{ids}/questions", 
+        "/questions/{ids}/related", 
+        "/users/{id}/top-answer-tags", 
+        "/users/{id}/tags/{tags}/top-questions", 
+        "/privileges", 
+        "/tags", 
+        "/badges/name", 
+        "/revisions/{id}/{revisionguid}", 
+        "/badges/tags", 
+        "/tags/{tags}/synonyms", 
+        "/search", 
+        "/answers/{ids}", 
+        "/comments", 
+        "/users/moderators", 
+        "/answers/{ids}/comments", 
+        "/tags/{tags}/wikis", 
+        "/users/{ids}/questions/unanswered", 
+        "/questions/{ids}/answers", 
+        "/questions", 
+        "/users"
+    ], 
+    "url_not_noun": []
+}

@@ -412,7 +412,7 @@
                             "full",
                             "lite"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Restrict information returned to a set of selected fields. (string)\nApplicable values:\n- full: Includes all volume data\n- lite: Includes a subset of fields in volumeInfo and accessInfo."
                     },
                     {
@@ -479,14 +479,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "ebooks",
-                            "free-ebooks",
-                            "full",
-                            "paid-ebooks",
-                            "partial"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Filter search results. (string)\nApplicable values:\n- ebooks: All Google eBooks.\n- free-ebooks: Google eBook with full volume text viewability.\n- full: Public can view entire volume text.\n- paid-ebooks: Google eBooks with a price.\n- partial: Public able to see parts of text."
                     },
                     {
@@ -523,7 +516,7 @@
                             "newest",
                             "relevance"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Sort search results. (string)\nApplicable values:\n- newest: Most recently published.\n- relevance: Relevance to search terms."
                     },
                     {
@@ -544,7 +537,7 @@
                             "books",
                             "magazines"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Restrict to books or magazines. (string)\nApplicable values:\n- all: All volume content types.\n- books: Just books.\n- magazines: Just magazines."
                     },
                     {
@@ -556,7 +549,7 @@
                             "full",
                             "lite"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Restrict information returned to a set of selected fields. (string)\nApplicable values:\n- full: Includes all volume data.\n- lite: Includes a subset of fields in volumeInfo and accessInfo."
                     },
                     {
@@ -646,7 +639,7 @@
                             "full",
                             "lite"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Restrict information returned to a set of selected fields. (string)\nApplicable values:\n- full: Includes all volume data.\n- lite: Includes a subset of fields in volumeInfo and accessInfo."
                     },
                     {
@@ -792,29 +785,15 @@
     "definitions": {
         "projection": {
             "title": "projection",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "full",
                 "lite"
             ]
         },
-        "filter": {
-            "title": "filter",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "ebooks",
-                "free-ebooks",
-                "full",
-                "paid-ebooks",
-                "partial"
-            ]
-        },
         "orderBy": {
             "title": "orderBy",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "newest",
                 "relevance"
@@ -822,8 +801,7 @@
         },
         "printType": {
             "title": "printType",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "all",
                 "books",

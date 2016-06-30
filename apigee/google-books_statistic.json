@@ -1,0 +1,44 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/books/v1/", 
+    "total": 11, 
+    "methods": {
+        "post": {
+            "times": 3, 
+            "frequency": "0.273"
+        }, 
+        "get": {
+            "times": 8, 
+            "frequency": "0.727"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 2, 
+            "frequency": "0.182"
+        }, 
+        "2": {
+            "times": 4, 
+            "frequency": "0.364"
+        }, 
+        "3": {
+            "times": 5, 
+            "frequency": "0.455"
+        }
+    }, 
+    "url_noun": [
+        "/users/{userId}/bookshelves", 
+        "/users/{userId}/bookshelves/{shelf}", 
+        "/mylibrary/bookshelves/{shelf}", 
+        "/volumes", 
+        "/mylibrary/bookshelves/{shelf}/volumes", 
+        "/mylibrary/bookshelves/{shelf}/clearVolumes", 
+        "/mylibrary/bookshelves", 
+        "/volumes/{volumeId}", 
+        "/users/{userId}/bookshelves/{shelf}/volumes"
+    ], 
+    "url_not_noun": [
+        "/mylibrary/bookshelves/{shelf}/addVolume", 
+        "/mylibrary/bookshelves/{shelf}/removeVolume"
+    ]
+}

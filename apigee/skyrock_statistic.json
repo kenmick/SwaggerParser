@@ -1,0 +1,99 @@
+{
+    "host": "api.skyrock.com", 
+    "basePath": "/v2/", 
+    "total": 70, 
+    "methods": {
+        "post": {
+            "times": 34, 
+            "frequency": "0.486"
+        }, 
+        "get": {
+            "times": 36, 
+            "frequency": "0.514"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 1, 
+            "frequency": "0.014"
+        }, 
+        "2": {
+            "times": 69, 
+            "frequency": "0.986"
+        }
+    }, 
+    "url_noun": [
+        "/blog/list_post_medias.{format}", 
+        "/profile/list_albums.{format}", 
+        "/user/list_friends_ids.{format}", 
+        "/blog/change_avatar.{format}", 
+        "/mood/list_moods.{format}", 
+        "/blog/set_post.{format}", 
+        "/profile/set_picture.{format}", 
+        "/blog/list_offline_posts.{format}", 
+        "/blog/list_posts.{format}", 
+        "/newsfeed/list_events_types.{format}", 
+        "/user/list_groups.{format}", 
+        "/blog/new_post.{format}", 
+        "/user/list_blacklist.{format}", 
+        "/blog/new_post_media.{format}", 
+        "/blog/list_post_comments.{format}", 
+        "/check_rate_limit.{format}", 
+        "/blog/set.{format}", 
+        "/user/list_friend_requests.{format}", 
+        "/newsfeed/list_events.{format}", 
+        "/profile/set_album.{format}", 
+        "/user/list_friends.{format}", 
+        "/blog/list_skins.{format}", 
+        "/message/set_thread_as_read.{format}", 
+        "/message/list_threads.{format}", 
+        "/user/list_online_friends.{format}", 
+        "/message/reply_thread.{format}", 
+        "/profile/set_config.{format}", 
+        "/profile/list_pictures.{format}", 
+        "/profile/set.{format}", 
+        "/user/list_best_friends.{format}", 
+        "/profile/set_tags.{format}", 
+        "/mood/set_mood.{format}", 
+        "/blog/list_pictures.{format}"
+    ], 
+    "url_not_noun": [
+        "/user/deny_friend_request.{format}", 
+        "/user/get.{format}", 
+        "/user/is_friend.{format}", 
+        "/message/get_thread.{format}", 
+        "/message/delete_thread.{format}", 
+        "/user/send_friend_request.{format}", 
+        "/profile/get_tags_types.{format}", 
+        "/mood/delete_mood.{format}", 
+        "/newsfeed/send_alert.{format}", 
+        "/profile/add_album.{format}", 
+        "/blog/delete_post_media.{format}", 
+        "/message/delete_message.{format}", 
+        "/profile/delete_album.{format}", 
+        "/profile/delete_picture.{format}", 
+        "/profile/get_config.{format}", 
+        "/user/accept_friend_request.{format}", 
+        "/newsfeed/list_alerts.{format}", 
+        "/user/add_to_best_friends.{format}", 
+        "/user/remove_from_best_friends.{format}", 
+        "/user/get_counters.{format}", 
+        "/user/remove_user_from_blacklist.{format}", 
+        "/blog/get_post_comment.{format}", 
+        "/blog/get_post.{format}", 
+        "/profile/get_picture.{format}", 
+        "/user/remove_from_friends.{format}", 
+        "/profile/add_picture.{format}", 
+        "/blog/get.{format}", 
+        "/message/create_thread.{format}", 
+        "/profile/get_tags.{format}", 
+        "/newsfeed/send_event.{format}", 
+        "/mood/get_mood.{format}", 
+        "/profile/get.{format}", 
+        "/profile/get_property_values.{format}", 
+        "/blog/delete_post.{format}", 
+        "/message/send_message.{format}", 
+        "/user/add_user_to_blacklist.{format}", 
+        "/newsfeed/list_alerts_types.{format}"
+    ]
+}

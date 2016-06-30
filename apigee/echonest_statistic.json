@@ -1,0 +1,66 @@
+{
+    "host": "developer.echonest.com", 
+    "basePath": "/api/v4/", 
+    "total": 42, 
+    "methods": {
+        "post": {
+            "times": 6, 
+            "frequency": "0.143"
+        }, 
+        "get": {
+            "times": 36, 
+            "frequency": "0.857"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 41, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/catalog/status", 
+        "/oauth/timestamp", 
+        "/artist/reviews", 
+        "/artist/video", 
+        "/artist/top_hottt", 
+        "/artist/news", 
+        "/artist/extract", 
+        "/playlist/basic", 
+        "/sandbox/list", 
+        "/catalog/profile", 
+        "/artist/familiarity", 
+        "/artist/similar", 
+        "/song/search", 
+        "/artist/songs", 
+        "/catalog/feed", 
+        "/artist/profile", 
+        "/playlist/dynamic", 
+        "/track/profile", 
+        "/artist/twitter", 
+        "/catalog/list", 
+        "/artist/search", 
+        "/sandbox/access", 
+        "/song/profile", 
+        "/artist/blogs", 
+        "/artist/terms", 
+        "/artist/hotttnesss", 
+        "/playlist/session_info", 
+        "/playlist/static", 
+        "/artist/top_terms", 
+        "/artist/urls", 
+        "/track/upload", 
+        "/artist/images", 
+        "/artist/list_terms", 
+        "/artist/biographies"
+    ], 
+    "url_not_noun": [
+        "/track/analyze", 
+        "/song/identify", 
+        "/catalog/read", 
+        "/catalog/update", 
+        "/artist/suggest", 
+        "/catalog/delete", 
+        "/catalog/create"
+    ]
+}

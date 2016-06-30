@@ -22,32 +22,20 @@
     }, 
     "paths": {
         "1": {
-            "times": 1, 
-            "frequency": "0.016"
+            "times": 2, 
+            "frequency": "0.032"
         }, 
         "2": {
-            "times": 1, 
-            "frequency": "0.016"
+            "times": 25, 
+            "frequency": "0.397"
         }, 
         "3": {
-            "times": 13, 
-            "frequency": "0.206"
+            "times": 27, 
+            "frequency": "0.429"
         }, 
         "4": {
-            "times": 21, 
-            "frequency": "0.333"
-        }, 
-        "5": {
-            "times": 15, 
-            "frequency": "0.238"
-        }, 
-        "6": {
-            "times": 8, 
-            "frequency": "0.127"
-        }, 
-        "7": {
-            "times": 4, 
-            "frequency": "0.063"
+            "times": 9, 
+            "frequency": "0.143"
         }
     }, 
     "url_noun": [

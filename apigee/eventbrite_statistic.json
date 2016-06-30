@@ -1,0 +1,47 @@
+{
+    "host": "www.eventbrite.com", 
+    "basePath": "/%7Bdata-type%7D/", 
+    "total": 26, 
+    "methods": {
+        "get": {
+            "times": 26, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 26, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/event_new", 
+        "/user_list_tickets", 
+        "/ticket_new", 
+        "/user_list_events", 
+        "/event_copy", 
+        "/event_list_attendees", 
+        "/organizer_new", 
+        "/venue_new", 
+        "/user_new", 
+        "/event_list_discounts", 
+        "/discount_new", 
+        "/user_list_organizers", 
+        "/user_list_venues", 
+        "/organizer_list_events", 
+        "/event_search"
+    ], 
+    "url_not_noun": [
+        "/payment_update", 
+        "/venue_update", 
+        "/user_get", 
+        "/organizer_get", 
+        "/event_get", 
+        "/discount_update", 
+        "/venue_get", 
+        "/organizer_update", 
+        "/user_update", 
+        "/ticket_update", 
+        "/event_update"
+    ]
+}

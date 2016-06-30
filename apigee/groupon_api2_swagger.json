@@ -39,7 +39,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
                     },
                     {
@@ -93,10 +93,11 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json"
+                            "json",
+                            "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
                     },
                     {
@@ -142,10 +143,11 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json"
+                            "json",
+                            "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
                     },
                     {
@@ -209,10 +211,11 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json"
+                            "json",
+                            "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
                     },
                     {
@@ -284,10 +287,11 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json"
+                            "json",
+                            "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
                     },
                     {
@@ -410,10 +414,11 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json"
+                            "json",
+                            "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Put all those great ideas for Groupon improvements, extensions, and multiple-platform interfaces to work."
                     },
                     {
@@ -449,10 +454,17 @@
     "definitions": {
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "json"
+            ]
+        },
+        "format1": {
+            "title": "format1",
+            "type": "string",
+            "enum": [
+                "json",
+                "xml"
             ]
         }
     }

@@ -1,0 +1,92 @@
+{
+    "host": "www.reddit.com", 
+    "basePath": "/", 
+    "total": 64, 
+    "methods": {
+        "post": {
+            "times": 53, 
+            "frequency": "0.828"
+        }, 
+        "get": {
+            "times": 11, 
+            "frequency": "0.172"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 2, 
+            "frequency": "0.032"
+        }, 
+        "2": {
+            "times": 61, 
+            "frequency": "0.968"
+        }
+    }, 
+    "url_noun": [
+        "/api/editusertext", 
+        "/api/friend", 
+        "/comments/{id36}.{format}", 
+        "/api/vote", 
+        "/api/unread_message", 
+        "/api/login/{username}", 
+        "/api/frame", 
+        "/api/report", 
+        "/api/flairlist", 
+        "/api/collapse_message", 
+        "/api/share", 
+        "/api/bookmarklet", 
+        "/api/info.{format}", 
+        "/api/subreddit_stylesheet", 
+        "/api/unfriend", 
+        "/reddits/mine.{format}", 
+        "/api/password", 
+        "/api/resetpassword", 
+        "/api/search_reddit_names", 
+        "/api/site_admin", 
+        "/user/{username}/about.json", 
+        "/api/feedback", 
+        "/api/marknsfw", 
+        "/api/friend_note", 
+        "/api/unsave", 
+        "/api/upload_sr_img", 
+        "/api/noframe", 
+        "/api/del", 
+        "/api/leavecontributor", 
+        "/api/me.json", 
+        "/api/gadget", 
+        "/api/uncollapse_message", 
+        "/api/unmarknsfw", 
+        "/api/register", 
+        "/api/flair", 
+        "/api/comment", 
+        "/api/save", 
+        "/api/tb_commentspanel_show", 
+        "/api/moremessages", 
+        "/api/leavemoderator", 
+        "/api/flaircsv.json", 
+        "/by_id/{fullname}.{format}", 
+        "/api/unhide_message", 
+        "/api/unhide", 
+        "/api/expando", 
+        "/api/searchfeedback"
+    ], 
+    "url_not_noun": [
+        "/api/read_message", 
+        "/api/delete_sr_img", 
+        "/api/delete_sr_header", 
+        "/api/hide", 
+        "/api/subscribe", 
+        "/api/approve", 
+        "/api/compose", 
+        "/api/distinguish", 
+        "/api/remove", 
+        "/api/tb_commentspanel_hide", 
+        "/api/hide_message", 
+        "/api/edit_error", 
+        "/api/morechildren", 
+        "/api/update", 
+        "/api/fetch_title", 
+        "/api/delete_user", 
+        "/api/submit"
+    ]
+}

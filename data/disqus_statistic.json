@@ -24,7 +24,10 @@
         "/users/listActiveForums.json", 
         "/threads/list.json", 
         "/forums/listThreads.json", 
+        "/users/listFollowingChannels.json", 
         "/blacklists/list.json", 
+        "/users/listOwnedChannels.json", 
+        "/users/listFollowing.json", 
         "/threads/listPopular.json", 
         "/posts/listPopular.json", 
         "/forums/listPosts.json", 
@@ -55,20 +58,20 @@
         "/forums/listModerators.json", 
         "/posts/list.json", 
         "/forums/listFollowers.json", 
+        "/users/listModeratedChannels.json", 
         "/threads/vote.json", 
         "/threads/details.json", 
         "/users/interestingUsers.json", 
         "/categories/listPosts.json", 
+        "/threads/listUsersVotedThread.json", 
         "/users/listActiveThreads.json", 
         "/forums/listCategories.json", 
+        "/users/listFollowingForums.json", 
         "/forums/fixFavIconsForClassifiedForums.json"
     ], 
     "url_not_noun": [
         "/threads/restore.json", 
         "/posts/create.json", 
-        "/users/listFollowingChannels.json", 
-        "/users/listOwnedChannels.json", 
-        "/users/listFollowing.json", 
         "/forums/listMostActiveUsers.json", 
         "/forums/follow.json", 
         "/posts/remove.json", 
@@ -86,12 +89,9 @@
         "/forums/create.json", 
         "/threads/update.json", 
         "/threads/create.json", 
-        "/users/listModeratedChannels.json", 
         "/users/follow.json", 
         "/posts/restore.json", 
         "/users/removeFollower.json", 
-        "/threads/listUsersVotedThread.json", 
-        "/users/updateProfile.json", 
-        "/users/listFollowingForums.json"
+        "/users/updateProfile.json"
     ]
 }

@@ -1,0 +1,34 @@
+{
+    "host": "connect.gettyimages.com", 
+    "basePath": "/", 
+    "total": 9, 
+    "methods": {
+        "post": {
+            "times": 9, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 8, 
+            "frequency": "0.889"
+        }, 
+        "4": {
+            "times": 1, 
+            "frequency": "0.111"
+        }
+    }, 
+    "url_noun": [
+        "/v1/search/SearchForImages"
+    ], 
+    "url_not_noun": [
+        "/v1/search/GetImageDetails", 
+        "/v1/download/GetImageDownloadAuthorizations", 
+        "/v1/search/GetEvents", 
+        "/sample/v1/session/CreateSession", 
+        "/v1/download/GetLargestImageDownloadAuthorizations", 
+        "/v1/session/CreateSession", 
+        "/v1/download/CreateDownloadRequest", 
+        "/v1/session/RenewSession"
+    ]
+}

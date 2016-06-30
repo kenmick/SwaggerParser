@@ -1,0 +1,40 @@
+{
+    "host": "api.tropo.com", 
+    "basePath": "/v1/", 
+    "total": 9, 
+    "methods": {
+        "put": {
+            "times": 1, 
+            "frequency": "0.111"
+        }, 
+        "post": {
+            "times": 3, 
+            "frequency": "0.333"
+        }, 
+        "delete": {
+            "times": 2, 
+            "frequency": "0.222"
+        }, 
+        "get": {
+            "times": 3, 
+            "frequency": "0.333"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 3, 
+            "frequency": "0.750"
+        }, 
+        "2": {
+            "times": 1, 
+            "frequency": "0.250"
+        }
+    }, 
+    "url_noun": [
+        "/exchanges", 
+        "/applications", 
+        "/applications/{AppId}/addresses", 
+        "/sessions"
+    ], 
+    "url_not_noun": []
+}

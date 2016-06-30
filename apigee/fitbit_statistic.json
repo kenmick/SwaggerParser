@@ -1,0 +1,114 @@
+{
+    "host": "api.fitbit.com", 
+    "basePath": "/1/", 
+    "total": 72, 
+    "methods": {
+        "post": {
+            "times": 22, 
+            "frequency": "0.306"
+        }, 
+        "delete": {
+            "times": 11, 
+            "frequency": "0.153"
+        }, 
+        "get": {
+            "times": 39, 
+            "frequency": "0.542"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 4, 
+            "frequency": "0.062"
+        }, 
+        "2": {
+            "times": 7, 
+            "frequency": "0.108"
+        }, 
+        "3": {
+            "times": 16, 
+            "frequency": "0.246"
+        }, 
+        "4": {
+            "times": 16, 
+            "frequency": "0.246"
+        }, 
+        "5": {
+            "times": 17, 
+            "frequency": "0.262"
+        }, 
+        "6": {
+            "times": 5, 
+            "frequency": "0.077"
+        }
+    }, 
+    "url_noun": [
+        "/user/-/meals.{format}", 
+        "/user/-/friends/invitations.{format}?invitedUserEmail={invitedUserEmail}", 
+        "/user/-/activities/recent.{format}", 
+        "/foods/units.{format}", 
+        "/user/-/body/log/fat.{format}", 
+        "/user/-/activities/{activity-log-id}.{format}", 
+        "/user/-/foods/log/water/{water-log-id}.{format}", 
+        "/user/-/body.{format}", 
+        "/user/-/activities/goals/daily.{format}", 
+        "/user/-{collection-path}apiSubscriptions/{subscription-id}.{format}", 
+        "/user/-/glucose/date/{date}.{format}", 
+        "/user/{user-id}/profile.{format}", 
+        "/user/{user-id}/sleep/minutesAsleep/date/{start-date-or-end-date}/{end-date-or-period}.{format}", 
+        "/user/-/bp/{bp-log-id}.{format}", 
+        "/user/-/foods/log/goal.{format}", 
+        "/user/-/heart/date/{date}.{format}", 
+        "/user/-/foods/log/favorite/{id}.{format}", 
+        "/user/-/foods/log/water/date/{date}.{format}", 
+        "/user/-/foods/log/recent.{format}", 
+        "/user/{user-id}/body/date/{date}.{format}", 
+        "/user/-/body/log/fat/{body-weight-log-id}.{format}", 
+        "/user/-/body/log/weight.{format}", 
+        "/user/-/foods/log/favorite.{format}", 
+        "/user/-/devices.{format}", 
+        "/user/-/glucose.{format}", 
+        "/user/{user-id}/activities/date/{date}.{format}", 
+        "/user/-/body/log/weight/date/{date}.{format}", 
+        "/user/-/heart/{heart-log-id}.{format}", 
+        "/user/-/profile.{format}", 
+        "/user/-/activities/goals/weekly.{format}?type={type}&value={value}", 
+        "/user/-/friends/leaderboard.{format}", 
+        "/user/-/body/log/weight/goal.{format}", 
+        "/user/{user-id}/body/weight/date/{start-date-or-end-date}/{end-date-or-period}.{format}", 
+        "/user/{user-id}/foods/log/caloriesIn/date/{start-date-or-end-date}/{end-date-or-period}.{format}", 
+        "/user/-/sleep.{format}", 
+        "/user/{user-id}/activities/calories/date/{start-date-or-end-date}/{end-date-or-period}.{format}", 
+        "/user/-/activities/goals/weekly.{format}", 
+        "/user/{user-id}/badges.{format}", 
+        "/user/-/body/log/fat/goal.{format}", 
+        "/user/-/activities.{format}", 
+        "/user/-/activities/log/favorite/{id}.{format}", 
+        "/user/-/activities/goals/daily.{format}?type={type}&value={value}", 
+        "/activities.{format}", 
+        "/user/{user-id}/sleep/date/{date}.{format}", 
+        "/user/-/foods/log/water.{format}", 
+        "/user/{user-id}/friends.{format}", 
+        "/user/-/body/log/fat/{body-fat-log-id}.{format}", 
+        "/user/-/bp.{format}", 
+        "/user/-/activities/frequent.{format}", 
+        "/user/-/foods/log/frequent.{format}", 
+        "/foods.{format}", 
+        "/foods/search.{format}?query={query}", 
+        "/user/-{collection-path}apiSubscriptions.{format}", 
+        "/user/-/foods/log/{food-log-id}.{format}", 
+        "/user/-/body/log/fat/date/{date}.{format}", 
+        "/user/-/foods/log.{format}", 
+        "/user/-/sleep/{sleep-log-id}.{format}", 
+        "/user/{user-id}/foods/log/date/{date}.{format}", 
+        "/user/-/heart.{format}", 
+        "/user/-/bp/date/{date}.{format}", 
+        "/user/-/friends/invitations.{format}", 
+        "/activities/{id}.{format}", 
+        "/user/-/activities/favorite.{format}", 
+        "/foods/{food-id}.{format}"
+    ], 
+    "url_not_noun": [
+        "/user/-/friends/invitations/{from-user-id}.{format}?accept={accept}"
+    ]
+}

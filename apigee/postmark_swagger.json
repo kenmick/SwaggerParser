@@ -35,13 +35,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type of the request. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -49,13 +44,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The accepted type for the response. Must be set to application/json, text/json, or text/x-json."
                     }
                 ],
@@ -82,13 +72,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type of the request. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -96,13 +81,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The accepted type for the response. Must be set to application/json, text/json, or text/x-json."
                     }
                 ],
@@ -129,13 +109,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type of the request. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -143,13 +118,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The accepted type for the response. Must be set to application/json, text/json, or text/x-json."
                     }
                 ],
@@ -176,13 +146,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type of the request. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -190,13 +155,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The accepted type for the response. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -225,7 +185,7 @@
                             "Blocked"
                         ],
                         "default": "HardBounce",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Filter by bounce type. Supported types are:\n- HardBounce\n- Transient\n- Unsubscribe\n- Subscribe\n- AutoResponder\n- AddressChange\n- DnsError\n- SpamNotification\n- OpenRelayTest\n- Unknown\n- SoftBounce\n- VirusNotification\n- ChallengeVerification\n- BadEmailAddress\n- SpamComplaint\n- ManuallyDeactivated\n- Unconfirmed\n- Blocked"
                     },
                     {
@@ -233,12 +193,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "true",
-                            "false",
-                            ""
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Filter by active/inactive status. Note that we have three options here: true, false, and null (no value). To get all bounces no matter if they are active or inactive, do not pass a value."
                     },
                     {
@@ -301,13 +256,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type of the request. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -315,13 +265,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The accepted type for the response. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -357,13 +302,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type of the request. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -371,13 +311,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The accepted type for the response. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -413,13 +348,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type of the request. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -427,13 +357,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The accepted type for the response. Must be set to application/json, text/json, or text/x-json."
                     }
                 ],
@@ -460,13 +385,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type of the request. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -474,13 +394,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The accepted type for the response. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -516,13 +431,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type of the request. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -530,13 +440,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The accepted type for the response. Must be set to application/json, text/json, or text/x-json."
                     }
                 ],
@@ -561,13 +466,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type of the request. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -575,13 +475,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The accepted type for the response. Must be set to application/json, text/json, or text/x-json."
                     }
                 ],
@@ -608,13 +503,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type of the request. Must be set to application/json, text/json, or text/x-json."
                     },
                     {
@@ -622,13 +512,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "text/json",
-                            "text/x-json"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The accepted type for the response. Must be set to application/json, text/json, or text/x-json."
                     }
                 ],
@@ -644,30 +529,9 @@
         }
     },
     "definitions": {
-        "Content-Type": {
-            "title": "Content-Type",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "application/json",
-                "text/json",
-                "text/x-json"
-            ]
-        },
-        "Accept": {
-            "title": "Accept",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "application/json",
-                "text/json",
-                "text/x-json"
-            ]
-        },
         "type": {
             "title": "type",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "HardBounce",
                 "Transient",
@@ -687,16 +551,6 @@
                 "ManuallyDeactivated",
                 "Unconfirmed",
                 "Blocked"
-            ]
-        },
-        "inactive": {
-            "title": "inactive",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "true",
-                "false",
-                ""
             ]
         }
     }

@@ -1,0 +1,45 @@
+{
+    "host": "apps-apis.google.com", 
+    "basePath": "/a/feeds/emailsettings/2.0/", 
+    "total": 21, 
+    "methods": {
+        "put": {
+            "times": 8, 
+            "frequency": "0.381"
+        }, 
+        "post": {
+            "times": 4, 
+            "frequency": "0.190"
+        }, 
+        "delete": {
+            "times": 1, 
+            "frequency": "0.048"
+        }, 
+        "get": {
+            "times": 8, 
+            "frequency": "0.381"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 13, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/{domain_name}/{user_name}/label", 
+        "/{domain_name}/{user_name}/language", 
+        "/{domain_name}/{user_name}/sendas", 
+        "/{domain_name}/{user_name}/delegation/{delegate_email_id}", 
+        "/{domain_name}/{user_name}/webclip", 
+        "/{domain_name}/{user_name}/pop", 
+        "/{domain_name}/{user_name}/forwarding", 
+        "/{domain_name}/{user_name}/general", 
+        "/{domain_name}/{user_name}/delegation", 
+        "/{domain_name}/{user_name}/signature", 
+        "/{domain_name}/{user_name}/vacation", 
+        "/{domain_name}/{user_name}/imap", 
+        "/{domain_name}/{user_name}/filter"
+    ], 
+    "url_not_noun": []
+}

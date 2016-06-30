@@ -1,0 +1,27 @@
+{
+    "host": "api.wxbug.net", 
+    "basePath": "/", 
+    "total": 7, 
+    "methods": {
+        "get": {
+            "times": 7, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 7, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [], 
+    "url_not_noun": [
+        "/getCamerasXML.aspx", 
+        "/getLiveCompactWeatherRSS.aspx", 
+        "/getForecastRSS.aspx", 
+        "/getAlertsRSS.aspx", 
+        "/getStationsXML.aspx", 
+        "/getLiveWeatherRSS.aspx", 
+        "/getLocationsXML.aspx"
+    ]
+}

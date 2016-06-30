@@ -1,0 +1,62 @@
+{
+    "host": "www.pivotaltracker.com", 
+    "basePath": "/services/v3/", 
+    "total": 31, 
+    "methods": {
+        "put": {
+            "times": 3, 
+            "frequency": "0.097"
+        }, 
+        "post": {
+            "times": 9, 
+            "frequency": "0.290"
+        }, 
+        "get": {
+            "times": 16, 
+            "frequency": "0.516"
+        }, 
+        "delete": {
+            "times": 3, 
+            "frequency": "0.097"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 4, 
+            "frequency": "0.190"
+        }, 
+        "2": {
+            "times": 7, 
+            "frequency": "0.333"
+        }, 
+        "3": {
+            "times": 10, 
+            "frequency": "0.476"
+        }
+    }, 
+    "url_noun": [
+        "/projects/{PROJECT_ID}/memberships/{MEMBERSHIP_ID}", 
+        "/projects/{PROJECT_ID}/stories/{STORY_ID}/tasks/{TASK_ID}", 
+        "/tokens/active", 
+        "/projects/{PROJECT_ID}/stories/{STORY_ID}/attachments", 
+        "/projects/{PROJECT_ID}/stories/{STORY_ID}", 
+        "/projects/{PROJECT_ID}/iterations/done", 
+        "/projects/{PROJECT_ID}/activities", 
+        "/projects/{PROJECT_ID}", 
+        "/activities", 
+        "/projects/{PROJECT_ID}/stories/{STORY_ID}/tasks", 
+        "/projects/{PROJECT_ID}/stories", 
+        "/projects/{PROJECT_ID}/iterations/current", 
+        "/projects/{PROJECT_ID}/iterations", 
+        "/projects/{PROJECT_ID}/iterations/current_backlog", 
+        "/projects/{PROJECT_ID}/stories/{STORY_ID}/moves", 
+        "/projects/{PROJECT_ID}/memberships", 
+        "/projects", 
+        "/projects/{PROJECT_ID}/stories/{STORY_ID}/notes", 
+        "/projects/{PROJECT_ID}/iterations/backlog"
+    ], 
+    "url_not_noun": [
+        "/projects/{PROJECT_ID}/stories/deliver_all_finished", 
+        "/source_commits"
+    ]
+}

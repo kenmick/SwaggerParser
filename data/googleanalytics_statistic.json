@@ -30,36 +30,20 @@
     }, 
     "paths": {
         "2": {
-            "times": 7, 
-            "frequency": "0.184"
+            "times": 8, 
+            "frequency": "0.211"
         }, 
         "3": {
-            "times": 1, 
-            "frequency": "0.026"
+            "times": 6, 
+            "frequency": "0.158"
         }, 
         "4": {
-            "times": 3, 
-            "frequency": "0.079"
+            "times": 11, 
+            "frequency": "0.289"
         }, 
         "5": {
-            "times": 3, 
-            "frequency": "0.079"
-        }, 
-        "6": {
-            "times": 6, 
-            "frequency": "0.158"
-        }, 
-        "7": {
-            "times": 5, 
-            "frequency": "0.132"
-        }, 
-        "8": {
-            "times": 7, 
-            "frequency": "0.184"
-        }, 
-        "9": {
-            "times": 6, 
-            "frequency": "0.158"
+            "times": 13, 
+            "frequency": "0.342"
         }
     }, 
     "url_noun": [

@@ -1,0 +1,52 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/adsense/v1.1/", 
+    "total": 20, 
+    "methods": {
+        "get": {
+            "times": 20, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 4, 
+            "frequency": "0.200"
+        }, 
+        "2": {
+            "times": 7, 
+            "frequency": "0.350"
+        }, 
+        "3": {
+            "times": 7, 
+            "frequency": "0.350"
+        }, 
+        "4": {
+            "times": 2, 
+            "frequency": "0.100"
+        }
+    }, 
+    "url_noun": [
+        "/adclients/{adClientId}/adunits/{adUnitId}/customchannels", 
+        "/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}/customchannels", 
+        "/adclients", 
+        "/accounts/{accountId}/reports", 
+        "/adclients/{adClientId}/customchannels", 
+        "/accounts/{accountId}/adclients", 
+        "/accounts/{accountId}/adclients/{adClientId}/adunits", 
+        "/accounts/{accountId}/adclients/{adClientId}/urlchannels", 
+        "/accounts", 
+        "/accounts/{accountId}", 
+        "/accounts/{accountId}/adclients/{adClientId}/customchannels/{customChannelId}/adunits", 
+        "/adclients/{adClientId}/urlchannels", 
+        "/accounts/{accountId}/adclients/{adClientId}/customchannels", 
+        "/accounts/{accountId}/adclients/{adClientId}/customchannels/{customChannelId}", 
+        "/adclients/{adClientId}/customchannels/{customChannelId}/adunits", 
+        "/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}", 
+        "/reports", 
+        "/adclients/{adClientId}/adunits/{adUnitId}", 
+        "/adclients/{adClientId}/customchannels/{customChannelId}", 
+        "/adclients/{adClientId}/adunits"
+    ], 
+    "url_not_noun": []
+}

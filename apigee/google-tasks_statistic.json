@@ -1,0 +1,42 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/tasks/v1/", 
+    "total": 12, 
+    "methods": {
+        "put": {
+            "times": 2, 
+            "frequency": "0.167"
+        }, 
+        "post": {
+            "times": 4, 
+            "frequency": "0.333"
+        }, 
+        "get": {
+            "times": 4, 
+            "frequency": "0.333"
+        }, 
+        "delete": {
+            "times": 2, 
+            "frequency": "0.167"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 3, 
+            "frequency": "0.500"
+        }, 
+        "3": {
+            "times": 3, 
+            "frequency": "0.500"
+        }
+    }, 
+    "url_noun": [
+        "/users/@me/lists/{tasklist}", 
+        "/lists/{tasklist}/tasks/{task}", 
+        "/lists/{tasklist}/tasks/{task}/move", 
+        "/users/@me/lists", 
+        "/lists/{tasklist}/tasks", 
+        "/lists/{tasklist}/clear"
+    ], 
+    "url_not_noun": []
+}

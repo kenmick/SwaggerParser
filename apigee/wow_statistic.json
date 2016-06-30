@@ -1,0 +1,39 @@
+{
+    "host": "us.battle.net", 
+    "basePath": "/api/wow/", 
+    "total": 11, 
+    "methods": {
+        "get": {
+            "times": 11, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 4, 
+            "frequency": "0.364"
+        }, 
+        "2": {
+            "times": 2, 
+            "frequency": "0.182"
+        }, 
+        "3": {
+            "times": 5, 
+            "frequency": "0.455"
+        }
+    }, 
+    "url_noun": [
+        "/character/{realm}/{characterName}", 
+        "/guild/{realm}/{guildName}", 
+        "/item/{itemId}", 
+        "/auction/data/{realm}", 
+        "/data/character/classes", 
+        "/data/item/classes", 
+        "/data/character/races", 
+        "/realm/status", 
+        "/arena/{realm}/{teamSize}/{teamName}", 
+        "/data/guild/rewards", 
+        "/data/guild/perks"
+    ], 
+    "url_not_noun": []
+}

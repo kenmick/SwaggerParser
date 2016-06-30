@@ -1,0 +1,66 @@
+{
+    "host": "docs.google.com", 
+    "basePath": "/feeds/", 
+    "total": 24, 
+    "methods": {
+        "put": {
+            "times": 3, 
+            "frequency": "0.125"
+        }, 
+        "post": {
+            "times": 6, 
+            "frequency": "0.250"
+        }, 
+        "delete": {
+            "times": 5, 
+            "frequency": "0.208"
+        }, 
+        "get": {
+            "times": 10, 
+            "frequency": "0.417"
+        }
+    }, 
+    "paths": {
+        "0": {
+            "times": 2, 
+            "frequency": "0.111"
+        }, 
+        "1": {
+            "times": 1, 
+            "frequency": "0.056"
+        }, 
+        "2": {
+            "times": 7, 
+            "frequency": "0.389"
+        }, 
+        "3": {
+            "times": 5, 
+            "frequency": "0.278"
+        }, 
+        "4": {
+            "times": 3, 
+            "frequency": "0.167"
+        }
+    }, 
+    "url_noun": [
+        "/default/{visibility}/full/-/{category}", 
+        "/{user_id}/private/changes", 
+        "/default/{visibility}/full/folder%3A{collection_id}/contents/{resourceID}", 
+        "/metadata/{user_id}", 
+        "/default/{visibility}/full/{resourceID}/revisions/{revisionID}", 
+        "/default/{visibility}/full/{resourceID}/acl/{user}", 
+        "/default/{visibility}/full/folder%3A{collection_id}/contents", 
+        "/{next-location}", 
+        "/default/{visibility}/full/folder%3A{collection_id}/acl", 
+        "/default/{visibility}/full/{resourceID}", 
+        "/{resumable-create-media-link}", 
+        "/default/{visibility}/archive", 
+        "/default/media/{resourceID}", 
+        "/default/{visibility}/full", 
+        "/default/{visibility}/archive/{archiveID}", 
+        "/default/{visibility}/full/{resourceID}/contents", 
+        "/default/{visibility}/full/{resourceID}/acl", 
+        "/download/{document-type}/Export"
+    ], 
+    "url_not_noun": []
+}

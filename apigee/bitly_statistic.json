@@ -1,0 +1,39 @@
+{
+    "host": "api-ssl.bitly.com", 
+    "basePath": "/", 
+    "total": 14, 
+    "methods": {
+        "get": {
+            "times": 14, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 4, 
+            "frequency": "0.286"
+        }, 
+        "2": {
+            "times": 10, 
+            "frequency": "0.714"
+        }
+    }, 
+    "url_noun": [
+        "/v3/realtime/hot_phrases", 
+        "/v3/user/popular_links", 
+        "/v3/user/link_history", 
+        "/v3/link/clicks", 
+        "/v3/search", 
+        "/v3/realtime/bursting_phrases", 
+        "/v3/link/countries", 
+        "/v3/info", 
+        "/v3/link/lookup", 
+        "/v3/link/referrers", 
+        "/v3/link/shares", 
+        "/v3/user/info"
+    ], 
+    "url_not_noun": [
+        "/v3/shorten", 
+        "/v3/expand"
+    ]
+}

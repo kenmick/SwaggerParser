@@ -1,0 +1,46 @@
+{
+    "host": "api.bluevia.com", 
+    "basePath": "/services/REST/", 
+    "total": 14, 
+    "methods": {
+        "post": {
+            "times": 3, 
+            "frequency": "0.214"
+        }, 
+        "get": {
+            "times": 11, 
+            "frequency": "0.786"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 2, 
+            "frequency": "0.143"
+        }, 
+        "3": {
+            "times": 5, 
+            "frequency": "0.357"
+        }, 
+        "4": {
+            "times": 7, 
+            "frequency": "0.500"
+        }
+    }, 
+    "url_noun": [
+        "/Advertising/requests", 
+        "/Location/TerminalLocation", 
+        "/Directory/alias:$oauth_token$/UserInfo/UserProfile", 
+        "/Directory/alias:$oauth_token$/UserInfo/UserTerminalInfo", 
+        "/Directory/alias:$oauth_token$}/UserInfo/UserPersonalInfo", 
+        "/SMS/inbound/{shortNumber}/messages", 
+        "/SMS/outbound/requests", 
+        "/MMS/outbound/requests/{messageId}/deliverystatus", 
+        "/Directory/alias:$oauth_token$/UserInfo/UserPersonalInfo", 
+        "/Directory/alias:$oauth_token$/UserInfo/UserAccessInfo", 
+        "/Directory/alias:$oauth_token$/UserInfo", 
+        "/MMS/outbound/requests", 
+        "/SMS/outbound/requests/{SMSId}/deliverystatus", 
+        "/MMS/inbound/{shortNumber}/messages"
+    ], 
+    "url_not_noun": []
+}

@@ -69,7 +69,7 @@
                             "gif"
                         ],
                         "default": "gif",
-                        "type": "integer",
+                        "type": "string",
                         "description": "String representing the mime-type of map you want returned. Valid values: jpg, png and gif."
                     },
                     {
@@ -180,7 +180,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Desired format of the response. Possible values: xml and json. Defaults to xml."
                     },
                     {
@@ -202,7 +202,7 @@
                             "distance",
                             "name"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Select the sort criteria for Organic Listings (only).\nValid inputs are:\n- distance: Sort results by distance.\n- name: Sort results alphabetically by name."
                     },
                     {
@@ -260,7 +260,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Desired format of the response. Possible values: xml and json. Defaults to xml."
                     }
                 ],
@@ -300,7 +300,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Desired format of the response. Possible values: xml and json. Defaults to xml."
                     }
                 ],
@@ -340,7 +340,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Desired format of the response. Possible values: xml and json. Defaults to xml."
                     },
                     {
@@ -393,8 +393,7 @@
     "definitions": {
         "image_format": {
             "title": "image_format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "jpg",
                 "png",
@@ -403,8 +402,7 @@
         },
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "xml",
                 "json"
@@ -412,8 +410,7 @@
         },
         "sort": {
             "title": "sort",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "distance",
                 "name"

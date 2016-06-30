@@ -18,30 +18,18 @@
     }, 
     "paths": {
         "1": {
-            "times": 6, 
-            "frequency": "0.207"
+            "times": 9, 
+            "frequency": "0.310"
         }, 
         "2": {
-            "times": 5, 
-            "frequency": "0.172"
+            "times": 15, 
+            "frequency": "0.517"
         }, 
         "3": {
-            "times": 7, 
-            "frequency": "0.241"
+            "times": 4, 
+            "frequency": "0.138"
         }, 
         "4": {
-            "times": 7, 
-            "frequency": "0.241"
-        }, 
-        "5": {
-            "times": 2, 
-            "frequency": "0.069"
-        }, 
-        "6": {
-            "times": 1, 
-            "frequency": "0.034"
-        }, 
-        "7": {
             "times": 1, 
             "frequency": "0.034"
         }

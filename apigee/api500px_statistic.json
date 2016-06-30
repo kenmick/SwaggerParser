@@ -1,0 +1,56 @@
+{
+    "host": "api.500px.com", 
+    "basePath": "/v1/", 
+    "total": 36, 
+    "methods": {
+        "put": {
+            "times": 3, 
+            "frequency": "0.083"
+        }, 
+        "post": {
+            "times": 11, 
+            "frequency": "0.306"
+        }, 
+        "delete": {
+            "times": 6, 
+            "frequency": "0.167"
+        }, 
+        "get": {
+            "times": 16, 
+            "frequency": "0.444"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 8, 
+            "frequency": "0.400"
+        }, 
+        "2": {
+            "times": 12, 
+            "frequency": "0.600"
+        }
+    }, 
+    "url_noun": [
+        "/users/{id}/followers", 
+        "/blogs/{id}", 
+        "/collections", 
+        "/photos/{id}", 
+        "/photos/{id}/vote", 
+        "/blogs", 
+        "/photos/{id}/votes", 
+        "/users/show", 
+        "/users/search", 
+        "/photos", 
+        "/users/{id}/friends", 
+        "/photos/{id}/comments", 
+        "/photos/{id}/tags", 
+        "/photos/upload", 
+        "/collections/{id}", 
+        "/blogs/{id}/comments", 
+        "/upload", 
+        "/photos/{id}/favorite", 
+        "/photos/search", 
+        "/users"
+    ], 
+    "url_not_noun": []
+}

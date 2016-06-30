@@ -50,7 +50,7 @@
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -83,7 +83,7 @@
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -125,7 +125,7 @@
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -265,7 +265,7 @@
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -298,7 +298,7 @@
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -340,7 +340,7 @@
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -373,7 +373,7 @@
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -406,7 +406,7 @@
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -439,7 +439,7 @@
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -490,7 +490,7 @@
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -537,11 +537,10 @@
                         "x-is-map": false,
                         "enum": [
                             "json",
-                            "xml",
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -588,11 +587,10 @@
                         "x-is-map": false,
                         "enum": [
                             "json",
-                            "xml",
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -652,7 +650,7 @@
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -754,7 +752,7 @@
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -894,7 +892,7 @@
                             "yaml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -940,11 +938,18 @@
     "definitions": {
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "json",
                 "xml",
+                "yaml"
+            ]
+        },
+        "format1": {
+            "title": "format1",
+            "type": "string",
+            "enum": [
+                "json",
                 "yaml"
             ]
         }

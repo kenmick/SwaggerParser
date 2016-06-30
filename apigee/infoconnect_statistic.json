@@ -1,0 +1,40 @@
+{
+    "host": "api.infoconnect.com", 
+    "basePath": "/", 
+    "total": 12, 
+    "methods": {
+        "post": {
+            "times": 6, 
+            "frequency": "0.500"
+        }, 
+        "get": {
+            "times": 6, 
+            "frequency": "0.500"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 8, 
+            "frequency": "0.667"
+        }, 
+        "2": {
+            "times": 4, 
+            "frequency": "0.333"
+        }
+    }, 
+    "url_noun": [
+        "/v1/companies/{id}", 
+        "/v1/people/counts", 
+        "/v1/sics/{id}", 
+        "/v1/companies", 
+        "/v1/companies/search", 
+        "/v1/people/search", 
+        "/v3/multiplematch", 
+        "/v1/sics", 
+        "/v1/people", 
+        "/v1/companies/counts", 
+        "/v3/match", 
+        "/v1/people/{id}"
+    ], 
+    "url_not_noun": []
+}

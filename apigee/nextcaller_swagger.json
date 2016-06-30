@@ -40,7 +40,7 @@
                             "v3"
                         ],
                         "default": "v2",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Specifies a api version."
                     },
                     {
@@ -62,7 +62,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Specifies a format of response: JSON or XML."
                     }
                 ],
@@ -103,7 +103,7 @@
                             "v3"
                         ],
                         "default": "v2",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Specifies a api version."
                     },
                     {
@@ -124,7 +124,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Specifies a format of response: JSON or XML."
                     }
                 ],
@@ -142,8 +142,7 @@
     "definitions": {
         "version": {
             "title": "version",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "v2",
                 "v3"
@@ -151,8 +150,7 @@
         },
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "json",
                 "xml"

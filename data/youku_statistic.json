@@ -42,6 +42,7 @@
         "/videos/show_basic.json", 
         "/shows/show.json", 
         "/persons/show_batch.json", 
+        "/playlists/video/del.json", 
         "/playlists/show.json", 
         "/shows/show_batch.json", 
         "/comments/show_batch.json", 
@@ -71,7 +72,6 @@
     "url_not_noun": [
         "/users/subscribe/notice.json", 
         "/playlists/update.json", 
-        "/playlists/video/del.json", 
         "/searches/show/address_unite.json", 
         "/videos/destroy.json", 
         "/comments/destroy.json", 

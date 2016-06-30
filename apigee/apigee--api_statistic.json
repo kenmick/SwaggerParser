@@ -1,0 +1,127 @@
+{
+    "host": "api.enterprise.apigee.com", 
+    "basePath": "/v1/", 
+    "total": 152, 
+    "methods": {
+        "put": {
+            "times": 7, 
+            "frequency": "0.046"
+        }, 
+        "post": {
+            "times": 41, 
+            "frequency": "0.270"
+        }, 
+        "delete": {
+            "times": 35, 
+            "frequency": "0.230"
+        }, 
+        "get": {
+            "times": 69, 
+            "frequency": "0.454"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 7, 
+            "frequency": "0.090"
+        }, 
+        "2": {
+            "times": 26, 
+            "frequency": "0.333"
+        }, 
+        "3": {
+            "times": 30, 
+            "frequency": "0.385"
+        }, 
+        "4": {
+            "times": 11, 
+            "frequency": "0.141"
+        }, 
+        "5": {
+            "times": 4, 
+            "frequency": "0.051"
+        }
+    }, 
+    "url_noun": [
+        "/userroles", 
+        "/organizations/{org_name}/developers/{developer_email}/apps/{app_name}/keys/{consumer_key}", 
+        "/organizations/{org_name}/developers/{developer_email}/appfamilies/{appfamily_name}", 
+        "/resources", 
+        "/organizations/{org_name}/companies/{company_name}/appfamilies/{appfamily_name}/apps/{app_name}", 
+        "/organizations/{org_name}/companies", 
+        "/organizations/{org_name}/oauth2/accesstokens", 
+        "/organizations/{org_name}/userroles/{role_name}/resourcepermissions", 
+        "/userroles/{role_name}/resourcepermissions", 
+        "/organizations/{org_name}/oauth1/verifiers", 
+        "/organizations/{org_name}/companies/{company_name}", 
+        "/organizations/{org_name}/oauth1/requesttokens/{request_token}", 
+        "/userroles/{role_name}", 
+        "/organizations/{org_name}/companies/{company_name}/developers", 
+        "/users/{user_name}/permissions", 
+        "/organizations/{org_name}/developers/{developer_email}/apps/{app_name}/oauth1accesstokens", 
+        "/userroles/{role_name}/permissions", 
+        "/organizations/{org_name}/developers/{developer_email}/apps/{app_name}/keys/{consumer_key}/oauth2accesstokens", 
+        "/organizations/{org_name}/developers/{developer_email}/appfamilies", 
+        "/users/{user_email}/userroles/{role_name}", 
+        "/organizations/{org_name}/resources", 
+        "/organizations/{org_name}/apiproducts", 
+        "/organizations/{org_name}/userroles/{role_name}", 
+        "/userroles/{role_name}/users", 
+        "/organizations/{org_name}/companies/{company_name}/appfamilies/{appfamily_name}", 
+        "/organizations/{org_name}/developers/{developer_email}/apps/{app_name}", 
+        "/users/{user_email}/userroles", 
+        "/organizations/{org_name}/environments/{env_name}", 
+        "/organizations/{org_name}/environments/{env_name}/virtualhosts", 
+        "/organizations/{org_name}/pods", 
+        "/organizations/{org_name}/companies/{company_name}/apps", 
+        "/organizations/{org_name}/apiproducts/{apiproduct_name}", 
+        "/organizations/{org_name}/keyvaluemaps/{map_name}/entries/{entry_name}", 
+        "/organizations/{org_name}/oauth2/accesstokens/{access_token}", 
+        "/organizations/{org_name}/userroles", 
+        "/organizations/{org_name}/companies/{company_name}/appfamilies", 
+        "/organizations/{org_name}/oauth1/accesstokens/{access_token}", 
+        "/organizations/{org_name}/developers", 
+        "/organizations/{org_name}/oauth1/accesstokens", 
+        "/organizations/{org_name}/keyvaluemaps/{map_name}", 
+        "/organizations/{org_name}/environments", 
+        "/users/{user_email}", 
+        "/organizations/{org_name}/apis/{api_name}/revisions/{revision_number}", 
+        "/organizations/{org_name}/companies/{company_name}/apps/{app_name}", 
+        "/organizations/{org_name}/oauth1/requesttokens", 
+        "/organizations/{org_name}/developers/{developer_email}/apps/{app_name}/keys/{consumer_key}/oauth1accesstokens", 
+        "/organizations/{org_name}/apis/{api_name}/revisions/{revision_number}/deployments", 
+        "/userroles/{role_name}/users/{user_email}", 
+        "/organizations/{org_name}/developers/{developer_name}", 
+        "/organizations/{org_name}/deployments", 
+        "/organizations/{org_name}/apis/{api_name}/revisions/revision_number", 
+        "/organizations", 
+        "/organizations/{org_name}/keyvaluemaps", 
+        "/audits/organizations/{org_name}", 
+        "/organizations/{org_name}/developers/{developer_email}/appfamilies/{appfamily_name}/apps/{app_name}", 
+        "/organizations/{org_name}/environments/{env_name}/virtualhosts/{virtualhost_name}", 
+        "/organizations/{org_name}/oauth2/authorizationcodes/{authorization_code}", 
+        "/organizations/{org_name}/apis", 
+        "/organizations/{org_name}/companies/{company_name}/apps/{app_name}/keys/{consumer_key}", 
+        "/organizations/{org_name}/developers/{developer_email}/apps/{app_name}/oauth2accesstokens", 
+        "/organizations/{org_name}/userroles/{role_name}/permissions", 
+        "/organizations/{org_name}/apis/{api_name}", 
+        "/organizations/{org_name}/environments/{env_name}/apis/{api_name}/revisions/{revision_number}/deployments", 
+        "/organizations/{org_name}/apis/{api_name}/revisions/{revision_name}/deployments", 
+        "/organizations/{org_name}/apis/{api_name}/deployments", 
+        "/organizations/{org_name}/environments/{env_name}/apis/{api_name}/deployments", 
+        "/organizations/{org_name}/companies/{company_name}/developers/{developer_email}", 
+        "/organizations/{org_name}", 
+        "/organizations/{org_name}/environments/{env_name}/deployments", 
+        "/organizations/{org_name}/oauth2/authorizationcodes", 
+        "/organizations/{org_name}/developers/{developer_email}/apps/{app_name}/keys/{consumer_key}/apiproducts/{apiproduct_name}", 
+        "/users", 
+        "/organizations/{org_name}/developers/{developer_email}/apps", 
+        "/organizations/{org_name}/oauth1/verifiers/{verifier_code}", 
+        "/organizations/{org_name}/environments/{env_name}/servers"
+    ], 
+    "url_not_noun": [
+        "/organizations/{org_name}/userroles/{role_name}/permissions/get", 
+        "/users/{user_email}permissions/get", 
+        "/userroles/{role_name}/permissions/get"
+    ]
+}

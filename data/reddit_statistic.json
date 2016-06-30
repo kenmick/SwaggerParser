@@ -25,17 +25,21 @@
         }
     }, 
     "paths": {
+        "1": {
+            "times": 9, 
+            "frequency": "0.069"
+        }, 
         "2": {
-            "times": 54, 
-            "frequency": "0.415"
+            "times": 81, 
+            "frequency": "0.623"
         }, 
         "3": {
-            "times": 23, 
-            "frequency": "0.177"
+            "times": 14, 
+            "frequency": "0.108"
         }, 
         "4": {
-            "times": 47, 
-            "frequency": "0.362"
+            "times": 20, 
+            "frequency": "0.154"
         }, 
         "5": {
             "times": 6, 
@@ -69,9 +73,12 @@
         "/api/unread_message", 
         "{/r/subreddit}/about/log", 
         "/api/collapse_message", 
+        "/api/saved_categories", 
         "{/r/subreddit}/api/unfriend", 
         "/api/multi/multipath/r/srname", 
+        "{/r/subreddit}/api/setflairenabled", 
         "{/r/subreddit}/new", 
+        "/api/set_subreddit_sticky", 
         "/r/subreddit/about", 
         "/api/leavecontributor", 
         "{/r/subreddit}/random", 
@@ -82,7 +89,9 @@
         "{/r/subreddit}/api/flair", 
         "/api/unlock", 
         "{/r/subreddit}/api/flairconfig", 
+        "/api/set_suggested_sort", 
         "/api/v1/user/username/trophies", 
+        "/api/set_contest_mode", 
         "{/r/subreddit}/api/deleteflairtemplate", 
         "{/r/subreddit}/sticky", 
         "{/r/subreddit}/api/deleteflair", 
@@ -109,6 +118,7 @@
         "/api/marknsfw", 
         "/subreddits/search", 
         "{/r/subreddit}/api/flairtemplate", 
+        "/api/del", 
         "{/r/subreddit}/api/clearflairtemplates", 
         "/api/unmarknsfw", 
         "/api/mute_message_author", 
@@ -139,13 +149,10 @@
         "{/r/subreddit}/api/delete_sr_icon", 
         "/api/live/thread/rm_contributor", 
         "/api/live/thread/edit", 
-        "/api/saved_categories", 
         "/api/hide", 
         "/api/live/thread/leave_contributor", 
-        "{/r/subreddit}/api/setflairenabled", 
         "/prefs/where", 
         "/api/live/thread/invite_contributor", 
-        "/api/set_subreddit_sticky", 
         "/api/unblock_subreddit", 
         "/api/morechildren", 
         "/r/subreddit/about/edit", 
@@ -153,8 +160,6 @@
         "/api/live/thread/close_thread", 
         "/api/live/thread/update", 
         "/api/remove", 
-        "/api/set_suggested_sort", 
-        "/api/set_contest_mode", 
         "/live/thread", 
         "/api/subscribe", 
         "/api/compose", 
@@ -170,7 +175,6 @@
         "/api/read_all_messages", 
         "/subreddits/mine/where", 
         "/api/live/thread/strike_update", 
-        "/api/del", 
         "/api/live/thread/rm_contributor_invite", 
         "/api/submit", 
         "{/r/subreddit}/api/accept_moderator_invite", 

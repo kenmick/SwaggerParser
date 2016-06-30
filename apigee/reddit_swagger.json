@@ -49,7 +49,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Format of the data being returned. Accepted values: json (JSON), rss (RSS feed), xml (RSS feed)"
                     }
                 ],
@@ -87,7 +87,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Format of the data being returned. Accepted values: json (JSON), rss (RSS feed), xml (RSS feed)"
                     }
                 ],
@@ -142,7 +142,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Format of the data being returned. Accepted values: json (JSON), xml (XML)"
                     }
                 ],
@@ -284,7 +284,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Format of the data being returned. Accepted values: json (JSON), xml (XML)"
                     }
                 ],
@@ -2286,8 +2286,7 @@
     "definitions": {
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "json",
                 "rss",

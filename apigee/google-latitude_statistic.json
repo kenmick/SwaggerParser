@@ -1,0 +1,31 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/latitude/v1/", 
+    "total": 7, 
+    "methods": {
+        "post": {
+            "times": 2, 
+            "frequency": "0.286"
+        }, 
+        "get": {
+            "times": 3, 
+            "frequency": "0.429"
+        }, 
+        "delete": {
+            "times": 2, 
+            "frequency": "0.286"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 3, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/location/{locationId}", 
+        "/location", 
+        "/currentLocation"
+    ], 
+    "url_not_noun": []
+}

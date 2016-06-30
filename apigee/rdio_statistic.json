@@ -1,0 +1,59 @@
+{
+    "host": "api.rdio.com", 
+    "basePath": "/1/", 
+    "total": 38, 
+    "methods": {
+        "post": {
+            "times": 38, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 38, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/?method=getAlbumsByUPC", 
+        "/?method=get", 
+        "/?method=removeFromPlaylist", 
+        "/?method=getTopCharts", 
+        "/?method=removeFromCollection", 
+        "/?method=setPlaylistCollaborating", 
+        "/?method=userFollowing", 
+        "/?method=getTracksByISRC", 
+        "/?method=getTracksInCollection", 
+        "/?method=addFriend", 
+        "/?method=getTracksForArtistInCollection", 
+        "/?method=getArtistsInCollection", 
+        "/?method=getActivityStream", 
+        "/?method=currentUser", 
+        "/?method=getAlbumsInCollection", 
+        "/?method=getPlaybackToken", 
+        "/?method=setPlaylistCollaborationMode", 
+        "/?method=getHeavyRotation", 
+        "/?method=setPlaylistOrder", 
+        "/?method=deletePlaylist", 
+        "/?method=getObjectFromUrl", 
+        "/?method=getPlaylists", 
+        "/?method=searchSuggestions", 
+        "/?method=getTracksForAlbumInCollection", 
+        "/?method=addToCollection", 
+        "/?method=getObjectFromShortCode", 
+        "/?method=setPlaylistFields", 
+        "/?method=removeFriend", 
+        "/?method=addToPlaylist", 
+        "/?method=getAlbumsForArtist", 
+        "/?method=createPlaylist", 
+        "/?method=getTracksForArtist", 
+        "/?method=search", 
+        "/?method=userFollowers", 
+        "/?method=getAlbumsForArtistInCollection", 
+        "/?method=findUser", 
+        "/?method=setAvailableOffline"
+    ], 
+    "url_not_noun": [
+        "/?method=getNewReleases"
+    ]
+}

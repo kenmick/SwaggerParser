@@ -1,0 +1,21 @@
+{
+    "host": "boxcar.io", 
+    "basePath": "/devices/providers/%7Bprovider_key%7D/", 
+    "total": 1, 
+    "methods": {
+        "post": {
+            "times": 1, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 1, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [], 
+    "url_not_noun": [
+        "/notifications/subscribe"
+    ]
+}

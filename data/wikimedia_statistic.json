@@ -18,28 +18,21 @@
             "frequency": "0.111"
         }, 
         "2": {
-            "times": 1, 
-            "frequency": "0.037"
+            "times": 13, 
+            "frequency": "0.481"
         }, 
         "3": {
-            "times": 12, 
-            "frequency": "0.444"
+            "times": 8, 
+            "frequency": "0.296"
         }, 
         "4": {
-            "times": 4, 
-            "frequency": "0.148"
-        }, 
-        "5": {
             "times": 3, 
             "frequency": "0.111"
-        }, 
-        "6": {
-            "times": 4, 
-            "frequency": "0.148"
         }
     }, 
     "url_noun": [
         "/page/summary/{title}", 
+        "/page/mobile-sections-remaining/{title}", 
         "/media/math/check/{type}", 
         "/media", 
         "/page/title/", 
@@ -61,7 +54,6 @@
         "/page/"
     ], 
     "url_not_noun": [
-        "/page/mobile-sections-remaining/{title}", 
         "/transform/wikitext/to/html{/title}{/revision}", 
         "/transform/html/to/wikitext{/title}{/revision}", 
         "/transform/sections/to/wikitext/{title}/{revision}", 

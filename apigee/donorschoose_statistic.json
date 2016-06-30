@@ -1,0 +1,27 @@
+{
+    "host": "apisecure.donorschoose.org", 
+    "basePath": "/common/", 
+    "total": 3, 
+    "methods": {
+        "post": {
+            "times": 1, 
+            "frequency": "0.333"
+        }, 
+        "get": {
+            "times": 2, 
+            "frequency": "0.667"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 3, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/json_challenge.html", 
+        "/json_feed.html", 
+        "/json_api.html"
+    ], 
+    "url_not_noun": []
+}

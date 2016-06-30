@@ -47,7 +47,7 @@
                             "user_favorites"
                         ],
                         "default": "fresh_today",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Photo stream."
                     },
                     {
@@ -96,7 +96,7 @@
                             "comments_count",
                             "taken_at"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Sort photos in the specified order."
                     },
                     {
@@ -121,10 +121,10 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2",
-                            "3",
-                            "4"
+                            "Value_1",
+                            "Value_2",
+                            "Value_3",
+                            "Value_4"
                         ],
                         "default": "3",
                         "type": "integer",
@@ -139,7 +139,7 @@
                             "store_download",
                             "store_print"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Returns market infomation about the photo."
                     },
                     {
@@ -152,7 +152,7 @@
                             "favorited",
                             "purchased"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Returns state of the photo for the currently logged in user and authenticated request."
                     },
                     {
@@ -372,10 +372,10 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2",
-                            "3",
-                            "4"
+                            "Value_1",
+                            "Value_2",
+                            "Value_3",
+                            "Value_4"
                         ],
                         "default": "3",
                         "type": "integer",
@@ -387,8 +387,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "type": "integer",
                         "description": "Return comments to the photo in the response. Comments are returned in order of creation, 20 entries per page."
@@ -712,8 +712,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "0",
-                            "1"
+                            "Value_0",
+                            "Value_1"
                         ],
                         "default": "1",
                         "type": "integer",
@@ -901,8 +901,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "0",
-                            "1"
+                            "Value_0",
+                            "Value_1"
                         ],
                         "default": "0",
                         "type": "integer",
@@ -1226,18 +1226,11 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "popular",
-                            "upcoming",
-                            "editors",
-                            "fresh_today",
-                            "fresh_yesterday",
-                            "fresh_week",
-                            "user",
-                            "user_friends",
-                            "user_favorites"
+                            "fresh",
+                            "user"
                         ],
                         "default": "fresh_today",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Blogs (Story) stream to be retrieved. Default fresh."
                     },
                     {
@@ -1588,8 +1581,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "type": "integer",
                         "description": "Kind of the Collection to be created Recognized values: 1 - Portfolio Set (default), 2 - Profile Set."
@@ -1685,8 +1678,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "type": "integer",
                         "description": "Kind of the Collection to be created Recognized values: 1 - Portfolio Set (default), 2 - Profile Set."
@@ -1744,8 +1737,7 @@
     "definitions": {
         "feature": {
             "title": "feature",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "popular",
                 "upcoming",
@@ -1760,8 +1752,7 @@
         },
         "sort": {
             "title": "sort",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "created_at",
                 "rating",
@@ -1777,16 +1768,15 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "1",
-                "2",
-                "3",
-                "4"
+                "Value_1",
+                "Value_2",
+                "Value_3",
+                "Value_4"
             ]
         },
         "include_store": {
             "title": "include_store",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "store_download",
                 "store_print"
@@ -1794,8 +1784,7 @@
         },
         "include_states": {
             "title": "include_states",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "voted",
                 "favorited",
@@ -1807,8 +1796,8 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "1",
-                "2"
+                "Value_1",
+                "Value_2"
             ]
         },
         "vote": {
@@ -1816,26 +1805,16 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "0",
-                "1"
+                "Value_0",
+                "Value_1"
             ]
         },
-        "privacy": {
-            "title": "privacy",
-            "type": "integer",
-            "format": "int32",
+        "feature7": {
+            "title": "feature7",
+            "type": "string",
             "enum": [
-                "0",
-                "1"
-            ]
-        },
-        "kind": {
-            "title": "kind",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "1",
-                "2"
+                "fresh",
+                "user"
             ]
         }
     }

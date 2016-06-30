@@ -26,17 +26,18 @@
     }, 
     "paths": {
         "1": {
-            "times": 20, 
-            "frequency": "0.556"
+            "times": 21, 
+            "frequency": "0.583"
         }, 
         "2": {
-            "times": 16, 
-            "frequency": "0.444"
+            "times": 15, 
+            "frequency": "0.417"
         }
     }, 
     "url_noun": [
         "/liveBroadcasts/control", 
         "/videos/rate", 
+        "/comments/setModerationStatus", 
         "/liveBroadcasts/bind", 
         "/liveChat/bans", 
         "/liveBroadcasts/transition", 
@@ -71,7 +72,6 @@
         "/liveBroadcasts"
     ], 
     "url_not_noun": [
-        "/comments/setModerationStatus", 
         "/videos/getRating"
     ]
 }

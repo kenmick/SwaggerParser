@@ -14,16 +14,16 @@
     }, 
     "paths": {
         "1": {
-            "times": 1, 
-            "frequency": "0.010"
+            "times": 14, 
+            "frequency": "0.136"
         }, 
         "2": {
-            "times": 43, 
-            "frequency": "0.417"
+            "times": 88, 
+            "frequency": "0.854"
         }, 
         "3": {
-            "times": 59, 
-            "frequency": "0.573"
+            "times": 1, 
+            "frequency": "0.010"
         }
     }, 
     "url_noun": [
@@ -38,6 +38,7 @@
         "/lists/{LIST_ID}/unfollow", 
         "/users/{USER_ID}/friends", 
         "/checkins/{CHECKIN_ID}/addcomment", 
+        "/settings/all", 
         "/tips/{TIP_ID}/markdone", 
         "/venues/{VENUE_ID}/similar", 
         "/events/{EVENT_ID}", 
@@ -46,6 +47,7 @@
         "/users/{USER_ID}/venuehistory", 
         "/campaigns/list", 
         "/venuegroups/{GROUP_ID}", 
+        "/tips/{TIP_ID}/listed", 
         "/venues/{VENUE_ID}", 
         "/updates/marknotificationsread", 
         "/lists/{LIST_ID}/deleteitem", 
@@ -65,6 +67,7 @@
         "/venues/timeseries", 
         "/events/search", 
         "/tips/{TIP_ID}/unmark", 
+        "/tips/{TIP_ID}/done", 
         "/venues/suggestcompletion", 
         "/updates/{UPDATE_ID}", 
         "/tips/{TIP_ID}", 
@@ -89,8 +92,10 @@
         "/users/{USER_ID}/lists", 
         "/users/{USER_ID}/mayorships", 
         "/campaigns/{CAMPAIGN_ID}/start", 
+        "/venues/managed", 
         "/venues/{VENUE_ID}/events", 
         "/pages/{PAGE_ID}", 
+        "/venues/trending", 
         "/tips/{TIP_ID}/marktodo", 
         "/users/{USER_ID}/request", 
         "/settings/{SETTING_ID}/set", 
@@ -103,6 +108,7 @@
         "/users/{USER_ID}/unfriend", 
         "/venues/{VENUE_ID}/menu", 
         "/venuegroups/{GROUP_ID}/addvenue", 
+        "/venues/{VENUE_ID}/listed", 
         "/users/leaderboard", 
         "/specials/{SPECIAL_ID}", 
         "/settings/{SETTING_ID}"
@@ -112,25 +118,19 @@
         "/venuegroups/add", 
         "/venues/add", 
         "/users/{USER_ID}/approve", 
-        "/settings/all", 
         "/checkins/add", 
-        "/tips/{TIP_ID}/listed", 
         "/users/self/update", 
         "/venuegroups/{GROUP_ID}/delete", 
         "/lists/{LIST_ID}/follow", 
         "/tips/add", 
-        "/tips/{TIP_ID}/done", 
         "/users/{USER_ID}/deny", 
         "/campaigns/{CAMPAIGN_ID}/delete", 
-        "/venues/managed", 
-        "/venues/trending", 
         "/specials/{SPECIAL_ID}/retire", 
         "/specials/add", 
         "/venues/explore", 
         "/photos/add", 
         "/lists/add", 
         "/venues/{VENUE_ID}/edit", 
-        "/venues/{VENUE_ID}/listed", 
         "/lists/{LIST_ID}/update"
     ]
 }

@@ -1,0 +1,64 @@
+{
+    "host": "rubygems.org", 
+    "basePath": "/api/v1/", 
+    "total": 24, 
+    "methods": {
+        "put": {
+            "times": 1, 
+            "frequency": "0.042"
+        }, 
+        "post": {
+            "times": 4, 
+            "frequency": "0.167"
+        }, 
+        "delete": {
+            "times": 3, 
+            "frequency": "0.125"
+        }, 
+        "get": {
+            "times": 16, 
+            "frequency": "0.667"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 11, 
+            "frequency": "0.478"
+        }, 
+        "2": {
+            "times": 11, 
+            "frequency": "0.478"
+        }, 
+        "3": {
+            "times": 1, 
+            "frequency": "0.043"
+        }
+    }, 
+    "url_noun": [
+        "/gems", 
+        "/downloads/all.{format}", 
+        "/dependencies", 
+        "/downloads/{name}-{version}.{format}", 
+        "/gems/{name}/owners", 
+        "/search.{format}", 
+        "/web_hooks/fire", 
+        "/versions/{name}-{version}/downloads/search.{format}", 
+        "/downloads/top.{format}", 
+        "/gems/latest.{format}", 
+        "/web_hooks.{format}", 
+        "/gems/{name}/owners.{format}", 
+        "/web_hooks", 
+        "/versions/{name}.{format}", 
+        "/gems/{name}.{format}", 
+        "/gems/unyank", 
+        "/gems.{format}", 
+        "/gems/just_updated.{format}", 
+        "/versions/{name}-{version}/downloads.{format}", 
+        "/api_key.{format}", 
+        "/downloads.{format}"
+    ], 
+    "url_not_noun": [
+        "/gems/yank", 
+        "/web_hooks/remove"
+    ]
+}

@@ -80,7 +80,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -112,7 +112,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -200,7 +200,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -232,7 +232,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -304,7 +304,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -336,7 +336,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -515,7 +515,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -547,7 +547,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -619,7 +619,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -651,7 +651,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -723,7 +723,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -755,7 +755,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -889,7 +889,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -921,7 +921,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -1025,7 +1025,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -1057,7 +1057,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -1145,7 +1145,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -1177,7 +1177,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -1249,7 +1249,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -1281,7 +1281,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -1377,7 +1377,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -1409,7 +1409,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -1505,7 +1505,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -1537,7 +1537,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -1686,7 +1686,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -1718,7 +1718,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -1814,7 +1814,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -1846,7 +1846,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -2012,7 +2012,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -2044,7 +2044,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     }
                 ],
@@ -2193,7 +2193,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -2225,7 +2225,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -2289,7 +2289,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -2321,7 +2321,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -2393,7 +2393,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -2425,7 +2425,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -2495,11 +2495,7 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "all-time",
-                            "month"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "One of all-time or month. string"
                     }
                 ],
@@ -2534,11 +2530,7 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "all-time",
-                            "month"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "One of all-time or month. string"
                     }
                 ],
@@ -2602,7 +2594,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -2634,7 +2626,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -2706,7 +2698,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -2738,7 +2730,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -2826,7 +2818,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -2858,7 +2850,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -2957,7 +2949,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -2989,7 +2981,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -3069,7 +3061,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -3101,7 +3093,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -3173,7 +3165,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -3205,7 +3197,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -3301,7 +3293,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -3333,7 +3325,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -3429,7 +3421,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -3461,7 +3453,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -3557,7 +3549,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -3589,7 +3581,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -3685,7 +3677,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -3717,7 +3709,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -3858,7 +3850,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -3890,7 +3882,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -4191,7 +4183,7 @@
                             "asc"
                         ],
                         "default": "desc",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How the current sort should be ordered. one of desc (default), or asc"
                     },
                     {
@@ -4223,7 +4215,7 @@
                             "votes"
                         ],
                         "default": "activity",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How a collection should be sorted. one of activity (default), creation, or votes"
                     },
                     {
@@ -4249,8 +4241,7 @@
     "definitions": {
         "order": {
             "title": "order",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "desc",
                 "asc"
@@ -4258,21 +4249,11 @@
         },
         "sort": {
             "title": "sort",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "activity",
                 "creation",
                 "votes"
-            ]
-        },
-        "period": {
-            "title": "period",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "all-time",
-                "month"
             ]
         }
     }

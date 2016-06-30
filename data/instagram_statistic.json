@@ -17,21 +17,26 @@
         }
     }, 
     "paths": {
+        "1": {
+            "times": 4, 
+            "frequency": "0.174"
+        }, 
         "2": {
-            "times": 9, 
-            "frequency": "0.391"
+            "times": 12, 
+            "frequency": "0.522"
         }, 
         "3": {
-            "times": 8, 
-            "frequency": "0.348"
-        }, 
-        "4": {
             "times": 6, 
             "frequency": "0.261"
+        }, 
+        "4": {
+            "times": 1, 
+            "frequency": "0.043"
         }
     }, 
     "url_noun": [
         "/tags/{tag-name}", 
+        "/users/self/media/liked", 
         "/users/search", 
         "/tags/{tag-name}/media/recent", 
         "/media/shortcode/{shortcode}", 
@@ -40,21 +45,20 @@
         "/media/{media-id}/likes", 
         "/locations/{location-id}/media/recent", 
         "/locations/{location-id}", 
+        "/users/{user-id}/followed-by", 
         "/media/popular", 
         "/media/{media-id}", 
         "/locations/search", 
         "/geographies/{geo-id}/media/recent", 
         "/users/{user-id}", 
         "/users/{user-id}/media/recent", 
+        "/users/self/requested-by", 
         "/media/search", 
         "/tags/search", 
         "/users/{user-id}/relationship", 
         "/users/self/feed"
     ], 
     "url_not_noun": [
-        "/users/self/media/liked", 
-        "/users/{user-id}/follows", 
-        "/users/{user-id}/followed-by", 
-        "/users/self/requested-by"
+        "/users/{user-id}/follows"
     ]
 }

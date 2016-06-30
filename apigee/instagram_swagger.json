@@ -924,8 +924,7 @@
     "definitions": {
         "object": {
             "title": "object",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "all",
                 "user",

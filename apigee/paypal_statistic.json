@@ -1,0 +1,53 @@
+{
+    "host": "svcs.sandbox.paypal.com", 
+    "basePath": "/", 
+    "total": 32, 
+    "methods": {
+        "post": {
+            "times": 32, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 32, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/AdaptivePayments/Refund", 
+        "/AdaptivePayments/PreapprovalDetails", 
+        "/Invoice/MarkInvoiceAsPaid", 
+        "/AdaptivePayments/Preapproval", 
+        "/AdaptivePayments/SetPaymentOptions", 
+        "/Permissions/RequestPermissions", 
+        "/AdaptiveAccounts/SetFundingSourceConfirmed", 
+        "/AdaptivePayments/Pay", 
+        "/AdaptivePayments/PaymentDetails", 
+        "/Invoice/SearchInvoices"
+    ], 
+    "url_not_noun": [
+        "/Invoice/CancelInvoice", 
+        "/AdaptivePayments/GetShippingAddresses", 
+        "/AdaptiveAccounts/AddBankAccount", 
+        "/AdaptivePayments/ConvertCurrency", 
+        "/AdaptivePayments/GetFundingPlans", 
+        "/Invoice/UpdateInvoice", 
+        "/Permissions/GetPermissions", 
+        "/Permissions/GetBasicPersonalData", 
+        "/AdaptivePayments/ExecutePayment", 
+        "/Invoice/CreateAndSendInvoice", 
+        "/AdaptiveAccounts/GetVerifiedStatus", 
+        "/Invoice/CreateInvoice", 
+        "/Permissions/GetAccessToken", 
+        "/AdaptivePayments/GetPaymentOptions", 
+        "/Permissions/CancelPermissions", 
+        "/AdaptiveAccounts/GetUserAgreement", 
+        "/AdaptiveAccounts/AddPaymentCard", 
+        "/Invoice/SendInvoice", 
+        "/AdaptivePayments/CancelPreapproval", 
+        "/AdaptiveAccounts/CreateAccount", 
+        "/Permissions/GetAdvancedPersonalData", 
+        "/Invoice/GetInvoiceDetails"
+    ]
+}

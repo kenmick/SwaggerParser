@@ -1488,20 +1488,9 @@
         }
     },
     "definitions": {
-        "listtype": {
-            "title": "listtype",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "active",
-                "removed",
-                "do-not-mail"
-            ]
-        },
         "status": {
             "title": "status",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "DRAFT",
                 "RUNNING",

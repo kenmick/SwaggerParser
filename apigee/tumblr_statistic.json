@@ -1,0 +1,45 @@
+{
+    "host": "api.tumblr.com", 
+    "basePath": "/v2/", 
+    "total": 16, 
+    "methods": {
+        "post": {
+            "times": 6, 
+            "frequency": "0.375"
+        }, 
+        "get": {
+            "times": 10, 
+            "frequency": "0.625"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 10, 
+            "frequency": "0.625"
+        }, 
+        "3": {
+            "times": 6, 
+            "frequency": "0.375"
+        }
+    }, 
+    "url_noun": [
+        "/blog/{base-hostname}/post/reblog", 
+        "/blog/{base-hostname}/info", 
+        "/blog/{base-hostname}/post", 
+        "/blog/{base-hostname}/followers", 
+        "/blog/{base-hostname}/posts/draft", 
+        "/user/dashboard", 
+        "/user/unfollow", 
+        "/user/likes", 
+        "/user/following", 
+        "/blog/{base-hostname}/posts/queue", 
+        "/blog/{base-hostname}/posts/{type}", 
+        "/blog/{base-hostname}/avatar/{size}", 
+        "/blog/{base-hostname}/posts/submission"
+    ], 
+    "url_not_noun": [
+        "/blog/{base-hostname}/post/edit", 
+        "/blog/{base-hostname}/post/delete", 
+        "/user/follow"
+    ]
+}

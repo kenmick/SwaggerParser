@@ -44,16 +44,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "post",
-                            "user",
-                            "page",
-                            "event",
-                            "group",
-                            "checkin"
-                        ],
                         "default": "post",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Supports these types of objects: All public posts (post), people (user), pages (page), events\n                                                        (event), groups (group), check-ins (checkin)"
                     }
                 ],
@@ -310,15 +302,12 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "post",
-                            "user",
-                            "page",
-                            "event",
-                            "group",
-                            "checkin"
+                            "square",
+                            "small",
+                            "large"
                         ],
                         "default": "small",
-                        "type": "integer",
+                        "type": "string",
                         "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                                                        variable height)"
                     },
                     {
@@ -651,15 +640,12 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "post",
-                            "user",
-                            "page",
-                            "event",
-                            "group",
-                            "checkin"
+                            "square",
+                            "small",
+                            "large"
                         ],
                         "default": "small",
-                        "type": "integer",
+                        "type": "string",
                         "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                                                        variable height)"
                     },
                     {
@@ -1804,15 +1790,12 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "post",
-                            "user",
-                            "page",
-                            "event",
-                            "group",
-                            "checkin"
+                            "square",
+                            "small",
+                            "large"
                         ],
                         "default": "small",
-                        "type": "integer",
+                        "type": "string",
                         "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                                                        variable height)"
                     },
                     {
@@ -2108,15 +2091,12 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "post",
-                            "user",
-                            "page",
-                            "event",
-                            "group",
-                            "checkin"
+                            "square",
+                            "small",
+                            "large"
                         ],
                         "default": "small",
-                        "type": "integer",
+                        "type": "string",
                         "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                                                        variable height)"
                     },
                     {
@@ -2605,15 +2585,12 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "post",
-                            "user",
-                            "page",
-                            "event",
-                            "group",
-                            "checkin"
+                            "square",
+                            "small",
+                            "large"
                         ],
                         "default": "small",
-                        "type": "integer",
+                        "type": "string",
                         "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                                                        variable height)"
                     },
                     {
@@ -2681,7 +2658,7 @@
                             "USERS_CAN_TAG_PHOTOS",
                             "USERS_CAN_POST_VIDEOS"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Which single setting to update: USERS_CAN_POST, USERS_CAN_POST_PHOTOS, USERS_CAN_TAG_PHOTOS, USERS_CAN_POST_VIDEOS"
                     },
                     {
@@ -3245,7 +3222,7 @@
                             "SECRET"
                         ],
                         "default": "OPEN",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Event privacy setting"
                     },
                     {
@@ -4748,7 +4725,7 @@
                             "SECRET"
                         ],
                         "default": "OPEN",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Event privacy setting"
                     },
                     {
@@ -5561,15 +5538,12 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "post",
-                            "user",
-                            "page",
-                            "event",
-                            "group",
-                            "checkin"
+                            "square",
+                            "small",
+                            "large"
                         ],
                         "default": "small",
-                        "type": "integer",
+                        "type": "string",
                         "description": "One of square (50x50), small (50 pixels wide, variable height), and large (about 200 pixels wide,\n                                                        variable height)"
                     },
                     {
@@ -6260,21 +6234,16 @@
     "definitions": {
         "type": {
             "title": "type",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
-                "post",
-                "user",
-                "page",
-                "event",
-                "group",
-                "checkin"
+                "square",
+                "small",
+                "large"
             ]
         },
         "object": {
             "title": "object",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "user",
                 "permissions",
@@ -6283,8 +6252,7 @@
         },
         "setting": {
             "title": "setting",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "USERS_CAN_POST",
                 "USERS_CAN_POST_PHOTOS",
@@ -6294,8 +6262,7 @@
         },
         "privacy_type": {
             "title": "privacy_type",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "OPEN",
                 "CLOSED",

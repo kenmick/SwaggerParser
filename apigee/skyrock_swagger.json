@@ -40,7 +40,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -72,7 +72,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -121,7 +121,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -188,7 +188,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -238,7 +238,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -288,7 +288,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -337,7 +337,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -369,7 +369,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -401,7 +401,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -433,7 +433,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -465,7 +465,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -497,7 +497,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -529,7 +529,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -561,7 +561,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -611,7 +611,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -643,7 +643,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -675,7 +675,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -707,7 +707,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -739,7 +739,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -788,7 +788,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -818,7 +818,7 @@
                             "bbcode"
                         ],
                         "default": "html",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Defines which format to output, for specific rich text fields. Possible values: 'html' (default), 'bbcode'."
                     }
                 ],
@@ -850,7 +850,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -882,7 +882,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -923,7 +923,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -972,7 +972,7 @@
                             "bbcode"
                         ],
                         "default": "html",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Defines which format to output, for specific rich text fields. Possible values: 'html' (default), 'bbcode'."
                     }
                 ],
@@ -1004,7 +1004,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -1036,7 +1036,7 @@
                             "bbcode"
                         ],
                         "default": "html",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Defines which format to output, for specific rich text fields. Possible values: 'html' (default), 'bbcode'."
                     }
                 ],
@@ -1068,7 +1068,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -1100,7 +1100,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -1139,7 +1139,7 @@
                             "bbcode"
                         ],
                         "default": "html",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Defines which format to output, for specific rich text fields. Possible values: 'html' (default), 'bbcode'."
                     }
                 ],
@@ -1171,7 +1171,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -1203,7 +1203,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -1235,7 +1235,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -1293,7 +1293,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -1325,7 +1325,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -1357,7 +1357,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -1424,7 +1424,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -1491,7 +1491,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -1523,7 +1523,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -1581,7 +1581,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -1611,7 +1611,7 @@
                             "bbcode"
                         ],
                         "default": "html",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Defines which format to output, for specific rich text fields. Possible values: 'html' (default), 'bbcode'."
                     }
                 ],
@@ -1643,7 +1643,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -1675,7 +1675,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -1707,7 +1707,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -1756,7 +1756,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -1788,7 +1788,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -1820,7 +1820,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -1852,7 +1852,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -1910,7 +1910,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -1960,7 +1960,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -1992,7 +1992,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2024,7 +2024,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2056,7 +2056,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2088,7 +2088,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -2133,7 +2133,7 @@
                             "show_videos_page",
                             "allow_comments"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Property name. Possible values: gender, gender_preference, looks_for, status, town, country, department, occupation, place, personality, smoker, hair_color, eye_color, height, weight, block_friends, block_honors, block_groups, block_gifts, show_visits_counter, show_comments_counter, show_kiffs_counter, show_my_websites, show_mood, display_policy, allow_share, allow_facebook_like, allow_votes, allow_kiffs, default_page, show_me_page, show_news_page, show_photos_page, show_videos_page, allow_comments."
                     }
                 ],
@@ -2165,7 +2165,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2197,7 +2197,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -2246,7 +2246,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2278,7 +2278,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -2327,7 +2327,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -2376,7 +2376,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2408,7 +2408,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2440,7 +2440,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2472,7 +2472,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2504,7 +2504,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -2517,7 +2517,7 @@
                             "friends"
                         ],
                         "default": "own",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Events category. Possible values: own (display own events), friends (display friends' events)."
                     }
                 ],
@@ -2549,7 +2549,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2581,7 +2581,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2613,7 +2613,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2645,7 +2645,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -2658,7 +2658,7 @@
                             "unread"
                         ],
                         "default": "all",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Thread selection filter (all/unread)."
                     },
                     {
@@ -2699,7 +2699,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -2749,7 +2749,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2781,7 +2781,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2813,7 +2813,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2845,7 +2845,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2877,7 +2877,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2909,7 +2909,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -2927,8 +2927,7 @@
     "definitions": {
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "json",
                 "xml"
@@ -2936,8 +2935,7 @@
         },
         "output_format": {
             "title": "output_format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "html",
                 "bbcode"
@@ -2945,8 +2943,7 @@
         },
         "property": {
             "title": "property",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "gender",
                 "gender_preference",
@@ -2987,8 +2984,7 @@
         },
         "events_category": {
             "title": "events_category",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "own",
                 "friends"
@@ -2996,8 +2992,7 @@
         },
         "filter": {
             "title": "filter",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "all",
                 "unread"

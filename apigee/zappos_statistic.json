@@ -1,0 +1,48 @@
+{
+    "host": "api.zappos.com", 
+    "basePath": "/", 
+    "total": 20, 
+    "methods": {
+        "get": {
+            "times": 20, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 10, 
+            "frequency": "0.500"
+        }, 
+        "2": {
+            "times": 5, 
+            "frequency": "0.250"
+        }, 
+        "3": {
+            "times": 5, 
+            "frequency": "0.250"
+        }
+    }, 
+    "url_noun": [
+        "/Search?term={term}", 
+        "/Review?productId={productid}", 
+        "/Search?list=facetFields", 
+        "/Statistics/type/topStyles", 
+        "/CoreValue", 
+        "/Search/term/{search_term}?filters={\"{Facet_Field}\":[\"{Facet_Value}\"]}", 
+        "/Search/Similarity?type=visualSearch&limit={limit}&styleId={styleId}&emphasis={options}", 
+        "/Image/list/recipes", 
+        "/AutoComplete?term={term}", 
+        "/Image?styleId=[\"{styleId}\"]", 
+        "/Search/term/includes=[\"facets\"]&facets=[\"{facetField}\",\"{facetField}\"]", 
+        "/Statistics/type/latestStyles", 
+        "/Brand/{id}", 
+        "/CoreValue/random", 
+        "/Image?productId={productId}", 
+        "/Search/term/{search_term}?includes=[\"facets\"]", 
+        "/Search/Similarity?type=moreLikeThis&limit={limit}&styleId={styleId}&emphasis={options}", 
+        "/Statistics/type/topStyles?location={\"{key}\":\"{value}\"}", 
+        "/CoreValue/{id}", 
+        "/Product?id=[\"{id1}\",\"{id2}\"]"
+    ], 
+    "url_not_noun": []
+}

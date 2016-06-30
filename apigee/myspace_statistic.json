@@ -1,0 +1,79 @@
+{
+    "host": "api.myspace.com", 
+    "basePath": "/", 
+    "total": 52, 
+    "methods": {
+        "put": {
+            "times": 6, 
+            "frequency": "0.115"
+        }, 
+        "post": {
+            "times": 9, 
+            "frequency": "0.173"
+        }, 
+        "delete": {
+            "times": 3, 
+            "frequency": "0.058"
+        }, 
+        "get": {
+            "times": 34, 
+            "frequency": "0.654"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 8, 
+            "frequency": "0.211"
+        }, 
+        "2": {
+            "times": 25, 
+            "frequency": "0.658"
+        }, 
+        "3": {
+            "times": 5, 
+            "frequency": "0.132"
+        }
+    }, 
+    "url_noun": [
+        "/stream/subscription", 
+        "/opensearch/videos", 
+        "/stream/subscription/{subscriptionId}", 
+        "/opensearch/people", 
+        "/opensearch/images", 
+        "/stream/subscription/@all"
+    ], 
+    "url_not_noun": [
+        "/1.0/activities/{personId}/{selector}", 
+        "/1.0/mediaItems/{personId}/@self/{albumId}", 
+        "/1.0/statusmoodcomments/{personId}/@self/{statusId}", 
+        "/1.0/activities/{personId}/{selector}/{appId}", 
+        "/1.0/activities/{personId}/@self", 
+        "/1.0/profilecomments/{personId}/@self", 
+        "/1.0/mediaItems/{personId}/@videos/@supportedcategories/{categoryId}", 
+        "/1.0/people/{personId}/{selector}/{friendId}", 
+        "/1.0/people/@supportedFields", 
+        "/1.0/mediaItems/{personId}/@videos/@supportedcategories", 
+        "/1.0/groups/{personId}", 
+        "/1.0/mediaItems/{personId}/@self/{albumId}/{mediaItemId}", 
+        "/1.0/statusmood/{personId}/{selector}/{friendId}/history", 
+        "/1.0/activities/@supportedVerbs", 
+        "/1.0/statusmood/{personId}/{selector}/history", 
+        "/1.0/notifications/{personId}/@self", 
+        "/1.0/albums/{personId}/@self", 
+        "/1.0/statusmood/{personId}/@supportedMood/{moodId}", 
+        "/1.0/activities/@supportedFields", 
+        "/1.0/appdata/{personId}/{selector}/{appId}", 
+        "/1.0/mediaItems/{personId}/@self/@videos/{mediaItemId}", 
+        "/1.0/activities/@supportedObjectTypes", 
+        "/1.0/mediaItems/{personId}/@self/@videos", 
+        "/1.0/albums/{personId}/@self/{albumId}", 
+        "/1.0/statusmood/{personId}/@supportedMood", 
+        "/1.0/groups/@supportedFields", 
+        "/1.0/statusmood/{personId}/{selector}", 
+        "/1.0/people/{personId}/{selector}", 
+        "/1.0/mediaItems/@supportedFields", 
+        "/1.0/statusmood/{personId}/{selector}/{friendId}", 
+        "/1.0/mediaitemcomments/{personId}/@self/{albumId}/{mediaItemId}", 
+        "/1.0/albums/@supportedFields"
+    ]
+}

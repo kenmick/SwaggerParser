@@ -53,15 +53,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     }
                 ],
@@ -88,15 +81,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     }
                 ],
@@ -123,15 +109,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     },
                     {
@@ -306,7 +285,7 @@
                             "Vote",
                             "WebLink"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "A Salesforce's object."
                     }
                 ],
@@ -331,15 +310,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     },
                     {
@@ -514,7 +486,7 @@
                             "Vote",
                             "WebLink"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "A Salesforce's object."
                     }
                 ],
@@ -541,15 +513,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     },
                     {
@@ -724,7 +689,7 @@
                             "Vote",
                             "WebLink"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "A Salesforce's object."
                     }
                 ],
@@ -759,15 +724,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     },
                     {
@@ -942,7 +900,7 @@
                             "Vote",
                             "WebLink"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "A Salesforce's object."
                     },
                     {
@@ -975,15 +933,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     },
                     {
@@ -1158,7 +1109,7 @@
                             "Vote",
                             "WebLink"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "A Salesforce's object."
                     },
                     {
@@ -1198,15 +1149,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     },
                     {
@@ -1381,7 +1325,7 @@
                             "Vote",
                             "WebLink"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "A Salesforce's object."
                     },
                     {
@@ -1424,15 +1368,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     },
                     {
@@ -1465,15 +1402,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     },
                     {
@@ -1506,15 +1436,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     },
                     {
@@ -1546,15 +1469,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     },
                     {
@@ -1590,15 +1506,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     },
                     {
@@ -1633,15 +1542,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "v20.0",
-                            "v21.0",
-                            "v22.0",
-                            "v23.0",
-                            "v24.0"
-                        ],
                         "default": "v24.0",
-                        "type": "integer",
+                        "type": "object",
                         "description": "An API version."
                     },
                     {
@@ -1666,22 +1568,9 @@
         }
     },
     "definitions": {
-        "version": {
-            "title": "version",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "v20.0",
-                "v21.0",
-                "v22.0",
-                "v23.0",
-                "v24.0"
-            ]
-        },
         "sobject": {
             "title": "sobject",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "Account",
                 "AccountContactRole",

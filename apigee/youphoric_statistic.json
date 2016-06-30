@@ -1,0 +1,26 @@
+{
+    "host": "youphoriclabs.com", 
+    "basePath": "/sms/", 
+    "total": 2, 
+    "methods": {
+        "post": {
+            "times": 1, 
+            "frequency": "0.500"
+        }, 
+        "get": {
+            "times": 1, 
+            "frequency": "0.500"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 2, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/mt.php?", 
+        "/register.php?"
+    ], 
+    "url_not_noun": []
+}

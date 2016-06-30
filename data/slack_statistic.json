@@ -15,8 +15,10 @@
         }
     }, 
     "url_noun": [
+        "/groups.setTopic", 
         "/groups.list", 
         "/files.info", 
+        "/channels.setPurpose", 
         "/channels.history", 
         "/im.mark", 
         "/emoji.list", 
@@ -24,27 +26,25 @@
         "/groups.history", 
         "/search.messages", 
         "/stars.list", 
+        "/channels.setTopic", 
         "/channels.info", 
         "/im.history", 
         "/im.list", 
         "/search.files", 
         "/users.list", 
         "/channels.list", 
+        "/groups.setPurpose", 
+        "/search.all", 
         "/chat.postMessage"
     ], 
     "url_not_noun": [
         "/chat.delete", 
         "/channels.mark", 
-        "/groups.setTopic", 
         "/chat.update", 
         "/groups.mark", 
-        "/channels.setPurpose", 
         "/files.upload", 
-        "/channels.setTopic", 
         "/channels.leave", 
         "/channels.join", 
-        "/groups.setPurpose", 
-        "/channels.invite", 
-        "/search.all"
+        "/channels.invite"
     ]
 }

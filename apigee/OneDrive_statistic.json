@@ -1,0 +1,76 @@
+{
+    "host": "api.onedrive.com", 
+    "basePath": "/", 
+    "total": 37, 
+    "methods": {
+        "put": {
+            "times": 2, 
+            "frequency": "0.054"
+        }, 
+        "post": {
+            "times": 10, 
+            "frequency": "0.270"
+        }, 
+        "delete": {
+            "times": 3, 
+            "frequency": "0.081"
+        }, 
+        "get": {
+            "times": 22, 
+            "frequency": "0.595"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 4, 
+            "frequency": "0.129"
+        }, 
+        "2": {
+            "times": 15, 
+            "frequency": "0.484"
+        }, 
+        "3": {
+            "times": 11, 
+            "frequency": "0.355"
+        }, 
+        "4": {
+            "times": 1, 
+            "frequency": "0.032"
+        }
+    }, 
+    "url_noun": [
+        "/up/{upload-fragment}"
+    ], 
+    "url_not_noun": [
+        "/v1.0/drive/items/{item-id}/thumbnails", 
+        "/v1.0/drive/{item-path}:/action.copy", 
+        "/v1.0/drive/{parent-item}/children", 
+        "/v1.0/drive/", 
+        "/v1.0/drive/{item-path}:/view.delta", 
+        "/v1.0/drive/{item-path}:/action.createLink", 
+        "/v1.0/drive/items/{item-id}", 
+        "/v1.0/drive/items/{item-id}/view.search", 
+        "/v1.0/drive/{item-path}:/thumbnails/{thumbnail-set-index}/{size}", 
+        "/v1.0/drive/{item-path}:/children", 
+        "/v1.0/drive/items/{item-id}/action.createLink", 
+        "/v1.0/drive/special/{special-folder-name}/children", 
+        "/v1.0/drive/{parent-path}:/{filename}:/content", 
+        "/v1.0/drive/special/{special-folder-name}", 
+        "/v1.0/drives/{drive-id}", 
+        "/v1.0/drive/items/{item-id}/view.delta", 
+        "/v1.0/drive/{item-path}:/view.search", 
+        "/v1.0/drive/{item-path}:/thumbnails/{thumbnail-set-index}/{size}/content", 
+        "/v1.0/drive/items/{item-id}/thumbnails/{thumbnail-set-index}/{size}", 
+        "/v1.0/drive/items/{item-id}/content", 
+        "/v1.0/drive/items/{item-id}/children", 
+        "/v1.0/drive/{item-path}:/thumbnails", 
+        "/v1.0/monitor/{location}", 
+        "/v1.0/drive/{parent-path}:/{file-name}:/upload.createSession", 
+        "/v1.0/drive/items/{parent-id}/children", 
+        "/v1.0/drive/items/{item-id}/action.copy", 
+        "/v1.0/drive/{parent-path}/children", 
+        "/v1.0/drive/items/{item-id}/thumbnails/{thumbnail-set-index}/{size}/content", 
+        "/v1.0/drive/{item-path}:/content", 
+        "/v1.0/drive/{item-path}"
+    ]
+}

@@ -28,11 +28,13 @@ with open(FILENAME) as json_data:
 
 # get attributes from swagger file
 host = swagger['host']
-basePath = swagger['basePath']
+basePath = ''
+if 'basePath' in swagger:
+    basePath = swagger['basePath']
 paths = [path for path in swagger['paths']]
 path_lengths = []
 for path in paths:
-    path_length = len(path.split('/')) - 1
+    path_length = len(re.sub('/?[\[{].*?[\]}]', '', path).split('/')) - 1
     # if path starts with version info, length should minus 1
     if re.match('^/[v]?[0-9]', path):
         path_length -= 1
@@ -44,14 +46,14 @@ fd_method = nltk.FreqDist(methods)
 fd_path_length = nltk.FreqDist(path_lengths)
 
 # part-of-speech judgement
-# home_path = '/home/pyx/Desktop/stanford-postagger-full-2015-12-09'
-home_path = '/Users/kenmick/Desktop/stanford-postagger-full-2015-12-09'
+home_path = '/home/pyx/Desktop/stanford-postagger-full-2015-12-09'
+# home_path = '/Users/kenmick/Desktop/stanford-postagger-full-2015-12-09'
 st = StanfordPOSTagger(home_path + '/models/english-left3words-distsim.tagger',
-                       home_path + '/stanford-postagger.jar')
+        home_path + '/stanford-postagger.jar')
 
 url_noun = []
 url_not_noun = []
-pos = ['NN', 'NNS', 'IN', 'JJ', 'JJS', 'RB', 'TO', 'PRP', 'PRP$', 'NNP', 'NNPS']
+pos = ['NN', 'NNS', 'IN', 'JJ', 'JJS', 'RB', 'TO', 'PRP', 'PRP$', 'NNP', 'NNPS', 'DT', 'VBG', 'VBN', 'VBD']
 count = 1
 
 for path in paths:

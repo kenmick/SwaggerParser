@@ -323,7 +323,7 @@
                             "json",
                             "csv"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -1769,8 +1769,7 @@
     "definitions": {
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "json",
                 "csv"

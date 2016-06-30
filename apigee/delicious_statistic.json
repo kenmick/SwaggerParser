@@ -1,0 +1,48 @@
+{
+    "host": "api.del.icio.us", 
+    "basePath": "/v1/", 
+    "total": 15, 
+    "methods": {
+        "put": {
+            "times": 1, 
+            "frequency": "0.067"
+        }, 
+        "get": {
+            "times": 11, 
+            "frequency": "0.733"
+        }, 
+        "delete": {
+            "times": 3, 
+            "frequency": "0.200"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 12, 
+            "frequency": "0.800"
+        }, 
+        "3": {
+            "times": 3, 
+            "frequency": "0.200"
+        }
+    }, 
+    "url_noun": [
+        "/posts/recent", 
+        "/posts/all", 
+        "/posts/all?hashes", 
+        "/posts/dates", 
+        "/tags/bundles/all", 
+        "/tags/bundles/set"
+    ], 
+    "url_not_noun": [
+        "/tags/delete", 
+        "/tags/bundles/delete", 
+        "/posts/get", 
+        "/posts/add", 
+        "/tags/rename", 
+        "/posts/suggest", 
+        "/tags/get", 
+        "/posts/update", 
+        "/posts/delete"
+    ]
+}

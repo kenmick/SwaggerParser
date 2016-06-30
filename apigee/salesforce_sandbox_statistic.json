@@ -1,0 +1,52 @@
+{
+    "host": "na14.salesforce.com", 
+    "basePath": "/services/data/", 
+    "total": 15, 
+    "methods": {
+        "post": {
+            "times": 2, 
+            "frequency": "0.133"
+        }, 
+        "get": {
+            "times": 11, 
+            "frequency": "0.733"
+        }, 
+        "delete": {
+            "times": 2, 
+            "frequency": "0.133"
+        }
+    }, 
+    "paths": {
+        "0": {
+            "times": 1, 
+            "frequency": "0.091"
+        }, 
+        "1": {
+            "times": 8, 
+            "frequency": "0.727"
+        }, 
+        "2": {
+            "times": 1, 
+            "frequency": "0.091"
+        }, 
+        "3": {
+            "times": 1, 
+            "frequency": "0.091"
+        }
+    }, 
+    "url_noun": [
+        "/{version}/sobjects/User/{id}/password", 
+        "/{version}/sobjects", 
+        "/{version}", 
+        "/{version}/query", 
+        "/", 
+        "/{version}/sobjects/{sobject}/{id}/{blobField}", 
+        "/{version}/sobjects/{sobject}", 
+        "/{version}/sobjects/{sobject}/{id}", 
+        "/{version}/query/{id}", 
+        "/{version}/search"
+    ], 
+    "url_not_noun": [
+        "/{version}/sobjects/{sobject}/describe"
+    ]
+}

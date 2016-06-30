@@ -1,0 +1,29 @@
+{
+    "host": "api.search.live.net", 
+    "basePath": "/", 
+    "total": 9, 
+    "methods": {
+        "get": {
+            "times": 9, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "0": {
+            "times": 9, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/{format}.aspx?sources=web%26query={query}", 
+        "/{format}.aspx?sources=relatedsearch%26query={query}", 
+        "/{format}.aspx?sources=instantanswer%26query={query}", 
+        "/{format}.aspx?sources=spell%26query={query}", 
+        "/{format}.aspx?sources=ad%26query={query}", 
+        "/{format}.aspx?sources=news%26query={query}", 
+        "/{format}.aspx?sources=image%26query={query}", 
+        "/{format}.aspx?sources=web+image%26query={query}", 
+        "/{format}.aspx?sources=phonebook%26query={query}"
+    ], 
+    "url_not_noun": []
+}

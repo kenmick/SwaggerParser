@@ -40,7 +40,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -81,7 +81,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -158,7 +158,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -208,7 +208,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -249,7 +249,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -290,7 +290,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -340,7 +340,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -390,7 +390,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -440,7 +440,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -481,7 +481,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -522,7 +522,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -563,7 +563,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -604,7 +604,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -636,7 +636,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -666,7 +666,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -743,7 +743,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -820,7 +820,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -879,7 +879,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -938,7 +938,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -997,7 +997,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1074,7 +1074,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1112,7 +1112,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1150,7 +1150,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1191,7 +1191,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1229,7 +1229,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1267,7 +1267,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1305,7 +1305,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1364,7 +1364,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1423,7 +1423,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1482,7 +1482,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1541,7 +1541,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1600,7 +1600,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1638,7 +1638,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1676,7 +1676,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -1706,7 +1706,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1765,7 +1765,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -1795,7 +1795,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1836,7 +1836,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1895,7 +1895,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -1954,7 +1954,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -1986,7 +1986,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -2018,7 +2018,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -2050,7 +2050,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -2082,7 +2082,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -2114,7 +2114,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -2146,7 +2146,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2185,7 +2185,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2223,7 +2223,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -2255,7 +2255,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -2287,7 +2287,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2302,7 +2302,7 @@
                             "caloriesOut"
                         ],
                         "default": "steps",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2343,7 +2343,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2354,11 +2354,10 @@
                         "enum": [
                             "steps",
                             "distance",
-                            "floors",
-                            "caloriesOut"
+                            "floors"
                         ],
                         "default": "steps",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2399,7 +2398,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2438,7 +2437,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2476,7 +2475,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2517,7 +2516,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2567,7 +2566,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2605,7 +2604,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2673,7 +2672,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -2705,7 +2704,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -2735,7 +2734,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2776,7 +2775,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -2808,7 +2807,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -2840,7 +2839,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2881,7 +2880,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2893,7 +2892,7 @@
                             "Icecream"
                         ],
                         "default": "Icecream",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -2925,7 +2924,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -2966,7 +2965,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -2998,7 +2997,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -3030,7 +3029,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -3071,7 +3070,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -3088,12 +3087,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "true",
-                            "false"
-                        ],
                         "default": "true",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -3125,7 +3120,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -3133,15 +3128,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "/",
-                            "/activities/",
-                            "/foods/",
-                            "/body/",
-                            "/sleep/"
-                        ],
                         "default": "/",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -3180,7 +3168,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -3188,15 +3176,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "/",
-                            "/activities/",
-                            "/foods/",
-                            "/body/",
-                            "/sleep/"
-                        ],
                         "default": "/",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -3234,7 +3215,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     },
                     {
@@ -3242,15 +3223,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "/",
-                            "/activities/",
-                            "/foods/",
-                            "/body/",
-                            "/sleep/"
-                        ],
                         "default": "/",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Bring Fitbit health data into your apps, including user activities, sleep, heart, glucose and blood pressure information."
                     }
                 ],
@@ -3268,8 +3242,7 @@
     "definitions": {
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "xml",
                 "json"
@@ -3277,8 +3250,7 @@
         },
         "type": {
             "title": "type",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "steps",
                 "distance",
@@ -3286,33 +3258,20 @@
                 "caloriesOut"
             ]
         },
+        "type2": {
+            "title": "type2",
+            "type": "string",
+            "enum": [
+                "steps",
+                "distance",
+                "floors"
+            ]
+        },
         "query": {
             "title": "query",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "Icecream"
-            ]
-        },
-        "accept": {
-            "title": "accept",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "true",
-                "false"
-            ]
-        },
-        "collection-path": {
-            "title": "collection-path",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "/",
-                "/activities/",
-                "/foods/",
-                "/body/",
-                "/sleep/"
             ]
         }
     }

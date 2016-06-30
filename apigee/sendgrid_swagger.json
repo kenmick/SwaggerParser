@@ -40,7 +40,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -113,7 +113,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -145,7 +145,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -208,7 +208,7 @@
                             "hard",
                             "soft"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "The type of bounce to search for. Valid values: hard or soft."
                     },
                     {
@@ -248,7 +248,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -276,7 +276,7 @@
                             "hard",
                             "soft"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "The type of bounce to be removed. Valid values: hard or soft."
                     },
                     {
@@ -316,7 +316,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -344,7 +344,7 @@
                             "hard",
                             "soft"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "The type of bounce to search for. Valid values: hard or soft."
                     }
                 ],
@@ -376,7 +376,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -416,7 +416,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -448,7 +448,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -480,7 +480,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -512,7 +512,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -552,7 +552,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -592,7 +592,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -632,7 +632,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -724,7 +724,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -780,7 +780,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -828,7 +828,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -860,7 +860,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -916,7 +916,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -956,7 +956,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -988,7 +988,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1092,7 +1092,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1140,7 +1140,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1180,7 +1180,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1220,7 +1220,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1311,7 +1311,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1367,7 +1367,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1456,7 +1456,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -1488,7 +1488,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1579,7 +1579,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1635,7 +1635,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1675,7 +1675,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1740,7 +1740,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1797,7 +1797,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1854,7 +1854,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1894,7 +1894,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -1966,7 +1966,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2046,7 +2046,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2086,7 +2086,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2126,7 +2126,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2166,7 +2166,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2214,7 +2214,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2262,7 +2262,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2302,7 +2302,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2342,7 +2342,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2390,7 +2390,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2438,7 +2438,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2486,7 +2486,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2582,7 +2582,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2686,7 +2686,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2726,7 +2726,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2766,7 +2766,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2806,7 +2806,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2854,7 +2854,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2894,7 +2894,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2942,7 +2942,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -2999,7 +2999,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -3039,7 +3039,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -3103,7 +3103,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -3159,7 +3159,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -3191,7 +3191,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -3239,7 +3239,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -3296,7 +3296,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -3353,7 +3353,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -3410,7 +3410,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -3450,7 +3450,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -3464,7 +3464,7 @@
                             "taken",
                             "available"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Must be set to either: all, free, taken, available. Here is a brief explanation of each option available for the list parameter:\n- all: All IP addresses available to reseller, regardless of whether or not the IP is taken by a subuser\n- free: All free IP addresses for the reseller. If a subuser is using an IP, it will not show up on this list\n- taken: All taken IP addresses for the reseller. Only IP addresses that taken by subusers will show up on this list\n- available: All available IP addresses for the reseller including all free IP addresses. If a subuser is deactivatedand is assigned an IP, that IP will show up on this list since that IP address is not being used by anyone"
                     }
                 ],
@@ -3505,7 +3505,7 @@
                             "all",
                             "specify"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Must be either:\n- none: Remove all ips.\n- all: Apply all possible ips to subuser.\n- specify: Specify the ips to the subser. Must be a valid set of IPs (use the list call to determine valid IPs)."
                     },
                     {
@@ -3529,7 +3529,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -3586,7 +3586,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -3635,7 +3635,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -3675,7 +3675,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -3836,7 +3836,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -3972,7 +3972,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -4012,7 +4012,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -4052,7 +4052,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -4092,7 +4092,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -4149,7 +4149,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -4189,7 +4189,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -4270,7 +4270,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -4302,7 +4302,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -4494,7 +4494,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     },
                     {
@@ -4568,7 +4568,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -4640,7 +4640,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -4689,7 +4689,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -4738,7 +4738,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -4787,7 +4787,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -4819,7 +4819,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -4885,7 +4885,7 @@
                             "xml"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the response format. It can be either json for a JSON response or xml for an XML response."
                     }
                 ],
@@ -4903,8 +4903,7 @@
     "definitions": {
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "json",
                 "xml"
@@ -4912,8 +4911,7 @@
         },
         "type": {
             "title": "type",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "hard",
                 "soft"
@@ -4921,8 +4919,7 @@
         },
         "list": {
             "title": "list",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "all",
                 "free",
@@ -4932,8 +4929,7 @@
         },
         "set": {
             "title": "set",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "none",
                 "all",
@@ -4942,8 +4938,7 @@
         },
         "period": {
             "title": "period",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "daily",
                 "weekly",

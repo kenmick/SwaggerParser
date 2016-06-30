@@ -22,20 +22,16 @@
     }, 
     "paths": {
         "1": {
-            "times": 11, 
-            "frequency": "0.355"
+            "times": 17, 
+            "frequency": "0.548"
         }, 
         "2": {
-            "times": 11, 
-            "frequency": "0.355"
+            "times": 10, 
+            "frequency": "0.323"
         }, 
         "3": {
-            "times": 8, 
-            "frequency": "0.258"
-        }, 
-        "4": {
-            "times": 1, 
-            "frequency": "0.032"
+            "times": 4, 
+            "frequency": "0.129"
         }
     }, 
     "url_noun": [
@@ -56,6 +52,7 @@
         "/v3/asset-changes/change-sets/{change-set-id}", 
         "/v3/images", 
         "/v3/search/videos", 
+        "/v3/purchased-assets", 
         "/v3/asset-changes/channels", 
         "/v3/search/videos/creative", 
         "/v3/downloads/{id}", 
@@ -65,12 +62,10 @@
         "/v3/search/videos/editorial", 
         "/v3/search/images/editorial", 
         "/v3/videos/{id}", 
+        "/v3/purchased-images", 
         "/v3/events/{id}", 
         "/v3/products", 
         "/v3/videos"
     ], 
-    "url_not_noun": [
-        "/v3/purchased-assets", 
-        "/v3/purchased-images"
-    ]
+    "url_not_noun": []
 }

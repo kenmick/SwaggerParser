@@ -1,0 +1,29 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/freebase/v1/", 
+    "total": 5, 
+    "methods": {
+        "post": {
+            "times": 1, 
+            "frequency": "0.200"
+        }, 
+        "get": {
+            "times": 4, 
+            "frequency": "0.800"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 5, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/image{id}", 
+        "/search", 
+        "/mqlwrite", 
+        "/text{id}", 
+        "/mqlread"
+    ], 
+    "url_not_noun": []
+}

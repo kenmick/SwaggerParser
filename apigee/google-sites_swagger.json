@@ -887,7 +887,7 @@
                             "webattachment",
                             "template"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Specifies the kind(s) of content entries to return. These follow the type of page within Google Sites."
                     },
                     {
@@ -1065,7 +1065,7 @@
                             "webattachment",
                             "template"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Specifies the kind(s) of content entries to return. These follow the type of page within Google Sites."
                     },
                     {
@@ -1584,8 +1584,7 @@
     "definitions": {
         "kind": {
             "title": "kind",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "announcement",
                 "announcementspage",

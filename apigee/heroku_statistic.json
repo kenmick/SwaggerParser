@@ -1,0 +1,62 @@
+{
+    "host": "api.heroku.com", 
+    "basePath": "/", 
+    "total": 30, 
+    "methods": {
+        "put": {
+            "times": 3, 
+            "frequency": "0.100"
+        }, 
+        "post": {
+            "times": 8, 
+            "frequency": "0.267"
+        }, 
+        "delete": {
+            "times": 6, 
+            "frequency": "0.200"
+        }, 
+        "get": {
+            "times": 13, 
+            "frequency": "0.433"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 3, 
+            "frequency": "0.143"
+        }, 
+        "2": {
+            "times": 15, 
+            "frequency": "0.714"
+        }, 
+        "3": {
+            "times": 3, 
+            "frequency": "0.143"
+        }
+    }, 
+    "url_noun": [
+        "/apps/{app}/releases", 
+        "/addons", 
+        "/apps/{app}/ps", 
+        "/apps/{app}/addons", 
+        "/apps/{app}/logs", 
+        "/user/keys/{key}", 
+        "/apps/{app}/domains", 
+        "/apps/{app}/config_vars/{key}", 
+        "/apps", 
+        "/apps/{app}/collaborators", 
+        "/apps/{app}/domains/{domain_name}", 
+        "/apps/{app}/ps/scale", 
+        "/apps/{app}/collaborators/{email}", 
+        "/apps/{app}/addons/{addon}", 
+        "/apps/{app}/config_vars", 
+        "/apps/{app}/releases/{release}", 
+        "/apps/{name}", 
+        "/user/keys"
+    ], 
+    "url_not_noun": [
+        "/apps/{app}/stack", 
+        "/apps/{app}/ps/stop", 
+        "/apps/{app}/ps/restart"
+    ]
+}

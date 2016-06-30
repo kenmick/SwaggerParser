@@ -1010,7 +1010,7 @@
                             "TARGETING_TYPE_CODE",
                             "TARGETING_TYPE_NAME"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "items": {},
                         "description": "Optional dimensions on which to base the report.\nAvailable dimensions are:\n- DATE\n- WEEK\n- MONTH\n- AD_CLIENT_ID\n- PRODUCT_CODE\n- PRODUCT_NAME\n- AD_UNIT_ID\n- AD_UNIT_CODE\n- AD_UNIT_NAME\n- AD_UNIT_SIZE_CODE\n- AD_UNIT_SIZE_NAME\n- CUSTOM_CHANNEL_ID\n- CUSTOM_CHANNEL_CODE\n- CUSTOM_CHANNEL_NAME\n- URL_CHANNEL_ID\n- URL_CHANNEL_NAME\n- AD_FORMAT_CODE\n- AD_FORMAT_NAME\n- BRANDING_TYPE_CODE\n- BRANDING_TYPE_NAME\n- BUYER_NETWORK_ID\n- BUYER_NETWORK_NAME\n- BID_TYPE_CODE\n- BID_TYPE_NAME\n- DOMAIN_NAME\n- COUNTRY_CODE\n- COUNTRY_NAME\n- TARGETING_TYPE_CODE\n- TARGETING_TYPE_NAME"
                     },
@@ -1057,7 +1057,7 @@
                             "TOTAL_EARNINGS",
                             "COST_PER_CLICK"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "items": {},
                         "description": "Optional numeric columns to include in the report.\nAvailable metrics are:\n- PAGE_VIEWS\n- PAGE_VIEWS_CTR\n- PAGE_VIEWS_RPM\n- AD_REQUESTS\n- AD_REQUESTS_COVERAGE\n- AD_REQUESTS_CTR\n- AD_REQUESTS_RPM\n- MATCHED_AD_REQUESTS\n- MATCHED_AD_REQUESTS_CTR\n- MATCHED_AD_REQUESTS_RPM\n- INDIVIDUAL_AD_IMPRESSIONS\n- INDIVIDUAL_AD_IMPRESSIONS_CTR\n- INDIVIDUAL_AD_IMPRESSIONS_RPM\n- CLICKS\n- EARNINGS\n- TOTAL_EARNINGS\n- COST_PER_CLICK"
                     },
@@ -1114,7 +1114,7 @@
                             "TOTAL_EARNINGS",
                             "COST_PER_CLICK"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Optional name of a dimension or metric on which to sort the resulting report. Optionally prefixed with \"+\" to sort ascending or \"-\" to sort descending. If no prefix is specified, the column is sorted ascending:\n- DATE\n- WEEK\n- MONTH\n- AD_CLIENT_ID\n- PRODUCT_CODE\n- PRODUCT_NAME\n- AD_UNIT_ID\n- AD_UNIT_CODE\n- AD_UNIT_NAME\n- AD_UNIT_SIZE_CODE\n- AD_UNIT_SIZE_NAME\n- CUSTOM_CHANNEL_ID\n- CUSTOM_CHANNEL_CODE\n- CUSTOM_CHANNEL_NAME\n- URL_CHANNEL_ID\n- URL_CHANNEL_NAME\n- AD_FORMAT_CODE\n- AD_FORMAT_NAME\n- BRANDING_TYPE_CODE\n- BRANDING_TYPE_NAME\n- BUYER_NETWORK_ID\n- BUYER_NETWORK_NAME\n- BID_TYPE_CODE\n- BID_TYPE_NAME\n- DOMAIN_NAME\n- COUNTRY_CODE\n- COUNTRY_NAME\n- TARGETING_TYPE_CODE\n- TARGETING_TYPE_NAME\n- PAGE_VIEWS\n- PAGE_VIEWS_CTR\n- PAGE_VIEWS_RPM\n- AD_REQUESTS\n- AD_REQUESTS_COVERAGE\n- AD_REQUESTS_CTR\n- AD_REQUESTS_RPM\n- MATCHED_AD_REQUESTS\n- MATCHED_AD_REQUESTS_CTR\n- MATCHED_AD_REQUESTS_RPM\n- INDIVIDUAL_AD_IMPRESSIONS\n- INDIVIDUAL_AD_IMPRESSIONS_CTR\n- INDIVIDUAL_AD_IMPRESSIONS_RPM\n- CLICKS\n- EARNINGS\n- TOTAL_EARNINGS\n- COST_PER_CLICK"
                     },
                     {
@@ -1961,7 +1961,7 @@
                             "TARGETING_TYPE_CODE",
                             "TARGETING_TYPE_NAME"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "items": {},
                         "description": "Optional dimensions on which to base the report.\nAvailable dimensions are:\n- DATE\n- WEEK\n- MONTH\n- AD_CLIENT_ID\n- PRODUCT_CODE\n- PRODUCT_NAME\n- AD_UNIT_ID\n- AD_UNIT_CODE\n- AD_UNIT_NAME\n- AD_UNIT_SIZE_CODE\n- AD_UNIT_SIZE_NAME\n- CUSTOM_CHANNEL_ID\n- CUSTOM_CHANNEL_CODE\n- CUSTOM_CHANNEL_NAME\n- URL_CHANNEL_ID\n- URL_CHANNEL_NAME\n- AD_FORMAT_CODE\n- AD_FORMAT_NAME\n- BRANDING_TYPE_CODE\n- BRANDING_TYPE_NAME\n- BUYER_NETWORK_ID\n- BUYER_NETWORK_NAME\n- BID_TYPE_CODE\n- BID_TYPE_NAME\n- DOMAIN_NAME\n- COUNTRY_CODE\n- COUNTRY_NAME\n- TARGETING_TYPE_CODE\n- TARGETING_TYPE_NAME"
                     },
@@ -2008,7 +2008,7 @@
                             "TOTAL_EARNINGS",
                             "COST_PER_CLICK"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "items": {},
                         "description": "Optional numeric columns to include in the report.\nAvailable metrics are:\n- PAGE_VIEWS\n- PAGE_VIEWS_CTR\n- PAGE_VIEWS_RPM\n- AD_REQUESTS\n- AD_REQUESTS_COVERAGE\n- AD_REQUESTS_CTR\n- AD_REQUESTS_RPM\n- MATCHED_AD_REQUESTS\n- MATCHED_AD_REQUESTS_CTR\n- MATCHED_AD_REQUESTS_RPM\n- INDIVIDUAL_AD_IMPRESSIONS\n- INDIVIDUAL_AD_IMPRESSIONS_CTR\n- INDIVIDUAL_AD_IMPRESSIONS_RPM\n- CLICKS\n- EARNINGS\n- TOTAL_EARNINGS\n- COST_PER_CLICK"
                     },
@@ -2065,7 +2065,7 @@
                             "TOTAL_EARNINGS",
                             "COST_PER_CLICK"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Optional name of a dimension or metric on which to sort the resulting report. Optionally prefixed with \"+\" to sort ascending or \"-\" to sort descending. If no prefix is specified, the column is sorted ascending:\n- DATE\n- WEEK\n- MONTH\n- AD_CLIENT_ID\n- PRODUCT_CODE\n- PRODUCT_NAME\n- AD_UNIT_ID\n- AD_UNIT_CODE\n- AD_UNIT_NAME\n- AD_UNIT_SIZE_CODE\n- AD_UNIT_SIZE_NAME\n- CUSTOM_CHANNEL_ID\n- CUSTOM_CHANNEL_CODE\n- CUSTOM_CHANNEL_NAME\n- URL_CHANNEL_ID\n- URL_CHANNEL_NAME\n- AD_FORMAT_CODE\n- AD_FORMAT_NAME\n- BRANDING_TYPE_CODE\n- BRANDING_TYPE_NAME\n- BUYER_NETWORK_ID\n- BUYER_NETWORK_NAME\n- BID_TYPE_CODE\n- BID_TYPE_NAME\n- DOMAIN_NAME\n- COUNTRY_CODE\n- COUNTRY_NAME\n- TARGETING_TYPE_CODE\n- TARGETING_TYPE_NAME\n- PAGE_VIEWS\n- PAGE_VIEWS_CTR\n- PAGE_VIEWS_RPM\n- AD_REQUESTS\n- AD_REQUESTS_COVERAGE\n- AD_REQUESTS_CTR\n- AD_REQUESTS_RPM\n- MATCHED_AD_REQUESTS\n- MATCHED_AD_REQUESTS_CTR\n- MATCHED_AD_REQUESTS_RPM\n- INDIVIDUAL_AD_IMPRESSIONS\n- INDIVIDUAL_AD_IMPRESSIONS_CTR\n- INDIVIDUAL_AD_IMPRESSIONS_RPM\n- CLICKS\n- EARNINGS\n- TOTAL_EARNINGS\n- COST_PER_CLICK"
                     },
                     {
@@ -2143,8 +2143,7 @@
     "definitions": {
         "dimension": {
             "title": "dimension",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "DATE",
                 "WEEK",
@@ -2179,8 +2178,7 @@
         },
         "metric": {
             "title": "metric",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "PAGE_VIEWS",
                 "PAGE_VIEWS_CTR",
@@ -2203,8 +2201,7 @@
         },
         "sort": {
             "title": "sort",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "DATE",
                 "WEEK",

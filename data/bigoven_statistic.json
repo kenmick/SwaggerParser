@@ -22,20 +22,12 @@
     }, 
     "paths": {
         "1": {
-            "times": 4, 
-            "frequency": "0.129"
+            "times": 7, 
+            "frequency": "0.226"
         }, 
         "2": {
-            "times": 13, 
-            "frequency": "0.419"
-        }, 
-        "3": {
-            "times": 12, 
-            "frequency": "0.387"
-        }, 
-        "4": {
-            "times": 2, 
-            "frequency": "0.065"
+            "times": 24, 
+            "frequency": "0.774"
         }
     }, 
     "url_noun": [

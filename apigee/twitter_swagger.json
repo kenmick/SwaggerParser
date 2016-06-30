@@ -425,13 +425,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "false",
-                            "true",
-                            ""
-                        ],
                         "default": "false",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Whether or not to put a pin on the exact coordinates a tweet has been sent from."
                     },
                     {
@@ -632,7 +627,7 @@
                             "center",
                             "none"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Specifies whether the embedded Tweet should be left aligned, right aligned, or centered in the\n                                        page. Valid values are left, right, center, and none. Defaults to none, meaning no alignment styles\n                                        are specified for the Tweet."
                     },
                     {
@@ -4101,7 +4096,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -4181,10 +4176,11 @@
                         "x-is-map": false,
                         "enum": [
                             "json",
-                            "xml"
+                            "xml",
+                            "rss"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -4259,7 +4255,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -4326,7 +4322,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -4393,7 +4389,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -4457,10 +4453,11 @@
                         "x-is-map": false,
                         "enum": [
                             "json",
-                            "xml"
+                            "xml",
+                            "rss"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -4543,7 +4540,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -4610,7 +4607,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -4677,7 +4674,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -4735,7 +4732,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -4801,7 +4798,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -4857,7 +4854,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -4905,7 +4902,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -4953,7 +4950,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5001,7 +4998,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5052,13 +5049,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "false",
-                            "true",
-                            ""
-                        ],
                         "default": "false",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Whether or not to put a pin on the exact coordinates a tweet has been sent from."
                     },
                     {
@@ -5098,7 +5090,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5149,7 +5141,7 @@
                             "none"
                         ],
                         "default": "none",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Specifies whether the embedded Tweet should be left aligned, right aligned, or centered in the\n                                        page. Valid values are left, right, center, and none. Defaults to none, meaning no alignment styles\n                                        are specified for the Tweet."
                     },
                     {
@@ -5194,10 +5186,11 @@
                         "x-is-map": false,
                         "enum": [
                             "json",
-                            "xml"
+                            "xml",
+                            "rss"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5261,10 +5254,11 @@
                         "x-is-map": false,
                         "enum": [
                             "json",
-                            "xml"
+                            "xml",
+                            "rss"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5323,7 +5317,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5360,7 +5354,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5408,7 +5402,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5448,7 +5442,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5496,7 +5490,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5544,7 +5538,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -5576,7 +5570,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5624,7 +5618,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5672,7 +5666,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -5704,7 +5698,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5744,7 +5738,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -5773,7 +5767,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -5805,7 +5799,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5853,7 +5847,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5893,7 +5887,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5941,7 +5935,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -5989,7 +5983,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6046,7 +6040,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -6078,7 +6072,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6118,7 +6112,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6158,7 +6152,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6198,7 +6192,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6246,7 +6240,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6283,10 +6277,11 @@
                         "x-is-map": false,
                         "enum": [
                             "json",
-                            "xml"
+                            "xml",
+                            "rss"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6353,7 +6348,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6393,7 +6388,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6430,7 +6425,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6478,7 +6473,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6552,7 +6547,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6616,7 +6611,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6680,7 +6675,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6728,7 +6723,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6800,7 +6795,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6856,7 +6851,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6896,7 +6891,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6944,7 +6939,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -6993,7 +6988,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7057,7 +7052,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7113,7 +7108,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7177,7 +7172,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7225,7 +7220,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7289,7 +7284,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7337,7 +7332,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7393,7 +7388,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7441,7 +7436,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -7473,7 +7468,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7513,7 +7508,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -7545,7 +7540,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7594,7 +7589,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7634,7 +7629,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7683,7 +7678,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7731,7 +7726,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -7763,7 +7758,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -7793,7 +7788,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -7825,7 +7820,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -7857,7 +7852,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -7889,7 +7884,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -7921,7 +7916,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -7961,7 +7956,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8001,7 +7996,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8034,11 +8029,10 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json",
-                            "xml"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8086,7 +8080,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8130,11 +8124,10 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json",
-                            "xml"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8170,11 +8163,10 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json",
-                            "xml"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8213,7 +8205,7 @@
                             "admin",
                             "country"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "This is the minimal granularity of place types to return and must be one of: poi, neighborhood,\n                                        city, admin or country. If no granularity is provided for the request neighborhood is assumed.\n                                        Setting this to city, for example, will find places which have a type of city, admin or country."
                     },
                     {
@@ -8258,11 +8250,10 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json",
-                            "xml"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8277,7 +8268,7 @@
                             "admin",
                             "country"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "This is the minimal granularity of place types to return and must be one of: poi, neighborhood,\n                                        city, admin or country. If no granularity is provided for the request neighborhood is assumed.\n                                        Setting this to city, for example, will find places which have a type of city, admin or country."
                     },
                     {
@@ -8346,11 +8337,10 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json",
-                            "xml"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8426,11 +8416,10 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json",
-                            "xml"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8514,11 +8503,10 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json",
-                            "xml"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8562,11 +8550,10 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json",
-                            "xml"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8614,7 +8601,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8672,7 +8659,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8712,7 +8699,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8752,7 +8739,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8792,7 +8779,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -8829,7 +8816,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -9017,7 +9004,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -9049,7 +9036,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -9081,7 +9068,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -9113,7 +9100,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -9145,7 +9132,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -9174,10 +9161,11 @@
                         "x-is-map": false,
                         "enum": [
                             "json",
-                            "xml"
+                            "xml",
+                            "rss"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -9226,7 +9214,7 @@
                             "xml"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -9318,11 +9306,10 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "json",
-                            "xml"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     },
                     {
@@ -9385,7 +9372,7 @@
                             "popular"
                         ],
                         "default": "mixed",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Specifies what type of search results you would prefer to receive. The current default is \"mixed\".\n                                        Valid values include:\n                                        - mixed: Include both popular and real time results in the response.\n                                        - recent: Return only the most recent results in the response.\n                                        - popular: Return only the most popular results in the response."
                     },
                     {
@@ -9453,20 +9440,9 @@
         }
     },
     "definitions": {
-        "display_coordinates": {
-            "title": "display_coordinates",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "false",
-                "true",
-                ""
-            ]
-        },
         "align": {
             "title": "align",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "left",
                 "right",
@@ -9476,17 +9452,31 @@
         },
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "json",
                 "xml"
             ]
         },
+        "format2": {
+            "title": "format2",
+            "type": "string",
+            "enum": [
+                "json",
+                "xml",
+                "rss"
+            ]
+        },
+        "format3": {
+            "title": "format3",
+            "type": "string",
+            "enum": [
+                "json"
+            ]
+        },
         "granularity": {
             "title": "granularity",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "poi",
                 "neighborhood",
@@ -9497,8 +9487,7 @@
         },
         "result_type": {
             "title": "result_type",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "mixed",
                 "recent",

@@ -40,7 +40,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -78,7 +78,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -116,7 +116,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -174,7 +174,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -236,7 +236,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -276,7 +276,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -324,7 +324,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -378,7 +378,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -418,7 +418,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -464,7 +464,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -510,7 +510,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -556,7 +556,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -601,7 +601,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -721,7 +721,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -777,7 +777,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -823,7 +823,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -871,7 +871,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -949,7 +949,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -989,7 +989,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1035,7 +1035,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1081,7 +1081,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1127,7 +1127,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1172,7 +1172,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1226,7 +1226,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1266,7 +1266,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1322,7 +1322,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1378,7 +1378,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1426,7 +1426,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1474,7 +1474,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1510,11 +1510,12 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "xml",
-                            "json"
+                            "wav",
+                            "mp3",
+                            "xml"
                         ],
                         "default": "wav",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1556,11 +1557,12 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "xml",
-                            "json"
+                            "wav",
+                            "mp3",
+                            "xml"
                         ],
                         "default": "wav",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1605,7 +1607,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1651,7 +1653,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1696,7 +1698,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1752,7 +1754,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1816,7 +1818,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1864,7 +1866,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1920,7 +1922,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -1992,7 +1994,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -2046,7 +2048,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -2100,7 +2102,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -2153,7 +2155,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -2191,7 +2193,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -2229,7 +2231,7 @@
                             "json"
                         ],
                         "default": "xml",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Telephony platform that exposes SMS and voice capabilities."
                     },
                     {
@@ -2255,11 +2257,19 @@
     "definitions": {
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "xml",
                 "json"
+            ]
+        },
+        "format1": {
+            "title": "format1",
+            "type": "string",
+            "enum": [
+                "wav",
+                "mp3",
+                "xml"
             ]
         }
     }

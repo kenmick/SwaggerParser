@@ -988,7 +988,7 @@
                             "inactive"
                         ],
                         "default": "active",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Etsy's handmade marketplace and community into your apps."
                     },
                     {
@@ -1276,7 +1276,7 @@
                             "score"
                         ],
                         "default": "created",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Etsy's handmade marketplace and community into your apps."
                     },
                     {
@@ -1289,7 +1289,7 @@
                             "down"
                         ],
                         "default": "down",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Etsy's handmade marketplace and community into your apps."
                     },
                     {
@@ -1417,7 +1417,7 @@
                             "score"
                         ],
                         "default": "created",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Etsy's handmade marketplace and community into your apps."
                     },
                     {
@@ -1430,7 +1430,7 @@
                             "down"
                         ],
                         "default": "down",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Etsy's handmade marketplace and community into your apps."
                     },
                     {
@@ -3518,12 +3518,11 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "created",
-                            "price",
-                            "score"
+                            "hotness",
+                            "created"
                         ],
                         "default": "hotness",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Etsy's handmade marketplace and community into your apps."
                     },
                     {
@@ -3536,7 +3535,7 @@
                             "down"
                         ],
                         "default": "down",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Etsy's handmade marketplace and community into your apps."
                     },
                     {
@@ -3549,7 +3548,7 @@
                             "safe_and_mature"
                         ],
                         "default": "safe_only",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Etsy's handmade marketplace and community into your apps."
                     },
                     {
@@ -3562,7 +3561,7 @@
                             "medium"
                         ],
                         "default": "low",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Etsy's handmade marketplace and community into your apps."
                     },
                     {
@@ -3619,12 +3618,11 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "created",
-                            "price",
-                            "score"
+                            "hotness",
+                            "created"
                         ],
                         "default": "hotness",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Etsy's handmade marketplace and community into your apps."
                     },
                     {
@@ -3637,7 +3635,7 @@
                             "down"
                         ],
                         "default": "down",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Etsy's handmade marketplace and community into your apps."
                     },
                     {
@@ -3650,7 +3648,7 @@
                             "safe_and_mature"
                         ],
                         "default": "safe_only",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Etsy's handmade marketplace and community into your apps."
                     },
                     {
@@ -3663,7 +3661,7 @@
                             "medium"
                         ],
                         "default": "low",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Bring Etsy's handmade marketplace and community into your apps."
                     },
                     {
@@ -5082,8 +5080,7 @@
     "definitions": {
         "sort_on": {
             "title": "sort_on",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "created",
                 "price",
@@ -5092,8 +5089,7 @@
         },
         "sort_order": {
             "title": "sort_order",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "up",
                 "down"
@@ -5101,17 +5097,23 @@
         },
         "state": {
             "title": "state",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "active",
                 "inactive"
             ]
         },
+        "sort_on3": {
+            "title": "sort_on3",
+            "type": "string",
+            "enum": [
+                "hotness",
+                "created"
+            ]
+        },
         "maturity": {
             "title": "maturity",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "safe_only",
                 "safe_and_mature"
@@ -5119,8 +5121,7 @@
         },
         "detail_level": {
             "title": "detail_level",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "low",
                 "medium"

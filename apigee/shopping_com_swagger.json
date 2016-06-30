@@ -84,14 +84,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "store-name",
-                            "store-rating",
-                            "price",
-                            "relevance",
-                            "featured-store"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Set the method of sorting offers. The API will return offers ordered to maximize yield by default. If you would like to use a different type of ordering (e.g. the user requested to sort by price) for results containing only offers, use the offerSortType parameter to control the type of sorting, and the offerSortOrder to control the direction of sorting."
                     },
                     {
@@ -125,12 +118,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "review-date",
-                            "product-rating"
-                        ],
                         "default": "review-date",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Control how to sort product reviews listings. The API will return product reviews ordered by review date by default. If you would like to use a different type of ordering (e.g. the user requested to sort by rating) for product reviews, use the productReviewsSortType parameter to control the type of sorting, and the productReviewsSortOrder to control the direction of sorting."
                     },
                     {
@@ -185,42 +174,10 @@
     "definitions": {
         "hybridSortType": {
             "title": "hybridSortType",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "relevance",
                 "price"
-            ]
-        },
-        "productSortType": {
-            "title": "productSortType",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "relevance",
-                "product-rating",
-                "price"
-            ]
-        },
-        "offerSortType": {
-            "title": "offerSortType",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "store-name",
-                "store-rating",
-                "price",
-                "relevance",
-                "featured-store"
-            ]
-        },
-        "productReviewSortType": {
-            "title": "productReviewSortType",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "review-date",
-                "product-rating"
             ]
         }
     }

@@ -49,7 +49,7 @@
                             "core"
                         ],
                         "default": "basic",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Identifies the resource type for the response. The default value basic returns a base resource type that is valid across all methods; the resource type parameter is not needed to produce this response. To get a more detailed response set the resource type parameter to enhanced. To retrieve resources with Id's only, set the resource type parameter to core."
                     },
                     {
@@ -57,12 +57,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type."
                     }
                 ],
@@ -95,7 +91,7 @@
                             "core"
                         ],
                         "default": "basic",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Identifies the resource type for the response. The default value basic returns a base resource type that is valid across all methods; the resource type parameter is not needed to produce this response. To get a more detailed response set the resource type parameter to enhanced. To retrieve resources with Id's only, set the resource type parameter to core."
                     },
                     {
@@ -204,12 +200,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type."
                     }
                 ],
@@ -236,12 +228,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type."
                     }
                 ],
@@ -268,12 +256,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type."
                     }
                 ],
@@ -311,10 +295,12 @@
                         "enum": [
                             "basic",
                             "enhanced",
-                            "core"
+                            "core",
+                            "LifeStyle",
+                            "TargetReady"
                         ],
                         "default": "basic",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Identifies the resource type for the response. The default value basic returns a base resource type that is valid across all methods; the resource type parameter is not needed to produce this response. To get a more detailed response set the resource type parameter to enhanced. To retrieve resources with Id's only, set the resource type parameter to core. Additional ResourceTypes are Core, LifeStyle and TargetReady."
                     },
                     {
@@ -322,12 +308,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type."
                     }
                 ],
@@ -357,10 +339,12 @@
                         "enum": [
                             "basic",
                             "enhanced",
-                            "core"
+                            "core",
+                            "LifeStyle",
+                            "TargetReady"
                         ],
                         "default": "basic",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Identifies the resource type for the response. The default value basic returns a base resource type that is valid across all methods; the resource type parameter is not needed to produce this response. To get a more detailed response set the resource type parameter to enhanced. To retrieve resources with Id's only, set the resource type parameter to core. Additional ResourceTypes are Core, LifeStyle and TargetReady."
                     },
                     {
@@ -468,12 +452,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type."
                     }
                 ],
@@ -500,12 +480,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type."
                     }
                 ],
@@ -532,12 +508,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type."
                     }
                 ],
@@ -564,12 +536,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type."
                     }
                 ],
@@ -596,12 +564,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type."
                     }
                 ],
@@ -636,12 +600,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type."
                     }
                 ],
@@ -677,12 +637,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The content type."
                     }
                 ],
@@ -700,21 +656,22 @@
     "definitions": {
         "resourcetype": {
             "title": "resourcetype",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "basic",
                 "enhanced",
                 "core"
             ]
         },
-        "Content-Type": {
-            "title": "Content-Type",
-            "type": "integer",
-            "format": "int32",
+        "resourcetype1": {
+            "title": "resourcetype1",
+            "type": "string",
             "enum": [
-                "application/json",
-                "application/xml"
+                "basic",
+                "enhanced",
+                "core",
+                "LifeStyle",
+                "TargetReady"
             ]
         }
     }

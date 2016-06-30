@@ -1,0 +1,43 @@
+{
+    "host": "spamcheck.postmarkapp.com", 
+    "basePath": "/", 
+    "total": 11, 
+    "methods": {
+        "put": {
+            "times": 1, 
+            "frequency": "0.091"
+        }, 
+        "post": {
+            "times": 4, 
+            "frequency": "0.364"
+        }, 
+        "get": {
+            "times": 6, 
+            "frequency": "0.545"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 6, 
+            "frequency": "0.600"
+        }, 
+        "2": {
+            "times": 4, 
+            "frequency": "0.400"
+        }
+    }, 
+    "url_noun": [
+        "/deliverystats", 
+        "/server", 
+        "/filter", 
+        "/bounces/{bounceID}", 
+        "/bounces/{bounceID}/dump", 
+        "/email", 
+        "/email/batch", 
+        "/bounces/tags", 
+        "/bounces"
+    ], 
+    "url_not_noun": [
+        "/bounces/{bounceID}/activate"
+    ]
+}

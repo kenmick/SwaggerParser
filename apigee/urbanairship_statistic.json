@@ -1,0 +1,87 @@
+{
+    "host": "go.urbanairship.com", 
+    "basePath": "/api/", 
+    "total": 59, 
+    "methods": {
+        "put": {
+            "times": 9, 
+            "frequency": "0.153"
+        }, 
+        "post": {
+            "times": 19, 
+            "frequency": "0.322"
+        }, 
+        "delete": {
+            "times": 9, 
+            "frequency": "0.153"
+        }, 
+        "get": {
+            "times": 22, 
+            "frequency": "0.373"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 12, 
+            "frequency": "0.286"
+        }, 
+        "2": {
+            "times": 19, 
+            "frequency": "0.452"
+        }, 
+        "3": {
+            "times": 8, 
+            "frequency": "0.190"
+        }, 
+        "4": {
+            "times": 3, 
+            "frequency": "0.071"
+        }
+    }, 
+    "url_noun": [
+        "/user/{user_id}/messages/message/{message_id}/body", 
+        "/apids", 
+        "/user/{user_id}/messages", 
+        "/user/{user_id}/messages/unread", 
+        "/user/{user_id}/subscription_content", 
+        "/push/scheduled/alias/{alias}", 
+        "/device_tokens/{token}", 
+        "/push/scheduled/{notification}", 
+        "/user/{user_id}", 
+        "/push/scheduled", 
+        "/device_tokens", 
+        "/partner/apps", 
+        "/push/stats", 
+        "/user/{user_id}/subscriptions/{subscription_key}/purchase", 
+        "/device_tokens/{device_token}/tags", 
+        "/user/{user_id}/subscriptions/content/{content_id}/download", 
+        "/push/broadcast", 
+        "/tags/{tag}", 
+        "/device_pins/{pin}", 
+        "/app/content/{product_id}/download", 
+        "/apids/{apid}", 
+        "/user/{user_id}/messages/message/{message_id}", 
+        "/user/{user_id}/available_subscriptions", 
+        "/partner/apps/{app_id}", 
+        "/device_tokens/{device_token}/tags/{tag}", 
+        "/tags", 
+        "/device_tokens/count", 
+        "/push/batch", 
+        "/user", 
+        "/device_tokens/feedback", 
+        "/push", 
+        "/app/content", 
+        "/app/updates"
+    ], 
+    "url_not_noun": [
+        "/feeds", 
+        "/user/recover", 
+        "/user/recover/{id}", 
+        "/user/{user_id}/messages/message/{message_id}/read", 
+        "/airmail/send/broadcast", 
+        "/feeds/{feed_id}", 
+        "/user/{user_id}/messages/delete", 
+        "/airmail/send", 
+        "/user/{user_id}/creds/reset"
+    ]
+}

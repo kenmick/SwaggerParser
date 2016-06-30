@@ -1,0 +1,26 @@
+{
+    "host": "api.sandbox.nextcaller.com", 
+    "basePath": "/", 
+    "total": 2, 
+    "methods": {
+        "post": {
+            "times": 1, 
+            "frequency": "0.500"
+        }, 
+        "get": {
+            "times": 1, 
+            "frequency": "0.500"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 2, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/{version}/records/", 
+        "/{version}/users/{nextcaller_id}/?format={format}"
+    ], 
+    "url_not_noun": []
+}

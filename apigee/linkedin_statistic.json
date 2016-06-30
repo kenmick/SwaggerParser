@@ -1,0 +1,59 @@
+{
+    "host": "api.linkedin.com", 
+    "basePath": "/v1/", 
+    "total": 18, 
+    "methods": {
+        "post": {
+            "times": 3, 
+            "frequency": "0.167"
+        }, 
+        "get": {
+            "times": 15, 
+            "frequency": "0.833"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 3, 
+            "frequency": "0.167"
+        }, 
+        "2": {
+            "times": 9, 
+            "frequency": "0.500"
+        }, 
+        "3": {
+            "times": 3, 
+            "frequency": "0.167"
+        }, 
+        "4": {
+            "times": 2, 
+            "frequency": "0.111"
+        }, 
+        "5": {
+            "times": 1, 
+            "frequency": "0.056"
+        }
+    }, 
+    "url_noun": [
+        "/companies/{id}/updates?format=json", 
+        "/people/~/shares?format=json", 
+        "/companies/{id}?format=json", 
+        "/people/~?format=json", 
+        "/companies/{id}/shares?format=json", 
+        "/companies/{id}/updates/key={update-key}?format=json", 
+        "/companies/{id}/updates/key={update-key}/likes?format=json", 
+        "/companies/{id}:(id,name,ticker,description)?format=json", 
+        "/people/~:(id,num-connections,picture-url)?format=json", 
+        "/companies?format=json&is-company-admin=true", 
+        "/companies/{id}/company-statistics?format=json"
+    ], 
+    "url_not_noun": [
+        "/companies/{id}/historical-follow-statistics?format=json", 
+        "/companies/{id}/updates/key={update-key}/update-comments?format=json", 
+        "/companies/{id}/relation-to-viewer/is-company-share-enabled?format=json", 
+        "/companies/{id}/historical-status-update-statistics?format=json", 
+        "/companies/{id}/updates/key={update-key}/update-comments-as-company/", 
+        "/companies/{id}/is-company-share-enabled?format=json", 
+        "/companies/{id}/num-followers?format=json&seniorities=vp,d&jobFunc=it&geos=na.ca"
+    ]
+}

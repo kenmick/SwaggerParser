@@ -35,12 +35,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     }
                 ],
@@ -67,12 +63,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -107,12 +99,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -153,12 +141,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -199,12 +183,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -244,12 +224,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     }
                 ],
@@ -274,12 +250,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     }
                 ],
@@ -306,12 +278,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -344,12 +312,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -381,12 +345,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -421,12 +381,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -466,12 +422,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -504,12 +456,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -544,12 +492,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -589,12 +533,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -629,12 +569,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -674,12 +610,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     }
                 ],
@@ -704,12 +636,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     }
                 ],
@@ -736,12 +664,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -773,12 +697,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -855,12 +775,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -893,12 +809,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -949,12 +861,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -1005,12 +913,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -1045,12 +949,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -1101,12 +1001,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -1139,12 +1035,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -1187,12 +1079,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -1235,12 +1123,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -1273,12 +1157,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml"
-                        ],
                         "default": "application/json",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -1299,17 +1179,6 @@
                     }
                 }
             }
-        }
-    },
-    "definitions": {
-        "Accept": {
-            "title": "Accept",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "application/json",
-                "application/xml"
-            ]
         }
     }
 }

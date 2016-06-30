@@ -68,7 +68,7 @@
                             "mobile"
                         ],
                         "default": "desktop",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The analysis strategy to use."
                     },
                     {
@@ -111,8 +111,7 @@
     "definitions": {
         "strategy": {
             "title": "strategy",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "desktop",
                 "mobile"

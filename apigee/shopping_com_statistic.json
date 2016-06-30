@@ -1,0 +1,22 @@
+{
+    "host": "sandbox.api.shopping.com", 
+    "basePath": "/publisher/3.0/rest/", 
+    "total": 2, 
+    "methods": {
+        "get": {
+            "times": 2, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 2, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/CategoryTree", 
+        "/GeneralSearch"
+    ], 
+    "url_not_noun": []
+}

@@ -1,0 +1,41 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/prediction/v1.4/", 
+    "total": 6, 
+    "methods": {
+        "put": {
+            "times": 1, 
+            "frequency": "0.167"
+        }, 
+        "post": {
+            "times": 3, 
+            "frequency": "0.500"
+        }, 
+        "get": {
+            "times": 1, 
+            "frequency": "0.167"
+        }, 
+        "delete": {
+            "times": 1, 
+            "frequency": "0.167"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 2, 
+            "frequency": "0.500"
+        }, 
+        "2": {
+            "times": 2, 
+            "frequency": "0.500"
+        }
+    }, 
+    "url_noun": [
+        "/trainedmodels", 
+        "/trainedmodels/{id}"
+    ], 
+    "url_not_noun": [
+        "/trainedmodels/{id}/predict", 
+        "/hostedmodels/{hostedModelName}/predict"
+    ]
+}

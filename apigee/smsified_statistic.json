@@ -1,0 +1,49 @@
+{
+    "host": "api.smsified.com", 
+    "basePath": "/v1/", 
+    "total": 12, 
+    "methods": {
+        "post": {
+            "times": 3, 
+            "frequency": "0.250"
+        }, 
+        "delete": {
+            "times": 2, 
+            "frequency": "0.167"
+        }, 
+        "get": {
+            "times": 7, 
+            "frequency": "0.583"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 4, 
+            "frequency": "0.333"
+        }, 
+        "3": {
+            "times": 7, 
+            "frequency": "0.583"
+        }, 
+        "4": {
+            "times": 1, 
+            "frequency": "0.083"
+        }
+    }, 
+    "url_noun": [
+        "/smsmessaging/inbound/subscriptions?destinationAddress={destinationAddress}", 
+        "/smsmessaging/outbound/{senderAddress}/subscriptions", 
+        "/messages", 
+        "/messages?status=fail&direction=in", 
+        "/smsmessaging/inbound/subscriptions/{subscriptionId}", 
+        "/smsmessaging/inbound/subscriptions", 
+        "/smsmessaging/outbound/{senderAddress}/requests/{requestId}/deliveryInfos", 
+        "/messages/{messageId}", 
+        "/smsmessaging/outbound/{senderAddress}/requests", 
+        "/smsmessaging/outbound/subscriptions?senderAddress={senderAddress}", 
+        "/smsmessaging/outbound/subscriptions/{subscriptionId}"
+    ], 
+    "url_not_noun": [
+        "/messages?startDate=2011-02-14&endDate=2011-02-15"
+    ]
+}

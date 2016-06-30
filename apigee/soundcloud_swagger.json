@@ -62,15 +62,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "all",
-                            "public",
-                            "private",
-                            "streamable",
-                            "downloadable"
-                        ],
                         "default": "all",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Access, host, upload, and comment on audio."
                     },
                     {
@@ -83,7 +76,7 @@
                             "hotness"
                         ],
                         "default": "create_at",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Access, host, upload, and comment on audio."
                     },
                     {
@@ -1367,15 +1360,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "all",
-                            "public",
-                            "private",
-                            "streamable",
-                            "downloadable"
-                        ],
                         "default": "all",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Access, host, upload, and comment on audio."
                     }
                 ],
@@ -1752,22 +1738,9 @@
         }
     },
     "definitions": {
-        "filter": {
-            "title": "filter",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "all",
-                "public",
-                "private",
-                "streamable",
-                "downloadable"
-            ]
-        },
         "order": {
             "title": "order",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "created_at",
                 "hotness"

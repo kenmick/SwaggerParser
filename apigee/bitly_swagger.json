@@ -43,13 +43,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "bit.ly",
-                            "j.mp",
-                            "bitly.com"
-                        ],
                         "default": "bit.ly",
-                        "type": "integer",
+                        "type": "object",
                         "description": "(optional) refers to a preferred domain; either bit.ly, j.mp, or bitly.com, for users who do NOT have a custom short domain set up with bitly. This affects the output value of url. The default for this parameter is the short domain selected by each user in his/her bitly account settings. Passing a specific domain via this parameter will override the default settings for users who do NOT have a custom short domain set up with bitly. For users who have implemented a custom short domain, bitly will always return short links according to the user's account-level preference."
                     },
                     {
@@ -63,7 +58,7 @@
                             "txt"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -105,11 +100,10 @@
                         "x-is-map": false,
                         "enum": [
                             "xml",
-                            "json",
-                            "txt"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -143,11 +137,10 @@
                         "x-is-map": false,
                         "enum": [
                             "xml",
-                            "json",
-                            "txt"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -189,11 +182,10 @@
                         "x-is-map": false,
                         "enum": [
                             "xml",
-                            "json",
-                            "txt"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -227,11 +219,10 @@
                         "x-is-map": false,
                         "enum": [
                             "xml",
-                            "json",
-                            "txt"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -289,11 +280,10 @@
                         "x-is-map": false,
                         "enum": [
                             "xml",
-                            "json",
-                            "txt"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -325,7 +315,7 @@
                             "month"
                         ],
                         "default": "day",
-                        "type": "integer",
+                        "type": "string",
                         "description": "minute, hour, day, week or month"
                     },
                     {
@@ -374,11 +364,10 @@
                         "x-is-map": false,
                         "enum": [
                             "xml",
-                            "json",
-                            "txt"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -418,7 +407,7 @@
                             "month"
                         ],
                         "default": "day",
-                        "type": "integer",
+                        "type": "string",
                         "description": "minute, hour, day, week or month"
                     },
                     {
@@ -467,11 +456,10 @@
                         "x-is-map": false,
                         "enum": [
                             "xml",
-                            "json",
-                            "txt"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -511,7 +499,7 @@
                             "month"
                         ],
                         "default": "day",
-                        "type": "integer",
+                        "type": "string",
                         "description": "minute, hour, day, week or month"
                     },
                     {
@@ -560,11 +548,10 @@
                         "x-is-map": false,
                         "enum": [
                             "xml",
-                            "json",
-                            "txt"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -604,7 +591,7 @@
                             "month"
                         ],
                         "default": "day",
-                        "type": "integer",
+                        "type": "string",
                         "description": "minute, hour, day, week or month"
                     },
                     {
@@ -653,11 +640,10 @@
                         "x-is-map": false,
                         "enum": [
                             "xml",
-                            "json",
-                            "txt"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -697,7 +683,7 @@
                             "month"
                         ],
                         "default": "day",
-                        "type": "integer",
+                        "type": "string",
                         "description": "minute, hour, day, week or month"
                     },
                     {
@@ -746,11 +732,10 @@
                         "x-is-map": false,
                         "enum": [
                             "xml",
-                            "json",
-                            "txt"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -826,11 +811,10 @@
                         "x-is-map": false,
                         "enum": [
                             "xml",
-                            "json",
-                            "txt"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -856,11 +840,10 @@
                         "x-is-map": false,
                         "enum": [
                             "xml",
-                            "json",
-                            "txt"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -886,11 +869,10 @@
                         "x-is-map": false,
                         "enum": [
                             "xml",
-                            "json",
-                            "txt"
+                            "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Response format."
                     }
                 ],
@@ -903,30 +885,26 @@
         }
     },
     "definitions": {
-        "domain": {
-            "title": "domain",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "bit.ly",
-                "j.mp",
-                "bitly.com"
-            ]
-        },
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "xml",
                 "json",
                 "txt"
             ]
         },
+        "format1": {
+            "title": "format1",
+            "type": "string",
+            "enum": [
+                "xml",
+                "json"
+            ]
+        },
         "unit": {
             "title": "unit",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "minute",
                 "hour",

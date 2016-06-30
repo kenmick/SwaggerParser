@@ -44,11 +44,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -61,7 +58,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -69,15 +66,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json-in-script",
-                            "atom-in-script",
-                            "rss-in-script",
-                            "atom-service"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Alternative representation type.\natom: If you don't specify an alt parameter, the service returns an Atom feed.\nrss: Returns an RSS 2.0 result feed (for reads only). When you request data from a service in RSS format, the service supplies a feed (or other representation of the resource) in RSS format. If there's no equivalent RSS property for a given Data API property, the service uses the Atom property, labeling it with an appropriate namespace to indicate that it's an extension to RSS.\njson: Returns a JSON representation of the feed. More information\njson-in-script: Requests a response that wraps JSON in a script tag. More information\natom-in-script: Requests an Atom response that wraps an XML string in a script tag.\nrss-in-script: Requests an RSS response that wraps an XML string in a script tag.\natom-service: Requests an Atom service document that describes the feed."
                     },
                     {
@@ -170,11 +159,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -187,7 +173,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -231,11 +217,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -256,7 +239,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -264,15 +247,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json-in-script",
-                            "atom-in-script",
-                            "rss-in-script",
-                            "atom-service"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Alternative representation type.\natom: If you don't specify an alt parameter, the service returns an Atom feed.\nrss: Returns an RSS 2.0 result feed (for reads only). When you request data from a service in RSS format, the service supplies a feed (or other representation of the resource) in RSS format. If there's no equivalent RSS property for a given Data API property, the service uses the Atom property, labeling it with an appropriate namespace to indicate that it's an extension to RSS.\njson: Returns a JSON representation of the feed. More information\njson-in-script: Requests a response that wraps JSON in a script tag. More information\natom-in-script: Requests an Atom response that wraps an XML string in a script tag.\nrss-in-script: Requests an RSS response that wraps an XML string in a script tag.\natom-service: Requests an Atom service document that describes the feed."
                     },
                     {
@@ -348,11 +323,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -373,7 +345,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -381,15 +353,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json-in-script",
-                            "atom-in-script",
-                            "rss-in-script",
-                            "atom-service"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Alternative representation type.\natom: If you don't specify an alt parameter, the service returns an Atom feed.\nrss: Returns an RSS 2.0 result feed (for reads only). When you request data from a service in RSS format, the service supplies a feed (or other representation of the resource) in RSS format. If there's no equivalent RSS property for a given Data API property, the service uses the Atom property, labeling it with an appropriate namespace to indicate that it's an extension to RSS.\njson: Returns a JSON representation of the feed. More information\njson-in-script: Requests a response that wraps JSON in a script tag. More information\natom-in-script: Requests an Atom response that wraps an XML string in a script tag.\nrss-in-script: Requests an RSS response that wraps an XML string in a script tag.\natom-service: Requests an Atom service document that describes the feed."
                     },
                     {
@@ -458,11 +422,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -483,7 +444,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -534,11 +495,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -559,7 +517,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -603,11 +561,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -628,7 +583,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -677,11 +632,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -702,7 +654,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -718,15 +670,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json-in-script",
-                            "atom-in-script",
-                            "rss-in-script",
-                            "atom-service"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Alternative representation type.\natom: If you don't specify an alt parameter, the service returns an Atom feed.\nrss: Returns an RSS 2.0 result feed (for reads only). When you request data from a service in RSS format, the service supplies a feed (or other representation of the resource) in RSS format. If there's no equivalent RSS property for a given Data API property, the service uses the Atom property, labeling it with an appropriate namespace to indicate that it's an extension to RSS.\njson: Returns a JSON representation of the feed. More information\njson-in-script: Requests a response that wraps JSON in a script tag. More information\natom-in-script: Requests an Atom response that wraps an XML string in a script tag.\nrss-in-script: Requests an RSS response that wraps an XML string in a script tag.\natom-service: Requests an Atom service document that describes the feed."
                     },
                     {
@@ -819,11 +763,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -844,7 +785,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -860,15 +801,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json-in-script",
-                            "atom-in-script",
-                            "rss-in-script",
-                            "atom-service"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Alternative representation type.\natom: If you don't specify an alt parameter, the service returns an Atom feed.\nrss: Returns an RSS 2.0 result feed (for reads only). When you request data from a service in RSS format, the service supplies a feed (or other representation of the resource) in RSS format. If there's no equivalent RSS property for a given Data API property, the service uses the Atom property, labeling it with an appropriate namespace to indicate that it's an extension to RSS.\njson: Returns a JSON representation of the feed. More information\njson-in-script: Requests a response that wraps JSON in a script tag. More information\natom-in-script: Requests an Atom response that wraps an XML string in a script tag.\nrss-in-script: Requests an RSS response that wraps an XML string in a script tag.\natom-service: Requests an Atom service document that describes the feed."
                     },
                     {
@@ -954,11 +887,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -979,7 +909,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -1038,11 +968,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -1063,7 +990,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -1113,11 +1040,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -1138,7 +1062,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -1187,11 +1111,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -1212,7 +1133,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -1228,15 +1149,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json-in-script",
-                            "atom-in-script",
-                            "rss-in-script",
-                            "atom-service"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Alternative representation type.\natom: If you don't specify an alt parameter, the service returns an Atom feed.\nrss: Returns an RSS 2.0 result feed (for reads only). When you request data from a service in RSS format, the service supplies a feed (or other representation of the resource) in RSS format. If there's no equivalent RSS property for a given Data API property, the service uses the Atom property, labeling it with an appropriate namespace to indicate that it's an extension to RSS.\njson: Returns a JSON representation of the feed. More information\njson-in-script: Requests a response that wraps JSON in a script tag. More information\natom-in-script: Requests an Atom response that wraps an XML string in a script tag.\nrss-in-script: Requests an RSS response that wraps an XML string in a script tag.\natom-service: Requests an Atom service document that describes the feed."
                     },
                     {
@@ -1345,11 +1258,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -1370,7 +1280,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -1429,11 +1339,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -1454,7 +1361,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -1515,11 +1422,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "private"
-                        ],
                         "default": "private",
-                        "type": "integer",
+                        "type": "object",
                         "description": "private: For use whenever you can authenticate the request. Read/write access if the authenticated user has edit privileges; otherwise, read-only."
                     },
                     {
@@ -1540,7 +1444,7 @@
                             "values",
                             "basic"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates what information is included in the representation.\nfull: Full-fidelity feed; contains all spreadsheet data including formulas. Full read/write access.\nvalues:\tFeed includes all data except for formulas. Formulas are replaced with their evaluations. Includes Data API extension elements.\tRead-only access.\nbasic: Feed includes all data except for formulas. Formulas are replaced with their evaluations. This feed uses only Atom elements, leaving out all Data API extension elements. Read-only access.\nNote: All combinations of visibility and projection are valid except for public/full."
                     },
                     {
@@ -1564,35 +1468,13 @@
         }
     },
     "definitions": {
-        "visibility": {
-            "title": "visibility",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "private"
-            ]
-        },
         "projection": {
             "title": "projection",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "full",
                 "values",
                 "basic"
-            ]
-        },
-        "alt": {
-            "title": "alt",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "atom",
-                "rss",
-                "json-in-script",
-                "atom-in-script",
-                "rss-in-script",
-                "atom-service"
             ]
         }
     }

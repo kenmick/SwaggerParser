@@ -55,7 +55,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -93,7 +93,7 @@
                             "@all",
                             "@friends"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
                     }
                 ],
@@ -177,7 +177,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -240,7 +240,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -303,7 +303,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -360,7 +360,7 @@
                             "@all",
                             "@friends"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
                     },
                     {
@@ -397,7 +397,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -461,7 +461,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Album is private.\nfriendsonly - Album is visible to friends.\neveryone - Album is visible to everyone."
                     },
                     {
@@ -473,7 +473,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -529,7 +529,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Album is private.\nfriendsonly - Album is visible to friends.\neveryone - Album is visible to everyone."
                     },
                     {
@@ -541,7 +541,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -722,7 +722,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Album is private.\nfriendsonly - Album is visible to friends.\neveryone - Album is visible to everyone."
                     },
                     {
@@ -734,7 +734,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -799,7 +799,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Album is private.\nfriendsonly - Album is visible to friends.\neveryone - Album is visible to everyone."
                     },
                     {
@@ -811,7 +811,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -895,9 +895,10 @@
                         "enum": [
                             "@self",
                             "@all",
-                            "@friends"
+                            "@friends",
+                            "groupId"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
                     },
                     {
@@ -926,7 +927,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     }
                 ],
@@ -972,9 +973,10 @@
                         "enum": [
                             "@self",
                             "@all",
-                            "@friends"
+                            "@friends",
+                            "groupId"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
                     },
                     {
@@ -1003,7 +1005,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     }
                 ],
@@ -1040,9 +1042,10 @@
                         "enum": [
                             "@self",
                             "@all",
-                            "@friends"
+                            "@friends",
+                            "groupId"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
                     },
                     {
@@ -1071,7 +1074,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     }
                 ],
@@ -1115,7 +1118,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -1162,9 +1165,10 @@
                         "enum": [
                             "@self",
                             "@all",
-                            "@friends"
+                            "@friends",
+                            "groupId"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
                     },
                     {
@@ -1216,7 +1220,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -1263,9 +1267,10 @@
                         "enum": [
                             "@self",
                             "@all",
-                            "@friends"
+                            "@friends",
+                            "groupId"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
                     },
                     {
@@ -1325,7 +1330,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -1434,7 +1439,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -1567,7 +1572,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -1645,10 +1650,9 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "json",
-                            "xml"
+                            "json"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -1675,8 +1679,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "type": "integer",
                         "description": "Search for specific video types. Two allowed values are videoMode=1 (music videos) or videoMode=2 (official)."
@@ -1718,7 +1722,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     }
                 ],
@@ -1758,7 +1762,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     }
                 ],
@@ -1805,7 +1809,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     }
                 ],
@@ -1843,7 +1847,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     }
                 ],
@@ -1871,7 +1875,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     }
                 ],
@@ -1900,7 +1904,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     }
                 ],
@@ -1945,7 +1949,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
                     },
                     {
@@ -1957,7 +1961,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -2030,7 +2034,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
                     },
                     {
@@ -2042,7 +2046,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -2122,7 +2126,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
                     },
                     {
@@ -2134,7 +2138,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -2215,7 +2219,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
                     },
                     {
@@ -2227,7 +2231,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -2315,7 +2319,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
                     },
                     {
@@ -2327,7 +2331,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -2392,7 +2396,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
                     },
                     {
@@ -2404,7 +2408,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -2476,7 +2480,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
                     },
                     {
@@ -2488,7 +2492,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -2561,7 +2565,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
                     },
                     {
@@ -2573,7 +2577,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -2653,7 +2657,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
                     },
                     {
@@ -2665,7 +2669,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -2730,7 +2734,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
                     },
                     {
@@ -2742,7 +2746,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -2815,7 +2819,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
                     },
                     {
@@ -2827,7 +2831,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -2908,7 +2912,7 @@
                             "friendsonly",
                             "everyone"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "MySpace specific field. May be one of the following values:\nme - Media item is private.\nfriendsonly - Media item is visible to friends.\neveryone - Media item is visible to everyone."
                     },
                     {
@@ -2920,7 +2924,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -3008,7 +3012,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -3103,7 +3107,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -3200,7 +3204,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -3304,7 +3308,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -3353,7 +3357,7 @@
                             "@all",
                             "@friends"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
                     },
                     {
@@ -3405,7 +3409,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -3461,7 +3465,7 @@
                             "@all",
                             "@friends"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
                     },
                     {
@@ -3513,7 +3517,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -3562,7 +3566,7 @@
                             "@all",
                             "@friends"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
                     },
                     {
@@ -3614,7 +3618,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -3671,7 +3675,7 @@
                             "@all",
                             "@friends"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
                     },
                     {
@@ -3723,7 +3727,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -3780,7 +3784,7 @@
                             "@all",
                             "@friends"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
                     },
                     {
@@ -3832,7 +3836,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -3898,7 +3902,7 @@
                             "@all",
                             "@friends"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates which set of individuals to query for activities. @friends and @all currently can be used interchangeably."
                     },
                     {
@@ -3950,7 +3954,7 @@
                             "json",
                             "xml"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines the format of the response."
                     },
                     {
@@ -3976,8 +3980,7 @@
     "definitions": {
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "json",
                 "xml"
@@ -3985,8 +3988,7 @@
         },
         "selector": {
             "title": "selector",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "@self",
                 "@all",
@@ -3995,12 +3997,28 @@
         },
         "msPrivacyLevel": {
             "title": "msPrivacyLevel",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "me",
                 "friendsonly",
                 "everyone"
+            ]
+        },
+        "selector3": {
+            "title": "selector3",
+            "type": "string",
+            "enum": [
+                "@self",
+                "@all",
+                "@friends",
+                "groupId"
+            ]
+        },
+        "format4": {
+            "title": "format4",
+            "type": "string",
+            "enum": [
+                "json"
             ]
         },
         "videoMode": {
@@ -4008,8 +4026,8 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "1",
-                "2"
+                "Value_1",
+                "Value_2"
             ]
         }
     }

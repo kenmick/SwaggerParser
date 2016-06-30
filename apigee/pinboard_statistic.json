@@ -1,0 +1,33 @@
+{
+    "host": "api.pinboard.in", 
+    "basePath": "/v1/", 
+    "total": 12, 
+    "methods": {
+        "get": {
+            "times": 12, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 12, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/posts/recent", 
+        "/posts/all", 
+        "/user/secret", 
+        "/posts/dates"
+    ], 
+    "url_not_noun": [
+        "/tags/delete", 
+        "/posts/get", 
+        "/posts/add", 
+        "/tags/rename", 
+        "/posts/suggest", 
+        "/tags/get", 
+        "/posts/update", 
+        "/posts/delete"
+    ]
+}

@@ -44,12 +44,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml, text/xml"
-                        ],
                         "default": "application/xml, text/xml",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The format to be returned in the response. (e.g. JSON, or XML)"
                     }
                 ],
@@ -76,12 +72,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml, text/xml"
-                        ],
                         "default": "application/xml, text/xml",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The format to be returned in the response. (e.g. JSON, or XML)"
                     },
                     {
@@ -127,12 +119,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml, text/xml"
-                        ],
                         "default": "application/xml, text/xml",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The format to be returned in the response. (e.g. JSON, or XML)"
                     },
                     {
@@ -178,12 +166,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "application/json",
-                            "application/xml, text/xml"
-                        ],
                         "default": "application/xml, text/xml",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The format to be returned in the response. (e.g. JSON, or XML)"
                     },
                     {
@@ -215,17 +199,6 @@
                     }
                 }
             }
-        }
-    },
-    "definitions": {
-        "Accept": {
-            "title": "Accept",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "application/json",
-                "application/xml, text/xml"
-            ]
         }
     }
 }

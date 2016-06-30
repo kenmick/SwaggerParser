@@ -1,0 +1,48 @@
+{
+    "host": "api.rhapsody.com", 
+    "basePath": "/v1/", 
+    "total": 20, 
+    "methods": {
+        "get": {
+            "times": 20, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 5, 
+            "frequency": "0.250"
+        }, 
+        "2": {
+            "times": 14, 
+            "frequency": "0.700"
+        }, 
+        "3": {
+            "times": 1, 
+            "frequency": "0.050"
+        }
+    }, 
+    "url_noun": [
+        "/albums/{alb.id}/reviews", 
+        "/artists/{art.id}/full", 
+        "/genres/{g.id}", 
+        "/artists/{art.id}/albums", 
+        "/albums/{alb.id}/similar", 
+        "/artists/{art.id}", 
+        "/albums/{alb.id}", 
+        "/artists/{art.id}/tracks/top", 
+        "/genres", 
+        "/albums/{alb.id}/recommendations", 
+        "/tracks/{tra.id}/recommendations", 
+        "/tracks/top", 
+        "/tracks/{tra.id}", 
+        "/albums/new", 
+        "/search/typeahead", 
+        "/artists/top", 
+        "/albums/{alb.id}/tracks", 
+        "/albums/top", 
+        "/artists/{art.id}/similar", 
+        "/artists/{art.id}/recommendations"
+    ], 
+    "url_not_noun": []
+}

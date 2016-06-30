@@ -1,0 +1,21 @@
+{
+    "host": "weather.yahooapis.com", 
+    "basePath": "/", 
+    "total": 1, 
+    "methods": {
+        "get": {
+            "times": 1, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 1, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [
+        "/forecastrss"
+    ], 
+    "url_not_noun": []
+}

@@ -1,0 +1,45 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/orkut/v2/", 
+    "total": 12, 
+    "methods": {
+        "put": {
+            "times": 1, 
+            "frequency": "0.083"
+        }, 
+        "post": {
+            "times": 1, 
+            "frequency": "0.083"
+        }, 
+        "delete": {
+            "times": 3, 
+            "frequency": "0.250"
+        }, 
+        "get": {
+            "times": 7, 
+            "frequency": "0.583"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 2, 
+            "frequency": "0.222"
+        }, 
+        "2": {
+            "times": 7, 
+            "frequency": "0.778"
+        }
+    }, 
+    "url_noun": [
+        "/activities/{activityId}/visibility", 
+        "/people/{userId}/badges/{badgeId}", 
+        "/people/{userId}/counters", 
+        "/activities/{activityId}/comments", 
+        "/comments/{commentId}", 
+        "/activities/{activityId}", 
+        "/people/{userId}/activities/{collection}", 
+        "/activities/{activityId}/acl/{userId}", 
+        "/people/{userId}/badges"
+    ], 
+    "url_not_noun": []
+}

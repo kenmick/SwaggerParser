@@ -229,7 +229,7 @@
                             "soft"
                         ],
                         "default": "hard",
-                        "type": "integer",
+                        "type": "string",
                         "description": "How MQL responds to uniqueness failures."
                     }
                 ],
@@ -297,7 +297,7 @@
                             "raw"
                         ],
                         "default": "raw",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Sanitizing transformation."
                     },
                     {
@@ -383,7 +383,7 @@
                             "fillcropmid",
                             "fit"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Method used to scale or crop image."
                     },
                     {
@@ -409,8 +409,7 @@
     "definitions": {
         "uniqueness_failure": {
             "title": "uniqueness_failure",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "hard",
                 "soft"
@@ -418,8 +417,7 @@
         },
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "html",
                 "plain",
@@ -428,8 +426,7 @@
         },
         "mode": {
             "title": "mode",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "fill",
                 "fillcrop",

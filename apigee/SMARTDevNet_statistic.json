@@ -1,0 +1,40 @@
+{
+    "host": "x.smart.com.ph", 
+    "basePath": "/", 
+    "total": 7, 
+    "methods": {
+        "post": {
+            "times": 3, 
+            "frequency": "0.429"
+        }, 
+        "get": {
+            "times": 4, 
+            "frequency": "0.571"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 2, 
+            "frequency": "0.286"
+        }, 
+        "3": {
+            "times": 2, 
+            "frequency": "0.286"
+        }, 
+        "4": {
+            "times": 3, 
+            "frequency": "0.429"
+        }
+    }, 
+    "url_noun": [
+        "/payment/v1/{MSISDN}/transactions/amount", 
+        "/oauth/token"
+    ], 
+    "url_not_noun": [
+        "/1/messaging/outbound/{senderAddress}/requests/{requestId}/deliveryInfos", 
+        "/1/smsmessaging/outbound/{senderAddress}/requests/{requestId}/deliveryInfos", 
+        "/1/messaging/outbound/{senderAddress}/requests", 
+        "/1/smsmessaging/outbound/{senderAddress}/requests", 
+        "/oauth/authorize"
+    ]
+}

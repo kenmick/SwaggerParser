@@ -1,0 +1,124 @@
+{
+    "host": "api.nytimes.com", 
+    "basePath": "/svc/", 
+    "total": 79, 
+    "methods": {
+        "get": {
+            "times": 79, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 1, 
+            "frequency": "0.013"
+        }, 
+        "2": {
+            "times": 7, 
+            "frequency": "0.089"
+        }, 
+        "3": {
+            "times": 16, 
+            "frequency": "0.203"
+        }, 
+        "4": {
+            "times": 15, 
+            "frequency": "0.190"
+        }, 
+        "5": {
+            "times": 26, 
+            "frequency": "0.329"
+        }, 
+        "6": {
+            "times": 13, 
+            "frequency": "0.165"
+        }, 
+        "7": {
+            "times": 1, 
+            "frequency": "0.013"
+        }
+    }, 
+    "url_noun": [
+        "/politics/{version}/ny/legislative/{year}/{chamber}/bills/{type}{.format}", 
+        "/timespeople/api/{version}/user/{user-id}/{data-type}{.format}", 
+        "/politics/{version}/us/legislative/congress/{congress-number}/nominees/state/{state}{.format}", 
+        "/politics/{version}/ny/legislative/members/{member-name}/bills/{type}{.format}", 
+        "/politics/{version}/us/legislative/congress/members/{member-id-1}/bills/{member-id-2}/{congress-number}/{chamber}{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/committees/{fec-id}/filings{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/committees/{fec-id}{.format}", 
+        "/politics/{version}/us/legislative/congress/{chamber}/votes/{year}/{month}{.format}", 
+        "/politics/{version}/us/legislative/congress/{congress-number}/bills/{bill-id}/cosponsors{.format}", 
+        "/news/{version}/content/section-list{.format}", 
+        "/politics/{version}/us/legislative/congress/{chamber}/votes/{start-date}/{end-date}{.format}", 
+        "/community/{version}/comments/by-date/{date}{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/seats/{state}/{chamber}/{district}{.format}", 
+        "/politics/{version}/us/legislative/congress/members/{member-id}/floor_appearances{.format}", 
+        "/politics/{version}/ny/legislative/{year}/{chamber}/committees/{committee-name}{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/president/candidates/{candidate-name-or-committeeID}{.format}", 
+        "/movies/{version}/critics/{resource-type}{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/candidates/{fec-id}{.format}", 
+        "/politics/{version}/us/legislative/congress/{congress-number}/bills/{bill-id}/{resource}{.format}", 
+        "/books/{version}/lists/names{.format}", 
+        "/news/{version}/content{.format}", 
+        "/real-estate/v2/neighborhoods{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/committees/{fec-id}/contributions/candidates/{candidate-id}{.format}", 
+        "/politics/{version}/us/legislative/congress/{congress-number}/{chamber}/members{.format}", 
+        "/politics/{version}/ny/legislative/members/{member-name}{.format}", 
+        "/politics/{version}/us/legislative/congress/members/{first-member-id}/votes/{second-member-id}/{congress-number}/{chamber}{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/filings/{year}/{month}/{day}{.format}", 
+        "/politics/{version}/us/legislative/congress/{congress-number}/{chamber}/sessions/{session-number}/votes/{roll-call-number}{.format}", 
+        "/politics/{version}/ny/legislative/{chamber}/{district}/current{.format}", 
+        "/real-estate/{version}/sales/percentile/{percentile-value}{.format}", 
+        "/politics/{version}/ny/legislative/{year}/{chamber}/members{.format}", 
+        "/politics/{version}/us/legislative/congress/{congress-number}/{chamber}/members/leaving{.format}", 
+        "/politics/{version}/ny/legislative/{year}/bills/{bill-id}{.format}", 
+        "/search/v1/article", 
+        "/community/{version}/comments/random{.format}", 
+        "/politics/{version}/us/legislative/congress/{congress-number}/nominations{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/president/{resource-type}/{location}{.format}", 
+        "/politics/{version}/us/legislative/congress/members/{member-id}{.format}", 
+        "/politics/{version}/us/legislative/congress/{congress-number}/nominees/{nomination-category}{.format}", 
+        "/news/{version}/content/{source}/{section}/{time-period}{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/candidates/new{.format}", 
+        "/books/{version}/lists/best-sellers/history{.format}", 
+        "/politics/{version}/us/legislative/congress/{congress-number}/{chamber}/bills/{type}{.format}", 
+        "/politics/{version}/us/legislative/congress/{chamber}/schedule{.format}", 
+        "/politics/{version}/us/legislative/congress/members/{member-id}/votes{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/filings/types/{form-type-id}{.format}", 
+        "/real-estate/{version}/listings/percentile/{percentile-value}{.format}", 
+        "/community/{version}/comments/recent{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/committees/new{.format}", 
+        "/politics/{version}/districts{.format}", 
+        "/books/{version}/lists{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/committees/{fec-id}/contributions/{.format}", 
+        "/community/{version}/comments/url/{match-type}{.format}", 
+        "/politics/{version}/us/legislative/congress/members/new{.format}", 
+        "/timespeople/api/{version}/user/{hash}/id{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/committees/leadership{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/candidates/search{.format}", 
+        "/politics/{version}/us/legislative/congress/{congress-number}/{chamber}/votes/{vote-type}{.format}", 
+        "/mostpopular/{version}/{resource-type}/{section}/{share-types}/{time-period}{.format}", 
+        "/real-estate/v2/building-types{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/filings/types{.format}", 
+        "/politics/{version}/us/legislative/congress/{congress-number}/bills/{bill-id}{.format}", 
+        "/real-estate/{version}/listings/count{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/president/contributions/donorsearch{.format}", 
+        "/politics/{version}/us/legislative/congress/states/members/party{.format}", 
+        "/movies/{version}/reviews/search{.format}", 
+        "/community/{version}/comments/user/id/{user-id}{.format}", 
+        "/politics/{version}/us/legislative/congress/{congress-number}/nominees/{nominee-id}{.format}", 
+        "/real-estate/{version}/sales/count{.format}", 
+        "/movies/{version}/reviews/reviewer/{reviewer-name}{.format}", 
+        "/politics/{version}/us/legislative/congress/{congress-number}/{chamber}/committees/{committee-id}{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/committees/search{.format}", 
+        "/politics/{version}/us/legislative/congress/members/{member-id}/bills/{type}{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/candidates/leaders/{category}{.format}", 
+        "/politics/{version}/us/legislative/congress/members/{chamber}/{state}/{district}/current{.format}", 
+        "/politics/{version}/ny/legislative/{year}/{chamber}/committees{.format}", 
+        "/elections/us/{version}/finances/{campaign-cycle}/president/totals{.format}", 
+        "/movies/{version}/reviews/{resource-path}{.format}"
+    ], 
+    "url_not_noun": [
+        "/timestags/suggest"
+    ]
+}

@@ -39,7 +39,7 @@
                             "city",
                             "best"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Granularity of the requested locations."
                     },
                     {
@@ -139,7 +139,7 @@
                             "city",
                             "best"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Granularity of the requested locations."
                     },
                     {
@@ -208,7 +208,7 @@
                             "city",
                             "best"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Granularity of the requested locations."
                     },
                     {
@@ -281,8 +281,7 @@
     "definitions": {
         "granularity": {
             "title": "granularity",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "city",
                 "best"

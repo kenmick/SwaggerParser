@@ -96,10 +96,10 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "-1",
-                            "1",
-                            "11",
-                            "12"
+                            "Value_-1",
+                            "Value_1",
+                            "Value_11",
+                            "Value_12"
                         ],
                         "type": "integer",
                         "description": "Search for subjects:\nMusic & The Arts - subject1=-1 \nPerforming Arts    - subject1=1 \nVisual Arts            - subject1=11 \nMusic                        - subject1=12"
@@ -110,11 +110,11 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "-2",
-                            "2",
-                            "27",
-                            "28",
-                            "29"
+                            "Value_-2",
+                            "Value_2",
+                            "Value_27",
+                            "Value_28",
+                            "Value_29"
                         ],
                         "type": "integer",
                         "description": "Search for subjects:\nHealth & Sports     - subject2=-2\nSports                        - subject2=2\nHealth & Wellness - subject2=27    \nNutrition                 - subject2=28 \nGym & Fitness\t    - subject2=29"
@@ -125,11 +125,11 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "-3",
-                            "9",
-                            "13",
-                            "14",
-                            "15"
+                            "Value_-3",
+                            "Value_9",
+                            "Value_13",
+                            "Value_14",
+                            "Value_15"
                         ],
                         "type": "integer",
                         "description": "Search for subjects:\nHistory & Civics        - subject3=-3\nHistory & Geography - subject3=9\nCivics & Government - subject3=13\nEconomics                     - subject3=14\nSocial Sciences         - subject3=15"
@@ -140,11 +140,11 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "-4",
-                            "4",
-                            "6",
-                            "7",
-                            "8"
+                            "Value_-4",
+                            "Value_4",
+                            "Value_6",
+                            "Value_7",
+                            "Value_8"
                         ],
                         "type": "integer",
                         "description": "Search for subjects:\nMath & Science                - subject4=-4 \nHealth & Life Science - subject4=4\nApplied Science             - subject4=6\nEnvironmental Science - subject4=7\nMathematics\t                    - subject4=8"
@@ -155,14 +155,14 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "-5",
-                            "18",
-                            "21",
-                            "26",
-                            "16",
-                            "17",
-                            "20",
-                            "19"
+                            "Value_-5",
+                            "Value_18",
+                            "Value_21",
+                            "Value_26",
+                            "Value_16",
+                            "Value_17",
+                            "Value_20",
+                            "Value_19"
                         ],
                         "type": "integer",
                         "description": "Search for subjects:\nApplied Learning            - subject5=-5\nEarly Development         - subject5=18\nCommunity Service         - subject5=21\nCharacter Education     - subject5=26\nCollege & Career Prep - subject5=16 \nExtra Curricular            - subject5=17\nParental Involvement    - subject5=20\nOther                                 - subject5=19"
@@ -173,11 +173,11 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "-6",
-                            "10",
-                            "3",
-                            "22",
-                            "25"
+                            "Value_-6",
+                            "Value_10",
+                            "Value_3",
+                            "Value_22",
+                            "Value_25"
                         ],
                         "type": "integer",
                         "description": "Search for subjects:\nLiteracy & Language    - subject6=-6\nLiteracy                         - subject6=10\nLiterature & Writing - subject6=3 \nForeign Languages        - subject6=22\nESL\t                                 - subject6=25"
@@ -188,7 +188,7 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "-7"
+                            "Value_-7"
                         ],
                         "type": "integer",
                         "description": "Search for subjects:\nSpecial Needs - subject7=-7"
@@ -202,7 +202,7 @@
                             "yes",
                             "no"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Some Received: Projects that have already received partial donations - partiallyFunded=yes\t\nNone Yet: Projects that haven't yet received a donation - partiallyFunded=no"
                     },
                     {
@@ -219,10 +219,10 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2",
-                            "3",
-                            "4"
+                            "Value_1",
+                            "Value_2",
+                            "Value_3",
+                            "Value_4"
                         ],
                         "type": "integer",
                         "description": "$99 or less -\tcostToComplete=1\n$100-$200 - costToComplete=2\n$200-$1,000 - costToComplete=3\n$1,000-above - costToComplete=4"
@@ -241,12 +241,12 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2",
-                            "3",
-                            "4",
-                            "5",
-                            "6"
+                            "Value_1",
+                            "Value_2",
+                            "Value_3",
+                            "Value_4",
+                            "Value_5",
+                            "Value_6"
                         ],
                         "type": "integer",
                         "description": "Books - proposalType=1\nTechnology - proposalType=2\nSupplies - proposalType=3\nTrips - proposalType=4\nVisitors - proposalType=5\nOther - proposalType=6"
@@ -260,7 +260,7 @@
                             "TripsVisitors",
                             "Supplies"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Trips & Visitors - proposalTypeCombo=TripsVisitors\nSupplies - proposalTypeCombo=Supplies"
                     },
                     {
@@ -269,11 +269,11 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2",
-                            "3",
-                            "4",
-                            "5"
+                            "Value_1",
+                            "Value_2",
+                            "Value_3",
+                            "Value_4",
+                            "Value_5"
                         ],
                         "type": "integer",
                         "description": "Grades PreK-2\t - gradeType=1\nGrades 3-5\t- gradeType=2\nGrades 6-8\t- gradeType=3\nHigh School\t- gradeType=4\nAdult Ed\t- gradeType=5"
@@ -284,8 +284,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "type": "integer",
                         "description": "Essential - resourceUsage=1\nEnrichment - resourceUsage=2"
@@ -296,7 +296,7 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1"
+                            "Value_1"
                         ],
                         "type": "integer",
                         "description": "Teach For America\t - teacherType=1"
@@ -307,9 +307,9 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "4",
-                            "5"
+                            "Value_1",
+                            "Value_4",
+                            "Value_5"
                         ],
                         "type": "integer",
                         "description": "Charter School - schoolType=1\nMagnet School - schoolType=4\nYear Round School - schoolType=5"
@@ -376,10 +376,10 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "0",
-                            "1",
-                            "2",
-                            "4"
+                            "Value_0",
+                            "Value_1",
+                            "Value_2",
+                            "Value_4"
                         ],
                         "type": "integer",
                         "description": "You can sort your results by:\n- Urgency: Shows projects with higher urgency at the top - sortBy=0\n- Poverty: Shows projects from schools with the highest levels of poverty at the top - sortBy=1\n- Cost: Shows projects with the lowest cost to complete at the top - sortBy=2\n- Popularity: Shows projects with higher numbers of donors at the top - sortBy=4"
@@ -609,7 +609,7 @@
                             "donate",
                             "giftcode"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Either 'donate' or 'giftcode' depending on whether you're making Project donations or issuing Gift codes."
                     },
                     {
@@ -638,10 +638,10 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "-1",
-                "1",
-                "11",
-                "12"
+                "Value_-1",
+                "Value_1",
+                "Value_11",
+                "Value_12"
             ]
         },
         "subject2": {
@@ -649,11 +649,11 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "-2",
-                "2",
-                "27",
-                "28",
-                "29"
+                "Value_-2",
+                "Value_2",
+                "Value_27",
+                "Value_28",
+                "Value_29"
             ]
         },
         "subject3": {
@@ -661,11 +661,11 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "-3",
-                "9",
-                "13",
-                "14",
-                "15"
+                "Value_-3",
+                "Value_9",
+                "Value_13",
+                "Value_14",
+                "Value_15"
             ]
         },
         "subject4": {
@@ -673,11 +673,11 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "-4",
-                "4",
-                "6",
-                "7",
-                "8"
+                "Value_-4",
+                "Value_4",
+                "Value_6",
+                "Value_7",
+                "Value_8"
             ]
         },
         "subject5": {
@@ -685,14 +685,14 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "-5",
-                "18",
-                "21",
-                "26",
-                "16",
-                "17",
-                "20",
-                "19"
+                "Value_-5",
+                "Value_18",
+                "Value_21",
+                "Value_26",
+                "Value_16",
+                "Value_17",
+                "Value_20",
+                "Value_19"
             ]
         },
         "subject6": {
@@ -700,11 +700,11 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "-6",
-                "10",
-                "3",
-                "22",
-                "25"
+                "Value_-6",
+                "Value_10",
+                "Value_3",
+                "Value_22",
+                "Value_25"
             ]
         },
         "subject7": {
@@ -712,13 +712,12 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "-7"
+                "Value_-7"
             ]
         },
         "partiallyFunded": {
             "title": "partiallyFunded",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "yes",
                 "no"
@@ -729,10 +728,10 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "1",
-                "2",
-                "3",
-                "4"
+                "Value_1",
+                "Value_2",
+                "Value_3",
+                "Value_4"
             ]
         },
         "proposalType": {
@@ -740,18 +739,17 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6"
+                "Value_1",
+                "Value_2",
+                "Value_3",
+                "Value_4",
+                "Value_5",
+                "Value_6"
             ]
         },
         "proposalTypeCombo": {
             "title": "proposalTypeCombo",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "TripsVisitors",
                 "Supplies"
@@ -762,11 +760,11 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "1",
-                "2",
-                "3",
-                "4",
-                "5"
+                "Value_1",
+                "Value_2",
+                "Value_3",
+                "Value_4",
+                "Value_5"
             ]
         },
         "resourceUsage": {
@@ -774,8 +772,8 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "1",
-                "2"
+                "Value_1",
+                "Value_2"
             ]
         },
         "teacherType": {
@@ -783,7 +781,7 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "1"
+                "Value_1"
             ]
         },
         "schoolType": {
@@ -791,9 +789,9 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "1",
-                "4",
-                "5"
+                "Value_1",
+                "Value_4",
+                "Value_5"
             ]
         },
         "sortBy": {
@@ -801,16 +799,15 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "0",
-                "1",
-                "2",
-                "4"
+                "Value_0",
+                "Value_1",
+                "Value_2",
+                "Value_4"
             ]
         },
         "action": {
             "title": "action",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "donate",
                 "giftcode"

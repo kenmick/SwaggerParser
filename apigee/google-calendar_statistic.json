@@ -1,0 +1,59 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/calendar/v3/", 
+    "total": 29, 
+    "methods": {
+        "put": {
+            "times": 4, 
+            "frequency": "0.138"
+        }, 
+        "post": {
+            "times": 9, 
+            "frequency": "0.310"
+        }, 
+        "delete": {
+            "times": 4, 
+            "frequency": "0.138"
+        }, 
+        "get": {
+            "times": 12, 
+            "frequency": "0.414"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 4, 
+            "frequency": "0.222"
+        }, 
+        "2": {
+            "times": 5, 
+            "frequency": "0.278"
+        }, 
+        "3": {
+            "times": 9, 
+            "frequency": "0.500"
+        }
+    }, 
+    "url_noun": [
+        "/calendars/{calendarId}/events", 
+        "/calendars/{calendarId}/events/{eventId}/move", 
+        "/users/me/calendarList/{calendarId}", 
+        "/users/me/calendarList", 
+        "/calendars/{calendarId}/acl/{ruleId}", 
+        "/calendars/{calendarId}/events/{eventId}/instances", 
+        "/calendars/{calendarId}/events/{eventId}", 
+        "/freeBusy", 
+        "/colors", 
+        "/users/me/settings/{setting}", 
+        "/calendars/{calendarId}/acl", 
+        "/calendars/{calendarId}/clear", 
+        "/users/me/settings", 
+        "/calendars/{calendarId}/events/import", 
+        "/calendars", 
+        "/calendars/{calendarId}"
+    ], 
+    "url_not_noun": [
+        "/calendars/{calendarId}/events/quickAdd", 
+        "/calendars/{calendarId}/events/{eventId}/reset"
+    ]
+}

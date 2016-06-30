@@ -29,21 +29,13 @@
         }
     }, 
     "paths": {
+        "1": {
+            "times": 12, 
+            "frequency": "0.522"
+        }, 
         "2": {
-            "times": 8, 
-            "frequency": "0.348"
-        }, 
-        "3": {
-            "times": 8, 
-            "frequency": "0.348"
-        }, 
-        "4": {
-            "times": 6, 
-            "frequency": "0.261"
-        }, 
-        "5": {
-            "times": 1, 
-            "frequency": "0.043"
+            "times": 11, 
+            "frequency": "0.478"
         }
     }, 
     "url_noun": [

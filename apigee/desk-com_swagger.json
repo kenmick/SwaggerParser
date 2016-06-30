@@ -42,7 +42,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -54,7 +54,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     }
                 ],
@@ -86,7 +86,7 @@
                             "external_id"
                         ],
                         "default": "id",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Specify what to find the case by. Can either be 'id' or 'external_id'. If none specified, defaults to 'id'."
                     },
                     {
@@ -106,7 +106,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -118,7 +118,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -176,16 +176,16 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2",
-                            "3",
-                            "4",
-                            "5",
-                            "6",
-                            "7",
-                            "8",
-                            "9",
-                            "10"
+                            "Value_1",
+                            "Value_2",
+                            "Value_3",
+                            "Value_4",
+                            "Value_5",
+                            "Value_6",
+                            "Value_7",
+                            "Value_8",
+                            "Value_9",
+                            "Value_10"
                         ],
                         "type": "integer",
                         "description": "The case's priority (1-10)."
@@ -213,10 +213,10 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "10",
-                            "30",
-                            "50",
-                            "70"
+                            "Value_10",
+                            "Value_30",
+                            "Value_50",
+                            "Value_70"
                         ],
                         "type": "integer",
                         "description": "The case's status type identifier. Can be one of the following: 10 (New), 30 (Open), 50 (Pending), 70 (Resolved)."
@@ -263,7 +263,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -275,7 +275,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -432,7 +432,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -444,7 +444,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     }
                 ],
@@ -562,7 +562,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -574,7 +574,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     }
                 ],
@@ -613,7 +613,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -625,7 +625,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -727,7 +727,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -739,7 +739,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -786,7 +786,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -798,7 +798,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -853,7 +853,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -865,7 +865,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -928,7 +928,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -940,7 +940,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -995,7 +995,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -1007,7 +1007,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -1165,7 +1165,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -1177,7 +1177,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     }
                 ],
@@ -1305,7 +1305,7 @@
                             "phone"
                         ],
                         "default": "email",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The channel type of the new interaction (\"email\" or \"phone\"). Defaults to \"email\"."
                     },
                     {
@@ -1333,7 +1333,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -1345,7 +1345,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     }
                 ],
@@ -1384,7 +1384,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -1396,7 +1396,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -1455,7 +1455,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -1467,7 +1467,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -1514,7 +1514,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -1526,7 +1526,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -1585,7 +1585,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -1597,7 +1597,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -1664,7 +1664,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -1676,7 +1676,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     }
                 ],
@@ -1738,7 +1738,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -1750,7 +1750,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     }
                 ],
@@ -1789,7 +1789,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -1801,7 +1801,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -1880,7 +1880,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -1892,7 +1892,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -1937,7 +1937,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -1949,7 +1949,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -2013,7 +2013,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -2025,7 +2025,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -2160,7 +2160,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -2172,7 +2172,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -2219,7 +2219,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -2231,7 +2231,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -2391,7 +2391,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -2403,7 +2403,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -2448,7 +2448,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -2460,7 +2460,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -2524,7 +2524,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -2536,7 +2536,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     }
                 ],
@@ -2598,7 +2598,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -2610,7 +2610,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     }
                 ],
@@ -2649,7 +2649,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -2661,7 +2661,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -2731,7 +2731,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -2743,7 +2743,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -2788,7 +2788,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -2800,7 +2800,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -2844,7 +2844,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -2856,7 +2856,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -2903,7 +2903,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -2915,7 +2915,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -2931,20 +2931,7 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "set-case-description",
-                            "set-case-labels",
-                            "append-case-labels",
-                            "set-case-priority",
-                            "set-case-status",
-                            "set-case-agent",
-                            "set-case-group",
-                            "append-case-article",
-                            "set-case-quick-reply",
-                            "set-case-outbound-email-subject",
-                            "set-case-custom-key"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "The action type slug."
                     }
                 ],
@@ -2998,7 +2985,7 @@
                             "v1"
                         ],
                         "default": "v1",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The API version."
                     },
                     {
@@ -3010,7 +2997,7 @@
                             "json"
                         ],
                         "default": "json",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The response format."
                     },
                     {
@@ -3026,20 +3013,7 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "set-case-description",
-                            "set-case-labels",
-                            "append-case-labels",
-                            "set-case-priority",
-                            "set-case-status",
-                            "set-case-agent",
-                            "set-case-group",
-                            "append-case-article",
-                            "set-case-quick-reply",
-                            "set-case-outbound-email-subject",
-                            "set-case-custom-key"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "The action type slug."
                     }
                 ],
@@ -3057,24 +3031,21 @@
     "definitions": {
         "version": {
             "title": "version",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "v1"
             ]
         },
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "json"
             ]
         },
         "by": {
             "title": "by",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "id",
                 "external_id"
@@ -3085,16 +3056,16 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10"
+                "Value_1",
+                "Value_2",
+                "Value_3",
+                "Value_4",
+                "Value_5",
+                "Value_6",
+                "Value_7",
+                "Value_8",
+                "Value_9",
+                "Value_10"
             ]
         },
         "case_status_type_id": {
@@ -3102,37 +3073,18 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "10",
-                "30",
-                "50",
-                "70"
+                "Value_10",
+                "Value_30",
+                "Value_50",
+                "Value_70"
             ]
         },
         "interaction_channel": {
             "title": "interaction_channel",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "email",
                 "phone"
-            ]
-        },
-        "type": {
-            "title": "type",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "set-case-description",
-                "set-case-labels",
-                "append-case-labels",
-                "set-case-priority",
-                "set-case-status",
-                "set-case-agent",
-                "set-case-group",
-                "append-case-article",
-                "set-case-quick-reply",
-                "set-case-outbound-email-subject",
-                "set-case-custom-key"
             ]
         }
     }

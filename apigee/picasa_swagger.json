@@ -61,13 +61,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "all",
-                            "private",
-                            "public",
-                            "visible"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Visibility parameter.\nApplicable values:\n- all: Shows all data, both public and private. Requires authentication. Default for the owner, and only the owner can specify this value.\n- private: Shows only private data.        Requires authentication. Only the owner can specify this value.\n- public: Shows only public data. Does not require authentication. Most often used by an authenticated user to see only the publicly visible photos, corresponding to \"View My Public Gallery\" in the Picasa Web Albums GUI.\n- visible: Shows all data the user has access to, including both all public photos or albums and any photos or albums that the owner has explicitly given the authenticated user rights to (using ACLs).     Does not require authentication. Default for unauthenticated requests and for non-owners. For unauthenticated requests, this is the same as public. For authenticated non-owners, this returns the data that the owner has given them access to. For authenticated requests from the owner, this is the same as all."
                     },
                     {
@@ -75,15 +69,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "atom-in-script",
-                            "rss-in-script",
-                            "atom-service"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Alternative representation type. If you don't specify an alt parameter, the service returns an Atom feed. This is equivalent to alt=atom.\nApplicable values:\n- rss: returns an RSS 2.0 result feed (for reads only). When you request data from a service in RSS format, the service supplies a feed (or other representation of the resource) in RSS format. If there's no equivalent RSS property for a given Data API property, the service uses the Atom property, labeling it with an appropriate namespace to indicate that it's an extension to RSS.\n- json: returns a JSON representation of the feed. More information\n- json-in-script: Requests a response that wraps JSON in a script tag. More information\n- atom-in-script: Requests an Atom response that wraps an XML string in a script tag.\n- rss-in-script: Requests an RSS response that wraps an XML string in a script tag.\n- atom-service: Requests an Atom service document that describes the feed."
                     },
                     {
@@ -213,7 +199,7 @@
                             "tag",
                             "user"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Picasa Web Albums-specific query parameter for kind queries.\nApplicable values:\n- album: Feed includes some or all of the albums the specified user has in their gallery. Which albums are returned depends on the visibility value specified.     User-based feed\n- photo: Feed includes the photos in an album (album-based), recent photos uploaded by a user (user-based) or photos uploaded by all users (community search).     Album-based, user-based and community search feeds\n- comment: Feed includes the comments that have been made on a photo.    Photo-based and user-based feeds\n- tag: Includes all tags associated with the specified user, album, or photo. For user-based and album-based feeds, the tags include a weight value indicating how often they occurred.        User-based, album-based, and photo-based feeds\n- user: Feed includes entries representing users."
                     },
                     {
@@ -221,13 +207,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "all",
-                            "private",
-                            "public",
-                            "visible"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Visibility parameter.\nApplicable values:\n- all: Shows all data, both public and private. Requires authentication. Default for the owner, and only the owner can specify this value.\n- private: Shows only private data.        Requires authentication. Only the owner can specify this value.\n- public: Shows only public data. Does not require authentication. Most often used by an authenticated user to see only the publicly visible photos, corresponding to \"View My Public Gallery\" in the Picasa Web Albums GUI.\n- visible: Shows all data the user has access to, including both all public photos or albums and any photos or albums that the owner has explicitly given the authenticated user rights to (using ACLs).     Does not require authentication. Default for unauthenticated requests and for non-owners. For unauthenticated requests, this is the same as public. For authenticated non-owners, this returns the data that the owner has given them access to. For authenticated requests from the owner, this is the same as all."
                     },
                     {
@@ -235,15 +215,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "atom-in-script",
-                            "rss-in-script",
-                            "atom-service"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Alternative representation type. If you don't specify an alt parameter, the service returns an Atom feed. This is equivalent to alt=atom.\nApplicable values:\n- rss: returns an RSS 2.0 result feed (for reads only). When you request data from a service in RSS format, the service supplies a feed (or other representation of the resource) in RSS format. If there's no equivalent RSS property for a given Data API property, the service uses the Atom property, labeling it with an appropriate namespace to indicate that it's an extension to RSS.\n- json: returns a JSON representation of the feed. More information\n- json-in-script: Requests a response that wraps JSON in a script tag. More information\n- atom-in-script: Requests an Atom response that wraps an XML string in a script tag.\n- rss-in-script: Requests an RSS response that wraps an XML string in a script tag.\n- atom-service: Requests an Atom service document that describes the feed."
                     },
                     {
@@ -376,13 +348,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "all",
-                            "private",
-                            "public",
-                            "visible"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Visibility parameter.\nApplicable values:\n- all: Shows all data, both public and private. Requires authentication. Default for the owner, and only the owner can specify this value.\n- private: Shows only private data.        Requires authentication. Only the owner can specify this value.\n- public: Shows only public data. Does not require authentication. Most often used by an authenticated user to see only the publicly visible photos, corresponding to \"View My Public Gallery\" in the Picasa Web Albums GUI.\n- visible: Shows all data the user has access to, including both all public photos or albums and any photos or albums that the owner has explicitly given the authenticated user rights to (using ACLs).     Does not require authentication. Default for unauthenticated requests and for non-owners. For unauthenticated requests, this is the same as public. For authenticated non-owners, this returns the data that the owner has given them access to. For authenticated requests from the owner, this is the same as all."
                     },
                     {
@@ -390,15 +356,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "atom-in-script",
-                            "rss-in-script",
-                            "atom-service"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Alternative representation type. If you don't specify an alt parameter, the service returns an Atom feed. This is equivalent to alt=atom.\nApplicable values:\n- rss: returns an RSS 2.0 result feed (for reads only). When you request data from a service in RSS format, the service supplies a feed (or other representation of the resource) in RSS format. If there's no equivalent RSS property for a given Data API property, the service uses the Atom property, labeling it with an appropriate namespace to indicate that it's an extension to RSS.\n- json: returns a JSON representation of the feed. More information\n- json-in-script: Requests a response that wraps JSON in a script tag. More information\n- atom-in-script: Requests an Atom response that wraps an XML string in a script tag.\n- rss-in-script: Requests an RSS response that wraps an XML string in a script tag.\n- atom-service: Requests an Atom service document that describes the feed."
                     },
                     {
@@ -504,24 +462,7 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "multipart/related; boundary=\"END_OF_PART\"",
-                            "image/bmp",
-                            "image/gif",
-                            "image/jpeg",
-                            "image/png",
-                            "video/3gpp",
-                            "video/avi",
-                            "video/quicktime",
-                            "video/mp4",
-                            "video/mpeg",
-                            "video/mpeg4",
-                            "video/msvideo",
-                            "video/x-ms-asf",
-                            "video/x-ms-wmv",
-                            "video/x-msvideo"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -569,7 +510,7 @@
                             "tag",
                             "user"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Picasa Web Albums-specific query parameter for kind queries.\nApplicable values:\n- album: Feed includes some or all of the albums the specified user has in their gallery. Which albums are returned depends on the visibility value specified.     User-based feed\n- photo: Feed includes the photos in an album (album-based), recent photos uploaded by a user (user-based) or photos uploaded by all users (community search).     Album-based, user-based and community search feeds\n- comment: Feed includes the comments that have been made on a photo.    Photo-based and user-based feeds\n- tag: Includes all tags associated with the specified user, album, or photo. For user-based and album-based feeds, the tags include a weight value indicating how often they occurred.        User-based, album-based, and photo-based feeds\n- user: Feed includes entries representing users."
                     },
                     {
@@ -577,13 +518,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "all",
-                            "private",
-                            "public",
-                            "visible"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Visibility parameter.\nApplicable values:\n- all: Shows all data, both public and private. Requires authentication. Default for the owner, and only the owner can specify this value.\n- private: Shows only private data.        Requires authentication. Only the owner can specify this value.\n- public: Shows only public data. Does not require authentication. Most often used by an authenticated user to see only the publicly visible photos, corresponding to \"View My Public Gallery\" in the Picasa Web Albums GUI.\n- visible: Shows all data the user has access to, including both all public photos or albums and any photos or albums that the owner has explicitly given the authenticated user rights to (using ACLs).     Does not require authentication. Default for unauthenticated requests and for non-owners. For unauthenticated requests, this is the same as public. For authenticated non-owners, this returns the data that the owner has given them access to. For authenticated requests from the owner, this is the same as all."
                     },
                     {
@@ -591,15 +526,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "atom-in-script",
-                            "rss-in-script",
-                            "atom-service"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Alternative representation type. If you don't specify an alt parameter, the service returns an Atom feed. This is equivalent to alt=atom.\nApplicable values:\n- rss: returns an RSS 2.0 result feed (for reads only). When you request data from a service in RSS format, the service supplies a feed (or other representation of the resource) in RSS format. If there's no equivalent RSS property for a given Data API property, the service uses the Atom property, labeling it with an appropriate namespace to indicate that it's an extension to RSS.\n- json: returns a JSON representation of the feed. More information\n- json-in-script: Requests a response that wraps JSON in a script tag. More information\n- atom-in-script: Requests an Atom response that wraps an XML string in a script tag.\n- rss-in-script: Requests an RSS response that wraps an XML string in a script tag.\n- atom-service: Requests an Atom service document that describes the feed."
                     },
                     {
@@ -882,13 +809,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "all",
-                            "private",
-                            "public",
-                            "visible"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Visibility parameter.\nApplicable values:\n- all: Shows all data, both public and private. Requires authentication. Default for the owner, and only the owner can specify this value.\n- private: Shows only private data.        Requires authentication. Only the owner can specify this value.\n- public: Shows only public data. Does not require authentication. Most often used by an authenticated user to see only the publicly visible photos, corresponding to \"View My Public Gallery\" in the Picasa Web Albums GUI.\n- visible: Shows all data the user has access to, including both all public photos or albums and any photos or albums that the owner has explicitly given the authenticated user rights to (using ACLs).     Does not require authentication. Default for unauthenticated requests and for non-owners. For unauthenticated requests, this is the same as public. For authenticated non-owners, this returns the data that the owner has given them access to. For authenticated requests from the owner, this is the same as all."
                     },
                     {
@@ -896,15 +817,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "atom-in-script",
-                            "rss-in-script",
-                            "atom-service"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Alternative representation type. If you don't specify an alt parameter, the service returns an Atom feed. This is equivalent to alt=atom.\nApplicable values:\n- rss: returns an RSS 2.0 result feed (for reads only). When you request data from a service in RSS format, the service supplies a feed (or other representation of the resource) in RSS format. If there's no equivalent RSS property for a given Data API property, the service uses the Atom property, labeling it with an appropriate namespace to indicate that it's an extension to RSS.\n- json: returns a JSON representation of the feed. More information\n- json-in-script: Requests a response that wraps JSON in a script tag. More information\n- atom-in-script: Requests an Atom response that wraps an XML string in a script tag.\n- rss-in-script: Requests an RSS response that wraps an XML string in a script tag.\n- atom-service: Requests an Atom service document that describes the feed."
                     },
                     {
@@ -1050,7 +963,7 @@
                             "tag",
                             "user"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Picasa Web Albums-specific query parameter for kind queries.\nApplicable values:\n- album: Feed includes some or all of the albums the specified user has in their gallery. Which albums are returned depends on the visibility value specified.     User-based feed\n- photo: Feed includes the photos in an album (album-based), recent photos uploaded by a user (user-based) or photos uploaded by all users (community search).     Album-based, user-based and community search feeds\n- comment: Feed includes the comments that have been made on a photo.    Photo-based and user-based feeds\n- tag: Includes all tags associated with the specified user, album, or photo. For user-based and album-based feeds, the tags include a weight value indicating how often they occurred.        User-based, album-based, and photo-based feeds\n- user: Feed includes entries representing users."
                     },
                     {
@@ -1058,13 +971,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "all",
-                            "private",
-                            "public",
-                            "visible"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Visibility parameter.\nApplicable values:\n- all: Shows all data, both public and private. Requires authentication. Default for the owner, and only the owner can specify this value.\n- private: Shows only private data.        Requires authentication. Only the owner can specify this value.\n- public: Shows only public data. Does not require authentication. Most often used by an authenticated user to see only the publicly visible photos, corresponding to \"View My Public Gallery\" in the Picasa Web Albums GUI.\n- visible: Shows all data the user has access to, including both all public photos or albums and any photos or albums that the owner has explicitly given the authenticated user rights to (using ACLs).     Does not require authentication. Default for unauthenticated requests and for non-owners. For unauthenticated requests, this is the same as public. For authenticated non-owners, this returns the data that the owner has given them access to. For authenticated requests from the owner, this is the same as all."
                     },
                     {
@@ -1072,15 +979,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "atom-in-script",
-                            "rss-in-script",
-                            "atom-service"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Alternative representation type. If you don't specify an alt parameter, the service returns an Atom feed. This is equivalent to alt=atom.\nApplicable values:\n- rss: returns an RSS 2.0 result feed (for reads only). When you request data from a service in RSS format, the service supplies a feed (or other representation of the resource) in RSS format. If there's no equivalent RSS property for a given Data API property, the service uses the Atom property, labeling it with an appropriate namespace to indicate that it's an extension to RSS.\n- json: returns a JSON representation of the feed. More information\n- json-in-script: Requests a response that wraps JSON in a script tag. More information\n- atom-in-script: Requests an Atom response that wraps an XML string in a script tag.\n- rss-in-script: Requests an RSS response that wraps an XML string in a script tag.\n- atom-service: Requests an Atom service document that describes the feed."
                     },
                     {
@@ -1188,25 +1087,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "multipart/related; boundary=\"END_OF_PART\"",
-                            "image/bmp",
-                            "image/gif",
-                            "image/jpeg",
-                            "image/png",
-                            "video/3gpp",
-                            "video/avi",
-                            "video/quicktime",
-                            "video/mp4",
-                            "video/mpeg",
-                            "video/mpeg4",
-                            "video/msvideo",
-                            "video/x-ms-asf",
-                            "video/x-ms-wmv",
-                            "video/x-msvideo"
-                        ],
                         "default": "image/jpeg",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -1448,7 +1330,7 @@
                             "tag",
                             "user"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Picasa Web Albums-specific query parameter for kind queries.\nApplicable values:\n- album: Feed includes some or all of the albums the specified user has in their gallery. Which albums are returned depends on the visibility value specified.     User-based feed\n- photo: Feed includes the photos in an album (album-based), recent photos uploaded by a user (user-based) or photos uploaded by all users (community search).     Album-based, user-based and community search feeds\n- comment: Feed includes the comments that have been made on a photo.    Photo-based and user-based feeds\n- tag: Includes all tags associated with the specified user, album, or photo. For user-based and album-based feeds, the tags include a weight value indicating how often they occurred.        User-based, album-based, and photo-based feeds\n- user: Feed includes entries representing users."
                     },
                     {
@@ -1456,13 +1338,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "all",
-                            "private",
-                            "public",
-                            "visible"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Visibility parameter.\nApplicable values:\n- all: Shows all data, both public and private. Requires authentication. Default for the owner, and only the owner can specify this value.\n- private: Shows only private data.        Requires authentication. Only the owner can specify this value.\n- public: Shows only public data. Does not require authentication. Most often used by an authenticated user to see only the publicly visible photos, corresponding to \"View My Public Gallery\" in the Picasa Web Albums GUI.\n- visible: Shows all data the user has access to, including both all public photos or albums and any photos or albums that the owner has explicitly given the authenticated user rights to (using ACLs).     Does not require authentication. Default for unauthenticated requests and for non-owners. For unauthenticated requests, this is the same as public. For authenticated non-owners, this returns the data that the owner has given them access to. For authenticated requests from the owner, this is the same as all."
                     },
                     {
@@ -1470,15 +1346,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "atom-in-script",
-                            "rss-in-script",
-                            "atom-service"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Alternative representation type. If you don't specify an alt parameter, the service returns an Atom feed. This is equivalent to alt=atom.\nApplicable values:\n- rss: returns an RSS 2.0 result feed (for reads only). When you request data from a service in RSS format, the service supplies a feed (or other representation of the resource) in RSS format. If there's no equivalent RSS property for a given Data API property, the service uses the Atom property, labeling it with an appropriate namespace to indicate that it's an extension to RSS.\n- json: returns a JSON representation of the feed. More information\n- json-in-script: Requests a response that wraps JSON in a script tag. More information\n- atom-in-script: Requests an Atom response that wraps an XML string in a script tag.\n- rss-in-script: Requests an RSS response that wraps an XML string in a script tag.\n- atom-service: Requests an Atom service document that describes the feed."
                     },
                     {
@@ -1568,60 +1436,13 @@
     "definitions": {
         "kind": {
             "title": "kind",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "album",
                 "photo",
                 "comment",
                 "tag",
                 "user"
-            ]
-        },
-        "access": {
-            "title": "access",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "all",
-                "private",
-                "public",
-                "visible"
-            ]
-        },
-        "alt": {
-            "title": "alt",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "rss",
-                "json",
-                "json-in-script",
-                "atom-in-script",
-                "rss-in-script",
-                "atom-service"
-            ]
-        },
-        "Content-Type": {
-            "title": "Content-Type",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "multipart/related; boundary=\"END_OF_PART\"",
-                "image/bmp",
-                "image/gif",
-                "image/jpeg",
-                "image/png",
-                "video/3gpp",
-                "video/avi",
-                "video/quicktime",
-                "video/mp4",
-                "video/mpeg",
-                "video/mpeg4",
-                "video/msvideo",
-                "video/x-ms-asf",
-                "video/x-ms-wmv",
-                "video/x-msvideo"
             ]
         }
     }

@@ -1,0 +1,28 @@
+{
+    "host": "api.v3.factual.com", 
+    "basePath": "/", 
+    "total": 4, 
+    "methods": {
+        "get": {
+            "times": 4, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 2, 
+            "frequency": "0.500"
+        }, 
+        "2": {
+            "times": 2, 
+            "frequency": "0.500"
+        }
+    }, 
+    "url_noun": [
+        "/t/{table_name}", 
+        "/t/{table_name}/facets", 
+        "/t/{table_name}/schema", 
+        "/t/{table_name}/{factual_id}"
+    ], 
+    "url_not_noun": []
+}

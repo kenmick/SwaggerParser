@@ -1,0 +1,53 @@
+{
+    "host": "sites.google.com", 
+    "basePath": "/feeds/", 
+    "total": 20, 
+    "methods": {
+        "put": {
+            "times": 5, 
+            "frequency": "0.250"
+        }, 
+        "post": {
+            "times": 4, 
+            "frequency": "0.200"
+        }, 
+        "delete": {
+            "times": 2, 
+            "frequency": "0.100"
+        }, 
+        "get": {
+            "times": 9, 
+            "frequency": "0.450"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 9, 
+            "frequency": "0.692"
+        }, 
+        "2": {
+            "times": 3, 
+            "frequency": "0.231"
+        }, 
+        "3": {
+            "times": 1, 
+            "frequency": "0.077"
+        }
+    }, 
+    "url_noun": [
+        "/content/{domainName}/{siteName}", 
+        "/content/{domainName}/{siteName}/batch", 
+        "/content/{domainName}/{siteName}/{contentEntryID}", 
+        "/revision/{domainName}/{siteName}/{contentEntryID}/{revisionEntryID}", 
+        "/content/{domainName}/{siteName}/{entryID}", 
+        "/site/{domainName}", 
+        "/acl/site/{domainName}/{siteName}/user%3A{user_mail}", 
+        "/acl/site/{domainName}/{siteName}", 
+        "/activity/{domainName}/{siteName}/{activityEntryID}", 
+        "/revision/{domainName}/{siteName}/{contentEntryID}", 
+        "/site/{domainName}/{siteName}", 
+        "/activity/{domainName}/{siteName}", 
+        "/media/content/{domainName}/{siteName}/{attchmentEntryID}"
+    ], 
+    "url_not_noun": []
+}

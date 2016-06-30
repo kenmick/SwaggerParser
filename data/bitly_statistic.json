@@ -19,16 +19,22 @@
         }
     }, 
     "url_noun": [
+        "/user/referring_domains", 
         "/user/popular_links", 
         "/organization/popular_links", 
         "/user/link_lookup", 
         "/oauth/app", 
+        "/user/popular_owned_by_shortens", 
         "/link/encoders", 
+        "/organization/missed_opportunities", 
         "/user/link_edit", 
+        "/user/popular_earned_by_clicks", 
         "/user/referrers", 
         "/link/referrers", 
         "/organization/clicks", 
+        "/user/popular_earned_by_shortens", 
         "/bitly_pro_domain", 
+        "/user/popular_owned_by_clicks", 
         "/user/link_history", 
         "/organization/leaderboard", 
         "/info", 
@@ -40,26 +46,20 @@
         "/user/network_history", 
         "/link/referrers_by_domain", 
         "/user/countries", 
+        "/organization/intersecting_links", 
         "/link/countries", 
         "/link/clicks", 
         "/user/tracking_domain_list", 
         "/link/lookup"
     ], 
     "url_not_noun": [
-        "/user/referring_domains", 
         "/link/encoders_count", 
         "/expand", 
-        "/user/popular_owned_by_shortens", 
         "/user/tracking_domain_shorten_counts", 
-        "/organization/missed_opportunities", 
         "/organization/shorten_counts", 
-        "/user/popular_earned_by_clicks", 
-        "/user/popular_earned_by_shortens", 
         "/user/link_save", 
-        "/user/popular_owned_by_clicks", 
         "/user/shorten_counts", 
         "/user/tracking_domain_clicks", 
-        "/shorten", 
-        "/organization/intersecting_links"
+        "/shorten"
     ]
 }

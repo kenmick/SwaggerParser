@@ -1,0 +1,53 @@
+{
+    "host": "picasaweb.google.com", 
+    "basePath": "/data/", 
+    "total": 14, 
+    "methods": {
+        "put": {
+            "times": 3, 
+            "frequency": "0.214"
+        }, 
+        "post": {
+            "times": 3, 
+            "frequency": "0.214"
+        }, 
+        "delete": {
+            "times": 4, 
+            "frequency": "0.286"
+        }, 
+        "get": {
+            "times": 4, 
+            "frequency": "0.286"
+        }
+    }, 
+    "paths": {
+        "3": {
+            "times": 2, 
+            "frequency": "0.222"
+        }, 
+        "4": {
+            "times": 2, 
+            "frequency": "0.222"
+        }, 
+        "5": {
+            "times": 3, 
+            "frequency": "0.333"
+        }, 
+        "6": {
+            "times": 2, 
+            "frequency": "0.222"
+        }
+    }, 
+    "url_noun": [
+        "/feed/api/user/{userID}/albumid/{albumID}/photoid/{photoID}", 
+        "/entry/api/user/{userID}/albumid/{albumID}/photoid/{photoID}", 
+        "/entry/api/user/{userID}/albumid/{albumID}/photoid/{photoID}/commentid/{commentID}", 
+        "/feed/api/user/{userID}", 
+        "/entry/api/user/{userID}/albumid/{albumID}/photoid/{photoID}/tag/{tagID}", 
+        "/feed/api/user/{userID}/albumid/{albumID}", 
+        "/entry/api/user/{userID}/albumid/{albumID}", 
+        "/media/api/user/{userID}/albumid/{albumID}/photoid/{photoID}", 
+        "/feed/api/all"
+    ], 
+    "url_not_noun": []
+}

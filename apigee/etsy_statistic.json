@@ -1,0 +1,137 @@
+{
+    "host": "openapi.etsy.com", 
+    "basePath": "/v2/private/", 
+    "total": 115, 
+    "methods": {
+        "put": {
+            "times": 9, 
+            "frequency": "0.078"
+        }, 
+        "post": {
+            "times": 14, 
+            "frequency": "0.122"
+        }, 
+        "get": {
+            "times": 82, 
+            "frequency": "0.713"
+        }, 
+        "delete": {
+            "times": 10, 
+            "frequency": "0.087"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 21, 
+            "frequency": "0.228"
+        }, 
+        "2": {
+            "times": 38, 
+            "frequency": "0.413"
+        }, 
+        "3": {
+            "times": 32, 
+            "frequency": "0.348"
+        }, 
+        "4": {
+            "times": 1, 
+            "frequency": "0.011"
+        }
+    }, 
+    "url_noun": [
+        "/users/{user_id}/avatar", 
+        "/shipping/templates/entries/{shipping_template_entry_id}", 
+        "/users/{user_id}/avatar/src", 
+        "/shops/{shop_id}/listings/featured", 
+        "/users/{user_id}/recommended_listings/views/{listing_ids}", 
+        "/users/{user_id}/treasuries", 
+        "/shops/{shop_id}/listings/inactive/{listing_id}", 
+        "/featured/users", 
+        "/users/{user_id}/favorites/users", 
+        "/categories/{tag}", 
+        "/users/{user_id}/feedback/as-buyer", 
+        "/users/{user_id}/receipts", 
+        "/sections", 
+        "/users/{user_id}/favorites/listings/{listing_id}", 
+        "/users/{user_id}/payments", 
+        "/orders/{order_id}", 
+        "/shops", 
+        "/listings/{listing_id}/images", 
+        "/regions", 
+        "/users/{user_id}/favored-by", 
+        "/orders/{order_id}/receipts", 
+        "/server/ping", 
+        "/users/{user_id}/feedback/as-subject", 
+        "/shipping/info/{shipping_info_id}", 
+        "/regions/{region_id}", 
+        "/receipts/{receipt_id}/transactions", 
+        "/users/{user_id}/favorites/users/{target_user_id}", 
+        "/users/{user_id}/charges", 
+        "/users/{user_id}/addresses/{user_address_id}", 
+        "/homepages/listings/{featured_listing_id}/listing", 
+        "/listings", 
+        "/receipts/{receipt_id}", 
+        "/shops/{shop_id}/listings/expired/{listing_id}", 
+        "/treasuries", 
+        "/payments/templates", 
+        "/homepages/pickers/{featured_listing_picker_id}", 
+        "/", 
+        "/homepages/listings/{featured_listing_id}/picker", 
+        "/users/{user_id}/feedback/as-author", 
+        "/homepages/pickers/{featured_listing_picker_id}/listings/active", 
+        "/transactions/{transaction_id}", 
+        "/listings/{listing_id}/images/{listing_image_id}", 
+        "/taxonomy/categories/{tag}", 
+        "/users/{user_id}/favorites/listings", 
+        "/shops/{shop_id}/sections", 
+        "/shipping/templates/entries", 
+        "/homepages/pickers/", 
+        "/users/{user_id}/shipping/templates", 
+        "/treasuries/{treasury_id}", 
+        "/shops/{shop_id}/appearance/banner/{shop_banner_id}", 
+        "/sections/{shop_section_id}", 
+        "/listings/{listing_id}", 
+        "/categories/{tag}/{subtag}/{subsubtag}", 
+        "/shops/{shop_id}/receipts", 
+        "/shops/{shop_id}/listings/active", 
+        "/users/{user_id}/addresses", 
+        "/taxonomy/categories/{tag}/{subtag}", 
+        "/featured/users/{featured_user_id}", 
+        "/payments/templates/{payment_template_id}", 
+        "/countries/{country_id}", 
+        "/categories/{tag}/{subtag}", 
+        "/listings/{listing_id}/favored-by", 
+        "/taxonomy/categories", 
+        "/users/{user_id}/transactions", 
+        "/listings/active", 
+        "/listings/{listing_id}/shipping/info", 
+        "/shipping/templates/{shipping_template_id}/entries", 
+        "/server/epoch", 
+        "/shops/{shop_id}/transactions", 
+        "/shipping/templates", 
+        "/homepages/listings/active", 
+        "/users/{user_id}/feedback/as-seller", 
+        "/users/{user_id}/payments/templates", 
+        "/countries", 
+        "/shipping/templates/{shipping_template_id}", 
+        "/homepages/listings/{featured_listing_id}", 
+        "/users/{user_id}", 
+        "/shops/{shop_id}/listings/expired", 
+        "/homepages/listings/", 
+        "/shops/{shop_id}/listings/inactive", 
+        "/users/{user_id}/recommended_listings", 
+        "/taxonomy/tags/{tags}", 
+        "/users/{user_id}/orders", 
+        "/shops/{shop_id}/appearance/banner", 
+        "/homepages/pickers/{featured_listing_picker_id}/featured", 
+        "/shops/{shop_id}", 
+        "/listings/{listing_id}/payments", 
+        "/taxonomy/tags", 
+        "/payments/{listing_payment_id}", 
+        "/users/{user_id}/shops", 
+        "/homepages/pickers/{featured_listing_picker_id}/listings"
+    ], 
+    "url_not_noun": [
+        "/users/{user_id}/recommended_listings/rejects/{listing_ids}"
+    ]
+}

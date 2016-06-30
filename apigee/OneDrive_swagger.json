@@ -51,16 +51,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "",
-                            "name%20desc",
-                            "size%20desc",
-                            "lastModifiedDateTime%20desc",
-                            "name%20asc",
-                            "size%20asc",
-                            "lastModifiedDateTime%20asc"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "You can use the orderby query string to control the sort order of the items returned from the API. For a collection of items, the following fields are allowed to be used in the orderby parameter:"
                     },
                     {
@@ -130,16 +121,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "",
-                            "name%20desc",
-                            "size%20desc",
-                            "lastModifiedDateTime%20desc",
-                            "name%20asc",
-                            "size%20asc",
-                            "lastModifiedDateTime%20asc"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "You can use the orderby query string to control the sort order of the items returned from the API. For a collection of items, the following fields are allowed to be used in the orderby parameter:"
                     },
                     {
@@ -192,7 +174,7 @@
                             "music"
                         ],
                         "default": "documents",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The special folder name"
                     }
                 ],
@@ -227,7 +209,7 @@
                             "music"
                         ],
                         "default": "documents",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The special folder name"
                     }
                 ],
@@ -398,7 +380,7 @@
                             "replace"
                         ],
                         "default": "fail",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines what to do if a file with a matching filename already exists in this folder. Accepted values are: rename, replace, and fail (the default)."
                     },
                     {
@@ -657,7 +639,7 @@
                             "replace"
                         ],
                         "default": "fail",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Determines what to do if a file with a matching filename already exists in this folder. Accepted values are: rename, replace, and fail (the default)."
                     },
                     {
@@ -1040,16 +1022,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "",
-                            "small",
-                            "medium",
-                            "large",
-                            "smallSquare",
-                            "mediumSquare",
-                            "largeSquare"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "You can use the select query string parameter to control which thumbnail sizes are returned in the ThumbnailSet. For example: /thumbnails?select=medium to retrieve only the medium sized thumbnails."
                     }
                 ],
@@ -1084,16 +1057,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "",
-                            "small",
-                            "medium",
-                            "large",
-                            "smallSquare",
-                            "mediumSquare",
-                            "largeSquare"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "You can use the select query string parameter to control which thumbnail sizes are returned in the ThumbnailSet. For example: /thumbnails?select=medium to retrieve only the medium sized thumbnails."
                     }
                 ],
@@ -1130,11 +1094,11 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "0",
-                            "1",
-                            "2",
-                            "3",
-                            "4"
+                            "Value_0",
+                            "Value_1",
+                            "Value_2",
+                            "Value_3",
+                            "Value_4"
                         ],
                         "default": "0",
                         "type": "integer",
@@ -1154,7 +1118,7 @@
                             "largeSquare"
                         ],
                         "default": "medium",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The size of the thumbnail requested"
                     }
                 ],
@@ -1190,11 +1154,11 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "0",
-                            "1",
-                            "2",
-                            "3",
-                            "4"
+                            "Value_0",
+                            "Value_1",
+                            "Value_2",
+                            "Value_3",
+                            "Value_4"
                         ],
                         "default": "0",
                         "type": "integer",
@@ -1214,7 +1178,7 @@
                             "largeSquare"
                         ],
                         "default": "medium",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The size of the thumbnail requested"
                     }
                 ],
@@ -1250,11 +1214,11 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "0",
-                            "1",
-                            "2",
-                            "3",
-                            "4"
+                            "Value_0",
+                            "Value_1",
+                            "Value_2",
+                            "Value_3",
+                            "Value_4"
                         ],
                         "default": "0",
                         "type": "integer",
@@ -1274,7 +1238,7 @@
                             "largeSquare"
                         ],
                         "default": "medium",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The size of the thumbnail requested"
                     }
                 ],
@@ -1310,11 +1274,11 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "0",
-                            "1",
-                            "2",
-                            "3",
-                            "4"
+                            "Value_0",
+                            "Value_1",
+                            "Value_2",
+                            "Value_3",
+                            "Value_4"
                         ],
                         "default": "0",
                         "type": "integer",
@@ -1334,7 +1298,7 @@
                             "largeSquare"
                         ],
                         "default": "medium",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The size of the thumbnail requested"
                     }
                 ],
@@ -1482,16 +1446,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "",
-                            "name%20desc",
-                            "size%20desc",
-                            "lastModifiedDateTime%20desc",
-                            "name%20asc",
-                            "size%20asc",
-                            "lastModifiedDateTime%20asc"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "You can use the orderby query string to control the sort order of the items returned from the API. For a collection of items, the following fields are allowed to be used in the orderby parameter:"
                     },
                     {
@@ -1568,16 +1523,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "",
-                            "name%20desc",
-                            "size%20desc",
-                            "lastModifiedDateTime%20desc",
-                            "name%20asc",
-                            "size%20asc",
-                            "lastModifiedDateTime%20asc"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "You can use the orderby query string to control the sort order of the items returned from the API. For a collection of items, the following fields are allowed to be used in the orderby parameter:"
                     },
                     {
@@ -1754,24 +1700,9 @@
         }
     },
     "definitions": {
-        "orderby": {
-            "title": "orderby",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "",
-                "name%20desc",
-                "size%20desc",
-                "lastModifiedDateTime%20desc",
-                "name%20asc",
-                "size%20asc",
-                "lastModifiedDateTime%20asc"
-            ]
-        },
         "special-folder-name": {
             "title": "special-folder-name",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "documents",
                 "photos",
@@ -1782,26 +1713,11 @@
         },
         "nameConflict": {
             "title": "nameConflict",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "fail",
                 "rename",
                 "replace"
-            ]
-        },
-        "select": {
-            "title": "select",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "",
-                "small",
-                "medium",
-                "large",
-                "smallSquare",
-                "mediumSquare",
-                "largeSquare"
             ]
         },
         "thumbnail-set-index": {
@@ -1809,17 +1725,16 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "0",
-                "1",
-                "2",
-                "3",
-                "4"
+                "Value_0",
+                "Value_1",
+                "Value_2",
+                "Value_3",
+                "Value_4"
             ]
         },
         "size": {
             "title": "size",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "small",
                 "medium",

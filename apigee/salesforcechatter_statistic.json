@@ -1,0 +1,71 @@
+{
+    "host": "na1.salesforce.com", 
+    "basePath": "/services/data/v23.0/", 
+    "total": 58, 
+    "methods": {
+        "post": {
+            "times": 18, 
+            "frequency": "0.310"
+        }, 
+        "delete": {
+            "times": 10, 
+            "frequency": "0.172"
+        }, 
+        "get": {
+            "times": 30, 
+            "frequency": "0.517"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 7, 
+            "frequency": "0.233"
+        }, 
+        "3": {
+            "times": 10, 
+            "frequency": "0.333"
+        }, 
+        "4": {
+            "times": 9, 
+            "frequency": "0.300"
+        }, 
+        "5": {
+            "times": 4, 
+            "frequency": "0.133"
+        }
+    }, 
+    "url_noun": [
+        "/chatter/feed-items/{feedItemId}/likes", 
+        "/chatter/users/me", 
+        "/chatter/groups/{groupId}/photos", 
+        "/chatter/likes/{likeId}", 
+        "/chatter/users/{userId}", 
+        "/chatter/users/me/photo", 
+        "/chatter/group-memberships/{membershipId}", 
+        "/chatter/users/{userId}/photo", 
+        "/chatter/users/me/followers", 
+        "/chatter/feed-items/{feedItemId}/comments", 
+        "/chatter/users/me/groups", 
+        "/chatter/groups/{groupId}/members", 
+        "/chatter/subscriptions/{subscriptionId}", 
+        "/chatter/users/me/following", 
+        "/chatter/users/{userId}/groups", 
+        "/chatter/groups/{groupId}", 
+        "/chatter/users/me/status", 
+        "/chatter/users/{userId}/following", 
+        "/chatter/comments/{commentId}", 
+        "/chatter/users/{userId}/status", 
+        "/chatter/feed-items/{feedItemId}", 
+        "/chatter/users/{userId}/followers"
+    ], 
+    "url_not_noun": [
+        "/chatter/feeds/to/me/feed-items", 
+        "/chatter/feeds/news/me/feed-items", 
+        "/chatter/feeds/record/{userId}/feed-items", 
+        "/chatter/feeds/to/{userId}/feed-items", 
+        "/chatter/feeds/news/{userId}/feed-items", 
+        "/chatter/feeds/user-profile/{userId}/feed-items", 
+        "/chatter/feeds/user-profile/me/feed-items", 
+        "/chatter/feeds/record/me/feed-items"
+    ]
+}

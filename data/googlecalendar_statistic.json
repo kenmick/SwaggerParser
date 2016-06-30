@@ -30,22 +30,18 @@
     }, 
     "paths": {
         "1": {
-            "times": 3, 
-            "frequency": "0.136"
+            "times": 4, 
+            "frequency": "0.182"
         }, 
         "2": {
-            "times": 2, 
-            "frequency": "0.091"
+            "times": 6, 
+            "frequency": "0.273"
         }, 
         "3": {
-            "times": 5, 
-            "frequency": "0.227"
-        }, 
-        "4": {
             "times": 10, 
             "frequency": "0.455"
         }, 
-        "5": {
+        "4": {
             "times": 2, 
             "frequency": "0.091"
         }

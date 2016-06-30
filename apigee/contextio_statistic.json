@@ -1,0 +1,80 @@
+{
+    "host": "api.context.io", 
+    "basePath": "/2.0/", 
+    "total": 60, 
+    "methods": {
+        "put": {
+            "times": 3, 
+            "frequency": "0.050"
+        }, 
+        "post": {
+            "times": 13, 
+            "frequency": "0.217"
+        }, 
+        "delete": {
+            "times": 7, 
+            "frequency": "0.117"
+        }, 
+        "get": {
+            "times": 37, 
+            "frequency": "0.617"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 7, 
+            "frequency": "0.179"
+        }, 
+        "2": {
+            "times": 17, 
+            "frequency": "0.436"
+        }, 
+        "3": {
+            "times": 15, 
+            "frequency": "0.385"
+        }
+    }, 
+    "url_noun": [
+        "/accounts/{id}/files/{fileId}", 
+        "/accounts/{id}/messages", 
+        "/accounts/{id}/files", 
+        "/accounts/{id}/files/{fileId}/content", 
+        "/accounts/{id}/messages/{message_id}", 
+        "/accounts/{id}/email_addresses/{email}", 
+        "/oauth_providers", 
+        "/accounts/{id}/contacts/{email}/messages", 
+        "/oauth_providers/{key}", 
+        "/accounts/{id}/files/{fileId}/revisions", 
+        "/accounts/{id}/webhooks/{webhook_id}", 
+        "/accounts/{id}", 
+        "/accounts/{id}/contacts", 
+        "/accounts/{id}/messages/{message_id}/headers", 
+        "/accounts/{id}/files/{fileId}/related", 
+        "/accounts/{id}/contacts/{email}/files", 
+        "/accounts/{id}/messages/{message_id}/source", 
+        "/accounts", 
+        "/accounts/{id}/sources/{label}", 
+        "/accounts/{id}/sources", 
+        "/accounts/{id}/email_addresses", 
+        "/accounts/{id}/sync", 
+        "/accounts/{id}/contacts/{email}", 
+        "/accounts/{id}/threads/{thread_id}", 
+        "/accounts/{id}/sources/{label}/folders", 
+        "/discovery", 
+        "/accounts/{id}/files/{fileId}/changes", 
+        "/accounts/{id}/messages/{message_id}/body", 
+        "/accounts/{id}/contacts/{email}/threads", 
+        "/accounts/{id}/sources/{label}/folders/{folder}", 
+        "/accounts/{id}/sources/{label}/sync", 
+        "/accounts/{id}/messages/{message_id}/thread", 
+        "/accounts/{id}/threads", 
+        "/accounts/{id}/webhooks", 
+        "/accounts/{id}/messages/{message_id}/flags"
+    ], 
+    "url_not_noun": [
+        "/connect_tokens/{token}", 
+        "/accounts/{id}/connect_tokens", 
+        "/connect_tokens", 
+        "/accounts/{id}/connect_tokens/{token}"
+    ]
+}

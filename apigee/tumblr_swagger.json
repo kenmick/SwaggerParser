@@ -68,15 +68,15 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "16",
-                            "24",
-                            "30",
-                            "40",
-                            "48",
-                            "64",
-                            "96",
-                            "128",
-                            "512"
+                            "Value_16",
+                            "Value_24",
+                            "Value_30",
+                            "Value_40",
+                            "Value_48",
+                            "Value_64",
+                            "Value_96",
+                            "Value_128",
+                            "Value_512"
                         ],
                         "default": "64",
                         "type": "integer",
@@ -206,7 +206,7 @@
                             "text",
                             "raw"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Specifies the post format to return, other than HTML."
                     },
                     {
@@ -231,7 +231,7 @@
                             "audio",
                             "photo"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "The type of post to return. Specify one of the following:    text, quote, link, answer, video, audio, photo. By default, all types are returned"
                     }
                 ],
@@ -329,15 +329,15 @@
                         "x-is-map": false,
                         "enum": [
                             "text",
+                            "photo",
                             "quote",
                             "link",
-                            "answer",
-                            "video",
+                            "chat",
                             "audio",
-                            "photo"
+                            "video"
                         ],
                         "default": "video",
-                        "type": "integer",
+                        "type": "string",
                         "description": "The type of post to create."
                     },
                     {
@@ -428,14 +428,14 @@
                         "x-is-map": false,
                         "enum": [
                             "text",
+                            "photo",
                             "quote",
                             "link",
-                            "answer",
-                            "video",
+                            "chat",
                             "audio",
-                            "photo"
+                            "video"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "The post type."
                     },
                     {
@@ -511,14 +511,14 @@
                         "x-is-map": false,
                         "enum": [
                             "text",
+                            "photo",
                             "quote",
                             "link",
-                            "answer",
-                            "video",
+                            "chat",
                             "audio",
-                            "photo"
+                            "video"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "The post type."
                     },
                     {
@@ -664,14 +664,15 @@
                         "x-is-map": false,
                         "enum": [
                             "text",
+                            "photo",
                             "quote",
                             "link",
-                            "answer",
-                            "video",
+                            "chat",
                             "audio",
-                            "photo"
+                            "video",
+                            "question"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "The type of post to return."
                     },
                     {
@@ -819,21 +820,20 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "16",
-                "24",
-                "30",
-                "40",
-                "48",
-                "64",
-                "96",
-                "128",
-                "512"
+                "Value_16",
+                "Value_24",
+                "Value_30",
+                "Value_40",
+                "Value_48",
+                "Value_64",
+                "Value_96",
+                "Value_128",
+                "Value_512"
             ]
         },
         "format": {
             "title": "format",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "text",
                 "raw"
@@ -841,8 +841,7 @@
         },
         "type": {
             "title": "type",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "text",
                 "quote",
@@ -851,6 +850,33 @@
                 "video",
                 "audio",
                 "photo"
+            ]
+        },
+        "type3": {
+            "title": "type3",
+            "type": "string",
+            "enum": [
+                "text",
+                "photo",
+                "quote",
+                "link",
+                "chat",
+                "audio",
+                "video"
+            ]
+        },
+        "type4": {
+            "title": "type4",
+            "type": "string",
+            "enum": [
+                "text",
+                "photo",
+                "quote",
+                "link",
+                "chat",
+                "audio",
+                "video",
+                "question"
             ]
         }
     }

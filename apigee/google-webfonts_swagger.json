@@ -42,7 +42,7 @@
                             "style",
                             "trending"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Enables sorting of the list."
                     },
                     {
@@ -68,8 +68,7 @@
     "definitions": {
         "sort": {
             "title": "sort",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "alpha",
                 "date",

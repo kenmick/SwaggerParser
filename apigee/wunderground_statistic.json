@@ -1,0 +1,68 @@
+{
+    "host": "api.wunderground.com", 
+    "basePath": "/api/", 
+    "total": 32, 
+    "methods": {
+        "get": {
+            "times": 32, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "2": {
+            "times": 4, 
+            "frequency": "0.125"
+        }, 
+        "3": {
+            "times": 7, 
+            "frequency": "0.219"
+        }, 
+        "4": {
+            "times": 17, 
+            "frequency": "0.531"
+        }, 
+        "5": {
+            "times": 1, 
+            "frequency": "0.031"
+        }, 
+        "6": {
+            "times": 3, 
+            "frequency": "0.094"
+        }
+    }, 
+    "url_noun": [], 
+    "url_not_noun": [
+        "/{key}/forecast/q/CA/San_Francisco.json", 
+        "/{key}/conditions/q/CA/San_Francisco.json", 
+        "/{key}/alerts/q/CA/San_Francisco.json", 
+        "/{key}/conditions/q/pws:KCATAHOE2.json", 
+        "/{key}/geolookup/q/37.776289,-122.395234.json", 
+        "/{key}/rawtide_20160312/q/CA/San_Francisco.json", 
+        "/{key}/satellite/q/CA/San_Francisco.json", 
+        "/{key}/hourly10day/q/CA/San_Francisco.json", 
+        "/{key}/conditions/forecast/lang:FR/q/France/Paris.json", 
+        "/{key}/geolookup/q/France/Paris.json", 
+        "/{key}/webcams/q/CA/San_Francisco.json", 
+        "/{key}/planner_10051031/q/CA/San_Francisco.json", 
+        "/{key}/animatedradar/image.gif?maxlat=42.35%26maxlon=-109.311%26minlat=39.27%26minlon=-114.644%26width=600%26height=480%26newmaps=1", 
+        "/{key}/animatedradar/image.gif?maxlat=42.35%26maxlon=-109.311%26minlat=39.27%26minlon=-114.644%26width=600%26height=480%26newmaps=0", 
+        "/{key}/geolookup/q/CA/San_Francisco.json", 
+        "/{key}/tide_20160312/q/CA/San_Francisco.json", 
+        "/{key}/almanac/q/CA/San_Francisco.json", 
+        "/{key}/history_20101018/q/pws:KCASANFR14.json", 
+        "/{key}/geolookup/conditions/forecast/q/CA/San_Francisco.json", 
+        "/{key}/geolookup/q/autoip.json", 
+        "/{key}/geolookup/conditions/q/CA/San_Francisco.json", 
+        "/{key}/yesterday/q/CA/San_Francisco.json", 
+        "/{key}/conditions/forecast/lang:SP/q/Spain/Alicante.json", 
+        "/{key}/history_20101018/q/SFO.json", 
+        "/{key}/tide/q/CA/San_Francisco.json", 
+        "/{key}/geolookup/q/94107.json", 
+        "/{key}/forecast10day/q/CA/San_Francisco.json", 
+        "/{key}/radar/image.gif?maxlat=42.35%26maxlon=-109.311%26minlat=39.27%26minlon=-114.644%26width=600%26height=480%26newmaps=0", 
+        "/{key}/radar/image.gif?maxlat=42.35%26maxlon=-109.311%26minlat=39.27%26minlon=-114.644%26width=600%26height=480%26newmaps=1", 
+        "/{key}/astronomy/q/CA/San_Francisco.json", 
+        "/{key}/hourly/q/CA/San_Francisco.json", 
+        "/{key}/geolookup/q/SFO.json"
+    ]
+}

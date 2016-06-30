@@ -55,7 +55,7 @@
                             "GMAIL",
                             "GOOGLEAPPSMARKETPLACE"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Identification of the OAuth provider. This must be either GMAIL and GOOGLEAPPSMARKETPLACE."
                     },
                     {
@@ -150,7 +150,7 @@
                         "enum": [
                             "IMAP"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "The type of source you want to discover settings for. Right now, the only supported source type is IMAP."
                     },
                     {
@@ -213,7 +213,7 @@
                             "PRO",
                             "BASIC"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Sets the service level of the account's source to be created. Possible values are PRO and BASIC."
                     },
                     {
@@ -329,7 +329,7 @@
                             "TEMP_DISABLED",
                             "DISABLED"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Only return accounts with sources whose status is of a specific value. If an account has many sources, only those matching the given value will be included in the response. Possible statuses are: INVALID_CREDENTIALS, CONNECTION_IMPOSSIBLE, NO_ACCESS_TO_ALL_MAIL, OK, TEMP_DISABLED and DISABLED."
                     },
                     {
@@ -567,7 +567,7 @@
                             "PRO",
                             "BASIC"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Sets the service level of the account's source to be created. Possible values are PRO and BASIC."
                     },
                     {
@@ -1686,11 +1686,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "GMAIL",
-                            "GOOGLEAPPSMARKETPLACE"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Many emails are sent with both rich text and plain text versions in the message body and by default, the response of this call will include both. It is possible to only get either the plain or rich text version by setting the type parameter to text/plain or text/html respectively."
                     }
                 ],
@@ -1943,7 +1939,7 @@
                             "TEMP_DISABLED",
                             "DISABLED"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Only return sources whose status is of a specific value. Possible statuses are: INVALID_CREDENTIALS, CONNECTION_IMPOSSIBLE, NO_ACCESS_TO_ALL_MAIL, OK, TEMP_DISABLED and DISABLED."
                     },
                     {
@@ -2028,10 +2024,9 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "GMAIL",
-                            "GOOGLEAPPSMARKETPLACE"
+                            "IMAP"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Currently, the only supported type is IMAP"
                     },
                     {
@@ -2043,7 +2038,7 @@
                             "PRO",
                             "BASIC"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Sets the service level for the source to be created. Possible values are: PRO and BASIC. See our pricing page for more information."
                     },
                     {
@@ -2051,14 +2046,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "1h",
-                            "4h",
-                            "12h",
-                            "24h"
-                        ],
                         "default": "24h",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Sets the period at which the Context.IO index for this source is synced with the origin email account on the IMAP server. Possible values are: 1h, 4h, 12h and 24h (default). Only available on sources with service_level set to PRO."
                     },
                     {
@@ -2171,7 +2160,7 @@
                             "PRO",
                             "BASIC"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Changes the service level for the source. Possible values are: PRO and BASIC. See our pricing page for more information."
                     },
                     {
@@ -2179,14 +2168,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "1h",
-                            "4h",
-                            "12h",
-                            "24h"
-                        ],
                         "default": "24h",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Changes the period at which the Context.IO index for this source is synced with the origin email account on the IMAP server. Possible values are 1h, 4h, 12h and 24h (default) Only available on sources with service_level set to PRO."
                     },
                     {
@@ -2809,14 +2792,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "1h",
-                            "4h",
-                            "12h",
-                            "24h"
-                        ],
                         "default": "24h",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Desired maximum delay between the moment the email comes in the user's mailbox and the time we call the callback_url. To have your callback_url called as soon as possible (typically, this means within a minute after the event occurred in the mailbox), set this parameter to immediate or 0. Other possible values are 30m, 1h, 4h, 12h and 24h (default) meaning 30 minutes, 1 hour, 4 hours, 12 hours and 24 hours respectively. This parameter only works on Pro Mailboxes. For Basic Mailboxes, the delay is forced to 24h. However, manually triggering a sync will also trigger WebHooks if applicable."
                     },
                     {
@@ -2885,8 +2862,8 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "0",
-                            "1"
+                            "Value_0",
+                            "Value_1"
                         ],
                         "type": "integer",
                         "description": "The active property of a WebHook allows you to pause (set to 0) or resume (set to 1) it."
@@ -2952,8 +2929,7 @@
     "definitions": {
         "type": {
             "title": "type",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "GMAIL",
                 "GOOGLEAPPSMARKETPLACE"
@@ -2961,16 +2937,14 @@
         },
         "source_type": {
             "title": "source_type",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "IMAP"
             ]
         },
         "service_level": {
             "title": "service_level",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "PRO",
                 "BASIC"
@@ -2978,8 +2952,7 @@
         },
         "status": {
             "title": "status",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "INVALID_CREDENTIALS",
                 "CONNECTION_IMPOSSIBLE",
@@ -2989,24 +2962,13 @@
                 "DISABLED"
             ]
         },
-        "sync_period": {
-            "title": "sync_period",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "1h",
-                "4h",
-                "12h",
-                "24h"
-            ]
-        },
         "active": {
             "title": "active",
             "type": "integer",
             "format": "int32",
             "enum": [
-                "0",
-                "1"
+                "Value_0",
+                "Value_1"
             ]
         }
     }

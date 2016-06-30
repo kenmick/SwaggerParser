@@ -1,0 +1,46 @@
+{
+    "host": "spreadsheets.google.com", 
+    "basePath": "/feeds/", 
+    "total": 16, 
+    "methods": {
+        "put": {
+            "times": 4, 
+            "frequency": "0.250"
+        }, 
+        "post": {
+            "times": 2, 
+            "frequency": "0.125"
+        }, 
+        "delete": {
+            "times": 2, 
+            "frequency": "0.125"
+        }, 
+        "get": {
+            "times": 8, 
+            "frequency": "0.500"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 9, 
+            "frequency": "0.900"
+        }, 
+        "2": {
+            "times": 1, 
+            "frequency": "0.100"
+        }
+    }, 
+    "url_noun": [
+        "/worksheets/{key}/{visibility}/{projection}/{worksheetId}", 
+        "/spreadsheets/{visibility}/{projection}", 
+        "/worksheets/{key}/{visibility}/{projection}/{worksheetId}/{version}", 
+        "/cells/{key}/{worksheetId}/{visibility}/{projection}/{cellId}", 
+        "/cells/{key}/{worksheetId}/{visibility}/{projection}", 
+        "/cells/{key}/{worksheetId}/{visibility}/{projection}/batch", 
+        "/list/{key}/{worksheetId}/{visibility}/{projection}/{rowId}", 
+        "/worksheets/{key}/{visibility}/{projection} ", 
+        "/spreadsheets/{visibility}/{projection}/{key}", 
+        "/list/{key}/{worksheetId}/{visibility}/{projection}"
+    ], 
+    "url_not_noun": []
+}

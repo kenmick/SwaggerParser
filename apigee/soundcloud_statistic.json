@@ -1,0 +1,75 @@
+{
+    "host": "api.soundcloud.com", 
+    "basePath": "/", 
+    "total": 52, 
+    "methods": {
+        "put": {
+            "times": 8, 
+            "frequency": "0.154"
+        }, 
+        "post": {
+            "times": 2, 
+            "frequency": "0.038"
+        }, 
+        "delete": {
+            "times": 5, 
+            "frequency": "0.096"
+        }, 
+        "get": {
+            "times": 37, 
+            "frequency": "0.712"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 11, 
+            "frequency": "0.282"
+        }, 
+        "2": {
+            "times": 28, 
+            "frequency": "0.718"
+        }
+    }, 
+    "url_noun": [
+        "/tracks.{format}", 
+        "/users/{user_id}/comments.{format}", 
+        "/users/{user_id}/tracks.{format}", 
+        "/groups/{group_id}/tracks.{format}", 
+        "/playlists/{playlist_id}.{format}", 
+        "/groups/{group_id}/members.{format}", 
+        "/me/followers.{format}", 
+        "/users/{user_id}/favorites/{track_id}.{format}", 
+        "/users.{format}", 
+        "/users/{user_id}/followers.{format}", 
+        "/groups/{group_id}/contributors.{format}", 
+        "/me/followers/{contact_id}.{format}", 
+        "/me/playlists.{format}", 
+        "/users/{user_id}/groups.{format}", 
+        "/users/{user_id}/playlists.{format}", 
+        "/me/comments.{format}", 
+        "/groups/{group_id}/users.{format}", 
+        "/tracks/{track_id}/secret-token.{format}", 
+        "/tracks/{track_id}/permissions.{format}", 
+        "/users/{user_id}.{format}", 
+        "/me/groups.{format}", 
+        "/users/{user_id}/followers/{contact_id}.{format}", 
+        "/groups.{format}", 
+        "/tracks/{track_id}/comments.{format}", 
+        "/groups/{group_id}.{format}", 
+        "/users/{user_id}/favorites.{format}", 
+        "/users/{user_id}/followings.{format}", 
+        "/me/followings/{contact_id}.{format}", 
+        "/me/favorites.{format}", 
+        "/tracks/{track_id}.{format}", 
+        "/resolve.{format}", 
+        "/users/{user_id}/followings/{contact_id}.{format}", 
+        "/me/favorites/{track_id}.{format}", 
+        "/playlists.{format}", 
+        "/groups/{group_id}/moderators.{format}", 
+        "/me/followings.{format}", 
+        "/me.{format}", 
+        "/me/tracks.{format}", 
+        "/comments/{comment_id}.{format}"
+    ], 
+    "url_not_noun": []
+}

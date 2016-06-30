@@ -1,0 +1,47 @@
+{
+    "host": "www.onenote.com", 
+    "basePath": "/api/v1.0/me/notes/", 
+    "total": 23, 
+    "methods": {
+        "post": {
+            "times": 7, 
+            "frequency": "0.304"
+        }, 
+        "delete": {
+            "times": 1, 
+            "frequency": "0.043"
+        }, 
+        "get": {
+            "times": 15, 
+            "frequency": "0.652"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 6, 
+            "frequency": "0.400"
+        }, 
+        "2": {
+            "times": 9, 
+            "frequency": "0.600"
+        }
+    }, 
+    "url_noun": [
+        "/sections/{sectionId}/pages", 
+        "/notebooks", 
+        "/pages/{pageId}/content", 
+        "/sectionGroups/{sectionGroupId}/sectionGroups", 
+        "/pages", 
+        "/sectionGroups/{sectionGroupId}/sections", 
+        "/pages/{pageId}/preview", 
+        "/notebooks/{notebookId}/sectiongroups", 
+        "/pages/{pageId}", 
+        "/sections/", 
+        "/notebooks/{notebookId}/sections", 
+        "/notebooks/{notebookId}", 
+        "/sections/{sectionId}", 
+        "/sectionGroups/", 
+        "/sectionGroups/{sectionGroupId}"
+    ], 
+    "url_not_noun": []
+}

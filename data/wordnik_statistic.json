@@ -22,16 +22,12 @@
     }, 
     "paths": {
         "1": {
-            "times": 1, 
-            "frequency": "0.042"
+            "times": 3, 
+            "frequency": "0.125"
         }, 
         "2": {
-            "times": 9, 
-            "frequency": "0.375"
-        }, 
-        "3": {
-            "times": 14, 
-            "frequency": "0.583"
+            "times": 21, 
+            "frequency": "0.875"
         }
     }, 
     "url_noun": [
@@ -54,12 +50,12 @@
         "/word.json/{word}/etymologies", 
         "/word.json/{word}/hyphenation", 
         "/word.json/{word}/pronunciations", 
+        "/words.json/wordOfTheDay", 
         "/words.json/randomWord", 
         "/word.json/{word}/examples"
     ], 
     "url_not_noun": [
         "/account.json/authenticate/{username}", 
-        "/wordList.json/{permalink}/deleteWords", 
-        "/words.json/wordOfTheDay"
+        "/wordList.json/{permalink}/deleteWords"
     ]
 }

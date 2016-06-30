@@ -1,0 +1,93 @@
+{
+    "host": "insight.youtube.com", 
+    "basePath": "/", 
+    "total": 64, 
+    "methods": {
+        "put": {
+            "times": 6, 
+            "frequency": "0.094"
+        }, 
+        "post": {
+            "times": 16, 
+            "frequency": "0.250"
+        }, 
+        "delete": {
+            "times": 10, 
+            "frequency": "0.156"
+        }, 
+        "get": {
+            "times": 32, 
+            "frequency": "0.500"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 2, 
+            "frequency": "0.042"
+        }, 
+        "2": {
+            "times": 9, 
+            "frequency": "0.188"
+        }, 
+        "3": {
+            "times": 30, 
+            "frequency": "0.625"
+        }, 
+        "4": {
+            "times": 7, 
+            "frequency": "0.146"
+        }
+    }, 
+    "url_noun": [
+        "/video-analytics/csvreports", 
+        "/sup", 
+        "/resumableupload/{id}"
+    ], 
+    "url_not_noun": [
+        "/feeds/{projection}/videos/-/{category_or_tag}", 
+        "/feeds/{projection}/users/{username}/playlists/{playlistId}", 
+        "/feeds/{projection}/charts/movies/{feedId}", 
+        "/feeds/{projection}/users/{messageRecipientUsername}/inbox", 
+        "/feeds/{projection}/users/default/inbox/{messageId}", 
+        "/feeds/{projection}/users/default/inbox", 
+        "/feeds/{projection}/videos/{videoId}", 
+        "/feeds/{projection}/users/{username}/subscriptions", 
+        "/feeds/{projection}/videos/{videoId}/related", 
+        "/feeds/{projection}/events", 
+        "/feeds/{projection}/playlists/{playlistId}/{playlistEntryId}", 
+        "/feeds/{projection}/users/{username}/newsubscriptionvideos", 
+        "/feeds/{projection}/playlists/snippets", 
+        "/feeds/{projection}/playlists/{playlistId}", 
+        "/feeds/{projection}/users/{username}/uploads", 
+        "/feeds/{projection}/users/{username}/playlists", 
+        "/feeds/{projection}/videos/{videoId}/responses/{responseId}", 
+        "/feeds/{projection}/users/{username}/recommendations", 
+        "/feeds/{projection}/charts/trailers/{feedId}", 
+        "/feeds/{projection}/channelstandardfeeds/{regionId}/{feedId}_{userType}/-/{categoryName}", 
+        "/feeds/{projection}/users/{username}/contacts", 
+        "/feeds/{projection}/users/{username}/live/events/{eventId}", 
+        "/feeds/{projection}/videos/{videoId}/ratings", 
+        "/feeds/{projection}/videos/{videoId}/captions", 
+        "/feeds/{projection}/videos/{videoId}/captions/{trackId}", 
+        "/feeds/{projection}/users/{username}/favorites", 
+        "/feeds/{projection}/users/{username}/subscriptions/{subscriptionId}", 
+        "/feeds/{projection}/users/{username}/events", 
+        "/feeds/{projection}/videos", 
+        "/feeds/{projection}/users/{username}/favorites/{favoriteId}", 
+        "/feeds/{projection}/users/{username}/uploads/{videoId}", 
+        "/feeds/{projection}/videos/{videoId}/captiondata/{trackId}", 
+        "/feeds/{projection}/users/batch", 
+        "/feeds/{projection}/users/{username}/contacts/{contactId}", 
+        "/feeds/{projection}/charts/live/events/{feedId}", 
+        "/feeds/{projection}/videos/batch", 
+        "/feeds/{projection}/users/{username}", 
+        "/feeds/{projection}/videos/{videoId}/comments", 
+        "/feeds/{projection}/channels", 
+        "/feeds/{projection}/videos/{videoId}/complaints", 
+        "/feeds/{projection}/videos/{videoId}/responses", 
+        "/feeds/{projection}/users/default/friendsactivity", 
+        "/feeds/{projection}/standardfeeds/{regionId}/{feedId}_{categoryName}", 
+        "/feeds/{projection}/users/{username}/live/events", 
+        "/resumable/feeds/{projection}/users/{username}/uploads"
+    ]
+}

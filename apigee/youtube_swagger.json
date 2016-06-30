@@ -35,15 +35,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -120,8 +113,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -147,7 +140,7 @@
                             "all_time"
                         ],
                         "default": "all_time",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Allows you to restrict the feed to only contain relevant results from the previous day, week or month. Note: The top_rated, top_favorites, most_viewed, most_discussed and most_responded standard feeds support the time parameter."
                     },
                     {
@@ -155,13 +148,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -189,7 +177,7 @@
                             "recently_featured",
                             "on_the_web"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Feed ID."
                     },
                     {
@@ -221,15 +209,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -298,8 +279,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -333,7 +314,7 @@
                             "all_time"
                         ],
                         "default": "all_time",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Allows you to restrict the feed to only contain relevant results from the previous day, week or month. Note: YouTube does not generate a feed of the most subscribed channels from the previous day. As such, the only supported values of the time parameter for the most_subscribed feed are this_week, this_month, and all_time."
                     },
                     {
@@ -341,13 +322,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -364,18 +340,10 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "top_rated",
-                            "top_favorites",
                             "most_viewed",
-                            "most_shared",
-                            "most_popular",
-                            "most_recent",
-                            "most_discussed",
-                            "most_responded",
-                            "recently_featured",
-                            "on_the_web"
+                            "most_subscribed"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Feed ID."
                     },
                     {
@@ -415,15 +383,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -500,8 +461,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -528,13 +489,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -573,15 +529,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -632,8 +581,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -652,13 +601,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -699,15 +643,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -758,8 +695,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -778,13 +715,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -831,15 +763,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -890,8 +815,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -910,13 +835,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -956,15 +876,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -1033,8 +946,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -1053,13 +966,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     }
                 ],
@@ -1083,15 +991,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -1168,8 +1069,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -1266,7 +1167,7 @@
                             "moderate",
                             "strict"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Indicates whether the search results should include restricted content as well as standard content. Accepted values: none, moderate, strict."
                     },
                     {
@@ -1281,7 +1182,7 @@
                             "all_time"
                         ],
                         "default": "all_time",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Allows you to restrict the feed to only contain relevant results from the previous day, week or month. Note: The top_rated, top_favorites, most_viewed, most_discussed and most_responded standard feeds support the time parameter."
                     },
                     {
@@ -1292,7 +1193,7 @@
                         "enum": [
                             "partner"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Lets you restrict a query to YouTube partner videos. A YouTube partner is a person or organization that has been accepted into and participates in the YouTube Partner Program."
                     },
                     {
@@ -1300,13 +1201,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     }
                 ],
@@ -1330,15 +1226,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -1415,8 +1304,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -1451,13 +1340,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -1489,15 +1373,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -1574,8 +1451,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -1594,13 +1471,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -1632,15 +1504,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -1675,8 +1540,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -1695,13 +1560,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -1733,15 +1593,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -1818,8 +1671,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -1838,13 +1691,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -1874,15 +1722,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -1933,8 +1774,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -1953,13 +1794,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -1991,15 +1827,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -2076,8 +1905,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -2096,13 +1925,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -2132,15 +1956,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -2191,8 +2008,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -2211,13 +2028,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -2249,15 +2061,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -2308,8 +2113,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -2328,13 +2133,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -2374,15 +2174,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom complaints. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -2433,8 +2226,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -2453,13 +2246,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -2491,15 +2279,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -2576,8 +2357,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -2596,13 +2377,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -2634,15 +2410,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -2711,8 +2480,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -2739,13 +2508,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -2775,15 +2539,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -2834,8 +2591,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -2879,13 +2636,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -2917,15 +2669,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -2976,8 +2721,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -2996,13 +2741,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -3042,15 +2782,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -3119,8 +2852,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -3151,7 +2884,7 @@
                             "sbv",
                             "srt"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Specifies an alternate format for the caption track than the one originally uploaded."
                     },
                     {
@@ -3159,13 +2892,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -3203,15 +2931,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -3262,8 +2983,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -3307,13 +3028,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -3353,15 +3069,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -3438,8 +3147,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -3458,13 +3167,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     }
                 ],
@@ -3488,15 +3192,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -3573,8 +3270,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -3593,13 +3290,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -3631,15 +3323,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -3716,8 +3401,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -3744,13 +3429,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -3789,15 +3469,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -3874,8 +3547,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -3894,13 +3567,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -3932,15 +3600,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -3991,8 +3652,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -4011,13 +3672,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -4057,15 +3713,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -4142,8 +3791,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -4170,13 +3819,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -4206,15 +3850,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -4265,8 +3902,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -4285,13 +3922,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -4323,15 +3955,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -4408,8 +4033,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -4436,13 +4061,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -4480,15 +4100,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -4539,8 +4152,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -4559,13 +4172,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -4605,15 +4213,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -4690,8 +4291,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -4710,13 +4311,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -4746,15 +4342,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -4805,8 +4394,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -4825,13 +4414,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -4863,15 +4447,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -4922,8 +4499,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -4942,13 +4519,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -4988,15 +4560,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -5073,8 +4638,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -5093,13 +4658,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -5131,15 +4691,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -5216,8 +4769,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -5236,13 +4789,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -5274,15 +4822,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -5359,8 +4900,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -5379,13 +4920,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -5415,15 +4951,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -5474,8 +5003,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -5494,13 +5023,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -5532,15 +5056,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -5591,8 +5108,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -5611,13 +5128,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -5647,15 +5159,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -5706,8 +5211,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -5726,13 +5231,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -5764,15 +5264,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -5849,8 +5342,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -5869,13 +5362,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     }
                 ],
@@ -5899,15 +5387,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -5958,8 +5439,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -5978,13 +5459,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -6016,15 +5492,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -6075,8 +5544,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -6095,13 +5564,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -6133,15 +5597,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -6218,8 +5675,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -6238,13 +5695,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -6282,13 +5734,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -6320,15 +5767,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -6397,8 +5837,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -6417,13 +5857,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -6469,13 +5904,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -6521,13 +5951,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -6567,15 +5992,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -6652,8 +6070,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -6680,7 +6098,7 @@
                             "cancelled",
                             "rejected"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Restricts a live event feed to only list events with the specified status."
                     },
                     {
@@ -6728,13 +6146,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -6773,15 +6186,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -6858,8 +6264,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -6878,13 +6284,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -6916,15 +6317,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -7001,8 +6395,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -7021,13 +6415,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -7067,15 +6456,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -7152,8 +6534,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -7172,13 +6554,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     }
                 ],
@@ -7202,15 +6579,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -7287,8 +6657,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -7315,13 +6685,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -7353,15 +6718,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -7438,8 +6796,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -7466,13 +6824,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     }
                 ],
@@ -7496,15 +6849,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -7573,8 +6919,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -7609,13 +6955,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     }
                 ],
@@ -7639,15 +6980,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -7724,8 +7058,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -7768,13 +7102,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -7787,7 +7116,7 @@
                             "most_recent",
                             "trending"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Feed ID."
                     }
                 ],
@@ -7811,15 +7140,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -7896,8 +7218,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -7924,13 +7246,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -7940,10 +7257,9 @@
                         "x-is-map": false,
                         "enum": [
                             "most_popular",
-                            "most_recent",
-                            "trending"
+                            "most_recent"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Feed ID."
                     }
                 ],
@@ -7967,15 +7283,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -8052,8 +7361,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -8080,7 +7389,7 @@
                             "cancelled",
                             "rejected"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Restricts a live event feed to only list events with the specified status."
                     },
                     {
@@ -8128,13 +7437,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -8143,11 +7447,12 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "most_popular",
-                            "most_recent",
-                            "trending"
+                            "featured",
+                            "live_now",
+                            "upcoming",
+                            "recently_broadcast"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Feed ID."
                     }
                 ],
@@ -8171,15 +7476,8 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "atom",
-                            "rss",
-                            "json",
-                            "json-in-script",
-                            "jsonc"
-                        ],
                         "default": "atom",
-                        "type": "integer",
+                        "type": "object",
                         "description": "The alt parameter specifies the format of the feed to be returned. The default value is atom and this document only explains the format of Atom responses. If you set the parameter value to json-in-script, then you must also set the callback parameter value to identify the callback function to which the API response will be sent."
                     },
                     {
@@ -8248,8 +7546,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -8276,13 +7574,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     }
                 ],
@@ -8324,8 +7617,8 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "2"
+                            "Value_1",
+                            "Value_2"
                         ],
                         "default": "2",
                         "type": "integer",
@@ -8377,13 +7670,8 @@
                         "in": "path",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "api",
-                            "base",
-                            "mobile"
-                        ],
                         "default": "api",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Projection name. All API requests must specify a projection. Most developers who are using this documentation will use the api projection. However, if you are developing applications for mobile devices, you can substitute mobile for api in any of the sample requests described in the API documentation. Similarly, if you prefer to use the base projection, which is well suited to feed readers, you can substitute base for api in any of the sample requests described in the API documentation."
                     },
                     {
@@ -8523,31 +7811,18 @@
         }
     },
     "definitions": {
-        "alt": {
-            "title": "alt",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "atom",
-                "rss",
-                "json",
-                "json-in-script",
-                "jsonc"
-            ]
-        },
         "v": {
             "title": "v",
             "type": "integer",
             "format": "int32",
             "enum": [
-                "1",
-                "2"
+                "Value_1",
+                "Value_2"
             ]
         },
         "time": {
             "title": "time",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "today",
                 "this_week",
@@ -8555,20 +7830,9 @@
                 "all_time"
             ]
         },
-        "projection": {
-            "title": "projection",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "api",
-                "base",
-                "mobile"
-            ]
-        },
         "feedID": {
             "title": "feedID",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "top_rated",
                 "top_favorites",
@@ -8582,10 +7846,17 @@
                 "on_the_web"
             ]
         },
+        "feedID3": {
+            "title": "feedID3",
+            "type": "string",
+            "enum": [
+                "most_viewed",
+                "most_subscribed"
+            ]
+        },
         "safeSearch": {
             "title": "safeSearch",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "none",
                 "moderate",
@@ -8594,16 +7865,14 @@
         },
         "uploader": {
             "title": "uploader",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "partner"
             ]
         },
         "fmt": {
             "title": "fmt",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "sbv",
                 "srt"
@@ -8611,8 +7880,7 @@
         },
         "status": {
             "title": "status",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "pending",
                 "active",
@@ -8624,12 +7892,29 @@
         },
         "feedId": {
             "title": "feedId",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "most_popular",
                 "most_recent",
                 "trending"
+            ]
+        },
+        "feedId9": {
+            "title": "feedId9",
+            "type": "string",
+            "enum": [
+                "most_popular",
+                "most_recent"
+            ]
+        },
+        "feedId10": {
+            "title": "feedId10",
+            "type": "string",
+            "enum": [
+                "featured",
+                "live_now",
+                "upcoming",
+                "recently_broadcast"
             ]
         }
     }

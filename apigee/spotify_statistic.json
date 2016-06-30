@@ -1,0 +1,24 @@
+{
+    "host": "ws.spotify.com", 
+    "basePath": "/", 
+    "total": 4, 
+    "methods": {
+        "get": {
+            "times": 4, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "3": {
+            "times": 4, 
+            "frequency": "1.000"
+        }
+    }, 
+    "url_noun": [], 
+    "url_not_noun": [
+        "/search/1/track", 
+        "/lookup/1/", 
+        "/search/1/album", 
+        "/search/1/artist"
+    ]
+}

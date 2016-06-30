@@ -30,28 +30,16 @@
     }, 
     "paths": {
         "1": {
-            "times": 10, 
-            "frequency": "0.200"
+            "times": 14, 
+            "frequency": "0.280"
         }, 
         "2": {
-            "times": 5, 
-            "frequency": "0.100"
+            "times": 22, 
+            "frequency": "0.440"
         }, 
         "3": {
-            "times": 19, 
-            "frequency": "0.380"
-        }, 
-        "4": {
-            "times": 2, 
-            "frequency": "0.040"
-        }, 
-        "5": {
-            "times": 11, 
-            "frequency": "0.220"
-        }, 
-        "6": {
-            "times": 3, 
-            "frequency": "0.060"
+            "times": 14, 
+            "frequency": "0.280"
         }
     }, 
     "url_noun": [
@@ -88,8 +76,10 @@
         "/pools/{poolId}/nodes/{nodeId}/users", 
         "/pools/{poolId}/nodes/{nodeId}", 
         "/pools/{poolId}/enableautoscale", 
+        "/pools/{poolId}/nodes/{nodeId}/enablescheduling", 
         "/pools/{poolId}/nodes/{nodeId}/files/{fileName}", 
         "/pools/{poolId}/disableautoscale", 
+        "/pools/{poolId}/nodes/{nodeId}/disablescheduling", 
         "/pools/{poolId}/nodes/{nodeId}/users/{userName}", 
         "/jobs/{jobId}/jobpreparationandreleasetaskstatus", 
         "/lifetimejobstats", 
@@ -104,8 +94,6 @@
         "/jobs/{jobId}/terminate", 
         "/jobs/{jobId}/disable", 
         "/pools/{poolId}/resize", 
-        "/pools/{poolId}/nodes/{nodeId}/enablescheduling", 
-        "/pools/{poolId}/nodes/{nodeId}/disablescheduling", 
         "/jobschedules/{jobScheduleId}/disable"
     ]
 }

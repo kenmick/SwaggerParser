@@ -1,0 +1,37 @@
+{
+    "host": "www.googleapis.com", 
+    "basePath": "/blogger/v2/", 
+    "total": 9, 
+    "methods": {
+        "get": {
+            "times": 9, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 2, 
+            "frequency": "0.222"
+        }, 
+        "2": {
+            "times": 5, 
+            "frequency": "0.556"
+        }, 
+        "3": {
+            "times": 2, 
+            "frequency": "0.222"
+        }
+    }, 
+    "url_noun": [
+        "/blogs/{blogId}/posts/{postId}", 
+        "/blogs/{blogId}/posts/{postId}/comments", 
+        "/users/{userId}/blogs", 
+        "/blogs/{blogId}/posts", 
+        "/blogs/{blogId}/posts/{postId}/comments/{commentId}", 
+        "/blogs/{blogId}/pages/{pageId}", 
+        "/blogs/{blogId}", 
+        "/blogs/{blogId}/pages", 
+        "/users/{userId}"
+    ], 
+    "url_not_noun": []
+}

@@ -1,0 +1,66 @@
+{
+    "host": "api.twilio.com", 
+    "basePath": "/2010-04-01/Accounts/", 
+    "total": 45, 
+    "methods": {
+        "put": {
+            "times": 4, 
+            "frequency": "0.089"
+        }, 
+        "post": {
+            "times": 10, 
+            "frequency": "0.222"
+        }, 
+        "get": {
+            "times": 26, 
+            "frequency": "0.578"
+        }, 
+        "delete": {
+            "times": 5, 
+            "frequency": "0.111"
+        }
+    }, 
+    "paths": {
+        "0": {
+            "times": 1, 
+            "frequency": "0.038"
+        }, 
+        "1": {
+            "times": 16, 
+            "frequency": "0.615"
+        }, 
+        "2": {
+            "times": 9, 
+            "frequency": "0.346"
+        }
+    }, 
+    "url_noun": [
+        "/{AccountSid}/Notifications/{NotificationSid}.{format}", 
+        "/{AccountSid}.{format}", 
+        "/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/TollFree.{format}", 
+        "/{AccountSid}/Notifications.{format}", 
+        "/{AccountSid}/Conferences.{format}", 
+        "/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.{format}", 
+        "/{AccountSid}/Calls/{CallSid}/Notifications.{format}", 
+        "/{AccountSid}/SMS/Messages/{SMSMessageSid}.{format}", 
+        "/{AccountSid}/Calls/{CallSid}/Recordings.{format}", 
+        "/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/Local.{format}", 
+        "/{AccountSid}/Recordings/{RecordingSid}.{format}", 
+        "/{AccountSid}/Recordings/{RecordingSid}/Transcriptions.{format}", 
+        "/{AccountSid}/Conferences/{ConferenceSid}/Participants.{format}", 
+        "/", 
+        "/{AccountSid}/Recordings.{format}", 
+        "/{AccountSid}/OutgoingCallerIds/{OutgoingCallerIdSid}.{format}", 
+        "/{AccountSid}/IncomingPhoneNumbers.{format}", 
+        "/{AccountSid}/Transcriptions/{TranscriptionSid}.{format}", 
+        "/{AccountSid}/OutgoingCallerIds.{format}", 
+        "/{AccountSid}/IncomingPhoneNumbers/{IncomingPhoneNumberSid}.{format}", 
+        "/{AccountSid}/Calls.{format}", 
+        "/{AccountSid}/Transcriptions.{format}", 
+        "/{AccountSid}/Calls/{CallSid}.{format}", 
+        "/{AccountSid}/Sandbox.{format}", 
+        "/{AccountSid}/Conferences/{ConferenceSid}.{format}", 
+        "/{AccountSid}/SMS/Messages.{format}"
+    ], 
+    "url_not_noun": []
+}

@@ -369,7 +369,7 @@
                             "friends",
                             "suggested"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Can be created (lists created by this user), edited (other people's lists this user has edited), followed (lists this user follows), friends (lists from this user's friends), and suggested (lists relevant to the user's current location)."
                     },
                     {
@@ -514,7 +514,7 @@
                             "nearby",
                             "popular"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "One of recent, nearby, or popular. Nearby requires geolat and geolong to be provided."
                     },
                     {
@@ -849,13 +849,8 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "image/jpeg",
-                            "image/gif",
-                            "image/png"
-                        ],
                         "default": "image/jpeg",
-                        "type": "integer",
+                        "type": "object",
                         "description": "Content type."
                     },
                     {
@@ -1161,7 +1156,7 @@
                             "arts",
                             "outdoors"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "One of food, drinks, coffee, shops, arts, or outdoors. Choosing one of these limits results to venues with categories matching these terms."
                     },
                     {
@@ -1194,11 +1189,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "new",
-                            "old"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Pass new or old to limit results to places the acting user hasn't been or has been, respectively. Omitting this parameter returns a mixture."
                     }
                 ],
@@ -1316,7 +1307,7 @@
                             "browse",
                             "match"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "One of the values checkin, browse or match, indicating your intent in performing the search. If no value is specified, defaults to checkin."
                     },
                     {
@@ -1740,9 +1731,9 @@
                             "edited",
                             "followed",
                             "friends",
-                            "suggested"
+                            "other"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Can be created, edited, followed, friends, other. If no acting user is present, only other is supported."
                     },
                     {
@@ -1841,13 +1832,10 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "created",
-                            "edited",
-                            "followed",
-                            "friends",
-                            "suggested"
+                            "checkin",
+                            "venue"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Pass \"checkin\" for photos added by friends on their recent checkins. Pass \"venue\" for public photos added to the venue by anyone. Use multi service to fetch both."
                     },
                     {
@@ -1998,11 +1986,11 @@
                         "required": false,
                         "x-is-map": false,
                         "enum": [
+                            "friends",
                             "recent",
-                            "nearby",
                             "popular"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "One of friends, recent, or popular"
                     },
                     {
@@ -2195,7 +2183,7 @@
                             "doesnt_exist",
                             "event_over"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "One of mislocated, closed, duplicate, inappropriate, doesnt_exist, event_over."
                     },
                     {
@@ -3141,9 +3129,9 @@
                             "edited",
                             "followed",
                             "friends",
-                            "suggested"
+                            "other"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Can be created, edited, followed, friends, other. If no acting user is present, only other is supported."
                     }
                 ],
@@ -3776,12 +3764,7 @@
                         "in": "query",
                         "required": true,
                         "x-is-map": false,
-                        "enum": [
-                            "twitter",
-                            "facebook",
-                            "twitter,facebook"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Where to broadcast this list. Send \"twitter\" if you want to send to twitter, \"facebook\" if you want to send to facebook, or \"twitter,facebook\" if you want to send to both."
                     },
                     {
@@ -4168,12 +4151,7 @@
                         "in": "query",
                         "required": false,
                         "x-is-map": false,
-                        "enum": [
-                            "twitter",
-                            "facebook",
-                            "twitter,facebook"
-                        ],
-                        "type": "integer",
+                        "type": "object",
                         "description": "Whether to broadcast this photo. Send \"twitter\" if you want to send to twitter, \"facebook\" if you want to send to facebook, or \"twitter,facebook\" if you want to send to both."
                     },
                     {
@@ -4314,7 +4292,7 @@
                             "receivePings",
                             "receiveCommentPings"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Name of setting to change."
                     },
                     {
@@ -4332,8 +4310,8 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "1",
-                            "0"
+                            "Value_1",
+                            "Value_0"
                         ],
                         "type": "integer",
                         "description": "1 for true, and 0 for false."
@@ -4440,7 +4418,7 @@
                             "friends",
                             "flash"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "The type of special.\nMayor: unlocked only for the mayor.\nFrequency: unlocked every count1 check-ins.\nCount: unlocked on the count1th check-in (all-time).\nRegular: unlocked if you have checked in at least count1 times in the last count2 days.\nSwarm: unlocked if there are count1 people here right now (but only for the first count1 people).\nFriends: unlocked if at least count1 friends check in together.\nFlash: first-come first-serve; unlocked for the first count1 people to check in between count2 and count3 (given in minutes since midnight, local time).each day. In all cases, the user must be at the venue (checked in within the last 3 hours, and not having checked in anywhere else since then) to unlock a special."
                     },
                     {
@@ -4546,7 +4524,7 @@
                             "expired",
                             "all"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "Which specials to return: pending, active, expired, all"
                     }
                 ],
@@ -4713,14 +4691,11 @@
                         "required": true,
                         "x-is-map": false,
                         "enum": [
-                            "mislocated",
-                            "closed",
-                            "duplicate",
-                            "inappropriate",
-                            "doesnt_exist",
-                            "event_over"
+                            "not_redeemable",
+                            "not_valuable",
+                            "other"
                         ],
-                        "type": "integer",
+                        "type": "string",
                         "description": "One of not_redeemable, not_valuable, other."
                     },
                     {
@@ -4935,7 +4910,7 @@
                             "all"
                         ],
                         "default": "all",
-                        "type": "integer",
+                        "type": "string",
                         "description": "Which campaigns to return: pending, active, expired, all (default=all)"
                     }
                 ],
@@ -5408,8 +5383,7 @@
     "definitions": {
         "group": {
             "title": "group",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "created",
                 "edited",
@@ -5420,28 +5394,16 @@
         },
         "sort": {
             "title": "sort",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "recent",
                 "nearby",
                 "popular"
             ]
         },
-        "Content-Type": {
-            "title": "Content-Type",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "image/jpeg",
-                "image/gif",
-                "image/png"
-            ]
-        },
         "section": {
             "title": "section",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "food",
                 "drinks",
@@ -5451,29 +5413,46 @@
                 "outdoors"
             ]
         },
-        "novelty": {
-            "title": "novelty",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "new",
-                "old"
-            ]
-        },
         "intent": {
             "title": "intent",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "checkin",
                 "browse",
                 "match"
             ]
         },
+        "group4": {
+            "title": "group4",
+            "type": "string",
+            "enum": [
+                "created",
+                "edited",
+                "followed",
+                "friends",
+                "other"
+            ]
+        },
+        "group5": {
+            "title": "group5",
+            "type": "string",
+            "enum": [
+                "checkin",
+                "venue"
+            ]
+        },
+        "sort6": {
+            "title": "sort6",
+            "type": "string",
+            "enum": [
+                "friends",
+                "recent",
+                "popular"
+            ]
+        },
         "problem": {
             "title": "problem",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "mislocated",
                 "closed",
@@ -5483,20 +5462,9 @@
                 "event_over"
             ]
         },
-        "broadcast": {
-            "title": "broadcast",
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-                "twitter",
-                "facebook",
-                "twitter,facebook"
-            ]
-        },
         "SETTING_ID": {
             "title": "SETTING_ID",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "sendToTwitter",
                 "sendMayorshipsToTwitter",
@@ -5513,14 +5481,13 @@
             "type": "integer",
             "format": "int32",
             "enum": [
-                "1",
-                "0"
+                "Value_1",
+                "Value_0"
             ]
         },
         "type": {
             "title": "type",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "mayor",
                 "frequency",
@@ -5533,13 +5500,21 @@
         },
         "status": {
             "title": "status",
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
                 "pending",
                 "active",
                 "expired",
                 "all"
+            ]
+        },
+        "problem12": {
+            "title": "problem12",
+            "type": "string",
+            "enum": [
+                "not_redeemable",
+                "not_valuable",
+                "other"
             ]
         }
     }

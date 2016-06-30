@@ -30,24 +30,16 @@
     }, 
     "paths": {
         "1": {
-            "times": 4, 
-            "frequency": "0.148"
+            "times": 13, 
+            "frequency": "0.481"
         }, 
         "2": {
-            "times": 8, 
-            "frequency": "0.296"
+            "times": 10, 
+            "frequency": "0.370"
         }, 
         "3": {
-            "times": 8, 
-            "frequency": "0.296"
-        }, 
-        "4": {
-            "times": 5, 
-            "frequency": "0.185"
-        }, 
-        "5": {
-            "times": 2, 
-            "frequency": "0.074"
+            "times": 4, 
+            "frequency": "0.148"
         }
     }, 
     "url_noun": [

@@ -1,0 +1,31 @@
+{
+    "host": "api.groupon.com", 
+    "basePath": "/", 
+    "total": 6, 
+    "methods": {
+        "get": {
+            "times": 6, 
+            "frequency": "1.000"
+        }
+    }, 
+    "paths": {
+        "1": {
+            "times": 5, 
+            "frequency": "0.833"
+        }, 
+        "2": {
+            "times": 1, 
+            "frequency": "0.167"
+        }
+    }, 
+    "url_noun": [
+        "/deals/{deal_id}/posts.{format}", 
+        "/deals/{id}.{format}", 
+        "/status.{format}", 
+        "/deals.{format}", 
+        "/divisions.{format}"
+    ], 
+    "url_not_noun": [
+        "/groupon_says.{format}"
+    ]
+}
